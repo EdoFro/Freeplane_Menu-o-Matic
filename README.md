@@ -32,6 +32,10 @@ info sobre
 
 [4.4. código](#44-código)
 
+[4.5. Imagen](#45-Imagen)
+
+[4.6. Link](#46-Link)
+
 [5. Funcionalidades](#5-Funcionalidades)
 
 [6. This AddOn is still beta](#6-This-AddOn-is-still-beta)
@@ -71,8 +75,8 @@ blablabla
 
 ### 4.3. Listado de tareas con niveles
 
-- [ ] **Tarea 1**
-   - [ ] **Tarea 2**
+- [ ] Tarea 1
+   - [ ] Tarea 2
    - [x] Tarea 3
 - [ ] **Tarea 4**
 - [x] Tarea 3
@@ -103,6 +107,14 @@ def setNoteMarkdown(n){
     return NoteController.getController().setNoteContentType(n.delegate, 'markdown')
 }
 ```
+
+### 4.5. Imagen
+
+![heros-journey.png](file:/C:/Users/Edo/Documents/GitHub/Freeplane_My-Menu-Inator/resources/heros-journey.png)
+
+### 4.6. Link
+
+[Groovy Switch statement](https://www.tutorialspoint.com/groovy/groovy_switch_statement.htm)
 
 ## 5. Funcionalidades
 
