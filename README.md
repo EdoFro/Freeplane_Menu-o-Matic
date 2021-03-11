@@ -78,15 +78,15 @@ def setNoteMarkdown(n){
 
 ### 3.3. Task list
 
-- []  Tarea 1 
+- [ ]  Tarea 1 
 
-- []  Tarea 2 
+- [ ]  Tarea 2 
 
 - [x]  Tarea 3 
 
-- []  Tarea 4 
+- [ ]  Tarea 4 
 
-- [] <del> Tarea6 </del>
+- [ ] <del> Tarea6 </del>
 
 ## 4. Funcionalidades
 
