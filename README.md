@@ -110,7 +110,7 @@ def setNoteMarkdown(n){
 
 ### 4.5. Imagen
 
-![heros-journey.png](file:/C:/Users/Edo/Documents/GitHub/Freeplane_My-Menu-Inator/resources/heros-journey.png)
+![heros-journey.png](/resources/heros-journey.png)
 
 ### 4.6. Link
 
