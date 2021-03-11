@@ -16,19 +16,19 @@ info sobre
 
 [Freeplane_My-Menu-Inator](#Freeplane_My-Menu-Inator)
 
-[1. parrafo introductorio](#1.-parrafo-introductorio)
+[1. parrafo introductorio](#1-parrafo-introductorio)
 
-[2. TOC](#2.-TOC)
+[2. TOC](#2-TOC)
 
-[3. Descarga e instalación](#3.-Descarga-e-instalación)
+[3. Descarga e instalación](#3-Descarga-e-instalación)
 
-[4. Funcionalidades](#4.-Funcionalidades)
+[4. Funcionalidades](#4-Funcionalidades)
 
-[5. This AddOn is still beta](#5.-This-AddOn-is-still-beta)
+[5. This AddOn is still beta](#5-This-AddOn-is-still-beta)
 
-[6. Your Help needed](#6.-Your-Help-needed)
+[6. Your Help needed](#6-Your-Help-needed)
 
-[7. About Freeplane](#7.-About-Freeplane)
+[7. About Freeplane](#7-About-Freeplane)
 
 ## 3. Descarga e instalación
 
