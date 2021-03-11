@@ -71,17 +71,17 @@ blablabla
 
 ### 4.3. Listado de tareas con niveles
 
-- [ ] Tarea 1
-   - [ ] Tarea 2
+- [ ] **Tarea 1**
+   - [ ] **Tarea 2**
    - [x] Tarea 3
-- [ ] Tarea 4
+- [ ] **Tarea 4**
 - [x] Tarea 3
    - [x] Tarea 3
-      - [ ] <del>Tarea6</del>
+      - [ ] *<del>Tarea6</del>*
       - [x] Tarea 3
    - [x] Tarea 3
    - [x] Tarea 3
-- [ ] <del>Tarea6</del>
+- [ ] *<del>Tarea6</del>*
 
 ### 4.4. código
 
