@@ -118,13 +118,13 @@ def setNoteMarkdown(n){
 
 [Groovy Switch statement](https://www.tutorialspoint.com/groovy/groovy_switch_statement.htm)
 
-## 5. Funcionalidades
+> ## 5. Funcionalidades
 
-en general
+> en general
 
-sin detalle
+> sin detalle
 
-con imágenes
+> con imágenes
 
 ## 6. This AddOn is still beta
 
