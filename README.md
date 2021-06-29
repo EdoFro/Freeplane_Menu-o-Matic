@@ -1,142 +1,109 @@
-# Freeplane_My-Menu-Inator
+-----
 
-## 1. parrafo introductorio
+# Menu-o-Matic for Freeplane!!
 
-que es
+Menu-o-Matic is an AddOn for Freeplane that gives the user the possibility to create his/her own dialogs with the menu items he/she prefers.
 
-que hace
+It can also include scripts.
 
-para quien
+The addon can be downloaded from the [latest release](https://github.com/EdoFro/Freeplane_Menu-o-Matic/releases/latest) page.
 
-donde se puede descargar
+-----
 
-info sobre
+[example video in YouTube](https://www.youtube.com/watch?v=uu46pntlCag)
 
-## 2. Table of contents
+-----
 
-[Freeplane_My-Menu-Inator](#Freeplane_My-Menu-Inator)
+   * [Menu-o-Matic for Freeplane!!](#Menu-o-Matic-for-Freeplane!!)
 
-[1. parrafo introductorio](#1-parrafo-introductorio)
+   * [Basic Instructions](#Basic-Instructions)
 
-[2. Table of contents](#2-Table-of-contents)
+   * [Additional features and instructions](#Additional-features-and-instructions)
 
-[3. Descarga e instalación](#3-Descarga-e-instalación)
+      * [1. Getting menu items as nodes](#1-Getting-menu-items-as-nodes)
 
-[4. Pruebas varias de Markdown](#4-Pruebas-varias-de-Markdown)
+      * [2. Script nodes](#2-Script-nodes)
 
-[4.1. Listado de ...](#41-Listado-de-)
+      * [3. About the icons](#3-About-the-icons)
 
-[4.2. Listado de tareas](#42-Listado-de-tareas)
+      * [4. Editing an existing **customMenu** node](#4-Editing-an-existing-**customMenu**-node)
 
-[4.3. Listado de tareas con niveles](#43-Listado-de-tareas-con-niveles)
+      * [5. Showing dialogs](#5-Showing-dialogs)
 
-[4.4. código](#44-código)
+      * [6. Navigating dialogs](#6-Navigating-dialogs)
 
-[4.5. Imagen](#45-Imagen)
+      * [7. Mindmap templates](#7-Mindmap-templates)
 
-[4.6. Link](#46-Link)
+-----
 
-[5. Funcionalidades](#5-Funcionalidades)
+# Basic Instructions
 
-[6. This AddOn is still beta](#6-This-AddOn-is-still-beta)
+1. Build a a branch with node's linked to menu items
+   * ![MoM 001.png](<br>----<br>--- No Markdown root folder defined!! ---<br>----<br>)
+1. Select the parent node. Its text will be used as the dialog's title.<br>And apply the '**pack menu**' command
+   * ![MoM 002.png](<br>----<br>--- No Markdown root folder defined!! ---<br>----<br>)
+1. You have to decide if the resulting dialog should show labels, icons or both
+   * ![MoM 003.png](<br>----<br>--- No Markdown root folder defined!! ---<br>----<br>)
+1. It creates a '**customMenu**' node that includes the whole information to build the dialog
+   * ![MoM 004.png](<br>----<br>--- No Markdown root folder defined!! ---<br>----<br>)
+1. Use this new node to launch your menu dialog
+   * ![MoM 005.png](<br>----<br>--- No Markdown root folder defined!! ---<br>----<br>)
+1. And here is the resulting dialog!
+   * ![MoM 006.png](<br>----<br>--- No Markdown root folder defined!! ---<br>----<br>)
 
-[7. Your Help needed](#7-Your-Help-needed)
+-----
 
-[8. About Freeplane](#8-About-Freeplane)
+# Additional features and instructions
 
-## 3. Descarga e instalación
+## 1. Getting menu items as nodes
 
-blablabla
+* the **standard option** is to select an existing node and add a link to a menu item to it using the menu command:<br>**Insert / Link / Add Hyperlink to menu item ...**
+* the **Menu-o-Matic way**:<br>the Add On has a command to directly insert a node linked to the menu item that the mouse points
+   * **"menu item under mouse as new node"**
+   * this command **NEEDS** to have a keyboard **shortcut** to be called
+   * move the mouse over a menu or toolbar item and press the keyboard shortcut to insert the new node
+   * Ctrl Shift F2
 
-## 4. Pruebas varias de Markdown
+## 2. Script nodes
 
-### 4.1. Listado de ...
+* You can add nodes with scripts as menu buttons too
+* For a node to be recognizable as having a script, it must (any of these):
+   * have a script1 attribute with a groovy script
+   * have a groovy script as note AND its details should start with ".groovy "
+   * have a link to a groovy script file
+* When packaging the customMenu node, the script will be automaticaly added to the pack information
 
-1. item 1
-1. item 2
-1. item 3
-   * item 3a
-   * item 3b
-1. item 4
-   1. item 1
-   1. item 2
-   1. item 3
-      * item 3a
-      * item 3b
-   1. item 4
+## 3. About the icons
 
-### 4.2. Listado de tareas
+* To build the dialog buttons, the addon uses the icons assigned to the menu items
+* If a menu item has no icon, then it takes the first icon in the node linked to the menu item
+* For the nodes with scripts, it uses the first icon from each node as its button icon
 
-- [ ] Tarea 1
-- [ ] Tarea 2
-- [x] Tarea 3
-- [ ] Tarea 4
-- [ ] <del>Tarea6</del>
+## 4. Editing an existing **customMenu** node
 
-### 4.3. Listado de tareas con niveles
+* After creating a customMenu node, you can erase the nodes used to design and build it
+* You can copy this customMenu node to other maps if you want. They will work as well as the original one.
+* If you want to edit a customNode to add, delete or reorder the buttons, you can use the **'unpack menu'** command and you will get the nodes again to edit and pack them again.
 
-- [ ] Tarea 1
-   - [ ] Tarea 2
-   - [x] Tarea 3
-- [ ] **Tarea 4**
-- [x] Tarea 3
-   - [x] Tarea 3
-      - [ ] *<del>Tarea6</del>*
-      - [x] Tarea 3
-   - [x] Tarea 3
-   - [x] Tarea 3
-- [ ] *<del>Tarea6</del>*
+## 5. Showing dialogs
 
-### 4.4. código
+* If you launch a dialog using the same customMenu node several times, it will reuse the same dialog.<br>It won't create a new one every time
+* If you launch a dialog using a customMenu node that has the same title as another one, it will reuse the same dialog and replace the buttons
+* You can display multiple dialogs if their customMenu source nodes have been build using different titles
 
-code: **'pasar texto a nota e indicar formato Markdown'**
+## 6. Navigating dialogs
 
-```groovy
-// import org.freeplane.features.text.TextController
-import org.freeplane.features.note.NoteController
+* You can use the **arrow keys** to navigate the buttons in the dialogs
+* **Enter** or **Spacebar** executes the selected button
+* With the **Esc** key you can **hide the dialog** and return to the mindmap
+* You can use the **'list menu dialogs'** command to select a existing menu and diplay it again
+   * I recomend you to add a keyboard shortcut to this command
+   * I use 'shift Esc'
 
+## 7. Mindmap templates
 
-def nodos = c.selecteds
-
-nodos.each{nodo ->
-    nodo.note = nodo.text
-    setNoteMarkdown(nodo)
-}
-
-def setNoteMarkdown(n){
-    return NoteController.getController().setNoteContentType(n.delegate, 'markdown')
-}
-```
-
-### 4.5. Imagen
-
-![heros-journey.png](file:/C:/Users/Edo/Documents/GitHub/Freeplane_My-Menu-Inator/resources/heros-journey.png)
-
-![heros-journey.png](/resources/heros-journey.png)
-
-### 4.6. Link
-
-[Groovy Switch statement](https://www.tutorialspoint.com/groovy/groovy_switch_statement.htm)
-
-> ## 5. Funcionalidades
-
-> en general
-
-> sin detalle
-
-> con imágenes
-
-## 6. This AddOn is still beta
-
-So it may have a lot of bugs. Use it at your own risk. (**Freeplane** has an excelent "*Undo*" implementation, so the risk is in fact very limited)
-
-Please report any bug in this addOn in its GitHub page
-
-## 7. Your Help needed
-
-I'm not very good at writing in english, so if you find any error please tell me (and please explain me how to write it correctly)
-
-## 8. About Freeplane
-
-[Freeplane](https://www.freeplane.org/wiki/index.php/Home) is a free and open source software application that supports thinking, sharing information and getting things done at work, in school and at home. The software can be used for [mind mapping](https://secure.wikimedia.org/wikipedia/en/wiki/Mind_map) and analyzing the information contained in mind maps. Freeplane runs on any operating system that has a current version of Java installed. It can be run locally or [portably](https://en.wikipedia.org/wiki/Portable_application) from removable storage like an USB drive.
+* The addOn includes a template that adds 3 custom styles to visually recognize the following types of nodes
+   * nodes with groovy scripts
+   * nodes with links to menu items
+   * customMenu pack nodes
 
