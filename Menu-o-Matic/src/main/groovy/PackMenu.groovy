@@ -20,10 +20,10 @@ class PackMenu{
     // region: properties
 
     static final String   scriptStr    = '_script'
-    static final String[] optionsD1    = ['icons and labels','icons only', 'labels only','cancel']
-    static final String   msgD1        = 'Dialog must show:'
     // static final Boolean  scriptInNote = true
     static final String   titleD1      = 'menu-o-matic'
+    static final String   msgD1        = 'Dialog must show:'
+    static final String[] optionsD1    = ['icons and labels','icons only', 'labels only','cancel']
     static final String   titleD2      = 'menu-o-matic'
     static final String   msgD2        = 'Export script code to node\'s :'
     static final String[] optionsD2    = ['note','script1 attribute']
@@ -108,7 +108,7 @@ class PackMenu{
         def options = optionsD1
         def msg     = msgD1
         def title   = titleD1
-        def resp    = respuestaDialogo(optionsD1,msgD1,titleD1)
+        def resp    = respuestaDialogo(options,msg,title)
         if(options[0..2].contains(resp)) {
             def showIcons  = (resp in options[0,1])?true:false
             def showLabels = (resp in options[0,2])?true:false
