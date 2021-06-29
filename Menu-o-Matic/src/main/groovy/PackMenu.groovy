@@ -20,10 +20,13 @@ class PackMenu{
     // region: properties
 
     static final String   scriptStr    = '_script'
-    static final Boolean  scriptInNote = true
     static final String[] optionsD1    = ['icons and labels','icons only', 'labels only','cancel']
     static final String   msgD1        = 'Dialog must show:'
+    // static final Boolean  scriptInNote = true
     static final String   titleD1      = 'menu-o-matic'
+    static final String   titleD2      = 'menu-o-matic'
+    static final String   msgD2        = 'Export script code to node\'s :'
+    static final String[] optionsD2    = ['note','script1 attribute']
     static final int      maxTextLen   = 50
     static       int      iScript      = 0
 
@@ -122,6 +125,14 @@ class PackMenu{
 
     def static unpackMenu(nodoMenu){
         def md = new MenuData(nodoMenu)
+        def scriptInNote
+        if (md.scripts){
+            def options  = optionsD2
+            def msg      = msgD2
+            def title    = titleD2
+            def resp     = respuestaDialogo(options,msg,title)
+            scriptInNote = (resp == options[0])?true:false
+        }
         def nBase = nodoMenu.createChild(md.title)
         md.actions.eachWithIndex{acc, i ->
             def nodo = nBase.createChild(md.labels[i])
