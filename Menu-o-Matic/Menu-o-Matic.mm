@@ -2,10 +2,10 @@
 <!--To view this file, download free mind mapping software Freeplane from http://freeplane.sourceforge.net -->
 <node TEXT="Menu-o-Matic" ID="ID_696401721" LINK="https://github.com/EdoFro/Freeplane_Menu-o-Matic" BACKGROUND_COLOR="#97c7dc">
 <font SIZE="16" BOLD="true" ITALIC="true"/>
-<hook NAME="AutomaticEdgeColor" COUNTER="11" RULE="ON_BRANCH_CREATION"/>
+<hook NAME="AutomaticEdgeColor" COUNTER="13" RULE="ON_BRANCH_CREATION"/>
 <attribute_layout NAME_WIDTH="112.5 pt" VALUE_WIDTH="321.74999 pt"/>
 <attribute NAME="name" VALUE="menuOMatic"/>
-<attribute NAME="version" VALUE="alpha"/>
+<attribute NAME="version" VALUE="v0.1.0"/>
 <attribute NAME="author" VALUE="EdoFro"/>
 <attribute NAME="freeplaneVersionFrom" VALUE="v1.9.0"/>
 <attribute NAME="freeplaneVersionTo" VALUE=""/>
@@ -46,14 +46,14 @@
 </html>
 </richcontent>
 <hook NAME="MapStyle" background="#f9f9f8">
-    <properties mapUsesOwnSaveOptions="true" save_last_visited_node="default" save_modification_times="false" fit_to_viewport="false" show_icon_for_attributes="true" show_note_icons="true" edgeColorConfiguration="#808080ff,#ff0000ff,#0000ffff,#00ff00ff,#ff00ffff,#00ffffff,#7c0000ff,#00007cff,#007c00ff,#7c007cff,#007c7cff,#7c7c00ff" save_folding="never_save_folding"/>
+    <properties save_modification_times="false" save_last_visited_node="default" mapUsesOwnSaveOptions="true" show_icon_for_attributes="true" fit_to_viewport="false" show_note_icons="true" edgeColorConfiguration="#808080ff,#ff0000ff,#0000ffff,#00ff00ff,#ff00ffff,#00ffffff,#7c0000ff,#00007cff,#007c00ff,#7c007cff,#007c7cff,#7c7c00ff" save_folding="never_save_folding"/>
 
 <map_styles>
 <stylenode LOCALIZED_TEXT="styles.root_node" ID="ID_118736178" STYLE="oval" UNIFORM_SHAPE="true" VGAP_QUANTITY="24 pt">
 <font SIZE="24"/>
 <stylenode LOCALIZED_TEXT="styles.predefined" POSITION="right" STYLE="bubble">
 <stylenode LOCALIZED_TEXT="default" ID="ID_506805493" ICON_SIZE="12 pt" FORMAT_AS_HYPERLINK="false" COLOR="#484747" BACKGROUND_COLOR="#efefef" STYLE="bubble" SHAPE_HORIZONTAL_MARGIN="5 px" SHAPE_VERTICAL_MARGIN="2 px" BORDER_WIDTH_LIKE_EDGE="false" BORDER_WIDTH="1.9 px" BORDER_COLOR_LIKE_EDGE="false" BORDER_COLOR="#8fbcbb" BORDER_DASH_LIKE_EDGE="true" BORDER_DASH="SOLID" VGAP_QUANTITY="2 px" MAX_WIDTH="15 cm" MIN_WIDTH="3.5 cm">
-<arrowlink SHAPE="CUBIC_CURVE" COLOR="#bf5d3f" WIDTH="2" TRANSPARENCY="200" DASH="" FONT_SIZE="9" FONT_FAMILY="SansSerif" DESTINATION="ID_506805493" STARTINCLINATION="45 pt;-11.25 pt;" ENDINCLINATION="57 pt;30 pt;" STARTARROW="NONE" ENDARROW="DEFAULT"/>
+<arrowlink SHAPE="CUBIC_CURVE" COLOR="#bf5d3f" WIDTH="2" TRANSPARENCY="200" DASH="" FONT_SIZE="9" FONT_FAMILY="SansSerif" DESTINATION="ID_506805493" STARTINCLINATION="45 pt;-9 pt;" ENDINCLINATION="57 pt;30 pt;" STARTARROW="NONE" ENDARROW="DEFAULT"/>
 <font NAME="Dialog" SIZE="10" BOLD="false" STRIKETHROUGH="false" ITALIC="false"/>
 <edge STYLE="horizontal" COLOR="#ff0000" WIDTH="1" DASH="SOLID"/>
 <richcontent CONTENT-TYPE="plain/auto" TYPE="DETAILS"/>
@@ -148,7 +148,7 @@
   </body>
 </html>
 </richcontent>
-<node TEXT="Menu-o-Matic !!" ID="ID_1642042079"/>
+<node TEXT="Menu-o-Matic for Freeplane!!&#xa;Menu-o-Matic is an AddOn for Freeplane that gives the user the possibility to create his/her own dialogs with the menu items he/she prefers.&#xa;It can also include scripts." ID="ID_1642042079"/>
 </node>
 <node TEXT="changes" POSITION="left" ID="ID_1349799607">
 <edge COLOR="#0000ff"/>
@@ -164,6 +164,9 @@
   </body>
 </html>
 </richcontent>
+<node TEXT="v0.1.0" ID="ID_674021294">
+<node TEXT="initial release" ID="ID_17370257"/>
+</node>
 </node>
 <node TEXT="license" POSITION="left" ID="ID_492801974">
 <edge COLOR="#00ff00"/>
@@ -258,7 +261,7 @@
 <attribute NAME="addons.${name}" VALUE="Menu-o-Matic"/>
 <attribute NAME="addons.${name}.launchCustomDialog" VALUE="launch menu dialog"/>
 <attribute NAME="addons.${name}.listCustomDialogs" VALUE="list menu dialogs"/>
-<attribute NAME="addons.${name}.packCustomMenu" VALUE="pach menu"/>
+<attribute NAME="addons.${name}.packCustomMenu" VALUE="pack menu"/>
 <attribute NAME="addons.${name}.unpackCustomMenu" VALUE="unpack menu"/>
 <attribute NAME="addons.${name}.getMenuCommand" VALUE="menu item under mouse as new node"/>
 </node>
@@ -285,6 +288,12 @@
 <attribute NAME="delete" VALUE="${installationbase}/addons/${name}/scripts/unpackCustomMenu.groovy"/>
 <attribute NAME="delete" VALUE="${installationbase}/addons/${name}/lib/Menu-o-Matic.jar"/>
 <attribute NAME="delete" VALUE="${installationbase}/addons/${name}/scripts/getMenuCommand.groovy"/>
+<attribute NAME="delete" VALUE="${installationbase}/templates/Menu-o-Matic/Menu-o-Matic template standard.mm"/>
+<attribute NAME="delete" VALUE="${installationbase}/templates/Menu-o-Matic/Menu-o-Matic template standard.svg"/>
+<attribute NAME="delete" VALUE="${installationbase}/templates/Menu-o-Matic/Menu-o-Matic template.mm"/>
+<attribute NAME="delete" VALUE="${installationbase}/templates/Menu-o-Matic/Menu-o-Matic template.svg"/>
+<attribute NAME="delete" VALUE="${installationbase}/doc/Menu-o-Matic/Menu-o-Matic guide.mm"/>
+<attribute NAME="delete" VALUE="${installationbase}/resources/images/Menu-o-Matic-screenshot-1.png"/>
 </node>
 <node TEXT="scripts" POSITION="right" ID="ID_1105183990">
 <edge COLOR="#007c00"/>
@@ -413,7 +422,7 @@
 <attribute NAME="keyboardShortcut" VALUE=""/>
 <attribute NAME="execute_scripts_without_asking" VALUE="true"/>
 <attribute NAME="execute_scripts_without_file_restriction" VALUE="true"/>
-<attribute NAME="execute_scripts_without_write_restriction" VALUE="false"/>
+<attribute NAME="execute_scripts_without_write_restriction" VALUE="true"/>
 <attribute NAME="execute_scripts_without_exec_restriction" VALUE="false"/>
 <attribute NAME="execute_scripts_without_network_restriction" VALUE="false"/>
 </node>
@@ -545,6 +554,7 @@
 </html>
 </richcontent>
 <node TEXT="doc" ID="ID_108012296"/>
+<node TEXT="templates" ID="ID_1212139449"/>
 </node>
 <node TEXT="images" POSITION="right" ID="ID_817685181">
 <edge COLOR="#7c7c00"/>
@@ -580,6 +590,56 @@
   </body>
 </html>
 </richcontent>
+<node TEXT="Menu-o-Matic-screenshot-1.png" ID="ID_828445446"/>
+</node>
+<node TEXT="DevTools - MoM" POSITION="right" ID="ID_989188638">
+<edge COLOR="#ff0000"/>
+<node TEXT="Build add-on" ID="ID_1016684737" LINK="menuitem:_addons.devtools.checkAddOn_on_single_node">
+<icon BUILTIN="emoji-1F527"/>
+</node>
+<node TEXT="Package add-on for publication" ID="ID_806418866" LINK="menuitem:_addons.devtools.releaseAddOn_on_single_node">
+<icon BUILTIN="emoji-1F5DC"/>
+</node>
+<node TEXT="DevTools" ID="ID_1227992955">
+<attribute NAME="tbActions" VALUE="[addons.devtools.checkAddOn_on_single_node, addons.devtools.releaseAddOn_on_single_node]"/>
+<attribute NAME="tbIcons" VALUE="[IconAction.emoji-1F527, IconAction.emoji-1F5DC]"/>
+<attribute NAME="tbLabels" VALUE="[Build add-on, Package add-on for publication]"/>
+<attribute NAME="tbMaxTextLength" VALUE="50" OBJECT="org.freeplane.features.format.FormattedNumber|50"/>
+<attribute NAME="tbShowIcons" VALUE="true"/>
+<attribute NAME="tbShowLabels" VALUE="false"/>
+<attribute NAME="tbTitle" VALUE="DevTools"/>
+<richcontent CONTENT-TYPE="xml/" TYPE="DETAILS">
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      customMenu - icons only
+    </p>
+  </body>
+</html></richcontent>
+</node>
+<node TEXT="DevTools" ID="ID_1670894731">
+<attribute NAME="tbActions" VALUE="[addons.devtools.checkAddOn_on_single_node, addons.devtools.releaseAddOn_on_single_node]"/>
+<attribute NAME="tbIcons" VALUE="[IconAction.emoji-1F527, IconAction.emoji-1F5DC]"/>
+<attribute NAME="tbLabels" VALUE="[Build add-on, Package add-on for publication]"/>
+<attribute NAME="tbMaxTextLength" VALUE="50" OBJECT="org.freeplane.features.format.FormattedNumber|50"/>
+<attribute NAME="tbShowIcons" VALUE="true"/>
+<attribute NAME="tbShowLabels" VALUE="true"/>
+<attribute NAME="tbTitle" VALUE="DevTools"/>
+<richcontent CONTENT-TYPE="xml/" TYPE="DETAILS">
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      customMenu - icons and labels
+    </p>
+  </body>
+</html></richcontent>
+</node>
 </node>
 </node>
 </map>

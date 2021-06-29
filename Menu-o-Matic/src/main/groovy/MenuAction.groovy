@@ -8,6 +8,7 @@ import javax.swing.JComponent
 
 import org.freeplane.plugin.script.proxy.ScriptUtils
 import org.freeplane.core.util.TextUtils  as textUtils
+import org.freeplane.core.util.LogUtils   as logger
 
 import edofro.menuomatic.PackMenu  as PM
 
