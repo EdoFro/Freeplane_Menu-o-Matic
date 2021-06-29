@@ -39,17 +39,17 @@ The addon can be downloaded from the [latest release](https://github.com/EdoFro/
 # Basic Instructions
 
 1. Build a a branch with node's linked to menu items
-   * ![MoM 001.png](<br>----<br>--- No Markdown root folder defined!! ---<br>----<br>)
+   * ![MoM 001.png](resources/MoM%20001.png)
 1. Select the parent node. Its text will be used as the dialog's title.<br>And apply the '**pack menu**' command
-   * ![MoM 002.png](<br>----<br>--- No Markdown root folder defined!! ---<br>----<br>)
+   * ![MoM 002.png](resources/MoM%20002.png)
 1. You have to decide if the resulting dialog should show labels, icons or both
-   * ![MoM 003.png](<br>----<br>--- No Markdown root folder defined!! ---<br>----<br>)
+   * ![MoM 003.png](resources/MoM%20003.png)
 1. It creates a '**customMenu**' node that includes the whole information to build the dialog
-   * ![MoM 004.png](<br>----<br>--- No Markdown root folder defined!! ---<br>----<br>)
+   * ![MoM 004.png](resources/MoM%20004.png)
 1. Use this new node to launch your menu dialog
-   * ![MoM 005.png](<br>----<br>--- No Markdown root folder defined!! ---<br>----<br>)
+   * ![MoM 005.png](resources/MoM%20005.png)
 1. And here is the resulting dialog!
-   * ![MoM 006.png](<br>----<br>--- No Markdown root folder defined!! ---<br>----<br>)
+   * ![MoM 006.png](resources/MoM%20006.png)
 
 -----
 
