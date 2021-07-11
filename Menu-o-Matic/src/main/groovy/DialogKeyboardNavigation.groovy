@@ -3,6 +3,9 @@ package edofro.menuomatic
 import java.awt.event.ActionEvent
 import java.awt.event.KeyEvent
 import javax.swing.*
+
+import org.freeplane.features.mode.Controller
+
 //import java.awt.*
 
 class DialogKeyboardNavigation{
@@ -80,6 +83,18 @@ class DialogKeyboardNavigation{
                   dialogo.visible = false
              }
         })
+    }
+
+
+    // --- focus map ---------------------------
+   
+    def static focusMap(){
+        /*org.freeplane.features.mode.*/
+        Controller
+            .getCurrentController()
+            .getMapViewManager()
+            .getSelectedComponent()
+            .requestFocus()   
     }
 
 }

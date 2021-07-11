@@ -128,6 +128,7 @@ class LaunchDialog{
             e.source.background = Color.RED 
             c.script(scrText, "groovy").executeOn(c.selected)
             e.source.background = iniColor 
+            if (md.focusMap) DKBN.focusMap()
         }
         //ui.informationMessage(actionPerformed.toString())
         return nuevoBoton(text,icon,toolTipText,minD, actionPerformed)
@@ -140,6 +141,7 @@ class LaunchDialog{
         def minD        = minDimension
         def actionPerformed = {
                 menuUtils.executeMenuItems([acc])
+                if (md.focusMap) DKBN.focusMap()
             }
         return nuevoBoton(text,icon,toolTipText,minD, actionPerformed)
     }

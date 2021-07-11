@@ -21,23 +21,29 @@ class PackMenu{
 
     static final String   scriptStr    = '_script'
     // static final Boolean  scriptInNote = true
+    
     static final String   titleD1      = 'menu-o-matic'
     static final String   msgD1        = 'Dialog must show:'
     static final String[] optionsD1    = ['icons and labels','icons only', 'labels only','cancel']
     static final String   titleD2      = 'menu-o-matic'
     static final String   msgD2        = 'Export script code to node\'s :'
     static final String[] optionsD2    = ['note','script1 attribute']
+    static final String   titleD3      = 'menu-o-matic'
+    static final String   msgD3        = 'After clicking a button the focus should:'
+    static final String[] optionsD3    = ['return to mindmap','stay in menu']
+    
     static final int      maxTextLen   = 50
     static       int      iScript      = 0
 
     static final Map TB = [
-        actions       : 'tbActions'       ,
-        icons         : 'tbIcons'         ,
-        labels        : 'tbLabels'        ,
-        maxTextLength : 'tbMaxTextLength' ,
-        showIcons     : 'tbShowIcons'     ,
-        showLabels    : 'tbShowLabels'    ,
-        title         : 'tbTitle'
+        actions       : 'tbActions'             ,
+        icons         : 'tbIcons'               ,
+        labels        : 'tbLabels'              ,
+        maxTextLength : 'tbMaxTextLength'       ,
+        showIcons     : 'tbShowIcons'           ,
+        showLabels    : 'tbShowLabels'          ,
+        title         : 'tbTitle'               ,
+        focusMap      : 'tbFocusToMap'
     ]
 
     static class MenuData{
@@ -49,14 +55,16 @@ class PackMenu{
         Boolean   showLabels
         String    title
         ArrayList scripts
+        Boolean   focusMap
 
         public MenuData(Proxy.Node nodoMenu){
             this.actions        = nodoMenu[TB.actions][1..-2].split(', ').collect{it!='null'?it:null}
             this.icons          = nodoMenu[TB.icons  ][1..-2].split(', ').collect{it!='null'?it:null}
             this.labels         = nodoMenu[TB.labels ][1..-2].split(', ').collect{it!='null'?it:null}
             this.maxTextLength  = maxTextLen
-            this.showIcons      = nodoMenu[TB.showIcons].bool
+            this.showIcons      = nodoMenu[TB.showIcons ].bool
             this.showLabels     = nodoMenu[TB.showLabels].bool
+            this.focusMap       = nodoMenu[TB.focusMap  ].bool
             this.title          = nodoMenu[TB.title].toString()
             def scriptList = []
             nodoMenu.attributes.names.findAll{it.startsWith(scriptStr)}.each{
@@ -65,7 +73,7 @@ class PackMenu{
             this.scripts        = scriptList
         }
 
-        public MenuData(String title, nAcciones, Boolean showIcons, Boolean showLabels){
+        public MenuData(String title, nAcciones, Boolean showIcons, Boolean showLabels, Boolean focusMap){
             iScript      = 0
             this.actions        = nAcciones.collect{accion(it)}
             this.icons          = nAcciones.collect{icono(it)}
@@ -73,6 +81,7 @@ class PackMenu{
             this.maxTextLength  = maxTextLen
             this.showIcons      = showIcons
             this.showLabels     = showLabels
+            this.focusMap       = focusMap
             this.title          = title
             def scriptList = []
             def i = 0
@@ -89,6 +98,7 @@ class PackMenu{
             nodo[TB.maxTextLength] = this.maxTextLength
             nodo[TB.showIcons]     = this.showIcons
             nodo[TB.showLabels]    = this.showLabels
+            nodo[TB.focusMap]      = this.focusMap
             nodo[TB.title]         = this.title
             this.scripts.each{id, scr ->
                 nodo[id] = scr
@@ -104,7 +114,7 @@ class PackMenu{
 
     // region: primary methods
 
-    def static packMenu(nodoBase){
+    def static getMDfromNodes(nodoBase){
         def options = optionsD1
         def msg     = msgD1
         def title   = titleD1
@@ -113,10 +123,21 @@ class PackMenu{
             def showIcons  = (resp in options[0,1])?true:false
             def showLabels = (resp in options[0,2])?true:false
             def nAcciones  = nodoBase.find{it.link?.uri?.scheme == 'menuitem' || WSE.isGroovyNode(it)}
-            def md = new MenuData(nodoBase.text, nAcciones, showIcons, showLabels)
+            def resp2      = respuestaDialogo(optionsD3,msgD3,titleD3)
+            def focusMap   = ( resp2 == optionsD3[0])
+            return [new MenuData(nodoBase.text, nAcciones, showIcons, showLabels, focusMap), "\n  - $resp\n  - $resp2" ]
+        } else {
+            return [null, resp]
+        }
+    }
+    
+    def static packMenu(nodoBase){
+        def (md, resp) = getMDfromNodes(nodoBase)
+        if(md){
             def nodo = nodoBase.createChild(nodoBase.text)
             md.toNode(nodo)
-            nodo.details   = "customMenu - ${resp}"
+            nodo.details   = "customMenu  ${resp}"
+            nodo.link.text = 'menuitem:_addons.menuOMatic.launchCustomDialog_on_single_node'
             c.statusInfo = 'customMenu node created'
         } else {
             c.statusInfo = 'customMenu node creation cancelled'
