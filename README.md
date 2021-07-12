@@ -44,12 +44,16 @@ The addon can be downloaded from the [latest release](https://github.com/EdoFro/
    * ![MoM 002.png](resources/MoM%20002.png)
 1. You have to decide if the resulting dialog should show labels, icons or both
    * ![MoM 003.png](resources/MoM%20003.png)
+1. You have to decide if after clicking a button the **focus** has to return to the map or stay in the dialog<br>(**new in v0.1.1**)
+   * ![MoM 007.png](resources/MoM%20007.png)
 1. It creates a '**customMenu**' node that includes the whole information to build the dialog
    * ![MoM 004.png](resources/MoM%20004.png)
 1. Use this new node to launch your menu dialog
    * ![MoM 005.png](resources/MoM%20005.png)
 1. And here is the resulting dialog!
    * ![MoM 006.png](resources/MoM%20006.png)
+1. **New in v0.1.1**: now there is a command so you can skip the packaging step and directly launch the menu dialog if you want
+   * useful when you want to create a one time menu
 
 -----
 
@@ -90,15 +94,21 @@ The addon can be downloaded from the [latest release](https://github.com/EdoFro/
 * If you launch a dialog using the same customMenu node several times, it will reuse the same dialog.<br>It won't create a new one every time
 * If you launch a dialog using a customMenu node that has the same title as another one, it will reuse the same dialog and replace the buttons
 * You can display multiple dialogs if their customMenu source nodes have been build using different titles
+* New in v0.1.1: Now you can launch several dialogs at once by selecting a common parent node.
+   * new command to launch all dialogs from the 'customMenu pack' node under the selected node branch
 
 ## 6. Navigating dialogs
 
 * You can use the **arrow keys** to navigate the buttons in the dialogs
 * **Enter** or **Spacebar** executes the selected button
 * With the **Esc** key you can **hide the dialog** and return to the mindmap
-* You can use the **'list menu dialogs'** command to select a existing menu and diplay it again
+* There is also a command to **show and go to the last used** Menu dialog<br>(new in v0.1.1)
    * I recomend you to add a keyboard shortcut to this command
-   * I use 'shift Esc'
+   * I use 'shift ESCAPE'
+* You can use the **'list menu dialogs'** command to select a existing menu and display it again
+   * I recomend you to add a keyboard shortcut to this command
+   * I use 'control shift MINUS'
+   * new in v0.1.1: now the list is sorted from 'most recently used first' order
 
 ## 7. Mindmap templates
 

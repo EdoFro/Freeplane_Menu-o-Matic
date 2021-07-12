@@ -32,7 +32,7 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
             </conjunct_condition>
         </conditional_style>
     </conditional_styles>
-    <properties save_modification_times="false" save_last_visited_node="default" mapUsesOwnSaveOptions="true" show_icon_for_attributes="true" fit_to_viewport="false" show_note_icons="true" edgeColorConfiguration="#808080ff,#ff0000ff,#0000ffff,#00ff00ff,#ff00ffff,#00ffffff,#7c0000ff,#00007cff,#007c00ff,#7c007cff,#007c7cff,#7c7c00ff" save_folding="save_folding_if_map_is_changed"/>
+    <properties mapUsesOwnSaveOptions="true" save_last_visited_node="default" save_modification_times="false" fit_to_viewport="false" show_icon_for_attributes="true" show_note_icons="true" edgeColorConfiguration="#808080ff,#ff0000ff,#0000ffff,#00ff00ff,#ff00ffff,#00ffffff,#7c0000ff,#00007cff,#007c00ff,#7c007cff,#007c7cff,#7c7c00ff" save_folding="save_folding_if_map_is_changed"/>
 
 <map_styles>
 <stylenode LOCALIZED_TEXT="styles.root_node" STYLE="oval" UNIFORM_SHAPE="true" VGAP_QUANTITY="24 pt">
@@ -158,7 +158,7 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
 </stylenode>
 </map_styles>
 </hook>
-<node TEXT="README.md" STYLE_REF="MarkdownHelperNode" POSITION="right" ID="ID_340248887" LINK="file:/C:/Users/Edo/Documents/GitHub/Freeplane_My-Menu-Inator/README.md">
+<node TEXT="README.md" STYLE_REF="MarkdownHelperNode" FOLDED="true" POSITION="right" ID="ID_340248887" LINK="file:/C:/Users/Edo/Documents/GitHub/Freeplane_My-Menu-Inator/README.md" VGAP_QUANTITY="3 pt">
 <edge COLOR="#ff0000"/>
 <attribute_layout NAME_WIDTH="126.75 pt"/>
 <attribute NAME="headersToUnderline" VALUE="1" OBJECT="org.freeplane.features.format.FormattedNumber|1|#0.####"/>
@@ -188,7 +188,7 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
 </html></richcontent>
 <node TEXT="content" ID="ID_905564017">
 <icon BUILTIN="emoji-1F648"/>
-<node TEXT="Freeplane_My-Menu-Inator" ID="ID_1936106468">
+<node TEXT="Freeplane_My-Menu-Inator" FOLDED="true" ID="ID_1936106468" VGAP_QUANTITY="3 pt">
 <icon BUILTIN="emoji-26D4"/>
 <node TEXT="parrafo introductorio" ID="ID_787612943">
 <node TEXT="que es" ID="ID_19596780"/>
@@ -371,6 +371,22 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
 <node TEXT="= edofro.MarkDownHelper.MDH.linkedNodeText(node)" STYLE_REF="MarkdownHelperLink" ID="ID_1807399593" LINK="#ID_507235335"/>
 </node>
 </node>
+<node TEXT="You have to decide if after clicking a button the **focus** has to return to the map or stay in the dialog&#xa;(**new in v0.1.1**)" ID="ID_143371709">
+<icon BUILTIN="emoji-1F537"/>
+<node TEXT="local image" STYLE_REF="MarkdownHelperNode" ID="ID_850301501"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      = edofro.MarkDownHelper.MDH.imageLink(node,true)
+    </p>
+  </body>
+</html></richcontent>
+<node TEXT="= edofro.MarkDownHelper.MDH.linkedNodeText(node)" STYLE_REF="MarkdownHelperLink" ID="ID_95043741" LINK="#ID_1037661475"/>
+</node>
+</node>
 <node TEXT="It creates a &apos;**customMenu**&apos; node that includes the whole information to build the dialog" ID="ID_1833115902">
 <icon BUILTIN="emoji-1F537"/>
 <node TEXT="local image" STYLE_REF="MarkdownHelperNode" ID="ID_450173748"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
@@ -418,6 +434,10 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
 </html></richcontent>
 <node TEXT="= edofro.MarkDownHelper.MDH.linkedNodeText(node)" STYLE_REF="MarkdownHelperLink" ID="ID_472204470" LINK="#ID_1831047845"/>
 </node>
+</node>
+<node TEXT="**New in v0.1.1**: now there is a command so you can skip the packaging step and directly launch the menu dialog if you want" ID="ID_1881412462">
+<icon BUILTIN="emoji-1F537"/>
+<node TEXT="useful when you want to create a one time menu" ID="ID_295129507"/>
 </node>
 </node>
 </node>
@@ -513,6 +533,9 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
 <node TEXT="If you launch a dialog using the same customMenu node several times, it will reuse the same dialog.&#xa;It won&apos;t create a new one every time" ID="ID_1161792917"/>
 <node TEXT="If you launch a dialog using a customMenu node that has the same title as another one, it will reuse the same dialog and replace the buttons" ID="ID_784079548"/>
 <node TEXT="You can display multiple dialogs if their customMenu source nodes have been build using different titles" ID="ID_1774028159"/>
+<node TEXT="New in v0.1.1: Now you can launch several dialogs at once by selecting a common parent node." ID="ID_1021741131">
+<node TEXT="new command to launch all dialogs from the &apos;customMenu pack&apos; node under the selected node branch" ID="ID_1907853140"/>
+</node>
 </node>
 </node>
 <node TEXT="Navigating dialogs" FOLDED="true" ID="ID_1062449364">
@@ -530,9 +553,14 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
 <node TEXT="You can use the **arrow keys** to navigate the buttons in the dialogs" ID="ID_390966841"/>
 <node TEXT="**Enter** or **Spacebar** executes the selected button" ID="ID_1744030215"/>
 <node TEXT="With the **Esc** key you can **hide the dialog** and return to the mindmap" ID="ID_1297294396"/>
-<node TEXT="You can use the **&apos;list menu dialogs&apos;** command to select a existing menu and diplay it again" ID="ID_517050270">
+<node TEXT="There is also a command to **show and go to the last used** Menu dialog&#xa;(new in v0.1.1)" ID="ID_1054273137">
+<node TEXT="I recomend you to add a keyboard shortcut to this command" ID="ID_1397987696"/>
+<node TEXT="I use &apos;shift ESCAPE&apos;" ID="ID_272476652"/>
+</node>
+<node TEXT="You can use the **&apos;list menu dialogs&apos;** command to select a existing menu and display it again" ID="ID_517050270">
 <node TEXT="I recomend you to add a keyboard shortcut to this command" ID="ID_1788397559"/>
-<node TEXT="I use &apos;shift Esc&apos;" ID="ID_1108617316"/>
+<node TEXT="I use &apos;control shift MINUS&apos;" ID="ID_1108617316"/>
+<node TEXT="new in v0.1.1: now the list is sorted from &apos;most recently used first&apos; order" ID="ID_749758326"/>
 </node>
 </node>
 </node>
@@ -558,7 +586,7 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
 </node>
 </node>
 </node>
-<node TEXT="Freeplane_My-Menu-Inator" STYLE_REF="baseFolder" POSITION="right" ID="ID_260100339" LINK="file:/C:/Users/Edo/Documents/GitHub/Freeplane_My-Menu-Inator/">
+<node TEXT="Freeplane_My-Menu-Inator" STYLE_REF="baseFolder" FOLDED="true" POSITION="right" ID="ID_260100339" LINK="file:/C:/Users/Edo/Documents/GitHub/Freeplane_My-Menu-Inator/">
 <attribute NAME="nameFilter" VALUE=""/>
 <attribute NAME="maxDepth" VALUE="-1" OBJECT="org.freeplane.features.format.FormattedNumber|-1|#0.####"/>
 <attribute NAME="markWhenMoved" VALUE="0" OBJECT="org.freeplane.features.format.FormattedNumber|0|#0.####"/>
@@ -739,10 +767,23 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
       &nbsp;&nbsp;&nbsp;
     </p>
   </body>
-</html></richcontent>
+</html>
+</richcontent>
 <node TEXT=".gitattributes" ID="ID_1996843115" LINK="file:/C:/Users/Edo/Documents/GitHub/Freeplane_My-Menu-Inator/.gitattributes"/>
 <node TEXT="Menu-o-Matic" STYLE_REF="locked" ID="ID_1589076031" LINK="file:/C:/Users/Edo/Documents/GitHub/Freeplane_My-Menu-Inator/Menu-o-Matic/"/>
-<node TEXT="README-MoM-MDH.mm" ID="ID_179290817" LINK="file:/C:/Users/Edo/Documents/GitHub/Freeplane_My-Menu-Inator/README-MoM-MDH.mm"/>
+<node TEXT="README-MoM-MDH.mm" ID="ID_179290817" LINK="file:/C:/Users/Edo/Documents/GitHub/Freeplane_My-Menu-Inator/README-MoM-MDH.mm"><richcontent CONTENT-TYPE="xml/" TYPE="DETAILS">
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      this very file
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
 <node TEXT="resources" ID="ID_928846385" LINK="file:/C:/Users/Edo/Documents/GitHub/Freeplane_My-Menu-Inator/resources/">
 <node TEXT="MoM 001.png" ID="ID_837225588" LINK="file:/C:/Users/Edo/Documents/GitHub/Freeplane_My-Menu-Inator/resources/MoM%20001.png"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/markdown">
 <html>
@@ -816,6 +857,19 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
   </body>
 </html></richcontent>
 </node>
+<node TEXT="MoM 007.png" ID="ID_1037661475" LINK="file:/C:/Users/Edo/Documents/GitHub/Freeplane_My-Menu-Inator/resources/MoM%20007.png"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/markdown">
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      =&quot;![](${node.link.uri})&quot;
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
 <node TEXT="MoM_example.mm" ID="ID_1497791969" LINK="file:/C:/Users/Edo/Documents/GitHub/Freeplane_My-Menu-Inator/resources/MoM_example.mm"/>
 <node TEXT="toUpperCase.groovy" ID="ID_530821844" LINK="file:/C:/Users/Edo/Documents/GitHub/Freeplane_My-Menu-Inator/resources/toUpperCase.groovy"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
 <html>
@@ -829,6 +883,79 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
   </body>
 </html></richcontent>
 </node>
+</node>
+<node TEXT="LICENSE.md" ID="ID_1225660405" LINK="file:/C:/Users/Edo/Documents/GitHub/Freeplane_My-Menu-Inator/LICENSE.md"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      MIT License
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      Copyright (c) 2021 Eduardo Frohlich.
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      Permission is hereby granted, free of charge, to any person obtaining a copy
+    </p>
+    <p>
+      of this software and associated documentation files (the &quot;Software&quot;), to deal
+    </p>
+    <p>
+      in the Software without restriction, including without limitation the rights
+    </p>
+    <p>
+      to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+    </p>
+    <p>
+      copies of the Software, and to permit persons to whom the Software is
+    </p>
+    <p>
+      furnished to do so, subject to the following conditions:
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      The above copyright notice and this permission notice shall be included in all
+    </p>
+    <p>
+      copies or substantial portions of the Software.
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+    </p>
+    <p>
+      IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+    </p>
+    <p>
+      FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+    </p>
+    <p>
+      AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+    </p>
+    <p>
+      LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+    </p>
+    <p>
+      OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+    </p>
+    <p>
+      SOFTWARE.
+    </p>
+  </body>
+</html>
+</richcontent>
 </node>
 <node TEXT="README.md" ID="ID_1558207926" LINK="file:/C:/Users/Edo/Documents/GitHub/Freeplane_My-Menu-Inator/README.md"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
 <html>
@@ -1134,7 +1261,20 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
       &nbsp;&nbsp;&nbsp;* I use 'shift Esc'
     </p>
   </body>
-</html></richcontent>
+</html>
+</richcontent>
+<richcontent CONTENT-TYPE="xml/" TYPE="DETAILS">
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      the resulting output of this file
+    </p>
+  </body>
+</html>
+</richcontent>
 </node>
 <node TEXT="new imported files" STYLE_REF="newFolderImport" ID="ID_458856747">
 <attribute NAME="log_MDI" VALUE="No"/>
@@ -1145,7 +1285,7 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
   </head>
   <body>
     <p>
-      Inated:&nbsp;&nbsp;&nbsp;2021-06-29&nbsp;&nbsp;15:42:33
+      Inated:&nbsp;&nbsp;&nbsp;2021-07-12&nbsp;&nbsp;18:55:25
     </p>
     <p>
       
@@ -1193,7 +1333,8 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
       
     </p>
   </body>
-</html></richcontent>
+</html>
+</richcontent>
 </node>
 </node>
 </node>
