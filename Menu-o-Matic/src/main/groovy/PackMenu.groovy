@@ -174,6 +174,25 @@ class PackMenu{
         c.statusInfo = 'customMenu node unpacked'
     }
 
+    def static getMenuDescriptionFromPackNode(nodoMenu,longText){
+        def ic = nodoMenu[TB.showIcons ].bool
+        def sl = nodoMenu[TB.showLabels].bool
+        def fm = nodoMenu[TB.focusMap  ].bool
+        def title = nodoMenu[TB.title].toString()
+        def iconLabel
+        def focus
+        if (longText) {
+            //iconLabel = ic?sl?'icons and labels':'icons only':sl?'labels only':'error'
+            iconLabel = ic?sl?optionsD1[0]:optionsD1[1]:sl?optionsD1[2]:'error'
+            //focus = fm?'return to mindmap':'stay in menu'
+            focus = fm?optionsD3[0]:optionsD3[1]
+        } else {
+            iconLabel = ic?sl?'ic+lb':'ic':sl?'lb':'error'
+            focus = fm?'-> map':'-> menu'
+        }
+        return "$title  ($iconLabel, $focus)".toString()
+    }
+
     // end: primary methods
 
     // region: secondary methods
