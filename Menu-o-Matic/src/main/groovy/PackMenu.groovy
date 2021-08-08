@@ -12,6 +12,9 @@ import javax.swing.*
 import org.freeplane.plugin.script.proxy.ScriptUtils
 import org.freeplane.plugin.script.proxy.Proxy
 
+import groovy.transform.MapConstructor
+
+
 // end: imports
 
 
@@ -46,6 +49,7 @@ class PackMenu{
         focusMap      : 'tbFocusToMap'
     ]
 
+    @MapConstructor
     static class MenuData{
         ArrayList actions
         ArrayList icons
