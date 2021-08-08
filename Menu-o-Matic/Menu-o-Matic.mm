@@ -46,7 +46,7 @@
 </html>
 </richcontent>
 <hook NAME="MapStyle" background="#f9f9f8">
-    <properties mapUsesOwnSaveOptions="true" save_last_visited_node="default" save_modification_times="false" fit_to_viewport="false" show_icon_for_attributes="true" show_note_icons="true" edgeColorConfiguration="#808080ff,#ff0000ff,#0000ffff,#00ff00ff,#ff00ffff,#00ffffff,#7c0000ff,#00007cff,#007c00ff,#7c007cff,#007c7cff,#7c7c00ff" save_folding="never_save_folding"/>
+    <properties save_modification_times="false" save_last_visited_node="default" mapUsesOwnSaveOptions="true" show_icon_for_attributes="true" fit_to_viewport="false" show_note_icons="true" edgeColorConfiguration="#808080ff,#ff0000ff,#0000ffff,#00ff00ff,#ff00ffff,#00ffffff,#7c0000ff,#00007cff,#007c00ff,#7c007cff,#007c7cff,#7c7c00ff" save_folding="never_save_folding"/>
 
 <map_styles>
 <stylenode LOCALIZED_TEXT="styles.root_node" ID="ID_118736178" STYLE="oval" UNIFORM_SHAPE="true" VGAP_QUANTITY="24 pt">
@@ -170,6 +170,9 @@
 <node TEXT="v0.1.1" ID="ID_935483166">
 <node TEXT="- new command to directly open dialog from nodes (not through customMenu node)&#xa;- added hyperlink to &quot;Launch&quot; command to &apos;customMenu&apos; pack nodes&#xa;- new command to launch all dialogs from selected node branch&#xa;- added option to return focus to map after button click&#xa;- added showLastUsedMenu command&#xa;- listed dialogs now sorted in most recently used order&#xa;- added Add-on images&#xa;- added &apos;list menu packages from map&apos;" ID="ID_1604082793"/>
 </node>
+<node TEXT="v0.1.2" ID="ID_945933975">
+<node TEXT="- added submenus in MenuBar&#xa;- added command &apos;launchMenuOMaticDialog&apos;" ID="ID_876496407"/>
+</node>
 </node>
 <node TEXT="license" POSITION="left" ID="ID_492801974">
 <edge COLOR="#00ff00"/>
@@ -271,6 +274,7 @@
 <attribute NAME="addons.${name}.launchDialogsFromBranch" VALUE="launch all dialog packages from branch"/>
 <attribute NAME="addons.${name}.showLastUsedMenu" VALUE="show most recently used menu"/>
 <attribute NAME="addons.${name}.listCustomMenusFromMap" VALUE="list menu packages from map"/>
+<attribute NAME="addons.${name}.launchMenuOMaticDialog" VALUE="launch Menu-o-Matic dialog"/>
 </node>
 </node>
 <node TEXT="deinstall" POSITION="left" ID="ID_1351206087">
@@ -308,6 +312,7 @@
 <attribute NAME="delete" VALUE="${installationbase}/resources/images/menuOMatic-icon.png"/>
 <attribute NAME="delete" VALUE="${installationbase}/resources/images/menuOMatic.png"/>
 <attribute NAME="delete" VALUE="${installationbase}/addons/${name}/scripts/listCustomMenusFromMap.groovy"/>
+<attribute NAME="delete" VALUE="${installationbase}/addons/${name}/scripts/launchMenuOMaticDialog.groovy"/>
 </node>
 <node TEXT="scripts" POSITION="right" ID="ID_1105183990">
 <edge COLOR="#007c00"/>
@@ -503,6 +508,18 @@
 <node TEXT="listCustomMenusFromMap.groovy" ID="ID_1444989427">
 <attribute_layout NAME_WIDTH="200.24999 pt" VALUE_WIDTH="200.24999 pt"/>
 <attribute NAME="menuTitleKey" VALUE="addons.${name}.listCustomMenusFromMap"/>
+<attribute NAME="menuLocation" VALUE="/menu_bar/edoTools/addons.${name}/launch"/>
+<attribute NAME="executionMode" VALUE="on_single_node"/>
+<attribute NAME="keyboardShortcut" VALUE=""/>
+<attribute NAME="execute_scripts_without_asking" VALUE="true"/>
+<attribute NAME="execute_scripts_without_file_restriction" VALUE="true"/>
+<attribute NAME="execute_scripts_without_write_restriction" VALUE="true"/>
+<attribute NAME="execute_scripts_without_exec_restriction" VALUE="false"/>
+<attribute NAME="execute_scripts_without_network_restriction" VALUE="false"/>
+</node>
+<node TEXT="launchMenuOMaticDialog.groovy" ID="ID_1132776118">
+<attribute_layout NAME_WIDTH="200.24999 pt" VALUE_WIDTH="200.24999 pt"/>
+<attribute NAME="menuTitleKey" VALUE="addons.${name}.launchMenuOMaticDialog"/>
 <attribute NAME="menuLocation" VALUE="/menu_bar/edoTools/addons.${name}/launch"/>
 <attribute NAME="executionMode" VALUE="on_single_node"/>
 <attribute NAME="keyboardShortcut" VALUE=""/>

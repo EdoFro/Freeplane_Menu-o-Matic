@@ -3,7 +3,7 @@
 <attribute_registry SHOW_ATTRIBUTES="selected"/>
 <node TEXT="Menu-o-Matic" FOLDED="false" ID="ID_696401721">
 <font SIZE="18"/>
-<hook NAME="MapStyle" background="#f9f9f8">
+<hook NAME="MapStyle" background="#f9f9f8" zoom="0.75">
     <conditional_styles>
         <conditional_style ACTIVE="true" STYLE_REF="GroovyNode" LAST="false">
             <script_condition>
@@ -24,7 +24,7 @@
 <font SIZE="24"/>
 <stylenode LOCALIZED_TEXT="styles.predefined" POSITION="right" STYLE="bubble">
 <stylenode LOCALIZED_TEXT="default" ID="ID_506805493" ICON_SIZE="12 pt" FORMAT_AS_HYPERLINK="false" COLOR="#484747" BACKGROUND_COLOR="#efefef" STYLE="bubble" SHAPE_HORIZONTAL_MARGIN="5 px" SHAPE_VERTICAL_MARGIN="2 px" BORDER_WIDTH_LIKE_EDGE="false" BORDER_WIDTH="1.9 px" BORDER_COLOR_LIKE_EDGE="false" BORDER_COLOR="#8fbcbb" BORDER_DASH_LIKE_EDGE="true" BORDER_DASH="SOLID" VGAP_QUANTITY="2 px">
-<arrowlink SHAPE="CUBIC_CURVE" COLOR="#bf5d3f" WIDTH="2" TRANSPARENCY="200" DASH="" FONT_SIZE="9" FONT_FAMILY="SansSerif" DESTINATION="ID_506805493" STARTINCLINATION="45 pt;-6 pt;" ENDINCLINATION="57 pt;30 pt;" STARTARROW="NONE" ENDARROW="DEFAULT"/>
+<arrowlink SHAPE="CUBIC_CURVE" COLOR="#bf5d3f" WIDTH="2" TRANSPARENCY="200" DASH="" FONT_SIZE="9" FONT_FAMILY="SansSerif" DESTINATION="ID_506805493" STARTINCLINATION="45 pt;-5.25 pt;" ENDINCLINATION="57 pt;30 pt;" STARTARROW="NONE" ENDARROW="DEFAULT"/>
 <font NAME="Dialog" SIZE="10" BOLD="false" STRIKETHROUGH="false" ITALIC="false"/>
 <edge STYLE="horizontal" COLOR="#2e3440" WIDTH="1" DASH="SOLID"/>
 <richcontent CONTENT-TYPE="plain/auto" TYPE="DETAILS"/>
@@ -115,7 +115,7 @@
 <cloud COLOR="#f0f0f0" SHAPE="ROUND_RECT"/>
 <node TEXT="design" ID="ID_657999998" ICON_SIZE="20 pt">
 <icon BUILTIN="emoji-1F3A8"/>
-<arrowlink SHAPE="LINE" DESTINATION="ID_576550497" STARTINCLINATION="-2.25 pt;6 pt;" ENDINCLINATION="0.75 pt;-12.75 pt;"/>
+<arrowlink SHAPE="LINE" DESTINATION="ID_576550497" STARTINCLINATION="-1.5 pt;6 pt;" ENDINCLINATION="0.75 pt;-12 pt;"/>
 <richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
 <html>
   <head>
@@ -130,7 +130,7 @@
 </node>
 <node TEXT="pack" ID="ID_576550497" ICON_SIZE="20 pt">
 <icon BUILTIN="emoji-1F4E6"/>
-<arrowlink SHAPE="LINE" DESTINATION="ID_924689991" STARTINCLINATION="1.5 pt;15 pt;" ENDINCLINATION="-3.75 pt;-15 pt;"/>
+<arrowlink SHAPE="LINE" DESTINATION="ID_924689991" STARTINCLINATION="1.5 pt;15 pt;" ENDINCLINATION="-3 pt;-14.25 pt;"/>
 <richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
 <html>
   <head>
@@ -145,7 +145,7 @@
 </node>
 <node TEXT="launch" ID="ID_924689991" ICON_SIZE="20 pt">
 <icon BUILTIN="emoji-1F680"/>
-<arrowlink SHAPE="LINE" DASH="3 3" DESTINATION="ID_1096145600" STARTINCLINATION="0 pt;6.75 pt;" ENDINCLINATION="0.75 pt;-10.5 pt;"/>
+<arrowlink SHAPE="LINE" DASH="3 3" DESTINATION="ID_1096145600" STARTINCLINATION="0 pt;6.75 pt;" ENDINCLINATION="0.75 pt;-9.75 pt;"/>
 <richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
 <html>
   <head>
@@ -471,7 +471,7 @@
 <node TEXT="MoM process" POSITION="left" ID="ID_311801146" VGAP_QUANTITY="2 px">
 <cloud COLOR="#f0f0f0" SHAPE="ROUND_RECT"/>
 <node TEXT="design" ID="ID_123463007" HGAP_QUANTITY="86.75 pt" VSHIFT_QUANTITY="66.75 pt">
-<arrowlink DESTINATION="ID_1643388270" STARTINCLINATION="60.75 pt;0 pt;" ENDINCLINATION="-1.5 pt;-12 pt;"/>
+<arrowlink DESTINATION="ID_1643388270" STARTINCLINATION="60.75 pt;0 pt;" ENDINCLINATION="-0.75 pt;-11.25 pt;"/>
 <edge STYLE="hide_edge"/>
 </node>
 <node TEXT="pack" ID="ID_1643388270" HGAP_QUANTITY="189.49999 pt" VSHIFT_QUANTITY="35.25 pt">
@@ -479,11 +479,11 @@
 <edge STYLE="hide_edge"/>
 </node>
 <node TEXT="unpack" ID="ID_282623393">
-<arrowlink DESTINATION="ID_123463007" STARTINCLINATION="0 pt;-18.75 pt;" ENDINCLINATION="-8.25 pt;2.25 pt;"/>
+<arrowlink DESTINATION="ID_123463007" STARTINCLINATION="0 pt;-18 pt;" ENDINCLINATION="-7.5 pt;2.25 pt;"/>
 <edge STYLE="hide_edge"/>
 </node>
 <node TEXT="launch" ID="ID_343107038" HGAP_QUANTITY="95.75 pt" VSHIFT_QUANTITY="49.5 pt">
-<arrowlink DESTINATION="ID_282623393" STARTINCLINATION="-12.75 pt;-2.25 pt;" ENDINCLINATION="0 pt;32.25 pt;"/>
+<arrowlink DESTINATION="ID_282623393" STARTINCLINATION="-12 pt;-1.5 pt;" ENDINCLINATION="0 pt;32.25 pt;"/>
 <edge STYLE="hide_edge"/>
 </node>
 </node>
