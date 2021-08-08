@@ -62,19 +62,21 @@ class PackMenu{
         Boolean   focusMap
 
         public MenuData(Proxy.Node nodoMenu){
-            this.actions        = nodoMenu[TB.actions][1..-2].split(', ').collect{it!='null'?it:null}
-            this.icons          = nodoMenu[TB.icons  ][1..-2].split(', ').collect{it!='null'?it:null}
-            this.labels         = nodoMenu[TB.labels ][1..-2].split(', ').collect{it!='null'?it:null}
-            this.maxTextLength  = maxTextLen
-            this.showIcons      = nodoMenu[TB.showIcons ].bool
-            this.showLabels     = nodoMenu[TB.showLabels].bool
-            this.focusMap       = nodoMenu[TB.focusMap  ].bool
-            this.title          = nodoMenu[TB.title].toString()
-            def scriptList = []
-            nodoMenu.attributes.names.findAll{it.startsWith(scriptStr)}.each{
-                scriptList << [it,nodoMenu[it]]
-            }
-            this.scripts        = scriptList
+//            if(nodoMenu[TB.title]){
+                this.actions        = nodoMenu[TB.actions]?nodoMenu[TB.actions][1..-2].split(', ').collect{it!='null'?it:null}:[]
+                this.icons          = nodoMenu[TB.icons  ]?nodoMenu[TB.icons  ][1..-2].split(', ').collect{it!='null'?it:null}:[]
+                this.labels         = nodoMenu[TB.labels ]?nodoMenu[TB.labels ][1..-2].split(', ').collect{it!='null'?it:null}:[]
+                this.maxTextLength  = maxTextLen?:50
+                this.showIcons      = nodoMenu[TB.showIcons ].bool
+                this.showLabels     = nodoMenu[TB.showLabels].bool
+                this.focusMap       = nodoMenu[TB.focusMap  ].bool
+                this.title          = nodoMenu[TB.title]?nodoMenu[TB.title].toString():null
+                def scriptList = []
+                nodoMenu.attributes.names.findAll{it.startsWith(scriptStr)}.each{
+                    scriptList << [it,nodoMenu[it]]
+                }
+                this.scripts        = scriptList
+//            }
         }
 
         public MenuData(String title, nAcciones, Boolean showIcons, Boolean showLabels, Boolean focusMap){
