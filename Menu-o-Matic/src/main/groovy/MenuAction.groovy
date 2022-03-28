@@ -10,12 +10,18 @@ import org.freeplane.plugin.script.proxy.ScriptUtils
 import org.freeplane.core.util.TextUtils  as textUtils
 import org.freeplane.core.util.LogUtils   as logger
 
-import edofro.menuomatic.PackMenu  as PM
-
 
 class MenuAction{
 
-    static final int maxTextLength = PM.maxTextLen
+    static final int maxTextLength = {
+        try{
+            edofro.menuomatic.PackMenu.maxTextLen
+        }
+        catch(e){
+            50
+        }
+    }()
+
     static final c = ScriptUtils.c()
     
     def static menuCommandToNode(n){
