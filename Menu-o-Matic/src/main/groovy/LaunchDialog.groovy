@@ -3,7 +3,7 @@ package edofro.menuomatic
 import groovy.swing.SwingBuilder
 import javax.swing.*
 import java.awt.*
-
+import java.awt.event.*
 
 import edofro.menuomatic.PackMenu                   as PM
 import edofro.menuomatic.WSE_redux                  as WSE
@@ -18,7 +18,7 @@ import org.freeplane.plugin.script.proxy.ScriptUtils
 class LaunchDialog{
     static final String defaultIcon     = 'IconAction.emoji-1F7EB'
     static final String dialogStr       = '_MoM_'
-    static final int    maxButtonsHoriz = 5
+    static final int    maxButtonsHoriz = 6
 
     static final SwingBuilder swingBuilder  = new SwingBuilder()
     static final c                          = ScriptUtils.c()
@@ -32,50 +32,79 @@ class LaunchDialog{
 
 
     // -------------------------- Methods -----------------------------------------------------
+    def static getDialogs(){
+        return ui.frame.ownedWindows.findAll{it.name.startsWith(dialogStr) && it.type.toString()=='NORMAL'}
+    }
+    
+    def static showLastUsedDialog(){
+        def dialogos = getDialogs()
+        dialogos.max{it.lastUsed}.show()
+    }
+    
     def static listDialogs(){
-        def dialogos = ui.frame.ownedWindows.findAll{it.name.startsWith(dialogStr) && it.type.toString()=='NORMAL'}
-        def titulos = dialogos*.title
+        def dialogos = getDialogs()
+        def titulos = dialogos.sort{it.lastUsed}*.title.reverse()
         def msg   = 'Select dialog to show'
         def title = 'Menu-o-Matic'
         def titulo = PM.respuestaDialogo(titulos,msg,title)
         dialogos.find{it.title == titulo}?.show()
     }
     
+    def static showDialogFromMD(MD){
+        md = MD
+        def dialogName = dialogStr + md.title.replace(' ' ,'_')
+        prefDimension = new Dimension(( md.showLabels?100:0) + (md.showIcons?30:0 ) ,md.showIcons?30:25)
+        minDimension = new Dimension(30 ,md.showIcons?30:25)
+        
+        def dialogo = ui.frame.ownedWindows.find{it.name == dialogName && it.type.toString()=='NORMAL'}
+        if( !dialogo ) {
+            c.statusInfo = '------------ se crea dialogo --------------'
+            dialogo = swingBuilder.dialog(
+                title              : md.title,
+                name               : dialogName,
+                modal              : false,
+                locationRelativeTo : ui.frame,
+                minimumSize        : new Dimension(30,70),
+                owner              : ui.frame
+                //defaultCloseOperation: JFrame.DISPOSE_ON_CLOSE,
+            ) {}
+        } else {
+            c.statusInfo = '------------- se reutiliza dialogo -------------------'
+            dialogo.getContentPane().removeAll()
+        }        
+        def cols = md.showLabels?1:buttonCols(md.actions.size(),maxButtonsHoriz)
+        dialogo.add(creaContenido(cols)) //TODO: 
+        dialogo.pack()
+        dialogo.show()
+        setLastUsed(dialogo)
+        setWindowFocusListeners(dialogo)
+
+        DKBN.addArrowMoves(dialogo)
+        DKBN.addEscapeAction(dialogo)
+    }
+    
+    def static setLastUsed(d){
+        if(d.hasProperty('lastUsed')){
+            d.lastUsed = new Date()
+        } else {
+            d.metaClass.lastUsed = new Date()
+        }
+
+    
+    }
+    
+    def static setWindowFocusListeners(d){
+        d.windowFocusListeners.each{
+            d.removeWindowFocusListener(it)
+        }
+        d.addWindowFocusListener(
+            [windowGainedFocus : { e -> setLastUsed(d)} , 
+             windowLostFocus   : { e -> }] as WindowFocusListener )
+    }
+    
     def static show(nodo){
         if(isCustomMenuPack(nodo)){
-            md = new PM.MenuData(nodo)
-            def dialogName = dialogStr + md.title.replace(' ' ,'_')
-            prefDimension = new Dimension(( md.showLabels?100:0) + (md.showIcons?30:0 ) ,md.showIcons?30:25)
-            minDimension = new Dimension(30 ,md.showIcons?30:25)
-            
-            def dialogo = ui.frame.ownedWindows.find{it.name == dialogName && it.type.toString()=='NORMAL'}
-            if( !dialogo ) {
-                c.statusInfo = '------------ se crea dialogo --------------'
-                dialogo = swingBuilder.dialog(
-                    title              : md.title,
-                    name               : dialogName,
-                    modal              : false,
-                    locationRelativeTo : ui.frame,
-                    minimumSize        : new Dimension(30,70),
-                    owner              : ui.frame,
-                    //defaultCloseOperation: JFrame.DISPOSE_ON_CLOSE,
-                ) {}
-            } else {
-                c.statusInfo = '------------- se reutiliza dialogo -------------------'
-                dialogo.getContentPane().removeAll()
-            }
-            
-            
-            
-            def cols = md.showLabels?1:buttonCols(md.actions.size(),maxButtonsHoriz)
-            dialogo.add(creaContenido(cols)) //TODO: 
-            dialogo.pack()
-            dialogo.show()
-
-            DKBN.addArrowMoves(dialogo)
-            DKBN.addEscapeAction(dialogo)
-            
-        
+            showDialogFromMD(new PM.MenuData(nodo))
         } else {
             c.statusInfo = 'selected node is not a customMenu node'
         }
@@ -128,6 +157,7 @@ class LaunchDialog{
             e.source.background = Color.RED 
             c.script(scrText, "groovy").executeOn(c.selected)
             e.source.background = iniColor 
+            if (md.focusMap) DKBN.focusMap()
         }
         //ui.informationMessage(actionPerformed.toString())
         return nuevoBoton(text,icon,toolTipText,minD, actionPerformed)
@@ -140,6 +170,7 @@ class LaunchDialog{
         def minD        = minDimension
         def actionPerformed = {
                 menuUtils.executeMenuItems([acc])
+                if (md.focusMap) DKBN.focusMap()
             }
         return nuevoBoton(text,icon,toolTipText,minD, actionPerformed)
     }

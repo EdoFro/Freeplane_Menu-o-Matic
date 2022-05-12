@@ -10,19 +10,32 @@ import org.freeplane.plugin.script.proxy.ScriptUtils
 import org.freeplane.core.util.TextUtils  as textUtils
 import org.freeplane.core.util.LogUtils   as logger
 
-import edofro.menuomatic.PackMenu  as PM
-
 
 class MenuAction{
 
-    static final int maxTextLength = PM.maxTextLen
+    static final int maxTextLength = {
+        try{
+            edofro.menuomatic.PackMenu.maxTextLen
+        }
+        catch(e){
+            50
+        }
+    }()
+
     static final c = ScriptUtils.c()
     
     def static menuCommandToNode(n){
-        JComponent component = (JComponent) getComponent()
-        def action = getAction(component)
+        def nodo
+        def action
+        try {
+            JComponent component = (JComponent) getComponent()
+            action = getAction(component)
+        } catch (e){
+            nodo = n.createChild(e.toString())
+            nodo.note = e.printStackTrace()
+        }
         if(action){
-            def nodo = n.createChild(getLabelText(action))
+            nodo = n.createChild(getLabelText(action))
             nodo.link.text = "menuitem:_${action.key}"
         } else {
             c.statusInfo = 'No menu or toolbar command encountered under mouse pointer'
@@ -55,9 +68,19 @@ class MenuAction{
 
     def static getComponent(){
         for (Window window : Window.getWindows()) {
-            Point mousePositionA = window.getMousePosition(true);
+            Point mousePositionA = window.getMousePosition(true)
+            if(!mousePositionA)continue
             def compo = window.getLayeredPane()
-            Point mousePosition = SwingUtilities.convertPoint(window,mousePositionA,compo);
+            Point mousePosition
+            try {
+                mousePosition = SwingUtilities.convertPoint(window,mousePositionA,compo)
+            } catch (e){
+                logger.warn('menuAction',e)
+                logger.warn('window:  ' + window.toString())
+                logger.warn('mousePosition:  ' + mousePositionA.toString())
+                logger.warn('LayeredPane:  ' + compo.toString())
+                throw e
+            }
             if (mousePosition != null) {
                 Component componentUnderMouse = SwingUtilities.getDeepestComponentAt(compo, (int) mousePosition.x,
                     (int)  mousePosition.y);

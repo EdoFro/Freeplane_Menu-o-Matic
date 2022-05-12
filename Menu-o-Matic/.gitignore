@@ -18,3 +18,6 @@ gradle-app.setting
 *.addon.mm
 version.properties
 *.mm.bak
+
+# ignore .jar files
+*.jar
