@@ -120,16 +120,20 @@ class PackMenu{
 
     // region: primary methods
 
-    def static getMDfromNodes(nodoBase){
-        def options = optionsD1
-        def msg     = msgD1
-        def title   = titleD1
-        def resp    = respuestaDialogo(options,msg,title)
-        if(options[0..2].contains(resp)) {
-            def showIcons  = (resp in options[0,1])?true:false
-            def showLabels = (resp in options[0,2])?true:false
+    def static getMDfromNodes(nodoBase, boolean useDetails = true){
+        def resp
+        def resp2
+        if(useDetails){
+            def detailsText = nodoBase.details.toString()
+            resp  = optionsD1.find{detailsText.toLowerCase().contains(it)}
+            resp2 = optionsD3.find{detailsText.toLowerCase().contains(it)}
+        }
+        resp    ?= respuestaDialogo(optionsD1,msgD1,titleD1)
+        if(optionsD1[0..2].contains(resp)) {
+            def showIcons  = (resp in optionsD1[0,1])?true:false
+            def showLabels = (resp in optionsD1[0,2])?true:false
             def nAcciones  = nodoBase.find{it.link?.uri?.scheme == 'menuitem' || WSE.isGroovyNode(it)}
-            def resp2      = respuestaDialogo(optionsD3,msgD3,titleD3)
+            resp2          ?= respuestaDialogo(optionsD3,msgD3,titleD3)
             def focusMap   = ( resp2 == optionsD3[0])
             return [new MenuData(nodoBase.text, nAcciones, showIcons, showLabels, focusMap), "\n  - $resp\n  - $resp2" ]
         } else {

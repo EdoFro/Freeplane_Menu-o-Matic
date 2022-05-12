@@ -1,18 +1,18 @@
-<map version="freeplane 1.9.8">
+<map version="freeplane 1.9.13">
 <!--To view this file, download free mind mapping software Freeplane from https://www.freeplane.org -->
 <node TEXT="Menu-o-Matic" ID="ID_696401721" LINK="https://github.com/EdoFro/Freeplane_Menu-o-Matic" BACKGROUND_COLOR="#97c7dc">
 <font SIZE="16" BOLD="true" ITALIC="true"/>
 <hook NAME="AutomaticEdgeColor" COUNTER="16" RULE="ON_BRANCH_CREATION"/>
-<attribute_layout NAME_WIDTH="108 pt" VALUE_WIDTH="298.49999 pt"/>
+<attribute_layout NAME_WIDTH="108 pt" VALUE_WIDTH="262.49999 pt"/>
 <attribute NAME="name" VALUE="menuOMatic"/>
-<attribute NAME="version" VALUE="v0.1.2"/>
+<attribute NAME="version" VALUE="v0.1.3"/>
 <attribute NAME="author" VALUE="EdoFro"/>
 <attribute NAME="freeplaneVersionFrom" VALUE="v1.9.0"/>
 <attribute NAME="freeplaneVersionTo" VALUE=""/>
 <attribute NAME="updateUrl" VALUE="${homepage}/releases/latest/download/version.properties"/>
 <attribute NAME="downloadUrl" VALUE="${homepage}/releases/download/${version}/"/>
-<attribute NAME="changelogUrl" VALUE=""/>
 <attribute NAME="addonsMenu" VALUE="/menu_bar/edoTools"/>
+<attribute NAME="changelogUrl" VALUE="${homepage}/releases/latest/download/history.md"/>
 <richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
 <html>
   <head>
@@ -27,35 +27,68 @@
     </p>
     <ul>
       <li>
-        name: The name of the add-on, normally a technically one (no spaces, no special characters except _.-).
+        <b>name</b>: The name of the add-on, normally a technically one (no spaces, no special characters except _.-).
       </li>
       <li>
-        author: Author's name(s) and (optionally) email adresses.
+        <b>author</b>: Author's name(s) and (optionally) email adresses.
       </li>
       <li>
-        version: Since it's difficult to protect numbers like 1.0 from Freeplane's number parser it's advised to prepend a 'v' to the number, e.g. 'v1.0'.
+        <b>version</b>: Since it's difficult to protect numbers like 1.0 from Freeplane's number parser it's advised to prepend a 'v' to the number, e.g. 'v1.0'.
       </li>
       <li>
-        freeplane-version-from: The oldest compatible Freeplane version. The add-on will not be installed if the Freeplane version is too old.
+        <b>freeplane-version-from</b>: The oldest compatible Freeplane version. The add-on will not be installed if the Freeplane version is too old.
       </li>
       <li>
-        freeplane-version-to: Normally empty: The newest compatible Freeplane version. The add-on will not be installed if the Freeplane version is too new.
+        <b>freeplane-version-to</b>: Normally empty: The newest compatible Freeplane version. The add-on will not be installed if the Freeplane version is too new.
       </li>
       <li>
-        updateUrl: URL of the file containing information (version, download url) on the latest version of this add-on. By default: &quot;${homepage}/version.properties&quot;
+        <b>updateUrl</b>: URL of the file containing information (version, download url) on the latest version of this add-on.<br/>By default: &quot;${homepage}/version.properties&quot;<br/>Examples:
+
+        <ul>
+          <li>
+            <b>For GitHub releases</b>: &quot;${homepage}/releases/latest/download/version.properties&quot;
+          </li>
+          <li>
+            <b>For Github in a folder named like the add-on&nbsp;(in the main repository branch)</b>: &quot;${homepage}/raw/main/${name}/version.properties
+          </li>
+          <li>
+            <b>For Github in a folder named like the add-on&nbsp;(in a repository branch named as the add-on version)</b>: &quot;${homepage}/raw/${version}/${name}/version.properties&quot;
+          </li>
+        </ul>
       </li>
       <li>
-        addonsMenu: Defines the addon's main menu location, defaults menu 'main_menu_scripting'.<br/>Use developer tool menuItemInfo to inspect menu location keys.<br/>This attribute is mandatory.<br/>Example: '/menu_bar/myAddons'
+        <b>addonsMenu</b>: Defines the addon's main menu location, defaults menu 'main_menu_scripting'.<br/>Use developer tool menuItemInfo to inspect menu location keys.<br/>This attribute is mandatory.<br/>Example: '/menu_bar/myAddons'
       </li>
       <li>
-        downloadUrl: URL from the place where the AddOn file will be available for downloading.<br/>By default is the same as the homepage.<br/>You can define a different place or a subfolder of the homepage.<br/>Example: &quot;${homepage}/files/&quot;
+        <b>downloadUrl</b>: URL from the place where the AddOn file will be available for downloading.<br/>By default is the same as the homepage.<br/>You can define a different place or a subfolder of the homepage.<br/>Examples:
+
+        <ul>
+          <li>
+            <b>homepage subfolder 'files'</b>: &quot;${homepage}/files/&quot;
+          </li>
+          <li>
+            <b>For GitHub releases (release named as the add-on version)</b>: ${homepage}/releases/download/${version}/
+          </li>
+        </ul>
+      </li>
+      <li>
+        <b>changelogUrl</b>: URL from the place where the history file will be available for downloading.<br/>By default is &quot;${homepage}/history.md&quot;<br/>You can define a different place or a subfolder of the homepage and a different file name and extension if wanted.<br/>Examples:
+
+        <ul>
+          <li>
+            <b>txt file</b>: &quot;${homepage}/history.md&quot;
+          </li>
+          <li>
+            <b>For GitHub releases as Markdown file</b>: &quot;${homepage}/releases/latest/download/history.md&quot;
+          </li>
+        </ul>
       </li>
     </ul>
   </body>
 </html>
 </richcontent>
 <hook NAME="MapStyle" background="#f9f9f8">
-    <properties save_modification_times="false" save_last_visited_node="default" mapUsesOwnSaveOptions="true" show_icon_for_attributes="true" fit_to_viewport="false" show_note_icons="true" edgeColorConfiguration="#808080ff,#ff0000ff,#0000ffff,#00ff00ff,#ff00ffff,#00ffffff,#7c0000ff,#00007cff,#007c00ff,#7c007cff,#007c7cff,#7c7c00ff" save_folding="never_save_folding"/>
+    <properties show_icon_for_attributes="true" edgeColorConfiguration="#808080ff,#ff0000ff,#0000ffff,#00ff00ff,#ff00ffff,#00ffffff,#7c0000ff,#00007cff,#007c00ff,#7c007cff,#007c7cff,#7c7c00ff" mapUsesOwnSaveOptions="true" save_modification_times="false" save_last_visited_node="default" show_note_icons="true" save_folding="never_save_folding" fit_to_viewport="false"/>
 
 <map_styles>
 <stylenode LOCALIZED_TEXT="styles.root_node" ID="ID_118736178" STYLE="oval" UNIFORM_SHAPE="true" VGAP_QUANTITY="24 pt">
@@ -177,10 +210,25 @@
 <node TEXT="initial release" ID="ID_17370257"/>
 </node>
 <node TEXT="v0.1.1" ID="ID_935483166">
-<node TEXT="- new command to directly open dialog from nodes (not through customMenu node)&#xa;- added hyperlink to &quot;Launch&quot; command to &apos;customMenu&apos; pack nodes&#xa;- new command to launch all dialogs from selected node branch&#xa;- added option to return focus to map after button click&#xa;- added showLastUsedMenu command&#xa;- listed dialogs now sorted in most recently used order&#xa;- added Add-on images&#xa;- added &apos;list menu packages from map&apos;" ID="ID_1604082793"/>
+<node TEXT="new command to directly open dialog from nodes (not through customMenu node)" ID="ID_1604082793"/>
+<node TEXT="added hyperlink to &quot;Launch&quot; command to &apos;customMenu&apos; pack nodes" ID="ID_1479420128"/>
+<node TEXT="new command to launch all dialogs from selected node branch" ID="ID_1934205043"/>
+<node TEXT="added option to return focus to map after button click" ID="ID_1447068777"/>
+<node TEXT="added showLastUsedMenu command" ID="ID_1097967863"/>
+<node TEXT="listed dialogs now sorted in most recently used order" ID="ID_1923564897"/>
+<node TEXT="added Add-on images" ID="ID_495594442"/>
+<node TEXT="added &apos;list menu packages from map&apos;" ID="ID_1829374000"/>
 </node>
 <node TEXT="v0.1.2" ID="ID_945933975">
-<node TEXT="- added submenus in MenuBar&#xa;- added command &apos;launchMenuOMaticDialog&apos;" ID="ID_876496407"/>
+<node TEXT="added submenus in MenuBar" ID="ID_876496407"/>
+<node TEXT="added command &apos;launchMenuOMaticDialog&apos;" ID="ID_1416498060"/>
+</node>
+<node TEXT="v0.1.3" ID="ID_1207801593">
+<node TEXT="ported to new devtools version" ID="ID_77472293"/>
+<node TEXT="added insertMenuOMaticPackage" ID="ID_66453549"/>
+<node TEXT="launchMenuOMaticDialog no more in Launch submenu" ID="ID_1116239515"/>
+<node TEXT="launchMenuOMaticDialog no longer offers to insert MoM package node" ID="ID_972257044"/>
+<node TEXT="now if &apos;title&apos; node has package options in its details text, it will take that parameters and it won&apos;t show the options dialogs to the user.&#xa;Nice when iterating when designing a new menu package." ID="ID_500892562"/>
 </node>
 </node>
 <node TEXT="license" POSITION="left" ID="ID_492801974">
@@ -217,8 +265,101 @@
       <font color="#000000" face="SansSerif, sans-serif">The child node contains the add-on configuration as an extension to mindmapmodemenu.xml (in Tools-&gt;Preferences-&gt;Add-ons). </font>
     </p>
     <p>
-      <font color="#000000" face="SansSerif, sans-serif">Every property in the configuration should receive a default value in <i>default.properties</i>&nbsp;node.</font>
+      <font color="#000000" face="SansSerif, sans-serif">&nbsp;</font>
     </p>
+    <p>
+      <font color="#000000" face="SansSerif, sans-serif">Every property in the configuration should receive a default value in <i>default.properties</i>&nbsp;node. </font>
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      <b>Automatic way (new since v0.9.30): </b>
+    </p>
+    <p>
+      you can add the preferences parameters as attributes to this node and then, by checking AddOn it will:
+    </p>
+    <ul>
+      <li>
+        create the child node containing <font color="#000000" face="SansSerif, sans-serif">the add-on configuration as an extension to mindmapmodemenu.xml</font>
+      </li>
+      <li>
+        add the properties to the <font color="#000000" face="SansSerif, sans-serif"><i>default.properties</i>&nbsp;node</font>
+      </li>
+      <li>
+        add the properties to the <i>translations</i><font color="#000000" face="SansSerif, sans-serif">&nbsp;node</font>
+      </li>
+    </ul>
+    <p>
+      
+    </p>
+    <p>
+      <b>How? </b>
+    </p>
+    <ul>
+      <li>
+        Add an attribute for each preference.
+      </li>
+      <li>
+        the attribute name should be the preference name.
+      </li>
+      <li>
+        as attribute value you should specify if it is a <b>boolean</b>, <b>string</b>&nbsp;or <b>number</b>&nbsp;preference
+      </li>
+      <li>
+        if it is a <b>number</b>&nbsp;preference. you should add the min and max value for it (separed by comma)
+      </li>
+    </ul>
+    <p>
+      
+    </p>
+    <p>
+      <b>Example: </b>
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      Attributes:
+    </p>
+    <table border="0" style="width: 80%; border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-width: 0; border-right-width: 0; border-bottom-width: 0; border-left-width: 0">
+      <tr>
+        <td valign="top" style="width: 50%; border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-width: 1; border-right-width: 1; border-bottom-width: 1; border-left-width: 1">
+          <p style="margin-top: 1; margin-right: 1; margin-bottom: 1; margin-left: 1">
+            isStudent
+          </p>
+        </td>
+        <td valign="top" style="width: 50%; border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-width: 1; border-right-width: 1; border-bottom-width: 1; border-left-width: 1">
+          <p style="margin-top: 1; margin-right: 1; margin-bottom: 1; margin-left: 1">
+            boolean
+          </p>
+        </td>
+      </tr>
+      <tr>
+        <td valign="top" style="width: 50%; border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-width: 1; border-right-width: 1; border-bottom-width: 1; border-left-width: 1">
+          <p style="margin-top: 1; margin-right: 1; margin-bottom: 1; margin-left: 1">
+            userName
+          </p>
+        </td>
+        <td valign="top" style="width: 50%; border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-width: 1; border-right-width: 1; border-bottom-width: 1; border-left-width: 1">
+          <p style="margin-top: 1; margin-right: 1; margin-bottom: 1; margin-left: 1">
+            string
+          </p>
+        </td>
+      </tr>
+      <tr>
+        <td valign="top" style="width: 50%; border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-width: 1; border-right-width: 1; border-bottom-width: 1; border-left-width: 1">
+          <p style="margin-top: 1; margin-right: 1; margin-bottom: 1; margin-left: 1">
+            birthMonth
+          </p>
+        </td>
+        <td valign="top" style="width: 50%; border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-width: 1; border-right-width: 1; border-bottom-width: 1; border-left-width: 1">
+          <p style="margin-top: 1; margin-right: 1; margin-bottom: 1; margin-left: 1">
+            number,1,12
+          </p>
+        </td>
+      </tr>
+    </table>
   </body>
 </html>
 </richcontent>
@@ -267,12 +408,21 @@
       <li>
         'addons.${name}.&lt;scriptname&gt;' for each script since it will be the menu title.
       </li>
+      <li>
+        'OptionPanel.separator.${name}' for the add-on's name in the preferences panel
+      </li>
+      <li>
+        'OptionPanel.&lt;property&gt;' for the label of the property in the preferences panel
+      </li>
+      <li>
+        'OptionPanel.&lt;property&gt;.tooltip' for the tooltip message for the property in the preferences panel (whwn hovering on it with the mouse)
+      </li>
     </ul>
   </body>
 </html>
 </richcontent>
 <node TEXT="en" ID="ID_1296909110">
-<attribute_layout NAME_WIDTH="179.24999 pt" VALUE_WIDTH="179.24999 pt"/>
+<attribute_layout NAME_WIDTH="195.74999 pt" VALUE_WIDTH="176.99999 pt"/>
 <attribute NAME="addons.${name}" VALUE="Menu-o-Matic"/>
 <attribute NAME="addons.${name}.launchCustomDialog" VALUE="launch menu dialog from package"/>
 <attribute NAME="addons.${name}.listCustomDialogs" VALUE="list opened menu dialogs"/>
@@ -283,7 +433,8 @@
 <attribute NAME="addons.${name}.launchDialogsFromBranch" VALUE="launch all dialog packages from branch"/>
 <attribute NAME="addons.${name}.showLastUsedMenu" VALUE="show most recently used menu"/>
 <attribute NAME="addons.${name}.listCustomMenusFromMap" VALUE="list menu packages from map"/>
-<attribute NAME="addons.${name}.launchMenuOMaticDialog" VALUE="launch Menu-o-Matic dialog"/>
+<attribute NAME="addons.${name}.1launchMenuOMaticDialog" VALUE="launch Menu-o-Matic dialog"/>
+<attribute NAME="addons.${name}.insertMenuOMaticPackage" VALUE="Insert Menu-o-Matic package node"/>
 </node>
 </node>
 <node TEXT="deinstall" POSITION="left" ID="ID_1351206087">
@@ -322,6 +473,7 @@
 <attribute NAME="delete" VALUE="${installationbase}/resources/images/menuOMatic.png"/>
 <attribute NAME="delete" VALUE="${installationbase}/addons/${name}/scripts/listCustomMenusFromMap.groovy"/>
 <attribute NAME="delete" VALUE="${installationbase}/addons/${name}/scripts/launchMenuOMaticDialog.groovy"/>
+<attribute NAME="delete" VALUE="${installationbase}/addons/${name}/scripts/insertMenuOMaticPackage.groovy"/>
 </node>
 <node TEXT="scripts" POSITION="right" ID="ID_1105183990">
 <edge COLOR="#007c00"/>
@@ -443,9 +595,9 @@
 </html>
 </richcontent>
 <node TEXT="getMenuCommand.groovy" ID="ID_1857102818">
-<attribute_layout NAME_WIDTH="200.24999 pt" VALUE_WIDTH="200.24999 pt"/>
+<attribute_layout NAME_WIDTH="204.74999 pt" VALUE_WIDTH="184.49999 pt"/>
 <attribute NAME="menuTitleKey" VALUE="addons.${name}.getMenuCommand"/>
-<attribute NAME="menuLocation" VALUE="/menu_bar/edoTools/addons.${name}/design"/>
+<attribute NAME="menuLocation" VALUE="${addonsMenu}/addons.${name}/design"/>
 <attribute NAME="executionMode" VALUE="on_single_node"/>
 <attribute NAME="keyboardShortcut" VALUE="control shift F2"/>
 <attribute NAME="execute_scripts_without_asking" VALUE="true"/>
@@ -455,9 +607,9 @@
 <attribute NAME="execute_scripts_without_network_restriction" VALUE="false"/>
 </node>
 <node TEXT="packCustomMenu.groovy" ID="ID_1518455930">
-<attribute_layout NAME_WIDTH="200.24999 pt" VALUE_WIDTH="200.24999 pt"/>
+<attribute_layout NAME_WIDTH="204.74999 pt" VALUE_WIDTH="184.49999 pt"/>
 <attribute NAME="menuTitleKey" VALUE="addons.${name}.packCustomMenu"/>
-<attribute NAME="menuLocation" VALUE="/menu_bar/edoTools/addons.${name}/design"/>
+<attribute NAME="menuLocation" VALUE="${addonsMenu}/addons.${name}/design"/>
 <attribute NAME="executionMode" VALUE="on_single_node"/>
 <attribute NAME="keyboardShortcut" VALUE=""/>
 <attribute NAME="execute_scripts_without_asking" VALUE="true"/>
@@ -467,9 +619,9 @@
 <attribute NAME="execute_scripts_without_network_restriction" VALUE="false"/>
 </node>
 <node TEXT="unpackCustomMenu.groovy" ID="ID_1584376447">
-<attribute_layout NAME_WIDTH="200.24999 pt" VALUE_WIDTH="200.24999 pt"/>
+<attribute_layout NAME_WIDTH="204.74999 pt" VALUE_WIDTH="184.49999 pt"/>
 <attribute NAME="menuTitleKey" VALUE="addons.${name}.unpackCustomMenu"/>
-<attribute NAME="menuLocation" VALUE="/menu_bar/edoTools/addons.${name}/design"/>
+<attribute NAME="menuLocation" VALUE="${addonsMenu}/addons.${name}/design"/>
 <attribute NAME="executionMode" VALUE="on_single_node"/>
 <attribute NAME="keyboardShortcut" VALUE=""/>
 <attribute NAME="execute_scripts_without_asking" VALUE="true"/>
@@ -479,9 +631,9 @@
 <attribute NAME="execute_scripts_without_network_restriction" VALUE="false"/>
 </node>
 <node TEXT="launchCustomDialog.groovy" ID="ID_666327274">
-<attribute_layout NAME_WIDTH="200.24999 pt" VALUE_WIDTH="200.24999 pt"/>
+<attribute_layout NAME_WIDTH="204.74999 pt" VALUE_WIDTH="184.49999 pt"/>
 <attribute NAME="menuTitleKey" VALUE="addons.${name}.launchCustomDialog"/>
-<attribute NAME="menuLocation" VALUE="/menu_bar/edoTools/addons.${name}/launch"/>
+<attribute NAME="menuLocation" VALUE="${addonsMenu}/addons.${name}/launch"/>
 <attribute NAME="executionMode" VALUE="on_single_node"/>
 <attribute NAME="keyboardShortcut" VALUE=""/>
 <attribute NAME="execute_scripts_without_asking" VALUE="true"/>
@@ -491,9 +643,9 @@
 <attribute NAME="execute_scripts_without_network_restriction" VALUE="false"/>
 </node>
 <node TEXT="lauchDialogFromNodes.groovy" ID="ID_1980105513">
-<attribute_layout NAME_WIDTH="200.24999 pt" VALUE_WIDTH="200.24999 pt"/>
+<attribute_layout NAME_WIDTH="204.74999 pt" VALUE_WIDTH="184.49999 pt"/>
 <attribute NAME="menuTitleKey" VALUE="addons.${name}.lauchDialogFromNodes"/>
-<attribute NAME="menuLocation" VALUE="/menu_bar/edoTools/addons.${name}/launch"/>
+<attribute NAME="menuLocation" VALUE="${addonsMenu}/addons.${name}/launch"/>
 <attribute NAME="executionMode" VALUE="on_single_node"/>
 <attribute NAME="keyboardShortcut" VALUE=""/>
 <attribute NAME="execute_scripts_without_asking" VALUE="true"/>
@@ -503,9 +655,9 @@
 <attribute NAME="execute_scripts_without_network_restriction" VALUE="false"/>
 </node>
 <node TEXT="launchDialogsFromBranch.groovy" ID="ID_108161238">
-<attribute_layout NAME_WIDTH="200.24999 pt" VALUE_WIDTH="200.24999 pt"/>
+<attribute_layout NAME_WIDTH="204.74999 pt" VALUE_WIDTH="191.99999 pt"/>
 <attribute NAME="menuTitleKey" VALUE="addons.${name}.launchDialogsFromBranch"/>
-<attribute NAME="menuLocation" VALUE="/menu_bar/edoTools/addons.${name}/launch"/>
+<attribute NAME="menuLocation" VALUE="${addonsMenu}/addons.${name}/launch"/>
 <attribute NAME="executionMode" VALUE="on_single_node"/>
 <attribute NAME="keyboardShortcut" VALUE=""/>
 <attribute NAME="execute_scripts_without_asking" VALUE="true"/>
@@ -515,9 +667,9 @@
 <attribute NAME="execute_scripts_without_network_restriction" VALUE="false"/>
 </node>
 <node TEXT="listCustomMenusFromMap.groovy" ID="ID_1444989427">
-<attribute_layout NAME_WIDTH="200.24999 pt" VALUE_WIDTH="200.24999 pt"/>
+<attribute_layout NAME_WIDTH="204.74999 pt" VALUE_WIDTH="191.99999 pt"/>
 <attribute NAME="menuTitleKey" VALUE="addons.${name}.listCustomMenusFromMap"/>
-<attribute NAME="menuLocation" VALUE="/menu_bar/edoTools/addons.${name}/launch"/>
+<attribute NAME="menuLocation" VALUE="${addonsMenu}/addons.${name}/launch"/>
 <attribute NAME="executionMode" VALUE="on_single_node"/>
 <attribute NAME="keyboardShortcut" VALUE=""/>
 <attribute NAME="execute_scripts_without_asking" VALUE="true"/>
@@ -527,9 +679,9 @@
 <attribute NAME="execute_scripts_without_network_restriction" VALUE="false"/>
 </node>
 <node TEXT="launchMenuOMaticDialog.groovy" ID="ID_1132776118">
-<attribute_layout NAME_WIDTH="200.24999 pt" VALUE_WIDTH="200.24999 pt"/>
-<attribute NAME="menuTitleKey" VALUE="addons.${name}.launchMenuOMaticDialog"/>
-<attribute NAME="menuLocation" VALUE="/menu_bar/edoTools/addons.${name}/launch"/>
+<attribute_layout NAME_WIDTH="204.74999 pt" VALUE_WIDTH="190.49999 pt"/>
+<attribute NAME="menuTitleKey" VALUE="addons.${name}.1launchMenuOMaticDialog"/>
+<attribute NAME="menuLocation" VALUE="${addonsMenu}/addons.${name}"/>
 <attribute NAME="executionMode" VALUE="on_single_node"/>
 <attribute NAME="keyboardShortcut" VALUE=""/>
 <attribute NAME="execute_scripts_without_asking" VALUE="true"/>
@@ -538,10 +690,22 @@
 <attribute NAME="execute_scripts_without_exec_restriction" VALUE="false"/>
 <attribute NAME="execute_scripts_without_network_restriction" VALUE="false"/>
 </node>
+<node TEXT="insertMenuOMaticPackage.groovy" ID="ID_1045039173">
+<attribute_layout NAME_WIDTH="204.74999 pt" VALUE_WIDTH="194.24999 pt"/>
+<attribute NAME="menuTitleKey" VALUE="addons.${name}.insertMenuOMaticPackage"/>
+<attribute NAME="menuLocation" VALUE="${addonsMenu}/addons.${name}/design"/>
+<attribute NAME="executionMode" VALUE="on_single_node"/>
+<attribute NAME="keyboardShortcut" VALUE=""/>
+<attribute NAME="execute_scripts_without_asking" VALUE="true"/>
+<attribute NAME="execute_scripts_without_file_restriction" VALUE="true"/>
+<attribute NAME="execute_scripts_without_write_restriction" VALUE="false"/>
+<attribute NAME="execute_scripts_without_exec_restriction" VALUE="false"/>
+<attribute NAME="execute_scripts_without_network_restriction" VALUE="false"/>
+</node>
 <node TEXT="showLastUsedMenu.groovy" ID="ID_960626023">
-<attribute_layout NAME_WIDTH="200.24999 pt" VALUE_WIDTH="200.24999 pt"/>
+<attribute_layout NAME_WIDTH="204.74999 pt" VALUE_WIDTH="191.99999 pt"/>
 <attribute NAME="menuTitleKey" VALUE="addons.${name}.showLastUsedMenu"/>
-<attribute NAME="menuLocation" VALUE="/menu_bar/edoTools/addons.${name}/navigate"/>
+<attribute NAME="menuLocation" VALUE="${addonsMenu}/addons.${name}/navigate"/>
 <attribute NAME="executionMode" VALUE="on_single_node"/>
 <attribute NAME="keyboardShortcut" VALUE=""/>
 <attribute NAME="execute_scripts_without_asking" VALUE="true"/>
@@ -551,9 +715,9 @@
 <attribute NAME="execute_scripts_without_network_restriction" VALUE="false"/>
 </node>
 <node TEXT="listCustomDialogs.groovy" ID="ID_1449809653">
-<attribute_layout NAME_WIDTH="200.24999 pt" VALUE_WIDTH="200.24999 pt"/>
+<attribute_layout NAME_WIDTH="204.74999 pt" VALUE_WIDTH="191.99999 pt"/>
 <attribute NAME="menuTitleKey" VALUE="addons.${name}.listCustomDialogs"/>
-<attribute NAME="menuLocation" VALUE="/menu_bar/edoTools/addons.${name}/navigate"/>
+<attribute NAME="menuLocation" VALUE="${addonsMenu}/addons.${name}/navigate"/>
 <attribute NAME="executionMode" VALUE="on_single_node"/>
 <attribute NAME="keyboardShortcut" VALUE=""/>
 <attribute NAME="execute_scripts_without_asking" VALUE="true"/>
@@ -698,6 +862,8 @@
 </richcontent>
 <node TEXT="Build add-on" ID="ID_1006867388" LINK="menuitem:_addons.devtools.checkAddOn_on_single_node"/>
 <node TEXT="Package add-on for publication" ID="ID_1119353524" LINK="menuitem:_addons.devtools.releaseAddOn_on_single_node"/>
+<node TEXT="Export Translations" ID="ID_1088411781" LINK="menuitem:_addons.devtools.exportTranslations_on_single_node"/>
+<node TEXT="Import Translations" ID="ID_1039784888" LINK="menuitem:_addons.devtools.importTranslations_on_single_node"/>
 </node>
 </node>
 </map>

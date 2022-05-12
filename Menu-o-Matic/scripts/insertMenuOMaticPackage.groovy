@@ -1,5 +1,4 @@
 import edofro.menuomatic.PackMenu            as PM
-import edofro.menuomatic.LaunchDialog        as LD
 
 Map MoMmenuData = [
                     'showIcons'     : true,
@@ -15,4 +14,6 @@ Map MoMmenuData = [
 
 
 def md = new PM.MenuData(MoMmenuData)
-LD.showDialogFromMD(md)
+def nodo = node.createChild('Menu-o-Matic')
+md.toNode(nodo)
+nodo.link.text = 'menuitem:_addons.menuOMatic.launchCustomDialog_on_single_node'
