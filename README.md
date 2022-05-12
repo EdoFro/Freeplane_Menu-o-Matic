@@ -4,6 +4,8 @@
 
 Menu-o-Matic is an AddOn for Freeplane that gives the user the possibility to create his/her own dialogs with the menu items he/she prefers.
 
+![MoM-launchDirectly.gif](resources/MoM-launchDirectly.gif)
+
 It can also include scripts.
 
 The addon can be downloaded from the [latest release](https://github.com/EdoFro/Freeplane_Menu-o-Matic/releases/latest) page.

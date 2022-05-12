@@ -249,6 +249,20 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
 </node>
 <node TEXT="Menu-o-Matic for Freeplane!!" ID="ID_1642042079">
 <node TEXT="Menu-o-Matic is an AddOn for Freeplane that gives the user the possibility to create his/her own dialogs with the menu items he/she prefers." ID="ID_305856401"/>
+<node TEXT="local image" STYLE_REF="MarkdownHelperNode" ID="ID_305342503"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      = edofro.MarkDownHelper.MDH.imageLink(node,true)
+    </p>
+  </body>
+</html>
+</richcontent>
+<node TEXT="= edofro.MarkDownHelper.MDH.linkedNodeText(node)" STYLE_REF="MarkdownHelperLink" ID="ID_154016803" LINK="#ID_1274235167"/>
+</node>
 <node TEXT="It can also include scripts." ID="ID_1847763156"/>
 <node TEXT="text block" STYLE_REF="MarkdownHelperNode" ID="ID_980882272"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
 <html>
@@ -472,7 +486,7 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
 </node>
 </node>
 </node>
-<node TEXT="Additional features and instructions" ID="ID_848178326">
+<node TEXT="Additional features and instructions" FOLDED="true" ID="ID_848178326">
 <node TEXT="Getting menu items as nodes" FOLDED="true" ID="ID_1618789141">
 <node TEXT="list" STYLE_REF="MarkdownHelperNode" ID="ID_1309862458"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
 <html>
@@ -761,8 +775,7 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
       * initial release
     </p>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 </node>
 </node>
 </node>
@@ -982,8 +995,7 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
       freeplaneVersionFrom=v1.9.0
     </p>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 </node>
 <node ID="ID_381928089" CONTENT_ID="ID_1679510638"/>
 </node>
@@ -1251,8 +1263,7 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
       
     </p>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 </node>
 </node>
 </node>
