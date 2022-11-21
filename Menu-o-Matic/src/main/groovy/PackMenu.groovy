@@ -165,6 +165,7 @@ class PackMenu{
             scriptInNote = (resp == options[0])?true:false
         }
         def nBase = nodoMenu.createChild(md.title)
+        nBase.details = nodoMenu.details
         md.actions.eachWithIndex{acc, i ->
             def nodo = nBase.createChild(md.labels[i])
             if(acc.startsWith(scriptStr)){

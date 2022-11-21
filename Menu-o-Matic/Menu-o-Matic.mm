@@ -3,9 +3,9 @@
 <node TEXT="Menu-o-Matic" ID="ID_696401721" LINK="https://github.com/EdoFro/Freeplane_Menu-o-Matic" BACKGROUND_COLOR="#97c7dc">
 <font SIZE="16" BOLD="true" ITALIC="true"/>
 <hook NAME="AutomaticEdgeColor" COUNTER="16" RULE="ON_BRANCH_CREATION"/>
-<attribute_layout NAME_WIDTH="108 pt" VALUE_WIDTH="262.49999 pt"/>
+<attribute_layout NAME_WIDTH="101.87234 pt" VALUE_WIDTH="242.80851 pt"/>
 <attribute NAME="name" VALUE="menuOMatic"/>
-<attribute NAME="version" VALUE="v0.1.3"/>
+<attribute NAME="version" VALUE="v0.1.4"/>
 <attribute NAME="author" VALUE="EdoFro"/>
 <attribute NAME="freeplaneVersionFrom" VALUE="v1.9.0"/>
 <attribute NAME="freeplaneVersionTo" VALUE=""/>
@@ -95,7 +95,7 @@
 <font SIZE="24"/>
 <stylenode LOCALIZED_TEXT="styles.predefined" POSITION="right" STYLE="bubble">
 <stylenode LOCALIZED_TEXT="default" ID="ID_506805493" ICON_SIZE="12 pt" FORMAT_AS_HYPERLINK="false" COLOR="#484747" BACKGROUND_COLOR="#efefef" STYLE="bubble" SHAPE_HORIZONTAL_MARGIN="5 px" SHAPE_VERTICAL_MARGIN="2 px" BORDER_WIDTH_LIKE_EDGE="false" BORDER_WIDTH="1.9 px" BORDER_COLOR_LIKE_EDGE="false" BORDER_COLOR="#8fbcbb" BORDER_DASH_LIKE_EDGE="true" BORDER_DASH="SOLID" VGAP_QUANTITY="2 px" MAX_WIDTH="15 cm" MIN_WIDTH="3.5 cm">
-<arrowlink SHAPE="CUBIC_CURVE" COLOR="#bf5d3f" WIDTH="2" TRANSPARENCY="200" DASH="" FONT_SIZE="9" FONT_FAMILY="SansSerif" DESTINATION="ID_506805493" STARTINCLINATION="45 pt;0 pt;" ENDINCLINATION="57 pt;30 pt;" STARTARROW="NONE" ENDARROW="DEFAULT"/>
+<arrowlink SHAPE="CUBIC_CURVE" COLOR="#bf5d3f" WIDTH="2" TRANSPARENCY="200" DASH="" FONT_SIZE="9" FONT_FAMILY="SansSerif" DESTINATION="ID_506805493" STARTINCLINATION="45.19149 pt;0 pt;" ENDINCLINATION="56.68085 pt;29.87234 pt;" STARTARROW="NONE" ENDARROW="DEFAULT"/>
 <font NAME="Dialog" SIZE="10" BOLD="false" STRIKETHROUGH="false" ITALIC="false"/>
 <edge STYLE="horizontal" COLOR="#ff0000" WIDTH="1" DASH="SOLID"/>
 <richcontent CONTENT-TYPE="plain/auto" TYPE="DETAILS"/>
@@ -229,6 +229,9 @@
 <node TEXT="launchMenuOMaticDialog no more in Launch submenu" ID="ID_1116239515"/>
 <node TEXT="launchMenuOMaticDialog no longer offers to insert MoM package node" ID="ID_972257044"/>
 <node TEXT="now if &apos;title&apos; node has package options in its details text, it will take that parameters and it won&apos;t show the options dialogs to the user.&#xa;Nice when iterating when designing a new menu package." ID="ID_500892562"/>
+</node>
+<node TEXT="v0.1.4" ID="ID_170412075">
+<node TEXT="added elapsed time message when clicking on a script based button" ID="ID_67878750"/>
 </node>
 </node>
 <node TEXT="license" POSITION="left" ID="ID_492801974">

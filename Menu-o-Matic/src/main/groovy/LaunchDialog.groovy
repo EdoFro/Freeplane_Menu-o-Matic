@@ -5,6 +5,10 @@ import javax.swing.*
 import java.awt.*
 import java.awt.event.*
 
+import groovy.time.TimeCategory
+import groovy.time.TimeDuration
+
+
 import edofro.menuomatic.PackMenu                   as PM
 import edofro.menuomatic.WSE_redux                  as WSE
 import edofro.menuomatic.DialogKeyboardNavigation   as DKBN
@@ -58,7 +62,7 @@ class LaunchDialog{
         
         def dialogo = ui.frame.ownedWindows.find{it.name == dialogName && it.type.toString()=='NORMAL'}
         if( !dialogo ) {
-            c.statusInfo = '------------ se crea dialogo --------------'
+            c.statusInfo = '------------ new menu dialog created --------------'
             dialogo = swingBuilder.dialog(
                 title              : md.title,
                 name               : dialogName,
@@ -69,7 +73,7 @@ class LaunchDialog{
                 //defaultCloseOperation: JFrame.DISPOSE_ON_CLOSE,
             ) {}
         } else {
-            c.statusInfo = '------------- se reutiliza dialogo -------------------'
+            c.statusInfo = '------------- existing menu dialog reused -------------------'
             dialogo.getContentPane().removeAll()
         }        
         def cols = md.showLabels?1:buttonCols(md.actions.size(),maxButtonsHoriz)
@@ -153,11 +157,14 @@ class LaunchDialog{
         def minD        = minDimension
         def scrText     = md.scripts.find{it[0] == acc}[1].toString() + "\n c.statusInfo = '---- script executed ----'".toString()
         def actionPerformed = { e ->
+            Date start = new Date()
             def iniColor = e.source.background 
             e.source.background = Color.RED 
             c.script(scrText, "groovy").executeOn(c.selected)
             e.source.background = iniColor 
             if (md.focusMap) DKBN.focusMap()
+            TimeDuration td = TimeCategory.minus( new Date(), start )
+            c.statusInfo = "---- script executed: duration: $td ------ "
         }
         //ui.informationMessage(actionPerformed.toString())
         return nuevoBoton(text,icon,toolTipText,minD, actionPerformed)
