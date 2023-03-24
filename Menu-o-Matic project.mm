@@ -1,7 +1,7 @@
 <map version="freeplane 1.9.13">
 <!--To view this file, download free mind mapping software Freeplane from https://www.freeplane.org -->
 <attribute_registry SHOW_ATTRIBUTES="selected"/>
-<node TEXT="Menu-o-Matic project" LOCALIZED_STYLE_REF="AutomaticLayout.level.root" FOLDED="false" ID="ID_551814049" LINK="../../../../../Respaldo%20EF/ef/Documentos%20con%20macros/08%20Freemind%20Groovy/scripts/ScriptsEnComputadorYDesarrollosEdo%20v1.9.mm" MAX_WIDTH="7 cm"><hook NAME="MapStyle" background="#f9f9f8">
+<node TEXT="Menu-o-Matic project" LOCALIZED_STYLE_REF="AutomaticLayout.level.root" FOLDED="false" ID="ID_551814049" LINK="../../../../../Respaldo%20EF/ef/Documentos%20con%20macros/08%20Freemind%20Groovy/scripts/ScriptsEnComputadorYDesarrollosEdo%20v1.9.mm" MAX_WIDTH="7 cm"><hook NAME="MapStyle" background="#f9f9f8" zoom="0.8">
     <conditional_styles>
         <conditional_style ACTIVE="true" STYLE_REF="file" LAST="false">
             <script_condition>
@@ -80,7 +80,7 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
 <font SIZE="24"/>
 <stylenode LOCALIZED_TEXT="styles.predefined" POSITION="right" STYLE="bubble">
 <stylenode LOCALIZED_TEXT="default" ID="ID_506805493" ICON_SIZE="12 pt" FORMAT_AS_HYPERLINK="false" COLOR="#484747" BACKGROUND_COLOR="#efefef" STYLE="bubble" SHAPE_HORIZONTAL_MARGIN="5 px" SHAPE_VERTICAL_MARGIN="2 px" NUMBERED="false" FORMAT="STANDARD_FORMAT" TEXT_ALIGN="DEFAULT" BORDER_WIDTH_LIKE_EDGE="false" BORDER_WIDTH="1.9 px" BORDER_COLOR_LIKE_EDGE="false" BORDER_COLOR="#8fbcbb" BORDER_DASH_LIKE_EDGE="true" BORDER_DASH="SOLID" VGAP_QUANTITY="2 px" MAX_WIDTH="10 cm" MIN_WIDTH="0 cm">
-<arrowlink SHAPE="CUBIC_CURVE" COLOR="#bf5d3f" WIDTH="2" TRANSPARENCY="200" DASH="" FONT_SIZE="9" FONT_FAMILY="SansSerif" DESTINATION="ID_506805493" STARTINCLINATION="45.19149 pt;-11.48936 pt;" ENDINCLINATION="56.68085 pt;29.87234 pt;" STARTARROW="NONE" ENDARROW="DEFAULT"/>
+<arrowlink SHAPE="CUBIC_CURVE" COLOR="#bf5d3f" WIDTH="2" TRANSPARENCY="200" DASH="" FONT_SIZE="9" FONT_FAMILY="SansSerif" DESTINATION="ID_506805493" STARTINCLINATION="45 pt;-10.5 pt;" ENDINCLINATION="57 pt;30 pt;" STARTARROW="NONE" ENDARROW="DEFAULT"/>
 <font NAME="Dialog" SIZE="10" BOLD="false" STRIKETHROUGH="false" ITALIC="false"/>
 <edge STYLE="horizontal" COLOR="#2e3440" WIDTH="1" DASH="SOLID"/>
 <richcontent CONTENT-TYPE="plain/auto" TYPE="DETAILS"/>
@@ -985,7 +985,8 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
       
     </p>
   </body>
-</html></richcontent>
+</html>
+</richcontent>
 </node>
 <node TEXT="DialogKeyboardNavigation.groovy" ID="ID_1310075859" LINK="file:/C:/Users/Edo/Documents/GitHub/Freeplane_My-Menu-Inator/Menu-o-Matic/src/main/groovy/DialogKeyboardNavigation.groovy">
 <attribute NAME="lastModifiedTime" VALUE="11-07-21 19:07" OBJECT="org.freeplane.features.format.FormattedDate|2021-07-11T19:07-0400|dd-MM-yy HH:mm"/>
@@ -1299,7 +1300,8 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
       }
     </p>
   </body>
-</html></richcontent>
+</html>
+</richcontent>
 </node>
 <node TEXT="MenuAction.groovy" ID="ID_1123028897" LINK="file:/C:/Users/Edo/Documents/GitHub/Freeplane_My-Menu-Inator/Menu-o-Matic/src/main/groovy/MenuAction.groovy">
 <attribute NAME="lastModifiedTime" VALUE="10-03-22 18:51" OBJECT="org.freeplane.features.format.FormattedDate|2022-03-10T18:51-0300|dd-MM-yy HH:mm"/>
@@ -1349,12 +1351,6 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
       
     </p>
     <p>
-      import edofro.menuomatic.PackMenu&nbsp;&nbsp;as PM
-    </p>
-    <p>
-      
-    </p>
-    <p>
       
     </p>
     <p>
@@ -1364,7 +1360,31 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
       
     </p>
     <p>
-      &nbsp;&nbsp;&nbsp;&nbsp;static final int maxTextLength = PM.maxTextLen
+      &nbsp;&nbsp;&nbsp;&nbsp;static final int maxTextLength = {
+    </p>
+    <p>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;try{
+    </p>
+    <p>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;edofro.menuomatic.PackMenu.maxTextLen
+    </p>
+    <p>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+    </p>
+    <p>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;catch(e){
+    </p>
+    <p>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;50
+    </p>
+    <p>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+    </p>
+    <p>
+      &nbsp;&nbsp;&nbsp;&nbsp;}()
+    </p>
+    <p>
+      
     </p>
     <p>
       &nbsp;&nbsp;&nbsp;&nbsp;static final c = ScriptUtils.c()
@@ -1376,16 +1396,37 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
       &nbsp;&nbsp;&nbsp;&nbsp;def static menuCommandToNode(n){
     </p>
     <p>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;JComponent component = (JComponent) getComponent()
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;def nodo
     </p>
     <p>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;def action = getAction(component)
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;def action
+    </p>
+    <p>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;try {
+    </p>
+    <p>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;JComponent component = (JComponent) getComponent()
+    </p>
+    <p>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;action = getAction(component)
+    </p>
+    <p>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} catch (e){
+    </p>
+    <p>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;nodo = n.createChild(e.toString())
+    </p>
+    <p>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;nodo.note = e.printStackTrace()
+    </p>
+    <p>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
     </p>
     <p>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(action){
     </p>
     <p>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;def nodo = n.createChild(getLabelText(action))
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;nodo = n.createChild(getLabelText(action))
     </p>
     <p>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;nodo.link.text = &quot;menuitem:_${action.key}&quot;
@@ -1484,13 +1525,43 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for (Window window : Window.getWindows()) {
     </p>
     <p>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Point mousePositionA = window.getMousePosition(true);
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Point mousePositionA = window.getMousePosition(true)
+    </p>
+    <p>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(!mousePositionA)continue
     </p>
     <p>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;def compo = window.getLayeredPane()
     </p>
     <p>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Point mousePosition = SwingUtilities.convertPoint(window,mousePositionA,compo);
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Point mousePosition
+    </p>
+    <p>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;try {
+    </p>
+    <p>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mousePosition = SwingUtilities.convertPoint(window,mousePositionA,compo)
+    </p>
+    <p>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} catch (e){
+    </p>
+    <p>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;logger.warn('menuAction',e)
+    </p>
+    <p>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;logger.warn('window:&nbsp;&nbsp;' + window.toString())
+    </p>
+    <p>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;logger.warn('mousePosition:&nbsp;&nbsp;' + mousePositionA.toString())
+    </p>
+    <p>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;logger.warn('LayeredPane:&nbsp;&nbsp;' + compo.toString())
+    </p>
+    <p>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;throw e
+    </p>
+    <p>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
     </p>
     <p>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (mousePosition != null) {
@@ -1520,7 +1591,8 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
       }
     </p>
   </body>
-</html></richcontent>
+</html>
+</richcontent>
 <node TEXT="versión para pruebas (MenuAction)" ID="ID_1864784835"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
 <html>
   <head>
@@ -1878,6 +1950,15 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
       
     </p>
     <p>
+      import groovy.transform.MapConstructor
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      
+    </p>
+    <p>
       // end: imports
     </p>
     <p>
@@ -1980,6 +2061,9 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
       
     </p>
     <p>
+      &nbsp;&nbsp;&nbsp;&nbsp;@MapConstructor
+    </p>
+    <p>
       &nbsp;&nbsp;&nbsp;&nbsp;static class MenuData{
     </p>
     <p>
@@ -2016,43 +2100,49 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public MenuData(Proxy.Node nodoMenu){
     </p>
     <p>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.actions&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= nodoMenu[TB.actions][1..-2].split(', ').collect{it!='null'?it:null}
+      //&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(nodoMenu[TB.title]){
     </p>
     <p>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.icons&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= nodoMenu[TB.icons&nbsp;&nbsp;][1..-2].split(', ').collect{it!='null'?it:null}
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.actions&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= nodoMenu[TB.actions]?nodoMenu[TB.actions][1..-2].split(', ').collect{it!='null'?it:null}:[]
     </p>
     <p>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.labels&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= nodoMenu[TB.labels ][1..-2].split(', ').collect{it!='null'?it:null}
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.icons&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= nodoMenu[TB.icons&nbsp;&nbsp;]?nodoMenu[TB.icons&nbsp;&nbsp;][1..-2].split(', ').collect{it!='null'?it:null}:[]
     </p>
     <p>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.maxTextLength&nbsp;&nbsp;= maxTextLen
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.labels&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= nodoMenu[TB.labels ]?nodoMenu[TB.labels ][1..-2].split(', ').collect{it!='null'?it:null}:[]
     </p>
     <p>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.showIcons&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= nodoMenu[TB.showIcons ].bool
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.maxTextLength&nbsp;&nbsp;= maxTextLen?:50
     </p>
     <p>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.showLabels&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= nodoMenu[TB.showLabels].bool
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.showIcons&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= nodoMenu[TB.showIcons ].bool
     </p>
     <p>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.focusMap&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= nodoMenu[TB.focusMap&nbsp;&nbsp;].bool
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.showLabels&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= nodoMenu[TB.showLabels].bool
     </p>
     <p>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.title&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= nodoMenu[TB.title].toString()
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.focusMap&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= nodoMenu[TB.focusMap&nbsp;&nbsp;].bool
     </p>
     <p>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;def scriptList = []
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.title&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= nodoMenu[TB.title]?nodoMenu[TB.title].toString():null
     </p>
     <p>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;nodoMenu.attributes.names.findAll{it.startsWith(scriptStr)}.each{
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;def scriptList = []
     </p>
     <p>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;scriptList &lt;&lt; [it,nodoMenu[it]]
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;nodoMenu.attributes.names.findAll{it.startsWith(scriptStr)}.each{
     </p>
     <p>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;scriptList &lt;&lt; [it,nodoMenu[it]]
     </p>
     <p>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.scripts&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= scriptList
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+    </p>
+    <p>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.scripts&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= scriptList
+    </p>
+    <p>
+      //&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
     </p>
     <p>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
@@ -2184,34 +2274,46 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
       
     </p>
     <p>
-      &nbsp;&nbsp;&nbsp;&nbsp;def static getMDfromNodes(nodoBase){
+      &nbsp;&nbsp;&nbsp;&nbsp;def static getMDfromNodes(nodoBase, boolean useDetails = true){
     </p>
     <p>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;def options = optionsD1
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;def resp
     </p>
     <p>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;def msg&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= msgD1
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;def resp2
     </p>
     <p>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;def title&nbsp;&nbsp;&nbsp;= titleD1
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(useDetails){
     </p>
     <p>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;def resp&nbsp;&nbsp;&nbsp;&nbsp;= respuestaDialogo(options,msg,title)
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;def detailsText = nodoBase.details.toString()
     </p>
     <p>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(options[0..2].contains(resp)) {
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;resp&nbsp;&nbsp;= optionsD1.find{detailsText.toLowerCase().contains(it)}
     </p>
     <p>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;def showIcons&nbsp;&nbsp;= (resp in options[0,1])?true:false
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;resp2 = optionsD3.find{detailsText.toLowerCase().contains(it)}
     </p>
     <p>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;def showLabels = (resp in options[0,2])?true:false
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+    </p>
+    <p>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;resp&nbsp;&nbsp;&nbsp;&nbsp;?= respuestaDialogo(optionsD1,msgD1,titleD1)
+    </p>
+    <p>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(optionsD1[0..2].contains(resp)) {
+    </p>
+    <p>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;def showIcons&nbsp;&nbsp;= (resp in optionsD1[0,1])?true:false
+    </p>
+    <p>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;def showLabels = (resp in optionsD1[0,2])?true:false
     </p>
     <p>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;def nAcciones&nbsp;&nbsp;= nodoBase.find{it.link?.uri?.scheme == 'menuitem' || WSE.isGroovyNode(it)}
     </p>
     <p>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;def resp2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= respuestaDialogo(optionsD3,msgD3,titleD3)
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;resp2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;?= respuestaDialogo(optionsD3,msgD3,titleD3)
     </p>
     <p>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;def focusMap&nbsp;&nbsp;&nbsp;= ( resp2 == optionsD3[0])
@@ -2307,6 +2409,9 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;def nBase = nodoMenu.createChild(md.title)
     </p>
     <p>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;nBase.details = nodoMenu.details
+    </p>
+    <p>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;md.actions.eachWithIndex{acc, i -&gt;
     </p>
     <p>
@@ -2356,6 +2461,63 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
     </p>
     <p>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;c.statusInfo = 'customMenu node unpacked'
+    </p>
+    <p>
+      &nbsp;&nbsp;&nbsp;&nbsp;}
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      &nbsp;&nbsp;&nbsp;&nbsp;def static getMenuDescriptionFromPackNode(nodoMenu,longText){
+    </p>
+    <p>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;def ic = nodoMenu[TB.showIcons ].bool
+    </p>
+    <p>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;def sl = nodoMenu[TB.showLabels].bool
+    </p>
+    <p>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;def fm = nodoMenu[TB.focusMap&nbsp;&nbsp;].bool
+    </p>
+    <p>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;def title = nodoMenu[TB.title].toString()
+    </p>
+    <p>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;def iconLabel
+    </p>
+    <p>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;def focus
+    </p>
+    <p>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (longText) {
+    </p>
+    <p>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//iconLabel = ic?sl?'icons and labels':'icons only':sl?'labels only':'error'
+    </p>
+    <p>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;iconLabel = ic?sl?optionsD1[0]:optionsD1[1]:sl?optionsD1[2]:'error'
+    </p>
+    <p>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//focus = fm?'return to mindmap':'stay in menu'
+    </p>
+    <p>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;focus = fm?optionsD3[0]:optionsD3[1]
+    </p>
+    <p>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} else {
+    </p>
+    <p>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;iconLabel = ic?sl?'ic+lb':'ic':sl?'lb':'error'
+    </p>
+    <p>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;focus = fm?'-&gt; map':'-&gt; menu'
+    </p>
+    <p>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+    </p>
+    <p>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return &quot;$title&nbsp;&nbsp;($iconLabel, $focus)&quot;.toString()
     </p>
     <p>
       &nbsp;&nbsp;&nbsp;&nbsp;}
@@ -2427,7 +2589,8 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
       }
     </p>
   </body>
-</html></richcontent>
+</html>
+</richcontent>
 <node TEXT="MoM Future A" STYLE_REF="milestone" ID="ID_1214021140">
 <node TEXT="Crear forma de que un botón incluya varios comandos" STYLE_REF="maybeTask" ID="ID_1260558966">
 <node TEXT="y los ejecute en orden" ID="ID_1787767020"/>
@@ -2480,6 +2643,18 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
     </p>
     <p>
       import java.awt.event.*
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      import groovy.time.TimeCategory
+    </p>
+    <p>
+      import groovy.time.TimeDuration
+    </p>
+    <p>
+      
     </p>
     <p>
       
@@ -2644,7 +2819,7 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if( !dialogo ) {
     </p>
     <p>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;c.statusInfo = '------------ se crea dialogo --------------'
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;c.statusInfo = '------------ new menu dialog created --------------'
     </p>
     <p>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dialogo = swingBuilder.dialog(
@@ -2677,7 +2852,7 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} else {
     </p>
     <p>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;c.statusInfo = '------------- se reutiliza dialogo -------------------'
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;c.statusInfo = '------------- existing menu dialog reused -------------------'
     </p>
     <p>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dialogo.getContentPane().removeAll()
@@ -2929,6 +3104,9 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;def actionPerformed = { e -&gt;
     </p>
     <p>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Date start = new Date()
+    </p>
+    <p>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;def iniColor = e.source.background&nbsp;
     </p>
     <p>
@@ -2942,6 +3120,12 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
     </p>
     <p>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (md.focusMap) DKBN.focusMap()
+    </p>
+    <p>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TimeDuration td = TimeCategory.minus( new Date(), start )
+    </p>
+    <p>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;c.statusInfo = &quot;---- script executed: duration: $td ------ &quot;
     </p>
     <p>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
@@ -3064,9 +3248,10 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
       }
     </p>
   </body>
-</html></richcontent>
+</html>
+</richcontent>
 <node TEXT="MoM Future A" STYLE_REF="milestone" ID="ID_1002832824">
-<node TEXT="Hacer que MoM pueda estar en ToolsTab" STYLE_REF="maybeTask" FOLDED="true" ID="ID_91790832">
+<node TEXT="Hacer que MoM pueda estar en ToolsTab" STYLE_REF="maybeTask" ID="ID_91790832">
 <node TEXT="cada grupo de herramientas se anexa como una &quot;sección&quot;" ID="ID_513233729"/>
 <node TEXT="secciones se pueden reordenar" ID="ID_1427840939"/>
 <node TEXT="secciones se pueden minimizar" ID="ID_733577266"/>
@@ -3243,7 +3428,7 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
   </body>
 </html></richcontent>
 </node>
-<node TEXT="packCustomMenu.groovy" FOLDED="true" ID="ID_509211543" LINK="file:/C:/Users/Edo/Documents/GitHub/Freeplane_My-Menu-Inator/Menu-o-Matic/scripts/packCustomMenu.groovy">
+<node TEXT="packCustomMenu.groovy" ID="ID_509211543" LINK="file:/C:/Users/Edo/Documents/GitHub/Freeplane_My-Menu-Inator/Menu-o-Matic/scripts/packCustomMenu.groovy">
 <attribute NAME="lastModifiedTime" VALUE="25-06-21 10:02" OBJECT="org.freeplane.features.format.FormattedDate|2021-06-25T10:02-0400|datetime"/>
 <attribute NAME="lastAccessTime" VALUE="12-05-22 11:04" OBJECT="org.freeplane.features.format.FormattedDate|2022-05-12T11:04-0400|dd-MM-yy HH:mm"/>
 <attribute NAME="creationTime" VALUE="22-06-21 19:14" OBJECT="org.freeplane.features.format.FormattedDate|2021-06-22T19:14-0400|datetime"/>
@@ -3436,8 +3621,341 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
   </body>
 </html></richcontent>
 </node>
-<node TEXT="get Map/Branch used icons actions" STYLE_REF="nextTask" ID="ID_232294406"/>
-<node TEXT="get Map/Branch used styles actions" STYLE_REF="nextTask" ID="ID_817232585"/>
+<node TEXT="get Map/Branch used icons actions" STYLE_REF="nextTask" ID="ID_232294406">
+<node TEXT="present icons in map/branch as buttons" FOLDED="true" ID="ID_1197565766" VGAP_QUANTITY="2 px"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      import edofro.menuomatic.MenuAction as MA
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      def nodo = node
+    </p>
+    <p>
+      def nIcons = nodo.createChild('used icons (as buttons)')
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      def usedIcons = nodo.findAll()*.icons*.icons.flatten().unique()//.sort()
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      usedIcons.each{ic -&gt;
+    </p>
+    <p>
+      &nbsp;&nbsp;&nbsp;&nbsp;def actionText = &quot;IconAction.${ic}&quot;
+    </p>
+    <p>
+      &nbsp;&nbsp;&nbsp;&nbsp;def label = MA.getActionText(actionText,'text')?:MA.getActionText(actionText,'tooltip')?:null
+    </p>
+    <p>
+      &nbsp;&nbsp;&nbsp;&nbsp;label ?= getLabel(menuUtils.createMenuEntryTree(&quot;icons&quot;).children(),actionText)
+    </p>
+    <p>
+      &nbsp;&nbsp;&nbsp;&nbsp;label ?= actionText
+    </p>
+    <p>
+      &nbsp;&nbsp;&nbsp;&nbsp;nIcons.createChild(label).link.text = &quot;menuitem:_${actionText.replace(' ','%20')}&quot;
+    </p>
+    <p>
+      }
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      // ----- methods ------
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      def getLabel(nodos, accKey){
+    </p>
+    <p>
+      &nbsp;&nbsp;&nbsp;&nbsp;def lab
+    </p>
+    <p>
+      &nbsp;&nbsp;&nbsp;&nbsp;nodos.any{ n -&gt;
+    </p>
+    <p>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;def mObj = n.getUserObject()
+    </p>
+    <p>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;def key = mObj.getKey()
+    </p>
+    <p>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(key == accKey){
+    </p>
+    <p>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lab = mObj.getLabel()
+    </p>
+    <p>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return true
+    </p>
+    <p>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+    </p>
+    <p>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (!n.isLeaf()){
+    </p>
+    <p>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lab = getLabel(n.children(),accKey)
+    </p>
+    <p>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(lab){return true}
+    </p>
+    <p>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+    </p>
+    <p>
+      &nbsp;&nbsp;&nbsp;&nbsp;}
+    </p>
+    <p>
+      &nbsp;&nbsp;&nbsp;&nbsp;return lab
+    </p>
+    <p>
+      }
+    </p>
+  </body>
+</html>
+</richcontent>
+<richcontent CONTENT-TYPE="xml/" TYPE="DETAILS">
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      .groovy
+    </p>
+  </body>
+</html></richcontent>
+<node TEXT="xx" ID="ID_1212370390">
+<node TEXT="&lt;-- -&apos;emoji-1F4B2&apos;" ID="ID_1910154839">
+<icon BUILTIN="emoji-1F4B2"/>
+</node>
+<node TEXT="&lt;-- -&apos;emoji-27A1&apos;" ID="ID_1681564439">
+<icon BUILTIN="emoji-27A1"/>
+</node>
+<node TEXT="&lt;-- -&apos;forward&apos;" ID="ID_202690052">
+<icon BUILTIN="forward"/>
+</node>
+<node TEXT="&lt;-- -&apos;emoji-1F333&apos;" ID="ID_1015267084">
+<icon BUILTIN="emoji-1F333"/>
+</node>
+<node TEXT="&lt;-- -&apos;emoji-1F525&apos;" ID="ID_1130586792">
+<icon BUILTIN="emoji-1F525"/>
+</node>
+<node TEXT="&lt;-- -&apos;emoji-1F995&apos;" ID="ID_1193703065">
+<icon BUILTIN="emoji-1F995"/>
+</node>
+<node TEXT="&lt;-- -&apos;bookmarks/Bookmark 1&apos;" ID="ID_1777383975">
+<icon BUILTIN="bookmarks/Bookmark 1"/>
+</node>
+<node TEXT="&lt;-- -&apos;folder-black-48dp - copia&apos;" ID="ID_287707772">
+<icon BUILTIN="folder-black-48dp - copia"/>
+</node>
+<node TEXT="&lt;-- -&apos;Importancia/Imp_3&apos;" ID="ID_1574639211">
+<icon BUILTIN="Importancia/Imp_3"/>
+</node>
+<node TEXT="used icons (as buttons)" ID="ID_1262204421">
+<node TEXT="heavy dollar sign" ID="ID_225484845" LINK="menuitem:_IconAction.emoji-1F4B2"/>
+<node TEXT="right arrow" ID="ID_428237866" LINK="menuitem:_IconAction.emoji-27A1"/>
+<node TEXT="Forward" ID="ID_1061643164" LINK="menuitem:_IconAction.forward"/>
+<node TEXT="deciduous tree" ID="ID_1890062601" LINK="menuitem:_IconAction.emoji-1F333"/>
+<node TEXT="fire" ID="ID_1805127394" LINK="menuitem:_IconAction.emoji-1F525"/>
+<node TEXT="sauropod" ID="ID_5563537" LINK="menuitem:_IconAction.emoji-1F995"/>
+<node TEXT="IconAction.bookmarks/Bookmark 1" OBJECT="org.codehaus.groovy.runtime.GStringImpl|IconAction.bookmarks/Bookmark 1" ID="ID_307633361" LINK="menuitem:_IconAction.bookmarks/Bookmark%201"/>
+<node TEXT="folder-black-48dp - copia" ID="ID_173452021" LINK="menuitem:_IconAction.folder-black-48dp%20-%20copia"/>
+<node TEXT="Imp_3" ID="ID_624685296" LINK="menuitem:_IconAction.Importancia/Imp_3"/>
+</node>
+</node>
+</node>
+</node>
+<node TEXT="get Map/Branch used styles actions" STYLE_REF="nextTask" ID="ID_817232585">
+<node TEXT="present styles in selected branch as buttons" FOLDED="true" ID="ID_563376606"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      import edofro.menuomatic.MenuAction as MA
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      def nodo = node.parent
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      def usedStyles = nodo.findAll()*.style*.allActiveStyles.flatten().unique().sort()
+    </p>
+    <p>
+      def assignedStyles = ((['default'] + nodo.findAll()*.style*.name.flatten().unique().sort() ).unique() - null)
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      def nAssigned = node.createChild('Styles assigned directly')
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      &nbsp;&nbsp;&nbsp;&nbsp;def actionText&nbsp;&nbsp;= 'ResetStyleAction'
+    </p>
+    <p>
+      &nbsp;&nbsp;&nbsp;&nbsp;def label = MA.getActionText(actionText,'text')?:MA.getActionText(actionText,'tooltip')?:'No_style'
+    </p>
+    <p>
+      &nbsp;&nbsp;&nbsp;&nbsp;nAssigned.createChild(label).link.text = &quot;menuitem:_${actionText.replace(' ','%20')}&quot;
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      assignedStyles.each{st -&gt;
+    </p>
+    <p>
+      &nbsp;&nbsp;&nbsp;&nbsp;st ?= 'default'
+    </p>
+    <p>
+      &nbsp;&nbsp;&nbsp;&nbsp;def n = nAssigned.createChild(st)
+    </p>
+    <p>
+      &nbsp;&nbsp;&nbsp;&nbsp;n.style.name = st
+    </p>
+    <p>
+      &nbsp;&nbsp;&nbsp;&nbsp;n.link.text = &quot;menuitem:_AssignStyleAction.$st&quot;
+    </p>
+    <p>
+      &nbsp;&nbsp;&nbsp;&nbsp;def ic = n.style.styleNode.icons.first
+    </p>
+    <p>
+      &nbsp;&nbsp;&nbsp;&nbsp;if (ic) n.icons.add(ic)
+    </p>
+    <p>
+      &nbsp;&nbsp;&nbsp;&nbsp;n.style.name = null
+    </p>
+    <p>
+      }
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      def nConditional = node.createChild('Styles assigned only through conditional formatting rules')
+    </p>
+    <p>
+      (usedStyles - assignedStyles).each{st -&gt;
+    </p>
+    <p>
+      &nbsp;&nbsp;&nbsp;&nbsp;def n = nConditional.createChild(st)
+    </p>
+    <p>
+      &nbsp;&nbsp;&nbsp;&nbsp;n.style.name = st
+    </p>
+    <p>
+      &nbsp;&nbsp;&nbsp;&nbsp;n.link.text = &quot;menuitem:_AssignStyleAction.$st&quot;
+    </p>
+    <p>
+      &nbsp;&nbsp;&nbsp;&nbsp;def ic = n.style.styleNode.icons.first
+    </p>
+    <p>
+      &nbsp;&nbsp;&nbsp;&nbsp;if (ic) n.icons.add(ic)
+    </p>
+    <p>
+      &nbsp;&nbsp;&nbsp;&nbsp;n.style.name = null
+    </p>
+    <p>
+      }
+    </p>
+  </body>
+</html>
+</richcontent>
+<richcontent CONTENT-TYPE="xml/" TYPE="DETAILS">
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      .groovy
+    </p>
+  </body>
+</html></richcontent>
+<node TEXT="Styles assigned directly" ID="ID_1602633014">
+<node TEXT="No style" ID="ID_1359242390" LINK="menuitem:_ResetStyleAction"/>
+<node TEXT="default" ID="ID_920415767" LINK="menuitem:_AssignStyleAction.default"/>
+<node TEXT="Organizador" ID="ID_1388759957" LINK="menuitem:_AssignStyleAction.Organizador">
+<icon BUILTIN="folder"/>
+</node>
+<node TEXT="baseFolder" ID="ID_1476423442" LINK="menuitem:_AssignStyleAction.baseFolder">
+<icon BUILTIN="emoji-1F4BD"/>
+</node>
+<node TEXT="completedTask" ID="ID_220251455" LINK="menuitem:_AssignStyleAction.completedTask">
+<icon BUILTIN="checked"/>
+</node>
+<node TEXT="file_folder" ID="ID_603271378" LINK="menuitem:_AssignStyleAction.file_folder"/>
+<node TEXT="locked" ID="ID_1625146554" LINK="menuitem:_AssignStyleAction.locked">
+<icon BUILTIN="emoji-1F512"/>
+</node>
+<node TEXT="maybeTask" ID="ID_1818514307" LINK="menuitem:_AssignStyleAction.maybeTask">
+<icon BUILTIN="emoji-23FA"/>
+</node>
+<node TEXT="milestone" ID="ID_38620080" LINK="menuitem:_AssignStyleAction.milestone">
+<icon BUILTIN="emoji-1F6A9"/>
+</node>
+<node TEXT="newFolderImport" ID="ID_1579629404" LINK="menuitem:_AssignStyleAction.newFolderImport">
+<icon BUILTIN="emoji-1F4BE"/>
+</node>
+<node TEXT="nextTask" ID="ID_269076136" LINK="menuitem:_AssignStyleAction.nextTask">
+<icon BUILTIN="yes"/>
+</node>
+<node TEXT="pendingTask" ID="ID_1309399568" LINK="menuitem:_AssignStyleAction.pendingTask">
+<icon BUILTIN="unchecked"/>
+</node>
+<node TEXT="project" ID="ID_118117209" LINK="menuitem:_AssignStyleAction.project">
+<icon BUILTIN="emoji-1F5C2"/>
+</node>
+<node TEXT="tasksBucket" ID="ID_1985462426" LINK="menuitem:_AssignStyleAction.tasksBucket">
+<icon BUILTIN="emoji-1F5C3"/>
+</node>
+</node>
+<node TEXT="Styles assigned only through conditional formatting rules" ID="ID_419590503">
+<node TEXT="GroovyNode" ID="ID_232422400" LINK="menuitem:_AssignStyleAction.GroovyNode">
+<icon BUILTIN="groovyNode/groovy-G"/>
+</node>
+<node TEXT="containsNextTasks" ID="ID_114208382" LINK="menuitem:_AssignStyleAction.containsNextTasks">
+<icon BUILTIN="emoji-1F7E5"/>
+</node>
+<node TEXT="containsPendingTasks" ID="ID_1742934965" LINK="menuitem:_AssignStyleAction.containsPendingTasks">
+<icon BUILTIN="emoji-23F9"/>
+</node>
+<node TEXT="file" ID="ID_1616822642" LINK="menuitem:_AssignStyleAction.file"/>
+<node TEXT="hasGroovyNode" ID="ID_1785952994" LINK="menuitem:_AssignStyleAction.hasGroovyNode">
+<icon BUILTIN="groovyNode/groovy-G"/>
+</node>
+<node TEXT="menuButton" ID="ID_1750003842" LINK="menuitem:_AssignStyleAction.menuButton"/>
+</node>
+</node>
+</node>
 </node>
 <node TEXT="Launching" ID="ID_1688826044">
 <node TEXT="launchCustomDialog.groovy" ID="ID_1401230090" LINK="file:/C:/Users/Edo/Documents/GitHub/Freeplane_My-Menu-Inator/Menu-o-Matic/scripts/launchCustomDialog.groovy"><richcontent CONTENT-TYPE="xml/" TYPE="DETAILS">
@@ -5956,8 +6474,7 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
       
     </p>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 </node>
 <node TEXT="versión instalada en AddOns" STYLE_REF="locked" FOLDED="true" ID="ID_1424141649">
 <node TEXT="menuOMatic" ID="ID_1859181061"><richcontent CONTENT-TYPE="xml/" TYPE="DETAILS">
@@ -6643,8 +7160,7 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
       (node['tasksStyles']?:'pendingTask,nextTask').split(',').collect{st -&gt; &quot;${node.find{it.style.name == st}.size()}&nbsp;&nbsp;${st}(s)&quot;}.join('\n')
     </p>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 <attribute NAME="tasksStyles" VALUE="nextTask,pendingTask,maybeTask,discardedTask,completedTask"/>
 <attribute NAME="WIP filter" VALUE="true"/>
 <attribute NAME="groupingLevels" VALUE="10" OBJECT="org.freeplane.features.format.FormattedNumber|10"/>
@@ -6662,8 +7178,7 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
       (node['tasksStyles']?:'pendingTask,nextTask').split(',').collect{st -&gt; &quot;${node.find{it.style.name == st}.size()}&nbsp;&nbsp;${st}(s)&quot;}.join('\n')
     </p>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 <attribute NAME="tasksStyles" VALUE="nextTask,pendingTask"/>
 <attribute NAME="WIP filter" VALUE="false"/>
 <attribute NAME="groupingLevels" VALUE="10" OBJECT="org.freeplane.features.format.FormattedNumber|10"/>
@@ -6751,8 +7266,7 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
       (node['tasksStyles']?:'pendingTask,nextTask').split(',').collect{st -&gt; &quot;${node.find{it.style.name == st}.size()}&nbsp;&nbsp;${st}(s)&quot;}.join('\n')
     </p>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 <attribute NAME="tasksStyles" VALUE="nextTask,pendingTask,maybeTask"/>
 <attribute NAME="WIP filter" VALUE="false"/>
 <attribute NAME="groupingLevels" VALUE="10" OBJECT="org.freeplane.features.format.FormattedNumber|10"/>
@@ -6855,7 +7369,7 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
 </node>
 <node TEXT="sauropod" ID="ID_1956864748" LINK="menuitem:_IconAction.emoji-1F995"/>
 <node TEXT="locked" ID="ID_1878265347" LINK="menuitem:_AssignStyleAction.locked"/>
-<node TEXT="present styles in selected branch" ID="ID_1783014117"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
+<node TEXT="present styles in selected branch" FOLDED="true" ID="ID_1783014117"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
 <html>
   <head>
     
@@ -6871,34 +7385,47 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
       def usedStyles = nodo.findAll()*.style*.allActiveStyles.flatten().unique().sort()
     </p>
     <p>
-      //return usedStyles
+      def assignedStyles = ((nodo.findAll()*.style*.name.flatten() &lt;&lt; 'default').unique().sort() - null)
     </p>
     <p>
       
     </p>
     <p>
-      def listedStyles = node.children*.text
+      def nAssigned = node.createChild('Styles assigned directly')
     </p>
     <p>
-      //return listedStyles
+      assignedStyles.each{st -&gt;
     </p>
     <p>
-      //return usedStyles - listedStyles
+      &nbsp;&nbsp;&nbsp;&nbsp;st ?= 'default'
+    </p>
+    <p>
+      &nbsp;&nbsp;&nbsp;&nbsp;nAssigned.createChild(st).style.name = st
+    </p>
+    <p>
+      }
     </p>
     <p>
       
     </p>
     <p>
-      (usedStyles - listedStyles).each{st -&gt;
+      def nConditional = node.createChild('Styles assigned only through conditional formatting rules')
     </p>
     <p>
-      &nbsp;&nbsp;&nbsp;&nbsp;node.createChild(st).style.name = st
+      (usedStyles - assignedStyles).each{st -&gt;
+    </p>
+    <p>
+      &nbsp;&nbsp;&nbsp;&nbsp;if(st)
+    </p>
+    <p>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;nConditional.createChild(st)//.style.name = st
     </p>
     <p>
       }
     </p>
   </body>
-</html></richcontent>
+</html>
+</richcontent>
 <richcontent CONTENT-TYPE="xml/" TYPE="DETAILS">
 <html>
   <head>
@@ -6910,6 +7437,55 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
     </p>
   </body>
 </html></richcontent>
+<node TEXT="Styles assigned directly" ID="ID_501774331">
+<node TEXT="Organizador" STYLE_REF="Organizador" ID="ID_1703890576"/>
+<node TEXT="baseFolder" STYLE_REF="baseFolder" ID="ID_1544236888"/>
+<node TEXT="completedTask" STYLE_REF="completedTask" ID="ID_398028803"/>
+<node TEXT="default" LOCALIZED_STYLE_REF="default" ID="ID_1884993533"/>
+<node TEXT="file_folder" STYLE_REF="file_folder" ID="ID_899206454"/>
+<node TEXT="locked" STYLE_REF="locked" ID="ID_1180054565"/>
+<node TEXT="maybeTask" STYLE_REF="maybeTask" ID="ID_1516563008"/>
+<node TEXT="milestone" STYLE_REF="milestone" ID="ID_1710491249"/>
+<node TEXT="newFolderImport" STYLE_REF="newFolderImport" ID="ID_792164254"/>
+<node TEXT="nextTask" STYLE_REF="nextTask" ID="ID_1413261599"/>
+<node TEXT="pendingTask" STYLE_REF="pendingTask" ID="ID_1246760187"/>
+<node TEXT="project" STYLE_REF="project" ID="ID_1235422518"/>
+<node TEXT="tasksBucket" STYLE_REF="tasksBucket" ID="ID_738043261"/>
+</node>
+<node TEXT="Styles assigned only through conditional formatting rules" ID="ID_52010318">
+<node TEXT="GroovyNode" ID="ID_822317973"/>
+<node TEXT="containsNextTasks" ID="ID_1494875030"/>
+<node TEXT="containsPendingTasks" ID="ID_1807596546"/>
+<node TEXT="file" ID="ID_1715223541"/>
+<node TEXT="hasGroovyNode" ID="ID_745581110"/>
+<node TEXT="menuButton" ID="ID_1840314675"/>
+</node>
+</node>
+<node ID="ID_1113835356" TREE_ID="ID_563376606">
+<node ID="ID_1417946136" TREE_ID="ID_1602633014">
+<node ID="ID_1090895689" TREE_ID="ID_1359242390"/>
+<node ID="ID_1305816982" TREE_ID="ID_920415767"/>
+<node ID="ID_149529856" TREE_ID="ID_1388759957"/>
+<node ID="ID_1015556663" TREE_ID="ID_1476423442"/>
+<node ID="ID_1418632253" TREE_ID="ID_220251455"/>
+<node ID="ID_268831080" TREE_ID="ID_603271378"/>
+<node ID="ID_933511782" TREE_ID="ID_1625146554"/>
+<node ID="ID_95732199" TREE_ID="ID_1818514307"/>
+<node ID="ID_266999139" TREE_ID="ID_38620080"/>
+<node ID="ID_1950307974" TREE_ID="ID_1579629404"/>
+<node ID="ID_20956883" TREE_ID="ID_269076136"/>
+<node ID="ID_459577246" TREE_ID="ID_1309399568"/>
+<node ID="ID_1951790470" TREE_ID="ID_118117209"/>
+<node ID="ID_698699632" TREE_ID="ID_1985462426"/>
+</node>
+<node ID="ID_1466495335" TREE_ID="ID_419590503">
+<node ID="ID_1834102917" TREE_ID="ID_232422400"/>
+<node ID="ID_1858827716" TREE_ID="ID_114208382"/>
+<node ID="ID_59908157" TREE_ID="ID_1742934965"/>
+<node ID="ID_1902380815" TREE_ID="ID_1616822642"/>
+<node ID="ID_1545435728" TREE_ID="ID_1785952994"/>
+<node ID="ID_765751431" TREE_ID="ID_1750003842"/>
+</node>
 </node>
 <node TEXT="present icons in map/branch" FOLDED="true" ID="ID_1926753731"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
 <html>
@@ -6936,13 +7512,14 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
       usedIcons.each{ic -&gt;
     </p>
     <p>
-      &nbsp;&nbsp;&nbsp;&nbsp;node.createChild(&quot;&lt;-- -'${ic}'&quot;).icons.add(ic)
+      &nbsp;&nbsp;&nbsp;&nbsp;node.createChild(&quot;&lt;-- -'${ic}'&quot;.toString()).icons.add(ic)
     </p>
     <p>
       }
     </p>
   </body>
-</html></richcontent>
+</html>
+</richcontent>
 <richcontent CONTENT-TYPE="xml/" TYPE="DETAILS">
 <html>
   <head>
@@ -6954,26 +7531,159 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
     </p>
   </body>
 </html></richcontent>
-<node TEXT="&lt;-- -&apos;emoji-1F4B2&apos;" ID="ID_769301201">
+<node TEXT="xx" ID="ID_515794695">
+<node TEXT="&lt;-- -&apos;emoji-1F4B2&apos;" ID="ID_1846289455">
 <icon BUILTIN="emoji-1F4B2"/>
 </node>
-<node TEXT="&lt;-- -&apos;emoji-27A1&apos;" ID="ID_448223782">
+<node TEXT="&lt;-- -&apos;emoji-27A1&apos;" ID="ID_913726456">
 <icon BUILTIN="emoji-27A1"/>
 </node>
-<node TEXT="&lt;-- -&apos;bookmarks/Bookmark 1&apos;" ID="ID_124436750">
-<icon BUILTIN="bookmarks/Bookmark 1"/>
-</node>
-<node TEXT="&lt;-- -&apos;forward&apos;" ID="ID_1367151714">
+<node TEXT="&lt;-- -&apos;forward&apos;" ID="ID_1955549962">
 <icon BUILTIN="forward"/>
 </node>
-<node TEXT="&lt;-- -&apos;emoji-1F333&apos;" ID="ID_1735989683">
+<node TEXT="&lt;-- -&apos;emoji-1F333&apos;" ID="ID_1050606744">
 <icon BUILTIN="emoji-1F333"/>
 </node>
-<node TEXT="&lt;-- -&apos;emoji-1F525&apos;" ID="ID_30949441">
+<node TEXT="&lt;-- -&apos;emoji-1F525&apos;" ID="ID_101578450">
 <icon BUILTIN="emoji-1F525"/>
 </node>
-<node TEXT="&lt;-- -&apos;emoji-1F995&apos;" ID="ID_1403236493">
+<node TEXT="&lt;-- -&apos;emoji-1F995&apos;" ID="ID_1939705048">
 <icon BUILTIN="emoji-1F995"/>
+</node>
+<node TEXT="&lt;-- -&apos;bookmarks/Bookmark 1&apos;" ID="ID_392648689">
+<icon BUILTIN="bookmarks/Bookmark 1"/>
+</node>
+<node TEXT="&lt;-- -&apos;folder-black-48dp - copia&apos;" ID="ID_298803752">
+<icon BUILTIN="folder-black-48dp - copia"/>
+</node>
+<node TEXT="&lt;-- -&apos;Importancia/Imp_3&apos;" ID="ID_1640464839">
+<icon BUILTIN="Importancia/Imp_3"/>
+</node>
+</node>
+</node>
+<node ID="ID_1316225028" TREE_ID="ID_1197565766">
+<node ID="ID_675404434" TREE_ID="ID_1212370390">
+<node ID="ID_284353271" TREE_ID="ID_1910154839"/>
+<node ID="ID_1778609392" TREE_ID="ID_1681564439"/>
+<node ID="ID_1938543548" TREE_ID="ID_202690052"/>
+<node ID="ID_959165593" TREE_ID="ID_1015267084"/>
+<node ID="ID_1090810211" TREE_ID="ID_1130586792"/>
+<node ID="ID_759290060" TREE_ID="ID_1193703065"/>
+<node ID="ID_1446783338" TREE_ID="ID_1777383975"/>
+<node ID="ID_1306962514" TREE_ID="ID_287707772"/>
+<node ID="ID_593599483" TREE_ID="ID_1574639211"/>
+<node ID="ID_1875373650" TREE_ID="ID_1262204421">
+<node ID="ID_1077510914" TREE_ID="ID_225484845"/>
+<node ID="ID_1320825812" TREE_ID="ID_428237866"/>
+<node ID="ID_291986126" TREE_ID="ID_1061643164"/>
+<node ID="ID_1787011551" TREE_ID="ID_1890062601"/>
+<node ID="ID_27852768" TREE_ID="ID_1805127394"/>
+<node ID="ID_1570797620" TREE_ID="ID_5563537"/>
+<node ID="ID_725059726" TREE_ID="ID_307633361"/>
+<node ID="ID_459353414" TREE_ID="ID_173452021"/>
+<node ID="ID_1957089970" TREE_ID="ID_624685296"/>
+</node>
+</node>
+</node>
+<node TEXT="create node with action to selected node&apos;s icon" FOLDED="true" ID="ID_775025033"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      import edofro.menuomatic.MenuAction as MA
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      def actionText = node.icons?&quot;IconAction.${node.icons.first}&quot;:null
+    </p>
+    <p>
+      def label = MA.getActionText(actionText,'text')?:MA.getActionText(actionText,'tooltip')?:null
+    </p>
+    <p>
+      label ?= getLabel(menuUtils.createMenuEntryTree(&quot;icons&quot;).children(),actionText)
+    </p>
+    <p>
+      label ?= actionText
+    </p>
+    <p>
+      node.createChild(label).link.text = &quot;menuitem:_${actionText.replace(' ','%20')}&quot;
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      def getLabel(nodos, accKey){
+    </p>
+    <p>
+      &nbsp;&nbsp;&nbsp;&nbsp;def lab
+    </p>
+    <p>
+      &nbsp;&nbsp;&nbsp;&nbsp;nodos.any{ n -&gt;
+    </p>
+    <p>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;def mObj = n.getUserObject()
+    </p>
+    <p>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;def key = mObj.getKey()
+    </p>
+    <p>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(key == accKey){
+    </p>
+    <p>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lab = mObj.getLabel()
+    </p>
+    <p>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return true
+    </p>
+    <p>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+    </p>
+    <p>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (!n.isLeaf()){
+    </p>
+    <p>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lab = getLabel(n.children(),accKey)
+    </p>
+    <p>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(lab){return true}
+    </p>
+    <p>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+    </p>
+    <p>
+      &nbsp;&nbsp;&nbsp;&nbsp;}
+    </p>
+    <p>
+      &nbsp;&nbsp;&nbsp;&nbsp;return lab
+    </p>
+    <p>
+      }
+    </p>
+  </body>
+</html>
+</richcontent>
+<richcontent CONTENT-TYPE="xml/" TYPE="DETAILS">
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      .groovy
+    </p>
+  </body>
+</html>
+</richcontent>
+<node TEXT="&lt;-- -&apos;emoji-1F984&apos;" ID="ID_703266161">
+<icon BUILTIN="emoji-1F984"/>
+<node TEXT="unicorn" ID="ID_1687034073" LINK="menuitem:_IconAction.emoji-1F984"/>
 </node>
 </node>
 <node TEXT="present icons in selected branch" ID="ID_1417839906"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
@@ -7060,6 +7770,10 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
     </p>
   </body>
 </html></richcontent>
+<node TEXT="OJO: hay otras formas tb." ID="ID_905503161">
+<node TEXT="puede estar en otro .mm explicado" ID="ID_168792550"/>
+<node TEXT="si no lo ebcuentro: está en un thread en el foro de Freeplane (en el nuevo de github) o en un Issue" ID="ID_242108571"/>
+</node>
 <node TEXT="example:" ID="ID_125383300">
 <icon BUILTIN="emoji-1F525"/>
 <node ID="ID_1079805888"><richcontent TYPE="NODE">
