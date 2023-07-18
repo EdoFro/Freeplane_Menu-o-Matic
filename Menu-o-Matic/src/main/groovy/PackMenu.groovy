@@ -15,7 +15,7 @@ import org.freeplane.plugin.script.proxy.Proxy
 import groovy.transform.MapConstructor
 
 
-// end: imports
+// endregion: imports
 
 
 class PackMenu{
@@ -48,6 +48,8 @@ class PackMenu{
         title         : 'tbTitle'               ,
         focusMap      : 'tbFocusToMap'
     ]
+
+    // endregion: properties
 
     @MapConstructor
     static class MenuData{
@@ -116,7 +118,6 @@ class PackMenu{
     static final SwingBuilder swingBuilder = new SwingBuilder()
     static final c = ScriptUtils.c()
 
-    // end: properties
 
     // region: primary methods
 
@@ -204,7 +205,7 @@ class PackMenu{
         return "$title  ($iconLabel, $focus)".toString()
     }
 
-    // end: primary methods
+    // endregion: primary methods
 
     // region: secondary methods
 
@@ -223,5 +224,5 @@ class PackMenu{
         return pane.inputValue
     }
 
-    // end: methods
+    // endregion: methods
 }
