@@ -1,30 +1,8 @@
-<map version="freeplane 1.9.13">
+<map version="freeplane 1.11.5">
 <!--To view this file, download free mind mapping software Freeplane from https://www.freeplane.org -->
 <attribute_registry SHOW_ATTRIBUTES="selected"/>
 <node TEXT="Menu-o-Matic project" LOCALIZED_STYLE_REF="AutomaticLayout.level.root" FOLDED="false" ID="ID_551814049" LINK="../../../../../Respaldo%20EF/ef/Documentos%20con%20macros/08%20Freemind%20Groovy/scripts/ScriptsEnComputadorYDesarrollosEdo%20v1.9.mm" MAX_WIDTH="7 cm"><hook NAME="MapStyle" background="#f9f9f8" zoom="0.8">
     <conditional_styles>
-        <conditional_style ACTIVE="true" STYLE_REF="file" LAST="false">
-            <script_condition>
-                <script>{node.link?.uri?.scheme == &apos;file&apos;}</script>
-            </script_condition>
-        </conditional_style>
-        <conditional_style ACTIVE="true" STYLE_REF="modifiedFile" LAST="false">
-            <attribute_contains_condition ATTRIBUTE="modifiedFile" VALUE="true"/>
-        </conditional_style>
-        <conditional_style ACTIVE="true" STYLE_REF="file_folder" LAST="false">
-            <script_condition>
-                <script>(node.link?.uri?.scheme == &apos;file&apos; &amp;&amp; node.link.uri.path.takeRight(1) == &apos;/&apos;)</script>
-            </script_condition>
-        </conditional_style>
-        <conditional_style ACTIVE="false" STYLE_REF="file_folder_with_icon" LAST="false">
-            <conjunct_condition>
-                <style_contains_condition TEXT="file_folder"/>
-                <script_condition>
-                    <script>import org.freeplane.core.util.FreeplaneVersion&#xd;
-return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) || !(node.link?.uri?.scheme == &apos;file&apos;) )</script>
-                </script_condition>
-            </conjunct_condition>
-        </conditional_style>
         <conditional_style ACTIVE="true" STYLE_REF="customMenuPackage" LAST="false">
             <attribute_exists_condition ATTRIBUTE="tbActions"/>
         </conditional_style>
@@ -63,27 +41,26 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
                 </script_condition>
             </any_descendant_condition>
         </conditional_style>
-        <conditional_style ACTIVE="false" STYLE_REF="file_folder_with_icon" LAST="false">
-            <conjunct_condition>
-                <script_condition>
-                    <script>import org.freeplane.core.util.FreeplaneVersion&#xd;
-return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) || !(node.link?.uri?.scheme == &apos;file&apos;) )</script>
-                </script_condition>
-                <style_equals_condition TEXT="file_folder"/>
-            </conjunct_condition>
+        <conditional_style ACTIVE="true" STYLE_REF="file" LAST="false">
+            <script_condition>
+                <script>{node.link.file &amp;&amp; !node.link.uri?.fragment}</script>
+            </script_condition>
+        </conditional_style>
+        <conditional_style ACTIVE="true" STYLE_REF="modifiedFile" LAST="false">
+            <attribute_contains_condition ATTRIBUTE="modifiedFile" VALUE="true"/>
         </conditional_style>
     </conditional_styles>
-    <properties edgeColorConfiguration="#808080ff,#ff0000ff,#0000ffff,#00ff00ff,#ff00ffff,#00ffffff,#7c0000ff,#00007cff,#007c00ff,#7c007cff,#007c7cff,#7c7c00ff" mapUsesOwnSaveOptions="true" BookmarksKeys="{}" followedTemplateLocation="template:/DFGHI%20Proyecto-Groovy-Tareas-MDI-menuButton%20(vis01).mm" pruebaDiccionario="ID_311366985|:|idDictionary|-|ID_323296041|:|ToM Actions|-|" show_icon_for_attributes="true" show_notes_in_map="false" save_modification_times="false" save_last_visited_node="default" show_note_icons="true" mdhFreeMindmapPath="hhgf" save_folding="save_folding_if_map_is_changed" followedMapLastTime="1661362125221" fit_to_viewport="false"/>
+    <properties edgeColorConfiguration="#808080ff,#ff0000ff,#0000ffff,#00ff00ff,#ff00ffff,#00ffffff,#7c0000ff,#00007cff,#007c00ff,#7c007cff,#007c7cff,#7c7c00ff" mapUsesOwnSaveOptions="true" BookmarksKeys="{}" followedTemplateLocation="template:/DFGHI%20Proyecto-Groovy-Tareas-MDI-menuButton%20(vis01).mm" pruebaDiccionario="ID_311366985|:|idDictionary|-|ID_323296041|:|ToM Actions|-|" show_icon_for_attributes="true" show_notes_in_map="false" save_modification_times="false" save_last_visited_node="default" show_note_icons="true" MDI_template="v0.0.13" mdhFreeMindmapPath="hhgf" save_folding="save_folding_if_map_is_changed" followedMapLastTime="1661362125221" fit_to_viewport="false"/>
 
 <map_styles>
 <stylenode LOCALIZED_TEXT="styles.root_node" ID="ID_118736178" STYLE="oval" UNIFORM_SHAPE="true" VGAP_QUANTITY="24 pt">
 <font SIZE="24"/>
-<stylenode LOCALIZED_TEXT="styles.predefined" POSITION="right" STYLE="bubble">
+<stylenode LOCALIZED_TEXT="styles.predefined" POSITION="bottom_or_right" STYLE="bubble">
 <stylenode LOCALIZED_TEXT="default" ID="ID_506805493" ICON_SIZE="12 pt" FORMAT_AS_HYPERLINK="false" COLOR="#484747" BACKGROUND_COLOR="#efefef" STYLE="bubble" SHAPE_HORIZONTAL_MARGIN="5 px" SHAPE_VERTICAL_MARGIN="2 px" NUMBERED="false" FORMAT="STANDARD_FORMAT" TEXT_ALIGN="DEFAULT" BORDER_WIDTH_LIKE_EDGE="false" BORDER_WIDTH="1.9 px" BORDER_COLOR_LIKE_EDGE="false" BORDER_COLOR="#8fbcbb" BORDER_DASH_LIKE_EDGE="true" BORDER_DASH="SOLID" VGAP_QUANTITY="2 px" MAX_WIDTH="10 cm" MIN_WIDTH="0 cm">
-<arrowlink SHAPE="CUBIC_CURVE" COLOR="#bf5d3f" WIDTH="2" TRANSPARENCY="200" DASH="" FONT_SIZE="9" FONT_FAMILY="SansSerif" DESTINATION="ID_506805493" STARTINCLINATION="45 pt;-10.5 pt;" ENDINCLINATION="57 pt;30 pt;" STARTARROW="NONE" ENDARROW="DEFAULT"/>
+<arrowlink SHAPE="CUBIC_CURVE" COLOR="#bf5d3f" WIDTH="2" TRANSPARENCY="200" DASH="" FONT_SIZE="9" FONT_FAMILY="SansSerif" DESTINATION="ID_506805493" STARTINCLINATION="45 pt;-7.5 pt;" ENDINCLINATION="57 pt;30 pt;" STARTARROW="NONE" ENDARROW="DEFAULT"/>
 <font NAME="Dialog" SIZE="10" BOLD="false" STRIKETHROUGH="false" ITALIC="false"/>
 <edge STYLE="horizontal" COLOR="#2e3440" WIDTH="1" DASH="SOLID"/>
-<richcontent CONTENT-TYPE="plain/auto" TYPE="DETAILS"/>
+<richcontent TYPE="DETAILS" CONTENT-TYPE="plain/auto"/>
 <richcontent TYPE="NOTE" CONTENT-TYPE="plain/auto"/>
 </stylenode>
 <stylenode LOCALIZED_TEXT="defaultstyle.details" ID="ID_861824498" COLOR="#006666" BACKGROUND_COLOR="#a5cece" BACKGROUND_ALPHA="204" BORDER_WIDTH_LIKE_EDGE="false" BORDER_WIDTH="1.9 px" BORDER_COLOR_LIKE_EDGE="false" BORDER_COLOR="#f0f0f0" BORDER_DASH_LIKE_EDGE="true">
@@ -102,7 +79,7 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
 </stylenode>
 <stylenode LOCALIZED_TEXT="defaultstyle.selection" ID="ID_358779365" COLOR="#eceff4" BACKGROUND_COLOR="#bf616a" STYLE="bubble" BORDER_COLOR_LIKE_EDGE="false" BORDER_COLOR="#bf616a"/>
 </stylenode>
-<stylenode LOCALIZED_TEXT="styles.user-defined" POSITION="right" STYLE="bubble">
+<stylenode LOCALIZED_TEXT="styles.user-defined" POSITION="bottom_or_right" STYLE="bubble">
 <stylenode LOCALIZED_TEXT="styles.important" ID="ID_915433779" BORDER_COLOR="#bf616a">
 <icon BUILTIN="yes"/>
 <arrowlink COLOR="#bf616a" TRANSPARENCY="255" DESTINATION="ID_915433779"/>
@@ -123,10 +100,12 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
 <stylenode TEXT="movedRenamed" ID="ID_851444256" ICON_SIZE="16 pt" BACKGROUND_COLOR="#ace500">
 <icon BUILTIN="emoji-1F500"/>
 </stylenode>
-<stylenode TEXT="file" ID="ID_1717966522" BORDER_WIDTH="2.5 px" BACKGROUND_COLOR="#bcc6e0" FORMAT="NO_FORMAT">
+<stylenode TEXT="file" ID="ID_1717966522" BACKGROUND_COLOR="#bcc6e0" FORMAT="NO_FORMAT" BORDER_WIDTH="2.5 px">
 <font NAME="Consolas"/>
 </stylenode>
-<stylenode TEXT="file_folder" ID="ID_1554270070" BORDER_WIDTH="3 px"/>
+<stylenode TEXT="file_folder" ID="ID_1554270070" BORDER_WIDTH="3 px">
+<icon BUILTIN="emoji-1F4C1"/>
+</stylenode>
 <stylenode TEXT="missing" ID="ID_1068634079" BACKGROUND_COLOR="#f28bb3" BORDER_WIDTH="3 px">
 <icon BUILTIN="broken-line"/>
 </stylenode>
@@ -138,7 +117,7 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
 <icon BUILTIN="emoji-1F512"/>
 </stylenode>
 <stylenode TEXT="file_folder_with_icon" ID="ID_927144007">
-<icon BUILTIN="emoji-1F4C2"/>
+<icon BUILTIN="emoji-1F4CD"/>
 </stylenode>
 <stylenode TEXT="GroovyNode" ID="ID_647184451" ICON_SIZE="16 pt" COLOR="#286b86" BACKGROUND_COLOR="#92c5d7" STYLE="bubble" BORDER_COLOR_LIKE_EDGE="false" BORDER_COLOR="#286b86">
 <icon BUILTIN="groovyNode/groovy-G"/>
@@ -231,11 +210,15 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
 <icon BUILTIN="emoji-1F6A9"/>
 <font BOLD="true"/>
 </stylenode>
-<stylenode TEXT="fullMarkDown" ID="ID_897231475" FORMAT="markdownPatternFormat" BORDER_DASH="SOLID"><richcontent CONTENT-TYPE="plain/markdown" TYPE="DETAILS"/>
+<stylenode TEXT="fullMarkDown" ID="ID_897231475" FORMAT="markdownPatternFormat" BORDER_DASH="SOLID">
+<richcontent TYPE="DETAILS" CONTENT-TYPE="plain/markdown"/>
 <richcontent TYPE="NOTE" CONTENT-TYPE="plain/markdown"/>
 </stylenode>
+<stylenode TEXT="notMovedRenamed" BACKGROUND_COLOR="#f28bb3" BORDER_WIDTH="3 px">
+<icon BUILTIN="emoji-26D4"/>
 </stylenode>
-<stylenode LOCALIZED_TEXT="styles.AutomaticLayout" POSITION="right" STYLE="bubble">
+</stylenode>
+<stylenode LOCALIZED_TEXT="styles.AutomaticLayout" POSITION="bottom_or_right" STYLE="bubble">
 <stylenode LOCALIZED_TEXT="AutomaticLayout.level.root" ID="ID_1209359852" COLOR="#ffffff" BACKGROUND_COLOR="#484747" STYLE="bubble" SHAPE_HORIZONTAL_MARGIN="10 pt" SHAPE_VERTICAL_MARGIN="15 pt" TEXT_ALIGN="CENTER" MAX_WIDTH="5 cm" MIN_WIDTH="3 cm">
 <font SIZE="18"/>
 </stylenode>
@@ -273,7 +256,7 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
 </stylenode>
 </map_styles>
 </hook>
-<node TEXT="Freeplane_My-Menu-Inator" STYLE_REF="baseFolder" POSITION="right" ID="ID_260100339" LINK="file:/C:/Users/Edo/Documents/GitHub/Freeplane_My-Menu-Inator/">
+<node TEXT="Freeplane_Menu-o-Matic" STYLE_REF="baseFolder" POSITION="bottom_or_right" ID="ID_260100339" LINK=".">
 <icon BUILTIN="emoji-1F4B2"/>
 <attribute NAME="nameFilter" VALUE=""/>
 <attribute NAME="maxDepth" VALUE="-1" OBJECT="org.freeplane.features.format.FormattedNumber|-1|#0.####"/>
@@ -284,183 +267,83 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
 <attribute NAME="creationTime" VALUE="10-03-21 10:30" OBJECT="org.freeplane.features.format.FormattedDate|2021-03-10T10:30-0300|datetime"/>
 <attribute NAME="fileSize" VALUE="4.096" OBJECT="org.freeplane.features.format.FormattedNumber|4096|#,##0"/>
 <attribute NAME="projectCode" VALUE="Freep.My.Menu.Inator"/>
-<richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      null
-    </p>
-    <p>
-      
-    </p>
-    <p>
-      ================ MDI =====================
-    </p>
-    <p>
-      
-    </p>
-    <p>
-      The import of files and folders can be adapted by providing various options in the attributes of the BaseFolder node:
-    </p>
-    <p>
-      
-    </p>
-    <p>
-      -----------------------------------------------------
-    </p>
-    <p>
-      &nbsp;&nbsp;&nbsp;&nbsp;-- nameFilter:
-    </p>
-    <p>
-      -----------------------------------------------------
-    </p>
-    <p>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A filter to perform on the name of traversed files. If set, only files which match are brought.
-    </p>
-    <p>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This option allowes four types of inputs:
-    </p>
-    <p>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1. nothing (empty) means no filtering (default)
-    </p>
-    <p>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2. regex&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- example:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~/.*\.mp3/
-    </p>
-    <p>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3. 'simplified' regex&nbsp;&nbsp;&nbsp;&nbsp;- example:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~.*\.mp3
-    </p>
-    <p>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4. string with *&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- example:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*.mp3&nbsp;&nbsp;&nbsp;&nbsp;(equivalent to regex&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~/(?i).*\.mp3/&nbsp;&nbsp;)
-    </p>
-    <p>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5. list of strings with * and ;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- example:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*.mp3;*.png&nbsp;&nbsp;&nbsp;(equivalent to regex&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~/(?i)(.*\.mp3|.*\.png)/&nbsp;&nbsp;)
-    </p>
-    <p>
-      
-    </p>
-    <p>
-      -----------------------------------------------------
-    </p>
-    <p>
-      &nbsp;&nbsp;-- maxDepth:
-    </p>
-    <p>
-      -----------------------------------------------------
-    </p>
-    <p>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The maximum number of directory levels when recursing
-    </p>
-    <p>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(default is -1 which means no limit, set to 0 for no recursion)
-    </p>
-    <p>
-      
-    </p>
-    <p>
-      
-    </p>
-    <p>
-      
-    </p>
-    <p>
-      -----------------------------------------------------
-    </p>
-    <p>
-      &nbsp;&nbsp;-- markWhenMoved:
-    </p>
-    <p>
-      -----------------------------------------------------
-    </p>
-    <p>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;change styles to moved/renamed file Nodes
-    </p>
-    <p>
-      
-    </p>
-    <p>
-      &nbsp;set to:
-    </p>
-    <p>
-      &nbsp;&nbsp;&nbsp;&nbsp;0 : to change style only if node hasn't a previous one (default),
-    </p>
-    <p>
-      
-    </p>
-    <p>
-      &nbsp;&nbsp;&nbsp;&nbsp;1 : to allways change the style,
-    </p>
-    <p>
-      
-    </p>
-    <p>
-      &nbsp;&nbsp;&nbsp;-1 : to never change the style
-    </p>
-    <p>
-      
-    </p>
-    <p>
-      &nbsp;&nbsp;&nbsp;
-    </p>
-    <p>
-      
-    </p>
-    <p>
-      -----------------------------------------------------
-    </p>
-    <p>
-      &nbsp;&nbsp;-- checkIfReallyBroken:
-    </p>
-    <p>
-      -----------------------------------------------------
-    </p>
-    <p>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Check if existing nodes pointing to filtered files still exist.&nbsp;
-    </p>
-    <p>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This option is only useful if you defined a nameFilter before&nbsp;
-    </p>
-    <p>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;but in the map there are also some files that doesn't match&nbsp;
-    </p>
-    <p>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this filter definition&nbsp;
-    </p>
-    <p>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(for example if you brought them manually or import them&nbsp;
-    </p>
-    <p>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;before the actual namefilter setting)&nbsp;&nbsp;
-    </p>
-    <p>
-      
-    </p>
-    <p>
-      &nbsp;&nbsp;&nbsp;&nbsp;- default is 0 which means don't check --&gt; Mark node as missing also if it doesn't match the current filter,
-    </p>
-    <p>
-      
-    </p>
-    <p>
-      &nbsp;&nbsp;&nbsp;&nbsp;- set to 1 to extra check if a not matching file still exists in drive&nbsp;
-    </p>
-    <p>
-      
-    </p>
-    <p>
-      
-    </p>
-    <p>
-      ==========================================
-    </p>
-    <p>
-      &nbsp;&nbsp;&nbsp;
-    </p>
-  </body>
-</html></richcontent>
-<node TEXT="otras ubicaciones posibles" STYLE_REF="locked" FOLDED="true" ID="ID_1718694286"><richcontent CONTENT-TYPE="xml/" TYPE="DETAILS">
+<attribute NAME="linkType" VALUE="1" OBJECT="org.freeplane.features.format.FormattedNumber|1|#0.####"/>
+<richcontent TYPE="NOTE" CONTENT-TYPE="plain/markdown">
+<text>
+# MDI:  parameters
+The import of files and folders can be adapted by providing various options in the attributes of the BaseFolder node:
+
+-----------------------------------------------------
+# MDI: nameFilter:
+A filter to perform on the name of traversed files. If set, only files which match are brought. 
+This option allowes four types of inputs:
+1. nothing (empty) means no filtering (default) 
+2. regex
+  - example: `~/.*\.mp3/ `
+3. 'simplified' regex
+  - example: `~.*\.mp3` 
+4. string with *
+  - example: `*.mp3`   
+    (equivalent to regex      `~/(?i).*\.mp3/`  )
+5. list of strings with '*' and ';'
+  - example: ` *.mp3;*.png `   
+    (equivalent to regex: ` ~/(?i)(.*\.mp3|.*\.png)/ `  )
+
+-----------------------------------------------------
+
+# MDI:  maxDepth:
+
+The maximum number of directory levels when recursing   
+(default is -1 which means no limit, set to 0 for no recursion)
+
+
+-----------------------------------------------------
+
+# MDI:  linkType:
+
+Define if you want to use Absolute or Relative   
+links for files and folders.
+
+ set to:   
+
+0 : to use Absolute links
+
+1 : to use Relative links
+
+-----------------------------------------------------
+   
+# MDI:  markWhenMoved:
+
+change styles to moved/renamed file Nodes 
+
+set to:   
+ 
+0  : to change style only if node hasn't a previous one (default),
+
+1  : to allways change the style,
+
+-1 : to never change the style
+
+-----------------------------------------------------
+
+ 
+# MDI:  checkIfReallyBroken:
+Check if existing nodes pointing to filtered files still exist.   
+This option is only useful if you defined a nameFilter before 
+but in the map there are also some files that doesn't match 
+this filter definition 
+(for example if you brought them manually or import them 
+before the actual namefilter setting)  
+
+- default is 0 which means don't check --&gt; Mark node as missing also if it doesn't match the current filter,
+
+- set to 1 to extra check if a not matching file still exists in drive 
+
+
+-----------------------------------------------------
+
+</text></richcontent>
+<node TEXT="otras ubicaciones posibles" STYLE_REF="locked" FOLDED="true" ID="ID_1718694286"><richcontent TYPE="DETAILS">
 <html>
   <head>
     
@@ -473,7 +356,7 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
 </html></richcontent>
 <node TEXT="Freeplane_My-Menu-Inator" ID="ID_592401889" LINK="file:/C:/Users/Edo/Documents/GitHub/Freeplane_My-Menu-Inator/">
 <icon BUILTIN="emoji-27A1"/>
-<richcontent CONTENT-TYPE="xml/" TYPE="DETAILS">
+<richcontent TYPE="DETAILS">
 <html>
   <head>
     
@@ -485,7 +368,7 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
   </body>
 </html></richcontent>
 </node>
-<node TEXT="Freeplane_My-Menu-Inator" ID="ID_1023992290" LINK="file:/E:/Users/Edo/Documents/GitHub/Freeplane_My-Menu-Inator/"><richcontent CONTENT-TYPE="xml/" TYPE="DETAILS">
+<node TEXT="Freeplane_My-Menu-Inator" ID="ID_1023992290" LINK="file:/E:/Users/Edo/Documents/GitHub/Freeplane_My-Menu-Inator/"><richcontent TYPE="DETAILS">
 <html>
   <head>
     
@@ -497,7 +380,7 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
   </body>
 </html></richcontent>
 </node>
-<node TEXT="Freeplane_My-Menu-Inator" ID="ID_1404750339" LINK="file:/D:/Users/Edo/Documents/GitHub/Freeplane_My-Menu-Inator/"><richcontent CONTENT-TYPE="xml/" TYPE="DETAILS">
+<node TEXT="Freeplane_My-Menu-Inator" ID="ID_1404750339" LINK="file:/D:/Users/Edo/Documents/GitHub/Freeplane_My-Menu-Inator/"><richcontent TYPE="DETAILS">
 <html>
   <head>
     
@@ -512,7 +395,7 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
 </node>
 <node TEXT="files" ID="ID_1263743307">
 <attribute NAME="projectCode" VALUE="files"/>
-<node TEXT="delete" STYLE_REF="file_folder" ID="ID_1469136399" LINK="file:/C:/Users/Edo/Documents/GitHub/Freeplane_My-Menu-Inator/delete/"><richcontent CONTENT-TYPE="xml/" TYPE="DETAILS">
+<node TEXT="delete" STYLE_REF="missing" ID="ID_1469136399" LINK="delete/"><richcontent TYPE="DETAILS">
 <html>
   <head>
     
@@ -524,25 +407,26 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
   </body>
 </html></richcontent>
 </node>
-<node TEXT=".git" ID="ID_1176131600" LINK="file:/C:/Users/Edo/Documents/GitHub/Freeplane_My-Menu-Inator/.git/">
+<node TEXT=".git" ID="ID_1176131600" LINK=".git/">
 <attribute NAME="lastModifiedTime" VALUE="12-07-21 19:06" OBJECT="org.freeplane.features.format.FormattedDate|2021-07-12T19:06-0400|dd-MM-yy HH:mm"/>
 <attribute NAME="lastAccessTime" VALUE="07-08-21 18:57" OBJECT="org.freeplane.features.format.FormattedDate|2021-08-07T18:57-0400|dd-MM-yy HH:mm"/>
 <attribute NAME="creationTime" VALUE="11-03-21 12:28" OBJECT="org.freeplane.features.format.FormattedDate|2021-03-11T12:28-0300|datetime"/>
 <attribute NAME="fileSize" VALUE="4.096" OBJECT="org.freeplane.features.format.FormattedNumber|4096|#,##0"/>
 </node>
-<node TEXT=".gitattributes" ID="ID_1786719158" LINK="file:/C:/Users/Edo/Documents/GitHub/Freeplane_My-Menu-Inator/.gitattributes">
+<node TEXT=".gitignore" ID="ID_1488838488" LINK=".gitignore"/>
+<node TEXT=".gitattributes" ID="ID_1786719158" LINK=".gitattributes">
 <attribute NAME="lastModifiedTime" VALUE="11-03-21 12:28" OBJECT="org.freeplane.features.format.FormattedDate|2021-03-11T12:28-0300|datetime"/>
 <attribute NAME="lastAccessTime" VALUE="07-08-21 13:41" OBJECT="org.freeplane.features.format.FormattedDate|2021-08-07T13:41-0400|dd-MM-yy HH:mm"/>
 <attribute NAME="creationTime" VALUE="11-03-21 12:28" OBJECT="org.freeplane.features.format.FormattedDate|2021-03-11T12:28-0300|datetime"/>
 <attribute NAME="fileSize" VALUE="66" OBJECT="org.freeplane.features.format.FormattedNumber|66|#,##0"/>
 </node>
-<node TEXT="Menu-o-Matic" ID="ID_1589076031" LINK="file:/C:/Users/Edo/Documents/GitHub/Freeplane_My-Menu-Inator/Menu-o-Matic/">
+<node TEXT="Menu-o-Matic" ID="ID_1589076031" LINK="Menu-o-Matic/">
 <attribute NAME="lastModifiedTime" VALUE="12-05-22 11:04" OBJECT="org.freeplane.features.format.FormattedDate|2022-05-12T11:04-0400|dd-MM-yy HH:mm"/>
 <attribute NAME="lastAccessTime" VALUE="12-05-22 11:05" OBJECT="org.freeplane.features.format.FormattedDate|2022-05-12T11:05-0400|dd-MM-yy HH:mm"/>
 <attribute NAME="creationTime" VALUE="24-06-21 13:31" OBJECT="org.freeplane.features.format.FormattedDate|2021-06-24T13:31-0400|datetime"/>
 <attribute NAME="fileSize" VALUE="4.096" OBJECT="org.freeplane.features.format.FormattedNumber|4096|#,##0"/>
 <attribute NAME="projectCode" VALUE="Menu-o-Matic"/>
-<richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
+<richcontent TYPE="NOTE">
 <html>
   <head>
     
@@ -720,28 +604,28 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
 </html></richcontent>
 <node TEXT="lib" STYLE_REF="Organizador" ID="ID_1649002022">
 <attribute NAME="projectCode" VALUE="lib"/>
-<node TEXT="src" STYLE_REF="file_folder" ID="ID_1777746420" LINK="file:/C:/Users/Edo/Documents/GitHub/Freeplane_My-Menu-Inator/Menu-o-Matic/src/">
+<node TEXT="src" STYLE_REF="file_folder" ID="ID_1777746420" LINK="Menu-o-Matic/src/">
 <attribute NAME="lastModifiedTime" VALUE="24-06-21 13:31" OBJECT="org.freeplane.features.format.FormattedDate|2021-06-24T13:31-0400|datetime"/>
 <attribute NAME="lastAccessTime" VALUE="12-05-22 11:05" OBJECT="org.freeplane.features.format.FormattedDate|2022-05-12T11:05-0400|dd-MM-yy HH:mm"/>
 <attribute NAME="creationTime" VALUE="24-06-21 13:31" OBJECT="org.freeplane.features.format.FormattedDate|2021-06-24T13:31-0400|datetime"/>
 <attribute NAME="fileSize" VALUE="0" OBJECT="org.freeplane.features.format.FormattedNumber|0|#,##0"/>
-<node TEXT="main" STYLE_REF="file_folder" ID="ID_1288455559" LINK="file:/C:/Users/Edo/Documents/GitHub/Freeplane_My-Menu-Inator/Menu-o-Matic/src/main/">
+<node TEXT="main" STYLE_REF="file_folder" ID="ID_1288455559" LINK="Menu-o-Matic/src/main/">
 <attribute NAME="lastModifiedTime" VALUE="24-06-21 13:31" OBJECT="org.freeplane.features.format.FormattedDate|2021-06-24T13:31-0400|datetime"/>
 <attribute NAME="lastAccessTime" VALUE="12-05-22 11:05" OBJECT="org.freeplane.features.format.FormattedDate|2022-05-12T11:05-0400|dd-MM-yy HH:mm"/>
 <attribute NAME="creationTime" VALUE="24-06-21 13:31" OBJECT="org.freeplane.features.format.FormattedDate|2021-06-24T13:31-0400|datetime"/>
 <attribute NAME="fileSize" VALUE="0" OBJECT="org.freeplane.features.format.FormattedNumber|0|#,##0"/>
-<node TEXT="groovy" STYLE_REF="file_folder" ID="ID_1812743557" LINK="file:/C:/Users/Edo/Documents/GitHub/Freeplane_My-Menu-Inator/Menu-o-Matic/src/main/groovy/">
+<node TEXT="groovy" STYLE_REF="file_folder" ID="ID_1812743557" LINK="Menu-o-Matic/src/main/groovy/">
 <icon BUILTIN="bookmarks/Bookmark 1"/>
 <attribute NAME="lastModifiedTime" VALUE="11-07-21 19:07" OBJECT="org.freeplane.features.format.FormattedDate|2021-07-11T19:07-0400|dd-MM-yy HH:mm"/>
 <attribute NAME="lastAccessTime" VALUE="12-05-22 11:05" OBJECT="org.freeplane.features.format.FormattedDate|2022-05-12T11:05-0400|dd-MM-yy HH:mm"/>
 <attribute NAME="creationTime" VALUE="24-06-21 13:31" OBJECT="org.freeplane.features.format.FormattedDate|2021-06-24T13:31-0400|datetime"/>
 <attribute NAME="fileSize" VALUE="4.096" OBJECT="org.freeplane.features.format.FormattedNumber|4096|#,##0"/>
-<node TEXT="WSE_redux.groovy" ID="ID_773525959" LINK="file:/C:/Users/Edo/Documents/GitHub/Freeplane_My-Menu-Inator/Menu-o-Matic/src/main/groovy/WSE_redux.groovy">
+<node TEXT="WSE_redux.groovy" ID="ID_773525959" LINK="Menu-o-Matic/src/main/groovy/WSE_redux.groovy">
 <attribute NAME="lastModifiedTime" VALUE="25-06-21 10:05" OBJECT="org.freeplane.features.format.FormattedDate|2021-06-25T10:05-0400|datetime"/>
 <attribute NAME="lastAccessTime" VALUE="06-11-21 23:04" OBJECT="org.freeplane.features.format.FormattedDate|2021-11-06T23:04-0300|dd-MM-yy HH:mm"/>
 <attribute NAME="creationTime" VALUE="21-06-21 13:51" OBJECT="org.freeplane.features.format.FormattedDate|2021-06-21T13:51-0400|datetime"/>
 <attribute NAME="fileSize" VALUE="2.412" OBJECT="org.freeplane.features.format.FormattedNumber|2412|#,##0"/>
-<richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
+<richcontent TYPE="NOTE">
 <html>
   <head>
     
@@ -985,15 +869,14 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
       
     </p>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 </node>
-<node TEXT="DialogKeyboardNavigation.groovy" ID="ID_1310075859" LINK="file:/C:/Users/Edo/Documents/GitHub/Freeplane_My-Menu-Inator/Menu-o-Matic/src/main/groovy/DialogKeyboardNavigation.groovy">
+<node TEXT="DialogKeyboardNavigation.groovy" ID="ID_1310075859" LINK="Menu-o-Matic/src/main/groovy/DialogKeyboardNavigation.groovy">
 <attribute NAME="lastModifiedTime" VALUE="11-07-21 19:07" OBJECT="org.freeplane.features.format.FormattedDate|2021-07-11T19:07-0400|dd-MM-yy HH:mm"/>
 <attribute NAME="lastAccessTime" VALUE="15-08-21 14:34" OBJECT="org.freeplane.features.format.FormattedDate|2021-08-15T14:34-0400|dd-MM-yy HH:mm"/>
 <attribute NAME="creationTime" VALUE="11-07-21 19:07" OBJECT="org.freeplane.features.format.FormattedDate|2021-07-11T19:07-0400|dd-MM-yy HH:mm"/>
 <attribute NAME="fileSize" VALUE="3.658" OBJECT="org.freeplane.features.format.FormattedNumber|3658|#,##0"/>
-<richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
+<richcontent TYPE="NOTE">
 <html>
   <head>
     
@@ -1300,15 +1183,14 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
       }
     </p>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 </node>
-<node TEXT="MenuAction.groovy" ID="ID_1123028897" LINK="file:/C:/Users/Edo/Documents/GitHub/Freeplane_My-Menu-Inator/Menu-o-Matic/src/main/groovy/MenuAction.groovy">
+<node TEXT="MenuAction.groovy" ID="ID_1123028897" LINK="Menu-o-Matic/src/main/groovy/MenuAction.groovy">
 <attribute NAME="lastModifiedTime" VALUE="10-03-22 18:51" OBJECT="org.freeplane.features.format.FormattedDate|2022-03-10T18:51-0300|dd-MM-yy HH:mm"/>
 <attribute NAME="lastAccessTime" VALUE="28-03-22 11:13" OBJECT="org.freeplane.features.format.FormattedDate|2022-03-28T11:13-0300|dd-MM-yy HH:mm"/>
 <attribute NAME="creationTime" VALUE="25-06-21 09:30" OBJECT="org.freeplane.features.format.FormattedDate|2021-06-25T09:30-0400|datetime"/>
 <attribute NAME="fileSize" VALUE="2.987" OBJECT="org.freeplane.features.format.FormattedNumber|2987|#,##0"/>
-<richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
+<richcontent TYPE="NOTE">
 <html>
   <head>
     
@@ -1591,9 +1473,8 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
       }
     </p>
   </body>
-</html>
-</richcontent>
-<node TEXT="versión para pruebas (MenuAction)" ID="ID_1864784835"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
+</html></richcontent>
+<node TEXT="versión para pruebas (MenuAction)" ID="ID_1864784835"><richcontent TYPE="NOTE">
 <html>
   <head>
     
@@ -1883,7 +1764,7 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
     </p>
   </body>
 </html></richcontent>
-<richcontent CONTENT-TYPE="xml/" TYPE="DETAILS">
+<richcontent TYPE="DETAILS">
 <html>
   <head>
     
@@ -1896,12 +1777,12 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
 </html></richcontent>
 </node>
 </node>
-<node TEXT="PackMenu.groovy" ID="ID_268320974" LINK="file:/C:/Users/Edo/Documents/GitHub/Freeplane_My-Menu-Inator/Menu-o-Matic/src/main/groovy/PackMenu.groovy">
+<node TEXT="PackMenu.groovy" ID="ID_268320974" LINK="Menu-o-Matic/src/main/groovy/PackMenu.groovy">
 <attribute NAME="lastModifiedTime" VALUE="08-08-21 16:13" OBJECT="org.freeplane.features.format.FormattedDate|2021-08-08T16:13-0400|dd-MM-yy HH:mm"/>
 <attribute NAME="lastAccessTime" VALUE="08-03-22 23:34" OBJECT="org.freeplane.features.format.FormattedDate|2022-03-08T23:34-0300|dd-MM-yy HH:mm"/>
 <attribute NAME="creationTime" VALUE="11-07-21 19:07" OBJECT="org.freeplane.features.format.FormattedDate|2021-07-11T19:07-0400|dd-MM-yy HH:mm"/>
 <attribute NAME="fileSize" VALUE="8.709" OBJECT="org.freeplane.features.format.FormattedNumber|8709|#,##0"/>
-<richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
+<richcontent TYPE="NOTE">
 <html>
   <head>
     
@@ -2589,13 +2470,12 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
       }
     </p>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 <node TEXT="MoM Future A" STYLE_REF="milestone" ID="ID_1214021140">
 <node TEXT="Crear forma de que un botón incluya varios comandos" STYLE_REF="maybeTask" ID="ID_1260558966">
 <node TEXT="y los ejecute en orden" ID="ID_1787767020"/>
 <node TEXT="¿aplica scripts o sólo comandos?" ID="ID_1027772698"/>
-<node TEXT="alternativas" FOLDED="true" ID="ID_1501100269">
+<node TEXT="alternativas" ID="ID_1501100269">
 <node TEXT="puede requerir nuevo estilo o ícono que indice nodo padre de unión" FOLDED="true" ID="ID_1944341740">
 <node TEXT="para que package entienda cuales son los comandos a unir" ID="ID_403432332"/>
 </node>
@@ -2615,12 +2495,12 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
 </node>
 </node>
 </node>
-<node TEXT="LaunchDialog.groovy" ID="ID_1915686947" LINK="file:/C:/Users/Edo/Documents/GitHub/Freeplane_My-Menu-Inator/Menu-o-Matic/src/main/groovy/LaunchDialog.groovy">
+<node TEXT="LaunchDialog.groovy" ID="ID_1915686947" LINK="Menu-o-Matic/src/main/groovy/LaunchDialog.groovy">
 <attribute NAME="lastModifiedTime" VALUE="08-08-21 16:04" OBJECT="org.freeplane.features.format.FormattedDate|2021-08-08T16:04-0400|dd-MM-yy HH:mm"/>
 <attribute NAME="lastAccessTime" VALUE="10-04-22 12:10" OBJECT="org.freeplane.features.format.FormattedDate|2022-04-10T12:10-0400|dd-MM-yy HH:mm"/>
 <attribute NAME="creationTime" VALUE="11-07-21 19:07" OBJECT="org.freeplane.features.format.FormattedDate|2021-07-11T19:07-0400|dd-MM-yy HH:mm"/>
 <attribute NAME="fileSize" VALUE="7.052" OBJECT="org.freeplane.features.format.FormattedNumber|7052|#,##0"/>
-<richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
+<richcontent TYPE="NOTE">
 <html>
   <head>
     
@@ -3248,8 +3128,7 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
       }
     </p>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 <node TEXT="MoM Future A" STYLE_REF="milestone" ID="ID_1002832824">
 <node TEXT="Hacer que MoM pueda estar en ToolsTab" STYLE_REF="maybeTask" ID="ID_91790832">
 <node TEXT="cada grupo de herramientas se anexa como una &quot;sección&quot;" ID="ID_513233729"/>
@@ -3261,11 +3140,41 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
 <node TEXT="botón que hace &quot;pack&quot; minimizando ancho necesario" ID="ID_714383084"/>
 </node>
 </node>
+<node TEXT="Menu-o-Matic" ID="ID_1838652963" LINK="menuitem:_addons.menuOMatic.launchCustomDialog_on_single_node">
+<attribute_layout NAME_WIDTH="85.78723 pt" VALUE_WIDTH="1598.55316 pt"/>
+<attribute NAME="tbActions" VALUE="[addons.menuOMatic.launchCustomDialog_on_single_node, addons.menuOMatic.packCustomMenu_on_single_node, addons.menuOMatic.unpackCustomMenu_on_single_node, addons.menuOMatic.lauchDialogFromNodes_on_single_node, addons.menuOMatic.launchDialogsFromBranch_on_single_node, addons.menuOMatic.listCustomDialogs_on_single_node, addons.menuOMatic.listCustomMenusFromMap_on_single_node]"/>
+<attribute NAME="tbIcons" VALUE="[IconAction.emoji-1F680, IconAction.emoji-1F4E6, IconAction.emoji-1F468-200D-1F527, IconAction.emoji-2728, IconAction.emoji-1F387, IconAction.list, IconAction.mindmap]"/>
+<attribute NAME="tbLabels" VALUE="[launch menu dialog, pack menu, unpack menu, launch directly, launch all, list menu dialogs, list menu packages from map]"/>
+<attribute NAME="tbMaxTextLength" VALUE="50" OBJECT="org.freeplane.features.format.FormattedNumber|50"/>
+<attribute NAME="tbShowIcons" VALUE="true"/>
+<attribute NAME="tbShowLabels" VALUE="false"/>
+<attribute NAME="tbFocusToMap" VALUE="true"/>
+<attribute NAME="tbTitle" VALUE="Menu-o-Matic"/>
+<richcontent TYPE="DETAILS">
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      customMenu&nbsp;&nbsp;
+    </p>
+    <p>
+      &nbsp;&nbsp;- icons only
+    </p>
+    <p>
+      &nbsp;&nbsp;- return to mindmap
+    </p>
+  </body>
+</html></richcontent>
+</node>
 </node>
 </node>
 <node TEXT="MoM Future A" STYLE_REF="milestone" ID="ID_1722534694">
 <node TEXT="agregar importMoMStyles" STYLE_REF="pendingTask" ID="ID_1898413286"/>
 </node>
+<node TEXT="TabPane.groovy" STYLE_REF="freshNew" ID="ID_439442031" LINK="Menu-o-Matic/src/main/groovy/TabPane.groovy"/>
+<node TEXT="MoMToolbar.groovy" STYLE_REF="freshNew" ID="ID_1177945776" LINK="Menu-o-Matic/src/main/groovy/MoMToolbar.groovy"/>
 </node>
 </node>
 </node>
@@ -3275,12 +3184,13 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
 <attribute NAME="creationTime" VALUE="24-06-21 13:31" OBJECT="org.freeplane.features.format.FormattedDate|2021-06-24T13:31-0400|datetime"/>
 <attribute NAME="fileSize" VALUE="0" OBJECT="org.freeplane.features.format.FormattedNumber|0|#,##0"/>
 </node>
-<node TEXT="lib" ID="ID_262688417" LINK="file:/C:/Users/Edo/Documents/GitHub/Freeplane_My-Menu-Inator/Menu-o-Matic/lib/">
+<node TEXT="build" STYLE_REF="locked" ID="ID_918774065" LINK="Menu-o-Matic/build/"/>
+<node TEXT="lib" ID="ID_262688417" LINK="Menu-o-Matic/lib/">
 <attribute NAME="lastModifiedTime" VALUE="07-08-21 13:42" OBJECT="org.freeplane.features.format.FormattedDate|2021-08-07T13:42-0400|dd-MM-yy HH:mm"/>
 <attribute NAME="lastAccessTime" VALUE="12-05-22 11:05" OBJECT="org.freeplane.features.format.FormattedDate|2022-05-12T11:05-0400|dd-MM-yy HH:mm"/>
 <attribute NAME="creationTime" VALUE="07-08-21 13:42" OBJECT="org.freeplane.features.format.FormattedDate|2021-08-07T13:42-0400|dd-MM-yy HH:mm"/>
 <attribute NAME="fileSize" VALUE="0" OBJECT="org.freeplane.features.format.FormattedNumber|0|#,##0"/>
-<node TEXT="Menu-o-Matic.jar" ID="ID_1498152516" LINK="file:/C:/Users/Edo/Documents/GitHub/Freeplane_My-Menu-Inator/Menu-o-Matic/lib/Menu-o-Matic.jar">
+<node TEXT="Menu-o-Matic.jar" ID="ID_1498152516" LINK="Menu-o-Matic/lib/Menu-o-Matic.jar">
 <attribute NAME="lastModifiedTime" VALUE="08-08-21 16:05" OBJECT="org.freeplane.features.format.FormattedDate|2021-08-08T16:05-0400|dd-MM-yy HH:mm"/>
 <attribute NAME="lastAccessTime" VALUE="12-05-22 11:04" OBJECT="org.freeplane.features.format.FormattedDate|2022-05-12T11:04-0400|dd-MM-yy HH:mm"/>
 <attribute NAME="creationTime" VALUE="07-08-21 13:42" OBJECT="org.freeplane.features.format.FormattedDate|2021-08-07T13:42-0400|dd-MM-yy HH:mm"/>
@@ -3288,19 +3198,19 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
 </node>
 </node>
 </node>
-<node TEXT="scripts" STYLE_REF="file_folder" ID="ID_283277560" LINK="file:/C:/Users/Edo/Documents/GitHub/Freeplane_My-Menu-Inator/Menu-o-Matic/scripts/">
+<node TEXT="scripts" STYLE_REF="file_folder" FOLDED="true" ID="ID_283277560" LINK="Menu-o-Matic/scripts/">
 <attribute NAME="lastModifiedTime" VALUE="12-05-22 10:19" OBJECT="org.freeplane.features.format.FormattedDate|2022-05-12T10:19-0400|dd-MM-yy HH:mm"/>
 <attribute NAME="lastAccessTime" VALUE="12-05-22 11:05" OBJECT="org.freeplane.features.format.FormattedDate|2022-05-12T11:05-0400|dd-MM-yy HH:mm"/>
 <attribute NAME="creationTime" VALUE="24-06-21 13:31" OBJECT="org.freeplane.features.format.FormattedDate|2021-06-24T13:31-0400|datetime"/>
 <attribute NAME="fileSize" VALUE="4.096" OBJECT="org.freeplane.features.format.FormattedNumber|4096|#,##0"/>
 <attribute NAME="projectCode" VALUE="scripts"/>
-<node TEXT="launchMenuOMaticDialog.groovy" ID="ID_568309708" LINK="file:/C:/Users/Edo/Documents/GitHub/Freeplane_My-Menu-Inator/Menu-o-Matic/scripts/launchMenuOMaticDialog.groovy">
+<node TEXT="launchMenuOMaticDialog.groovy" ID="ID_568309708" LINK="Menu-o-Matic/scripts/launchMenuOMaticDialog.groovy">
 <attribute NAME="lastModifiedTime" VALUE="12-05-22 10:20" OBJECT="org.freeplane.features.format.FormattedDate|2022-05-12T10:20-0400|dd-MM-yy HH:mm"/>
 <attribute NAME="lastAccessTime" VALUE="12-05-22 11:04" OBJECT="org.freeplane.features.format.FormattedDate|2022-05-12T11:04-0400|dd-MM-yy HH:mm"/>
 <attribute NAME="creationTime" VALUE="08-08-21 13:12" OBJECT="org.freeplane.features.format.FormattedDate|2021-08-08T13:12-0400|datetime"/>
 <attribute NAME="fileSize" VALUE="1.320" OBJECT="org.freeplane.features.format.FormattedNumber|1320|#,##0"/>
 <attribute NAME="projectCode" VALUE="laun.Menu.Mati.Dial.groo"/>
-<richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
+<richcontent TYPE="NOTE">
 <html>
   <head>
     
@@ -3386,7 +3296,7 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
     </p>
   </body>
 </html></richcontent>
-<richcontent CONTENT-TYPE="xml/" TYPE="DETAILS">
+<richcontent TYPE="DETAILS">
 <html>
   <head>
     
@@ -3404,13 +3314,13 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
 </node>
 </node>
 <node TEXT="Designing" ID="ID_1407265156">
-<node TEXT="getMenuCommand.groovy" ID="ID_1957867000" LINK="file:/C:/Users/Edo/Documents/GitHub/Freeplane_My-Menu-Inator/Menu-o-Matic/scripts/getMenuCommand.groovy">
+<node TEXT="getMenuCommand.groovy" ID="ID_1957867000" LINK="Menu-o-Matic/scripts/getMenuCommand.groovy">
 <attribute NAME="lastModifiedTime" VALUE="25-06-21 10:21" OBJECT="org.freeplane.features.format.FormattedDate|2021-06-25T10:21-0400|datetime"/>
 <attribute NAME="lastAccessTime" VALUE="12-05-22 11:04" OBJECT="org.freeplane.features.format.FormattedDate|2022-05-12T11:04-0400|dd-MM-yy HH:mm"/>
 <attribute NAME="creationTime" VALUE="25-06-21 09:25" OBJECT="org.freeplane.features.format.FormattedDate|2021-06-25T09:25-0400|datetime"/>
 <attribute NAME="fileSize" VALUE="73" OBJECT="org.freeplane.features.format.FormattedNumber|73|#,##0"/>
 <attribute NAME="projectCode" VALUE="get.Menu.Comman.groovy"/>
-<richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
+<richcontent TYPE="NOTE">
 <html>
   <head>
     
@@ -3428,13 +3338,13 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
   </body>
 </html></richcontent>
 </node>
-<node TEXT="packCustomMenu.groovy" ID="ID_509211543" LINK="file:/C:/Users/Edo/Documents/GitHub/Freeplane_My-Menu-Inator/Menu-o-Matic/scripts/packCustomMenu.groovy">
+<node TEXT="packCustomMenu.groovy" ID="ID_509211543" LINK="Menu-o-Matic/scripts/packCustomMenu.groovy">
 <attribute NAME="lastModifiedTime" VALUE="25-06-21 10:02" OBJECT="org.freeplane.features.format.FormattedDate|2021-06-25T10:02-0400|datetime"/>
 <attribute NAME="lastAccessTime" VALUE="12-05-22 11:04" OBJECT="org.freeplane.features.format.FormattedDate|2022-05-12T11:04-0400|dd-MM-yy HH:mm"/>
 <attribute NAME="creationTime" VALUE="22-06-21 19:14" OBJECT="org.freeplane.features.format.FormattedDate|2021-06-22T19:14-0400|datetime"/>
 <attribute NAME="fileSize" VALUE="62" OBJECT="org.freeplane.features.format.FormattedNumber|62|#,##0"/>
 <attribute NAME="projectCode" VALUE="pack.Custom.Menu.groovy"/>
-<richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
+<richcontent TYPE="NOTE">
 <html>
   <head>
     
@@ -3453,7 +3363,7 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
 </html></richcontent>
 <node TEXT="if title node has details indicating options then it don&apos;t has to ask parameters" STYLE_REF="completedTask" FOLDED="true" ID="ID_264377532">
 <node TEXT="tests" ID="ID_602097184">
-<node TEXT="xxx" ID="ID_576705414"><richcontent CONTENT-TYPE="xml/" TYPE="DETAILS">
+<node TEXT="xxx" ID="ID_576705414"><richcontent TYPE="DETAILS">
 <html>
   <head>
     
@@ -3473,7 +3383,7 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
 <node TEXT="Centered text" ID="ID_1726415650" LINK="menuitem:_TextAlignAction.CENTER"/>
 <node TEXT="Blinking node" ID="ID_304876" LINK="menuitem:_BlinkingNodeHookAction"/>
 </node>
-<node TEXT="xxx" ID="ID_1658567708"><richcontent CONTENT-TYPE="xml/" TYPE="DETAILS">
+<node TEXT="xxx" ID="ID_1658567708"><richcontent TYPE="DETAILS">
 <html>
   <head>
     
@@ -3492,7 +3402,7 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
 <node TEXT="Strike through" ID="ID_394061183" LINK="menuitem:_StrikeThroughAction"/>
 <node TEXT="Centered text" ID="ID_1850818250" LINK="menuitem:_TextAlignAction.CENTER"/>
 </node>
-<node TEXT="xxx" ID="ID_1651623210"><richcontent CONTENT-TYPE="xml/" TYPE="DETAILS">
+<node TEXT="xxx" ID="ID_1651623210"><richcontent TYPE="DETAILS">
 <html>
   <head>
     
@@ -3509,7 +3419,7 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
 <node TEXT="Centered text" ID="ID_1509788199" LINK="menuitem:_TextAlignAction.CENTER"/>
 <node TEXT="Blinking node" ID="ID_278612219" LINK="menuitem:_BlinkingNodeHookAction"/>
 </node>
-<node TEXT="xxx" ID="ID_527842965"><richcontent CONTENT-TYPE="xml/" TYPE="DETAILS">
+<node TEXT="xxx" ID="ID_527842965"><richcontent TYPE="DETAILS">
 <html>
   <head>
     
@@ -3529,13 +3439,13 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
 </node>
 </node>
 </node>
-<node TEXT="unpackCustomMenu.groovy" ID="ID_1011974878" LINK="file:/C:/Users/Edo/Documents/GitHub/Freeplane_My-Menu-Inator/Menu-o-Matic/scripts/unpackCustomMenu.groovy">
+<node TEXT="unpackCustomMenu.groovy" ID="ID_1011974878" LINK="Menu-o-Matic/scripts/unpackCustomMenu.groovy">
 <attribute NAME="lastModifiedTime" VALUE="25-06-21 10:03" OBJECT="org.freeplane.features.format.FormattedDate|2021-06-25T10:03-0400|datetime"/>
 <attribute NAME="lastAccessTime" VALUE="12-05-22 11:04" OBJECT="org.freeplane.features.format.FormattedDate|2022-05-12T11:04-0400|dd-MM-yy HH:mm"/>
 <attribute NAME="creationTime" VALUE="22-06-21 19:04" OBJECT="org.freeplane.features.format.FormattedDate|2021-06-22T19:04-0400|datetime"/>
 <attribute NAME="fileSize" VALUE="64" OBJECT="org.freeplane.features.format.FormattedNumber|64|#,##0"/>
 <attribute NAME="projectCode" VALUE="unpac.Custo.Menu.groov"/>
-<richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
+<richcontent TYPE="NOTE">
 <html>
   <head>
     
@@ -3553,12 +3463,12 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
   </body>
 </html></richcontent>
 </node>
-<node TEXT="insertMenuOMaticPackage.groovy" ID="ID_270559908" LINK="file:/C:/Users/Edo/Documents/GitHub/Freeplane_My-Menu-Inator/Menu-o-Matic/scripts/insertMenuOMaticPackage.groovy">
+<node TEXT="insertMenuOMaticPackage.groovy" ID="ID_270559908" LINK="Menu-o-Matic/scripts/insertMenuOMaticPackage.groovy">
 <attribute NAME="lastModifiedTime" VALUE="12-05-22 10:23" OBJECT="org.freeplane.features.format.FormattedDate|2022-05-12T10:23-0400|datetime"/>
 <attribute NAME="lastAccessTime" VALUE="12-05-22 11:04" OBJECT="org.freeplane.features.format.FormattedDate|2022-05-12T11:04-0400|datetime"/>
 <attribute NAME="creationTime" VALUE="12-05-22 10:19" OBJECT="org.freeplane.features.format.FormattedDate|2022-05-12T10:19-0400|datetime"/>
 <attribute NAME="fileSize" VALUE="1.305" OBJECT="org.freeplane.features.format.FormattedNumber|1305|#,##0"/>
-<richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
+<richcontent TYPE="NOTE">
 <html>
   <head>
     
@@ -3622,7 +3532,7 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
 </html></richcontent>
 </node>
 <node TEXT="get Map/Branch used icons actions" STYLE_REF="nextTask" ID="ID_232294406">
-<node TEXT="present icons in map/branch as buttons" FOLDED="true" ID="ID_1197565766" VGAP_QUANTITY="2 px"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
+<node TEXT="present icons in map/branch as buttons" FOLDED="true" ID="ID_1197565766" VGAP_QUANTITY="2 px"><richcontent TYPE="NOTE">
 <html>
   <head>
     
@@ -3728,9 +3638,8 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
       }
     </p>
   </body>
-</html>
-</richcontent>
-<richcontent CONTENT-TYPE="xml/" TYPE="DETAILS">
+</html></richcontent>
+<richcontent TYPE="DETAILS">
 <html>
   <head>
     
@@ -3776,7 +3685,7 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
 <node TEXT="deciduous tree" ID="ID_1890062601" LINK="menuitem:_IconAction.emoji-1F333"/>
 <node TEXT="fire" ID="ID_1805127394" LINK="menuitem:_IconAction.emoji-1F525"/>
 <node TEXT="sauropod" ID="ID_5563537" LINK="menuitem:_IconAction.emoji-1F995"/>
-<node TEXT="IconAction.bookmarks/Bookmark 1" OBJECT="org.codehaus.groovy.runtime.GStringImpl|IconAction.bookmarks/Bookmark 1" ID="ID_307633361" LINK="menuitem:_IconAction.bookmarks/Bookmark%201"/>
+<node TEXT="org.codehaus.groovy.runtime.GStringImpl|IconAction.bookmarks/Bookmark 1" ID="ID_307633361" LINK="menuitem:_IconAction.bookmarks/Bookmark%201"/>
 <node TEXT="folder-black-48dp - copia" ID="ID_173452021" LINK="menuitem:_IconAction.folder-black-48dp%20-%20copia"/>
 <node TEXT="Imp_3" ID="ID_624685296" LINK="menuitem:_IconAction.Importancia/Imp_3"/>
 </node>
@@ -3784,7 +3693,7 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
 </node>
 </node>
 <node TEXT="get Map/Branch used styles actions" STYLE_REF="nextTask" ID="ID_817232585">
-<node TEXT="present styles in selected branch as buttons" FOLDED="true" ID="ID_563376606"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
+<node TEXT="present styles in selected branch as buttons" FOLDED="true" ID="ID_563376606"><richcontent TYPE="NOTE">
 <html>
   <head>
     
@@ -3887,9 +3796,8 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
       }
     </p>
   </body>
-</html>
-</richcontent>
-<richcontent CONTENT-TYPE="xml/" TYPE="DETAILS">
+</html></richcontent>
+<richcontent TYPE="DETAILS">
 <html>
   <head>
     
@@ -3912,7 +3820,7 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
 <node TEXT="completedTask" ID="ID_220251455" LINK="menuitem:_AssignStyleAction.completedTask">
 <icon BUILTIN="checked"/>
 </node>
-<node TEXT="file_folder" ID="ID_603271378" LINK="menuitem:_AssignStyleAction.file_folder"/>
+<node TEXT="file_folder" ID="ID_603271378" LINK="Menu-o-Matic/scripts/file_folder/"/>
 <node TEXT="locked" ID="ID_1625146554" LINK="menuitem:_AssignStyleAction.locked">
 <icon BUILTIN="emoji-1F512"/>
 </node>
@@ -3958,7 +3866,7 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
 </node>
 </node>
 <node TEXT="Launching" ID="ID_1688826044">
-<node TEXT="launchCustomDialog.groovy" ID="ID_1401230090" LINK="file:/C:/Users/Edo/Documents/GitHub/Freeplane_My-Menu-Inator/Menu-o-Matic/scripts/launchCustomDialog.groovy"><richcontent CONTENT-TYPE="xml/" TYPE="DETAILS">
+<node TEXT="launchCustomDialog.groovy" ID="ID_1401230090" LINK="Menu-o-Matic/scripts/launchCustomDialog.groovy"><richcontent TYPE="DETAILS">
 <html>
   <head>
     
@@ -3974,7 +3882,7 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
 <attribute NAME="creationTime" VALUE="22-06-21 19:17" OBJECT="org.freeplane.features.format.FormattedDate|2021-06-22T19:17-0400|datetime"/>
 <attribute NAME="fileSize" VALUE="60" OBJECT="org.freeplane.features.format.FormattedNumber|60|#,##0"/>
 <attribute NAME="projectCode" VALUE="launc.Custo.Dialo.groov"/>
-<richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
+<richcontent TYPE="NOTE">
 <html>
   <head>
     
@@ -3995,13 +3903,13 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
   </body>
 </html></richcontent>
 </node>
-<node TEXT="lauchDialogFromNodes.groovy" FOLDED="true" ID="ID_1875583659" LINK="file:/C:/Users/Edo/Documents/GitHub/Freeplane_My-Menu-Inator/Menu-o-Matic/scripts/lauchDialogFromNodes.groovy">
+<node TEXT="lauchDialogFromNodes.groovy" FOLDED="true" ID="ID_1875583659" LINK="Menu-o-Matic/scripts/lauchDialogFromNodes.groovy">
 <attribute NAME="lastModifiedTime" VALUE="11-07-21 19:07" OBJECT="org.freeplane.features.format.FormattedDate|2021-07-11T19:07-0400|dd-MM-yy HH:mm"/>
 <attribute NAME="lastAccessTime" VALUE="12-05-22 11:04" OBJECT="org.freeplane.features.format.FormattedDate|2022-05-12T11:04-0400|dd-MM-yy HH:mm"/>
 <attribute NAME="creationTime" VALUE="11-07-21 19:07" OBJECT="org.freeplane.features.format.FormattedDate|2021-07-11T19:07-0400|dd-MM-yy HH:mm"/>
 <attribute NAME="fileSize" VALUE="157" OBJECT="org.freeplane.features.format.FormattedNumber|157|#,##0"/>
 <attribute NAME="projectCode" VALUE="lauc.Dial.From.Node.groo"/>
-<richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
+<richcontent TYPE="NOTE">
 <html>
   <head>
     
@@ -4029,13 +3937,13 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
 </html></richcontent>
 <node ID="ID_50619971" CONTENT_ID="ID_264377532"/>
 </node>
-<node TEXT="launchDialogsFromBranch.groovy" ID="ID_1503356647" LINK="file:/C:/Users/Edo/Documents/GitHub/Freeplane_My-Menu-Inator/Menu-o-Matic/scripts/launchDialogsFromBranch.groovy">
+<node TEXT="launchDialogsFromBranch.groovy" ID="ID_1503356647" LINK="Menu-o-Matic/scripts/launchDialogsFromBranch.groovy">
 <attribute NAME="lastModifiedTime" VALUE="11-07-21 19:07" OBJECT="org.freeplane.features.format.FormattedDate|2021-07-11T19:07-0400|dd-MM-yy HH:mm"/>
 <attribute NAME="lastAccessTime" VALUE="12-05-22 11:04" OBJECT="org.freeplane.features.format.FormattedDate|2022-05-12T11:04-0400|dd-MM-yy HH:mm"/>
 <attribute NAME="creationTime" VALUE="11-07-21 19:07" OBJECT="org.freeplane.features.format.FormattedDate|2021-07-11T19:07-0400|dd-MM-yy HH:mm"/>
 <attribute NAME="fileSize" VALUE="130" OBJECT="org.freeplane.features.format.FormattedNumber|130|#,##0"/>
 <attribute NAME="projectCode" VALUE="laun.Dial.From.Bran.groo"/>
-<richcontent CONTENT-TYPE="xml/" TYPE="DETAILS">
+<richcontent TYPE="DETAILS">
 <html>
   <head>
     
@@ -4046,7 +3954,7 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
     </p>
   </body>
 </html></richcontent>
-<richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
+<richcontent TYPE="NOTE">
 <html>
   <head>
     
@@ -4076,13 +3984,13 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
   </body>
 </html></richcontent>
 </node>
-<node TEXT="listCustomMenusFromMap.groovy" ID="ID_247227183" LINK="file:/C:/Users/Edo/Documents/GitHub/Freeplane_My-Menu-Inator/Menu-o-Matic/scripts/listCustomMenusFromMap.groovy">
+<node TEXT="listCustomMenusFromMap.groovy" ID="ID_247227183" LINK="Menu-o-Matic/scripts/listCustomMenusFromMap.groovy">
 <attribute NAME="lastModifiedTime" VALUE="08-08-21 16:04" OBJECT="org.freeplane.features.format.FormattedDate|2021-08-08T16:04-0400|dd-MM-yy HH:mm"/>
 <attribute NAME="lastAccessTime" VALUE="12-05-22 11:04" OBJECT="org.freeplane.features.format.FormattedDate|2022-05-12T11:04-0400|dd-MM-yy HH:mm"/>
 <attribute NAME="creationTime" VALUE="07-08-21 20:52" OBJECT="org.freeplane.features.format.FormattedDate|2021-08-07T20:52-0400|datetime"/>
 <attribute NAME="fileSize" VALUE="657" OBJECT="org.freeplane.features.format.FormattedNumber|657|#,##0"/>
 <attribute NAME="projectCode" VALUE="list.Cust.Menu.From.Map.groo"/>
-<richcontent CONTENT-TYPE="xml/" TYPE="DETAILS">
+<richcontent TYPE="DETAILS">
 <html>
   <head>
     
@@ -4093,7 +4001,7 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
     </p>
   </body>
 </html></richcontent>
-<richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
+<richcontent TYPE="NOTE">
 <html>
   <head>
     
@@ -4161,7 +4069,7 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
 </node>
 </node>
 <node TEXT="Navigating" ID="ID_1591150376">
-<node TEXT="listCustomDialogs.groovy" ID="ID_1969310287" LINK="file:/C:/Users/Edo/Documents/GitHub/Freeplane_My-Menu-Inator/Menu-o-Matic/scripts/listCustomDialogs.groovy"><richcontent CONTENT-TYPE="xml/" TYPE="DETAILS">
+<node TEXT="listCustomDialogs.groovy" ID="ID_1969310287" LINK="Menu-o-Matic/scripts/listCustomDialogs.groovy"><richcontent TYPE="DETAILS">
 <html>
   <head>
     
@@ -4176,7 +4084,7 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
 <attribute NAME="lastAccessTime" VALUE="12-05-22 11:04" OBJECT="org.freeplane.features.format.FormattedDate|2022-05-12T11:04-0400|dd-MM-yy HH:mm"/>
 <attribute NAME="creationTime" VALUE="22-06-21 19:20" OBJECT="org.freeplane.features.format.FormattedDate|2021-06-22T19:20-0400|datetime"/>
 <attribute NAME="fileSize" VALUE="65" OBJECT="org.freeplane.features.format.FormattedNumber|65|#,##0"/>
-<richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
+<richcontent TYPE="NOTE">
 <html>
   <head>
     
@@ -4194,12 +4102,12 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
   </body>
 </html></richcontent>
 </node>
-<node TEXT="showLastUsedMenu.groovy" ID="ID_409853021" LINK="file:/C:/Users/Edo/Documents/GitHub/Freeplane_My-Menu-Inator/Menu-o-Matic/scripts/showLastUsedMenu.groovy">
+<node TEXT="showLastUsedMenu.groovy" ID="ID_409853021" LINK="Menu-o-Matic/scripts/showLastUsedMenu.groovy">
 <attribute NAME="lastModifiedTime" VALUE="11-07-21 19:07" OBJECT="org.freeplane.features.format.FormattedDate|2021-07-11T19:07-0400|dd-MM-yy HH:mm"/>
 <attribute NAME="lastAccessTime" VALUE="12-05-22 11:04" OBJECT="org.freeplane.features.format.FormattedDate|2022-05-12T11:04-0400|dd-MM-yy HH:mm"/>
 <attribute NAME="creationTime" VALUE="11-07-21 19:07" OBJECT="org.freeplane.features.format.FormattedDate|2021-07-11T19:07-0400|dd-MM-yy HH:mm"/>
 <attribute NAME="fileSize" VALUE="72" OBJECT="org.freeplane.features.format.FormattedNumber|72|#,##0"/>
-<richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
+<richcontent TYPE="NOTE">
 <html>
   <head>
     
@@ -4222,7 +4130,7 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
 <node TEXT="design" STYLE_REF="Organizador" ID="ID_1602015427">
 <node TEXT="combinado: trae primero submenu y si repite trae botones" ID="ID_1020191197">
 <icon BUILTIN="emoji-1F333"/>
-<richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
+<richcontent TYPE="NOTE">
 <html>
   <head>
     
@@ -4374,7 +4282,7 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
     </p>
   </body>
 </html></richcontent>
-<richcontent CONTENT-TYPE="xml/" TYPE="DETAILS">
+<richcontent TYPE="DETAILS">
 <html>
   <head>
     
@@ -4388,7 +4296,7 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
 <node TEXT="combinar con siguiente para si mouse está sobre grupo de menus entonces descargue todos los botones baje él" ID="ID_1411193413"/>
 <node TEXT="abre dialogo con boton para ir repitiendo" ID="ID_1942898211"/>
 </node>
-<node TEXT="Abre submenu de la barra de menus de Freeplane" FOLDED="true" ID="ID_1785189681"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
+<node TEXT="Abre submenu de la barra de menus de Freeplane" FOLDED="true" ID="ID_1785189681"><richcontent TYPE="NOTE">
 <html>
   <head>
     
@@ -4480,7 +4388,7 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
     </p>
   </body>
 </html></richcontent>
-<richcontent CONTENT-TYPE="xml/" TYPE="DETAILS">
+<richcontent TYPE="DETAILS">
 <html>
   <head>
     
@@ -4491,7 +4399,7 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
     </p>
   </body>
 </html></richcontent>
-<node TEXT="result " ID="ID_1408114250"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
+<node TEXT="result " ID="ID_1408114250"><richcontent TYPE="NOTE">
 <html>
   <head>
     
@@ -4932,7 +4840,7 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
   </body>
 </html></richcontent>
 </node>
-<node TEXT="result menu bajo mouse 1" ID="ID_169130894"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
+<node TEXT="result menu bajo mouse 1" ID="ID_169130894"><richcontent TYPE="NOTE">
 <html>
   <head>
     
@@ -5374,7 +5282,7 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
 </html></richcontent>
 </node>
 </node>
-<node TEXT="imita escribir nodo usando Timer" FOLDED="true" ID="ID_966450538"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
+<node TEXT="imita escribir nodo usando Timer" FOLDED="true" ID="ID_966450538"><richcontent TYPE="NOTE">
 <html>
   <head>
     
@@ -5463,7 +5371,7 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
     </p>
   </body>
 </html></richcontent>
-<richcontent CONTENT-TYPE="xml/" TYPE="DETAILS">
+<richcontent TYPE="DETAILS">
 <html>
   <head>
     
@@ -5476,7 +5384,7 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
 </html></richcontent>
 <node TEXT="Hola, cómo estás?&#xa;combinar con siguiente para si mouse está sobre grupo de menus entonces descargue todos los botones bajo él" ID="ID_1005909169"/>
 </node>
-<node TEXT="A2. cambiar texto nodo a label de acción" FOLDED="true" ID="ID_797256925"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
+<node TEXT="A2. cambiar texto nodo a label de acción" FOLDED="true" ID="ID_797256925"><richcontent TYPE="NOTE">
 <html>
   <head>
     
@@ -5541,7 +5449,7 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
     </p>
   </body>
 </html></richcontent>
-<richcontent CONTENT-TYPE="xml/" TYPE="DETAILS">
+<richcontent TYPE="DETAILS">
 <html>
   <head>
     
@@ -5557,7 +5465,7 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
 <font BOLD="false"/>
 </node>
 </node>
-<node TEXT="combinar texto (nuevo texto = texto padre + texto hijo)" ID="ID_1342031563"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
+<node TEXT="combinar texto (nuevo texto = texto padre + texto hijo)" ID="ID_1342031563"><richcontent TYPE="NOTE">
 <html>
   <head>
     
@@ -5580,7 +5488,7 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
     </p>
   </body>
 </html></richcontent>
-<richcontent CONTENT-TYPE="xml/" TYPE="DETAILS">
+<richcontent TYPE="DETAILS">
 <html>
   <head>
     
@@ -5597,24 +5505,24 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
 </node>
 <node ID="ID_91861266" CONTENT_ID="ID_1898413286"/>
 </node>
-<node TEXT="zips" STYLE_REF="file_folder" FOLDED="true" ID="ID_1075512046" LINK="file:/C:/Users/Edo/Documents/GitHub/Freeplane_My-Menu-Inator/Menu-o-Matic/zips/">
+<node TEXT="zips" STYLE_REF="file_folder" FOLDED="true" ID="ID_1075512046" LINK="Menu-o-Matic/zips/">
 <attribute NAME="lastModifiedTime" VALUE="25-06-21 15:00" OBJECT="org.freeplane.features.format.FormattedDate|2021-06-25T15:00-0400|dd-MM-yy HH:mm"/>
 <attribute NAME="lastAccessTime" VALUE="12-05-22 11:05" OBJECT="org.freeplane.features.format.FormattedDate|2022-05-12T11:05-0400|dd-MM-yy HH:mm"/>
 <attribute NAME="creationTime" VALUE="24-06-21 13:38" OBJECT="org.freeplane.features.format.FormattedDate|2021-06-24T13:38-0400|datetime"/>
 <attribute NAME="fileSize" VALUE="0" OBJECT="org.freeplane.features.format.FormattedNumber|0|#,##0"/>
 <attribute NAME="projectCode" VALUE="zips"/>
-<node TEXT="doc" STYLE_REF="file_folder" ID="ID_544149911" LINK="file:/C:/Users/Edo/Documents/GitHub/Freeplane_My-Menu-Inator/Menu-o-Matic/zips/doc/">
+<node TEXT="doc" STYLE_REF="file_folder" ID="ID_544149911" LINK="Menu-o-Matic/zips/doc/">
 <attribute NAME="lastModifiedTime" VALUE="25-06-21 15:02" OBJECT="org.freeplane.features.format.FormattedDate|2021-06-25T15:02-0400|dd-MM-yy HH:mm"/>
 <attribute NAME="lastAccessTime" VALUE="12-05-22 11:05" OBJECT="org.freeplane.features.format.FormattedDate|2022-05-12T11:05-0400|dd-MM-yy HH:mm"/>
 <attribute NAME="creationTime" VALUE="24-06-21 13:38" OBJECT="org.freeplane.features.format.FormattedDate|2021-06-24T13:38-0400|datetime"/>
 <attribute NAME="fileSize" VALUE="0" OBJECT="org.freeplane.features.format.FormattedNumber|0|#,##0"/>
 <attribute NAME="projectCode" VALUE="doc"/>
-<node TEXT="Menu-o-Matic" STYLE_REF="file_folder" ID="ID_133929070" LINK="file:/C:/Users/Edo/Documents/GitHub/Freeplane_My-Menu-Inator/Menu-o-Matic/zips/doc/Menu-o-Matic/">
+<node TEXT="Menu-o-Matic" STYLE_REF="file_folder" ID="ID_133929070" LINK="Menu-o-Matic/zips/doc/Menu-o-Matic/">
 <attribute NAME="lastModifiedTime" VALUE="11-07-21 19:07" OBJECT="org.freeplane.features.format.FormattedDate|2021-07-11T19:07-0400|dd-MM-yy HH:mm"/>
 <attribute NAME="lastAccessTime" VALUE="12-05-22 11:05" OBJECT="org.freeplane.features.format.FormattedDate|2022-05-12T11:05-0400|dd-MM-yy HH:mm"/>
 <attribute NAME="creationTime" VALUE="25-06-21 15:02" OBJECT="org.freeplane.features.format.FormattedDate|2021-06-25T15:02-0400|dd-MM-yy HH:mm"/>
 <attribute NAME="fileSize" VALUE="0" OBJECT="org.freeplane.features.format.FormattedNumber|0|#,##0"/>
-<node TEXT="Menu-o-Matic guide.mm" ID="ID_968851967" LINK="file:/C:/Users/Edo/Documents/GitHub/Freeplane_My-Menu-Inator/Menu-o-Matic/zips/doc/Menu-o-Matic/Menu-o-Matic%20guide.mm">
+<node TEXT="Menu-o-Matic guide.mm" ID="ID_968851967" LINK="Menu-o-Matic/zips/doc/Menu-o-Matic/Menu-o-Matic%20guide.mm">
 <attribute NAME="lastModifiedTime" VALUE="27-07-21 13:26" OBJECT="org.freeplane.features.format.FormattedDate|2021-07-27T13:26-0400|dd-MM-yy HH:mm"/>
 <attribute NAME="lastAccessTime" VALUE="12-05-22 11:04" OBJECT="org.freeplane.features.format.FormattedDate|2022-05-12T11:04-0400|dd-MM-yy HH:mm"/>
 <attribute NAME="creationTime" VALUE="11-07-21 19:07" OBJECT="org.freeplane.features.format.FormattedDate|2021-07-11T19:07-0400|dd-MM-yy HH:mm"/>
@@ -5632,9 +5540,9 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
 </node>
 </node>
 </node>
-<node TEXT="icons" STYLE_REF="file_folder" ID="ID_293396145" LINK="file:/C:/Users/Edo/Documents/GitHub/Freeplane_My-Menu-Inator/Menu-o-Matic/zips/icons/">
+<node TEXT="icons" STYLE_REF="missing" ID="ID_293396145" LINK="file:/C:/Users/Edo/Documents/GitHub/Freeplane_My-Menu-Inator/Menu-o-Matic/zips/icons/">
 <attribute NAME="projectCode" VALUE="icons"/>
-<node TEXT="Menu-o-Matic" STYLE_REF="file_folder" ID="ID_1151999985" LINK="file:/C:/Users/Edo/Documents/GitHub/Freeplane_My-Menu-Inator/Menu-o-Matic/zips/icons/Menu-o-Matic/">
+<node TEXT="Menu-o-Matic" STYLE_REF="missing" ID="ID_1151999985" LINK="file:/C:/Users/Edo/Documents/GitHub/Freeplane_My-Menu-Inator/Menu-o-Matic/zips/icons/Menu-o-Matic/">
 <node TEXT="MoM v0.1.4" STYLE_REF="milestone" FOLDED="true" ID="ID_1800669823">
 <node TEXT="⁃        comando ‘muestra menubar’ debe tener icono asociado para que después se muestre en nodo compacto Menubar" STYLE_REF="pendingTask" ID="ID_1363282036">
 <node TEXT="crear imagen de ícono" STYLE_REF="pendingTask" ID="ID_838723031"/>
@@ -5642,36 +5550,36 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
 </node>
 </node>
 </node>
-<node TEXT="templates" STYLE_REF="file_folder" ID="ID_1904073328" LINK="file:/C:/Users/Edo/Documents/GitHub/Freeplane_My-Menu-Inator/Menu-o-Matic/zips/templates/">
+<node TEXT="templates" STYLE_REF="file_folder" ID="ID_1904073328" LINK="Menu-o-Matic/zips/templates/">
 <attribute NAME="lastModifiedTime" VALUE="25-06-21 15:00" OBJECT="org.freeplane.features.format.FormattedDate|2021-06-25T15:00-0400|datetime"/>
 <attribute NAME="lastAccessTime" VALUE="12-05-22 11:05" OBJECT="org.freeplane.features.format.FormattedDate|2022-05-12T11:05-0400|dd-MM-yy HH:mm"/>
 <attribute NAME="creationTime" VALUE="25-06-21 15:00" OBJECT="org.freeplane.features.format.FormattedDate|2021-06-25T15:00-0400|datetime"/>
 <attribute NAME="fileSize" VALUE="0" OBJECT="org.freeplane.features.format.FormattedNumber|0|#,##0"/>
 <attribute NAME="projectCode" VALUE="templates"/>
-<node TEXT="Menu-o-Matic" STYLE_REF="file_folder" ID="ID_1848293177" LINK="file:/C:/Users/Edo/Documents/GitHub/Freeplane_My-Menu-Inator/Menu-o-Matic/zips/templates/Menu-o-Matic/">
+<node TEXT="Menu-o-Matic" STYLE_REF="file_folder" ID="ID_1848293177" LINK="Menu-o-Matic/zips/templates/Menu-o-Matic/">
 <attribute NAME="lastModifiedTime" VALUE="25-06-21 15:38" OBJECT="org.freeplane.features.format.FormattedDate|2021-06-25T15:38-0400|dd-MM-yy HH:mm"/>
 <attribute NAME="lastAccessTime" VALUE="12-05-22 11:05" OBJECT="org.freeplane.features.format.FormattedDate|2022-05-12T11:05-0400|dd-MM-yy HH:mm"/>
 <attribute NAME="creationTime" VALUE="25-06-21 15:00" OBJECT="org.freeplane.features.format.FormattedDate|2021-06-25T15:00-0400|dd-MM-yy HH:mm"/>
 <attribute NAME="fileSize" VALUE="0" OBJECT="org.freeplane.features.format.FormattedNumber|0|#,##0"/>
-<node TEXT="Menu-o-Matic template standard.mm" ID="ID_536217151" LINK="file:/C:/Users/Edo/Documents/GitHub/Freeplane_My-Menu-Inator/Menu-o-Matic/zips/templates/Menu-o-Matic/Menu-o-Matic%20template%20standard.mm">
+<node TEXT="Menu-o-Matic template standard.mm" ID="ID_536217151" LINK="Menu-o-Matic/zips/templates/Menu-o-Matic/Menu-o-Matic%20template%20standard.mm">
 <attribute NAME="lastModifiedTime" VALUE="25-06-21 15:40" OBJECT="org.freeplane.features.format.FormattedDate|2021-06-25T15:40-0400|datetime"/>
 <attribute NAME="lastAccessTime" VALUE="12-05-22 11:04" OBJECT="org.freeplane.features.format.FormattedDate|2022-05-12T11:04-0400|dd-MM-yy HH:mm"/>
 <attribute NAME="creationTime" VALUE="25-06-21 15:37" OBJECT="org.freeplane.features.format.FormattedDate|2021-06-25T15:37-0400|datetime"/>
 <attribute NAME="fileSize" VALUE="5.129" OBJECT="org.freeplane.features.format.FormattedNumber|5129|#,##0"/>
 </node>
-<node TEXT="Menu-o-Matic template standard.svg" ID="ID_782272636" LINK="file:/C:/Users/Edo/Documents/GitHub/Freeplane_My-Menu-Inator/Menu-o-Matic/zips/templates/Menu-o-Matic/Menu-o-Matic%20template%20standard.svg">
+<node TEXT="Menu-o-Matic template standard.svg" ID="ID_782272636" LINK="Menu-o-Matic/zips/templates/Menu-o-Matic/Menu-o-Matic%20template%20standard.svg">
 <attribute NAME="lastModifiedTime" VALUE="25-06-21 15:43" OBJECT="org.freeplane.features.format.FormattedDate|2021-06-25T15:43-0400|datetime"/>
 <attribute NAME="lastAccessTime" VALUE="12-05-22 11:04" OBJECT="org.freeplane.features.format.FormattedDate|2022-05-12T11:04-0400|dd-MM-yy HH:mm"/>
 <attribute NAME="creationTime" VALUE="25-06-21 15:36" OBJECT="org.freeplane.features.format.FormattedDate|2021-06-25T15:36-0400|datetime"/>
 <attribute NAME="fileSize" VALUE="99.620" OBJECT="org.freeplane.features.format.FormattedNumber|99620|#,##0"/>
 </node>
-<node TEXT="Menu-o-Matic template.mm" ID="ID_1789339173" LINK="file:/C:/Users/Edo/Documents/GitHub/Freeplane_My-Menu-Inator/Menu-o-Matic/zips/templates/Menu-o-Matic/Menu-o-Matic%20template.mm">
+<node TEXT="Menu-o-Matic template.mm" ID="ID_1789339173" LINK="Menu-o-Matic/zips/templates/Menu-o-Matic/Menu-o-Matic%20template.mm">
 <attribute NAME="lastModifiedTime" VALUE="25-06-21 15:25" OBJECT="org.freeplane.features.format.FormattedDate|2021-06-25T15:25-0400|datetime"/>
 <attribute NAME="lastAccessTime" VALUE="12-05-22 11:04" OBJECT="org.freeplane.features.format.FormattedDate|2022-05-12T11:04-0400|dd-MM-yy HH:mm"/>
 <attribute NAME="creationTime" VALUE="25-06-21 15:17" OBJECT="org.freeplane.features.format.FormattedDate|2021-06-25T15:17-0400|datetime"/>
 <attribute NAME="fileSize" VALUE="6.006" OBJECT="org.freeplane.features.format.FormattedNumber|6006|#,##0"/>
 </node>
-<node TEXT="Menu-o-Matic template.svg" ID="ID_842103030" LINK="file:/C:/Users/Edo/Documents/GitHub/Freeplane_My-Menu-Inator/Menu-o-Matic/zips/templates/Menu-o-Matic/Menu-o-Matic%20template.svg">
+<node TEXT="Menu-o-Matic template.svg" ID="ID_842103030" LINK="Menu-o-Matic/zips/templates/Menu-o-Matic/Menu-o-Matic%20template.svg">
 <attribute NAME="lastModifiedTime" VALUE="25-06-21 15:34" OBJECT="org.freeplane.features.format.FormattedDate|2021-06-25T15:34-0400|datetime"/>
 <attribute NAME="lastAccessTime" VALUE="12-05-22 11:04" OBJECT="org.freeplane.features.format.FormattedDate|2022-05-12T11:04-0400|dd-MM-yy HH:mm"/>
 <attribute NAME="creationTime" VALUE="25-06-21 15:34" OBJECT="org.freeplane.features.format.FormattedDate|2021-06-25T15:34-0400|datetime"/>
@@ -5680,18 +5588,18 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
 </node>
 </node>
 </node>
-<node TEXT="images" STYLE_REF="file_folder" FOLDED="true" ID="ID_1716968814" LINK="file:/C:/Users/Edo/Documents/GitHub/Freeplane_My-Menu-Inator/Menu-o-Matic/images/">
+<node TEXT="images" STYLE_REF="file_folder" FOLDED="true" ID="ID_1716968814" LINK="Menu-o-Matic/images/">
 <attribute NAME="lastModifiedTime" VALUE="11-07-21 19:07" OBJECT="org.freeplane.features.format.FormattedDate|2021-07-11T19:07-0400|dd-MM-yy HH:mm"/>
 <attribute NAME="lastAccessTime" VALUE="12-05-22 11:05" OBJECT="org.freeplane.features.format.FormattedDate|2022-05-12T11:05-0400|dd-MM-yy HH:mm"/>
 <attribute NAME="creationTime" VALUE="11-07-21 19:07" OBJECT="org.freeplane.features.format.FormattedDate|2021-07-11T19:07-0400|dd-MM-yy HH:mm"/>
 <attribute NAME="fileSize" VALUE="0" OBJECT="org.freeplane.features.format.FormattedNumber|0|#,##0"/>
 <attribute NAME="projectCode" VALUE="images"/>
-<node TEXT="menuOMatic-screenshot-1.png" ID="ID_1719860065" LINK="file:/C:/Users/Edo/Documents/GitHub/Freeplane_My-Menu-Inator/Menu-o-Matic/images/menuOMatic-screenshot-1.png">
+<node TEXT="menuOMatic-screenshot-1.png" ID="ID_1719860065" LINK="Menu-o-Matic/images/menuOMatic-screenshot-1.png">
 <attribute NAME="lastModifiedTime" VALUE="11-07-21 19:07" OBJECT="org.freeplane.features.format.FormattedDate|2021-07-11T19:07-0400|dd-MM-yy HH:mm"/>
 <attribute NAME="lastAccessTime" VALUE="12-05-22 11:04" OBJECT="org.freeplane.features.format.FormattedDate|2022-05-12T11:04-0400|dd-MM-yy HH:mm"/>
 <attribute NAME="creationTime" VALUE="11-07-21 19:07" OBJECT="org.freeplane.features.format.FormattedDate|2021-07-11T19:07-0400|dd-MM-yy HH:mm"/>
 <attribute NAME="fileSize" VALUE="8.462" OBJECT="org.freeplane.features.format.FormattedNumber|8462|#,##0"/>
-<richcontent CONTENT-TYPE="xml/markdown" TYPE="DETAILS">
+<richcontent TYPE="DETAILS" CONTENT-TYPE="xml/markdown">
 <html>
   <head>
     
@@ -5703,7 +5611,7 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
   </body>
 </html></richcontent>
 </node>
-<node TEXT="menuOMatic-icon.png" ID="ID_787195450" LINK="file:/C:/Users/Edo/Documents/GitHub/Freeplane_My-Menu-Inator/Menu-o-Matic/images/menuOMatic-icon.png"><richcontent CONTENT-TYPE="xml/markdown" TYPE="DETAILS">
+<node TEXT="menuOMatic-icon.png" ID="ID_787195450" LINK="Menu-o-Matic/images/menuOMatic-icon.png"><richcontent TYPE="DETAILS" CONTENT-TYPE="xml/markdown">
 <html>
   <head>
     
@@ -5719,7 +5627,7 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
 <attribute NAME="creationTime" VALUE="11-07-21 19:07" OBJECT="org.freeplane.features.format.FormattedDate|2021-07-11T19:07-0400|dd-MM-yy HH:mm"/>
 <attribute NAME="fileSize" VALUE="2.098" OBJECT="org.freeplane.features.format.FormattedNumber|2098|#,##0"/>
 </node>
-<node TEXT="menuOMatic-icon2.png" ID="ID_1378434131" LINK="file:/C:/Users/Edo/Documents/GitHub/Freeplane_My-Menu-Inator/Menu-o-Matic/images/menuOMatic-icon2.png"><richcontent CONTENT-TYPE="xml/markdown" TYPE="DETAILS">
+<node TEXT="menuOMatic-icon2.png" ID="ID_1378434131" LINK="Menu-o-Matic/images/menuOMatic-icon2.png"><richcontent TYPE="DETAILS" CONTENT-TYPE="xml/markdown">
 <html>
   <head>
     
@@ -5735,7 +5643,7 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
 <attribute NAME="creationTime" VALUE="11-07-21 19:07" OBJECT="org.freeplane.features.format.FormattedDate|2021-07-11T19:07-0400|dd-MM-yy HH:mm"/>
 <attribute NAME="fileSize" VALUE="820" OBJECT="org.freeplane.features.format.FormattedNumber|820|#,##0"/>
 </node>
-<node TEXT="menuOMatic.png" ID="ID_397986393" LINK="file:/C:/Users/Edo/Documents/GitHub/Freeplane_My-Menu-Inator/Menu-o-Matic/images/menuOMatic.png"><richcontent CONTENT-TYPE="xml/markdown" TYPE="DETAILS">
+<node TEXT="menuOMatic.png" ID="ID_397986393" LINK="Menu-o-Matic/images/menuOMatic.png"><richcontent TYPE="DETAILS" CONTENT-TYPE="xml/markdown">
 <html>
   <head>
     
@@ -5753,77 +5661,79 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
 </node>
 <node TEXT="menuOMatic.svg" ID="ID_1211760039">
 <node TEXT="MoM Future A" STYLE_REF="milestone" ID="ID_1182448701">
-<node TEXT="crear menuOMatic.svg" STYLE_REF="maybeTask" ID="ID_1133637359"/>
+<node TEXT="crear menuOMatic.svg" STYLE_REF="maybeTask" ID="ID_1133637359">
+<node TEXT="SEVERE: can not load icon &apos;/images/menuOMatic.svg&apos;" STYLE_REF="nextTask" POSITION="bottom_or_right" ID="ID_1165507630"/>
 </node>
 </node>
 </node>
-<node TEXT="translations" ID="ID_262848016" LINK="file:/C:/Users/Edo/Documents/GitHub/Freeplane_My-Menu-Inator/Menu-o-Matic/translations/">
+</node>
+<node TEXT="translations" ID="ID_262848016" LINK="Menu-o-Matic/translations/">
 <attribute NAME="lastModifiedTime" VALUE="12-05-22 11:04" OBJECT="org.freeplane.features.format.FormattedDate|2022-05-12T11:04-0400|datetime"/>
 <attribute NAME="lastAccessTime" VALUE="12-05-22 11:05" OBJECT="org.freeplane.features.format.FormattedDate|2022-05-12T11:05-0400|datetime"/>
 <attribute NAME="creationTime" VALUE="12-05-22 11:04" OBJECT="org.freeplane.features.format.FormattedDate|2022-05-12T11:04-0400|datetime"/>
 <attribute NAME="fileSize" VALUE="0" OBJECT="org.freeplane.features.format.FormattedNumber|0|#,##0"/>
-<node TEXT="en.properties" ID="ID_812585085" LINK="file:/C:/Users/Edo/Documents/GitHub/Freeplane_My-Menu-Inator/Menu-o-Matic/translations/en.properties">
+<node TEXT="en.properties" ID="ID_812585085" LINK="Menu-o-Matic/translations/en.properties">
 <attribute NAME="lastModifiedTime" VALUE="12-05-22 11:04" OBJECT="org.freeplane.features.format.FormattedDate|2022-05-12T11:04-0400|datetime"/>
 <attribute NAME="lastAccessTime" VALUE="12-05-22 11:04" OBJECT="org.freeplane.features.format.FormattedDate|2022-05-12T11:04-0400|datetime"/>
 <attribute NAME="creationTime" VALUE="12-05-22 11:04" OBJECT="org.freeplane.features.format.FormattedDate|2022-05-12T11:04-0400|datetime"/>
 <attribute NAME="fileSize" VALUE="749" OBJECT="org.freeplane.features.format.FormattedNumber|749|#,##0"/>
 </node>
 </node>
-<node TEXT="Menu-o-Matic.mm" ID="ID_496679323" LINK="file:/C:/Users/Edo/Documents/GitHub/Freeplane_My-Menu-Inator/Menu-o-Matic/Menu-o-Matic.mm">
+<node TEXT="Menu-o-Matic.mm" ID="ID_496679323" LINK="Menu-o-Matic/Menu-o-Matic.mm">
 <attribute NAME="lastModifiedTime" VALUE="12-05-22 11:04" OBJECT="org.freeplane.features.format.FormattedDate|2022-05-12T11:04-0400|dd-MM-yy HH:mm"/>
 <attribute NAME="lastAccessTime" VALUE="12-05-22 11:04" OBJECT="org.freeplane.features.format.FormattedDate|2022-05-12T11:04-0400|dd-MM-yy HH:mm"/>
 <attribute NAME="creationTime" VALUE="11-07-21 19:07" OBJECT="org.freeplane.features.format.FormattedDate|2021-07-11T19:07-0400|dd-MM-yy HH:mm"/>
 <attribute NAME="fileSize" VALUE="40.442" OBJECT="org.freeplane.features.format.FormattedNumber|40442|#,##0"/>
 </node>
-<node TEXT="Menu-o-Matic.mm.bak" ID="ID_1714228380" LINK="file:/C:/Users/Edo/Documents/GitHub/Freeplane_My-Menu-Inator/Menu-o-Matic/Menu-o-Matic.mm.bak">
+<node TEXT="Menu-o-Matic.mm.bak" ID="ID_1714228380" LINK="Menu-o-Matic/Menu-o-Matic.mm.bak">
 <attribute NAME="lastModifiedTime" VALUE="12-05-22 11:04" OBJECT="org.freeplane.features.format.FormattedDate|2022-05-12T11:04-0400|dd-MM-yy HH:mm"/>
 <attribute NAME="lastAccessTime" VALUE="12-05-22 11:04" OBJECT="org.freeplane.features.format.FormattedDate|2022-05-12T11:04-0400|dd-MM-yy HH:mm"/>
 <attribute NAME="creationTime" VALUE="24-06-21 13:09" OBJECT="org.freeplane.features.format.FormattedDate|2021-06-24T13:09-0400|datetime"/>
 <attribute NAME="fileSize" VALUE="40.442" OBJECT="org.freeplane.features.format.FormattedNumber|40442|#,##0"/>
 </node>
-<node TEXT="generados automáticamente" STYLE_REF="Organizador" FOLDED="true" ID="ID_753392396">
-<node TEXT="Menu-o-Matic-v0.1.3.addon.mm" ID="ID_510896369" LINK="file:/C:/Users/Edo/Documents/GitHub/Freeplane_My-Menu-Inator/Menu-o-Matic/Menu-o-Matic-v0.1.3.addon.mm">
+<node TEXT="generados automáticamente" STYLE_REF="Organizador" ID="ID_753392396">
+<node TEXT="Menu-o-Matic-v0.1.3.addon.mm" ID="ID_510896369" LINK="Menu-o-Matic/Menu-o-Matic-v0.1.3.addon.mm">
 <attribute NAME="lastModifiedTime" VALUE="12-05-22 11:04" OBJECT="org.freeplane.features.format.FormattedDate|2022-05-12T11:04-0400|datetime"/>
 <attribute NAME="lastAccessTime" VALUE="12-05-22 11:04" OBJECT="org.freeplane.features.format.FormattedDate|2022-05-12T11:04-0400|datetime"/>
 <attribute NAME="creationTime" VALUE="12-05-22 11:04" OBJECT="org.freeplane.features.format.FormattedDate|2022-05-12T11:04-0400|datetime"/>
 <attribute NAME="fileSize" VALUE="287.268" OBJECT="org.freeplane.features.format.FormattedNumber|287268|#,##0"/>
 </node>
-<node TEXT="Menu-o-Matic-v0.1.2.addon.mm" ID="ID_1384176031" LINK="file:/C:/Users/Edo/Documents/GitHub/Freeplane_My-Menu-Inator/Menu-o-Matic/Menu-o-Matic-v0.1.2.addon.mm">
+<node TEXT="Menu-o-Matic-v0.1.2.addon.mm" ID="ID_1384176031" LINK="Menu-o-Matic/Menu-o-Matic-v0.1.2.addon.mm">
 <attribute NAME="lastModifiedTime" VALUE="17-01-22 22:37" OBJECT="org.freeplane.features.format.FormattedDate|2022-01-17T22:37-0300|dd-MM-yy HH:mm"/>
 <attribute NAME="lastAccessTime" VALUE="29-01-22 13:16" OBJECT="org.freeplane.features.format.FormattedDate|2022-01-29T13:16-0300|dd-MM-yy HH:mm"/>
 <attribute NAME="creationTime" VALUE="07-08-21 21:36" OBJECT="org.freeplane.features.format.FormattedDate|2021-08-07T21:36-0400|datetime"/>
 <attribute NAME="fileSize" VALUE="278.933" OBJECT="org.freeplane.features.format.FormattedNumber|278933|#,##0"/>
 </node>
-<node TEXT="Menu-o-Matic-v0.1.1.addon.mm" ID="ID_935699412" LINK="file:/C:/Users/Edo/Documents/GitHub/Freeplane_My-Menu-Inator/Menu-o-Matic/Menu-o-Matic-v0.1.1.addon.mm">
+<node TEXT="Menu-o-Matic-v0.1.1.addon.mm" ID="ID_935699412" LINK="Menu-o-Matic/Menu-o-Matic-v0.1.1.addon.mm">
 <attribute NAME="lastModifiedTime" VALUE="07-08-21 21:11" OBJECT="org.freeplane.features.format.FormattedDate|2021-08-07T21:11-0400|dd-MM-yy HH:mm"/>
 <attribute NAME="lastAccessTime" VALUE="10-08-21 09:10" OBJECT="org.freeplane.features.format.FormattedDate|2021-08-10T09:10-0400|dd-MM-yy HH:mm"/>
 <attribute NAME="creationTime" VALUE="02-07-21 11:24" OBJECT="org.freeplane.features.format.FormattedDate|2021-07-02T11:24-0400|datetime"/>
 <attribute NAME="fileSize" VALUE="272.749" OBJECT="org.freeplane.features.format.FormattedNumber|272749|#,##0"/>
 </node>
-<node TEXT="Menu-o-Matic-v0.1.0.addon.mm" ID="ID_213261528" LINK="file:/C:/Users/Edo/Documents/GitHub/Freeplane_My-Menu-Inator/Menu-o-Matic/Menu-o-Matic-v0.1.0.addon.mm">
+<node TEXT="Menu-o-Matic-v0.1.0.addon.mm" ID="ID_213261528" LINK="Menu-o-Matic/Menu-o-Matic-v0.1.0.addon.mm">
 <attribute NAME="lastModifiedTime" VALUE="02-07-21 11:05" OBJECT="org.freeplane.features.format.FormattedDate|2021-07-02T11:05-0400|dd-MM-yy HH:mm"/>
 <attribute NAME="lastAccessTime" VALUE="06-07-21 08:57" OBJECT="org.freeplane.features.format.FormattedDate|2021-07-06T08:57-0400|dd-MM-yy HH:mm"/>
 <attribute NAME="creationTime" VALUE="29-06-21 15:58" OBJECT="org.freeplane.features.format.FormattedDate|2021-06-29T15:58-0400|datetime"/>
 <attribute NAME="fileSize" VALUE="242.563" OBJECT="org.freeplane.features.format.FormattedNumber|242563|#,##0"/>
 </node>
-<node TEXT="Menu-o-Matic-alpha.addon.mm" ID="ID_627207204" LINK="file:/C:/Users/Edo/Documents/GitHub/Freeplane_My-Menu-Inator/Menu-o-Matic/Menu-o-Matic-alpha.addon.mm">
+<node TEXT="Menu-o-Matic-alpha.addon.mm" ID="ID_627207204" LINK="Menu-o-Matic/Menu-o-Matic-alpha.addon.mm">
 <attribute NAME="lastModifiedTime" VALUE="29-06-21 09:55" OBJECT="org.freeplane.features.format.FormattedDate|2021-06-29T09:55-0400|dd-MM-yy HH:mm"/>
 <attribute NAME="lastAccessTime" VALUE="29-06-21 17:18" OBJECT="org.freeplane.features.format.FormattedDate|2021-06-29T17:18-0400|dd-MM-yy HH:mm"/>
 <attribute NAME="creationTime" VALUE="24-06-21 14:28" OBJECT="org.freeplane.features.format.FormattedDate|2021-06-24T14:28-0400|datetime"/>
 <attribute NAME="fileSize" VALUE="234.305" OBJECT="org.freeplane.features.format.FormattedNumber|234305|#,##0"/>
 </node>
-<node TEXT="version.properties" ID="ID_428915476" LINK="file:/C:/Users/Edo/Documents/GitHub/Freeplane_My-Menu-Inator/Menu-o-Matic/version.properties">
+<node TEXT="version.properties" ID="ID_428915476" LINK="Menu-o-Matic/version.properties">
 <attribute NAME="lastModifiedTime" VALUE="12-05-22 11:04" OBJECT="org.freeplane.features.format.FormattedDate|2022-05-12T11:04-0400|dd-MM-yy HH:mm"/>
 <attribute NAME="lastAccessTime" VALUE="12-05-22 11:04" OBJECT="org.freeplane.features.format.FormattedDate|2022-05-12T11:04-0400|dd-MM-yy HH:mm"/>
 <attribute NAME="creationTime" VALUE="24-06-21 14:28" OBJECT="org.freeplane.features.format.FormattedDate|2021-06-24T14:28-0400|datetime"/>
 <attribute NAME="fileSize" VALUE="232" OBJECT="org.freeplane.features.format.FormattedNumber|232|#,##0"/>
 </node>
-<node TEXT="history.md" ID="ID_381928089" LINK="file:/C:/Users/Edo/Documents/GitHub/Freeplane_My-Menu-Inator/Menu-o-Matic/history.md">
+<node TEXT="history.md" ID="ID_381928089" LINK="Menu-o-Matic/history.md">
 <attribute NAME="lastModifiedTime" VALUE="12-05-22 11:04" OBJECT="org.freeplane.features.format.FormattedDate|2022-05-12T11:04-0400|datetime"/>
 <attribute NAME="lastAccessTime" VALUE="12-05-22 11:06" OBJECT="org.freeplane.features.format.FormattedDate|2022-05-12T11:06-0400|datetime"/>
 <attribute NAME="creationTime" VALUE="12-05-22 11:04" OBJECT="org.freeplane.features.format.FormattedDate|2022-05-12T11:04-0400|datetime"/>
 <attribute NAME="fileSize" VALUE="746" OBJECT="org.freeplane.features.format.FormattedNumber|746|#,##0"/>
-<richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
+<richcontent TYPE="NOTE">
 <html>
   <head>
     
@@ -5924,18 +5834,18 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
 </node>
 <node TEXT="versiones anteriores" STYLE_REF="Organizador" ID="ID_73675832"/>
 </node>
-<node TEXT=".gitignore" ID="ID_1179106038" LINK="file:/C:/Users/Edo/Documents/GitHub/Freeplane_My-Menu-Inator/Menu-o-Matic/.gitignore">
+<node TEXT=".gitignore" ID="ID_1179106038" LINK="Menu-o-Matic/.gitignore">
 <attribute NAME="lastModifiedTime" VALUE="12-07-21 19:00" OBJECT="org.freeplane.features.format.FormattedDate|2021-07-12T19:00-0400|dd-MM-yy HH:mm"/>
 <attribute NAME="lastAccessTime" VALUE="09-05-22 21:53" OBJECT="org.freeplane.features.format.FormattedDate|2022-05-09T21:53-0400|dd-MM-yy HH:mm"/>
 <attribute NAME="creationTime" VALUE="24-06-21 11:48" OBJECT="org.freeplane.features.format.FormattedDate|2021-06-24T11:48-0400|datetime"/>
 <attribute NAME="fileSize" VALUE="428" OBJECT="org.freeplane.features.format.FormattedNumber|428|#,##0"/>
 </node>
-<node TEXT="build.gradle" ID="ID_770172581" LINK="file:/C:/Users/Edo/Documents/GitHub/Freeplane_My-Menu-Inator/Menu-o-Matic/build.gradle">
+<node TEXT="build.gradle" ID="ID_770172581" LINK="Menu-o-Matic/build.gradle">
 <attribute NAME="lastModifiedTime" VALUE="06-01-22 15:48" OBJECT="org.freeplane.features.format.FormattedDate|2022-01-06T15:48-0300|dd-MM-yy HH:mm"/>
 <attribute NAME="lastAccessTime" VALUE="28-03-22 11:13" OBJECT="org.freeplane.features.format.FormattedDate|2022-03-28T11:13-0300|dd-MM-yy HH:mm"/>
 <attribute NAME="creationTime" VALUE="24-06-21 11:48" OBJECT="org.freeplane.features.format.FormattedDate|2021-06-24T11:48-0400|datetime"/>
 <attribute NAME="fileSize" VALUE="2.146" OBJECT="org.freeplane.features.format.FormattedNumber|2146|#,##0"/>
-<richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
+<richcontent TYPE="NOTE">
 <html>
   <head>
     
@@ -6087,7 +5997,7 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
 </node>
 <node TEXT="new imported files" STYLE_REF="newFolderImport" ID="ID_71158706">
 <attribute NAME="log_MDI" VALUE="No"/>
-<richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
+<richcontent TYPE="NOTE">
 <html>
   <head>
     
@@ -6144,15 +6054,25 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
   </body>
 </html></richcontent>
 </node>
-<node TEXT="última versión no funciona con groovy 3.x.txt" ID="ID_1548801217" LINK="file:/C:/Users/Edo/Documents/GitHub/Freeplane_My-Menu-Inator/Menu-o-Matic/última%20versión%20no%20funciona%20con%20groovy%203.x.txt"/>
+<node TEXT="última versión no funciona con groovy 3.x.txt" ID="ID_1548801217" LINK="Menu-o-Matic/última%20versión%20no%20funciona%20con%20groovy%203.x.txt"/>
+<node TEXT="Menu-o-Matic-v0.1.4.addon.mm" STYLE_REF="freshNew" ID="ID_606492663" LINK="Menu-o-Matic/Menu-o-Matic-v0.1.4.addon.mm"/>
+<node TEXT="gradle" STYLE_REF="freshNew" ID="ID_66998103" LINK="Menu-o-Matic/gradle/">
+<node TEXT="wrapper" STYLE_REF="freshNew" ID="ID_173644777" LINK="Menu-o-Matic/gradle/wrapper/">
+<node TEXT="gradle-wrapper.jar" STYLE_REF="freshNew" ID="ID_1997121508" LINK="Menu-o-Matic/gradle/wrapper/gradle-wrapper.jar"/>
+<node TEXT="gradle-wrapper.properties" STYLE_REF="freshNew" ID="ID_1478115143" LINK="Menu-o-Matic/gradle/wrapper/gradle-wrapper.properties"/>
 </node>
-<node TEXT="resources" STYLE_REF="file_folder" FOLDED="true" ID="ID_928846385" LINK="file:/C:/Users/Edo/Documents/GitHub/Freeplane_My-Menu-Inator/resources/">
+</node>
+<node TEXT="Menu-o-Matic-v0.1.5.addon.mm" STYLE_REF="freshNew" ID="ID_1736490742" LINK="Menu-o-Matic/Menu-o-Matic-v0.1.5.addon.mm"/>
+<node TEXT="gradlew" STYLE_REF="freshNew" ID="ID_528678433" LINK="Menu-o-Matic/gradlew"/>
+<node TEXT="gradlew.bat" STYLE_REF="freshNew" ID="ID_1585301390" LINK="Menu-o-Matic/gradlew.bat"/>
+</node>
+<node TEXT="resources" STYLE_REF="file_folder" FOLDED="true" ID="ID_928846385" LINK="resources/">
 <attribute NAME="lastModifiedTime" VALUE="12-07-21 18:52" OBJECT="org.freeplane.features.format.FormattedDate|2021-07-12T18:52-0400|dd-MM-yy HH:mm"/>
 <attribute NAME="lastAccessTime" VALUE="07-08-21 21:36" OBJECT="org.freeplane.features.format.FormattedDate|2021-08-07T21:36-0400|dd-MM-yy HH:mm"/>
 <attribute NAME="creationTime" VALUE="10-03-21 10:51" OBJECT="org.freeplane.features.format.FormattedDate|2021-03-10T10:51-0300|datetime"/>
 <attribute NAME="fileSize" VALUE="4.096" OBJECT="org.freeplane.features.format.FormattedNumber|4096|#,##0"/>
 <attribute NAME="projectCode" VALUE="resources"/>
-<node TEXT="MoM 001.png" ID="ID_86225428" LINK="file:/C:/Users/Edo/Documents/GitHub/Freeplane_My-Menu-Inator/resources/MoM%20001.png">
+<node TEXT="MoM 001.png" ID="ID_86225428" LINK="resources/MoM%20001.png">
 <attribute NAME="lastModifiedTime" VALUE="29-06-21 11:52" OBJECT="org.freeplane.features.format.FormattedDate|2021-06-29T11:52-0400|datetime"/>
 <attribute NAME="lastAccessTime" VALUE="12-07-21 18:56" OBJECT="org.freeplane.features.format.FormattedDate|2021-07-12T18:56-0400|dd-MM-yy HH:mm"/>
 <attribute NAME="creationTime" VALUE="29-06-21 11:52" OBJECT="org.freeplane.features.format.FormattedDate|2021-06-29T11:52-0400|datetime"/>
@@ -6169,7 +6089,7 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
   </body>
 </html></richcontent>
 </node>
-<node TEXT="MoM 002.png" ID="ID_779297795" LINK="file:/C:/Users/Edo/Documents/GitHub/Freeplane_My-Menu-Inator/resources/MoM%20002.png">
+<node TEXT="MoM 002.png" ID="ID_779297795" LINK="resources/MoM%20002.png">
 <attribute NAME="lastModifiedTime" VALUE="29-06-21 11:52" OBJECT="org.freeplane.features.format.FormattedDate|2021-06-29T11:52-0400|datetime"/>
 <attribute NAME="lastAccessTime" VALUE="12-07-21 18:55" OBJECT="org.freeplane.features.format.FormattedDate|2021-07-12T18:55-0400|dd-MM-yy HH:mm"/>
 <attribute NAME="creationTime" VALUE="29-06-21 11:52" OBJECT="org.freeplane.features.format.FormattedDate|2021-06-29T11:52-0400|datetime"/>
@@ -6186,7 +6106,7 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
   </body>
 </html></richcontent>
 </node>
-<node TEXT="MoM 003.png" ID="ID_408058372" LINK="file:/C:/Users/Edo/Documents/GitHub/Freeplane_My-Menu-Inator/resources/MoM%20003.png">
+<node TEXT="MoM 003.png" ID="ID_408058372" LINK="resources/MoM%20003.png">
 <attribute NAME="lastModifiedTime" VALUE="29-06-21 11:52" OBJECT="org.freeplane.features.format.FormattedDate|2021-06-29T11:52-0400|datetime"/>
 <attribute NAME="lastAccessTime" VALUE="12-07-21 18:55" OBJECT="org.freeplane.features.format.FormattedDate|2021-07-12T18:55-0400|dd-MM-yy HH:mm"/>
 <attribute NAME="creationTime" VALUE="29-06-21 11:52" OBJECT="org.freeplane.features.format.FormattedDate|2021-06-29T11:52-0400|datetime"/>
@@ -6203,7 +6123,7 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
   </body>
 </html></richcontent>
 </node>
-<node TEXT="MoM 004.png" ID="ID_822564400" LINK="file:/C:/Users/Edo/Documents/GitHub/Freeplane_My-Menu-Inator/resources/MoM%20004.png">
+<node TEXT="MoM 004.png" ID="ID_822564400" LINK="resources/MoM%20004.png">
 <attribute NAME="lastModifiedTime" VALUE="29-06-21 11:52" OBJECT="org.freeplane.features.format.FormattedDate|2021-06-29T11:52-0400|datetime"/>
 <attribute NAME="lastAccessTime" VALUE="12-07-21 18:55" OBJECT="org.freeplane.features.format.FormattedDate|2021-07-12T18:55-0400|dd-MM-yy HH:mm"/>
 <attribute NAME="creationTime" VALUE="29-06-21 11:52" OBJECT="org.freeplane.features.format.FormattedDate|2021-06-29T11:52-0400|datetime"/>
@@ -6220,7 +6140,7 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
   </body>
 </html></richcontent>
 </node>
-<node TEXT="MoM 005.png" ID="ID_793886965" LINK="file:/C:/Users/Edo/Documents/GitHub/Freeplane_My-Menu-Inator/resources/MoM%20005.png">
+<node TEXT="MoM 005.png" ID="ID_793886965" LINK="resources/MoM%20005.png">
 <attribute NAME="lastModifiedTime" VALUE="29-06-21 11:52" OBJECT="org.freeplane.features.format.FormattedDate|2021-06-29T11:52-0400|datetime"/>
 <attribute NAME="lastAccessTime" VALUE="12-07-21 18:55" OBJECT="org.freeplane.features.format.FormattedDate|2021-07-12T18:55-0400|dd-MM-yy HH:mm"/>
 <attribute NAME="creationTime" VALUE="29-06-21 11:52" OBJECT="org.freeplane.features.format.FormattedDate|2021-06-29T11:52-0400|datetime"/>
@@ -6237,7 +6157,7 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
   </body>
 </html></richcontent>
 </node>
-<node TEXT="MoM 006.png" ID="ID_1208332817" LINK="file:/C:/Users/Edo/Documents/GitHub/Freeplane_My-Menu-Inator/resources/MoM%20006.png">
+<node TEXT="MoM 006.png" ID="ID_1208332817" LINK="resources/MoM%20006.png">
 <attribute NAME="lastModifiedTime" VALUE="29-06-21 11:52" OBJECT="org.freeplane.features.format.FormattedDate|2021-06-29T11:52-0400|datetime"/>
 <attribute NAME="lastAccessTime" VALUE="12-07-21 18:55" OBJECT="org.freeplane.features.format.FormattedDate|2021-07-12T18:55-0400|dd-MM-yy HH:mm"/>
 <attribute NAME="creationTime" VALUE="29-06-21 11:52" OBJECT="org.freeplane.features.format.FormattedDate|2021-06-29T11:52-0400|datetime"/>
@@ -6254,7 +6174,7 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
   </body>
 </html></richcontent>
 </node>
-<node TEXT="MoM 007.png" ID="ID_206445861" LINK="file:/C:/Users/Edo/Documents/GitHub/Freeplane_My-Menu-Inator/resources/MoM%20007.png">
+<node TEXT="MoM 007.png" ID="ID_206445861" LINK="resources/MoM%20007.png">
 <attribute NAME="lastModifiedTime" VALUE="12-07-21 18:52" OBJECT="org.freeplane.features.format.FormattedDate|2021-07-12T18:52-0400|datetime"/>
 <attribute NAME="lastAccessTime" VALUE="13-07-21 16:38" OBJECT="org.freeplane.features.format.FormattedDate|2021-07-13T16:38-0400|dd-MM-yy HH:mm"/>
 <attribute NAME="creationTime" VALUE="12-07-21 18:52" OBJECT="org.freeplane.features.format.FormattedDate|2021-07-12T18:52-0400|datetime"/>
@@ -6271,7 +6191,7 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
   </body>
 </html></richcontent>
 </node>
-<node TEXT="MoM_example.mm" FOLDED="true" ID="ID_1626267884" LINK="file:/C:/Users/Edo/Documents/GitHub/Freeplane_My-Menu-Inator/resources/MoM_example.mm">
+<node TEXT="MoM_example.mm" FOLDED="true" ID="ID_1626267884" LINK="resources/MoM_example.mm">
 <attribute NAME="lastModifiedTime" VALUE="11-07-21 19:07" OBJECT="org.freeplane.features.format.FormattedDate|2021-07-11T19:07-0400|dd-MM-yy HH:mm"/>
 <attribute NAME="lastAccessTime" VALUE="27-07-21 13:02" OBJECT="org.freeplane.features.format.FormattedDate|2021-07-27T13:02-0400|dd-MM-yy HH:mm"/>
 <attribute NAME="creationTime" VALUE="11-07-21 19:07" OBJECT="org.freeplane.features.format.FormattedDate|2021-07-11T19:07-0400|dd-MM-yy HH:mm"/>
@@ -6280,13 +6200,13 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
 <node TEXT="usar para mejorar pantallazos para README y Tutorial" STYLE_REF="pendingTask" ID="ID_1897677105"/>
 </node>
 </node>
-<node TEXT="toUpperCase.groovy" ID="ID_1295205982" LINK="file:/C:/Users/Edo/Documents/GitHub/Freeplane_My-Menu-Inator/resources/toUpperCase.groovy">
+<node TEXT="toUpperCase.groovy" ID="ID_1295205982" LINK="resources/toUpperCase.groovy">
 <attribute NAME="lastModifiedTime" VALUE="29-06-21 13:21" OBJECT="org.freeplane.features.format.FormattedDate|2021-06-29T13:21-0400|datetime"/>
 <attribute NAME="lastAccessTime" VALUE="08-07-21 19:34" OBJECT="org.freeplane.features.format.FormattedDate|2021-07-08T19:34-0400|dd-MM-yy HH:mm"/>
 <attribute NAME="creationTime" VALUE="29-06-21 13:21" OBJECT="org.freeplane.features.format.FormattedDate|2021-06-29T13:21-0400|datetime"/>
 <attribute NAME="fileSize" VALUE="35" OBJECT="org.freeplane.features.format.FormattedNumber|35|#,##0"/>
 </node>
-<node TEXT="MoM-launchDirectly.gif" ID="ID_1914406824" LINK="file:/C:/Users/Edo/Documents/GitHub/Freeplane_My-Menu-Inator/resources/MoM-launchDirectly.gif"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/markdown">
+<node TEXT="MoM-launchDirectly.gif" ID="ID_1914406824" LINK="resources/MoM-launchDirectly.gif"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/markdown">
 <html>
   <head>
     
@@ -6299,7 +6219,7 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
 </html></richcontent>
 </node>
 </node>
-<node TEXT="README.md" FOLDED="true" ID="ID_925151699" LINK="file:/C:/Users/Edo/Documents/GitHub/Freeplane_My-Menu-Inator/README.md" STYLE="bubble">
+<node TEXT="README.md" ID="ID_925151699" LINK="README.md" STYLE="bubble">
 <edge COLOR="#ff0000"/>
 <richcontent TYPE="NOTE" CONTENT-TYPE="plain/markdown"/>
 <attribute_layout NAME_WIDTH="132.75 pt"/>
@@ -6307,7 +6227,7 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
 <attribute NAME="lastAccessTime" VALUE="13-07-21 16:38" OBJECT="org.freeplane.features.format.FormattedDate|2021-07-13T16:38-0400|dd-MM-yy HH:mm"/>
 <attribute NAME="creationTime" VALUE="11-03-21 18:22" OBJECT="org.freeplane.features.format.FormattedDate|2021-03-11T18:22-0300|datetime"/>
 <attribute NAME="fileSize" VALUE="5.417" OBJECT="org.freeplane.features.format.FormattedNumber|5417|#,##0"/>
-<node TEXT="README-MoM-MDH.mm" ID="ID_1030065546" LINK="file:/C:/Users/Edo/Documents/GitHub/Freeplane_My-Menu-Inator/README-MoM-MDH.mm">
+<node TEXT="README-MoM-MDH.mm" ID="ID_1030065546" LINK="README-MoM-MDH.mm">
 <attribute NAME="lastModifiedTime" VALUE="12-07-21 18:56" OBJECT="org.freeplane.features.format.FormattedDate|2021-07-12T18:56-0400|dd-MM-yy HH:mm"/>
 <attribute NAME="lastAccessTime" VALUE="13-07-21 16:38" OBJECT="org.freeplane.features.format.FormattedDate|2021-07-13T16:38-0400|dd-MM-yy HH:mm"/>
 <attribute NAME="creationTime" VALUE="29-06-21 10:22" OBJECT="org.freeplane.features.format.FormattedDate|2021-06-29T10:22-0400|datetime"/>
@@ -6326,12 +6246,12 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
 </node>
 </node>
 </node>
-<node TEXT="LICENSE.md" ID="ID_1152259847" LINK="file:/C:/Users/Edo/Documents/GitHub/Freeplane_My-Menu-Inator/LICENSE.md">
+<node TEXT="LICENSE.md" ID="ID_1152259847" LINK="LICENSE.md">
 <attribute NAME="lastModifiedTime" VALUE="16-04-21 13:48" OBJECT="org.freeplane.features.format.FormattedDate|2021-04-16T13:48-0400|datetime"/>
 <attribute NAME="lastAccessTime" VALUE="12-07-21 18:24" OBJECT="org.freeplane.features.format.FormattedDate|2021-07-12T18:24-0400|dd-MM-yy HH:mm"/>
 <attribute NAME="creationTime" VALUE="29-06-21 16:11" OBJECT="org.freeplane.features.format.FormattedDate|2021-06-29T16:11-0400|datetime"/>
 <attribute NAME="fileSize" VALUE="1.073" OBJECT="org.freeplane.features.format.FormattedNumber|1073|#,##0"/>
-<richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
+<richcontent TYPE="NOTE">
 <html>
   <head>
     
@@ -6403,7 +6323,7 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
   </body>
 </html></richcontent>
 </node>
-<node TEXT="ignoredByGitHub" STYLE_REF="file_folder" ID="ID_1913165798" LINK="file:/C:/Users/Edo/Documents/GitHub/Freeplane_My-Menu-Inator/ignoredByGitHub/"><richcontent CONTENT-TYPE="xml/" TYPE="DETAILS">
+<node TEXT="ignoredByGitHub" ID="ID_1913165798" LINK="ignoredByGitHub/"><richcontent TYPE="DETAILS">
 <html>
   <head>
     
@@ -6414,46 +6334,116 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
     </p>
   </body>
 </html></richcontent>
-</node>
-</node>
-<node TEXT="Menu-o-Matic project.mm" ID="ID_1492418706" LINK="file:/C:/Users/Edo/Documents/GitHub/Freeplane_My-Menu-Inator/Menu-o-Matic%20project.mm"/>
-<node TEXT="new imported files" STYLE_REF="newFolderImport" ID="ID_1788703280">
-<attribute NAME="log_MDI" VALUE="No"/>
-<richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
+<node TEXT="agrega Tab test con botones.groovy" ID="ID_381894890" LINK="ignoredByGitHub/agrega%20Tab%20test%20con%20botones.groovy"><richcontent TYPE="NOTE">
 <html>
   <head>
     
   </head>
   <body>
     <p>
-      Inated:&nbsp;&nbsp;&nbsp;2022-08-26&nbsp;&nbsp;19:59:25
+      import groovy.swing.SwingBuilder
+    </p>
+    <p>
+      //import org.freeplane.core.ui.components.FreeplaneToolBar
+    </p>
+    <p>
+      import javax.swing.SwingConstants;
+    </p>
+    <p>
+      import java.awt.Insets;
     </p>
     <p>
       
     </p>
     <p>
-      ------- Files: --------&nbsp;
+      import org.freeplane.core.ui.components.*
     </p>
     <p>
-      &nbsp;0 node(s) pointing to unexisting/filtered files (marked as 'broken')
-    </p>
-    <p>
-      &nbsp;0 link(s) corrected in nodes
-    </p>
-    <p>
-      &nbsp;0 new file(s) imported as node(s)&nbsp;
-    </p>
-    <p>
-      &nbsp;1 node(s) moved/renamed in drive
+      // region imports_from_toolbar
     </p>
     <p>
       
     </p>
     <p>
-      ------- Folders: --------&nbsp;
+      &#xa0;&#xa0;&#xa0;&#xa0;import java.awt.Component;
     </p>
     <p>
-      20 folders didn't need to be moved&nbsp;
+      //&#xa0;&#xa0;&#xa0;&#xa0;import java.awt.GridBagConstraints;
+    </p>
+    <p>
+      // import java.awt.GridBagLayout;
+    </p>
+    <p>
+      //&#xa0;&#xa0;&#xa0;&#xa0;import java.awt.Insets;
+    </p>
+    <p>
+      //&#xa0;&#xa0;&#xa0;&#xa0;import java.awt.LayoutManager;
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;import java.awt.event.HierarchyBoundsListener;
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;import java.awt.event.HierarchyEvent;
+    </p>
+    <p>
+      //
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;import javax.swing.AbstractButton;
+    </p>
+    <p>
+      //&#xa0;&#xa0;&#xa0;&#xa0;import javax.swing.BorderFactory;
+    </p>
+    <p>
+      //&#xa0;&#xa0;&#xa0;&#xa0;import javax.swing.JButton;
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;import javax.swing.JToolBar;
+    </p>
+    <p>
+      //&#xa0;&#xa0;&#xa0;&#xa0;import javax.swing.SwingConstants;
+    </p>
+    <p>
+      //
+    </p>
+    <p>
+      //&#xa0;&#xa0;&#xa0;&#xa0;import org.freeplane.core.ui.AFreeplaneAction;
+    </p>
+    <p>
+      //&#xa0;&#xa0;&#xa0;&#xa0;import org.freeplane.core.ui.menubuilders.menu.JButtonWithDropdownMenu;
+    </p>
+    <p>
+      //&#xa0;&#xa0;&#xa0;&#xa0;import org.freeplane.core.ui.menubuilders.menu.UnitGridBagLayout;
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;import org.freeplane.core.util.Compat;
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      // endregion
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      // region crea tab test
+    </p>
+    <p>
+      sb = new SwingBuilder()
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      TP = ui.getFreeplaneTabbedPanel()
+    </p>
+    <p>
+      //return TP
+    </p>
+    <p>
+      if (TP.tabCount&gt;= 5){TP.remove(4)}//;return
     </p>
     <p>
       
@@ -6462,7 +6452,417 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
       
     </p>
     <p>
-      1.1 seconds
+      
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      def tb = new FreeplaneToolBar('myToolbar', SwingConstants.VERTICAL)
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      def i = 1
+    </p>
+    <p>
+      3.times{tb.add(creaBoton(i++, true))}
+    </p>
+    <p>
+      tb.addSeparator()
+    </p>
+    <p>
+      4.times{tb.add(creaBoton(i++,false))}
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      def tb2 = new FreeplaneToolBar('myToolbar2', SwingConstants.VERTICAL)
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      i = 1
+    </p>
+    <p>
+      3.times{tb2.add(creaBoton(i++,false))}
+    </p>
+    <p>
+      tb2.addSeparator()
+    </p>
+    <p>
+      4.times{tb2.add(creaBoton(i++,true))}
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      def pane = sb.panel()
+    </p>
+    <p>
+      pane.add(tb)
+    </p>
+    <p>
+      pane.add(tb2)
+    </p>
+    <p>
+      TP.addTab(&quot;test&quot;,pane)
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      // endregion
+    </p>
+    <p>
+      //---- methods -----
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      def creaBoton(j, conTexto) {
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;def boton = sb.button(
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;text&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;: conTexto?&quot;texto $j&quot;:null,
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;horizontalAlignment : SwingConstants.LEFT,
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;icon&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;: menuUtils.getMenuItemIcon(&quot;IconAction.TabbedPanelMod/0$j&quot;),
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;toolTipText&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;: &quot;tooltip $j&quot;,
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;//preferredSize&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;: prefDimension,
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;//minimumSize&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;: minD,
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;margin&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;: new Insets(10,12,10,12),
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;borderPainted&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;: true,
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;actionPerformed&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;: {c.statusInfo = j.toString() * 5}
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;)
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;return boton
+    </p>
+    <p>
+      }
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      // region FreeplaneToolBar
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      class FreeplaneToolBar extends JToolBar {
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;protected static Insets nullInsets = new Insets(0, 0, 0, 0);
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;private boolean disablesFocus;
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;public FreeplaneToolBar(int orientation) {
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;this(null, orientation);
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;}
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;public FreeplaneToolBar(final String name, final int orientation) {
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;super(name, orientation)
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;this.disablesFocus = true
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;this.setMargin(FreeplaneToolBar.nullInsets)
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;setFloatable(true)
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;setRollover(true)
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;super.setLayout(ToolbarLayout.vertical())
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;addHierarchyBoundsListener(new HierarchyBoundsListener() {
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;@Override
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;public void ancestorResized(final HierarchyEvent e) {
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;revalidate()
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;repaint()
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;}
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;@Override
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;public void ancestorMoved(final HierarchyEvent e) {
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;}
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;})
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;}
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;@Override
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;public Component add(final Component comp) {
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;super.add(comp);
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;configureComponent(comp);
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;return comp;
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;}
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;@Override
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;public Component add(final Component comp, final int index) {
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;super.add(comp, index);
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;configureComponent(comp);
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;return comp;
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;}
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;protected void configureComponent(final Component comp) {
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;if (!(comp instanceof AbstractButton)) {
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;return;
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;}
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;final AbstractButton abstractButton = (AbstractButton) comp;
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;configureToolbarButton(abstractButton);
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;}
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;private void configureToolbarButton(AbstractButton abstractButton) {
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;configureToolbarButtonSize(abstractButton);
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;if(disablesFocus) {
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;abstractButton.setRequestFocusEnabled(false);
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;abstractButton.setFocusable(false);
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;}
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;}
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;private void configureToolbarButtonSize(final AbstractButton abstractButton) {
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;if (Compat.isMacOsX()) {
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;abstractButton.putClientProperty(&quot;JButton.buttonType&quot;, &quot;segmentedGradient&quot;);
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;abstractButton.putClientProperty(&quot;JButton.segmentPosition&quot;, &quot;middle&quot;);
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;abstractButton.setFocusPainted(false);
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;}
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;abstractButton.setMargin(FreeplaneToolBar.nullInsets);
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;}
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      }
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      // endregion
+    </p>
+  </body>
+</html>
+</richcontent>
+<richcontent TYPE="DETAILS">
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      .groovy
+    </p>
+  </body>
+</html></richcontent>
+</node>
+</node>
+</node>
+<node TEXT="Menu-o-Matic project.mm" ID="ID_1492418706" LINK="Menu-o-Matic%20project.mm"/>
+<node TEXT="new imported files" STYLE_REF="newFolderImport" ID="ID_1788703280">
+<attribute NAME="log_MDI" VALUE="2" OBJECT="org.freeplane.features.format.FormattedObject|org.freeplane.plugin.script.proxy.ConvertibleText&amp;#x7c;2|number:decimal:#0.####"/>
+<richcontent TYPE="NOTE">
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      Inated:&#xa0;&#xa0;&#xa0;2023-07-17&#xa0;&#xa0;19:11:48
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      ------- Files: --------&#xa0;
+    </p>
+    <p>
+      &#xa0;0 node(s) pointing to unexisting/filtered files (marked as 'broken')
+    </p>
+    <p>
+      &#xa0;0 link(s) corrected in nodes
+    </p>
+    <p>
+      &#xa0;1 new file(s) imported as node(s)&#xa0;
+    </p>
+    <p>
+      &#xa0;0 node(s) moved/renamed in drive
+    </p>
+    <p>
+      &#xa0;0 node(s) couldn't be moved/renamed in drive (marked as 'notMovedRenamed')
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      ------- Folders: --------&#xa0;
+    </p>
+    <p>
+      23 folders didn't need to be moved&#xa0;
+    </p>
+    <p>
+      3 folders were not found&#xa0;
+    </p>
+    <p>
+      1 folder node(s) having case: 'mapPosition != drivePosition' but that had Clones that were OK --&gt; they were OK&#xa0;
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      0.3 seconds
+    </p>
+    <p>
+      
     </p>
     <p>
       
@@ -6473,11 +6873,22 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
     <p>
       
     </p>
+    <p>
+      No failed operation in drive
+    </p>
   </body>
-</html></richcontent>
+</html>
+</richcontent>
+<node TEXT="Menu-o-Matic" ID="ID_13403667" LINK="Menu-o-Matic/">
+<node TEXT="src" ID="ID_1710270558" LINK="Menu-o-Matic/src/">
+<node TEXT="main" ID="ID_228709392" LINK="Menu-o-Matic/src/main/">
+<node TEXT="groovy" ID="ID_1055959163" LINK="#ID_1812743557"/>
+</node>
+</node>
+</node>
 </node>
 <node TEXT="versión instalada en AddOns" STYLE_REF="locked" FOLDED="true" ID="ID_1424141649">
-<node TEXT="menuOMatic" ID="ID_1859181061"><richcontent CONTENT-TYPE="xml/" TYPE="DETAILS">
+<node TEXT="menuOMatic" ID="ID_1859181061"><richcontent TYPE="DETAILS">
 <html>
   <head>
     
@@ -6499,7 +6910,7 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
 <node TEXT="MoM Future B" STYLE_REF="milestone" FOLDED="true" ID="ID_1205873899">
 <node TEXT="⁃        preguntar si nuevas características estarán disponibles a través de API: type content, followed map, isFormula(), etc." STYLE_REF="maybeTask" ID="ID_1978469114"/>
 <node TEXT="preguntar a Dimitry que opina de que yo patronice mis AddOns" STYLE_REF="maybeTask" ID="ID_1202885607"/>
-<node TEXT="YouTube: Freeplane Menu-o-Matic" STYLE_REF="pendingTask" ID="ID_169365071" LINK="https://www.youtube.com/watch?v=uu46pntlCag"><richcontent CONTENT-TYPE="xml/" TYPE="DETAILS">
+<node TEXT="YouTube: Freeplane Menu-o-Matic" STYLE_REF="pendingTask" ID="ID_169365071" LINK="https://www.youtube.com/watch?v=uu46pntlCag"><richcontent TYPE="DETAILS">
 <html>
   <head>
     
@@ -6532,7 +6943,7 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
 </node>
 <node TEXT="ideas para próximos releases" FOLDED="true" ID="ID_712283228">
 <node TEXT="⁃        comando que abra listado de todos los menubars del mapa y usuario pueda abrirlos desde allí" STYLE_REF="completedTask" FOLDED="true" ID="ID_1456737763">
-<node TEXT="borrador" ID="ID_1975476122"><richcontent CONTENT-TYPE="xml/" TYPE="DETAILS">
+<node TEXT="borrador" ID="ID_1975476122"><richcontent TYPE="DETAILS">
 <html>
   <head>
     
@@ -6543,7 +6954,7 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
     </p>
   </body>
 </html></richcontent>
-<richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
+<richcontent TYPE="NOTE">
 <html>
   <head>
     
@@ -6686,7 +7097,7 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
 </node>
 </node>
 <node TEXT="comado para abrir dialogo de Menu-o-Matic" STYLE_REF="completedTask" FOLDED="true" ID="ID_515147775">
-<node TEXT="borrador" ID="ID_255433371"><richcontent CONTENT-TYPE="xml/" TYPE="DETAILS">
+<node TEXT="borrador" ID="ID_255433371"><richcontent TYPE="DETAILS">
 <html>
   <head>
     
@@ -6697,7 +7108,7 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
     </p>
   </body>
 </html></richcontent>
-<richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
+<richcontent TYPE="NOTE">
 <html>
   <head>
     
@@ -7003,7 +7414,7 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
 </node>
 </node>
 </node>
-<node TEXT="actualizar file links de rama para disco externo" ID="ID_1520939874"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
+<node TEXT="actualizar file links de rama para disco externo" ID="ID_1520939874"><richcontent TYPE="NOTE">
 <html>
   <head>
     
@@ -7134,7 +7545,7 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
     </p>
   </body>
 </html></richcontent>
-<richcontent CONTENT-TYPE="xml/" TYPE="DETAILS">
+<richcontent TYPE="DETAILS">
 <html>
   <head>
     
@@ -7147,7 +7558,7 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
 </html></richcontent>
 </node>
 </node>
-<node TEXT="WIP" STYLE_REF="tasksBucket" ID="ID_1832095650"><richcontent CONTENT-TYPE="xml/" TYPE="DETAILS">
+<node TEXT="WIP" STYLE_REF="tasksBucket" ID="ID_1832095650"><richcontent TYPE="DETAILS">
 <html>
   <head>
     
@@ -7165,7 +7576,7 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
 <attribute NAME="WIP filter" VALUE="true"/>
 <attribute NAME="groupingLevels" VALUE="10" OBJECT="org.freeplane.features.format.FormattedNumber|10"/>
 </node>
-<node TEXT="tasksBucket" STYLE_REF="tasksBucket" ID="ID_1594981695"><richcontent CONTENT-TYPE="xml/" TYPE="DETAILS">
+<node TEXT="tasksBucket" STYLE_REF="tasksBucket" ID="ID_1594981695"><richcontent TYPE="DETAILS">
 <html>
   <head>
     
@@ -7253,7 +7664,7 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
 </node>
 </node>
 </node>
-<node TEXT="tasksBucket" STYLE_REF="tasksBucket" ID="ID_1412452816"><richcontent CONTENT-TYPE="xml/" TYPE="DETAILS">
+<node TEXT="tasksBucket" STYLE_REF="tasksBucket" ID="ID_1412452816"><richcontent TYPE="DETAILS">
 <html>
   <head>
     
@@ -7369,7 +7780,7 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
 </node>
 <node TEXT="sauropod" ID="ID_1956864748" LINK="menuitem:_IconAction.emoji-1F995"/>
 <node TEXT="locked" ID="ID_1878265347" LINK="menuitem:_AssignStyleAction.locked"/>
-<node TEXT="present styles in selected branch" FOLDED="true" ID="ID_1783014117"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
+<node TEXT="present styles in selected branch" FOLDED="true" ID="ID_1783014117"><richcontent TYPE="NOTE">
 <html>
   <head>
     
@@ -7424,9 +7835,8 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
       }
     </p>
   </body>
-</html>
-</richcontent>
-<richcontent CONTENT-TYPE="xml/" TYPE="DETAILS">
+</html></richcontent>
+<richcontent TYPE="DETAILS">
 <html>
   <head>
     
@@ -7442,7 +7852,7 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
 <node TEXT="baseFolder" STYLE_REF="baseFolder" ID="ID_1544236888"/>
 <node TEXT="completedTask" STYLE_REF="completedTask" ID="ID_398028803"/>
 <node TEXT="default" LOCALIZED_STYLE_REF="default" ID="ID_1884993533"/>
-<node TEXT="file_folder" STYLE_REF="file_folder" ID="ID_899206454"/>
+<node TEXT="file_folder" STYLE_REF="movedRenamed" ID="ID_899206454" LINK="file_folder/"/>
 <node TEXT="locked" STYLE_REF="locked" ID="ID_1180054565"/>
 <node TEXT="maybeTask" STYLE_REF="maybeTask" ID="ID_1516563008"/>
 <node TEXT="milestone" STYLE_REF="milestone" ID="ID_1710491249"/>
@@ -7487,7 +7897,7 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
 <node ID="ID_765751431" TREE_ID="ID_1750003842"/>
 </node>
 </node>
-<node TEXT="present icons in map/branch" FOLDED="true" ID="ID_1926753731"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
+<node TEXT="present icons in map/branch" FOLDED="true" ID="ID_1926753731"><richcontent TYPE="NOTE">
 <html>
   <head>
     
@@ -7518,9 +7928,8 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
       }
     </p>
   </body>
-</html>
-</richcontent>
-<richcontent CONTENT-TYPE="xml/" TYPE="DETAILS">
+</html></richcontent>
+<richcontent TYPE="DETAILS">
 <html>
   <head>
     
@@ -7585,7 +7994,7 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
 </node>
 </node>
 </node>
-<node TEXT="create node with action to selected node&apos;s icon" FOLDED="true" ID="ID_775025033"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
+<node TEXT="create node with action to selected node&apos;s icon" FOLDED="true" ID="ID_775025033"><richcontent TYPE="NOTE">
 <html>
   <head>
     
@@ -7667,9 +8076,8 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
       }
     </p>
   </body>
-</html>
-</richcontent>
-<richcontent CONTENT-TYPE="xml/" TYPE="DETAILS">
+</html></richcontent>
+<richcontent TYPE="DETAILS">
 <html>
   <head>
     
@@ -7679,14 +8087,13 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
       .groovy
     </p>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 <node TEXT="&lt;-- -&apos;emoji-1F984&apos;" ID="ID_703266161">
 <icon BUILTIN="emoji-1F984"/>
 <node TEXT="unicorn" ID="ID_1687034073" LINK="menuitem:_IconAction.emoji-1F984"/>
 </node>
 </node>
-<node TEXT="present icons in selected branch" ID="ID_1417839906"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
+<node TEXT="present icons in selected branch" ID="ID_1417839906"><richcontent TYPE="NOTE">
 <html>
   <head>
     
@@ -7703,7 +8110,7 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
     </p>
   </body>
 </html></richcontent>
-<richcontent CONTENT-TYPE="xml/" TYPE="DETAILS">
+<richcontent TYPE="DETAILS">
 <html>
   <head>
     
@@ -7715,7 +8122,7 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
   </body>
 </html></richcontent>
 </node>
-<node TEXT="get first icon from node and insert it into an html" FOLDED="true" ID="ID_901278280"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
+<node TEXT="get first icon from node and insert it into an html" FOLDED="true" ID="ID_901278280"><richcontent TYPE="NOTE">
 <html>
   <head>
     
@@ -7743,7 +8150,7 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
       
     </p>
     <p>
-      def html2 =&nbsp;&nbsp;&quot;&lt;html&gt;&lt;body&gt;&lt;p&gt;icon ${html} is named '${iconName}'&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;&quot;
+      def html2 =&#xa0;&#xa0;&quot;&lt;html&gt;&lt;body&gt;&lt;p&gt;icon ${html} is named '${iconName}'&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;&quot;
     </p>
     <p>
       
@@ -7758,8 +8165,9 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
       resultNode.details = html2
     </p>
   </body>
-</html></richcontent>
-<richcontent CONTENT-TYPE="xml/" TYPE="DETAILS">
+</html>
+</richcontent>
+<richcontent TYPE="DETAILS">
 <html>
   <head>
     
@@ -7789,7 +8197,7 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
   </body>
 </html>
 </richcontent>
-<richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
+<richcontent TYPE="NOTE">
 <html>
   <head>
     
@@ -7800,7 +8208,7 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
     </p>
   </body>
 </html></richcontent>
-<richcontent CONTENT-TYPE="xml/" TYPE="DETAILS">
+<richcontent TYPE="DETAILS">
 <html>
   <head>
     
@@ -7828,7 +8236,7 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
   </body>
 </html>
 </richcontent>
-<richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
+<richcontent TYPE="NOTE">
 <html>
   <head>
     
@@ -7839,7 +8247,7 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
     </p>
   </body>
 </html></richcontent>
-<richcontent CONTENT-TYPE="xml/" TYPE="DETAILS">
+<richcontent TYPE="DETAILS">
 <html>
   <head>
     
@@ -7854,5 +8262,6 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
 </node>
 </node>
 </node>
+<node TEXT="Freeplane_Menu-o-Matic" POSITION="bottom_or_right" ID="ID_996112512" LINK="."/>
 </node>
 </map>
