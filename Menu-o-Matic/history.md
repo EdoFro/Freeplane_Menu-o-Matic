@@ -2,6 +2,8 @@
 
 ## v0.1.5
 
+* added TabPane lib
+* added MoMToolbar lib
 
 ## v0.1.4
 

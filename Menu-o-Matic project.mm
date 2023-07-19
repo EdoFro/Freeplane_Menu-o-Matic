@@ -57,7 +57,7 @@
 <font SIZE="24"/>
 <stylenode LOCALIZED_TEXT="styles.predefined" POSITION="bottom_or_right" STYLE="bubble">
 <stylenode LOCALIZED_TEXT="default" ID="ID_506805493" ICON_SIZE="12 pt" FORMAT_AS_HYPERLINK="false" COLOR="#484747" BACKGROUND_COLOR="#efefef" STYLE="bubble" SHAPE_HORIZONTAL_MARGIN="5 px" SHAPE_VERTICAL_MARGIN="2 px" NUMBERED="false" FORMAT="STANDARD_FORMAT" TEXT_ALIGN="DEFAULT" BORDER_WIDTH_LIKE_EDGE="false" BORDER_WIDTH="1.9 px" BORDER_COLOR_LIKE_EDGE="false" BORDER_COLOR="#8fbcbb" BORDER_DASH_LIKE_EDGE="true" BORDER_DASH="SOLID" VGAP_QUANTITY="2 px" MAX_WIDTH="10 cm" MIN_WIDTH="0 cm">
-<arrowlink SHAPE="CUBIC_CURVE" COLOR="#bf5d3f" WIDTH="2" TRANSPARENCY="200" DASH="" FONT_SIZE="9" FONT_FAMILY="SansSerif" DESTINATION="ID_506805493" STARTINCLINATION="45 pt;-7.5 pt;" ENDINCLINATION="57 pt;30 pt;" STARTARROW="NONE" ENDARROW="DEFAULT"/>
+<arrowlink SHAPE="CUBIC_CURVE" COLOR="#bf5d3f" WIDTH="2" TRANSPARENCY="200" DASH="" FONT_SIZE="9" FONT_FAMILY="SansSerif" DESTINATION="ID_506805493" STARTINCLINATION="45 pt;-6.75 pt;" ENDINCLINATION="57 pt;30 pt;" STARTARROW="NONE" ENDARROW="DEFAULT"/>
 <font NAME="Dialog" SIZE="10" BOLD="false" STRIKETHROUGH="false" ITALIC="false"/>
 <edge STYLE="horizontal" COLOR="#2e3440" WIDTH="1" DASH="SOLID"/>
 <richcontent TYPE="DETAILS" CONTENT-TYPE="plain/auto"/>
@@ -6788,8 +6788,7 @@ before the actual namefilter setting)
       // endregion
     </p>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 <richcontent TYPE="DETAILS">
 <html>
   <head>
@@ -6802,6 +6801,7 @@ before the actual namefilter setting)
   </body>
 </html></richcontent>
 </node>
+<node TEXT="agrega Tab test con botones - usando lib.groovy" ID="ID_982318595" LINK="ignoredByGitHub/agrega%20Tab%20test%20con%20botones%20-%20usando%20lib.groovy"/>
 </node>
 </node>
 <node TEXT="Menu-o-Matic project.mm" ID="ID_1492418706" LINK="Menu-o-Matic%20project.mm"/>
@@ -6814,7 +6814,7 @@ before the actual namefilter setting)
   </head>
   <body>
     <p>
-      Inated:&#xa0;&#xa0;&#xa0;2023-07-17&#xa0;&#xa0;19:11:48
+      Inated:&#xa0;&#xa0;&#xa0;2023-07-18&#xa0;&#xa0;11:43:48
     </p>
     <p>
       
@@ -6829,7 +6829,7 @@ before the actual namefilter setting)
       &#xa0;0 link(s) corrected in nodes
     </p>
     <p>
-      &#xa0;1 new file(s) imported as node(s)&#xa0;
+      &#xa0;0 new file(s) imported as node(s)&#xa0;
     </p>
     <p>
       &#xa0;0 node(s) moved/renamed in drive
@@ -6881,9 +6881,7 @@ before the actual namefilter setting)
 </richcontent>
 <node TEXT="Menu-o-Matic" ID="ID_13403667" LINK="Menu-o-Matic/">
 <node TEXT="src" ID="ID_1710270558" LINK="Menu-o-Matic/src/">
-<node TEXT="main" ID="ID_228709392" LINK="Menu-o-Matic/src/main/">
-<node TEXT="groovy" ID="ID_1055959163" LINK="#ID_1812743557"/>
-</node>
+<node TEXT="main" ID="ID_228709392" LINK="Menu-o-Matic/src/main/"/>
 </node>
 </node>
 </node>
@@ -6901,7 +6899,7 @@ before the actual namefilter setting)
 </html></richcontent>
 </node>
 </node>
-<node TEXT="Tareas" STYLE_REF="Organizador" FOLDED="true" ID="ID_642782932">
+<node TEXT="Tareas" STYLE_REF="Organizador" ID="ID_642782932">
 <attribute NAME="projectCode" VALUE="Tareas"/>
 <node TEXT="MoM First" STYLE_REF="milestone" ID="ID_1952544676">
 <node TEXT="traducir tareas al inglés" STYLE_REF="pendingTask" ID="ID_1966513049"/>
@@ -8165,8 +8163,7 @@ before the actual namefilter setting)
       resultNode.details = html2
     </p>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 <richcontent TYPE="DETAILS">
 <html>
   <head>
