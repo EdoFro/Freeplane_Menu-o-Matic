@@ -57,7 +57,7 @@
 <font SIZE="24"/>
 <stylenode LOCALIZED_TEXT="styles.predefined" POSITION="bottom_or_right" STYLE="bubble">
 <stylenode LOCALIZED_TEXT="default" ID="ID_506805493" ICON_SIZE="12 pt" FORMAT_AS_HYPERLINK="false" COLOR="#484747" BACKGROUND_COLOR="#efefef" STYLE="bubble" SHAPE_HORIZONTAL_MARGIN="5 px" SHAPE_VERTICAL_MARGIN="2 px" NUMBERED="false" FORMAT="STANDARD_FORMAT" TEXT_ALIGN="DEFAULT" BORDER_WIDTH_LIKE_EDGE="false" BORDER_WIDTH="1.9 px" BORDER_COLOR_LIKE_EDGE="false" BORDER_COLOR="#8fbcbb" BORDER_DASH_LIKE_EDGE="true" BORDER_DASH="SOLID" VGAP_QUANTITY="2 px" MAX_WIDTH="10 cm" MIN_WIDTH="0 cm">
-<arrowlink SHAPE="CUBIC_CURVE" COLOR="#bf5d3f" WIDTH="2" TRANSPARENCY="200" DASH="" FONT_SIZE="9" FONT_FAMILY="SansSerif" DESTINATION="ID_506805493" STARTINCLINATION="45 pt;-6.75 pt;" ENDINCLINATION="57 pt;30 pt;" STARTARROW="NONE" ENDARROW="DEFAULT"/>
+<arrowlink SHAPE="CUBIC_CURVE" COLOR="#bf5d3f" WIDTH="2" TRANSPARENCY="200" DASH="" FONT_SIZE="9" FONT_FAMILY="SansSerif" DESTINATION="ID_506805493" STARTINCLINATION="45 pt;-3.75 pt;" ENDINCLINATION="57 pt;30 pt;" STARTARROW="NONE" ENDARROW="DEFAULT"/>
 <font NAME="Dialog" SIZE="10" BOLD="false" STRIKETHROUGH="false" ITALIC="false"/>
 <edge STYLE="horizontal" COLOR="#2e3440" WIDTH="1" DASH="SOLID"/>
 <richcontent TYPE="DETAILS" CONTENT-TYPE="plain/auto"/>
@@ -3198,7 +3198,7 @@ before the actual namefilter setting)
 </node>
 </node>
 </node>
-<node TEXT="scripts" STYLE_REF="file_folder" FOLDED="true" ID="ID_283277560" LINK="Menu-o-Matic/scripts/">
+<node TEXT="scripts" STYLE_REF="file_folder" ID="ID_283277560" LINK="Menu-o-Matic/scripts/">
 <attribute NAME="lastModifiedTime" VALUE="12-05-22 10:19" OBJECT="org.freeplane.features.format.FormattedDate|2022-05-12T10:19-0400|dd-MM-yy HH:mm"/>
 <attribute NAME="lastAccessTime" VALUE="12-05-22 11:05" OBJECT="org.freeplane.features.format.FormattedDate|2022-05-12T11:05-0400|dd-MM-yy HH:mm"/>
 <attribute NAME="creationTime" VALUE="24-06-21 13:31" OBJECT="org.freeplane.features.format.FormattedDate|2021-06-24T13:31-0400|datetime"/>
@@ -5505,7 +5505,7 @@ before the actual namefilter setting)
 </node>
 <node ID="ID_91861266" CONTENT_ID="ID_1898413286"/>
 </node>
-<node TEXT="zips" STYLE_REF="file_folder" FOLDED="true" ID="ID_1075512046" LINK="Menu-o-Matic/zips/">
+<node TEXT="zips" STYLE_REF="file_folder" ID="ID_1075512046" LINK="Menu-o-Matic/zips/">
 <attribute NAME="lastModifiedTime" VALUE="25-06-21 15:00" OBJECT="org.freeplane.features.format.FormattedDate|2021-06-25T15:00-0400|dd-MM-yy HH:mm"/>
 <attribute NAME="lastAccessTime" VALUE="12-05-22 11:05" OBJECT="org.freeplane.features.format.FormattedDate|2022-05-12T11:05-0400|dd-MM-yy HH:mm"/>
 <attribute NAME="creationTime" VALUE="24-06-21 13:38" OBJECT="org.freeplane.features.format.FormattedDate|2021-06-24T13:38-0400|datetime"/>
@@ -5584,6 +5584,31 @@ before the actual namefilter setting)
 <attribute NAME="lastAccessTime" VALUE="12-05-22 11:04" OBJECT="org.freeplane.features.format.FormattedDate|2022-05-12T11:04-0400|dd-MM-yy HH:mm"/>
 <attribute NAME="creationTime" VALUE="25-06-21 15:34" OBJECT="org.freeplane.features.format.FormattedDate|2021-06-25T15:34-0400|datetime"/>
 <attribute NAME="fileSize" VALUE="103.710" OBJECT="org.freeplane.features.format.FormattedNumber|103710|#,##0"/>
+</node>
+</node>
+</node>
+<node TEXT="scripts" ID="ID_943715260" LINK="Menu-o-Matic/zips/scripts/">
+<node TEXT="init" ID="ID_524155904" LINK="Menu-o-Matic/zips/scripts/init/">
+<node TEXT="Menu-o-Matic_init.groovy" ID="ID_13016940" LINK="Menu-o-Matic/zips/scripts/init/Menu-o-Matic_init.groovy"><richcontent TYPE="NOTE">
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      //crear
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      //eso
+    </p>
+    <p>
+      
+    </p>
+  </body>
+</html></richcontent>
 </node>
 </node>
 </node>
@@ -5692,6 +5717,8 @@ before the actual namefilter setting)
 <attribute NAME="fileSize" VALUE="40.442" OBJECT="org.freeplane.features.format.FormattedNumber|40442|#,##0"/>
 </node>
 <node TEXT="generados automáticamente" STYLE_REF="Organizador" ID="ID_753392396">
+<node TEXT="Menu-o-Matic-v0.1.5.addon.mm" STYLE_REF="freshNew" ID="ID_1736490742" LINK="Menu-o-Matic/Menu-o-Matic-v0.1.5.addon.mm"/>
+<node TEXT="Menu-o-Matic-v0.1.4.addon.mm" STYLE_REF="freshNew" ID="ID_606492663" LINK="Menu-o-Matic/Menu-o-Matic-v0.1.4.addon.mm"/>
 <node TEXT="Menu-o-Matic-v0.1.3.addon.mm" ID="ID_510896369" LINK="Menu-o-Matic/Menu-o-Matic-v0.1.3.addon.mm">
 <attribute NAME="lastModifiedTime" VALUE="12-05-22 11:04" OBJECT="org.freeplane.features.format.FormattedDate|2022-05-12T11:04-0400|datetime"/>
 <attribute NAME="lastAccessTime" VALUE="12-05-22 11:04" OBJECT="org.freeplane.features.format.FormattedDate|2022-05-12T11:04-0400|datetime"/>
@@ -6055,14 +6082,11 @@ before the actual namefilter setting)
 </html></richcontent>
 </node>
 <node TEXT="última versión no funciona con groovy 3.x.txt" ID="ID_1548801217" LINK="Menu-o-Matic/última%20versión%20no%20funciona%20con%20groovy%203.x.txt"/>
-<node TEXT="Menu-o-Matic-v0.1.4.addon.mm" STYLE_REF="freshNew" ID="ID_606492663" LINK="Menu-o-Matic/Menu-o-Matic-v0.1.4.addon.mm"/>
 <node TEXT="gradle" STYLE_REF="freshNew" ID="ID_66998103" LINK="Menu-o-Matic/gradle/">
 <node TEXT="wrapper" STYLE_REF="freshNew" ID="ID_173644777" LINK="Menu-o-Matic/gradle/wrapper/">
-<node TEXT="gradle-wrapper.jar" STYLE_REF="freshNew" ID="ID_1997121508" LINK="Menu-o-Matic/gradle/wrapper/gradle-wrapper.jar"/>
 <node TEXT="gradle-wrapper.properties" STYLE_REF="freshNew" ID="ID_1478115143" LINK="Menu-o-Matic/gradle/wrapper/gradle-wrapper.properties"/>
 </node>
 </node>
-<node TEXT="Menu-o-Matic-v0.1.5.addon.mm" STYLE_REF="freshNew" ID="ID_1736490742" LINK="Menu-o-Matic/Menu-o-Matic-v0.1.5.addon.mm"/>
 <node TEXT="gradlew" STYLE_REF="freshNew" ID="ID_528678433" LINK="Menu-o-Matic/gradlew"/>
 <node TEXT="gradlew.bat" STYLE_REF="freshNew" ID="ID_1585301390" LINK="Menu-o-Matic/gradlew.bat"/>
 </node>
@@ -6234,7 +6258,36 @@ before the actual namefilter setting)
 <attribute NAME="fileSize" VALUE="45.841" OBJECT="org.freeplane.features.format.FormattedNumber|45841|#,##0"/>
 <attribute NAME="projectCode" VALUE="README-MoM-MDH.mm"/>
 <node TEXT="MoM v0.1.4" STYLE_REF="milestone" ID="ID_1696364528">
-<node TEXT="actualizar" STYLE_REF="pendingTask" ID="ID_1470130410"/>
+<node TEXT="actualizar" STYLE_REF="pendingTask" ID="ID_1470130410">
+<node TEXT="View settings" ID="ID_276226858" LINK="menuitem:_addons.menuOMatic.launchCustomDialog_on_single_node">
+<icon BUILTIN="launch"/>
+<attribute NAME="tbActions" VALUE="[ToggleMapOverviewAction, ShowFormatPanel, ShowHideNoteAction, ShowFilterToolbarAction, ToggleToolbarAction, ToggleLeftToolbarAction, ToggleStatusAction, ToggleFullScreenAction, ViewLayoutTypeAction.OUTLINE, ShowNotesInMapAction]"/>
+<attribute NAME="tbIcons" VALUE="[IconAction.mindmap, IconAction.emoji-1F9F0, IconAction.emoji-1F4DD, ShowFilterToolbarAction, IconAction.emoji-1F6E0, IconAction.emoji-1F596, IconAction.emoji-2139, ToggleFullScreenAction, ViewLayoutTypeAction.OUTLINE, IconAction.emoji-1F5D2]"/>
+<attribute NAME="tbLabels" VALUE="[Map overview, Tool panel, Display note panel, Filter toolbar, Toolbar, Icons toolbar, Display status line, Full screen mode, Outline view, Display notes in map]"/>
+<attribute NAME="tbMaxTextLength" VALUE="50" OBJECT="org.freeplane.features.format.FormattedNumber|50"/>
+<attribute NAME="tbShowIcons" VALUE="true"/>
+<attribute NAME="tbShowLabels" VALUE="false"/>
+<attribute NAME="tbFocusToMap" VALUE="true"/>
+<attribute NAME="tbTitle" VALUE="View settings"/>
+<richcontent TYPE="DETAILS">
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      customMenu&nbsp;&nbsp;
+    </p>
+    <p>
+      &nbsp;&nbsp;- icons only
+    </p>
+    <p>
+      &nbsp;&nbsp;- return to mindmap
+    </p>
+  </body>
+</html></richcontent>
+</node>
+</node>
 <node TEXT="agregar imagenes de template" STYLE_REF="pendingTask" ID="ID_1734690317"/>
 <node TEXT="agregar gif animados" STYLE_REF="pendingTask" ID="ID_1476094888"/>
 </node>
@@ -6801,7 +6854,13 @@ before the actual namefilter setting)
   </body>
 </html></richcontent>
 </node>
-<node TEXT="agrega Tab test con botones - usando lib.groovy" ID="ID_982318595" LINK="ignoredByGitHub/agrega%20Tab%20test%20con%20botones%20-%20usando%20lib.groovy"/>
+<node TEXT="agrega Tab test con botones - usando lib.groovy" ID="ID_982318595" LINK="ignoredByGitHub/agrega%20Tab%20test%20con%20botones%20-%20usando%20lib.groovy">
+<font BOLD="false"/>
+</node>
+<node TEXT="java" ID="ID_969725714" LINK="ignoredByGitHub/java/">
+<node TEXT="CustomTitleProvider.java" ID="ID_893099842" LINK="ignoredByGitHub/java/CustomTitleProvider.java"/>
+</node>
+<node TEXT="DockingWindowTitleProvider.groovy" ID="ID_609130610" LINK="ignoredByGitHub/DockingWindowTitleProvider.groovy"/>
 </node>
 </node>
 <node TEXT="Menu-o-Matic project.mm" ID="ID_1492418706" LINK="Menu-o-Matic%20project.mm"/>
@@ -6814,7 +6873,7 @@ before the actual namefilter setting)
   </head>
   <body>
     <p>
-      Inated:&#xa0;&#xa0;&#xa0;2023-07-18&#xa0;&#xa0;11:43:48
+      Inated:&#xa0;&#xa0;&#xa0;2023-08-08&#xa0;&#xa0;13:03:19
     </p>
     <p>
       
@@ -6844,7 +6903,7 @@ before the actual namefilter setting)
       ------- Folders: --------&#xa0;
     </p>
     <p>
-      23 folders didn't need to be moved&#xa0;
+      26 folders didn't need to be moved&#xa0;
     </p>
     <p>
       3 folders were not found&#xa0;
@@ -6899,7 +6958,7 @@ before the actual namefilter setting)
 </html></richcontent>
 </node>
 </node>
-<node TEXT="Tareas" STYLE_REF="Organizador" ID="ID_642782932">
+<node TEXT="Tareas" STYLE_REF="Organizador" FOLDED="true" ID="ID_642782932">
 <attribute NAME="projectCode" VALUE="Tareas"/>
 <node TEXT="MoM First" STYLE_REF="milestone" ID="ID_1952544676">
 <node TEXT="traducir tareas al inglés" STYLE_REF="pendingTask" ID="ID_1966513049"/>
@@ -6939,7 +6998,7 @@ before the actual namefilter setting)
 </node>
 </node>
 </node>
-<node TEXT="ideas para próximos releases" FOLDED="true" ID="ID_712283228">
+<node TEXT="ideas para próximos releases" ID="ID_712283228">
 <node TEXT="⁃        comando que abra listado de todos los menubars del mapa y usuario pueda abrirlos desde allí" STYLE_REF="completedTask" FOLDED="true" ID="ID_1456737763">
 <node TEXT="borrador" ID="ID_1975476122"><richcontent TYPE="DETAILS">
 <html>
@@ -7555,6 +7614,38 @@ before the actual namefilter setting)
   </body>
 </html></richcontent>
 </node>
+<node TEXT="getComponent under mouse arrow" ID="ID_1582839785"><richcontent TYPE="NOTE">
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      import edofro.menuomatic.MenuAction as MA
+    </p>
+    <p>
+      import javax.swing.JComponent&#xa0;
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      JComponent component = (JComponent) MA. getComponent()
+    </p>
+  </body>
+</html></richcontent>
+<richcontent TYPE="DETAILS">
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      .groovy
+    </p>
+  </body>
+</html></richcontent>
+</node>
 </node>
 <node TEXT="WIP" STYLE_REF="tasksBucket" ID="ID_1832095650"><richcontent TYPE="DETAILS">
 <html>
@@ -7574,7 +7665,7 @@ before the actual namefilter setting)
 <attribute NAME="WIP filter" VALUE="true"/>
 <attribute NAME="groupingLevels" VALUE="10" OBJECT="org.freeplane.features.format.FormattedNumber|10"/>
 </node>
-<node TEXT="tasksBucket" STYLE_REF="tasksBucket" ID="ID_1594981695"><richcontent TYPE="DETAILS">
+<node TEXT="tasksBucket" STYLE_REF="tasksBucket" FOLDED="true" ID="ID_1594981695"><richcontent TYPE="DETAILS">
 <html>
   <head>
     
@@ -7662,7 +7753,7 @@ before the actual namefilter setting)
 </node>
 </node>
 </node>
-<node TEXT="tasksBucket" STYLE_REF="tasksBucket" ID="ID_1412452816"><richcontent TYPE="DETAILS">
+<node TEXT="tasksBucket" STYLE_REF="tasksBucket" FOLDED="true" ID="ID_1412452816"><richcontent TYPE="DETAILS">
 <html>
   <head>
     
@@ -8120,7 +8211,7 @@ before the actual namefilter setting)
   </body>
 </html></richcontent>
 </node>
-<node TEXT="get first icon from node and insert it into an html" FOLDED="true" ID="ID_901278280"><richcontent TYPE="NOTE">
+<node TEXT="get first icon from node and insert it into an html" ID="ID_901278280"><richcontent TYPE="NOTE">
 <html>
   <head>
     
@@ -8177,7 +8268,117 @@ before the actual namefilter setting)
 </html></richcontent>
 <node TEXT="OJO: hay otras formas tb." ID="ID_905503161">
 <node TEXT="puede estar en otro .mm explicado" ID="ID_168792550"/>
-<node TEXT="si no lo ebcuentro: está en un thread en el foro de Freeplane (en el nuevo de github) o en un Issue" ID="ID_242108571"/>
+<node TEXT="si no lo ebcuentro: está en un thread en el foro de Freeplane (en el nuevo de github) o en un Issue" ID="ID_242108571">
+<node TEXT="https://github.com/freeplane/freeplane/discussions/568" POSITION="bottom_or_right" ID="ID_1554054914" LINK="https://github.com/freeplane/freeplane/discussions/568"/>
+</node>
+<node TEXT="freeplaneresource:" ID="ID_1913514298">
+<node TEXT="There is a way to include internal images in markdown and HTML but it works only with png or jpg bitmaps." ID="ID_1629582388"><richcontent TYPE="DETAILS">
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      dpolivaev
+    </p>
+  </body>
+</html></richcontent>
+<node TEXT="![image](freeplaneresource:/images/Freeplane_splash.png)" ID="ID_1390058839"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/markdown">
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      ![image](freeplaneresource:/images/Freeplane_splash.png)
+    </p>
+  </body>
+</html></richcontent>
+<richcontent TYPE="DETAILS">
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      markdown
+    </p>
+  </body>
+</html></richcontent>
+</node>
+<node ID="ID_1155320690"><richcontent TYPE="NODE">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      &lt;html&gt;
+    </p>
+    <p>
+      &#xa0;&#xa0;&lt;head&gt;
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;
+    </p>
+    <p>
+      &#xa0;&#xa0;&lt;/head&gt;
+    </p>
+    <p>
+      &#xa0;&#xa0;&lt;body&gt;
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;&lt;p&gt;
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&lt;img src=&quot;freeplaneresource:/images/Freeplane_splash.png&quot;
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;alt=&quot;image&quot;/&gt;
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;&lt;/p&gt;
+    </p>
+    <p>
+      &#xa0;&#xa0;&lt;/body&gt;
+    </p>
+    <p>
+      &lt;/html&gt;
+    </p>
+  </body>
+</html>
+</richcontent>
+<richcontent TYPE="NOTE">
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <img src="freeplaneresource:/images/Freeplane_splash.png" alt="image"/>
+    </p>
+  </body>
+</html></richcontent>
+<richcontent TYPE="DETAILS">
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      html
+    </p>
+  </body>
+</html></richcontent>
+</node>
+</node>
+<node TEXT="It access the resources folder in the user directory too" ID="ID_1487542216">
+<node TEXT="to add images to add-ons and show them into HTML or Markdown panels inside Freeplane (as part of a larger html text)" ID="ID_1268002034"/>
+</node>
+<node TEXT="The handler always checks if the resource is available under &lt;user-config-directory&gt;/resources/ and uses it if it finds it there" ID="ID_1465779501"/>
+</node>
+<node TEXT="file:///C:/Program%20Files/Freeplane/doc/api/org/freeplane/plugin/script/FreeplaneScriptBaseClass.ConfigProperties.html#getIcon(java.lang.String)" ID="ID_1981502969" LINK="file:///C:/Program%20Files/Freeplane/doc/api/org/freeplane/plugin/script/FreeplaneScriptBaseClass.ConfigProperties.html#getIcon(java.lang.String)"/>
 </node>
 <node TEXT="example:" ID="ID_125383300">
 <icon BUILTIN="emoji-1F525"/>

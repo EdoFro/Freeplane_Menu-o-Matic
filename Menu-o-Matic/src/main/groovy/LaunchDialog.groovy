@@ -1,9 +1,12 @@
 package edofro.menuomatic
 
 import groovy.swing.SwingBuilder
-import javax.swing.*
-import java.awt.*
-import java.awt.event.*
+import javax.swing.SwingConstants
+import java.awt.GridLayout
+import java.awt.Insets
+import java.awt.Dimension
+import java.awt.event.WindowFocusListener
+
 
 import groovy.time.TimeCategory
 import groovy.time.TimeDuration
@@ -79,13 +82,34 @@ class LaunchDialog{
 
     // region node information
 
-    def static isCustomMenuPack(n){
+    def static isCustomMenuPack(org.freeplane.api.Node n){
         n.attributes.containsKey(tb.actions)
     }
 
+    def static isAutoLaunchMarked(org.freeplane.api.Node n){
+        n.icons.contains('launch')
+    }
+
+    def static isAutoLaunchMenuPack(org.freeplane.api.Node n){
+        isCustomMenuPack(n) && isAutoLaunchMarked(n)
+    }
+
     // endregion
-
-
+    def static launchAutoLaunchCustomMenusFromMap(org.freeplane.features.map.MapModel mapModel){
+        def mapa = ScriptUtils.c().mapLoader(mapModel.getURL()).mindMap
+        if (mapa) launchAutoLaunchCustomMenusFromMap(mapa)
+    }
+	
+    def static launchAutoLaunchCustomMenusFromMap(org.freeplane.api.MindMap mapa){
+        println "|- mindMap: '${mapa.name}'"
+        def nodos = mapa.root.find{isAutoLaunchMenuPack(it)}
+        println "|  - ${nodos*.text}"
+        nodos.each{
+            show(it)
+        }
+    }	
+	
+	
     def static show(nodo){
         if(isCustomMenuPack(nodo)){
             md = new PM.MenuData(nodo)
@@ -96,9 +120,16 @@ class LaunchDialog{
         } else {
             c.statusInfo = 'selected node is not a customMenu node'
         }
-
     }
-    
+
+    // region creating Tab menu
+
+    def static showTabMenu(tabName, panelName){
+        return null
+    }
+
+    // endregion
+
     //region creating/showing dialog menu
 
     def static showDialogFromMD(MD){

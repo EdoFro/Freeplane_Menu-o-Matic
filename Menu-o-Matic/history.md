@@ -2,8 +2,9 @@
 
 ## v0.1.5
 
-* added TabPane lib
-* added MoMToolbar lib
+* Added AutoLaunch capabillity to custom Menus
+  * They launch automatically when starting Freeplane or when opening a map that contains Custom Menus marked as 'AutoLaunch'
+  * just add a 'launch' icon to the package node to define it as an AutoLaunch menu
 
 ## v0.1.4
 
