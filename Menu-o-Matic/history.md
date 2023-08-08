@@ -1,5 +1,11 @@
 # History
 
+## v0.1.5
+
+* Added AutoLaunch capabillity to custom Menus
+  * They launch automatically when starting Freeplane or when opening a map that contains Custom Menus marked as 'AutoLaunch'
+  * just add a 'launch' icon to the package node to define it as an AutoLaunch menu
+
 ## v0.1.4
 
 * added elapsed time message when clicking on a script based button

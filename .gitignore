@@ -1,6 +1,7 @@
 .gradle
 **/build/
 !src/**/build/
+.idea
 
 # Ignore Gradle GUI config
 gradle-app.setting
@@ -16,8 +17,12 @@ gradle-app.setting
 
 # Addon maps
 *.addon.mm
-version.properties
 *.mm.bak
+# version.properties
 
 # ignore .jar files
 *.jar
+
+# ignore some folders
+ignoredByGitHub/
+delete/
