@@ -96,8 +96,11 @@ class LaunchDialog{
 
     // endregion
     def static launchAutoLaunchCustomMenusFromMap(org.freeplane.features.map.MapModel mapModel){
-        def mapa = ScriptUtils.c().mapLoader(mapModel.getURL()).mindMap
-        if (mapa) launchAutoLaunchCustomMenusFromMap(mapa)
+		def url = mapModel.getURL()
+		if(url){
+			def mapa = ScriptUtils.c().mapLoader(url).mindMap
+			if (mapa) launchAutoLaunchCustomMenusFromMap(mapa)
+		}
     }
 	
     def static launchAutoLaunchCustomMenusFromMap(org.freeplane.api.MindMap mapa){
