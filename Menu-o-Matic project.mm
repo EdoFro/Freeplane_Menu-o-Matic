@@ -57,7 +57,7 @@
 <font SIZE="24"/>
 <stylenode LOCALIZED_TEXT="styles.predefined" POSITION="bottom_or_right" STYLE="bubble">
 <stylenode LOCALIZED_TEXT="default" ID="ID_506805493" ICON_SIZE="12 pt" FORMAT_AS_HYPERLINK="false" COLOR="#484747" BACKGROUND_COLOR="#efefef" STYLE="bubble" SHAPE_HORIZONTAL_MARGIN="5 px" SHAPE_VERTICAL_MARGIN="2 px" NUMBERED="false" FORMAT="STANDARD_FORMAT" TEXT_ALIGN="DEFAULT" BORDER_WIDTH_LIKE_EDGE="false" BORDER_WIDTH="1.9 px" BORDER_COLOR_LIKE_EDGE="false" BORDER_COLOR="#8fbcbb" BORDER_DASH_LIKE_EDGE="true" BORDER_DASH="SOLID" VGAP_QUANTITY="2 px" MAX_WIDTH="10 cm" MIN_WIDTH="0 cm">
-<arrowlink SHAPE="CUBIC_CURVE" COLOR="#bf5d3f" WIDTH="2" TRANSPARENCY="200" DASH="" FONT_SIZE="9" FONT_FAMILY="SansSerif" DESTINATION="ID_506805493" STARTINCLINATION="45 pt;-3.75 pt;" ENDINCLINATION="57 pt;30 pt;" STARTARROW="NONE" ENDARROW="DEFAULT"/>
+<arrowlink SHAPE="CUBIC_CURVE" COLOR="#bf5d3f" WIDTH="2" TRANSPARENCY="200" DASH="" FONT_SIZE="9" FONT_FAMILY="SansSerif" DESTINATION="ID_506805493" STARTINCLINATION="45 pt;-1.5 pt;" ENDINCLINATION="57 pt;30 pt;" STARTARROW="NONE" ENDARROW="DEFAULT"/>
 <font NAME="Dialog" SIZE="10" BOLD="false" STRIKETHROUGH="false" ITALIC="false"/>
 <edge STYLE="horizontal" COLOR="#2e3440" WIDTH="1" DASH="SOLID"/>
 <richcontent TYPE="DETAILS" CONTENT-TYPE="plain/auto"/>
@@ -5540,14 +5540,10 @@ before the actual namefilter setting)
 </node>
 </node>
 </node>
-<node TEXT="icons" STYLE_REF="missing" ID="ID_293396145" LINK="file:/C:/Users/Edo/Documents/GitHub/Freeplane_My-Menu-Inator/Menu-o-Matic/zips/icons/">
+<node TEXT="icons" ID="ID_293396145" LINK="Menu-o-Matic/zips/icons/">
 <attribute NAME="projectCode" VALUE="icons"/>
-<node TEXT="Menu-o-Matic" STYLE_REF="missing" ID="ID_1151999985" LINK="file:/C:/Users/Edo/Documents/GitHub/Freeplane_My-Menu-Inator/Menu-o-Matic/zips/icons/Menu-o-Matic/">
-<node TEXT="MoM v0.1.4" STYLE_REF="milestone" FOLDED="true" ID="ID_1800669823">
-<node TEXT="⁃        comando ‘muestra menubar’ debe tener icono asociado para que después se muestre en nodo compacto Menubar" STYLE_REF="pendingTask" ID="ID_1363282036">
-<node TEXT="crear imagen de ícono" STYLE_REF="pendingTask" ID="ID_838723031"/>
-</node>
-</node>
+<node TEXT="TabbedPanelMod" ID="ID_1367464612" LINK="Menu-o-Matic/zips/icons/TabbedPanelMod/">
+<node TEXT="MoM.svg" ID="ID_844351064" LINK="Menu-o-Matic/zips/icons/TabbedPanelMod/MoM.svg"/>
 </node>
 </node>
 <node TEXT="templates" STYLE_REF="file_folder" ID="ID_1904073328" LINK="Menu-o-Matic/zips/templates/">
@@ -5613,7 +5609,7 @@ before the actual namefilter setting)
 </node>
 </node>
 </node>
-<node TEXT="images" STYLE_REF="file_folder" FOLDED="true" ID="ID_1716968814" LINK="Menu-o-Matic/images/">
+<node TEXT="images" STYLE_REF="file_folder" ID="ID_1716968814" LINK="Menu-o-Matic/images/">
 <attribute NAME="lastModifiedTime" VALUE="11-07-21 19:07" OBJECT="org.freeplane.features.format.FormattedDate|2021-07-11T19:07-0400|dd-MM-yy HH:mm"/>
 <attribute NAME="lastAccessTime" VALUE="12-05-22 11:05" OBJECT="org.freeplane.features.format.FormattedDate|2022-05-12T11:05-0400|dd-MM-yy HH:mm"/>
 <attribute NAME="creationTime" VALUE="11-07-21 19:07" OBJECT="org.freeplane.features.format.FormattedDate|2021-07-11T19:07-0400|dd-MM-yy HH:mm"/>
@@ -5684,13 +5680,7 @@ before the actual namefilter setting)
 <attribute NAME="creationTime" VALUE="11-07-21 19:07" OBJECT="org.freeplane.features.format.FormattedDate|2021-07-11T19:07-0400|dd-MM-yy HH:mm"/>
 <attribute NAME="fileSize" VALUE="2.429" OBJECT="org.freeplane.features.format.FormattedNumber|2429|#,##0"/>
 </node>
-<node TEXT="menuOMatic.svg" ID="ID_1211760039">
-<node TEXT="MoM Future A" STYLE_REF="milestone" ID="ID_1182448701">
-<node TEXT="crear menuOMatic.svg" STYLE_REF="maybeTask" ID="ID_1133637359">
-<node TEXT="SEVERE: can not load icon &apos;/images/menuOMatic.svg&apos;" STYLE_REF="nextTask" POSITION="bottom_or_right" ID="ID_1165507630"/>
-</node>
-</node>
-</node>
+<node TEXT="menuOMatic.svg" ID="ID_28769296" LINK="Menu-o-Matic/images/menuOMatic.svg"/>
 </node>
 <node TEXT="translations" ID="ID_262848016" LINK="Menu-o-Matic/translations/">
 <attribute NAME="lastModifiedTime" VALUE="12-05-22 11:04" OBJECT="org.freeplane.features.format.FormattedDate|2022-05-12T11:04-0400|datetime"/>
@@ -5860,12 +5850,6 @@ before the actual namefilter setting)
 </html></richcontent>
 </node>
 <node TEXT="versiones anteriores" STYLE_REF="Organizador" ID="ID_73675832"/>
-</node>
-<node TEXT=".gitignore" ID="ID_1179106038" LINK="Menu-o-Matic/.gitignore">
-<attribute NAME="lastModifiedTime" VALUE="12-07-21 19:00" OBJECT="org.freeplane.features.format.FormattedDate|2021-07-12T19:00-0400|dd-MM-yy HH:mm"/>
-<attribute NAME="lastAccessTime" VALUE="09-05-22 21:53" OBJECT="org.freeplane.features.format.FormattedDate|2022-05-09T21:53-0400|dd-MM-yy HH:mm"/>
-<attribute NAME="creationTime" VALUE="24-06-21 11:48" OBJECT="org.freeplane.features.format.FormattedDate|2021-06-24T11:48-0400|datetime"/>
-<attribute NAME="fileSize" VALUE="428" OBJECT="org.freeplane.features.format.FormattedNumber|428|#,##0"/>
 </node>
 <node TEXT="build.gradle" ID="ID_770172581" LINK="Menu-o-Matic/build.gradle">
 <attribute NAME="lastModifiedTime" VALUE="06-01-22 15:48" OBJECT="org.freeplane.features.format.FormattedDate|2022-01-06T15:48-0300|dd-MM-yy HH:mm"/>
@@ -6082,13 +6066,6 @@ before the actual namefilter setting)
 </html></richcontent>
 </node>
 <node TEXT="última versión no funciona con groovy 3.x.txt" ID="ID_1548801217" LINK="Menu-o-Matic/última%20versión%20no%20funciona%20con%20groovy%203.x.txt"/>
-<node TEXT="gradle" STYLE_REF="freshNew" ID="ID_66998103" LINK="Menu-o-Matic/gradle/">
-<node TEXT="wrapper" STYLE_REF="freshNew" ID="ID_173644777" LINK="Menu-o-Matic/gradle/wrapper/">
-<node TEXT="gradle-wrapper.properties" STYLE_REF="freshNew" ID="ID_1478115143" LINK="Menu-o-Matic/gradle/wrapper/gradle-wrapper.properties"/>
-</node>
-</node>
-<node TEXT="gradlew" STYLE_REF="freshNew" ID="ID_528678433" LINK="Menu-o-Matic/gradlew"/>
-<node TEXT="gradlew.bat" STYLE_REF="freshNew" ID="ID_1585301390" LINK="Menu-o-Matic/gradlew.bat"/>
 </node>
 <node TEXT="resources" STYLE_REF="file_folder" FOLDED="true" ID="ID_928846385" LINK="resources/">
 <attribute NAME="lastModifiedTime" VALUE="12-07-21 18:52" OBJECT="org.freeplane.features.format.FormattedDate|2021-07-12T18:52-0400|dd-MM-yy HH:mm"/>
@@ -6258,36 +6235,7 @@ before the actual namefilter setting)
 <attribute NAME="fileSize" VALUE="45.841" OBJECT="org.freeplane.features.format.FormattedNumber|45841|#,##0"/>
 <attribute NAME="projectCode" VALUE="README-MoM-MDH.mm"/>
 <node TEXT="MoM v0.1.4" STYLE_REF="milestone" ID="ID_1696364528">
-<node TEXT="actualizar" STYLE_REF="pendingTask" ID="ID_1470130410">
-<node TEXT="View settings" ID="ID_276226858" LINK="menuitem:_addons.menuOMatic.launchCustomDialog_on_single_node">
-<icon BUILTIN="launch"/>
-<attribute NAME="tbActions" VALUE="[ToggleMapOverviewAction, ShowFormatPanel, ShowHideNoteAction, ShowFilterToolbarAction, ToggleToolbarAction, ToggleLeftToolbarAction, ToggleStatusAction, ToggleFullScreenAction, ViewLayoutTypeAction.OUTLINE, ShowNotesInMapAction]"/>
-<attribute NAME="tbIcons" VALUE="[IconAction.mindmap, IconAction.emoji-1F9F0, IconAction.emoji-1F4DD, ShowFilterToolbarAction, IconAction.emoji-1F6E0, IconAction.emoji-1F596, IconAction.emoji-2139, ToggleFullScreenAction, ViewLayoutTypeAction.OUTLINE, IconAction.emoji-1F5D2]"/>
-<attribute NAME="tbLabels" VALUE="[Map overview, Tool panel, Display note panel, Filter toolbar, Toolbar, Icons toolbar, Display status line, Full screen mode, Outline view, Display notes in map]"/>
-<attribute NAME="tbMaxTextLength" VALUE="50" OBJECT="org.freeplane.features.format.FormattedNumber|50"/>
-<attribute NAME="tbShowIcons" VALUE="true"/>
-<attribute NAME="tbShowLabels" VALUE="false"/>
-<attribute NAME="tbFocusToMap" VALUE="true"/>
-<attribute NAME="tbTitle" VALUE="View settings"/>
-<richcontent TYPE="DETAILS">
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      customMenu&nbsp;&nbsp;
-    </p>
-    <p>
-      &nbsp;&nbsp;- icons only
-    </p>
-    <p>
-      &nbsp;&nbsp;- return to mindmap
-    </p>
-  </body>
-</html></richcontent>
-</node>
-</node>
+<node TEXT="actualizar" STYLE_REF="pendingTask" ID="ID_1470130410"/>
 <node TEXT="agregar imagenes de template" STYLE_REF="pendingTask" ID="ID_1734690317"/>
 <node TEXT="agregar gif animados" STYLE_REF="pendingTask" ID="ID_1476094888"/>
 </node>
@@ -6856,6 +6804,356 @@ before the actual namefilter setting)
 </node>
 <node TEXT="agrega Tab test con botones - usando lib.groovy" ID="ID_982318595" LINK="ignoredByGitHub/agrega%20Tab%20test%20con%20botones%20-%20usando%20lib.groovy">
 <font BOLD="false"/>
+<node TEXT="prueba para tab" POSITION="bottom_or_right" ID="ID_1313472121"><richcontent TYPE="NOTE">
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      import edofro.menuomatic.MoMToolbar
+    </p>
+    <p>
+      import edofro.menuomatic.TabPane as TP
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      import groovy.swing.SwingBuilder
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      import java.awt.Color
+    </p>
+    <p>
+      import java.awt.Insets
+    </p>
+    <p>
+      import javax.swing.SwingConstants
+    </p>
+    <p>
+      import javax.swing.JScrollPane
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      tabPane = TP.tabPane
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      sb = new SwingBuilder()
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      println &quot;tab eliminada: ${removeTab('prueba_01')}&quot;
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      def momContainer = createMoMTab('prueba_01')
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      def tb = new MoMToolbar('myToolbar_1', SwingConstants.VERTICAL)
+    </p>
+    <p>
+      tb.setFloatable(false)
+    </p>
+    <p>
+      tb.margin&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;= new Insets(0,0,2,0)
+    </p>
+    <p>
+      tb.setBorderPainted(true)
+    </p>
+    <p>
+      def i = 1
+    </p>
+    <p>
+      3.times{tb.add(creaBoton(i++, true))}
+    </p>
+    <p>
+      tb.addSeparator()
+    </p>
+    <p>
+      4.times{tb.add(creaBoton(i++,false))}
+    </p>
+    <p>
+      //tb.addSeparator()
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      momContainer.add(tb)
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      return 'listo'
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      def createMoMTab(String tabName){
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;def tbP = new MoMToolbar('MoM_container', SwingConstants.VERTICAL)
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;def scrollPane = sb.scrollPane()
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;scrollPane.viewport.add(tbP)
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;TP.addTab(tabName, scrollPane)
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;return tbP
+    </p>
+    <p>
+      }
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      //---- methods -----
+    </p>
+    <p>
+      def removeTab(String tabName){
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;TP.removeTab(indexOfTab(tabName))
+    </p>
+    <p>
+      }
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      int indexOfTab(String tabName){
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;for(int i = 0; i &lt; tabPane.tabCount; i++) {
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;if (getTabTitleAt(i)==tabName) {
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;return i
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;}
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;}
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;return -1
+    </p>
+    <p>
+      }
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      String getTabTitleAt(int i){
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;tabPane.getTitleAt(i)?:tabPane.getToolTipTextAt(i)
+    </p>
+    <p>
+      }
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      def creaBoton(j, conTexto) {
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;def boton = sb.button(
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;text&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;: conTexto?&quot;texto $j&quot;:null,
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;horizontalAlignment : SwingConstants.LEFT,
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;icon&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;: menuUtils.getMenuItemIcon(&quot;IconAction.TabbedPanelMod/0$j&quot;),
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;toolTipText&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;: &quot;tooltip $j&quot;,
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;//preferredSize&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;: prefDimension,
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;//minimumSize&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;: minD,
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;margin&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;: new Insets(0,0,0,0),
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;borderPainted&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;: true,
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;actionPerformed&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;: {c.statusInfo = j.toString() * 5}
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;)
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;return boton
+    </p>
+    <p>
+      }
+    </p>
+  </body>
+</html>
+</richcontent>
+<richcontent TYPE="DETAILS">
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      .groovy
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+<node TEXT="prueba getTabIndex" POSITION="bottom_or_right" ID="ID_1026474488"><richcontent TYPE="NOTE">
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      tabPane = ui.freeplaneTabbedPanel
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      tabPane.tabCount.times{i -&gt;
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;println i + '&#xa0;&#xa0;&#xa0;' + getTabTitleAt(i)
+    </p>
+    <p>
+      }
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      indexOfTab('MoM')
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      // --- methods -----------
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      int indexOfTab(String tabName){
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;for(int i = 0; i &lt; tabPane.tabCount; i++) {
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;if (getTabTitleAt(i)==tabName) {
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;return i
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;}
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;}
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;return -1
+    </p>
+    <p>
+      }
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      String getTabTitleAt(int i){
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;tabPane.getTitleAt(i)?:tabPane.getToolTipTextAt(i)
+    </p>
+    <p>
+      }
+    </p>
+  </body>
+</html>
+</richcontent>
+<richcontent TYPE="DETAILS">
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      .groovy
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
 </node>
 <node TEXT="java" ID="ID_969725714" LINK="ignoredByGitHub/java/">
 <node TEXT="CustomTitleProvider.java" ID="ID_893099842" LINK="ignoredByGitHub/java/CustomTitleProvider.java"/>
@@ -6865,7 +7163,7 @@ before the actual namefilter setting)
 </node>
 <node TEXT="Menu-o-Matic project.mm" ID="ID_1492418706" LINK="Menu-o-Matic%20project.mm"/>
 <node TEXT="new imported files" STYLE_REF="newFolderImport" ID="ID_1788703280">
-<attribute NAME="log_MDI" VALUE="2" OBJECT="org.freeplane.features.format.FormattedObject|org.freeplane.plugin.script.proxy.ConvertibleText&amp;#x7c;2|number:decimal:#0.####"/>
+<attribute NAME="log_MDI" VALUE="org.freeplane.plugin.script.proxy.ConvertibleNumber|2" OBJECT="org.freeplane.features.format.FormattedObject|java.lang.String&amp;#x7c;org.freeplane.plugin.script.proxy.ConvertibleNumber&amp;#x7c;2|number:decimal:#0.####"/>
 <richcontent TYPE="NOTE">
 <html>
   <head>
@@ -6873,7 +7171,7 @@ before the actual namefilter setting)
   </head>
   <body>
     <p>
-      Inated:&#xa0;&#xa0;&#xa0;2023-08-08&#xa0;&#xa0;13:03:19
+      Inated:&#xa0;&#xa0;&#xa0;2023-08-08&#xa0;&#xa0;19:08:27
     </p>
     <p>
       
@@ -6888,7 +7186,7 @@ before the actual namefilter setting)
       &#xa0;0 link(s) corrected in nodes
     </p>
     <p>
-      &#xa0;0 new file(s) imported as node(s)&#xa0;
+      &#xa0;1 new file(s) imported as node(s)&#xa0;
     </p>
     <p>
       &#xa0;0 node(s) moved/renamed in drive
@@ -6903,10 +7201,10 @@ before the actual namefilter setting)
       ------- Folders: --------&#xa0;
     </p>
     <p>
-      26 folders didn't need to be moved&#xa0;
+      27 folders didn't need to be moved&#xa0;
     </p>
     <p>
-      3 folders were not found&#xa0;
+      1 folders were not found&#xa0;
     </p>
     <p>
       1 folder node(s) having case: 'mapPosition != drivePosition' but that had Clones that were OK --&gt; they were OK&#xa0;
@@ -6936,12 +7234,13 @@ before the actual namefilter setting)
       No failed operation in drive
     </p>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 <node TEXT="Menu-o-Matic" ID="ID_13403667" LINK="Menu-o-Matic/">
 <node TEXT="src" ID="ID_1710270558" LINK="Menu-o-Matic/src/">
 <node TEXT="main" ID="ID_228709392" LINK="Menu-o-Matic/src/main/"/>
 </node>
+<node TEXT="zips" ID="ID_1473858531" LINK="Menu-o-Matic/zips/"/>
+<node TEXT="images" ID="ID_23523378" LINK="#ID_1716968814"/>
 </node>
 </node>
 <node TEXT="versión instalada en AddOns" STYLE_REF="locked" FOLDED="true" ID="ID_1424141649">
@@ -7706,8 +8005,8 @@ before the actual namefilter setting)
 </node>
 </node>
 <node TEXT="icons" STYLE_REF="project" ID="ID_1488642725">
-<node ID="ID_915460515" CONTENT_ID="ID_1363282036">
-<node ID="ID_778118666" CONTENT_ID="ID_838723031"/>
+<node TEXT="⁃        comando ‘muestra menubar’ debe tener icono asociado para que después se muestre en nodo compacto Menubar" STYLE_REF="pendingTask" ID="ID_915460515">
+<node TEXT="crear imagen de ícono" STYLE_REF="pendingTask" ID="ID_778118666"/>
 </node>
 </node>
 </node>
@@ -7804,8 +8103,8 @@ before the actual namefilter setting)
 </node>
 </node>
 <node TEXT="icons" STYLE_REF="project" ID="ID_918997514">
-<node ID="ID_1532418162" CONTENT_ID="ID_1363282036">
-<node ID="ID_1816557111" CONTENT_ID="ID_838723031"/>
+<node ID="ID_1532418162" CONTENT_ID="ID_915460515">
+<node ID="ID_1816557111" CONTENT_ID="ID_778118666"/>
 </node>
 </node>
 </node>
@@ -7834,7 +8133,7 @@ before the actual namefilter setting)
 </node>
 </node>
 <node TEXT="images" STYLE_REF="project" ID="ID_54377144">
-<node ID="ID_1399789788" CONTENT_ID="ID_1133637359"/>
+<node TEXT="crear menuOMatic.svg" STYLE_REF="maybeTask" ID="ID_1399789788"/>
 </node>
 </node>
 </node>

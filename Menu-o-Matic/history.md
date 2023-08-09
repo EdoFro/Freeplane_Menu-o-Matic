@@ -1,5 +1,10 @@
 # History
 
+## v0.1.6
+
+* added menuOMatic.svg icon
+* added MoM.svg icon for TabbedPanelMod
+
 ## v0.1.5
 
 * Added AutoLaunch capabillity to custom Menus

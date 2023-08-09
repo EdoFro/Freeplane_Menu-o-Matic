@@ -5,7 +5,7 @@
 <hook NAME="AutomaticEdgeColor" COUNTER="16" RULE="ON_BRANCH_CREATION"/>
 <attribute_layout NAME_WIDTH="104.25 pt" VALUE_WIDTH="233.24999 pt"/>
 <attribute NAME="name" VALUE="menuOMatic"/>
-<attribute NAME="version" VALUE="v0.1.5"/>
+<attribute NAME="version" VALUE="v0.1.6"/>
 <attribute NAME="author" VALUE="EdoFro"/>
 <attribute NAME="freeplaneVersionFrom" VALUE="v1.9.0"/>
 <attribute NAME="freeplaneVersionTo" VALUE=""/>
@@ -238,6 +238,10 @@
 <node TEXT="They launch automatically when starting Freeplane or when opening a map that contains Custom Menus marked as &apos;AutoLaunch&apos;" ID="ID_286725258"/>
 <node TEXT="just add a &apos;launch&apos; icon to the package node to define it as an AutoLaunch menu" ID="ID_123594505"/>
 </node>
+</node>
+<node TEXT="v0.1.6" ID="ID_321909342">
+<node TEXT="added menuOMatic.svg icon" ID="ID_1516241569"/>
+<node TEXT="added MoM.svg icon for TabbedPanelMod" ID="ID_376952887"/>
 </node>
 </node>
 <node TEXT="license" POSITION="top_or_left" ID="ID_492801974">
@@ -492,6 +496,7 @@
 <attribute NAME="delete" VALUE="${installationbase}/addons/${name}/scripts/launchMenuOMaticDialog.groovy"/>
 <attribute NAME="delete" VALUE="${installationbase}/addons/${name}/scripts/insertMenuOMaticPackage.groovy"/>
 <attribute NAME="delete" VALUE="${installationbase}/scripts/init/Menu-o-Matic_init.groovy"/>
+<attribute NAME="delete" VALUE="${installationbase}/icons/TabbedPanelMod/MoM.svg"/>
 </node>
 <node TEXT="scripts" POSITION="bottom_or_right" ID="ID_1105183990">
 <edge COLOR="#007c00"/>
@@ -826,6 +831,7 @@
 <node TEXT="doc" ID="ID_108012296"/>
 <node TEXT="templates" ID="ID_1212139449"/>
 <node TEXT="scripts" ID="ID_162715608"/>
+<node TEXT="icons" ID="ID_652630771"/>
 </node>
 <node TEXT="images" POSITION="bottom_or_right" ID="ID_817685181" VGAP_QUANTITY="2 px">
 <edge COLOR="#7c7c00"/>
