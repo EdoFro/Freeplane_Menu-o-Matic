@@ -1,6 +1,12 @@
 package edofro.menuomatic
 
+import edofro.menuomatic.LaunchTabPane
+import edofro.menuomatic.MoMToolbar
 import groovy.swing.SwingBuilder
+import org.freeplane.api.MindMap
+import org.freeplane.core.ui.components.ToolbarLayout
+import org.freeplane.features.map.MapModel
+
 import javax.swing.SwingConstants
 import java.awt.GridLayout
 import java.awt.Insets
@@ -54,7 +60,7 @@ class LaunchDialog{
         def msg   = 'Select dialog to show'
         def title = 'Menu-o-Matic'
         def titulo = PM.respuestaDialogo(titulos,msg,title)
-        dialogos.find{it.title == titulo}?.show()
+        dialogos.find{it.title == titulo}?.setVisible(true)
     }
 
     // endregion
@@ -95,7 +101,9 @@ class LaunchDialog{
     }
 
     // endregion
-    def static launchAutoLaunchCustomMenusFromMap(org.freeplane.features.map.MapModel mapModel){
+
+    // region AutoLaunch
+    def static launchAutoLaunchCustomMenusFromMap(MapModel mapModel){
 		def url = mapModel.getURL()
 		if(url){
 			def mapa = ScriptUtils.c().mapLoader(url).mindMap
@@ -103,7 +111,7 @@ class LaunchDialog{
 		}
     }
 	
-    def static launchAutoLaunchCustomMenusFromMap(org.freeplane.api.MindMap mapa){
+    def static launchAutoLaunchCustomMenusFromMap(MindMap mapa){
         println "|- mindMap: '${mapa.name}'"
         def nodos = mapa.root.find{isAutoLaunchMenuPack(it)}
         println "|  - ${nodos*.text}"
@@ -111,36 +119,29 @@ class LaunchDialog{
             show(it)
         }
     }	
-	
-	
-    def static show(nodo){
-        if(isCustomMenuPack(nodo)){
-            md = new PM.MenuData(nodo)
-            prefDimension = new Dimension(( md.showLabels?100:0) + (md.showIcons?30:0 ) ,md.showIcons?30:25)
-            minDimension = new Dimension(30 ,md.showIcons?30:25)
-            def panelName = md.title.replace(' ' ,'_')
-            showDialog(panelName)
-        } else {
-            c.statusInfo = 'selected node is not a customMenu node'
-        }
-    }
-
-    // region creating Tab menu
-
-    def static showTabMenu(tabName, panelName){
-        return null
-    }
 
     // endregion
 
     //region creating/showing dialog menu
 
-    def static showDialogFromMD(MD){
+    def static show(nodo, boolean openInTabPane = true){
+        if(isCustomMenuPack(nodo)){
+            showDialogFromMD(new PM.MenuData(nodo), openInTabPane)
+        } else {
+            c.statusInfo = 'selected node is not a customMenu node'
+        }
+    }
+
+    def static showDialogFromMD(MD, boolean openInTabPane = true){
         md = MD
         prefDimension = new Dimension(( md.showLabels?100:0) + (md.showIcons?30:0 ) ,md.showIcons?30:25)
         minDimension = new Dimension(30 ,md.showIcons?30:25)
         def panelName = md.title.replace(' ' ,'_')
-        showDialog(panelName)
+        if(openInTabPane) {
+            showTabMenu(md.tabName, panelName)
+        } else {
+            showDialog(panelName)
+        }
     }
 
     def static showDialog(panelName){
@@ -173,6 +174,37 @@ class LaunchDialog{
             dialogo.getContentPane().removeAll()
         }
         return dialogo
+    }
+
+    // endregion
+
+    // region ShowTabMenu
+
+    def static showTabMenu(tabName, panelName){
+        def momContainer = LaunchTabPane.getMoMTabContainer(tabName)
+
+        def toolB = momContainer.components.find{it.name == panelName}
+        if(!toolB){
+            momContainer.addSeparator()
+            toolB = new MoMToolbar(panelName, SwingConstants.VERTICAL)
+            momContainer.add(toolB)
+        }else{
+            toolB.removeAll()
+        }
+        setUpToolbar(toolB)
+    }
+
+    def static setUpToolbar(tb) {
+        def theLayout = md.showLabels?new GridLayout(0,1): ToolbarLayout.vertical()
+        tb.setLayout(theLayout)
+        tb.setFloatable(true)
+        tb.margin = new Insets(0, 0, 5, 0)
+        tb.setBorderPainted(true)
+        md.actions.eachWithIndex{ a, j ->
+            tb.add(creaBoton(a, j))
+        }
+        tb.revalidate()
+        tb.repaint()
     }
 
     // endregion
@@ -225,6 +257,7 @@ class LaunchDialog{
     // endregion
 
     // region creating buttons
+
     def static creaBoton(acc, i){
         if(acc.startsWith(scriptStr)){
             return creaBotonDesdeScript(acc,i)

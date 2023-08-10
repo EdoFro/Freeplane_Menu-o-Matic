@@ -46,7 +46,8 @@ class PackMenu{
         showIcons     : 'tbShowIcons'           ,
         showLabels    : 'tbShowLabels'          ,
         title         : 'tbTitle'               ,
-        focusMap      : 'tbFocusToMap'
+        focusMap      : 'tbFocusToMap'          ,
+        tabName       : 'tbTabName'
     ]
 
     // endregion: properties
@@ -62,6 +63,7 @@ class PackMenu{
         String    title
         ArrayList scripts
         Boolean   focusMap
+        String    tabName = 'MoM'
 
         public MenuData(Proxy.Node nodoMenu){
 //            if(nodoMenu[TB.title]){
@@ -78,6 +80,7 @@ class PackMenu{
                     scriptList << [it,nodoMenu[it]]
                 }
                 this.scripts        = scriptList
+                this.tabName        = nodoMenu[TB.tabName]?nodoMenu[TB.tabName].toString():tabName
 //            }
         }
 
@@ -108,6 +111,7 @@ class PackMenu{
             nodo[TB.showLabels]    = this.showLabels
             nodo[TB.focusMap]      = this.focusMap
             nodo[TB.title]         = this.title
+            nodo[TB.tabName]       = this.tabName
             this.scripts.each{id, scr ->
                 nodo[id] = scr
             }
