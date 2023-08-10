@@ -28,6 +28,7 @@ import org.freeplane.plugin.script.proxy.ScriptUtils
 
 
 class LaunchDialog{
+//region: properties
     static final String defaultIcon     = 'IconAction.emoji-1F7EB'
     static final String dialogStr       = '_MoM_'
     static final int    maxButtonsHoriz = 6
@@ -41,6 +42,7 @@ class LaunchDialog{
     static Dimension prefDimension
     static Dimension minDimension
 
+//endregion:
 
 
     // region managing dialogs
@@ -181,12 +183,12 @@ class LaunchDialog{
     // region ShowTabMenu
 
     def static showTabMenu(tabName, panelName){
-        def momContainer = LaunchTabPane.getMoMTabContainer(tabName)
-
+        def momContainer = LaunchTabPane.getMoMTabContainer(tabName, md.tabIcon)
         def toolB = momContainer.components.find{it.name == panelName}
         if(!toolB){
             momContainer.addSeparator()
             toolB = new MoMToolbar(panelName, SwingConstants.VERTICAL)
+            toolB.setToolTipText(panelName)
             momContainer.add(toolB)
         }else{
             toolB.removeAll()

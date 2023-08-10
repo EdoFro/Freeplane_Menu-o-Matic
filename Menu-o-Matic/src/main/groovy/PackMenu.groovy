@@ -39,15 +39,16 @@ class PackMenu{
     static       int      iScript      = 0
 
     static final Map TB = [
-        actions       : 'tbActions'             ,
-        icons         : 'tbIcons'               ,
-        labels        : 'tbLabels'              ,
-        maxTextLength : 'tbMaxTextLength'       ,
-        showIcons     : 'tbShowIcons'           ,
-        showLabels    : 'tbShowLabels'          ,
-        title         : 'tbTitle'               ,
-        focusMap      : 'tbFocusToMap'          ,
-        tabName       : 'tbTabName'
+        actions       : 'tbActions',
+        icons         : 'tbIcons',
+        labels        : 'tbLabels',
+        maxTextLength : 'tbMaxTextLength',
+        showIcons     : 'tbShowIcons',
+        showLabels    : 'tbShowLabels',
+        title         : 'tbTitle',
+        focusMap      : 'tbFocusToMap',
+        tabName       : 'tbTabName',
+        tabIcon       : 'tbTabIcon'
     ]
 
     // endregion: properties
@@ -64,6 +65,7 @@ class PackMenu{
         ArrayList scripts
         Boolean   focusMap
         String    tabName = 'MoM'
+        String    tabIcon
 
         public MenuData(Proxy.Node nodoMenu){
 //            if(nodoMenu[TB.title]){
@@ -81,6 +83,7 @@ class PackMenu{
                 }
                 this.scripts        = scriptList
                 this.tabName        = nodoMenu[TB.tabName]?nodoMenu[TB.tabName].toString():tabName
+                this.tabIcon        = nodoMenu.icons.first
 //            }
         }
 
@@ -112,6 +115,9 @@ class PackMenu{
             nodo[TB.focusMap]      = this.focusMap
             nodo[TB.title]         = this.title
             nodo[TB.tabName]       = this.tabName
+            if(this.tabIcon){
+                nodo.icons.add(this.tabIcon)
+            }
             this.scripts.each{id, scr ->
                 nodo[id] = scr
             }
