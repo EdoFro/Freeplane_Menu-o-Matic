@@ -57,7 +57,7 @@
 <font SIZE="24"/>
 <stylenode LOCALIZED_TEXT="styles.predefined" POSITION="bottom_or_right" STYLE="bubble">
 <stylenode LOCALIZED_TEXT="default" ID="ID_506805493" ICON_SIZE="12 pt" FORMAT_AS_HYPERLINK="false" COLOR="#484747" BACKGROUND_COLOR="#efefef" STYLE="bubble" SHAPE_HORIZONTAL_MARGIN="5 px" SHAPE_VERTICAL_MARGIN="2 px" NUMBERED="false" FORMAT="STANDARD_FORMAT" TEXT_ALIGN="DEFAULT" BORDER_WIDTH_LIKE_EDGE="false" BORDER_WIDTH="1.9 px" BORDER_COLOR_LIKE_EDGE="false" BORDER_COLOR="#8fbcbb" BORDER_DASH_LIKE_EDGE="true" BORDER_DASH="SOLID" VGAP_QUANTITY="2 px" MAX_WIDTH="10 cm" MIN_WIDTH="0 cm">
-<arrowlink SHAPE="CUBIC_CURVE" COLOR="#bf5d3f" WIDTH="2" TRANSPARENCY="200" DASH="" FONT_SIZE="9" FONT_FAMILY="SansSerif" DESTINATION="ID_506805493" STARTINCLINATION="45 pt;-1.5 pt;" ENDINCLINATION="57 pt;30 pt;" STARTARROW="NONE" ENDARROW="DEFAULT"/>
+<arrowlink SHAPE="CUBIC_CURVE" COLOR="#bf5d3f" WIDTH="2" TRANSPARENCY="200" DASH="" FONT_SIZE="9" FONT_FAMILY="SansSerif" DESTINATION="ID_506805493" STARTINCLINATION="45 pt;0 pt;" ENDINCLINATION="57 pt;30 pt;" STARTARROW="NONE" ENDARROW="DEFAULT"/>
 <font NAME="Dialog" SIZE="10" BOLD="false" STRIKETHROUGH="false" ITALIC="false"/>
 <edge STYLE="horizontal" COLOR="#2e3440" WIDTH="1" DASH="SOLID"/>
 <richcontent TYPE="DETAILS" CONTENT-TYPE="plain/auto"/>
@@ -2472,20 +2472,20 @@ before the actual namefilter setting)
   </body>
 </html></richcontent>
 <node TEXT="MoM Future A" STYLE_REF="milestone" ID="ID_1214021140">
-<node TEXT="Crear forma de que un botón incluya varios comandos" STYLE_REF="maybeTask" ID="ID_1260558966">
+<node TEXT="Crear forma de que un botón incluya varios comandos" STYLE_REF="nextTask" FOLDED="true" ID="ID_1260558966">
 <node TEXT="y los ejecute en orden" ID="ID_1787767020"/>
 <node TEXT="¿aplica scripts o sólo comandos?" ID="ID_1027772698"/>
 <node TEXT="alternativas" ID="ID_1501100269">
-<node TEXT="puede requerir nuevo estilo o ícono que indice nodo padre de unión" FOLDED="true" ID="ID_1944341740">
+<node TEXT="puede requerir nuevo estilo o ícono que indice nodo padre de unión" ID="ID_1944341740">
 <node TEXT="para que package entienda cuales son los comandos a unir" ID="ID_403432332"/>
 </node>
-<node TEXT="o puede hacerse en dos pasos" FOLDED="true" ID="ID_1016741639">
+<node TEXT="o puede hacerse en dos pasos" ID="ID_1016741639">
 <node TEXT="unir commandos en un nodo &quot;resumen&quot;" ID="ID_962422598"/>
 <node TEXT="package" ID="ID_359472693"/>
 </node>
-<node TEXT="o puede ser cuando se aplica package y uno de los hijos es un nodo package" FOLDED="true" ID="ID_427716198">
+<node TEXT="o puede ser cuando se aplica package y uno de los hijos es un nodo package" ID="ID_427716198">
 <icon BUILTIN="forward"/>
-<node TEXT="si package incluye scripts?" FOLDED="true" ID="ID_1538141123">
+<node TEXT="si package incluye scripts?" ID="ID_1538141123">
 <node TEXT="los incluye" ID="ID_334845430"/>
 <node TEXT="los omite" ID="ID_1424559313"/>
 <node TEXT="aborta y mensaje" ID="ID_1407197711"/>
@@ -3135,7 +3135,7 @@ before the actual namefilter setting)
 <node TEXT="secciones se pueden reordenar" ID="ID_1427840939"/>
 <node TEXT="secciones se pueden minimizar" ID="ID_733577266"/>
 <node TEXT="secciones se pueden cambiar de sólo iconos a iconos + label de ida y vuelta" ID="ID_1557719601"/>
-<node TEXT="Tab en tools label &quot;recuerda&quot; su ancho" FOLDED="true" ID="ID_1993864839">
+<node TEXT="Tab en tools label &quot;recuerda&quot; su ancho" STYLE_REF="completedTask" ID="ID_1993864839">
 <node TEXT="al cambiar a otras tabs se recupera ancho original" ID="ID_1033020137"/>
 <node TEXT="botón que hace &quot;pack&quot; minimizando ancho necesario" ID="ID_714383084"/>
 </node>
@@ -3169,12 +3169,23 @@ before the actual namefilter setting)
 </html></richcontent>
 </node>
 </node>
+<node TEXT="cambiar a MoMToolbars" STYLE_REF="nextTask" ID="ID_1305392679"/>
 </node>
 <node TEXT="MoM Future A" STYLE_REF="milestone" ID="ID_1722534694">
 <node TEXT="agregar importMoMStyles" STYLE_REF="pendingTask" ID="ID_1898413286"/>
 </node>
-<node TEXT="TabPane.groovy" STYLE_REF="freshNew" ID="ID_439442031" LINK="Menu-o-Matic/src/main/groovy/TabPane.groovy"/>
-<node TEXT="MoMToolbar.groovy" STYLE_REF="freshNew" ID="ID_1177945776" LINK="Menu-o-Matic/src/main/groovy/MoMToolbar.groovy"/>
+<node TEXT="TabPane.groovy" ID="ID_439442031" LINK="Menu-o-Matic/src/main/groovy/TabPane.groovy">
+<node TEXT="ELIMINAR" STYLE_REF="nextTask" ID="ID_494508757"/>
+</node>
+<node TEXT="MoMToolbar.groovy" ID="ID_1177945776" LINK="Menu-o-Matic/src/main/groovy/MoMToolbar.groovy"/>
+<node TEXT="LaunchTabPane.groovy" ID="ID_56604948" LINK="Menu-o-Matic/src/main/groovy/LaunchTabPane.groovy">
+<node TEXT="inventar forma en que poder agregar separadores entre botones" STYLE_REF="nextTask" ID="ID_1218863478">
+<node TEXT="y que quede en MD" STYLE_REF="pendingTask" ID="ID_212680872"/>
+</node>
+<node TEXT="al crear Tab, toma ícono de nodo" STYLE_REF="nextTask" ID="ID_1543419095">
+<node TEXT="puede ser parte del MD" STYLE_REF="pendingTask" ID="ID_383938869"/>
+</node>
+</node>
 </node>
 </node>
 </node>
@@ -3531,8 +3542,8 @@ before the actual namefilter setting)
   </body>
 </html></richcontent>
 </node>
-<node TEXT="get Map/Branch used icons actions" STYLE_REF="nextTask" ID="ID_232294406">
-<node TEXT="present icons in map/branch as buttons" FOLDED="true" ID="ID_1197565766" VGAP_QUANTITY="2 px"><richcontent TYPE="NOTE">
+<node TEXT="get Map/Branch used icons actions" STYLE_REF="nextTask" FOLDED="true" ID="ID_232294406">
+<node TEXT="present icons in map/branch as buttons" ID="ID_1197565766" VGAP_QUANTITY="2 px"><richcontent TYPE="NOTE">
 <html>
   <head>
     
@@ -3692,8 +3703,8 @@ before the actual namefilter setting)
 </node>
 </node>
 </node>
-<node TEXT="get Map/Branch used styles actions" STYLE_REF="nextTask" ID="ID_817232585">
-<node TEXT="present styles in selected branch as buttons" FOLDED="true" ID="ID_563376606"><richcontent TYPE="NOTE">
+<node TEXT="get Map/Branch used styles actions" STYLE_REF="nextTask" FOLDED="true" ID="ID_817232585">
+<node TEXT="present styles in selected branch as buttons" ID="ID_563376606"><richcontent TYPE="NOTE">
 <html>
   <head>
     
@@ -3863,6 +3874,7 @@ before the actual namefilter setting)
 <node TEXT="menuButton" ID="ID_1750003842" LINK="menuitem:_AssignStyleAction.menuButton"/>
 </node>
 </node>
+<node TEXT="revisar MarkdownHelper para ver como traspasé estilo de nodo a panel PREVIEW" STYLE_REF="nextTask" ID="ID_141236557"/>
 </node>
 </node>
 <node TEXT="Launching" ID="ID_1688826044">
@@ -4067,6 +4079,7 @@ before the actual namefilter setting)
   </body>
 </html></richcontent>
 </node>
+<node TEXT="launchCustomToolTab.groovy" STYLE_REF="nextTask" POSITION="bottom_or_right" ID="ID_1149928475" LINK="Menu-o-Matic/scripts/launchCustomToolTab.groovy"/>
 </node>
 <node TEXT="Navigating" ID="ID_1591150376">
 <node TEXT="listCustomDialogs.groovy" ID="ID_1969310287" LINK="Menu-o-Matic/scripts/listCustomDialogs.groovy"><richcontent TYPE="DETAILS">
@@ -5605,11 +5618,14 @@ before the actual namefilter setting)
     </p>
   </body>
 </html></richcontent>
+<node TEXT="hacer que revise los mapas en orden alfabético" STYLE_REF="nextTask" ID="ID_773018765"/>
+<node TEXT="y luego los nodos en cada mapa también en orden alfabético" STYLE_REF="nextTask" ID="ID_449476548"/>
+<node TEXT="Si tiene tbTabName --&gt; abre en TabPane" STYLE_REF="nextTask" ID="ID_485021316"/>
 </node>
 </node>
 </node>
 </node>
-<node TEXT="images" STYLE_REF="file_folder" ID="ID_1716968814" LINK="Menu-o-Matic/images/">
+<node TEXT="images" STYLE_REF="file_folder" FOLDED="true" ID="ID_1716968814" LINK="Menu-o-Matic/images/">
 <attribute NAME="lastModifiedTime" VALUE="11-07-21 19:07" OBJECT="org.freeplane.features.format.FormattedDate|2021-07-11T19:07-0400|dd-MM-yy HH:mm"/>
 <attribute NAME="lastAccessTime" VALUE="12-05-22 11:05" OBJECT="org.freeplane.features.format.FormattedDate|2022-05-12T11:05-0400|dd-MM-yy HH:mm"/>
 <attribute NAME="creationTime" VALUE="11-07-21 19:07" OBJECT="org.freeplane.features.format.FormattedDate|2021-07-11T19:07-0400|dd-MM-yy HH:mm"/>
@@ -5707,6 +5723,7 @@ before the actual namefilter setting)
 <attribute NAME="fileSize" VALUE="40.442" OBJECT="org.freeplane.features.format.FormattedNumber|40442|#,##0"/>
 </node>
 <node TEXT="generados automáticamente" STYLE_REF="Organizador" ID="ID_753392396">
+<node TEXT="Menu-o-Matic-v0.1.6.addon.mm" STYLE_REF="freshNew" ID="ID_1389730929" LINK="Menu-o-Matic/Menu-o-Matic-v0.1.6.addon.mm"/>
 <node TEXT="Menu-o-Matic-v0.1.5.addon.mm" STYLE_REF="freshNew" ID="ID_1736490742" LINK="Menu-o-Matic/Menu-o-Matic-v0.1.5.addon.mm"/>
 <node TEXT="Menu-o-Matic-v0.1.4.addon.mm" STYLE_REF="freshNew" ID="ID_606492663" LINK="Menu-o-Matic/Menu-o-Matic-v0.1.4.addon.mm"/>
 <node TEXT="Menu-o-Matic-v0.1.3.addon.mm" ID="ID_510896369" LINK="Menu-o-Matic/Menu-o-Matic-v0.1.3.addon.mm">
@@ -6005,6 +6022,16 @@ before the actual namefilter setting)
     </p>
   </body>
 </html></richcontent>
+<node TEXT="gradle" STYLE_REF="Organizador" FOLDED="true" POSITION="bottom_or_right" ID="ID_1433608259">
+<node TEXT="gradle" ID="ID_975915280" LINK="Menu-o-Matic/gradle/">
+<node TEXT="wrapper" ID="ID_110270662" LINK="Menu-o-Matic/gradle/wrapper/">
+<node TEXT="gradle-wrapper.jar" ID="ID_1561921106" LINK="Menu-o-Matic/gradle/wrapper/gradle-wrapper.jar"/>
+<node TEXT="gradle-wrapper.properties" ID="ID_1662834730" LINK="Menu-o-Matic/gradle/wrapper/gradle-wrapper.properties"/>
+</node>
+</node>
+<node TEXT="gradlew" ID="ID_895748805" LINK="Menu-o-Matic/gradlew"/>
+<node TEXT="gradlew.bat" ID="ID_1212876413" LINK="Menu-o-Matic/gradlew.bat"/>
+</node>
 </node>
 <node TEXT="new imported files" STYLE_REF="newFolderImport" ID="ID_71158706">
 <attribute NAME="log_MDI" VALUE="No"/>
@@ -6841,6 +6868,21 @@ before the actual namefilter setting)
       
     </p>
     <p>
+      import org.freeplane.main.addons.AddOnsController
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      /*final String*/ MOM_CONTAINER_NAME = 'MoM_container'
+    </p>
+    <p>
+      
+    </p>
+    <p>
       tabPane = TP.tabPane
     </p>
     <p>
@@ -6856,16 +6898,13 @@ before the actual namefilter setting)
       
     </p>
     <p>
-      println &quot;tab eliminada: ${removeTab('prueba_01')}&quot;
+      println &quot;tab eliminada: ${removeTab('MoM')}&quot;
     </p>
     <p>
       
     </p>
     <p>
       
-    </p>
-    <p>
-      def momContainer = createMoMTab('prueba_01')
     </p>
     <p>
       
@@ -6901,13 +6940,52 @@ before the actual namefilter setting)
       
     </p>
     <p>
+      
+    </p>
+    <p>
+      def momContainer = createMoMTab('MoM')
+    </p>
+    <p>
       momContainer.add(tb)
     </p>
     <p>
       
     </p>
     <p>
-      return 'listo'
+      //is TabbedPanelMod addon active?
+    </p>
+    <p>
+      def TPM_props&#xa0;&#xa0;= AddOnsController.getController().getInstalledAddOn('tabbedPanelMod')
+    </p>
+    <p>
+      if (TPM_props &amp;&amp; TPM_props['active'] &amp;&amp; c.FreeplaneVersion.getVersion(TPM_props['version'])&gt;= c.FreeplaneVersion.getVersion(&quot;v0.4&quot;)){
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;def index = tabPane.tabCount - 1
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;edofro.tabbedpanelmod.TPM.modifyTab(index)
+    </p>
+    <p>
+      }
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      def momContainer2 =&#xa0;&#xa0;getMoMTabContainer('MoM')
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      assert momContainer.equals(momContainer2)
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      //---- methods -----
     </p>
     <p>
       
@@ -6916,19 +6994,37 @@ before the actual namefilter setting)
       def createMoMTab(String tabName){
     </p>
     <p>
-      &#xa0;&#xa0;&#xa0;&#xa0;def tbP = new MoMToolbar('MoM_container', SwingConstants.VERTICAL)
+      &#xa0;&#xa0;&#xa0;&#xa0;def momContainer = new MoMToolbar(MOM_CONTAINER_NAME, SwingConstants.VERTICAL)
     </p>
     <p>
       &#xa0;&#xa0;&#xa0;&#xa0;def scrollPane = sb.scrollPane()
     </p>
     <p>
-      &#xa0;&#xa0;&#xa0;&#xa0;scrollPane.viewport.add(tbP)
+      &#xa0;&#xa0;&#xa0;&#xa0;scrollPane.viewport.add(momContainer)
     </p>
     <p>
       &#xa0;&#xa0;&#xa0;&#xa0;TP.addTab(tabName, scrollPane)
     </p>
     <p>
-      &#xa0;&#xa0;&#xa0;&#xa0;return tbP
+      &#xa0;&#xa0;&#xa0;&#xa0;return momContainer
+    </p>
+    <p>
+      }
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      def getMoMTabContainer(String tabName){
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;def index = indexOfTab(tabName)
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;def momContainer = (index&gt;=0) ? (tabPane.getComponentAt(index).getViewport()?.components?.find{it.name == MOM_CONTAINER_NAME}) : null
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;return momContainer
     </p>
     <p>
       }
@@ -7042,8 +7138,7 @@ before the actual namefilter setting)
       }
     </p>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 <richcontent TYPE="DETAILS">
 <html>
   <head>
@@ -7054,8 +7149,7 @@ before the actual namefilter setting)
       .groovy
     </p>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 </node>
 <node TEXT="prueba getTabIndex" POSITION="bottom_or_right" ID="ID_1026474488"><richcontent TYPE="NOTE">
 <html>
@@ -7139,8 +7233,7 @@ before the actual namefilter setting)
       }
     </p>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 <richcontent TYPE="DETAILS">
 <html>
   <head>
@@ -7151,8 +7244,7 @@ before the actual namefilter setting)
       .groovy
     </p>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 </node>
 </node>
 <node TEXT="java" ID="ID_969725714" LINK="ignoredByGitHub/java/">
@@ -7163,7 +7255,7 @@ before the actual namefilter setting)
 </node>
 <node TEXT="Menu-o-Matic project.mm" ID="ID_1492418706" LINK="Menu-o-Matic%20project.mm"/>
 <node TEXT="new imported files" STYLE_REF="newFolderImport" ID="ID_1788703280">
-<attribute NAME="log_MDI" VALUE="org.freeplane.plugin.script.proxy.ConvertibleNumber|2" OBJECT="org.freeplane.features.format.FormattedObject|java.lang.String&amp;#x7c;org.freeplane.plugin.script.proxy.ConvertibleNumber&amp;#x7c;2|number:decimal:#0.####"/>
+<attribute NAME="log_MDI" VALUE="2" OBJECT="org.freeplane.features.format.FormattedNumber|2|#0.####"/>
 <richcontent TYPE="NOTE">
 <html>
   <head>
@@ -7171,7 +7263,7 @@ before the actual namefilter setting)
   </head>
   <body>
     <p>
-      Inated:&#xa0;&#xa0;&#xa0;2023-08-08&#xa0;&#xa0;19:08:27
+      Inated:&#xa0;&#xa0;&#xa0;2023-08-10&#xa0;&#xa0;11:26:29
     </p>
     <p>
       
@@ -7186,7 +7278,7 @@ before the actual namefilter setting)
       &#xa0;0 link(s) corrected in nodes
     </p>
     <p>
-      &#xa0;1 new file(s) imported as node(s)&#xa0;
+      &#xa0;0 new file(s) imported as node(s)&#xa0;
     </p>
     <p>
       &#xa0;0 node(s) moved/renamed in drive
@@ -7201,7 +7293,7 @@ before the actual namefilter setting)
       ------- Folders: --------&#xa0;
     </p>
     <p>
-      27 folders didn't need to be moved&#xa0;
+      29 folders didn't need to be moved&#xa0;
     </p>
     <p>
       1 folders were not found&#xa0;
@@ -7216,7 +7308,7 @@ before the actual namefilter setting)
       
     </p>
     <p>
-      0.3 seconds
+      0.9 seconds
     </p>
     <p>
       
@@ -7234,13 +7326,13 @@ before the actual namefilter setting)
       No failed operation in drive
     </p>
   </body>
-</html></richcontent>
+</html>
+</richcontent>
 <node TEXT="Menu-o-Matic" ID="ID_13403667" LINK="Menu-o-Matic/">
 <node TEXT="src" ID="ID_1710270558" LINK="Menu-o-Matic/src/">
 <node TEXT="main" ID="ID_228709392" LINK="Menu-o-Matic/src/main/"/>
 </node>
 <node TEXT="zips" ID="ID_1473858531" LINK="Menu-o-Matic/zips/"/>
-<node TEXT="images" ID="ID_23523378" LINK="#ID_1716968814"/>
 </node>
 </node>
 <node TEXT="versión instalada en AddOns" STYLE_REF="locked" FOLDED="true" ID="ID_1424141649">

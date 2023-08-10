@@ -439,7 +439,7 @@
   </body>
 </html>
 </richcontent>
-<node TEXT="en" ID="ID_135465452">
+<node TEXT="en" ID="ID_1881907876">
 <attribute_layout NAME_WIDTH="212.24999 pt" VALUE_WIDTH="411.74999 pt"/>
 <attribute NAME="addons.${name}.lauchDialogFromNodes" VALUE="launch menu dialog directly"/>
 <attribute NAME="addons.${name}.1launchMenuOMaticDialog" VALUE="launch Menu-o-Matic dialog"/>
@@ -448,6 +448,7 @@
 <attribute NAME="addons.${name}" VALUE="Menu-o-Matic"/>
 <attribute NAME="addons.${name}.packCustomMenu" VALUE="pack menu"/>
 <attribute NAME="OptionPanel.${name}_runOnStartingFreeplane" VALUE="Open auto launch menus"/>
+<attribute NAME="addons.${name}.launchCustomToolTab" VALUE="Launch custom tool tab"/>
 <attribute NAME="addons.${name}.showLastUsedMenu" VALUE="show most recently used menu"/>
 <attribute NAME="OptionPanel.separator.${name}" VALUE="Menu-o-Matic"/>
 <attribute NAME="OptionPanel.${name}_runOnStartingFreeplane.tooltip" VALUE="Automatically opens all Custom Menus marked as AutoLaunch from all opened mindmaps on Freeplane start"/>
@@ -497,6 +498,7 @@
 <attribute NAME="delete" VALUE="${installationbase}/addons/${name}/scripts/insertMenuOMaticPackage.groovy"/>
 <attribute NAME="delete" VALUE="${installationbase}/scripts/init/Menu-o-Matic_init.groovy"/>
 <attribute NAME="delete" VALUE="${installationbase}/icons/TabbedPanelMod/MoM.svg"/>
+<attribute NAME="delete" VALUE="${installationbase}/addons/${name}/scripts/launchCustomToolTab.groovy"/>
 </node>
 <node TEXT="scripts" POSITION="bottom_or_right" ID="ID_1105183990">
 <edge COLOR="#007c00"/>
@@ -741,6 +743,18 @@
 <attribute_layout NAME_WIDTH="204.74999 pt" VALUE_WIDTH="191.99999 pt"/>
 <attribute NAME="menuTitleKey" VALUE="addons.${name}.listCustomDialogs"/>
 <attribute NAME="menuLocation" VALUE="${addonsMenu}/addons.${name}/navigate"/>
+<attribute NAME="executionMode" VALUE="on_single_node"/>
+<attribute NAME="keyboardShortcut" VALUE=""/>
+<attribute NAME="execute_scripts_without_asking" VALUE="true"/>
+<attribute NAME="execute_scripts_without_file_restriction" VALUE="true"/>
+<attribute NAME="execute_scripts_without_write_restriction" VALUE="false"/>
+<attribute NAME="execute_scripts_without_exec_restriction" VALUE="false"/>
+<attribute NAME="execute_scripts_without_network_restriction" VALUE="false"/>
+</node>
+<node TEXT="launchCustomToolTab.groovy" ID="ID_729002718">
+<attribute_layout NAME_WIDTH="188.24999 pt" VALUE_WIDTH="164.25 pt"/>
+<attribute NAME="menuTitleKey" VALUE="addons.${name}.launchCustomToolTab"/>
+<attribute NAME="menuLocation" VALUE="${addonsMenu}/addons.${name}"/>
 <attribute NAME="executionMode" VALUE="on_single_node"/>
 <attribute NAME="keyboardShortcut" VALUE=""/>
 <attribute NAME="execute_scripts_without_asking" VALUE="true"/>
