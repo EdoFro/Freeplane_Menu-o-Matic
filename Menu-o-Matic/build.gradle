@@ -6,7 +6,7 @@ apply plugin: 'groovy'
 
 targetCompatibility='1.8'
 
-// 1. I have to define which freeplane version is going to be used to look at the libreries (freeplane and groovy)
+// 1. I have to define which freeplane version is going to be used to look at the libraries (freeplane and groovy)
 def FPversion = 'instaled'
 
     def freeplaneDirs = [
