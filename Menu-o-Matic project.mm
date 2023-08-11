@@ -3170,6 +3170,7 @@ before the actual namefilter setting)
 </node>
 </node>
 <node TEXT="cambiar a MoMToolbars" STYLE_REF="nextTask" ID="ID_1305392679"/>
+<node TEXT="Eliminar dialogs??" STYLE_REF="nextTask" ID="ID_1470646510"/>
 </node>
 <node TEXT="MoM Future A" STYLE_REF="milestone" ID="ID_1722534694">
 <node TEXT="agregar importMoMStyles" STYLE_REF="pendingTask" ID="ID_1898413286"/>
@@ -3182,8 +3183,16 @@ before the actual namefilter setting)
 <node TEXT="inventar forma en que poder agregar separadores entre botones" STYLE_REF="nextTask" ID="ID_1218863478">
 <node TEXT="y que quede en MD" STYLE_REF="pendingTask" ID="ID_212680872"/>
 </node>
-<node TEXT="al crear Tab, toma ícono de nodo" STYLE_REF="nextTask" ID="ID_1543419095">
-<node TEXT="puede ser parte del MD" STYLE_REF="pendingTask" ID="ID_383938869"/>
+<node TEXT="al crear Tab, toma ícono de nodo" STYLE_REF="completedTask" FOLDED="true" ID="ID_1543419095">
+<node TEXT="puede ser parte del MD" STYLE_REF="completedTask" ID="ID_383938869"/>
+</node>
+<node TEXT="al crear nuevo tab se crea con botonera superior" STYLE_REF="completedTask" FOLDED="true" ID="ID_661671677">
+<node TEXT="botón para eliminar tab" STYLE_REF="completedTask" ID="ID_217931650">
+<node TEXT="cross mark" ID="ID_507211697" LINK="menuitem:_IconAction.emoji-274C"/>
+</node>
+<node TEXT="botón para eliminar una de las herramientas" STYLE_REF="completedTask" ID="ID_1319008382">
+<node TEXT="cross mark button" POSITION="bottom_or_right" ID="ID_460994643" LINK="menuitem:_IconAction.emoji-274E"/>
+</node>
 </node>
 </node>
 </node>
@@ -3321,7 +3330,9 @@ before the actual namefilter setting)
 <node TEXT="it should not offer to insert package node" STYLE_REF="completedTask" ID="ID_1537120083"/>
 <node TEXT="sacar de submenu Launching" STYLE_REF="completedTask" ID="ID_1324294569"/>
 <node TEXT="MoM Future A" STYLE_REF="milestone" ID="ID_1201482261">
-<node TEXT="Agregarle hotkey?" STYLE_REF="maybeTask" ID="ID_551618788"/>
+<node TEXT="Agregarle hotkey?" STYLE_REF="maybeTask" ID="ID_551618788">
+<icon BUILTIN="ksmiletris"/>
+</node>
 </node>
 </node>
 <node TEXT="Designing" ID="ID_1407265156">
@@ -3661,7 +3672,7 @@ before the actual namefilter setting)
     </p>
   </body>
 </html></richcontent>
-<node TEXT="xx" ID="ID_1212370390">
+<node TEXT="xx" FOLDED="true" ID="ID_1212370390">
 <node TEXT="&lt;-- -&apos;emoji-1F4B2&apos;" ID="ID_1910154839">
 <icon BUILTIN="emoji-1F4B2"/>
 </node>
@@ -3704,7 +3715,7 @@ before the actual namefilter setting)
 </node>
 </node>
 <node TEXT="get Map/Branch used styles actions" STYLE_REF="nextTask" FOLDED="true" ID="ID_817232585">
-<node TEXT="present styles in selected branch as buttons" ID="ID_563376606"><richcontent TYPE="NOTE">
+<node TEXT="present styles in selected branch as buttons" FOLDED="true" ID="ID_563376606"><richcontent TYPE="NOTE">
 <html>
   <head>
     
@@ -4079,7 +4090,9 @@ before the actual namefilter setting)
   </body>
 </html></richcontent>
 </node>
-<node TEXT="launchCustomToolTab.groovy" STYLE_REF="nextTask" POSITION="bottom_or_right" ID="ID_1149928475" LINK="Menu-o-Matic/scripts/launchCustomToolTab.groovy"/>
+<node TEXT="launchCustomToolTab.groovy" STYLE_REF="nextTask" POSITION="bottom_or_right" ID="ID_1149928475" LINK="Menu-o-Matic/scripts/launchCustomToolTab.groovy">
+<node TEXT="definir cual será el standard" STYLE_REF="nextTask" ID="ID_865232833"/>
+</node>
 </node>
 <node TEXT="Navigating" ID="ID_1591150376">
 <node TEXT="listCustomDialogs.groovy" ID="ID_1969310287" LINK="Menu-o-Matic/scripts/listCustomDialogs.groovy"><richcontent TYPE="DETAILS">
@@ -5618,8 +5631,37 @@ before the actual namefilter setting)
     </p>
   </body>
 </html></richcontent>
-<node TEXT="hacer que revise los mapas en orden alfabético" STYLE_REF="nextTask" ID="ID_773018765"/>
-<node TEXT="y luego los nodos en cada mapa también en orden alfabético" STYLE_REF="nextTask" ID="ID_449476548"/>
+<node TEXT="hacer que revise los mapas en orden alfabético" STYLE_REF="completedTask" ID="ID_773018765">
+<node TEXT="DevTools" ID="ID_916920294" LINK="menuitem:_addons.menuOMatic.launchCustomDialog_on_single_node">
+<attribute_layout NAME_WIDTH="85.78723 pt" VALUE_WIDTH="379.14893 pt"/>
+<attribute NAME="tbActions" VALUE="[addons.devtools.checkAddOn_on_single_node, addons.devtools.releaseAddOn_on_single_node]"/>
+<attribute NAME="tbIcons" VALUE="[IconAction.emoji-1F527, IconAction.emoji-1F5DC]"/>
+<attribute NAME="tbLabels" VALUE="[Build add-on, Package add-on for publication]"/>
+<attribute NAME="tbMaxTextLength" VALUE="50" OBJECT="org.freeplane.features.format.FormattedNumber|50"/>
+<attribute NAME="tbShowIcons" VALUE="true"/>
+<attribute NAME="tbShowLabels" VALUE="true"/>
+<attribute NAME="tbFocusToMap" VALUE="true"/>
+<attribute NAME="tbTitle" VALUE="DevTools"/>
+<richcontent TYPE="DETAILS">
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      customMenu&nbsp;&nbsp;
+    </p>
+    <p>
+      &nbsp;&nbsp;- icons and labels
+    </p>
+    <p>
+      &nbsp;&nbsp;- return to mindmap
+    </p>
+  </body>
+</html></richcontent>
+</node>
+</node>
+<node TEXT="y luego los nodos en cada mapa también en orden alfabético" STYLE_REF="completedTask" ID="ID_449476548"/>
 <node TEXT="Si tiene tbTabName --&gt; abre en TabPane" STYLE_REF="nextTask" ID="ID_485021316"/>
 </node>
 </node>
@@ -7255,7 +7297,7 @@ before the actual namefilter setting)
 </node>
 <node TEXT="Menu-o-Matic project.mm" ID="ID_1492418706" LINK="Menu-o-Matic%20project.mm"/>
 <node TEXT="new imported files" STYLE_REF="newFolderImport" ID="ID_1788703280">
-<attribute NAME="log_MDI" VALUE="2" OBJECT="org.freeplane.features.format.FormattedNumber|2|#0.####"/>
+<attribute NAME="log_MDI" VALUE="2" OBJECT="org.freeplane.features.format.FormattedObject|org.freeplane.plugin.script.proxy.ConvertibleNumber&amp;#x7c;2|number:decimal:#0.####"/>
 <richcontent TYPE="NOTE">
 <html>
   <head>
@@ -7263,7 +7305,7 @@ before the actual namefilter setting)
   </head>
   <body>
     <p>
-      Inated:&#xa0;&#xa0;&#xa0;2023-08-10&#xa0;&#xa0;11:26:29
+      Inated:&#xa0;&#xa0;&#xa0;2023-08-11&#xa0;&#xa0;00:42:53
     </p>
     <p>
       
@@ -8602,7 +8644,7 @@ before the actual namefilter setting)
   </body>
 </html></richcontent>
 </node>
-<node TEXT="get first icon from node and insert it into an html" ID="ID_901278280"><richcontent TYPE="NOTE">
+<node TEXT="get first icon from node and insert it into an html" FOLDED="true" ID="ID_901278280"><richcontent TYPE="NOTE">
 <html>
   <head>
     
