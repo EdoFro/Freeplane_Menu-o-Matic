@@ -115,7 +115,7 @@ class LaunchDialog{
 	
     def static launchAutoLaunchCustomMenusFromMap(MindMap mapa){
         println "|- mindMap: '${mapa.name}'"
-        def nodos = mapa.root.find{isAutoLaunchMenuPack(it)}
+        def nodos = ([] + mapa.root.find{isAutoLaunchMenuPack(it)})//.sort{it.text}  // No tengo claro si deseo que se ordene alfabéticamente o según su posición en el mapa
         println "|  - ${nodos*.text}"
         nodos.each{
             show(it)
