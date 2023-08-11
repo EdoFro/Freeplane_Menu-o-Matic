@@ -7,6 +7,8 @@ import org.freeplane.api.MindMap
 import org.freeplane.core.ui.components.ToolbarLayout
 import org.freeplane.features.map.MapModel
 
+import javax.swing.Icon
+import javax.swing.JButton
 import javax.swing.SwingConstants
 import java.awt.GridLayout
 import java.awt.Insets
@@ -136,8 +138,8 @@ class LaunchDialog{
 
     def static showDialogFromMD(MD, boolean openInTabPane = true){
         md = MD
-        prefDimension = new Dimension(( md.showLabels?100:0) + (md.showIcons?30:0 ) ,md.showIcons?30:25)
-        minDimension = new Dimension(30 ,md.showIcons?30:25)
+        prefDimension = null // new Dimension(( md.showLabels?100:0) + (md.showIcons?30:0 ) ,md.showIcons?30:25)
+        minDimension = null // new Dimension(30 ,md.showIcons?30:25)
         def panelName = md.title.replace(' ' ,'_')
         if(openInTabPane) {
             showTabMenu(md.tabName, panelName)
@@ -272,6 +274,7 @@ class LaunchDialog{
         def text        = md.showLabels?textoLabel(md.labels[i]):null
         def icon        = md.showIcons?menuUtils.getMenuItemIcon(md.icons[i]):null
         def toolTipText = md.labels[i]
+        def prefD       = prefDimension
         def minD        = minDimension
         def scrText     = md.scripts.find{it[0] == acc}[1].toString() + "\n c.statusInfo = '---- script executed ----'".toString()
         def actionPerformed = { e ->
@@ -285,32 +288,33 @@ class LaunchDialog{
             c.statusInfo = "---- script executed: duration: $td ------ "
         }
         //ui.informationMessage(actionPerformed.toString())
-        return nuevoBoton(text,icon,toolTipText,minD, actionPerformed)
+        return nuevoBoton(text, icon, toolTipText, prefD, minD, actionPerformed)
     }
 
     def static creaBotonDesdeUI(acc, i){
         def text = md.showLabels?textoLabel(md.labels[i]):null
         def icon = md.showIcons?menuUtils.getMenuItemIcon(md.icons[i]):null
         def toolTipText = md.labels[i]
+        def prefD= prefDimension
         def minD = minDimension
         def actionPerformed = {
                 menuUtils.executeMenuItems([acc])
                 if (md.focusMap) DKBN.focusMap()
             }
-        return nuevoBoton(text,icon,toolTipText,minD, actionPerformed)
+        return nuevoBoton(text, icon, toolTipText, prefD, minD, actionPerformed)
     }
 
     def static textoLabel(texto) {
       return textUtils.getShortText(texto,md.maxTextLength,'.')
     }
 
-    def static nuevoBoton(t,i,tt,minD,actPerf){
+    static JButton nuevoBoton(String t, Icon i, Object tt,Dimension prefD, Dimension minD, Closure<GString> actPerf){
         def boton = swingBuilder.button(
             text                : t,
             horizontalAlignment : SwingConstants.LEFT,
             icon                : i,
             toolTipText         : tt,
-            preferredSize       : prefDimension,
+            preferredSize       : prefD,
             minimumSize         : minD,
             margin              : new Insets(0,2,0,2),
             borderPainted       : false,
