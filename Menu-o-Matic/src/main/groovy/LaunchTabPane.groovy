@@ -4,6 +4,13 @@ import edofro.menuomatic.LaunchDialog
 import edofro.menuomatic.MoMToolbar
 import edofro.menuomatic.PackMenu
 
+import javax.swing.Box
+import javax.swing.BoxLayout
+import javax.swing.JButton
+import javax.swing.JLabel
+import javax.swing.JPanel
+import javax.swing.JSeparator
+import javax.swing.ScrollPaneConstants
 import java.awt.Dimension
 import javax.swing.Icon
 import javax.swing.JTabbedPane
@@ -27,16 +34,23 @@ class LaunchTabPane {
     static final JTabbedPane tabPane   = UITools.freeplaneTabbedPanel
     static final Icon closeTabIcon     = MenuUtils.getMenuItemIcon('IconAction.emoji-274C')
     static final Icon closeToolbarIcon = MenuUtils.getMenuItemIcon('IconAction.emoji-274E')
-
+    static final String MoMIconText    = 'TabbedPanelMod/MoM'
+    static final Icon MoMInfoIcon      = MenuUtils.getMenuItemIcon('IconAction.' + MoMIconText)
 //endregion:
 
 //region: methods tabPane
 
     def static getMoMTabContainer(String tabName, String iconForTab = null){
         def index = indexOfTab(tabName)
-        println "index of tab '$tabName' is $index"
-        def momContainer = (index>=0) ? (((JScrollPane) tabPane.getComponentAt(index)).getViewport()?.components?.find{it.name == MOM_CONTAINER_NAME}) : null
-        momContainer ?= createMoMTab(tabName, iconForTab)
+        println "MoM: Looking for tab '$tabName' --> tab's index: $index"
+        def momContainer
+        if (index>=0){
+            momContainer = (((JScrollPane) tabPane.getComponentAt(index)).getViewport()?.components[0]?.components?.find{it.name == MOM_CONTAINER_NAME})
+        }else{
+            momContainer = createMoMTab(tabName, iconForTab)
+            index = tabPane.tabCount - 1
+        }
+        tabPane.setSelectedIndex(index)
         return momContainer
     }
 
@@ -54,31 +68,59 @@ class LaunchTabPane {
     }
 
     def static createMoMTab(String tabName, String iconForTab = null){
-        def momContainer = new MoMToolbar(MOM_CONTAINER_NAME, SwingConstants.VERTICAL)
-        def scrollPane = new JScrollPane(momContainer)
+        def separator = new JSeparator()
+        separator.setMaximumSize(new Dimension (5000,8))
+        def momContainer = new MoMToolbar(MOM_CONTAINER_NAME, SwingConstants.HORIZONTAL)
+        def container = new JPanel()
+        container.setLayout( new BoxLayout(container, BoxLayout.PAGE_AXIS))
+        container.add(topBar(tabName))
+        container.add(separator)
+        container.add(momContainer)
+        def scrollPane = new JScrollPane(container, ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED, ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER)
         tabPane.addTab(tabName, scrollPane)
-        println "tab '$tabName' was created"
-        momContainer.add(topBar())
-        def index = tabPane.tabCount - 1
-        formatTab(index, iconForTab)
+        println "MoM: tab '$tabName' was created"
+        formatTab(tabPane.tabCount - 1, (tabName!=PackMenu.MoM_TAB_NAME)?iconForTab:null)
         return momContainer
     }
 
-    def static topBar(){
+    def static topBar(tabName = null){
         Dimension minD  = null
         Dimension prefD = null //new Dimension(20,20)
-        def closeBtn = LaunchDialog.nuevoBoton(
+        //region def closeBtn
+        def closeBtn = getCloseBtn(prefD, minD)
+        def closeToolbarBtn = getCloseToolbarBtn(prefD, minD)
+        def MoMInfoBtn = getMoMInfoBtn(prefD, minD)
+//        def tBar = new MoMToolbar(MOM_TOPBAR, SwingConstants.VERTICAL)
+        def tBar = new JPanel()
+        tBar.setLayout(new BoxLayout(tBar, BoxLayout.LINE_AXIS ))
+        tBar.setMaximumSize(new Dimension(5000, 20))
+        tBar.add(MoMInfoBtn)
+        //tBar.add(Box.createHorizontalGlue())
+        tBar.add(Box.createRigidArea(new Dimension(12,0)))
+        tBar.add(closeToolbarBtn)
+        tBar.add(closeBtn)
+        if(tabName) tBar.add(new JLabel(tabName))
+
+        return tBar
+    }
+
+    static JButton getCloseBtn(prefD, minD){
+        JButton closeBtn = LaunchDialog.nuevoBoton(
                 null, closeTabIcon, 'Remove this Tab', prefD, minD,
                 { e ->
                     def scrollPane = e.source.parent.parent.parent.parent
                     tabPane.remove(scrollPane)
                 }
         )
-        def closeToolbarBtn = LaunchDialog.nuevoBoton(
+        return closeBtn
+    }
+
+    static JButton getCloseToolbarBtn(prefD, minD){
+        JButton closeToolbarBtn = LaunchDialog.nuevoBoton(
                 null, closeToolbarIcon, 'Remove a toolbar from this Tab', prefD, minD,
                 { e ->
-                    def momContainer = e.source.parent.parent
-                    def toolbars = momContainer.components.findAll{it instanceof MoMToolbar}
+                    def momContainer = e.source.parent.parent.components.find{it.name == MOM_CONTAINER_NAME}//.parent
+                    def toolbars = momContainer.components.findAll{it?.class?.simpleName=='MoMToolbar'}
                     def toolbarsNames = toolbars*.name - MOM_TOPBAR
                     def tbName = PackMenu.respuestaDialogo(toolbarsNames,'Select toolbar to remove', 'Menu-o-Matic')
                     def toolbarToRemove = toolbars.find{it.name == tbName}
@@ -89,17 +131,22 @@ class LaunchTabPane {
                     momContainer.repaint()
                 }
         )
-        def tBar = new MoMToolbar(MOM_TOPBAR, SwingConstants.VERTICAL)
-        tBar.add(closeBtn)
-        tBar.add(closeToolbarBtn)
-        tBar.alignmentX = 1
-        return tBar
+        return closeToolbarBtn
     }
 
+    static JButton getMoMInfoBtn(prefD, minD){
+        JButton  momInfoBtn = LaunchDialog.nuevoBoton(
+            null, MoMInfoIcon, 'Menu-o-Matic', prefD, minD,
+            {  e ->
+                c.setStatusInfo("MoM",'Menu-Matic by EdoFro: Hope you enjoy!', MoMIconText)
+                new Timer().runAfter(10000){c.setStatusInfo("MoM",null)}
+            })
+        return momInfoBtn
+    }
+
+
     def static removeTab(String tabName){
-        println 'a'
         def index = indexOfTab(tabName)
-        println 'b'
         if (index>=0) {
             tabPane.remove(index)
             return true

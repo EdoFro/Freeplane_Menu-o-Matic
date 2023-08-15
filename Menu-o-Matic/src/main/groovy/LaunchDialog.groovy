@@ -10,6 +10,7 @@ import org.freeplane.features.map.MapModel
 import javax.swing.Icon
 import javax.swing.JButton
 import javax.swing.SwingConstants
+import java.awt.Color
 import java.awt.GridLayout
 import java.awt.Insets
 import java.awt.Dimension
@@ -204,6 +205,7 @@ class LaunchDialog{
         tb.setFloatable(true)
         tb.margin = new Insets(0, 0, 5, 0)
         tb.setBorderPainted(true)
+        if(md.color) {tb.background = Color.decode(md.color)}
         md.actions.eachWithIndex{ a, j ->
             tb.add(creaBoton(a, j))
         }
@@ -287,8 +289,9 @@ class LaunchDialog{
             TimeDuration td = TimeCategory.minus( new Date(), start )
             c.statusInfo = "---- script executed: duration: $td ------ "
         }
+        def fgColor = md.fgColor
         //ui.informationMessage(actionPerformed.toString())
-        return nuevoBoton(text, icon, toolTipText, prefD, minD, actionPerformed)
+        return nuevoBoton(text, icon, toolTipText, prefD, minD, actionPerformed, fgColor)
     }
 
     def static creaBotonDesdeUI(acc, i){
@@ -301,16 +304,18 @@ class LaunchDialog{
                 menuUtils.executeMenuItems([acc])
                 if (md.focusMap) DKBN.focusMap()
             }
-        return nuevoBoton(text, icon, toolTipText, prefD, minD, actionPerformed)
+        def fgColor = md.fgColor
+        return nuevoBoton(text, icon, toolTipText, prefD, minD, actionPerformed, fgColor)
     }
 
     def static textoLabel(texto) {
       return textUtils.getShortText(texto,md.maxTextLength,'.')
     }
 
-    static JButton nuevoBoton(String t, Icon i, Object tt,Dimension prefD, Dimension minD, Closure<GString> actPerf){
+    static JButton nuevoBoton(String t, Icon i, Object tt,Dimension prefD, Dimension minD, Closure<GString> actPerf, fgColor = null){
         def boton = swingBuilder.button(
             text                : t,
+            foreground          : fgColor?Color.decode(fgColor):null,
             horizontalAlignment : SwingConstants.LEFT,
             icon                : i,
             toolTipText         : tt,

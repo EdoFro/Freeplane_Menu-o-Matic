@@ -34,21 +34,23 @@ class PackMenu{
     static final String   titleD3      = 'menu-o-matic'
     static final String   msgD3        = 'After clicking a button the focus should:'
     static final String[] optionsD3    = ['return to mindmap','stay in menu']
+    static final String   MoM_TAB_NAME = 'MoM'
     
     static final int      maxTextLen   = 50
     static       int      iScript      = 0
 
     static final Map TB = [
-        actions       : 'tbActions',
-        icons         : 'tbIcons',
-        labels        : 'tbLabels',
-        maxTextLength : 'tbMaxTextLength',
-        showIcons     : 'tbShowIcons',
-        showLabels    : 'tbShowLabels',
-        title         : 'tbTitle',
-        focusMap      : 'tbFocusToMap',
-        tabName       : 'tbTabName',
-        tabIcon       : 'tbTabIcon'
+            actions       : 'tbActions',
+            icons         : 'tbIcons',
+            labels        : 'tbLabels',
+            maxTextLength : 'tbMaxTextLength',
+            showIcons     : 'tbShowIcons',
+            showLabels    : 'tbShowLabels',
+            title         : 'tbTitle',
+            focusMap      : 'tbFocusToMap',
+            tabName       : 'tbTabName',
+            tabIcon       : 'tbTabIcon',
+            color         : 'tbBackColor'
     ]
 
     // endregion: properties
@@ -64,8 +66,10 @@ class PackMenu{
         String    title
         ArrayList scripts
         Boolean   focusMap
-        String    tabName = 'MoM'
+        String    tabName = MoM_TAB_NAME
         String    tabIcon
+        String    color
+        String    fgColor
 
         public MenuData(Proxy.Node nodoMenu){
 //            if(nodoMenu[TB.title]){
@@ -84,6 +88,8 @@ class PackMenu{
                 this.scripts        = scriptList
                 this.tabName        = nodoMenu[TB.tabName]?nodoMenu[TB.tabName].toString():tabName
                 this.tabIcon        = nodoMenu.icons.first
+                this.color          = nodoMenu.style.backgroundColorSet?nodoMenu.style.backgroundColorCode:null
+                this.fgColor        = nodoMenu.style.textColorSet?nodoMenu.style.textColorCode:null
 //            }
         }
 
@@ -118,9 +124,16 @@ class PackMenu{
             if(this.tabIcon){
                 nodo.icons.add(this.tabIcon)
             }
+            if(this.color){
+                nodo.style.setBackgroundColorCode(this.color)
+            }
+            if(this.fgColor){
+                nodo.style.setTextColorCode(this.fgColor)
+            }
             this.scripts.each{id, scr ->
                 nodo[id] = scr
             }
+
         }
 
     }
