@@ -118,7 +118,7 @@ class LaunchDialog{
 	
     def static launchAutoLaunchCustomMenusFromMap(MindMap mapa){
         println "|- mindMap: '${mapa.name}'"
-        def nodos = ([] + mapa.root.find{isAutoLaunchMenuPack(it)})//.sort{it.text}  // No tengo claro si deseo que se ordene alfabéticamente o según su posición en el mapa
+        def nodos = /*([] +*/ mapa.root.find{isAutoLaunchMenuPack(it)}//).sort{it.text}  // No tengo claro si deseo que se ordene alfabéticamente o según su posición en el mapa
         println "|  - ${nodos*.text}"
         nodos.each{
             show(it)
@@ -189,7 +189,6 @@ class LaunchDialog{
         def momContainer = LaunchTabPane.getMoMTabContainer(tabName, md.tabIcon)
         def toolB = momContainer.components.find{it.name == panelName}
         if(!toolB){
-            momContainer.addSeparator()
             toolB = new MoMToolbar(panelName, SwingConstants.VERTICAL)
             toolB.setToolTipText(panelName)
             momContainer.add(toolB)
