@@ -4091,7 +4091,9 @@ before the actual namefilter setting)
 </html></richcontent>
 </node>
 <node TEXT="launchCustomToolTab.groovy" STYLE_REF="nextTask" POSITION="bottom_or_right" ID="ID_1149928475" LINK="Menu-o-Matic/scripts/launchCustomToolTab.groovy">
-<node TEXT="definir cual será el standard" STYLE_REF="nextTask" ID="ID_865232833"/>
+<node TEXT="definir cual será el standard" STYLE_REF="nextTask" ID="ID_865232833">
+<icon BUILTIN="emoji-274E"/>
+</node>
 </node>
 </node>
 <node TEXT="Navigating" ID="ID_1591150376">
@@ -7297,7 +7299,7 @@ before the actual namefilter setting)
 </node>
 <node TEXT="Menu-o-Matic project.mm" ID="ID_1492418706" LINK="Menu-o-Matic%20project.mm"/>
 <node TEXT="new imported files" STYLE_REF="newFolderImport" ID="ID_1788703280">
-<attribute NAME="log_MDI" VALUE="2" OBJECT="org.freeplane.features.format.FormattedObject|org.freeplane.plugin.script.proxy.ConvertibleNumber&amp;#x7c;2|number:decimal:#0.####"/>
+<attribute NAME="log_MDI" VALUE="org.freeplane.plugin.script.proxy.ConvertibleNumber|2" OBJECT="org.freeplane.features.format.FormattedObject|java.lang.String&amp;#x7c;org.freeplane.plugin.script.proxy.ConvertibleNumber&amp;#x7c;2|number:decimal:#0.####"/>
 <richcontent TYPE="NOTE">
 <html>
   <head>
@@ -7368,8 +7370,7 @@ before the actual namefilter setting)
       No failed operation in drive
     </p>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 <node TEXT="Menu-o-Matic" ID="ID_13403667" LINK="Menu-o-Matic/">
 <node TEXT="src" ID="ID_1710270558" LINK="Menu-o-Matic/src/">
 <node TEXT="main" ID="ID_228709392" LINK="Menu-o-Matic/src/main/"/>

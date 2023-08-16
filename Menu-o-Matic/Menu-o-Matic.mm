@@ -85,8 +85,7 @@
       </li>
     </ul>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 <hook NAME="MapStyle" background="#f9f9f8">
     <properties show_icon_for_attributes="true" edgeColorConfiguration="#808080ff,#ff0000ff,#0000ffff,#00ff00ff,#ff00ffff,#00ffffff,#7c0000ff,#00007cff,#007c00ff,#7c007cff,#007c7cff,#7c7c00ff" mapUsesOwnSaveOptions="true" save_modification_times="false" save_last_visited_node="default" show_note_icons="true" save_folding="never_save_folding" fit_to_viewport="false"/>
 
@@ -240,6 +239,10 @@
 <node TEXT="v0.1.6" ID="ID_321909342">
 <node TEXT="added menuOMatic.svg icon" ID="ID_1516241569"/>
 <node TEXT="added MoM.svg icon for TabbedPanelMod" ID="ID_376952887"/>
+<node TEXT="CustomMenus are now launched in tool panel" ID="ID_1171719173"/>
+<node TEXT="Added Tab Icon capability" ID="ID_695488984"/>
+<node TEXT="added custom colors to toolbar" ID="ID_141499994"/>
+<node TEXT="it selects the tab when adding a toolbar" ID="ID_529425209"/>
 </node>
 </node>
 <node TEXT="license" POSITION="top_or_left" ID="ID_492801974">
