@@ -4,6 +4,10 @@
 
 * added menuOMatic.svg icon
 * added MoM.svg icon for TabbedPanelMod
+* CustomMenus are now launched in tool panel
+* Added Tab Icon capability
+* added custom colors to toolbar
+* it selects the tab when adding a toolbar
 
 ## v0.1.5
 

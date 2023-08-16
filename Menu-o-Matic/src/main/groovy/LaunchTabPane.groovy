@@ -32,8 +32,8 @@ class LaunchTabPane {
     static final String MOM_TOPBAR = 'MoM_topBar'
     static final String MOM_CONTAINER_NAME = 'MoM_container'
     static final JTabbedPane tabPane   = UITools.freeplaneTabbedPanel
-    static final Icon closeTabIcon     = MenuUtils.getMenuItemIcon('IconAction.emoji-274C')
-    static final Icon closeToolbarIcon = MenuUtils.getMenuItemIcon('IconAction.emoji-274E')
+    static final Icon closeTabIcon     = MenuUtils.getMenuItemIcon('IconAction.Menu-o-Matic/MoMCloseTab')
+    static final Icon closeToolbarIcon = MenuUtils.getMenuItemIcon('IconAction.Menu-o-Matic/MoMCloseToolbar')
     static final String MoMIconText    = 'TabbedPanelMod/MoM'
     static final Icon MoMInfoIcon      = MenuUtils.getMenuItemIcon('IconAction.' + MoMIconText)
 //endregion:
