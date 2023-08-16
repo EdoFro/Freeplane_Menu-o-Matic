@@ -3175,9 +3175,6 @@ before the actual namefilter setting)
 <node TEXT="MoM Future A" STYLE_REF="milestone" ID="ID_1722534694">
 <node TEXT="agregar importMoMStyles" STYLE_REF="pendingTask" ID="ID_1898413286"/>
 </node>
-<node TEXT="TabPane.groovy" ID="ID_439442031" LINK="Menu-o-Matic/src/main/groovy/TabPane.groovy">
-<node TEXT="ELIMINAR" STYLE_REF="nextTask" ID="ID_494508757"/>
-</node>
 <node TEXT="MoMToolbar.groovy" ID="ID_1177945776" LINK="Menu-o-Matic/src/main/groovy/MoMToolbar.groovy"/>
 <node TEXT="LaunchTabPane.groovy" ID="ID_56604948" LINK="Menu-o-Matic/src/main/groovy/LaunchTabPane.groovy">
 <node TEXT="inventar forma en que poder agregar separadores entre botones" STYLE_REF="nextTask" ID="ID_1218863478">
@@ -5573,6 +5570,17 @@ before the actual namefilter setting)
 <node TEXT="TabbedPanelMod" ID="ID_1367464612" LINK="Menu-o-Matic/zips/icons/TabbedPanelMod/">
 <node TEXT="MoM.svg" ID="ID_844351064" LINK="Menu-o-Matic/zips/icons/TabbedPanelMod/MoM.svg"/>
 </node>
+<node TEXT="Menu-o-Matic" STYLE_REF="movedRenamed" ID="ID_1262031919" LINK="Menu-o-Matic/zips/icons/Menu-o-Matic/">
+<node TEXT="MoM.svg" STYLE_REF="freshNew" ID="ID_647775263" LINK="Menu-o-Matic/zips/icons/Menu-o-Matic/MoM.svg">
+<node TEXT="MoM" POSITION="bottom_or_right" ID="ID_352979862" LINK="menuitem:_IconAction.Menu-o-Matic/MoM"/>
+</node>
+<node TEXT="MoMCloseTab.svg" STYLE_REF="freshNew" ID="ID_1249662872" LINK="Menu-o-Matic/zips/icons/Menu-o-Matic/MoMCloseTab.svg">
+<node TEXT="MoMCloseTab" ID="ID_1360054908" LINK="menuitem:_IconAction.Menu-o-Matic/MoMCloseTab"/>
+</node>
+<node TEXT="MoMCloseToolbar.svg" STYLE_REF="freshNew" ID="ID_49034312" LINK="Menu-o-Matic/zips/icons/Menu-o-Matic/MoMCloseToolbar.svg">
+<node TEXT="MoMCloseToolbar" POSITION="bottom_or_right" ID="ID_409548431" LINK="menuitem:_IconAction.Menu-o-Matic/MoMCloseToolbar"/>
+</node>
+</node>
 </node>
 <node TEXT="templates" STYLE_REF="file_folder" ID="ID_1904073328" LINK="Menu-o-Matic/zips/templates/">
 <attribute NAME="lastModifiedTime" VALUE="25-06-21 15:00" OBJECT="org.freeplane.features.format.FormattedDate|2021-06-25T15:00-0400|datetime"/>
@@ -7299,7 +7307,7 @@ before the actual namefilter setting)
 </node>
 <node TEXT="Menu-o-Matic project.mm" ID="ID_1492418706" LINK="Menu-o-Matic%20project.mm"/>
 <node TEXT="new imported files" STYLE_REF="newFolderImport" ID="ID_1788703280">
-<attribute NAME="log_MDI" VALUE="org.freeplane.plugin.script.proxy.ConvertibleNumber|2" OBJECT="org.freeplane.features.format.FormattedObject|java.lang.String&amp;#x7c;org.freeplane.plugin.script.proxy.ConvertibleNumber&amp;#x7c;2|number:decimal:#0.####"/>
+<attribute NAME="log_MDI" VALUE="2" OBJECT="org.freeplane.features.format.FormattedObject|org.freeplane.plugin.script.proxy.ConvertibleNumber&amp;#x7c;2|number:decimal:#0.####"/>
 <richcontent TYPE="NOTE">
 <html>
   <head>
@@ -7307,7 +7315,7 @@ before the actual namefilter setting)
   </head>
   <body>
     <p>
-      Inated:&#xa0;&#xa0;&#xa0;2023-08-11&#xa0;&#xa0;00:42:53
+      Inated:&#xa0;&#xa0;&#xa0;2023-08-15&#xa0;&#xa0;20:52:14
     </p>
     <p>
       
@@ -7316,13 +7324,13 @@ before the actual namefilter setting)
       ------- Files: --------&#xa0;
     </p>
     <p>
-      &#xa0;0 node(s) pointing to unexisting/filtered files (marked as 'broken')
+      &#xa0;1 node(s) pointing to unexisting/filtered files (marked as 'broken')
     </p>
     <p>
       &#xa0;0 link(s) corrected in nodes
     </p>
     <p>
-      &#xa0;0 new file(s) imported as node(s)&#xa0;
+      &#xa0;3 new file(s) imported as node(s)&#xa0;
     </p>
     <p>
       &#xa0;0 node(s) moved/renamed in drive
@@ -7337,7 +7345,7 @@ before the actual namefilter setting)
       ------- Folders: --------&#xa0;
     </p>
     <p>
-      29 folders didn't need to be moved&#xa0;
+      30 folders didn't need to be moved&#xa0;
     </p>
     <p>
       1 folders were not found&#xa0;
@@ -7352,7 +7360,7 @@ before the actual namefilter setting)
       
     </p>
     <p>
-      0.9 seconds
+      1 seconds
     </p>
     <p>
       
@@ -7370,12 +7378,17 @@ before the actual namefilter setting)
       No failed operation in drive
     </p>
   </body>
-</html></richcontent>
+</html>
+</richcontent>
 <node TEXT="Menu-o-Matic" ID="ID_13403667" LINK="Menu-o-Matic/">
 <node TEXT="src" ID="ID_1710270558" LINK="Menu-o-Matic/src/">
 <node TEXT="main" ID="ID_228709392" LINK="Menu-o-Matic/src/main/"/>
 </node>
-<node TEXT="zips" ID="ID_1473858531" LINK="Menu-o-Matic/zips/"/>
+<node TEXT="zips" ID="ID_1473858531" LINK="Menu-o-Matic/zips/">
+<node TEXT="icons" ID="ID_1691421978" LINK="Menu-o-Matic/zips/icons/">
+<node TEXT="Menu-o-Matic" ID="ID_1108270291" LINK="#ID_1262031919"/>
+</node>
+</node>
 </node>
 </node>
 <node TEXT="versión instalada en AddOns" STYLE_REF="locked" FOLDED="true" ID="ID_1424141649">
