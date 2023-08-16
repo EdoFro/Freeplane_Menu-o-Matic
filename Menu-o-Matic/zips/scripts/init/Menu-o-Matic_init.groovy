@@ -30,7 +30,7 @@ if(isAddOnActive && runOnStartingFreeplane){
     println '- opening AutoLaunchCustomMenus from following mind maps:'
     def mapas = c.getOpenMindMaps()
     
-    mapas.each{mapa ->
+    mapas.sort{it.name}.each{mapa ->
         LD.launchAutoLaunchCustomMenusFromMap(mapa)
     }
 

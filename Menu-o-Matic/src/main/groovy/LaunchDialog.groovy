@@ -1,7 +1,16 @@
 package edofro.menuomatic
 
+import edofro.menuomatic.LaunchTabPane
+import edofro.menuomatic.MoMToolbar
 import groovy.swing.SwingBuilder
+import org.freeplane.api.MindMap
+import org.freeplane.core.ui.components.ToolbarLayout
+import org.freeplane.features.map.MapModel
+
+import javax.swing.Icon
+import javax.swing.JButton
 import javax.swing.SwingConstants
+import java.awt.Color
 import java.awt.GridLayout
 import java.awt.Insets
 import java.awt.Dimension
@@ -22,6 +31,7 @@ import org.freeplane.plugin.script.proxy.ScriptUtils
 
 
 class LaunchDialog{
+//region: properties
     static final String defaultIcon     = 'IconAction.emoji-1F7EB'
     static final String dialogStr       = '_MoM_'
     static final int    maxButtonsHoriz = 6
@@ -35,6 +45,7 @@ class LaunchDialog{
     static Dimension prefDimension
     static Dimension minDimension
 
+//endregion:
 
 
     // region managing dialogs
@@ -54,7 +65,7 @@ class LaunchDialog{
         def msg   = 'Select dialog to show'
         def title = 'Menu-o-Matic'
         def titulo = PM.respuestaDialogo(titulos,msg,title)
-        dialogos.find{it.title == titulo}?.show()
+        dialogos.find{it.title == titulo}?.setVisible(true)
     }
 
     // endregion
@@ -95,7 +106,9 @@ class LaunchDialog{
     }
 
     // endregion
-    def static launchAutoLaunchCustomMenusFromMap(org.freeplane.features.map.MapModel mapModel){
+
+    // region AutoLaunch
+    def static launchAutoLaunchCustomMenusFromMap(MapModel mapModel){
 		def url = mapModel.getURL()
 		if(url){
 			def mapa = ScriptUtils.c().mapLoader(url).mindMap
@@ -103,44 +116,37 @@ class LaunchDialog{
 		}
     }
 	
-    def static launchAutoLaunchCustomMenusFromMap(org.freeplane.api.MindMap mapa){
+    def static launchAutoLaunchCustomMenusFromMap(MindMap mapa){
         println "|- mindMap: '${mapa.name}'"
-        def nodos = mapa.root.find{isAutoLaunchMenuPack(it)}
+        def nodos = /*([] +*/ mapa.root.find{isAutoLaunchMenuPack(it)}//).sort{it.text}  // No tengo claro si deseo que se ordene alfabéticamente o según su posición en el mapa
         println "|  - ${nodos*.text}"
         nodos.each{
             show(it)
         }
     }	
-	
-	
-    def static show(nodo){
-        if(isCustomMenuPack(nodo)){
-            md = new PM.MenuData(nodo)
-            prefDimension = new Dimension(( md.showLabels?100:0) + (md.showIcons?30:0 ) ,md.showIcons?30:25)
-            minDimension = new Dimension(30 ,md.showIcons?30:25)
-            def panelName = md.title.replace(' ' ,'_')
-            showDialog(panelName)
-        } else {
-            c.statusInfo = 'selected node is not a customMenu node'
-        }
-    }
-
-    // region creating Tab menu
-
-    def static showTabMenu(tabName, panelName){
-        return null
-    }
 
     // endregion
 
     //region creating/showing dialog menu
 
-    def static showDialogFromMD(MD){
+    def static show(nodo, boolean openInTabPane = true){
+        if(isCustomMenuPack(nodo)){
+            showDialogFromMD(new PM.MenuData(nodo), openInTabPane)
+        } else {
+            c.statusInfo = 'selected node is not a customMenu node'
+        }
+    }
+
+    def static showDialogFromMD(MD, boolean openInTabPane = true){
         md = MD
-        prefDimension = new Dimension(( md.showLabels?100:0) + (md.showIcons?30:0 ) ,md.showIcons?30:25)
-        minDimension = new Dimension(30 ,md.showIcons?30:25)
+        prefDimension = null // new Dimension(( md.showLabels?100:0) + (md.showIcons?30:0 ) ,md.showIcons?30:25)
+        minDimension = null // new Dimension(30 ,md.showIcons?30:25)
         def panelName = md.title.replace(' ' ,'_')
-        showDialog(panelName)
+        if(openInTabPane) {
+            showTabMenu(md.tabName, panelName)
+        } else {
+            showDialog(panelName)
+        }
     }
 
     def static showDialog(panelName){
@@ -173,6 +179,37 @@ class LaunchDialog{
             dialogo.getContentPane().removeAll()
         }
         return dialogo
+    }
+
+    // endregion
+
+    // region ShowTabMenu
+
+    def static showTabMenu(tabName, panelName){
+        def momContainer = LaunchTabPane.getMoMTabContainer(tabName, md.tabIcon)
+        def toolB = momContainer.components.find{it.name == panelName}
+        if(!toolB){
+            toolB = new MoMToolbar(panelName, SwingConstants.VERTICAL)
+            toolB.setToolTipText(panelName)
+            momContainer.add(toolB)
+        }else{
+            toolB.removeAll()
+        }
+        setUpToolbar(toolB)
+    }
+
+    def static setUpToolbar(tb) {
+        def theLayout = md.showLabels?new GridLayout(0,1): ToolbarLayout.vertical()
+        tb.setLayout(theLayout)
+        tb.setFloatable(true)
+        tb.margin = new Insets(0, 0, 5, 0)
+        tb.setBorderPainted(true)
+        if(md.color) {tb.background = Color.decode(md.color)}
+        md.actions.eachWithIndex{ a, j ->
+            tb.add(creaBoton(a, j))
+        }
+        tb.revalidate()
+        tb.repaint()
     }
 
     // endregion
@@ -225,6 +262,7 @@ class LaunchDialog{
     // endregion
 
     // region creating buttons
+
     def static creaBoton(acc, i){
         if(acc.startsWith(scriptStr)){
             return creaBotonDesdeScript(acc,i)
@@ -237,6 +275,7 @@ class LaunchDialog{
         def text        = md.showLabels?textoLabel(md.labels[i]):null
         def icon        = md.showIcons?menuUtils.getMenuItemIcon(md.icons[i]):null
         def toolTipText = md.labels[i]
+        def prefD       = prefDimension
         def minD        = minDimension
         def scrText     = md.scripts.find{it[0] == acc}[1].toString() + "\n c.statusInfo = '---- script executed ----'".toString()
         def actionPerformed = { e ->
@@ -249,33 +288,37 @@ class LaunchDialog{
             TimeDuration td = TimeCategory.minus( new Date(), start )
             c.statusInfo = "---- script executed: duration: $td ------ "
         }
+        def fgColor = md.fgColor
         //ui.informationMessage(actionPerformed.toString())
-        return nuevoBoton(text,icon,toolTipText,minD, actionPerformed)
+        return nuevoBoton(text, icon, toolTipText, prefD, minD, actionPerformed, fgColor)
     }
 
     def static creaBotonDesdeUI(acc, i){
         def text = md.showLabels?textoLabel(md.labels[i]):null
         def icon = md.showIcons?menuUtils.getMenuItemIcon(md.icons[i]):null
         def toolTipText = md.labels[i]
+        def prefD= prefDimension
         def minD = minDimension
         def actionPerformed = {
                 menuUtils.executeMenuItems([acc])
                 if (md.focusMap) DKBN.focusMap()
             }
-        return nuevoBoton(text,icon,toolTipText,minD, actionPerformed)
+        def fgColor = md.fgColor
+        return nuevoBoton(text, icon, toolTipText, prefD, minD, actionPerformed, fgColor)
     }
 
     def static textoLabel(texto) {
       return textUtils.getShortText(texto,md.maxTextLength,'.')
     }
 
-    def static nuevoBoton(t,i,tt,minD,actPerf){
+    static JButton nuevoBoton(String t, Icon i, Object tt,Dimension prefD, Dimension minD, Closure<GString> actPerf, fgColor = null){
         def boton = swingBuilder.button(
             text                : t,
+            foreground          : fgColor?Color.decode(fgColor):null,
             horizontalAlignment : SwingConstants.LEFT,
             icon                : i,
             toolTipText         : tt,
-            preferredSize       : prefDimension,
+            preferredSize       : prefD,
             minimumSize         : minD,
             margin              : new Insets(0,2,0,2),
             borderPainted       : false,

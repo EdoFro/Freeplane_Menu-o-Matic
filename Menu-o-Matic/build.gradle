@@ -6,7 +6,7 @@ apply plugin: 'groovy'
 
 targetCompatibility='1.8'
 
-// 1. I have to define which freeplane version is going to be used to look at the libreries (freeplane and groovy)
+// 1. I have to define which freeplane version is going to be used to look at the libraries (freeplane and groovy)
 def FPversion = 'instaled'
 
     def freeplaneDirs = [
@@ -26,7 +26,7 @@ def groovyVersion = '4.0.1'
 
 libsDirName = "${rootDir}/lib"
 clean.doFirst { delete "${rootDir}/lib" } // para eliminar todas las .jar
-//clean.doFirst { delete "${rootDir}/lib/Tutorial-o-Matic.jar" } //para eliminar sólo una de las .jar y que no me borrara markedj ni jsoup
+//clean.doFirst { delete "${rootDir}/lib/Tutorial-o-Matic.jar" } //para eliminar sÃ³lo una de las .jar y que no me borrara markedj ni jsoup
 
 repositories {
     mavenCentral()
@@ -36,7 +36,7 @@ repositories {
         "${freeplaneDir}/core/org.freeplane.core/lib",
         "${freeplaneDir}/plugins/org.freeplane.plugin.script/lib",
         // "${freeplaneDir}/plugins/org.freeplane.plugin.markdown/lib", // para incluir markedj.jar
-        // "${rootDir}/lib" //ahí puse markedj y jsoup
+        // "${rootDir}/lib" //ahÃ­ puse markedj y jsoup
     ]
 }
 

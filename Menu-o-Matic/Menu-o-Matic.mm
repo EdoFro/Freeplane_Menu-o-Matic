@@ -5,7 +5,7 @@
 <hook NAME="AutomaticEdgeColor" COUNTER="16" RULE="ON_BRANCH_CREATION"/>
 <attribute_layout NAME_WIDTH="104.25 pt" VALUE_WIDTH="233.24999 pt"/>
 <attribute NAME="name" VALUE="menuOMatic"/>
-<attribute NAME="version" VALUE="v0.1.5"/>
+<attribute NAME="version" VALUE="v0.1.6"/>
 <attribute NAME="author" VALUE="EdoFro"/>
 <attribute NAME="freeplaneVersionFrom" VALUE="v1.9.0"/>
 <attribute NAME="freeplaneVersionTo" VALUE=""/>
@@ -239,6 +239,14 @@
 <node TEXT="just add a &apos;launch&apos; icon to the package node to define it as an AutoLaunch menu" ID="ID_123594505"/>
 </node>
 </node>
+<node TEXT="v0.1.6" ID="ID_321909342">
+<node TEXT="added menuOMatic.svg icon" ID="ID_1516241569"/>
+<node TEXT="added MoM.svg icon for TabbedPanelMod" ID="ID_376952887"/>
+<node TEXT="CustomMenus are now launched in tool panel" ID="ID_1171719173"/>
+<node TEXT="Added Tab Icon capability" ID="ID_695488984"/>
+<node TEXT="added custom colors to toolbar" ID="ID_141499994"/>
+<node TEXT="it selects the tab when adding a toolbar" ID="ID_529425209"/>
+</node>
 </node>
 <node TEXT="license" POSITION="top_or_left" ID="ID_492801974">
 <edge COLOR="#00ff00"/>
@@ -435,7 +443,7 @@
   </body>
 </html>
 </richcontent>
-<node TEXT="en" ID="ID_135465452">
+<node TEXT="en" ID="ID_1881907876">
 <attribute_layout NAME_WIDTH="212.24999 pt" VALUE_WIDTH="411.74999 pt"/>
 <attribute NAME="addons.${name}.lauchDialogFromNodes" VALUE="launch menu dialog directly"/>
 <attribute NAME="addons.${name}.1launchMenuOMaticDialog" VALUE="launch Menu-o-Matic dialog"/>
@@ -444,6 +452,7 @@
 <attribute NAME="addons.${name}" VALUE="Menu-o-Matic"/>
 <attribute NAME="addons.${name}.packCustomMenu" VALUE="pack menu"/>
 <attribute NAME="OptionPanel.${name}_runOnStartingFreeplane" VALUE="Open auto launch menus"/>
+<attribute NAME="addons.${name}.launchCustomToolTab" VALUE="Launch custom tool tab"/>
 <attribute NAME="addons.${name}.showLastUsedMenu" VALUE="show most recently used menu"/>
 <attribute NAME="OptionPanel.separator.${name}" VALUE="Menu-o-Matic"/>
 <attribute NAME="OptionPanel.${name}_runOnStartingFreeplane.tooltip" VALUE="Automatically opens all Custom Menus marked as AutoLaunch from all opened mindmaps on Freeplane start"/>
@@ -492,6 +501,11 @@
 <attribute NAME="delete" VALUE="${installationbase}/addons/${name}/scripts/launchMenuOMaticDialog.groovy"/>
 <attribute NAME="delete" VALUE="${installationbase}/addons/${name}/scripts/insertMenuOMaticPackage.groovy"/>
 <attribute NAME="delete" VALUE="${installationbase}/scripts/init/Menu-o-Matic_init.groovy"/>
+<attribute NAME="delete" VALUE="${installationbase}/icons/TabbedPanelMod/MoM.svg"/>
+<attribute NAME="delete" VALUE="${installationbase}/addons/${name}/scripts/launchCustomToolTab.groovy"/>
+<attribute NAME="delete" VALUE="${installationbase}/icons/Menu-o-Matic/MoM.svg"/>
+<attribute NAME="delete" VALUE="${installationbase}/icons/Menu-o-Matic/MoMCloseTab.svg"/>
+<attribute NAME="delete" VALUE="${installationbase}/icons/Menu-o-Matic/MoMCloseToolbar.svg"/>
 </node>
 <node TEXT="scripts" POSITION="bottom_or_right" ID="ID_1105183990">
 <edge COLOR="#007c00"/>
@@ -744,6 +758,18 @@
 <attribute NAME="execute_scripts_without_exec_restriction" VALUE="false"/>
 <attribute NAME="execute_scripts_without_network_restriction" VALUE="false"/>
 </node>
+<node TEXT="launchCustomToolTab.groovy" ID="ID_729002718">
+<attribute_layout NAME_WIDTH="188.24999 pt" VALUE_WIDTH="164.25 pt"/>
+<attribute NAME="menuTitleKey" VALUE="addons.${name}.launchCustomToolTab"/>
+<attribute NAME="menuLocation" VALUE="${addonsMenu}/addons.${name}"/>
+<attribute NAME="executionMode" VALUE="on_single_node"/>
+<attribute NAME="keyboardShortcut" VALUE=""/>
+<attribute NAME="execute_scripts_without_asking" VALUE="true"/>
+<attribute NAME="execute_scripts_without_file_restriction" VALUE="true"/>
+<attribute NAME="execute_scripts_without_write_restriction" VALUE="false"/>
+<attribute NAME="execute_scripts_without_exec_restriction" VALUE="false"/>
+<attribute NAME="execute_scripts_without_network_restriction" VALUE="false"/>
+</node>
 </node>
 <node TEXT="lib" POSITION="bottom_or_right" ID="ID_1186629716">
 <edge COLOR="#7c007c"/>
@@ -826,6 +852,7 @@
 <node TEXT="doc" ID="ID_108012296"/>
 <node TEXT="templates" ID="ID_1212139449"/>
 <node TEXT="scripts" ID="ID_162715608"/>
+<node TEXT="icons" ID="ID_652630771"/>
 </node>
 <node TEXT="images" POSITION="bottom_or_right" ID="ID_817685181" VGAP_QUANTITY="2 px">
 <edge COLOR="#7c7c00"/>
