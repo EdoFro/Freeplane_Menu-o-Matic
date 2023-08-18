@@ -204,6 +204,8 @@ class LaunchDialog{
         tb.setFloatable(true)
         tb.margin = new Insets(0, 0, 5, 0)
         tb.setBorderPainted(true)
+        ui.addTitledBorder(tb,md.title,10f)
+        if(md.fgColor) {tb.border.outsideBorder.titleColor = Color.decode(md.fgColor)}
         if(md.color) {tb.background = Color.decode(md.color)}
         md.actions.eachWithIndex{ a, j ->
             tb.add(creaBoton(a, j))

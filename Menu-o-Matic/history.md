@@ -1,5 +1,8 @@
 # History
 
+## v0.1.7
+
+
 ## v0.1.6
 
 * added menuOMatic.svg icon

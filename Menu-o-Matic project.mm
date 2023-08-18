@@ -1,7 +1,7 @@
 <map version="freeplane 1.11.5">
 <!--To view this file, download free mind mapping software Freeplane from https://www.freeplane.org -->
 <attribute_registry SHOW_ATTRIBUTES="selected"/>
-<node TEXT="Menu-o-Matic project" LOCALIZED_STYLE_REF="AutomaticLayout.level.root" FOLDED="false" ID="ID_551814049" LINK="../../../../../Respaldo%20EF/ef/Documentos%20con%20macros/08%20Freemind%20Groovy/scripts/ScriptsEnComputadorYDesarrollosEdo%20v1.9.mm" MAX_WIDTH="7 cm"><hook NAME="MapStyle" background="#f9f9f8" zoom="0.8">
+<node TEXT="Menu-o-Matic project" LOCALIZED_STYLE_REF="AutomaticLayout.level.root" FOLDED="false" ID="ID_551814049" LINK="../../../../../Respaldo%20EF/ef/Documentos%20con%20macros/08%20Freemind%20Groovy/scripts/ScriptsEnComputadorYDesarrollosEdo%20v1.9.mm" MAX_WIDTH="7 cm"><hook NAME="MapStyle" background="#f9f9f8">
     <conditional_styles>
         <conditional_style ACTIVE="true" STYLE_REF="customMenuPackage" LAST="false">
             <attribute_exists_condition ATTRIBUTE="tbActions"/>
@@ -602,7 +602,7 @@ before the actual namefilter setting)
     </p>
   </body>
 </html></richcontent>
-<node TEXT="lib" STYLE_REF="Organizador" ID="ID_1649002022">
+<node TEXT="lib" STYLE_REF="Organizador" FOLDED="true" ID="ID_1649002022">
 <attribute NAME="projectCode" VALUE="lib"/>
 <node TEXT="src" STYLE_REF="file_folder" ID="ID_1777746420" LINK="Menu-o-Matic/src/">
 <attribute NAME="lastModifiedTime" VALUE="24-06-21 13:31" OBJECT="org.freeplane.features.format.FormattedDate|2021-06-24T13:31-0400|datetime"/>
@@ -1184,6 +1184,7 @@ before the actual namefilter setting)
     </p>
   </body>
 </html></richcontent>
+<node TEXT="OJO: implementar esto en TabbedPanel???" STYLE_REF="nextTask" ID="ID_37674960"/>
 </node>
 <node TEXT="MenuAction.groovy" ID="ID_1123028897" LINK="Menu-o-Matic/src/main/groovy/MenuAction.groovy">
 <attribute NAME="lastModifiedTime" VALUE="10-03-22 18:51" OBJECT="org.freeplane.features.format.FormattedDate|2022-03-10T18:51-0300|dd-MM-yy HH:mm"/>
@@ -3131,11 +3132,11 @@ before the actual namefilter setting)
 </html></richcontent>
 <node TEXT="MoM Future A" STYLE_REF="milestone" ID="ID_1002832824">
 <node TEXT="Hacer que MoM pueda estar en ToolsTab" STYLE_REF="maybeTask" ID="ID_91790832">
-<node TEXT="cada grupo de herramientas se anexa como una &quot;sección&quot;" ID="ID_513233729"/>
-<node TEXT="secciones se pueden reordenar" ID="ID_1427840939"/>
-<node TEXT="secciones se pueden minimizar" ID="ID_733577266"/>
-<node TEXT="secciones se pueden cambiar de sólo iconos a iconos + label de ida y vuelta" ID="ID_1557719601"/>
-<node TEXT="Tab en tools label &quot;recuerda&quot; su ancho" STYLE_REF="completedTask" ID="ID_1993864839">
+<node TEXT="cada grupo de herramientas se anexa como una &quot;sección&quot;" STYLE_REF="completedTask" ID="ID_513233729"/>
+<node TEXT="secciones se pueden reordenar" STYLE_REF="completedTask" ID="ID_1427840939"/>
+<node TEXT="secciones se pueden minimizar" STYLE_REF="maybeTask" ID="ID_733577266"/>
+<node TEXT="secciones se pueden cambiar de sólo iconos a iconos + label de ida y vuelta" STYLE_REF="maybeTask" ID="ID_1557719601"/>
+<node TEXT="Tab en tools label &quot;recuerda&quot; su ancho" STYLE_REF="completedTask" FOLDED="true" ID="ID_1993864839">
 <node TEXT="al cambiar a otras tabs se recupera ancho original" ID="ID_1033020137"/>
 <node TEXT="botón que hace &quot;pack&quot; minimizando ancho necesario" ID="ID_714383084"/>
 </node>
@@ -3169,7 +3170,7 @@ before the actual namefilter setting)
 </html></richcontent>
 </node>
 </node>
-<node TEXT="cambiar a MoMToolbars" STYLE_REF="nextTask" ID="ID_1305392679"/>
+<node TEXT="cambiar a MoMToolbars" STYLE_REF="completedTask" ID="ID_1305392679"/>
 <node TEXT="Eliminar dialogs??" STYLE_REF="nextTask" ID="ID_1470646510"/>
 </node>
 <node TEXT="MoM Future A" STYLE_REF="milestone" ID="ID_1722534694">
@@ -3669,7 +3670,7 @@ before the actual namefilter setting)
     </p>
   </body>
 </html></richcontent>
-<node TEXT="xx" FOLDED="true" ID="ID_1212370390">
+<node TEXT="xx" ID="ID_1212370390">
 <node TEXT="&lt;-- -&apos;emoji-1F4B2&apos;" ID="ID_1910154839">
 <icon BUILTIN="emoji-1F4B2"/>
 </node>
@@ -3883,6 +3884,195 @@ before the actual namefilter setting)
 </node>
 </node>
 <node TEXT="revisar MarkdownHelper para ver como traspasé estilo de nodo a panel PREVIEW" STYLE_REF="nextTask" ID="ID_141236557"/>
+<node TEXT="create &quot;Button&quot; using node format and icons" POSITION="bottom_or_right" ID="ID_945425172"><richcontent TYPE="NOTE">
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      import java.awt.*
+    </p>
+    <p>
+      import javax.swing.*
+    </p>
+    <p>
+      import javax.swing.border.*
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      def n = node
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      def p1 =&#xa0;&#xa0;new JPanel()
+    </p>
+    <p>
+      //p1.background = n.style.backgroundColor
+    </p>
+    <p>
+      p1.opaque = false
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      def L = new JLabel(n.text)
+    </p>
+    <p>
+      def nf = n.style.font
+    </p>
+    <p>
+      L.font = new Font(nf.name,(nf.bold?Font.BOLD:0) + (nf.italic?Font.ITALIC:0), (nf.size * 1.5).toInteger())
+    </p>
+    <p>
+      L.foreground = n.style.textColor
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      n.icons.icons.each{ico -&gt;
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;def Lico = new JLabel()
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;Lico.icon = menuUtils.getMenuItemIcon(&quot;IconAction.&quot; + ico)
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;p1.add(Lico)
+    </p>
+    <p>
+      }
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      //p1.setBounds(50,115,5,15)
+    </p>
+    <p>
+      p1.add(L)
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      def btn = new JButton()
+    </p>
+    <p>
+      btn.background = n.style.backgroundColor
+    </p>
+    <p>
+      btn.setBorder(new MatteBorder(3,3,3,3, n.style.edge.color))
+    </p>
+    <p>
+      btn.add(p1)
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      //ui.addTitledBorder(p1,'hola',12f)
+    </p>
+    <p>
+      //p1.border.titleColor = Color.blue
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      //return p1
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      def p = new JPanel()
+    </p>
+    <p>
+      p.add(btn)
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      return p
+    </p>
+  </body>
+</html>
+</richcontent>
+<richcontent TYPE="DETAILS">
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      .groovy
+    </p>
+  </body>
+</html></richcontent>
+<node TEXT="myStyle" POSITION="bottom_or_right" ID="ID_1828226967" COLOR="#ccffff" BACKGROUND_COLOR="#660033">
+<icon BUILTIN="emoji-1F433"/>
+<icon BUILTIN="emoji-1F995"/>
+<icon BUILTIN="emoji-1F993"/>
+<font NAME="Elephant" ITALIC="true"/>
+</node>
+<node TEXT="otro estilo" POSITION="bottom_or_right" ID="ID_1538006751" COLOR="#006633" BACKGROUND_COLOR="#ffccff" BORDER_WIDTH="5.5 px" BORDER_COLOR="#009999">
+<icon BUILTIN="emoji-1F965"/>
+<icon BUILTIN="emoji-1F3D6"/>
+<font NAME="Gill Sans Ultra Bold" BOLD="false" ITALIC="false"/>
+</node>
+<node TEXT="imitar estilo" LOCALIZED_STYLE_REF="default" POSITION="bottom_or_right" ID="ID_748990591">
+<node TEXT="texto" STYLE_REF="completedTask" ID="ID_707523575"/>
+<node TEXT="font" STYLE_REF="completedTask" ID="ID_868950798"/>
+<node TEXT="color fondo" STYLE_REF="completedTask" ID="ID_531376273"/>
+<node TEXT="color texto" STYLE_REF="completedTask" ID="ID_1762067807"/>
+<node TEXT="iconos" STYLE_REF="completedTask" ID="ID_1949799787"/>
+<node TEXT="Borde" STYLE_REF="nextTask" ID="ID_1785461116">
+<node TEXT="otro estilo" POSITION="bottom_or_right" ID="ID_685007100" COLOR="#006633" BACKGROUND_COLOR="#ffccff" BORDER_WIDTH="5.5 px" BORDER_COLOR="#009999">
+<icon BUILTIN="emoji-1F965"/>
+<icon BUILTIN="emoji-1F3D6"/>
+<font NAME="Gill Sans Ultra Bold" BOLD="false" ITALIC="false"/>
+</node>
+<node TEXT="otro estilo" ID="ID_1067066546" COLOR="#006633" BACKGROUND_COLOR="#ffccff" BORDER_WIDTH="2 px" BORDER_COLOR="#cc0066" BORDER_DASH_LIKE_EDGE="false" BORDER_DASH="CLOSE_DOTS">
+<icon BUILTIN="emoji-1F965"/>
+<icon BUILTIN="emoji-1F3D6"/>
+<font NAME="Gill Sans Ultra Bold" BOLD="false" ITALIC="false"/>
+</node>
+</node>
+<node TEXT="nodeShape" STYLE_REF="nextTask" ID="ID_1587115362">
+<node TEXT="otro estilo" POSITION="bottom_or_right" ID="ID_875152866" COLOR="#006633" BACKGROUND_COLOR="#ffccff" STYLE="fork" SHAPE_HORIZONTAL_MARGIN="5 px" SHAPE_VERTICAL_MARGIN="2 px" BORDER_WIDTH="5.5 px" BORDER_COLOR="#009999">
+<icon BUILTIN="emoji-1F965"/>
+<icon BUILTIN="emoji-1F3D6"/>
+<font NAME="Gill Sans Ultra Bold" BOLD="false" ITALIC="false"/>
+</node>
+<node TEXT="otro estilo" ID="ID_78018582" COLOR="#006633" BACKGROUND_COLOR="#ffccff" STYLE="wide_hexagon" SHAPE_HORIZONTAL_MARGIN="5 px" SHAPE_VERTICAL_MARGIN="2 px" BORDER_WIDTH="5.5 px" BORDER_COLOR="#009999">
+<icon BUILTIN="emoji-1F965"/>
+<icon BUILTIN="emoji-1F3D6"/>
+<font NAME="Gill Sans Ultra Bold" BOLD="false" ITALIC="false"/>
+</node>
+<node TEXT="otro estilo" ID="ID_705207683" COLOR="#006633" BACKGROUND_COLOR="#ffccff" STYLE="oval" SHAPE_HORIZONTAL_MARGIN="5 px" SHAPE_VERTICAL_MARGIN="2 px" BORDER_WIDTH="5.5 px" BORDER_COLOR_LIKE_EDGE="true" BORDER_COLOR="#009999">
+<icon BUILTIN="emoji-1F965"/>
+<icon BUILTIN="emoji-1F3D6"/>
+<font NAME="Gill Sans Ultra Bold" BOLD="false" ITALIC="false"/>
+<edge COLOR="#c5196f"/>
+</node>
+</node>
+</node>
+</node>
 </node>
 </node>
 <node TEXT="Launching" ID="ID_1688826044">
@@ -4094,6 +4284,9 @@ before the actual namefilter setting)
 </node>
 </node>
 <node TEXT="Navigating" ID="ID_1591150376">
+<node TEXT="" ID="ID_1073224625">
+<hook NAME="FirstGroupNode"/>
+</node>
 <node TEXT="listCustomDialogs.groovy" ID="ID_1969310287" LINK="Menu-o-Matic/scripts/listCustomDialogs.groovy"><richcontent TYPE="DETAILS">
 <html>
   <head>
@@ -4149,6 +4342,11 @@ before the actual namefilter setting)
     </p>
   </body>
 </html></richcontent>
+</node>
+<node TEXT="" ID="ID_714156267">
+<hook NAME="SummaryNode"/>
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="REvisar. Ya no serían necesarios?" STYLE_REF="nextTask" ID="ID_1256033455"/>
 </node>
 </node>
 <node TEXT="borradores / tareas" STYLE_REF="Organizador" FOLDED="true" ID="ID_266728019" VSHIFT_QUANTITY="-0.75 pt">
@@ -5530,7 +5728,7 @@ before the actual namefilter setting)
 </node>
 <node ID="ID_91861266" CONTENT_ID="ID_1898413286"/>
 </node>
-<node TEXT="zips" STYLE_REF="file_folder" ID="ID_1075512046" LINK="Menu-o-Matic/zips/">
+<node TEXT="zips" STYLE_REF="file_folder" FOLDED="true" ID="ID_1075512046" LINK="Menu-o-Matic/zips/">
 <attribute NAME="lastModifiedTime" VALUE="25-06-21 15:00" OBJECT="org.freeplane.features.format.FormattedDate|2021-06-25T15:00-0400|dd-MM-yy HH:mm"/>
 <attribute NAME="lastAccessTime" VALUE="12-05-22 11:05" OBJECT="org.freeplane.features.format.FormattedDate|2022-05-12T11:05-0400|dd-MM-yy HH:mm"/>
 <attribute NAME="creationTime" VALUE="24-06-21 13:38" OBJECT="org.freeplane.features.format.FormattedDate|2021-06-24T13:38-0400|datetime"/>
@@ -5553,7 +5751,7 @@ before the actual namefilter setting)
 <attribute NAME="creationTime" VALUE="11-07-21 19:07" OBJECT="org.freeplane.features.format.FormattedDate|2021-07-11T19:07-0400|dd-MM-yy HH:mm"/>
 <attribute NAME="fileSize" VALUE="20.129" OBJECT="org.freeplane.features.format.FormattedNumber|20129|#,##0"/>
 </node>
-<node TEXT="MoM v0.1.4" STYLE_REF="milestone" FOLDED="true" ID="ID_1587280814">
+<node TEXT="MoM v0.1.4" STYLE_REF="milestone" ID="ID_1587280814">
 <node TEXT="agregarle tutorial" ID="ID_1788037625">
 <attribute NAME="projectCode" VALUE="agregarle.tutorial"/>
 <node TEXT="agregarle librerías" STYLE_REF="pendingTask" ID="ID_1905299904"/>
@@ -5672,7 +5870,7 @@ before the actual namefilter setting)
 </node>
 </node>
 <node TEXT="y luego los nodos en cada mapa también en orden alfabético" STYLE_REF="completedTask" ID="ID_449476548"/>
-<node TEXT="Si tiene tbTabName --&gt; abre en TabPane" STYLE_REF="nextTask" ID="ID_485021316"/>
+<node TEXT="Si tiene tbTabName --&gt; abre en TabPane" STYLE_REF="discardedTask" ID="ID_485021316"/>
 </node>
 </node>
 </node>
@@ -5750,7 +5948,7 @@ before the actual namefilter setting)
 </node>
 <node TEXT="menuOMatic.svg" ID="ID_28769296" LINK="Menu-o-Matic/images/menuOMatic.svg"/>
 </node>
-<node TEXT="translations" ID="ID_262848016" LINK="Menu-o-Matic/translations/">
+<node TEXT="translations" FOLDED="true" ID="ID_262848016" LINK="Menu-o-Matic/translations/">
 <attribute NAME="lastModifiedTime" VALUE="12-05-22 11:04" OBJECT="org.freeplane.features.format.FormattedDate|2022-05-12T11:04-0400|datetime"/>
 <attribute NAME="lastAccessTime" VALUE="12-05-22 11:05" OBJECT="org.freeplane.features.format.FormattedDate|2022-05-12T11:05-0400|datetime"/>
 <attribute NAME="creationTime" VALUE="12-05-22 11:04" OBJECT="org.freeplane.features.format.FormattedDate|2022-05-12T11:04-0400|datetime"/>
@@ -5767,6 +5965,26 @@ before the actual namefilter setting)
 <attribute NAME="lastAccessTime" VALUE="12-05-22 11:04" OBJECT="org.freeplane.features.format.FormattedDate|2022-05-12T11:04-0400|dd-MM-yy HH:mm"/>
 <attribute NAME="creationTime" VALUE="11-07-21 19:07" OBJECT="org.freeplane.features.format.FormattedDate|2021-07-11T19:07-0400|dd-MM-yy HH:mm"/>
 <attribute NAME="fileSize" VALUE="40.442" OBJECT="org.freeplane.features.format.FormattedNumber|40442|#,##0"/>
+<node TEXT="Hacer que botones tengan capacidad de acceder a files (niveles de permisos)" STYLE_REF="nextTask" ID="ID_1508873582"/>
+<node TEXT="crear grupo de botones que genere submenú desplegable" STYLE_REF="pendingTask" FOLDED="true" ID="ID_228336941">
+<node TEXT="submenú puede contener texto o no" ID="ID_1351948809">
+<node TEXT="propia configuración" ID="ID_401689680"/>
+</node>
+</node>
+<node TEXT="ver posibilidad de agregar separadores en toolbars" STYLE_REF="pendingTask" FOLDED="true" ID="ID_1433276653">
+<node TEXT="ver" ID="ID_1116152058">
+<node TEXT="TitledSeparators" ID="ID_1305078940">
+<node TEXT="https://stackoverflow.com/questions/11466337/titled-separator-in-java-swing" POSITION="bottom_or_right" ID="ID_175447613" LINK="https://stackoverflow.com/questions/11466337/titled-separator-in-java-swing"/>
+<node TEXT="https://docs.oracle.com/cd/E14571_01/apirefs.1111/e13403/oracle/javatools/ui/TitledSeparator.html" POSITION="bottom_or_right" ID="ID_1257446286" LINK="https://docs.oracle.com/cd/E14571_01/apirefs.1111/e13403/oracle/javatools/ui/TitledSeparator.html"/>
+<node TEXT="https://seadas.gsfc.nasa.gov/mvn-seadas/junk/javadoc/com/jidesoft/swing/TitledSeparator.html" POSITION="bottom_or_right" ID="ID_1861054278" LINK="https://seadas.gsfc.nasa.gov/mvn-seadas/junk/javadoc/com/jidesoft/swing/TitledSeparator.html"/>
+<node TEXT="png_18412139571428858945.png" ID="ID_1138511802">
+<hook URI="Menu-o-Matic%20project_files/png_18412139571428858945.png" SIZE="1.4984623" NAME="ExternalObject"/>
+<node TEXT="https://github.com/aterai/java-swing-tips/blob/master/TitledSeparator/src/java/example/MainPanel.java" POSITION="bottom_or_right" ID="ID_1561484878" LINK="https://github.com/aterai/java-swing-tips/blob/master/TitledSeparator/src/java/example/MainPanel.java"/>
+</node>
+</node>
+<node TEXT="TitledBorders" ID="ID_692121003"/>
+</node>
+</node>
 </node>
 <node TEXT="Menu-o-Matic.mm.bak" ID="ID_1714228380" LINK="Menu-o-Matic/Menu-o-Matic.mm.bak">
 <attribute NAME="lastModifiedTime" VALUE="12-05-22 11:04" OBJECT="org.freeplane.features.format.FormattedDate|2022-05-12T11:04-0400|dd-MM-yy HH:mm"/>
@@ -5775,9 +5993,10 @@ before the actual namefilter setting)
 <attribute NAME="fileSize" VALUE="40.442" OBJECT="org.freeplane.features.format.FormattedNumber|40442|#,##0"/>
 </node>
 <node TEXT="generados automáticamente" STYLE_REF="Organizador" ID="ID_753392396">
-<node TEXT="Menu-o-Matic-v0.1.6.addon.mm" STYLE_REF="freshNew" ID="ID_1389730929" LINK="Menu-o-Matic/Menu-o-Matic-v0.1.6.addon.mm"/>
-<node TEXT="Menu-o-Matic-v0.1.5.addon.mm" STYLE_REF="freshNew" ID="ID_1736490742" LINK="Menu-o-Matic/Menu-o-Matic-v0.1.5.addon.mm"/>
-<node TEXT="Menu-o-Matic-v0.1.4.addon.mm" STYLE_REF="freshNew" ID="ID_606492663" LINK="Menu-o-Matic/Menu-o-Matic-v0.1.4.addon.mm"/>
+<node TEXT="Menu-o-Matic-v0.1.7.addon.mm" STYLE_REF="freshNew" ID="ID_1846519074" LINK="Menu-o-Matic/Menu-o-Matic-v0.1.7.addon.mm"/>
+<node TEXT="Menu-o-Matic-v0.1.6.addon.mm" ID="ID_1389730929" LINK="Menu-o-Matic/Menu-o-Matic-v0.1.6.addon.mm"/>
+<node TEXT="Menu-o-Matic-v0.1.5.addon.mm" ID="ID_1736490742" LINK="Menu-o-Matic/Menu-o-Matic-v0.1.5.addon.mm"/>
+<node TEXT="Menu-o-Matic-v0.1.4.addon.mm" ID="ID_606492663" LINK="Menu-o-Matic/Menu-o-Matic-v0.1.4.addon.mm"/>
 <node TEXT="Menu-o-Matic-v0.1.3.addon.mm" ID="ID_510896369" LINK="Menu-o-Matic/Menu-o-Matic-v0.1.3.addon.mm">
 <attribute NAME="lastModifiedTime" VALUE="12-05-22 11:04" OBJECT="org.freeplane.features.format.FormattedDate|2022-05-12T11:04-0400|datetime"/>
 <attribute NAME="lastAccessTime" VALUE="12-05-22 11:04" OBJECT="org.freeplane.features.format.FormattedDate|2022-05-12T11:04-0400|datetime"/>
@@ -6403,7 +6622,7 @@ before the actual namefilter setting)
   </body>
 </html></richcontent>
 </node>
-<node TEXT="ignoredByGitHub" ID="ID_1913165798" LINK="ignoredByGitHub/"><richcontent TYPE="DETAILS">
+<node TEXT="ignoredByGitHub" STYLE_REF="missing" ID="ID_1913165798" LINK="ignoredByGitHub/"><richcontent TYPE="DETAILS">
 <html>
   <head>
     
@@ -6414,7 +6633,7 @@ before the actual namefilter setting)
     </p>
   </body>
 </html></richcontent>
-<node TEXT="agrega Tab test con botones.groovy" ID="ID_381894890" LINK="ignoredByGitHub/agrega%20Tab%20test%20con%20botones.groovy"><richcontent TYPE="NOTE">
+<node TEXT="agrega Tab test con botones.groovy" STYLE_REF="missing" ID="ID_381894890" LINK="ignoredByGitHub/agrega%20Tab%20test%20con%20botones.groovy"><richcontent TYPE="NOTE">
 <html>
   <head>
     
@@ -6881,7 +7100,7 @@ before the actual namefilter setting)
   </body>
 </html></richcontent>
 </node>
-<node TEXT="agrega Tab test con botones - usando lib.groovy" ID="ID_982318595" LINK="ignoredByGitHub/agrega%20Tab%20test%20con%20botones%20-%20usando%20lib.groovy">
+<node TEXT="agrega Tab test con botones - usando lib.groovy" STYLE_REF="missing" ID="ID_982318595" LINK="ignoredByGitHub/agrega%20Tab%20test%20con%20botones%20-%20usando%20lib.groovy">
 <font BOLD="false"/>
 <node TEXT="prueba para tab" POSITION="bottom_or_right" ID="ID_1313472121"><richcontent TYPE="NOTE">
 <html>
@@ -7299,15 +7518,15 @@ before the actual namefilter setting)
 </html></richcontent>
 </node>
 </node>
-<node TEXT="java" ID="ID_969725714" LINK="ignoredByGitHub/java/">
-<node TEXT="CustomTitleProvider.java" ID="ID_893099842" LINK="ignoredByGitHub/java/CustomTitleProvider.java"/>
+<node TEXT="java" STYLE_REF="missing" ID="ID_969725714" LINK="ignoredByGitHub/java/">
+<node TEXT="CustomTitleProvider.java" STYLE_REF="missing" ID="ID_893099842" LINK="ignoredByGitHub/java/CustomTitleProvider.java"/>
 </node>
-<node TEXT="DockingWindowTitleProvider.groovy" ID="ID_609130610" LINK="ignoredByGitHub/DockingWindowTitleProvider.groovy"/>
+<node TEXT="DockingWindowTitleProvider.groovy" STYLE_REF="missing" ID="ID_609130610" LINK="ignoredByGitHub/DockingWindowTitleProvider.groovy"/>
 </node>
 </node>
 <node TEXT="Menu-o-Matic project.mm" ID="ID_1492418706" LINK="Menu-o-Matic%20project.mm"/>
 <node TEXT="new imported files" STYLE_REF="newFolderImport" ID="ID_1788703280">
-<attribute NAME="log_MDI" VALUE="2" OBJECT="org.freeplane.features.format.FormattedObject|org.freeplane.plugin.script.proxy.ConvertibleNumber&amp;#x7c;2|number:decimal:#0.####"/>
+<attribute NAME="log_MDI" VALUE="2" OBJECT="org.freeplane.features.format.FormattedObject|org.freeplane.plugin.script.proxy.ConvertibleText&amp;#x7c;2|number:decimal:#0.####"/>
 <richcontent TYPE="NOTE">
 <html>
   <head>
@@ -7315,7 +7534,7 @@ before the actual namefilter setting)
   </head>
   <body>
     <p>
-      Inated:&#xa0;&#xa0;&#xa0;2023-08-15&#xa0;&#xa0;20:52:14
+      Inated:&#xa0;&#xa0;&#xa0;2023-08-17&#xa0;&#xa0;22:43:40
     </p>
     <p>
       
@@ -7324,13 +7543,13 @@ before the actual namefilter setting)
       ------- Files: --------&#xa0;
     </p>
     <p>
-      &#xa0;1 node(s) pointing to unexisting/filtered files (marked as 'broken')
+      &#xa0;4 node(s) pointing to unexisting/filtered files (marked as 'broken')
     </p>
     <p>
       &#xa0;0 link(s) corrected in nodes
     </p>
     <p>
-      &#xa0;3 new file(s) imported as node(s)&#xa0;
+      &#xa0;0 new file(s) imported as node(s)&#xa0;
     </p>
     <p>
       &#xa0;0 node(s) moved/renamed in drive
@@ -7345,10 +7564,10 @@ before the actual namefilter setting)
       ------- Folders: --------&#xa0;
     </p>
     <p>
-      30 folders didn't need to be moved&#xa0;
+      25 folders didn't need to be moved&#xa0;
     </p>
     <p>
-      1 folders were not found&#xa0;
+      3 folders were not found&#xa0;
     </p>
     <p>
       1 folder node(s) having case: 'mapPosition != drivePosition' but that had Clones that were OK --&gt; they were OK&#xa0;
@@ -7360,7 +7579,7 @@ before the actual namefilter setting)
       
     </p>
     <p>
-      1 seconds
+      0.3 seconds
     </p>
     <p>
       
@@ -7380,16 +7599,6 @@ before the actual namefilter setting)
   </body>
 </html>
 </richcontent>
-<node TEXT="Menu-o-Matic" ID="ID_13403667" LINK="Menu-o-Matic/">
-<node TEXT="src" ID="ID_1710270558" LINK="Menu-o-Matic/src/">
-<node TEXT="main" ID="ID_228709392" LINK="Menu-o-Matic/src/main/"/>
-</node>
-<node TEXT="zips" ID="ID_1473858531" LINK="Menu-o-Matic/zips/">
-<node TEXT="icons" ID="ID_1691421978" LINK="Menu-o-Matic/zips/icons/">
-<node TEXT="Menu-o-Matic" ID="ID_1108270291" LINK="#ID_1262031919"/>
-</node>
-</node>
-</node>
 </node>
 <node TEXT="versión instalada en AddOns" STYLE_REF="locked" FOLDED="true" ID="ID_1424141649">
 <node TEXT="menuOMatic" ID="ID_1859181061"><richcontent TYPE="DETAILS">
@@ -8323,7 +8532,7 @@ before the actual namefilter setting)
   </head>
   <body>
     <p>
-      def nodo = node.parent
+      def nodo = node.mindMap.root//parent
     </p>
     <p>
       
@@ -8344,10 +8553,10 @@ before the actual namefilter setting)
       assignedStyles.each{st -&gt;
     </p>
     <p>
-      &nbsp;&nbsp;&nbsp;&nbsp;st ?= 'default'
+      &#xa0;&#xa0;&#xa0;&#xa0;st ?= 'default'
     </p>
     <p>
-      &nbsp;&nbsp;&nbsp;&nbsp;nAssigned.createChild(st).style.name = st
+      &#xa0;&#xa0;&#xa0;&#xa0;nAssigned.createChild(st).style.name = st
     </p>
     <p>
       }
@@ -8362,10 +8571,10 @@ before the actual namefilter setting)
       (usedStyles - assignedStyles).each{st -&gt;
     </p>
     <p>
-      &nbsp;&nbsp;&nbsp;&nbsp;if(st)
+      &#xa0;&#xa0;&#xa0;&#xa0;if(st)
     </p>
     <p>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;nConditional.createChild(st)//.style.name = st
+      &#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;nConditional.createChild(st)//.style.name = st
     </p>
     <p>
       }
@@ -8383,28 +8592,54 @@ before the actual namefilter setting)
     </p>
   </body>
 </html></richcontent>
-<node TEXT="Styles assigned directly" ID="ID_501774331">
-<node TEXT="Organizador" STYLE_REF="Organizador" ID="ID_1703890576"/>
-<node TEXT="baseFolder" STYLE_REF="baseFolder" ID="ID_1544236888"/>
-<node TEXT="completedTask" STYLE_REF="completedTask" ID="ID_398028803"/>
-<node TEXT="default" LOCALIZED_STYLE_REF="default" ID="ID_1884993533"/>
-<node TEXT="file_folder" STYLE_REF="movedRenamed" ID="ID_899206454" LINK="file_folder/"/>
-<node TEXT="locked" STYLE_REF="locked" ID="ID_1180054565"/>
-<node TEXT="maybeTask" STYLE_REF="maybeTask" ID="ID_1516563008"/>
-<node TEXT="milestone" STYLE_REF="milestone" ID="ID_1710491249"/>
-<node TEXT="newFolderImport" STYLE_REF="newFolderImport" ID="ID_792164254"/>
-<node TEXT="nextTask" STYLE_REF="nextTask" ID="ID_1413261599"/>
-<node TEXT="pendingTask" STYLE_REF="pendingTask" ID="ID_1246760187"/>
-<node TEXT="project" STYLE_REF="project" ID="ID_1235422518"/>
-<node TEXT="tasksBucket" STYLE_REF="tasksBucket" ID="ID_738043261"/>
+<node TEXT="Styles assigned directly" ID="ID_529268431">
+<node TEXT="AutomaticLayout.level.root" LOCALIZED_STYLE_REF="AutomaticLayout.level.root" ID="ID_1816357475"/>
+<node TEXT="Organizador" STYLE_REF="Organizador" ID="ID_311957733"/>
+<node TEXT="baseFolder" STYLE_REF="baseFolder" ID="ID_963159347"/>
+<node TEXT="completedTask" STYLE_REF="completedTask" ID="ID_1031496085"/>
+<node TEXT="default" LOCALIZED_STYLE_REF="default" ID="ID_1510586181"/>
+<node TEXT="discardedTask" STYLE_REF="discardedTask" ID="ID_518224250"/>
+<node TEXT="file_folder" STYLE_REF="movedRenamed" ID="ID_12631486" LINK="file_folder/"/>
+<node TEXT="freshNew" STYLE_REF="freshNew" ID="ID_1808964378"/>
+<node TEXT="locked" STYLE_REF="locked" ID="ID_945375205"/>
+<node TEXT="maybeTask" STYLE_REF="maybeTask" ID="ID_492635397"/>
+<node TEXT="milestone" STYLE_REF="milestone" ID="ID_1235201866"/>
+<node TEXT="missing" STYLE_REF="missing" ID="ID_389693981"/>
+<node TEXT="movedRenamed" STYLE_REF="movedRenamed" ID="ID_1955941028"/>
+<node TEXT="newFolderImport" STYLE_REF="newFolderImport" ID="ID_81102341"/>
+<node TEXT="nextTask" STYLE_REF="nextTask" ID="ID_831801864"/>
+<node TEXT="pendingTask" STYLE_REF="pendingTask" ID="ID_1011911690"/>
+<node TEXT="project" STYLE_REF="project" ID="ID_1909881087"/>
+<node TEXT="tasksBucket" STYLE_REF="tasksBucket" ID="ID_335077370"/>
 </node>
-<node TEXT="Styles assigned only through conditional formatting rules" ID="ID_52010318">
-<node TEXT="GroovyNode" ID="ID_822317973"/>
-<node TEXT="containsNextTasks" ID="ID_1494875030"/>
-<node TEXT="containsPendingTasks" ID="ID_1807596546"/>
-<node TEXT="file" ID="ID_1715223541"/>
-<node TEXT="hasGroovyNode" ID="ID_745581110"/>
-<node TEXT="menuButton" ID="ID_1840314675"/>
+<node TEXT="Styles assigned only through conditional formatting rules" ID="ID_1537053785">
+<node TEXT="GroovyNode" ID="ID_1007680962"/>
+<node TEXT="containsNextTasks" ID="ID_521595038"/>
+<node TEXT="containsPendingTasks" ID="ID_225056453"/>
+<node TEXT="customMenuPackage" ID="ID_873835532"/>
+<node TEXT="file" ID="ID_1757977704"/>
+<node TEXT="hasGroovyNode" ID="ID_434356788"/>
+<node TEXT="menuButton" ID="ID_1217664873"/>
+</node>
+</node>
+<node ID="ID_1511690073" TREE_ID="ID_945425172">
+<node POSITION="bottom_or_right" ID="ID_644979900" TREE_ID="ID_1828226967"/>
+<node POSITION="bottom_or_right" ID="ID_1952244810" TREE_ID="ID_1538006751"/>
+<node POSITION="bottom_or_right" ID="ID_1818123749" TREE_ID="ID_748990591">
+<node ID="ID_1467241334" TREE_ID="ID_707523575"/>
+<node ID="ID_1389179122" TREE_ID="ID_868950798"/>
+<node ID="ID_942102370" TREE_ID="ID_531376273"/>
+<node ID="ID_213142172" TREE_ID="ID_1762067807"/>
+<node ID="ID_1838940634" TREE_ID="ID_1949799787"/>
+<node ID="ID_380702113" TREE_ID="ID_1785461116">
+<node POSITION="bottom_or_right" ID="ID_1542069249" TREE_ID="ID_685007100"/>
+<node ID="ID_361732723" TREE_ID="ID_1067066546"/>
+</node>
+<node ID="ID_1313843691" TREE_ID="ID_1587115362">
+<node POSITION="bottom_or_right" ID="ID_9765609" TREE_ID="ID_875152866"/>
+<node ID="ID_1168482081" TREE_ID="ID_78018582"/>
+<node ID="ID_515805616" TREE_ID="ID_705207683"/>
+</node>
 </node>
 </node>
 <node ID="ID_1113835356" TREE_ID="ID_563376606">
@@ -8905,6 +9140,9 @@ before the actual namefilter setting)
 </html></richcontent>
 </node>
 </node>
+</node>
+<node TEXT="Menu-o-Matic project_files" STYLE_REF="freshNew" ID="ID_203558723" LINK="Menu-o-Matic%20project_files/">
+<node TEXT="png_18412139571428858945.png" STYLE_REF="freshNew" ID="ID_1292443528" LINK="Menu-o-Matic%20project_files/png_18412139571428858945.png"/>
 </node>
 </node>
 <node TEXT="Freeplane_Menu-o-Matic" POSITION="bottom_or_right" ID="ID_996112512" LINK="."/>
