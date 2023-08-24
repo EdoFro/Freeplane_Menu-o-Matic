@@ -277,16 +277,19 @@ class LaunchDialog{
         def toolTipText = md.labels[i]
         def prefD       = prefDimension
         def minD        = minDimension
-        def scrText     = md.scripts.find{it[0] == acc}[1].toString() + "\n c.statusInfo = '---- script executed ----'".toString()
+	// I decided not to use c.statusInfo, because the user may want to use that in her/his script him/herself
+        def scrText     = md.scripts.find{it[0] == acc}[1].toString() //+ "\n c.statusInfo = '---- script executed ----'".toString() 
         def actionPerformed = { e ->
             Date start = new Date()
             def iniColor = e.source.background 
             e.source.background = Color.RED 
+	    //TODO: add permisions here
             c.script(scrText, "groovy").executeOn(c.selected)
             e.source.background = iniColor 
             if (md.focusMap) DKBN.focusMap()
-            TimeDuration td = TimeCategory.minus( new Date(), start )
-            c.statusInfo = "---- script executed: duration: $td ------ "
+	    // I decided to not use c.statusInfo, because the user may want to use that in her/his script
+            //TimeDuration td = TimeCategory.minus( new Date(), start )
+            //c.statusInfo = "---- script executed: duration: $td ------ "
         }
         def fgColor = md.fgColor
         //ui.informationMessage(actionPerformed.toString())
