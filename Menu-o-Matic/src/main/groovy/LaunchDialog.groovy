@@ -283,7 +283,7 @@ class LaunchDialog{
             Date start = new Date()
             def iniColor = e.source.background 
             e.source.background = Color.RED 
-	    //TODO: add permisions here
+	    //TODO: add permisions here withAllPermissions()
             c.script(scrText, "groovy").executeOn(c.selected)
             e.source.background = iniColor 
             if (md.focusMap) DKBN.focusMap()
