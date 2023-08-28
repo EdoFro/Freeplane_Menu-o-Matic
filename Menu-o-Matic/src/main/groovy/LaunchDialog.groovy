@@ -100,7 +100,8 @@ class LaunchDialog{
     }
 
     def static isAutoLaunchMarked(org.freeplane.api.Node n){
-        n.icons.contains('launch')
+        //n.icons.contains('launch')
+        n[tb.autoLaunch].bool
     }
 
     def static isAutoLaunchMenuPack(org.freeplane.api.Node n){
