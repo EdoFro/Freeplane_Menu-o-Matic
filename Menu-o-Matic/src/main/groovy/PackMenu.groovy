@@ -74,7 +74,7 @@ class PackMenu{
         boolean   showLabels
         String    title
         ArrayList scripts
-        //boolean   focusMap //focus to map is currently don't needed, I will let the code here just in case in a future version it makes sense again.
+        boolean   focusMap //focus to map is currently don't needed, I will let the code here just in case in a future version it makes sense again.
         String    tabName = MoM_TAB_NAME
         String    tabIcon
         String    color

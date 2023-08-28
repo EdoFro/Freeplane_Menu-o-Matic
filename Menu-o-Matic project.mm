@@ -3675,8 +3675,7 @@ before the actual namefilter setting)
       }
     </p>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 <richcontent TYPE="DETAILS">
 <html>
   <head>
@@ -3687,8 +3686,7 @@ before the actual namefilter setting)
       .groovy
     </p>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 </node>
 <node TEXT="get Map/Branch used icons actions" STYLE_REF="nextTask" FOLDED="true" ID="ID_232294406">
 <node TEXT="present icons in map/branch as buttons" ID="ID_1197565766" VGAP_QUANTITY="2 px"><richcontent TYPE="NOTE">
@@ -7674,7 +7672,7 @@ before the actual namefilter setting)
   </head>
   <body>
     <p>
-      Inated:&#xa0;&#xa0;&#xa0;2023-08-28&#xa0;&#xa0;18:12:27
+      Inated:&#xa0;&#xa0;&#xa0;2023-08-28&#xa0;&#xa0;19:41:27
     </p>
     <p>
       
@@ -7719,7 +7717,7 @@ before the actual namefilter setting)
       
     </p>
     <p>
-      0.2 seconds
+      0.3 seconds
     </p>
     <p>
       
