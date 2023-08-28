@@ -6,6 +6,8 @@ import groovy.swing.SwingBuilder
 import org.freeplane.api.MindMap
 import org.freeplane.core.ui.components.ToolbarLayout
 import org.freeplane.features.map.MapModel
+import org.freeplane.plugin.script.proxy.MapProxy
+
 
 import javax.swing.Icon
 import javax.swing.JButton
@@ -109,11 +111,8 @@ class LaunchDialog{
 
     // region AutoLaunch
     def static launchAutoLaunchCustomMenusFromMap(MapModel mapModel){
-		def url = mapModel.getURL()
-		if(url){
-			def mapa = ScriptUtils.c().mapLoader(url).mindMap
-			if (mapa) launchAutoLaunchCustomMenusFromMap(mapa)
-		}
+        def mapProxy = new MapProxy(mapModel, null)
+        if (mapProxy) launchAutoLaunchCustomMenusFromMap(mapProxy)
     }
 	
     def static launchAutoLaunchCustomMenusFromMap(MindMap mapa){
