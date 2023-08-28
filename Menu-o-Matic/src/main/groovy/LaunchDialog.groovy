@@ -104,6 +104,10 @@ class LaunchDialog{
         n.attributes.containsKey(tb.actions)
     }
 
+    def static isCustomMenuNode(org.freeplane.api.Node n){
+        n.attributes.containsKey(tb.showLabels)
+    }
+
     def static isAutoLaunchMarked(org.freeplane.api.Node n){
         //n.icons.contains('launch')
         n[tb.autoLaunch].bool
