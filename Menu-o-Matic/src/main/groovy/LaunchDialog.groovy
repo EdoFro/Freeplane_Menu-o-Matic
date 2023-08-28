@@ -47,6 +47,11 @@ class LaunchDialog{
     static Dimension prefDimension
     static Dimension minDimension
 
+    static final int WITHOUT_READ_RESTRICTION    = 0b0001
+    static final int WITHOUT_WRITE_RESTRICTION   = 0b0010
+    static final int WITHOUT_EXEC_RESTRICTION    = 0b0100
+    static final int WITHOUT_NETWORK_RESTRICTION = 0b1000
+
 //endregion:
 
 
@@ -283,13 +288,21 @@ class LaunchDialog{
         def prefD       = prefDimension
         def minD        = minDimension
 	// I decided not to use c.statusInfo, because the user may want to use that in her/his script him/herself
-        def scrText     = md.scripts.find{it[0] == acc}[1].toString() //+ "\n c.statusInfo = '---- script executed ----'".toString() 
+        def scrText     = md.scripts.find{it[0] == acc}[1].toString() //+ "\n c.statusInfo = '---- script executed ----'".toString()
+        def binPermissions =  Integer.parseInt(md.permissions, 2)
         def actionPerformed = { e ->
             Date start = new Date()
             def iniColor = e.source.background 
             e.source.background = Color.RED 
-	    //TODO: add permisions here withAllPermissions()
-            c.script(scrText, "groovy").executeOn(c.selected)
+
+            //.withAllPermissions().executeOn(c.selected)
+
+            def script = c.script(scrText, "groovy")
+            if((binPermissions & WITHOUT_READ_RESTRICTION   ) >0 ) {script = script.readingFiles()}
+            if((binPermissions & WITHOUT_WRITE_RESTRICTION  ) >0 ) {script = script.writingFiles()}
+            if((binPermissions & WITHOUT_EXEC_RESTRICTION   ) >0 ) {script = script.startingApplications()}
+            if((binPermissions & WITHOUT_NETWORK_RESTRICTION) >0 ) {script = script.accessingNetwork()}
+            script.executeOn(c.selected)
             e.source.background = iniColor 
             if (md.focusMap) DKBN.focusMap()
 	    // I decided to not use c.statusInfo, because the user may want to use that in her/his script
