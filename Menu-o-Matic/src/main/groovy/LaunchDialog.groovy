@@ -194,6 +194,9 @@ class LaunchDialog{
             momContainer.add(toolB)
         }else{
             toolB.removeAll()
+            if( toolB.border instanceof javax.swing.border.CompoundBorder){
+                toolB.setBorder(toolB.border.insideBorder)
+            }
         }
         setUpToolbar(toolB)
     }
