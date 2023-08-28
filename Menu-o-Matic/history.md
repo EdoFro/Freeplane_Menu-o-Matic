@@ -2,6 +2,8 @@
 
 ## v0.1.7
 
+* No more status bar information messages when clicking on a script based button
+* Now script based button's have no security restrictions
 
 ## v0.1.6
 

@@ -2,7 +2,7 @@
 <!--To view this file, download free mind mapping software Freeplane from https://www.freeplane.org -->
 <node TEXT="Menu-o-Matic" ID="ID_696401721" LINK="https://github.com/EdoFro/Freeplane_Menu-o-Matic" BACKGROUND_COLOR="#97c7dc">
 <font SIZE="16" BOLD="true" ITALIC="true"/>
-<hook NAME="AutomaticEdgeColor" COUNTER="16" RULE="ON_BRANCH_CREATION"/>
+<hook NAME="AutomaticEdgeColor" COUNTER="17" RULE="ON_BRANCH_CREATION"/>
 <attribute_layout NAME_WIDTH="104.25 pt" VALUE_WIDTH="233.24999 pt"/>
 <attribute NAME="name" VALUE="menuOMatic"/>
 <attribute NAME="version" VALUE="v0.1.7"/>
@@ -188,8 +188,7 @@
       To translate the description you have to define a translation for the key 'addons.${name}.description'.
     </p>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 <node TEXT="Menu-o-Matic for Freeplane!!&#xa;Menu-o-Matic is an AddOn for Freeplane that gives the user the possibility to create his/her own dialogs with the menu items he/she prefers.&#xa;It can also include scripts." ID="ID_1642042079"/>
 </node>
 <node TEXT="changes" POSITION="top_or_left" ID="ID_1349799607">
@@ -204,8 +203,7 @@
       Change log of this add-on: append one node for each noteworthy version and put the details for each version into a child node.
     </p>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 <node TEXT="v0.1.0" ID="ID_674021294">
 <node TEXT="initial release" ID="ID_17370257"/>
 </node>
@@ -247,7 +245,18 @@
 <node TEXT="added custom colors to toolbar" ID="ID_141499994"/>
 <node TEXT="it selects the tab when adding a toolbar" ID="ID_529425209"/>
 </node>
-<node TEXT="v0.1.7" ID="ID_1528067874"/>
+<node TEXT="v0.1.7" ID="ID_1528067874">
+<node TEXT="No more status bar information messages when clicking on a script based button" ID="ID_1688242281"/>
+<node TEXT="Removed unused commands:" ID="ID_932433916">
+<node TEXT="listCustomDialogs" ID="ID_1140132384"/>
+<node TEXT="launchCustomToolTab" ID="ID_1732437525"/>
+<node TEXT="showLastUsedMenu" ID="ID_51805126"/>
+</node>
+<node TEXT="AutoLaunch mark is no longer a rocket icon, now it is an attribute" ID="ID_1051465093"/>
+<node TEXT="Added script restrictions parameters" ID="ID_931215130"/>
+<node TEXT="improved input dialog" ID="ID_747681068"/>
+<node TEXT="created changePackParameters command" ID="ID_321714507"/>
+</node>
 </node>
 <node TEXT="license" POSITION="top_or_left" ID="ID_492801974">
 <edge COLOR="#00ff00"/>
@@ -267,8 +276,7 @@
       The License text has to be entered as a child of the <i>'license'</i>&#xa0;node, either as plain text or as HTML.
     </p>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 <node TEXT="MIT License&#xa;&#xa;Copyright (c) 2021 Eduardo Frohlich.&#xa;&#xa;Permission is hereby granted, free of charge, to any person obtaining a copy&#xa;of this software and associated documentation files (the &quot;Software&quot;), to deal&#xa;in the Software without restriction, including without limitation the rights&#xa;to use, copy, modify, merge, publish, distribute, sublicense, and/or sell&#xa;copies of the Software, and to permit persons to whom the Software is&#xa;furnished to do so, subject to the following conditions:&#xa;&#xa;The above copyright notice and this permission notice shall be included in all&#xa;copies or substantial portions of the Software.&#xa;&#xa;THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR&#xa;IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,&#xa;FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE&#xa;AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER&#xa;LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,&#xa;OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE&#xa;SOFTWARE." ID="ID_1379820487" VSHIFT_QUANTITY="-0.75 pt"/>
 </node>
 <node TEXT="preferences.xml" POSITION="top_or_left" ID="ID_809015286">
@@ -280,13 +288,13 @@
   </head>
   <body>
     <p>
-      <font color="#000000" face="SansSerif, sans-serif"><span style="color: #000000; font-family: SansSerif, sans-serif;">The child node contains the add-on configuration as an extension to mindmapmodemenu.xml (in Tools-&gt;Preferences-&gt;Add-ons). </span></font>
+      <span style="color: #000000; font-family: SansSerif, sans-serif;">The child node contains the add-on configuration as an extension to mindmapmodemenu.xml (in Tools-&gt;Preferences-&gt;Add-ons). </span>
     </p>
     <p>
-      <font color="#000000" face="SansSerif, sans-serif"><span style="color: #000000; font-family: SansSerif, sans-serif;">&#xa0;</span></font>
+      <span style="color: #000000; font-family: SansSerif, sans-serif;">&#xa0;</span>
     </p>
     <p>
-      <font color="#000000" face="SansSerif, sans-serif"><span style="color: #000000; font-family: SansSerif, sans-serif;">Every property in the configuration should receive a default value in <i>default.properties</i>&#xa0;node. </span></font>
+      <span style="color: #000000; font-family: SansSerif, sans-serif;">Every property in the configuration should receive a default value in <i>default.properties</i>&#xa0;node. </span>
     </p>
     <p>
       
@@ -299,13 +307,13 @@
     </p>
     <ul>
       <li>
-        create the child node containing <font color="#000000" face="SansSerif, sans-serif"><span style="color: #000000; font-family: SansSerif, sans-serif;">the add-on configuration as an extension to mindmapmodemenu.xml</span></font>
+        create the child node containing <span style="color: #000000; font-family: SansSerif, sans-serif;">the add-on configuration as an extension to mindmapmodemenu.xml</span>
       </li>
       <li>
-        add the properties to the <font color="#000000" face="SansSerif, sans-serif"><i><span style="color: #000000; font-family: SansSerif, sans-serif;">default.properties</span></i><span style="color: #000000; font-family: SansSerif, sans-serif;">&#xa0;node</span></font>
+        add the properties to the <i><span style="color: #000000; font-family: SansSerif, sans-serif;">default.properties</span></i><span style="color: #000000; font-family: SansSerif, sans-serif;">&#xa0;node</span>
       </li>
       <li>
-        add the properties to the <i>translations</i><font color="#000000" face="SansSerif, sans-serif"><span style="color: #000000; font-family: SansSerif, sans-serif;">&#xa0;node</span></font>
+        add the properties to the <i>translations</i><span style="color: #000000; font-family: SansSerif, sans-serif;">&#xa0;node</span>
       </li>
     </ul>
     <p>
@@ -379,8 +387,7 @@
       </tr>
     </table>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 <attribute_layout NAME_WIDTH="109.5 pt" VALUE_WIDTH="51.75 pt"/>
 <attribute NAME="runOnStartingFreeplane" VALUE="boolean"/>
 <node TEXT="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#xa;&lt;preferences_structure&gt;&#xa;         &lt;tabbed_pane&gt;&#xa;                  &lt;tab name=&quot;plugins&quot;&gt;&#xa;                            &lt;separator name = &quot;${name}&quot;&gt;&#xa;                                    &lt;boolean name = &quot;${name}_runOnStartingFreeplane&quot;/&gt;&#xa;                           &lt;/separator&gt;&#xa;                  &lt;/tab&gt;&#xa;         &lt;/tabbed_pane&gt;&#xa;&lt;/preferences_structure&gt;" ID="ID_1133880285" MAX_WIDTH="20 cm"/>
@@ -405,8 +412,7 @@
       </li>
     </ul>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 <attribute_layout NAME_WIDTH="144 pt" VALUE_WIDTH="37.5 pt"/>
 <attribute NAME="${name}_runOnStartingFreeplane" VALUE="true"/>
 </node>
@@ -442,9 +448,8 @@
       </li>
     </ul>
   </body>
-</html>
-</richcontent>
-<node TEXT="en" ID="ID_1881907876">
+</html></richcontent>
+<node TEXT="en" ID="ID_612862351">
 <attribute_layout NAME_WIDTH="212.24999 pt" VALUE_WIDTH="411.74999 pt"/>
 <attribute NAME="addons.${name}.lauchDialogFromNodes" VALUE="launch menu dialog directly"/>
 <attribute NAME="addons.${name}.1launchMenuOMaticDialog" VALUE="launch Menu-o-Matic dialog"/>
@@ -454,6 +459,7 @@
 <attribute NAME="addons.${name}.packCustomMenu" VALUE="pack menu"/>
 <attribute NAME="OptionPanel.${name}_runOnStartingFreeplane" VALUE="Open auto launch menus"/>
 <attribute NAME="addons.${name}.launchCustomToolTab" VALUE="Launch custom tool tab"/>
+<attribute NAME="addons.${name}.changePackParameters" VALUE="Change pack parameters"/>
 <attribute NAME="addons.${name}.showLastUsedMenu" VALUE="show most recently used menu"/>
 <attribute NAME="OptionPanel.separator.${name}" VALUE="Menu-o-Matic"/>
 <attribute NAME="OptionPanel.${name}_runOnStartingFreeplane.tooltip" VALUE="Automatically opens all Custom Menus marked as AutoLaunch from all opened mindmaps on Freeplane start"/>
@@ -476,8 +482,7 @@
       List of files and/or directories to remove on uninstall
     </p>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 <attribute_layout NAME_WIDTH="42.75 pt" VALUE_WIDTH="316.49999 pt"/>
 <attribute NAME="delete" VALUE="${installationbase}/addons/${name}.script.xml"/>
 <attribute NAME="delete" VALUE="${installationbase}/addons/${name}/scripts/launchCustomDialog.groovy"/>
@@ -507,6 +512,7 @@
 <attribute NAME="delete" VALUE="${installationbase}/icons/Menu-o-Matic/MoM.svg"/>
 <attribute NAME="delete" VALUE="${installationbase}/icons/Menu-o-Matic/MoMCloseTab.svg"/>
 <attribute NAME="delete" VALUE="${installationbase}/icons/Menu-o-Matic/MoMCloseToolbar.svg"/>
+<attribute NAME="delete" VALUE="${installationbase}/addons/${name}/scripts/changePackParameters.groovy"/>
 </node>
 <node TEXT="scripts" POSITION="bottom_or_right" ID="ID_1105183990">
 <edge COLOR="#007c00"/>
@@ -625,8 +631,7 @@
       &#xa0;&#xa0;- In any case set execute_scripts_without_asking to true unless you want to annoy users.
     </p>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 <node TEXT="getMenuCommand.groovy" ID="ID_1857102818">
 <attribute_layout NAME_WIDTH="204.74999 pt" VALUE_WIDTH="184.49999 pt"/>
 <attribute NAME="menuTitleKey" VALUE="addons.${name}.getMenuCommand"/>
@@ -654,6 +659,17 @@
 <node TEXT="unpackCustomMenu.groovy" ID="ID_1584376447">
 <attribute_layout NAME_WIDTH="204.74999 pt" VALUE_WIDTH="184.49999 pt"/>
 <attribute NAME="menuTitleKey" VALUE="addons.${name}.unpackCustomMenu"/>
+<attribute NAME="menuLocation" VALUE="${addonsMenu}/addons.${name}/design"/>
+<attribute NAME="executionMode" VALUE="on_single_node"/>
+<attribute NAME="keyboardShortcut" VALUE=""/>
+<attribute NAME="execute_scripts_without_asking" VALUE="true"/>
+<attribute NAME="execute_scripts_without_file_restriction" VALUE="true"/>
+<attribute NAME="execute_scripts_without_write_restriction" VALUE="false"/>
+<attribute NAME="execute_scripts_without_exec_restriction" VALUE="false"/>
+<attribute NAME="execute_scripts_without_network_restriction" VALUE="false"/>
+</node>
+<node TEXT="changePackParameters.groovy" ID="ID_439163238">
+<attribute NAME="menuTitleKey" VALUE="addons.${name}.changePackParameters"/>
 <attribute NAME="menuLocation" VALUE="${addonsMenu}/addons.${name}/design"/>
 <attribute NAME="executionMode" VALUE="on_single_node"/>
 <attribute NAME="keyboardShortcut" VALUE=""/>
@@ -735,7 +751,10 @@
 <attribute NAME="execute_scripts_without_exec_restriction" VALUE="false"/>
 <attribute NAME="execute_scripts_without_network_restriction" VALUE="false"/>
 </node>
-<node TEXT="showLastUsedMenu.groovy" ID="ID_960626023">
+</node>
+<node TEXT="xx" POSITION="bottom_or_right" ID="ID_1535583604">
+<edge COLOR="#7c0000"/>
+<node TEXT="showLastUsedMenu.groovy" POSITION="bottom_or_right" ID="ID_960626023">
 <attribute_layout NAME_WIDTH="204.74999 pt" VALUE_WIDTH="191.99999 pt"/>
 <attribute NAME="menuTitleKey" VALUE="addons.${name}.showLastUsedMenu"/>
 <attribute NAME="menuLocation" VALUE="${addonsMenu}/addons.${name}/navigate"/>
@@ -747,7 +766,7 @@
 <attribute NAME="execute_scripts_without_exec_restriction" VALUE="false"/>
 <attribute NAME="execute_scripts_without_network_restriction" VALUE="false"/>
 </node>
-<node TEXT="listCustomDialogs.groovy" ID="ID_1449809653">
+<node TEXT="listCustomDialogs.groovy" POSITION="bottom_or_right" ID="ID_1449809653">
 <attribute_layout NAME_WIDTH="204.74999 pt" VALUE_WIDTH="191.99999 pt"/>
 <attribute NAME="menuTitleKey" VALUE="addons.${name}.listCustomDialogs"/>
 <attribute NAME="menuLocation" VALUE="${addonsMenu}/addons.${name}/navigate"/>
@@ -759,7 +778,7 @@
 <attribute NAME="execute_scripts_without_exec_restriction" VALUE="false"/>
 <attribute NAME="execute_scripts_without_network_restriction" VALUE="false"/>
 </node>
-<node TEXT="launchCustomToolTab.groovy" ID="ID_729002718">
+<node TEXT="launchCustomToolTab.groovy" POSITION="bottom_or_right" ID="ID_729002718">
 <attribute_layout NAME_WIDTH="188.24999 pt" VALUE_WIDTH="164.25 pt"/>
 <attribute NAME="menuTitleKey" VALUE="addons.${name}.launchCustomToolTab"/>
 <attribute NAME="menuLocation" VALUE="${addonsMenu}/addons.${name}"/>
@@ -808,8 +827,7 @@
       &#xa0;- The files will be processed in the sequence as seen in the map.
     </p>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 <node TEXT="Menu-o-Matic.jar" ID="ID_257757258"/>
 </node>
 <node TEXT="zips" POSITION="bottom_or_right" ID="ID_532152967">
@@ -848,8 +866,7 @@
       &#xa0;- The files will be processed in the sequence as seen in the map.
     </p>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 <node TEXT="doc" ID="ID_108012296"/>
 <node TEXT="templates" ID="ID_1212139449"/>
 <node TEXT="scripts" ID="ID_162715608"/>
@@ -887,8 +904,7 @@
       Images can be added automatically by releaseAddOn.groovy or must be uploaded into the map via the script <i>Tools-&gt;Scripts-&gt;Insert Binary</i>&#xa0;since they have to be (base64) encoded as simple strings.
     </p>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 <node TEXT="menuOMatic-screenshot-1.png" ID="ID_828445446"/>
 <node TEXT="menuOMatic-icon.png" STYLE_REF="freshNew" ID="ID_787195450">
 <richcontent TYPE="DETAILS" CONTENT-TYPE="plain/markdown"/>
@@ -907,8 +923,7 @@
   <body>
     Direct links to menu commands
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 <node TEXT="Build add-on" ID="ID_1006867388" LINK="menuitem:_addons.devtools.checkAddOn_on_single_node"/>
 <node TEXT="Package add-on for publication" ID="ID_1119353524" LINK="menuitem:_addons.devtools.releaseAddOn_on_single_node"/>
 <node TEXT="Export Translations" ID="ID_1088411781" LINK="menuitem:_addons.devtools.exportTranslations_on_single_node"/>

@@ -3551,6 +3551,145 @@ before the actual namefilter setting)
   </body>
 </html></richcontent>
 </node>
+<node TEXT="changePackParameters.groovy" ID="ID_1628590489" LINK="Menu-o-Matic/scripts/changePackParameters.groovy"><richcontent TYPE="NOTE">
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      import edofro.menuomatic.LaunchDialog
+    </p>
+    <p>
+      import edofro.menuomatic.PackMenu
+    </p>
+    <p>
+      import edofro.menuomatic.WSE_redux as WSE
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      def nodoBase = node
+    </p>
+    <p>
+      if(LaunchDialog.isCustomMenuNode(nodoBase) || LaunchDialog.isCustomMenuPack(nodoBase)
+    </p>
+    <p>
+      || ui.showConfirmDialog(null,'Do you want to add MoM attributes to the selected node?','Menu-o-Matic',1)==0) {
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;def TB = PackMenu.TB
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;//get info from node/dialog
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;def maxTextLength = nodoBase[TB.maxTextLength].num
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;def tabName&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;= nodoBase[TB.tabName].string
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;def autoLaunch&#xa0;&#xa0;&#xa0;&#xa0;= nodoBase[TB.autoLaunch]&#xa0;&#xa0;&#xa0;//.bool
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;def showIcons&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;= nodoBase[TB.showIcons]&#xa0;&#xa0;&#xa0;&#xa0;//.bool
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;def showLabels&#xa0;&#xa0;&#xa0;&#xa0;= nodoBase[TB.showLabels]&#xa0;&#xa0;&#xa0;//.bool
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;def focusToMap&#xa0;&#xa0;&#xa0;&#xa0;= nodoBase[TB.focusMap]&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;//.bool
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;def permissions&#xa0;&#xa0;&#xa0;= nodoBase[TB.permissions].string
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;def forceDialog = true
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;def hasScripts = (nodoBase.attributes.names.any{it.startsWith('_script')} || nodoBase.findAll().any{WSE.isGroovyNode(it)} )
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;(maxTextLength, tabName, autoLaunch, showIcons, showLabels, focusToMap, permissions) = PackMenu.getConfirmedInfo(forceDialog, hasScripts, maxTextLength, tabName, autoLaunch, showIcons, showLabels, focusToMap, permissions)
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;if(maxTextLength &amp;&amp; tabName &amp;&amp; autoLaunch!=null &amp;&amp; showIcons!=null &amp;&amp; showLabels!=null &amp;&amp; focusToMap!=null&#xa0;
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;|| ui.showConfirmDialog(null,'Do you want to remove the MoM attributes from selected node?','Menu-o-Matic',1)==0) {
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;nodoBase[TB.maxTextLength] = maxTextLength
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;nodoBase[TB.tabName]&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;= tabName
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;nodoBase[TB.autoLaunch]&#xa0;&#xa0;&#xa0;&#xa0;= autoLaunch
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;nodoBase[TB.showIcons]&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;= showIcons
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;nodoBase[TB.showLabels]&#xa0;&#xa0;&#xa0;&#xa0;= showLabels
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;//nodoBase[TB.focusMap]&#xa0;&#xa0;&#xa0;&#xa0;= focusToMap
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;nodoBase[TB.permissions]&#xa0;&#xa0;&#xa0;= permissions
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;c.statusInfo = 'MoM: Pack parameters changed'
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;} else {
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;c.statusInfo = 'MoM: No pack parameters changed'
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;}
+    </p>
+    <p>
+      } else {
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;c.statusInfo = 'MoM: No pack parameters changed'
+    </p>
+    <p>
+      }
+    </p>
+  </body>
+</html>
+</richcontent>
+<richcontent TYPE="DETAILS">
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      .groovy
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
 <node TEXT="get Map/Branch used icons actions" STYLE_REF="nextTask" FOLDED="true" ID="ID_232294406">
 <node TEXT="present icons in map/branch as buttons" ID="ID_1197565766" VGAP_QUANTITY="2 px"><richcontent TYPE="NOTE">
 <html>
@@ -4011,8 +4150,7 @@ before the actual namefilter setting)
       return p
     </p>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 <richcontent TYPE="DETAILS">
 <html>
   <head>
@@ -4040,7 +4178,9 @@ before the actual namefilter setting)
 <node TEXT="font" STYLE_REF="completedTask" ID="ID_868950798"/>
 <node TEXT="color fondo" STYLE_REF="completedTask" ID="ID_531376273"/>
 <node TEXT="color texto" STYLE_REF="completedTask" ID="ID_1762067807"/>
-<node TEXT="iconos" STYLE_REF="completedTask" ID="ID_1949799787"/>
+<node TEXT="iconos" STYLE_REF="completedTask" ID="ID_1949799787" BORDER_WIDTH="1 mm" BORDER_COLOR="#ff0000">
+<edge COLOR="#ff0000" WIDTH="4"/>
+</node>
 <node TEXT="Borde" STYLE_REF="nextTask" ID="ID_1785461116">
 <node TEXT="otro estilo" POSITION="bottom_or_right" ID="ID_685007100" COLOR="#006633" BACKGROUND_COLOR="#ffccff" BORDER_WIDTH="5.5 px" BORDER_COLOR="#009999">
 <icon BUILTIN="emoji-1F965"/>
@@ -4063,6 +4203,7 @@ before the actual namefilter setting)
 <icon BUILTIN="emoji-1F965"/>
 <icon BUILTIN="emoji-1F3D6"/>
 <font NAME="Gill Sans Ultra Bold" BOLD="false" ITALIC="false"/>
+<edge WIDTH="7"/>
 </node>
 <node TEXT="otro estilo" ID="ID_705207683" COLOR="#006633" BACKGROUND_COLOR="#ffccff" STYLE="oval" SHAPE_HORIZONTAL_MARGIN="5 px" SHAPE_VERTICAL_MARGIN="2 px" BORDER_WIDTH="5.5 px" BORDER_COLOR_LIKE_EDGE="true" BORDER_COLOR="#009999">
 <icon BUILTIN="emoji-1F965"/>
@@ -4277,78 +4418,8 @@ before the actual namefilter setting)
   </body>
 </html></richcontent>
 </node>
-<node TEXT="launchCustomToolTab.groovy" STYLE_REF="nextTask" POSITION="bottom_or_right" ID="ID_1149928475" LINK="Menu-o-Matic/scripts/launchCustomToolTab.groovy">
-<node TEXT="definir cual será el standard" STYLE_REF="nextTask" ID="ID_865232833">
-<icon BUILTIN="emoji-274E"/>
 </node>
-</node>
-</node>
-<node TEXT="Navigating" ID="ID_1591150376">
-<node TEXT="" ID="ID_1073224625">
-<hook NAME="FirstGroupNode"/>
-</node>
-<node TEXT="listCustomDialogs.groovy" ID="ID_1969310287" LINK="Menu-o-Matic/scripts/listCustomDialogs.groovy"><richcontent TYPE="DETAILS">
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      .groovy
-    </p>
-  </body>
-</html></richcontent>
-<attribute NAME="lastModifiedTime" VALUE="25-06-21 10:04" OBJECT="org.freeplane.features.format.FormattedDate|2021-06-25T10:04-0400|datetime"/>
-<attribute NAME="lastAccessTime" VALUE="12-05-22 11:04" OBJECT="org.freeplane.features.format.FormattedDate|2022-05-12T11:04-0400|dd-MM-yy HH:mm"/>
-<attribute NAME="creationTime" VALUE="22-06-21 19:20" OBJECT="org.freeplane.features.format.FormattedDate|2021-06-22T19:20-0400|datetime"/>
-<attribute NAME="fileSize" VALUE="65" OBJECT="org.freeplane.features.format.FormattedNumber|65|#,##0"/>
-<richcontent TYPE="NOTE">
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      import edofro.menuomatic.LaunchDialog as LD
-    </p>
-    <p>
-      
-    </p>
-    <p>
-      LD.listDialogs()
-    </p>
-  </body>
-</html></richcontent>
-</node>
-<node TEXT="showLastUsedMenu.groovy" ID="ID_409853021" LINK="Menu-o-Matic/scripts/showLastUsedMenu.groovy">
-<attribute NAME="lastModifiedTime" VALUE="11-07-21 19:07" OBJECT="org.freeplane.features.format.FormattedDate|2021-07-11T19:07-0400|dd-MM-yy HH:mm"/>
-<attribute NAME="lastAccessTime" VALUE="12-05-22 11:04" OBJECT="org.freeplane.features.format.FormattedDate|2022-05-12T11:04-0400|dd-MM-yy HH:mm"/>
-<attribute NAME="creationTime" VALUE="11-07-21 19:07" OBJECT="org.freeplane.features.format.FormattedDate|2021-07-11T19:07-0400|dd-MM-yy HH:mm"/>
-<attribute NAME="fileSize" VALUE="72" OBJECT="org.freeplane.features.format.FormattedNumber|72|#,##0"/>
-<richcontent TYPE="NOTE">
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      import edofro.menuomatic.LaunchDialog as LD
-    </p>
-    <p>
-      
-    </p>
-    <p>
-      LD.showLastUsedDialog()
-    </p>
-  </body>
-</html></richcontent>
-</node>
-<node TEXT="" ID="ID_714156267">
-<hook NAME="SummaryNode"/>
-<hook NAME="AlwaysUnfoldedNode"/>
-<node TEXT="REvisar. Ya no serían necesarios?" STYLE_REF="nextTask" ID="ID_1256033455"/>
-</node>
-</node>
+<node TEXT="Navigating" ID="ID_1591150376"/>
 <node TEXT="borradores / tareas" STYLE_REF="Organizador" FOLDED="true" ID="ID_266728019" VSHIFT_QUANTITY="-0.75 pt">
 <node TEXT="design" STYLE_REF="Organizador" ID="ID_1602015427">
 <node TEXT="combinado: trae primero submenu y si repite trae botones" ID="ID_1020191197">
@@ -5948,7 +6019,7 @@ before the actual namefilter setting)
 </node>
 <node TEXT="menuOMatic.svg" ID="ID_28769296" LINK="Menu-o-Matic/images/menuOMatic.svg"/>
 </node>
-<node TEXT="translations" FOLDED="true" ID="ID_262848016" LINK="Menu-o-Matic/translations/">
+<node TEXT="translations" ID="ID_262848016" LINK="Menu-o-Matic/translations/">
 <attribute NAME="lastModifiedTime" VALUE="12-05-22 11:04" OBJECT="org.freeplane.features.format.FormattedDate|2022-05-12T11:04-0400|datetime"/>
 <attribute NAME="lastAccessTime" VALUE="12-05-22 11:05" OBJECT="org.freeplane.features.format.FormattedDate|2022-05-12T11:05-0400|datetime"/>
 <attribute NAME="creationTime" VALUE="12-05-22 11:04" OBJECT="org.freeplane.features.format.FormattedDate|2022-05-12T11:04-0400|datetime"/>
@@ -5965,7 +6036,7 @@ before the actual namefilter setting)
 <attribute NAME="lastAccessTime" VALUE="12-05-22 11:04" OBJECT="org.freeplane.features.format.FormattedDate|2022-05-12T11:04-0400|dd-MM-yy HH:mm"/>
 <attribute NAME="creationTime" VALUE="11-07-21 19:07" OBJECT="org.freeplane.features.format.FormattedDate|2021-07-11T19:07-0400|dd-MM-yy HH:mm"/>
 <attribute NAME="fileSize" VALUE="40.442" OBJECT="org.freeplane.features.format.FormattedNumber|40442|#,##0"/>
-<node TEXT="Hacer que botones tengan capacidad de acceder a files (niveles de permisos)" STYLE_REF="nextTask" ID="ID_1508873582"/>
+<node TEXT="Hacer que botones tengan capacidad de acceder a files (niveles de permisos)" STYLE_REF="completedTask" ID="ID_1508873582"/>
 <node TEXT="crear grupo de botones que genere submenú desplegable" STYLE_REF="pendingTask" FOLDED="true" ID="ID_228336941">
 <node TEXT="submenú puede contener texto o no" ID="ID_1351948809">
 <node TEXT="propia configuración" ID="ID_401689680"/>
@@ -6622,7 +6693,7 @@ before the actual namefilter setting)
   </body>
 </html></richcontent>
 </node>
-<node TEXT="ignoredByGitHub" STYLE_REF="missing" ID="ID_1913165798" LINK="ignoredByGitHub/"><richcontent TYPE="DETAILS">
+<node TEXT="ignoredByGitHub" FOLDED="true" ID="ID_1913165798" LINK="ignoredByGitHub/"><richcontent TYPE="DETAILS">
 <html>
   <head>
     
@@ -7522,6 +7593,75 @@ before the actual namefilter setting)
 <node TEXT="CustomTitleProvider.java" STYLE_REF="missing" ID="ID_893099842" LINK="ignoredByGitHub/java/CustomTitleProvider.java"/>
 </node>
 <node TEXT="DockingWindowTitleProvider.groovy" STYLE_REF="missing" ID="ID_609130610" LINK="ignoredByGitHub/DockingWindowTitleProvider.groovy"/>
+<node TEXT="" ID="ID_1073224625">
+<hook NAME="FirstGroupNode"/>
+</node>
+<node TEXT="listCustomDialogs.groovy" ID="ID_1969310287" LINK="ignoredByGitHub/listCustomDialogs.groovy"><richcontent TYPE="DETAILS">
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      .groovy
+    </p>
+  </body>
+</html></richcontent>
+<attribute NAME="lastModifiedTime" VALUE="25-06-21 10:04" OBJECT="org.freeplane.features.format.FormattedDate|2021-06-25T10:04-0400|datetime"/>
+<attribute NAME="lastAccessTime" VALUE="12-05-22 11:04" OBJECT="org.freeplane.features.format.FormattedDate|2022-05-12T11:04-0400|dd-MM-yy HH:mm"/>
+<attribute NAME="creationTime" VALUE="22-06-21 19:20" OBJECT="org.freeplane.features.format.FormattedDate|2021-06-22T19:20-0400|datetime"/>
+<attribute NAME="fileSize" VALUE="65" OBJECT="org.freeplane.features.format.FormattedNumber|65|#,##0"/>
+<richcontent TYPE="NOTE">
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      import edofro.menuomatic.LaunchDialog as LD
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      LD.listDialogs()
+    </p>
+  </body>
+</html></richcontent>
+</node>
+<node TEXT="showLastUsedMenu.groovy" ID="ID_409853021" LINK="ignoredByGitHub/showLastUsedMenu.groovy">
+<attribute NAME="lastModifiedTime" VALUE="11-07-21 19:07" OBJECT="org.freeplane.features.format.FormattedDate|2021-07-11T19:07-0400|dd-MM-yy HH:mm"/>
+<attribute NAME="lastAccessTime" VALUE="12-05-22 11:04" OBJECT="org.freeplane.features.format.FormattedDate|2022-05-12T11:04-0400|dd-MM-yy HH:mm"/>
+<attribute NAME="creationTime" VALUE="11-07-21 19:07" OBJECT="org.freeplane.features.format.FormattedDate|2021-07-11T19:07-0400|dd-MM-yy HH:mm"/>
+<attribute NAME="fileSize" VALUE="72" OBJECT="org.freeplane.features.format.FormattedNumber|72|#,##0"/>
+<richcontent TYPE="NOTE">
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      import edofro.menuomatic.LaunchDialog as LD
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      LD.showLastUsedDialog()
+    </p>
+  </body>
+</html></richcontent>
+</node>
+<node TEXT="" ID="ID_714156267">
+<hook NAME="SummaryNode"/>
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="REvisar. Ya no serían necesarios?" STYLE_REF="discardedTask" ID="ID_1256033455"/>
+</node>
+<node TEXT="launchCustomToolTab.groovy" ID="ID_1149928475" LINK="ignoredByGitHub/launchCustomToolTab.groovy">
+<node TEXT="definir cual será el standard" STYLE_REF="maybeTask" ID="ID_865232833">
+<icon BUILTIN="emoji-274E"/>
+</node>
+</node>
 </node>
 </node>
 <node TEXT="Menu-o-Matic project.mm" ID="ID_1492418706" LINK="Menu-o-Matic%20project.mm"/>
@@ -7534,7 +7674,7 @@ before the actual namefilter setting)
   </head>
   <body>
     <p>
-      Inated:&#xa0;&#xa0;&#xa0;2023-08-17&#xa0;&#xa0;22:43:40
+      Inated:&#xa0;&#xa0;&#xa0;2023-08-28&#xa0;&#xa0;18:12:27
     </p>
     <p>
       
@@ -7564,10 +7704,10 @@ before the actual namefilter setting)
       ------- Folders: --------&#xa0;
     </p>
     <p>
-      25 folders didn't need to be moved&#xa0;
+      26 folders didn't need to be moved&#xa0;
     </p>
     <p>
-      3 folders were not found&#xa0;
+      2 folders were not found&#xa0;
     </p>
     <p>
       1 folder node(s) having case: 'mapPosition != drivePosition' but that had Clones that were OK --&gt; they were OK&#xa0;
@@ -7579,7 +7719,7 @@ before the actual namefilter setting)
       
     </p>
     <p>
-      0.3 seconds
+      0.2 seconds
     </p>
     <p>
       
