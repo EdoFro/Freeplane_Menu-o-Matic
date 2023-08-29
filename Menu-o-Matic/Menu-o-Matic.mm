@@ -5,7 +5,7 @@
 <hook NAME="AutomaticEdgeColor" COUNTER="17" RULE="ON_BRANCH_CREATION"/>
 <attribute_layout NAME_WIDTH="104.25 pt" VALUE_WIDTH="233.24999 pt"/>
 <attribute NAME="name" VALUE="menuOMatic"/>
-<attribute NAME="version" VALUE="v0.1.7"/>
+<attribute NAME="version" VALUE="v0.1.8"/>
 <attribute NAME="author" VALUE="EdoFro"/>
 <attribute NAME="freeplaneVersionFrom" VALUE="v1.9.0"/>
 <attribute NAME="freeplaneVersionTo" VALUE=""/>
@@ -260,6 +260,7 @@
 <node TEXT="created changePackParameters command" ID="ID_321714507"/>
 <node TEXT="insertMenuOMaticPackage updated" ID="ID_1959406335"/>
 </node>
+<node TEXT="v0.1.8" ID="ID_49387614"/>
 </node>
 <node TEXT="license" POSITION="top_or_left" ID="ID_492801974">
 <edge COLOR="#00ff00"/>
