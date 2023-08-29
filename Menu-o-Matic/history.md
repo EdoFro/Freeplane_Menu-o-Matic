@@ -11,6 +11,7 @@
 * Added script restrictions parameters
 * improved input dialog
 * created changePackParameters command
+* insertMenuOMaticPackage updated
 
 ## v0.1.6
 

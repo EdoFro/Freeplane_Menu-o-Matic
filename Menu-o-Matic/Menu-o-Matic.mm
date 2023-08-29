@@ -258,6 +258,7 @@
 <node TEXT="Added script restrictions parameters" ID="ID_931215130"/>
 <node TEXT="improved input dialog" ID="ID_747681068"/>
 <node TEXT="created changePackParameters command" ID="ID_321714507"/>
+<node TEXT="insertMenuOMaticPackage updated" ID="ID_1959406335"/>
 </node>
 </node>
 <node TEXT="license" POSITION="top_or_left" ID="ID_492801974">
