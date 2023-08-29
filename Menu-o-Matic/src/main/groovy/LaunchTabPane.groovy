@@ -109,6 +109,9 @@ class LaunchTabPane {
                 null, closeTabIcon, 'Remove this Tab', prefD, minD,
                 { e ->
                     def scrollPane = e.source.parent.parent.parent.parent
+                  //  def index =  tabPane.indexOfComponent(scrollPane)
+                  //  def sumando = (tabPane.getTabCount() - (index + 1))>0?+1:-1
+                  //  def tabName =  tabPane.getToolTipTextAt(index + sumando)
                     tabPane.remove(scrollPane)
                 }
         )
@@ -119,9 +122,14 @@ class LaunchTabPane {
         JButton closeToolbarBtn = LaunchDialog.nuevoBoton(
                 null, closeToolbarIcon, 'Remove a toolbar from this Tab', prefD, minD,
                 { e ->
+                    def i = 1
+                    println "closeToolbarBtn ${i++}"
                     def momContainer = e.source.parent.parent.components.find{it.name == MOM_CONTAINER_NAME}//.parent
+                    println "closeToolbarBtn ${i++}"
                     def toolbars = momContainer.components.findAll{it?.class?.simpleName=='MoMToolbar'}
+                    println "closeToolbarBtn ${i++}"
                     def toolbarsNames = toolbars*.name - MOM_TOPBAR
+                    println "closeToolbarBtn ${i++}"
                     def tbName = PackMenu.respuestaDialogo(toolbarsNames,'Select toolbar to remove', 'Menu-o-Matic')
                     def toolbarToRemove = toolbars.find{it.name == tbName}
                     if (toolbarToRemove) {

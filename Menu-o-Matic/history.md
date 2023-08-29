@@ -1,5 +1,18 @@
 # History
 
+## v0.1.7
+
+* No more status bar information messages when clicking on a script based button
+* Removed unused commands:
+  * listCustomDialogs
+  * launchCustomToolTab
+  * showLastUsedMenu
+* AutoLaunch mark is no longer a rocket icon, now it is an attribute
+* Added script restrictions parameters
+* improved input dialog
+* created changePackParameters command
+* insertMenuOMaticPackage updated
+
 ## v0.1.6
 
 * added menuOMatic.svg icon

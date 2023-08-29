@@ -2,10 +2,10 @@
 <!--To view this file, download free mind mapping software Freeplane from https://www.freeplane.org -->
 <node TEXT="Menu-o-Matic" ID="ID_696401721" LINK="https://github.com/EdoFro/Freeplane_Menu-o-Matic" BACKGROUND_COLOR="#97c7dc">
 <font SIZE="16" BOLD="true" ITALIC="true"/>
-<hook NAME="AutomaticEdgeColor" COUNTER="16" RULE="ON_BRANCH_CREATION"/>
+<hook NAME="AutomaticEdgeColor" COUNTER="17" RULE="ON_BRANCH_CREATION"/>
 <attribute_layout NAME_WIDTH="104.25 pt" VALUE_WIDTH="233.24999 pt"/>
 <attribute NAME="name" VALUE="menuOMatic"/>
-<attribute NAME="version" VALUE="v0.1.6"/>
+<attribute NAME="version" VALUE="v0.1.7"/>
 <attribute NAME="author" VALUE="EdoFro"/>
 <attribute NAME="freeplaneVersionFrom" VALUE="v1.9.0"/>
 <attribute NAME="freeplaneVersionTo" VALUE=""/>
@@ -247,6 +247,19 @@
 <node TEXT="added custom colors to toolbar" ID="ID_141499994"/>
 <node TEXT="it selects the tab when adding a toolbar" ID="ID_529425209"/>
 </node>
+<node TEXT="v0.1.7" ID="ID_1528067874">
+<node TEXT="No more status bar information messages when clicking on a script based button" ID="ID_1688242281"/>
+<node TEXT="Removed unused commands:" ID="ID_932433916">
+<node TEXT="listCustomDialogs" ID="ID_1140132384"/>
+<node TEXT="launchCustomToolTab" ID="ID_1732437525"/>
+<node TEXT="showLastUsedMenu" ID="ID_51805126"/>
+</node>
+<node TEXT="AutoLaunch mark is no longer a rocket icon, now it is an attribute" ID="ID_1051465093"/>
+<node TEXT="Added script restrictions parameters" ID="ID_931215130"/>
+<node TEXT="improved input dialog" ID="ID_747681068"/>
+<node TEXT="created changePackParameters command" ID="ID_321714507"/>
+<node TEXT="insertMenuOMaticPackage updated" ID="ID_1959406335"/>
+</node>
 </node>
 <node TEXT="license" POSITION="top_or_left" ID="ID_492801974">
 <edge COLOR="#00ff00"/>
@@ -279,13 +292,13 @@
   </head>
   <body>
     <p>
-      <font color="#000000" face="SansSerif, sans-serif"><span style="color: #000000; font-family: SansSerif, sans-serif;">The child node contains the add-on configuration as an extension to mindmapmodemenu.xml (in Tools-&gt;Preferences-&gt;Add-ons). </span></font>
+      <span style="color: #000000; font-family: SansSerif, sans-serif;">The child node contains the add-on configuration as an extension to mindmapmodemenu.xml (in Tools-&gt;Preferences-&gt;Add-ons). </span>
     </p>
     <p>
-      <font color="#000000" face="SansSerif, sans-serif"><span style="color: #000000; font-family: SansSerif, sans-serif;">&#xa0;</span></font>
+      <span style="color: #000000; font-family: SansSerif, sans-serif;">&#xa0;</span>
     </p>
     <p>
-      <font color="#000000" face="SansSerif, sans-serif"><span style="color: #000000; font-family: SansSerif, sans-serif;">Every property in the configuration should receive a default value in <i>default.properties</i>&#xa0;node. </span></font>
+      <span style="color: #000000; font-family: SansSerif, sans-serif;">Every property in the configuration should receive a default value in <i>default.properties</i>&#xa0;node. </span>
     </p>
     <p>
       
@@ -298,13 +311,13 @@
     </p>
     <ul>
       <li>
-        create the child node containing <font color="#000000" face="SansSerif, sans-serif"><span style="color: #000000; font-family: SansSerif, sans-serif;">the add-on configuration as an extension to mindmapmodemenu.xml</span></font>
+        create the child node containing <span style="color: #000000; font-family: SansSerif, sans-serif;">the add-on configuration as an extension to mindmapmodemenu.xml</span>
       </li>
       <li>
-        add the properties to the <font color="#000000" face="SansSerif, sans-serif"><i><span style="color: #000000; font-family: SansSerif, sans-serif;">default.properties</span></i><span style="color: #000000; font-family: SansSerif, sans-serif;">&#xa0;node</span></font>
+        add the properties to the <i><span style="color: #000000; font-family: SansSerif, sans-serif;">default.properties</span></i><span style="color: #000000; font-family: SansSerif, sans-serif;">&#xa0;node</span>
       </li>
       <li>
-        add the properties to the <i>translations</i><font color="#000000" face="SansSerif, sans-serif"><span style="color: #000000; font-family: SansSerif, sans-serif;">&#xa0;node</span></font>
+        add the properties to the <i>translations</i><span style="color: #000000; font-family: SansSerif, sans-serif;">&#xa0;node</span>
       </li>
     </ul>
     <p>
@@ -443,7 +456,7 @@
   </body>
 </html>
 </richcontent>
-<node TEXT="en" ID="ID_1881907876">
+<node TEXT="en" ID="ID_612862351">
 <attribute_layout NAME_WIDTH="212.24999 pt" VALUE_WIDTH="411.74999 pt"/>
 <attribute NAME="addons.${name}.lauchDialogFromNodes" VALUE="launch menu dialog directly"/>
 <attribute NAME="addons.${name}.1launchMenuOMaticDialog" VALUE="launch Menu-o-Matic dialog"/>
@@ -453,6 +466,7 @@
 <attribute NAME="addons.${name}.packCustomMenu" VALUE="pack menu"/>
 <attribute NAME="OptionPanel.${name}_runOnStartingFreeplane" VALUE="Open auto launch menus"/>
 <attribute NAME="addons.${name}.launchCustomToolTab" VALUE="Launch custom tool tab"/>
+<attribute NAME="addons.${name}.changePackParameters" VALUE="Change pack parameters"/>
 <attribute NAME="addons.${name}.showLastUsedMenu" VALUE="show most recently used menu"/>
 <attribute NAME="OptionPanel.separator.${name}" VALUE="Menu-o-Matic"/>
 <attribute NAME="OptionPanel.${name}_runOnStartingFreeplane.tooltip" VALUE="Automatically opens all Custom Menus marked as AutoLaunch from all opened mindmaps on Freeplane start"/>
@@ -506,6 +520,7 @@
 <attribute NAME="delete" VALUE="${installationbase}/icons/Menu-o-Matic/MoM.svg"/>
 <attribute NAME="delete" VALUE="${installationbase}/icons/Menu-o-Matic/MoMCloseTab.svg"/>
 <attribute NAME="delete" VALUE="${installationbase}/icons/Menu-o-Matic/MoMCloseToolbar.svg"/>
+<attribute NAME="delete" VALUE="${installationbase}/addons/${name}/scripts/changePackParameters.groovy"/>
 </node>
 <node TEXT="scripts" POSITION="bottom_or_right" ID="ID_1105183990">
 <edge COLOR="#007c00"/>
@@ -662,6 +677,17 @@
 <attribute NAME="execute_scripts_without_exec_restriction" VALUE="false"/>
 <attribute NAME="execute_scripts_without_network_restriction" VALUE="false"/>
 </node>
+<node TEXT="changePackParameters.groovy" ID="ID_439163238">
+<attribute NAME="menuTitleKey" VALUE="addons.${name}.changePackParameters"/>
+<attribute NAME="menuLocation" VALUE="${addonsMenu}/addons.${name}/design"/>
+<attribute NAME="executionMode" VALUE="on_single_node"/>
+<attribute NAME="keyboardShortcut" VALUE=""/>
+<attribute NAME="execute_scripts_without_asking" VALUE="true"/>
+<attribute NAME="execute_scripts_without_file_restriction" VALUE="true"/>
+<attribute NAME="execute_scripts_without_write_restriction" VALUE="false"/>
+<attribute NAME="execute_scripts_without_exec_restriction" VALUE="false"/>
+<attribute NAME="execute_scripts_without_network_restriction" VALUE="false"/>
+</node>
 <node TEXT="launchCustomDialog.groovy" ID="ID_666327274">
 <attribute_layout NAME_WIDTH="204.74999 pt" VALUE_WIDTH="184.49999 pt"/>
 <attribute NAME="menuTitleKey" VALUE="addons.${name}.launchCustomDialog"/>
@@ -734,7 +760,10 @@
 <attribute NAME="execute_scripts_without_exec_restriction" VALUE="false"/>
 <attribute NAME="execute_scripts_without_network_restriction" VALUE="false"/>
 </node>
-<node TEXT="showLastUsedMenu.groovy" ID="ID_960626023">
+</node>
+<node TEXT="xx" POSITION="bottom_or_right" ID="ID_1535583604">
+<edge COLOR="#7c0000"/>
+<node TEXT="showLastUsedMenu.groovy" POSITION="bottom_or_right" ID="ID_960626023">
 <attribute_layout NAME_WIDTH="204.74999 pt" VALUE_WIDTH="191.99999 pt"/>
 <attribute NAME="menuTitleKey" VALUE="addons.${name}.showLastUsedMenu"/>
 <attribute NAME="menuLocation" VALUE="${addonsMenu}/addons.${name}/navigate"/>
@@ -746,7 +775,7 @@
 <attribute NAME="execute_scripts_without_exec_restriction" VALUE="false"/>
 <attribute NAME="execute_scripts_without_network_restriction" VALUE="false"/>
 </node>
-<node TEXT="listCustomDialogs.groovy" ID="ID_1449809653">
+<node TEXT="listCustomDialogs.groovy" POSITION="bottom_or_right" ID="ID_1449809653">
 <attribute_layout NAME_WIDTH="204.74999 pt" VALUE_WIDTH="191.99999 pt"/>
 <attribute NAME="menuTitleKey" VALUE="addons.${name}.listCustomDialogs"/>
 <attribute NAME="menuLocation" VALUE="${addonsMenu}/addons.${name}/navigate"/>
@@ -758,7 +787,7 @@
 <attribute NAME="execute_scripts_without_exec_restriction" VALUE="false"/>
 <attribute NAME="execute_scripts_without_network_restriction" VALUE="false"/>
 </node>
-<node TEXT="launchCustomToolTab.groovy" ID="ID_729002718">
+<node TEXT="launchCustomToolTab.groovy" POSITION="bottom_or_right" ID="ID_729002718">
 <attribute_layout NAME_WIDTH="188.24999 pt" VALUE_WIDTH="164.25 pt"/>
 <attribute NAME="menuTitleKey" VALUE="addons.${name}.launchCustomToolTab"/>
 <attribute NAME="menuLocation" VALUE="${addonsMenu}/addons.${name}"/>

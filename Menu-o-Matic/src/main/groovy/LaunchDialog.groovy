@@ -6,6 +6,8 @@ import groovy.swing.SwingBuilder
 import org.freeplane.api.MindMap
 import org.freeplane.core.ui.components.ToolbarLayout
 import org.freeplane.features.map.MapModel
+import org.freeplane.plugin.script.proxy.MapProxy
+
 
 import javax.swing.Icon
 import javax.swing.JButton
@@ -44,6 +46,11 @@ class LaunchDialog{
     static PM.MenuData md
     static Dimension prefDimension
     static Dimension minDimension
+
+    static final int WITHOUT_READ_RESTRICTION    = 0b0001
+    static final int WITHOUT_WRITE_RESTRICTION   = 0b0010
+    static final int WITHOUT_EXEC_RESTRICTION    = 0b0100
+    static final int WITHOUT_NETWORK_RESTRICTION = 0b1000
 
 //endregion:
 
@@ -97,8 +104,13 @@ class LaunchDialog{
         n.attributes.containsKey(tb.actions)
     }
 
+    def static isCustomMenuNode(org.freeplane.api.Node n){
+        n.attributes.containsKey(tb.showLabels)
+    }
+
     def static isAutoLaunchMarked(org.freeplane.api.Node n){
-        n.icons.contains('launch')
+        //n.icons.contains('launch')
+        n[tb.autoLaunch].bool
     }
 
     def static isAutoLaunchMenuPack(org.freeplane.api.Node n){
@@ -109,11 +121,8 @@ class LaunchDialog{
 
     // region AutoLaunch
     def static launchAutoLaunchCustomMenusFromMap(MapModel mapModel){
-		def url = mapModel.getURL()
-		if(url){
-			def mapa = ScriptUtils.c().mapLoader(url).mindMap
-			if (mapa) launchAutoLaunchCustomMenusFromMap(mapa)
-		}
+        def mapProxy = new MapProxy(mapModel, null)
+        if (mapProxy) launchAutoLaunchCustomMenusFromMap(mapProxy)
     }
 	
     def static launchAutoLaunchCustomMenusFromMap(MindMap mapa){
@@ -194,6 +203,9 @@ class LaunchDialog{
             momContainer.add(toolB)
         }else{
             toolB.removeAll()
+            if( toolB.border instanceof javax.swing.border.CompoundBorder){
+                toolB.setBorder(toolB.border.insideBorder)
+            }
         }
         setUpToolbar(toolB)
     }
@@ -204,6 +216,8 @@ class LaunchDialog{
         tb.setFloatable(true)
         tb.margin = new Insets(0, 0, 5, 0)
         tb.setBorderPainted(true)
+        ui.addTitledBorder(tb,md.title,10f)
+        if(md.fgColor) {tb.border.outsideBorder.titleColor = Color.decode(md.fgColor)}
         if(md.color) {tb.background = Color.decode(md.color)}
         md.actions.eachWithIndex{ a, j ->
             tb.add(creaBoton(a, j))
@@ -278,13 +292,21 @@ class LaunchDialog{
         def prefD       = prefDimension
         def minD        = minDimension
 	// I decided not to use c.statusInfo, because the user may want to use that in her/his script him/herself
-        def scrText     = md.scripts.find{it[0] == acc}[1].toString() //+ "\n c.statusInfo = '---- script executed ----'".toString() 
+        def scrText     = md.scripts.find{it[0] == acc}[1].toString() //+ "\n c.statusInfo = '---- script executed ----'".toString()
+        def binPermissions =  Integer.parseInt(md.permissions, 2)
         def actionPerformed = { e ->
             Date start = new Date()
             def iniColor = e.source.background 
             e.source.background = Color.RED 
-	    //TODO: add permisions here withAllPermissions()
-            c.script(scrText, "groovy").executeOn(c.selected)
+
+            //.withAllPermissions().executeOn(c.selected)
+
+            def script = c.script(scrText, "groovy")
+            if((binPermissions & WITHOUT_READ_RESTRICTION   ) >0 ) {script = script.readingFiles()}
+            if((binPermissions & WITHOUT_WRITE_RESTRICTION  ) >0 ) {script = script.writingFiles()}
+            if((binPermissions & WITHOUT_EXEC_RESTRICTION   ) >0 ) {script = script.startingApplications()}
+            if((binPermissions & WITHOUT_NETWORK_RESTRICTION) >0 ) {script = script.accessingNetwork()}
+            script.executeOn(c.selected)
             e.source.background = iniColor 
             if (md.focusMap) DKBN.focusMap()
 	    // I decided to not use c.statusInfo, because the user may want to use that in her/his script
