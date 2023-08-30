@@ -1,35 +1,32 @@
 package edofro.menuomatic
 
-import edofro.menuomatic.LaunchTabPane
-import edofro.menuomatic.MoMToolbar
-import groovy.swing.SwingBuilder
-import org.freeplane.api.MindMap
-import org.freeplane.core.ui.components.ToolbarLayout
-import org.freeplane.features.map.MapModel
-import org.freeplane.plugin.script.proxy.MapProxy
-
-
+import java.awt.Color
+import java.awt.Dimension
+import java.awt.GridLayout
+import java.awt.Insets
+import java.awt.event.WindowFocusListener
 import javax.swing.Icon
 import javax.swing.JButton
 import javax.swing.SwingConstants
-import java.awt.Color
-import java.awt.GridLayout
-import java.awt.Insets
-import java.awt.Dimension
-import java.awt.event.WindowFocusListener
 
-
+import groovy.swing.SwingBuilder
 import groovy.time.TimeCategory
 import groovy.time.TimeDuration
 
-
-import edofro.menuomatic.PackMenu                   as PM
-import edofro.menuomatic.DialogKeyboardNavigation   as DKBN
-    
+import org.freeplane.api.MindMap
+import org.freeplane.core.ui.components.ToolbarLayout
 import org.freeplane.core.ui.components.UITools     as ui
-import org.freeplane.core.util.TextUtils            as textUtils
 import org.freeplane.core.util.MenuUtils            as menuUtils
+import org.freeplane.core.util.TextUtils            as textUtils
+import org.freeplane.features.map.MapModel
+import org.freeplane.plugin.script.proxy.MapProxy
 import org.freeplane.plugin.script.proxy.ScriptUtils
+
+import edofro.menuomatic.DialogKeyboardNavigation   as DKBN
+import edofro.menuomatic.LaunchTabPane
+import edofro.menuomatic.MoMToolbar
+import edofro.menuomatic.PackMenu                   as PM
+
 
 
 class LaunchDialog{
