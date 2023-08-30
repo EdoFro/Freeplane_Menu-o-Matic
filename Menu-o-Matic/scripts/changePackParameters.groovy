@@ -8,6 +8,7 @@ if(LaunchDialog.isCustomMenuNode(nodoBase) || LaunchDialog.isCustomMenuPack(nodo
 || ui.showConfirmDialog(null,'Do you want to add MoM attributes to the selected node?','Menu-o-Matic',1)==0) {
     def TB = PackMenu.TB
     //get info from node/dialog
+    def menuName      = nodoBase[TB.title].string?:nodoBase.text
     def maxTextLength = nodoBase[TB.maxTextLength].num
     def tabName       = nodoBase[TB.tabName].string
     def autoLaunch    = nodoBase[TB.autoLaunch]   //.bool
@@ -20,10 +21,12 @@ if(LaunchDialog.isCustomMenuNode(nodoBase) || LaunchDialog.isCustomMenuPack(nodo
     //
     def hasScripts = (nodoBase.attributes.names.any{it.startsWith(PackMenu.scriptStr)} || nodoBase.findAll().any{WSE.isGroovyNode(it)} )
     
-    (maxTextLength, tabName, autoLaunch, showIcons, showLabels, focusToMap, permissions) = PackMenu.getConfirmedInfo(forceDialog, hasScripts, maxTextLength, tabName, autoLaunch, showIcons, showLabels, focusToMap, permissions)
+    (menuName, maxTextLength, tabName, autoLaunch, showIcons, showLabels, focusToMap, permissions) = PackMenu.getConfirmedInfo(forceDialog, hasScripts, menuName, maxTextLength, tabName, autoLaunch, showIcons, showLabels, focusToMap, permissions)
 
-    if(maxTextLength && tabName && autoLaunch!=null && showIcons!=null && showLabels!=null && focusToMap!=null 
+    //menuName?=nodoBase[TB.title].string?:nodoBase.text
+    if(menuName && maxTextLength && tabName && autoLaunch!=null && showIcons!=null && showLabels!=null && focusToMap!=null 
     || ui.showConfirmDialog(null,'Do you want to remove the MoM attributes from selected node?','Menu-o-Matic',1)==0) {
+        nodoBase[TB.title]         = menuName
         nodoBase[TB.maxTextLength] = maxTextLength
         nodoBase[TB.tabName]       = tabName
         nodoBase[TB.autoLaunch]    = autoLaunch

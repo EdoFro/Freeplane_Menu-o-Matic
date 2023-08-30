@@ -27,6 +27,7 @@ class PackMenu{
     // static final Boolean  scriptInNote = true
     
     static final String MoMDialogTitle = 'menu-o-matic'
+    static final String nameMsg = 'menu\'s name:'
     static final String iconLabelMsg = 'Dialog must show:'
     static final String[] optionsD1    = ['icons only', 'labels only','icons and labels','cancel']
     static final String   titleD2      = 'menu-o-matic'
@@ -92,7 +93,7 @@ class PackMenu{
                 this.showIcons      = nodoMenu[TB.showIcons ].bool
                 this.showLabels     = nodoMenu[TB.showLabels].bool
                 //this.focusMap       = nodoMenu[TB.focusMap  ].bool //focus to map is currently don't needed, I will let the code here just in case in a future version it makes sence again.
-                this.title          = nodoMenu[TB.title]?nodoMenu[TB.title].toString():null
+                this.title          = nodoMenu[TB.title].string?:null
                 def scriptList = []
                 nodoMenu.attributes.names.findAll{it.startsWith(scriptStr)}.each{
                     scriptList << [it,nodoMenu[it]]
@@ -107,6 +108,7 @@ class PackMenu{
 //            }
         }
 
+        //PackMenu$MenuData(String, org.freeplane.plugin.script.proxy.ProxyUtils$1, Boolean, Boolean, Boolean, Long, String, Boolean, null)
         public MenuData(String title, nAcciones, boolean showIcons, boolean showLabels,
                         boolean focusMap, int maxTextLength, String tabName, boolean autoLaunch, String permissions){
             iScript      = 0
@@ -172,10 +174,11 @@ class PackMenu{
         def hasScripts = nAcciones.any{WSE.isGroovyNode(it)}
 
         //get info from node
-        def title = nodoBase.text
+        //def title = nodoBase.text
 
         //get info from node/dialog
-        def maxTextLength = nodoBase[TB.maxTextLength].num
+        def menuName      = nodoBase[TB.title].string?:nodoBase.text
+        def maxTextLength = nodoBase[TB.maxTextLength].num?.toInteger()
         def tabName       = nodoBase[TB.tabName].string
         def autoLaunch    = nodoBase[TB.autoLaunch]//.bool
         def showIcons     = nodoBase[TB.showIcons]//.bool
@@ -183,9 +186,10 @@ class PackMenu{
         def focusToMap    = nodoBase[TB.focusMap]//.bool
         def permissions   = nodoBase[TB.permissions].string
         def forceDialog = false
-        (maxTextLength, tabName, autoLaunch, showIcons, showLabels, focusToMap, permissions) = getConfirmedInfo(forceDialog, hasScripts, maxTextLength, tabName, autoLaunch, showIcons, showLabels, focusToMap, permissions)
-        if(maxTextLength && tabName && autoLaunch!=null && showIcons!=null && showLabels!=null && focusToMap!=null) {
-            return [new MenuData(nodoBase.text, nAcciones, showIcons, showLabels, focusToMap, maxTextLength, tabName, autoLaunch, permissions), "\n  - resp\n  - resp2" ]
+        (menuName, maxTextLength, tabName, autoLaunch, showIcons, showLabels, focusToMap, permissions) = getConfirmedInfo(forceDialog, hasScripts, menuName, maxTextLength, tabName, autoLaunch, showIcons, showLabels, focusToMap, permissions)
+        menuName?=nodoBase[TB.title].string?:nodoBase.text
+        if(menuName && maxTextLength && tabName && autoLaunch!=null && showIcons!=null && showLabels!=null && focusToMap!=null) {
+            return [new MenuData(menuName, nAcciones, showIcons, showLabels, focusToMap, maxTextLength, tabName, autoLaunch, permissions), "\n  - resp\n  - resp2" ]
         } else {
             return [null, 'resp']
         }
@@ -232,7 +236,8 @@ class PackMenu{
         def fgColor        = nodoMenu.style.textColorSet?nodoMenu.style.textColorCode:null
         if(fgColor)
             nBase.style.textColorCode = fgColor
-        nBase[TB.showIcons] = md.showIcons
+        nBase[TB.title]      = md.title
+        nBase[TB.showIcons]  = md.showIcons
         nBase[TB.showLabels] = md.showLabels
         //nBase[TB.focusMap] = md.focusMap //focus to map is currently don't needed, I will let the code here just in case in a future version it makes sence again.
         nBase[TB.maxTextLength] = md.maxTextLength
@@ -279,12 +284,13 @@ class PackMenu{
         return "$title  ($iconLabel, $focus)".toString()
     }
 
-    def static getConfirmedInfo(forceDialog, hasScripts, maxTextLength, tabName, autoLaunch, showIcons, showLabels, focusToMap, permissions) {
+    def static getConfirmedInfo(forceDialog, hasScripts, menuName, maxTextLength, tabName, autoLaunch, showIcons, showLabels, focusToMap, permissions) {
         //if all info is ready discard inputDialog
-        if(!forceDialog && maxTextLength && tabName && autoLaunch!=null && showIcons!=null && showLabels!=null && focusToMap!=null && (!hasScripts || permissions)){
-            return [maxTextLength, tabName, autoLaunch.bool, showIcons.bool, showLabels.bool, focusToMap.bool, permissions]
+        if(!forceDialog && maxTextLength && tabName && menuName && autoLaunch!=null && showIcons!=null && showLabels!=null && focusToMap!=null && (!hasScripts || permissions)){
+            return [menuName, maxTextLength, tabName, autoLaunch.bool, showIcons.bool, showLabels.bool, focusToMap.bool, permissions]
         }
         //create input objects
+        JTextField menuNameField = new JTextField(menuName)
         JTextField textLengthField = new JTextField(maxTextLength?.toString()?:maxTextLen.toString())
         JTextField tabNameField = new JTextField(tabName?:MoM_TAB_NAME)
         JCheckBox autoLaunchCheckBox = new JCheckBox(autoLaunchMsg, autoLaunch?autoLaunch.bool:false)
@@ -300,6 +306,8 @@ class PackMenu{
         JCheckBox exePermissionCheckBox   = hasScripts? new JCheckBox(exePermission,   (binPermissions & 0b1000)>0): null
         //create group component
         final JComponent[] inputs = new JComponent[] {
+                new JLabel(nameMsg),
+                menuNameField,
                 new JLabel(iconLabelMsg),
                 iconsLabelsComboBox,
                 new JLabel(textLengthMsg),
@@ -319,6 +327,7 @@ class PackMenu{
         if (result == JOptionPane.OK_OPTION) {
             def permiString = hasScripts? Integer.toBinaryString((readPermissionCheckBox.selected?0b0001:0)+(writePermissionCheckBox.selected?0b0010:0)+(netPermissionCheckBox.selected?0b0100:0)+(exePermissionCheckBox.selected?0b1000:0)) : null
             return [
+                    menuNameField.text,
                     textLengthField.text?.isInteger()?textLengthField.text.toInteger():maxTextLen,
                     tabNameField.text?:MoM_TAB_NAME,
                     autoLaunchCheckBox.isSelected(),
@@ -328,7 +337,7 @@ class PackMenu{
                     hasScripts? ('0000' + permiString).takeRight(4) : null,
             ]
         } else {
-            return [null, null, null, null, null, null, null]
+            return [null, null, null, null, null, null, null, null]
         }
     }
 
