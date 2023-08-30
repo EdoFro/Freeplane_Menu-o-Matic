@@ -3,6 +3,7 @@
 ## v0.1.8
 
 * init script opens Menu o Matic toolbar
+* Added preference to show/hide Menu-o-Matic toolbar buttons labels
 * Added menu separators
 ## v0.1.7
 
