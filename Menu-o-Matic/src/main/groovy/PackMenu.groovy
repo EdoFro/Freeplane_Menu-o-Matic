@@ -20,9 +20,10 @@ import groovy.transform.MapConstructor
 
 class PackMenu{
 
-    // region: properties
+    // region properties
 
     static final String   scriptStr    = '_script'
+    static final String   separatorStr = '_separator'
     // static final Boolean  scriptInNote = true
     
     static final String MoMDialogTitle = 'menu-o-matic'
@@ -35,7 +36,7 @@ class PackMenu{
     //static final String[] optionsD3    = ['return to mindmap','stay in menu']  //focus to map is currently don't needed, I will let the code here just in case in a future version it makes sense again.
     static final String   MoM_TAB_NAME = 'MoM'
     static final String   textLengthMsg = 'Maximal label text length:'
-    static final String   tabNameMsg    = 'Include toolbar to tab:'
+    static final String   tabNameMsg    = 'Place toolbar into tab:'
     static final String   autoLaunchMsg = 'Auto launch toolbar'
     static final String   permissionsMsg = 'Scripts permissions'
     static final String   readPermission  = 'WITHOUT_READ_RESTRICTION'
@@ -62,7 +63,7 @@ class PackMenu{
     ]
 
 
-    // endregion: properties
+    // endregion properties
 
     @MapConstructor
     static class MenuData{
@@ -163,11 +164,11 @@ class PackMenu{
     static final c = ScriptUtils.c()
 
 
-    // region: primary methods
+    // region primary methods
 
     def static getMDfromNodes(nodoBase, boolean useDetails = true){
         //get info from child nodes
-        def nAcciones  = nodoBase.find{it.link?.uri?.scheme == 'menuitem' || WSE.isGroovyNode(it)}
+        def nAcciones  = nodoBase.find{it.link?.uri?.scheme == 'menuitem' || WSE.isGroovyNode(it) || isSeparatorNode(it)}
         def hasScripts = nAcciones.any{WSE.isGroovyNode(it)}
 
         //get info from node
@@ -248,6 +249,8 @@ class PackMenu{
                     nodo['script1'] = nodoMenu[acc].toString()
                 }
                 WSE.setExtension(nodo, 'groovy')
+            } else if (acc==separatorStr){
+                //nodo.text = '---' // it seems it isn't necessary
             } else {
                 nodo.link.text = "menuitem:_${acc}"
             }
@@ -329,9 +332,12 @@ class PackMenu{
         }
     }
 
-    // endregion: primary methods
+    // endregion primary methods
 
-    // region: secondary methods
+    // region secondary methods
+    def static isSeparatorNode(n){
+        return n.text.every{ it == '-' }
+    }
 
     def static accion(n){
         return (n.link?.uri?.scheme == 'menuitem')?n.link.uri.schemeSpecificPart.drop(1):WSE.isGroovyNode(n)?scriptStr + ++iScript :null
@@ -348,5 +354,5 @@ class PackMenu{
         return pane.inputValue
     }
 
-    // endregion: methods
+    // endregion methods
 }

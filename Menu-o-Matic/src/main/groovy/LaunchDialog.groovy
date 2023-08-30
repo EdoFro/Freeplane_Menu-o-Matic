@@ -5,8 +5,10 @@ import java.awt.Dimension
 import java.awt.GridLayout
 import java.awt.Insets
 import java.awt.event.WindowFocusListener
+import javax.swing.BoxLayout
 import javax.swing.Icon
 import javax.swing.JButton
+import javax.swing.JSeparator
 import javax.swing.SwingConstants
 
 import groovy.swing.SwingBuilder
@@ -30,7 +32,7 @@ import edofro.menuomatic.PackMenu                   as PM
 
 
 class LaunchDialog{
-//region: properties
+//region properties
     static final String defaultIcon     = 'IconAction.emoji-1F7EB'
     static final String dialogStr       = '_MoM_'
     static final int    maxButtonsHoriz = 6
@@ -39,6 +41,7 @@ class LaunchDialog{
     static final c                          = ScriptUtils.c()
     static final tb                         = PM.TB
     static final scriptStr                  = PM.scriptStr
+    static final separatorStr               = PM.separatorStr
 
     static PM.MenuData md
     static Dimension prefDimension
@@ -49,7 +52,7 @@ class LaunchDialog{
     static final int WITHOUT_EXEC_RESTRICTION    = 0b0100
     static final int WITHOUT_NETWORK_RESTRICTION = 0b1000
 
-//endregion:
+//endregion
 
 
     // region managing dialogs
@@ -208,7 +211,8 @@ class LaunchDialog{
     }
 
     def static setUpToolbar(tb) {
-        def theLayout = md.showLabels?new GridLayout(0,1): ToolbarLayout.vertical()
+        //def theLayout = md.showLabels?new GridLayout(0,1): ToolbarLayout.vertical()
+        def theLayout = md.showLabels?new BoxLayout(tb, BoxLayout.PAGE_AXIS): ToolbarLayout.vertical()  // TODO : BoxLayout.PAGE_AXIS
         tb.setLayout(theLayout)
         tb.setFloatable(true)
         tb.margin = new Insets(0, 0, 5, 0)
@@ -225,7 +229,7 @@ class LaunchDialog{
 
     // endregion
 
-    //region creating panel
+    // region creating panel
 
     def static getCols(){
         md.showLabels?1:buttonCols(md.actions.size(),maxButtonsHoriz)
@@ -277,6 +281,8 @@ class LaunchDialog{
     def static creaBoton(acc, i){
         if(acc.startsWith(scriptStr)){
             return creaBotonDesdeScript(acc,i)
+        } else if(acc==separatorStr){
+            return new JSeparator(SwingConstants.HORIZONTAL) //SI NO FUNCIONA. VER 
         } else {
             return creaBotonDesdeUI(acc, i)
         }

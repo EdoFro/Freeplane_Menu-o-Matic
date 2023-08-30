@@ -3,6 +3,7 @@
 ## v0.1.8
 
 * init script opens Menu o Matic toolbar
+* Added menu separators
 ## v0.1.7
 
 * No more status bar information messages when clicking on a script based button
