@@ -6213,156 +6213,18 @@ before the actual namefilter setting)
 <attribute NAME="lastAccessTime" VALUE="28-03-22 11:13" OBJECT="org.freeplane.features.format.FormattedDate|2022-03-28T11:13-0300|dd-MM-yy HH:mm"/>
 <attribute NAME="creationTime" VALUE="24-06-21 11:48" OBJECT="org.freeplane.features.format.FormattedDate|2021-06-24T11:48-0400|datetime"/>
 <attribute NAME="fileSize" VALUE="2.146" OBJECT="org.freeplane.features.format.FormattedNumber|2146|#,##0"/>
-<richcontent TYPE="NOTE">
+<richcontent TYPE="DETAILS">
 <html>
   <head>
     
   </head>
   <body>
     <p>
-      //Menu-o-Matic
-    </p>
-    <p>
-      
-    </p>
-    <p>
-      apply plugin: 'groovy'
-    </p>
-    <p>
-      
-    </p>
-    <p>
-      targetCompatibility='1.8'
-    </p>
-    <p>
-      
-    </p>
-    <p>
-      libsDirName = &quot;${rootDir}/lib&quot;
-    </p>
-    <p>
-      clean.doFirst { delete &quot;${rootDir}/lib&quot; }
-    </p>
-    <p>
-      //clean.doFirst { delete &quot;${rootDir}/lib/WikdShellExtension.jar&quot; } //así lo usé en wikdshellext. para eliminar sólo una de las .jar y que no me borrara WikdShell.jar
-    </p>
-    <p>
-      
-    </p>
-    <p>
-      repositories {
-    </p>
-    <p>
-      &nbsp;&nbsp;&nbsp;&nbsp;mavenCentral()
-    </p>
-    <p>
-      &nbsp;&nbsp;&nbsp;&nbsp;flatDir name: 'localGitDepsRepository',
-    </p>
-    <p>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dirs: [
-    </p>
-    <p>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;C:/Program Files/Freeplane&quot;,
-    </p>
-    <p>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;C:/Program Files/Freeplane/core/org.freeplane.core/lib&quot;,
-    </p>
-    <p>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;C:/Program Files/Freeplane/plugins/org.freeplane.plugin.script/lib&quot;
-    </p>
-    <p>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//, &quot;${rootDir}/lib&quot; //así lo usé en wikdshellext, porque ahí puse WikdShell.jar
-    </p>
-    <p>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]
-    </p>
-    <p>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    </p>
-    <p>
-      &nbsp;&nbsp;&nbsp;&nbsp;// Así para cuando Freeplane está en Portable Apps
-    </p>
-    <p>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// dirs: [
-    </p>
-    <p>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// &quot;C:/PortableApps/FreeplanePortable/App/Freeplane&quot;,
-    </p>
-    <p>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// &quot;C:/PortableApps/FreeplanePortable/App/Freeplane/core/org.freeplane.core/lib&quot;,
-    </p>
-    <p>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// &quot;C:/PortableApps/FreeplanePortable/App/Freeplane/plugins/org.freeplane.plugin.script/lib&quot;,
-    </p>
-    <p>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// &quot;${rootDir}/lib&quot; //así lo usé en wikdshellext, porque ahí puse WikdShell.jar
-    </p>
-    <p>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// ]
-    </p>
-    <p>
-      }
-    </p>
-    <p>
-      
-    </p>
-    <p>
-      dependencies {
-    </p>
-    <p>
-      &nbsp;&nbsp;&nbsp;&nbsp;compile name: 'freeplanelauncher'
-    </p>
-    <p>
-      &nbsp;&nbsp;&nbsp;&nbsp;compile name: 'freeplaneviewer'
-    </p>
-    <p>
-      &nbsp;&nbsp;&nbsp;&nbsp;compile group: 'org.freeplane.core', name: 'freeplaneeditor', version:&quot;+&quot;
-    </p>
-    <p>
-      &nbsp;&nbsp;&nbsp;&nbsp;compile group: 'org.freeplane.script', name: 'plugin', version: '+'
-    </p>
-    <p>
-      &nbsp;&nbsp;&nbsp;&nbsp;// compile name: 'WikdShell' //así lo usé en wikdshellext.&nbsp;
-    </p>
-    <p>
-      &nbsp;&nbsp;&nbsp;&nbsp;compile ('org.codehaus.groovy:groovy-all:3.0.1') {
-    </p>
-    <p>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;exclude group:'org.codehaus.groovy', module:'groovy-test'
-    </p>
-    <p>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;exclude group:'org.codehaus.groovy', module:'groovy-test-junit5'
-    </p>
-    <p>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;exclude group:'org.codehaus.groovy', module:'groovy-testng'
-    </p>
-    <p>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;exclude group:'org.codehaus.groovy', module:'groovy-ant'
-    </p>
-    <p>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;exclude group:'org.codehaus.groovy', module:'groovy-docgenerator'
-    </p>
-    <p>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;exclude group:'org.codehaus.groovy', module:'groovy-groovydoc'
-    </p>
-    <p>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;exclude group:'org.codehaus.groovy', module:'groovy-cli-commons'
-    </p>
-    <p>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;exclude group:'org.codehaus.groovy', module:'groovy-cli-picocli'
-    </p>
-    <p>
-      &nbsp;&nbsp;&nbsp;&nbsp;}
-    </p>
-    <p>
-      &nbsp;&nbsp;&nbsp;&nbsp;compile 'org.codehaus.groovy:groovy-dateutil:3.0.1'
-    </p>
-    <p>
-      }
+      .gradle
     </p>
   </body>
 </html></richcontent>
-<node TEXT="gradle" STYLE_REF="Organizador" FOLDED="true" POSITION="bottom_or_right" ID="ID_1433608259">
+<node TEXT="gradle" STYLE_REF="Organizador" POSITION="bottom_or_right" ID="ID_1433608259">
 <node TEXT="gradle" ID="ID_975915280" LINK="Menu-o-Matic/gradle/">
 <node TEXT="wrapper" ID="ID_110270662" LINK="Menu-o-Matic/gradle/wrapper/">
 <node TEXT="gradle-wrapper.jar" ID="ID_1561921106" LINK="Menu-o-Matic/gradle/wrapper/gradle-wrapper.jar"/>
@@ -7664,7 +7526,7 @@ before the actual namefilter setting)
 </node>
 <node TEXT="Menu-o-Matic project.mm" ID="ID_1492418706" LINK="Menu-o-Matic%20project.mm"/>
 <node TEXT="new imported files" STYLE_REF="newFolderImport" ID="ID_1788703280">
-<attribute NAME="log_MDI" VALUE="2" OBJECT="org.freeplane.features.format.FormattedObject|org.freeplane.plugin.script.proxy.ConvertibleText&amp;#x7c;2|number:decimal:#0.####"/>
+<attribute NAME="log_MDI" VALUE="2" OBJECT="org.freeplane.features.format.FormattedObject|org.freeplane.plugin.script.proxy.ConvertibleNumber&amp;#x7c;2|number:decimal:#0.####"/>
 <richcontent TYPE="NOTE">
 <html>
   <head>
@@ -7672,7 +7534,7 @@ before the actual namefilter setting)
   </head>
   <body>
     <p>
-      Inated:&#xa0;&#xa0;&#xa0;2023-08-28&#xa0;&#xa0;19:41:27
+      Inated:&#xa0;&#xa0;&#xa0;2023-08-30&#xa0;&#xa0;12:16:16
     </p>
     <p>
       
@@ -7702,7 +7564,7 @@ before the actual namefilter setting)
       ------- Folders: --------&#xa0;
     </p>
     <p>
-      26 folders didn't need to be moved&#xa0;
+      27 folders didn't need to be moved&#xa0;
     </p>
     <p>
       2 folders were not found&#xa0;
@@ -7717,7 +7579,7 @@ before the actual namefilter setting)
       
     </p>
     <p>
-      0.3 seconds
+      0.7 seconds
     </p>
     <p>
       
@@ -7737,6 +7599,9 @@ before the actual namefilter setting)
   </body>
 </html>
 </richcontent>
+<node TEXT="Menu-o-Matic" ID="ID_940860362" LINK="Menu-o-Matic/">
+<node TEXT="Menu-o-Matic-v0.1.8.addon.mm" ID="ID_331038225" LINK="Menu-o-Matic/Menu-o-Matic-v0.1.8.addon.mm"/>
+</node>
 </node>
 <node TEXT="versión instalada en AddOns" STYLE_REF="locked" FOLDED="true" ID="ID_1424141649">
 <node TEXT="menuOMatic" ID="ID_1859181061"><richcontent TYPE="DETAILS">

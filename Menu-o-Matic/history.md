@@ -1,5 +1,12 @@
 # History
 
+## v0.1.8
+
+* init script opens Menu o Matic toolbar
+* Added preference to show/hide Menu-o-Matic toolbar buttons labels
+* Added menu separators
+* Toolbar title can be modified in dialog
+
 ## v0.1.7
 
 * No more status bar information messages when clicking on a script based button
