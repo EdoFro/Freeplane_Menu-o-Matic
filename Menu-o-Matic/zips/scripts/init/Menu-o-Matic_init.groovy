@@ -36,6 +36,8 @@ if(isAddOnActive && runOnStartingFreeplane){
 
     def controller = Controller.currentController
     controller.addMapLifeCycleListener(new MoMMapCreationListener())
+    
+    menuUtils.executeMenuItems(['addons.menuOMatic.1launchMenuOMaticDialog_on_single_node'])
 
 }
 
