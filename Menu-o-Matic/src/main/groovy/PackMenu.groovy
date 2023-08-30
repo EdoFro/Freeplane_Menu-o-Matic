@@ -340,7 +340,7 @@ class PackMenu{
     }
 
     def static accion(n){
-        return (n.link?.uri?.scheme == 'menuitem')?n.link.uri.schemeSpecificPart.drop(1):WSE.isGroovyNode(n)?scriptStr + ++iScript :null
+        return (n.link?.uri?.scheme == 'menuitem')?n.link.uri.schemeSpecificPart.drop(1):WSE.isGroovyNode(n)?scriptStr + ++iScript :isSeparatorNode(n)?separatorStr:null
     }
 
     def static icono(n){
