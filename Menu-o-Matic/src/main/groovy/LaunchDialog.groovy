@@ -343,6 +343,7 @@ class LaunchDialog{
         def boton = swingBuilder.button(
             text                : t,
             foreground          : fgColor?Color.decode(fgColor):null,
+            background          : null,
             horizontalAlignment : SwingConstants.LEFT,
             icon                : i,
             toolTipText         : tt,
