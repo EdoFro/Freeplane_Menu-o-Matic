@@ -3688,6 +3688,40 @@ before the actual namefilter setting)
   </body>
 </html></richcontent>
 </node>
+<node TEXT="markAsPowerButton.groovy" ID="ID_1244684195" LINK="Menu-o-Matic/scripts/markAsPowerButton.groovy"><richcontent TYPE="NOTE">
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      import edofro.menuomatic.PackMenu as PM
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      PM.markAsPowerButton(node, !PM.isPowerButtonNode(node))
+    </p>
+  </body>
+</html>
+</richcontent>
+<richcontent TYPE="DETAILS">
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      .groovy
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
 <node TEXT="get Map/Branch used icons actions" STYLE_REF="nextTask" FOLDED="true" ID="ID_232294406">
 <node TEXT="present icons in map/branch as buttons" ID="ID_1197565766" VGAP_QUANTITY="2 px"><richcontent TYPE="NOTE">
 <html>
@@ -6062,6 +6096,7 @@ before the actual namefilter setting)
 <attribute NAME="fileSize" VALUE="40.442" OBJECT="org.freeplane.features.format.FormattedNumber|40442|#,##0"/>
 </node>
 <node TEXT="generados automáticamente" STYLE_REF="Organizador" ID="ID_753392396">
+<node TEXT="Menu-o-Matic-v0.1.9.addon.mm" STYLE_REF="freshNew" ID="ID_407125811" LINK="Menu-o-Matic/Menu-o-Matic-v0.1.9.addon.mm"/>
 <node TEXT="Menu-o-Matic-v0.1.8.addon.mm" ID="ID_331038225" LINK="Menu-o-Matic/Menu-o-Matic-v0.1.8.addon.mm">
 <attribute NAME="lastModifiedTime" VALUE="30-08-23 13:06" OBJECT="org.freeplane.features.format.FormattedDate|2023-08-30T13:06-0400|datetime"/>
 <attribute NAME="lastAccessTime" VALUE="30-08-23 17:48" OBJECT="org.freeplane.features.format.FormattedDate|2023-08-30T17:48-0400|datetime"/>
@@ -7552,7 +7587,7 @@ before the actual namefilter setting)
 </node>
 <node TEXT="Menu-o-Matic project.mm" ID="ID_1492418706" LINK="Menu-o-Matic%20project.mm"/>
 <node TEXT="new imported files" STYLE_REF="newFolderImport" ID="ID_1788703280">
-<attribute NAME="log_MDI" VALUE="2" OBJECT="org.freeplane.features.format.FormattedNumber|2|#0.####"/>
+<attribute NAME="log_MDI" VALUE="2" OBJECT="org.freeplane.features.format.FormattedObject|org.freeplane.plugin.script.proxy.ConvertibleNumber&amp;#x7c;2|number:decimal:#0.####"/>
 <richcontent TYPE="NOTE">
 <html>
   <head>
@@ -7560,7 +7595,7 @@ before the actual namefilter setting)
   </head>
   <body>
     <p>
-      Inated:&#xa0;&#xa0;&#xa0;2023-08-30&#xa0;&#xa0;18:26:57
+      Inated:&#xa0;&#xa0;&#xa0;2023-08-31&#xa0;&#xa0;12:25:39
     </p>
     <p>
       
@@ -7575,7 +7610,7 @@ before the actual namefilter setting)
       &#xa0;0 link(s) corrected in nodes
     </p>
     <p>
-      &#xa0;0 new file(s) imported as node(s)&#xa0;
+      &#xa0;1 new file(s) imported as node(s)&#xa0;
     </p>
     <p>
       &#xa0;0 node(s) moved/renamed in drive
@@ -7590,7 +7625,7 @@ before the actual namefilter setting)
       ------- Folders: --------&#xa0;
     </p>
     <p>
-      27 folders didn't need to be moved&#xa0;
+      26 folders didn't need to be moved&#xa0;
     </p>
     <p>
       2 folders were not found&#xa0;
@@ -7605,7 +7640,7 @@ before the actual namefilter setting)
       
     </p>
     <p>
-      1.3 seconds
+      1 seconds
     </p>
     <p>
       
@@ -7625,7 +7660,6 @@ before the actual namefilter setting)
   </body>
 </html>
 </richcontent>
-<node TEXT="Menu-o-Matic" ID="ID_940860362" LINK="#ID_1589076031"/>
 </node>
 <node TEXT="versión instalada en AddOns" STYLE_REF="locked" FOLDED="true" ID="ID_1424141649">
 <node TEXT="menuOMatic" ID="ID_1859181061"><richcontent TYPE="DETAILS">

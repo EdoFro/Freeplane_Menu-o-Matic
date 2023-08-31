@@ -6,6 +6,8 @@ import edofro.menuomatic.WSE_redux              as WSE
 import org.freeplane.core.util.MenuUtils        as menuUtils
 import org.freeplane.core.ui.components.UITools as ui
 import groovy.swing.SwingBuilder
+import org.freeplane.core.util.TextUtils
+
 import javax.swing.*
 
 // import org.freeplane.plugin.script.FreeplaneScriptBaseClass as FSBC
@@ -24,6 +26,7 @@ class PackMenu{
 
     static final String   scriptStr    = '_script'
     static final String   separatorStr = '_separator'
+    static final String   POWER_BUTTON_STYLE = 'powerButton'
     // static final Boolean  scriptInNote = true
     
     static final String MoMDialogTitle = 'menu-o-matic'
@@ -170,7 +173,12 @@ class PackMenu{
 
     def static getMDfromNodes(nodoBase, boolean useDetails = true){
         //get info from child nodes
-        def nAcciones  = nodoBase.find{it.link?.uri?.scheme == 'menuitem' || WSE.isGroovyNode(it) || isSeparatorNode(it)}
+        def nPowers = []
+        nodoBase.find{isPowerButtonNode(it)}.each{
+            nPowers += it.find{it.link?.uri?.scheme == 'menuitem'}
+        }
+        def nAcciones  = [] + nodoBase.find{it.link?.uri?.scheme == 'menuitem' || WSE.isGroovyNode(it) || isSeparatorNode(it) || isPowerButtonNode(it)}
+        nAcciones -= nPowers
         def hasScripts = nAcciones.any{WSE.isGroovyNode(it)}
 
         //get info from node
@@ -189,7 +197,9 @@ class PackMenu{
         (menuName, maxTextLength, tabName, autoLaunch, showIcons, showLabels, focusToMap, permissions) = getConfirmedInfo(forceDialog, hasScripts, menuName, maxTextLength, tabName, autoLaunch, showIcons, showLabels, focusToMap, permissions)
         menuName?=nodoBase[TB.title].string?:nodoBase.text
         if(menuName && maxTextLength && tabName && autoLaunch!=null && showIcons!=null && showLabels!=null && focusToMap!=null) {
-            return [new MenuData(menuName, nAcciones, showIcons, showLabels, focusToMap, maxTextLength, tabName, autoLaunch, permissions), "\n  - resp\n  - resp2" ]
+            def selectedOption = ((showIcons?1:0) + (showLabels?2:0)) - 1
+            def resp_iconsLabels = optionsD1.getAt(selectedOption)
+            return [new MenuData(menuName, nAcciones, showIcons, showLabels, focusToMap, maxTextLength, tabName, autoLaunch, permissions), "\n  - $resp_iconsLabels" ]
         } else {
             return [null, 'resp']
         }
@@ -256,6 +266,11 @@ class PackMenu{
                 WSE.setExtension(nodo, 'groovy')
             } else if (acc==separatorStr){
                 //nodo.text = '---' // it seems it isn't necessary
+            } else if (acc.contains(';')){
+                markAsPowerButton(nodo, true)
+                acc.split(';')each{a ->
+                    nodo.createChild(TextUtils.getText("${a}.text",null)?:TextUtils.getText("${a}.tooltip",null)?:'').link.text = "menuitem:_${a}"
+                }
             } else {
                 nodo.link.text = "menuitem:_${acc}"
             }
@@ -344,17 +359,45 @@ class PackMenu{
     // endregion primary methods
 
     // region secondary methods
+
     def static isSeparatorNode(n){
         return n.text.every{ it == '-' }
     }
 
+    def static isPowerButtonNode(n){
+        //return n.style.name == POWER_BUTTON_STYLE
+        return n.details?.startsWith(POWER_BUTTON_STYLE)?:false
+    }
+
+    def static markAsPowerButton(n, boolean doMark =  true){
+        //n.style.name = POWER_BUTTON_STYLE
+        n.details = doMark? POWER_BUTTON_STYLE : null
+    }
+
     def static accion(n){
-        return (n.link?.uri?.scheme == 'menuitem')?n.link.uri.schemeSpecificPart.drop(1):WSE.isGroovyNode(n)?scriptStr + ++iScript :isSeparatorNode(n)?separatorStr:null
+        return (n.link?.uri?.scheme == 'menuitem')?
+                n.link.uri.schemeSpecificPart.drop(1):
+                WSE.isGroovyNode(n)?
+                        scriptStr + ++iScript :
+                        isSeparatorNode(n)?
+                                separatorStr:
+                                isPowerButtonNode(n)?
+                                        getPowerButtonActions(n):
+                                        null
+    }
+
+    def static getPowerButtonActions(n){
+        def nodos = n.find{it.link?.uri?.scheme == 'menuitem'}
+        return nodos.collect{it.link.uri.schemeSpecificPart.drop(1)}.join(';')
     }
 
     def static icono(n){
         def acc = accion(n)
-        return menuUtils.getMenuItemIcon(acc)?acc:n.icons?"IconAction.${n.icons.first}":null
+        return acc.contains(';')?getNodeIcon(n):menuUtils.getMenuItemIcon(acc)?acc:getNodeIcon(n)
+    }
+
+    def static getNodeIcon(n){
+        return n.icons?"IconAction.${n.icons.first}":null
     }
 
     def static respuestaDialogo(options,msg,title){

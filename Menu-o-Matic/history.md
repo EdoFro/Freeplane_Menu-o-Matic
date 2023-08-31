@@ -3,7 +3,12 @@
 ## v0.1.9
 
 * Corrected button background color (bug in some L&F)
+  * In original Look&Feels the buttons background weren't transparent
 * Added preference to (in)activate TitledBorders
+* Added popup menu to remove toolbars
+  * Right clicking on toolbars
+* Added powerButtons functionality
+  * Unifies multiple MenuActions nodes as a single "powerButton" that executes all actions at once
 
 ## v0.1.8
 

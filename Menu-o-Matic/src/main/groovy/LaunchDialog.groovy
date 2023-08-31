@@ -46,6 +46,7 @@ class LaunchDialog{
     static final tb                         = PM.TB
     static final scriptStr                  = PM.scriptStr
     static final separatorStr               = PM.separatorStr
+    static final POWER_BUTTON_STYLE         = PM.POWER_BUTTON_STYLE
     static final config                     = new ConfigProperties()
 
     static PM.MenuData md
@@ -314,7 +315,7 @@ class LaunchDialog{
         } else if(acc==separatorStr){
             return new JSeparator(SwingConstants.HORIZONTAL) //SI NO FUNCIONA. VER 
         } else {
-            return creaBotonDesdeUI(acc, i)
+            return creaBotonDesdeUI(acc.split(';').flatten(), i)
         }
     }
 
@@ -351,14 +352,14 @@ class LaunchDialog{
         return nuevoBoton(text, icon, toolTipText, prefD, minD, actionPerformed, fgColor)
     }
 
-    def static creaBotonDesdeUI(acc, i){
+    def static creaBotonDesdeUI(acc, int i){
         def icon = md.showIcons?menuUtils.getMenuItemIcon(md.icons[i]):null
         def text = (md.showLabels || !icon)?textoLabel(md.labels[i]):null
         def toolTipText = md.labels[i]
         def prefD= prefDimension
         def minD = minDimension
         def actionPerformed = {
-                menuUtils.executeMenuItems([acc])
+                menuUtils.executeMenuItems(acc)
                 if (md.focusMap) DKBN.focusMap()
             }
         def fgColor = md.fgColor
