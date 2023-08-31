@@ -3,9 +3,9 @@
 <node TEXT="Menu-o-Matic" ID="ID_696401721" LINK="https://github.com/EdoFro/Freeplane_Menu-o-Matic" BACKGROUND_COLOR="#97c7dc">
 <font SIZE="16" BOLD="true" ITALIC="true"/>
 <hook NAME="AutomaticEdgeColor" COUNTER="17" RULE="ON_BRANCH_CREATION"/>
-<attribute_layout NAME_WIDTH="112.5 pt" VALUE_WIDTH="266.99999 pt"/>
+<attribute_layout NAME_WIDTH="104.25 pt" VALUE_WIDTH="233.24999 pt"/>
 <attribute NAME="name" VALUE="menuOMatic"/>
-<attribute NAME="version" VALUE="v0.1.8"/>
+<attribute NAME="version" VALUE="v0.1.9"/>
 <attribute NAME="author" VALUE="EdoFro"/>
 <attribute NAME="freeplaneVersionFrom" VALUE="v1.9.0"/>
 <attribute NAME="freeplaneVersionTo" VALUE=""/>
@@ -266,6 +266,18 @@
 <node TEXT="Added menu separators" ID="ID_261454163"/>
 <node TEXT="Toolbar title can be modified in dialog" ID="ID_419612997"/>
 </node>
+<node TEXT="v0.1.9" ID="ID_1463454153">
+<node TEXT="Corrected button background color (bug in some L&amp;F)" ID="ID_1635777247">
+<node TEXT="In original Look&amp;Feels the buttons background weren&apos;t transparent" ID="ID_520607658"/>
+</node>
+<node TEXT="Added preference to (in)activate TitledBorders" ID="ID_1456132538"/>
+<node TEXT="Added popup menu to remove toolbars" ID="ID_1610581537">
+<node TEXT="Right clicking on toolbars" ID="ID_1636531086"/>
+</node>
+<node TEXT="Added powerButtons functionality" ID="ID_986228712">
+<node TEXT="Unifies multiple MenuActions nodes as a single &quot;powerButton&quot; that executes all actions at once" ID="ID_987728606"/>
+</node>
+</node>
 </node>
 <node TEXT="license" POSITION="top_or_left" ID="ID_492801974">
 <edge COLOR="#00ff00"/>
@@ -402,7 +414,8 @@
 <attribute_layout NAME_WIDTH="109.5 pt" VALUE_WIDTH="51.75 pt"/>
 <attribute NAME="runOnStartingFreeplane" VALUE="boolean"/>
 <attribute NAME="showMenuOMaticMenuLabels" VALUE="boolean"/>
-<node TEXT="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#xa;&lt;preferences_structure&gt;&#xa;         &lt;tabbed_pane&gt;&#xa;                  &lt;tab name=&quot;plugins&quot;&gt;&#xa;                            &lt;separator name = &quot;${name}&quot;&gt;&#xa;                                    &lt;boolean name = &quot;${name}_runOnStartingFreeplane&quot;/&gt;&#xa;                                    &lt;boolean name = &quot;${name}_showMenuOMaticMenuLabels&quot;/&gt;&#xa;                           &lt;/separator&gt;&#xa;                  &lt;/tab&gt;&#xa;         &lt;/tabbed_pane&gt;&#xa;&lt;/preferences_structure&gt;" ID="ID_1133880285" MAX_WIDTH="20 cm"/>
+<attribute NAME="useTitledBorders" VALUE="boolean"/>
+<node TEXT="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#xa;&lt;preferences_structure&gt;&#xa;         &lt;tabbed_pane&gt;&#xa;                  &lt;tab name=&quot;plugins&quot;&gt;&#xa;                            &lt;separator name = &quot;${name}&quot;&gt;&#xa;                                    &lt;boolean name = &quot;${name}_runOnStartingFreeplane&quot;/&gt;&#xa;                                    &lt;boolean name = &quot;${name}_showMenuOMaticMenuLabels&quot;/&gt;&#xa;                                    &lt;boolean name = &quot;${name}_useTitledBorders&quot;/&gt;&#xa;                           &lt;/separator&gt;&#xa;                  &lt;/tab&gt;&#xa;         &lt;/tabbed_pane&gt;&#xa;&lt;/preferences_structure&gt;" ID="ID_1133880285" MAX_WIDTH="20 cm"/>
 </node>
 <node TEXT="default.properties" POSITION="top_or_left" ID="ID_252406354">
 <edge COLOR="#00ffff"/>
@@ -426,9 +439,10 @@
   </body>
 </html>
 </richcontent>
-<attribute_layout NAME_WIDTH="182.24999 pt" VALUE_WIDTH="39.75 pt"/>
+<attribute_layout NAME_WIDTH="166.5 pt" VALUE_WIDTH="37.5 pt"/>
 <attribute NAME="${name}_runOnStartingFreeplane" VALUE="true"/>
 <attribute NAME="${name}_showMenuOMaticMenuLabels" VALUE="true"/>
+<attribute NAME="${name}_useTitledBorders" VALUE="true"/>
 </node>
 <node TEXT="translations" POSITION="top_or_left" ID="ID_971883114">
 <edge COLOR="#7c0000"/>
@@ -464,15 +478,16 @@
   </body>
 </html>
 </richcontent>
-<node TEXT="en" ID="ID_43497759">
-<attribute_layout NAME_WIDTH="262.49999 pt" VALUE_WIDTH="456.74999 pt"/>
+<node TEXT="en" ID="ID_553754732">
+<attribute_layout NAME_WIDTH="234.74999 pt" VALUE_WIDTH="411.74999 pt"/>
 <attribute NAME="addons.${name}.lauchDialogFromNodes" VALUE="launch menu dialog directly"/>
 <attribute NAME="addons.${name}.1launchMenuOMaticDialog" VALUE="launch Menu-o-Matic dialog"/>
-<attribute NAME="OptionPanel.${name}_showMenuOMaticMenuLabels" VALUE="show buttons labels in Menu-o-Matic toolbar"/>
+<attribute NAME="OptionPanel.${name}_showMenuOMaticMenuLabels" VALUE="Show buttons labels in Menu-o-Matic toolbar"/>
 <attribute NAME="addons.${name}.launchCustomDialog" VALUE="launch menu dialog from package"/>
 <attribute NAME="addons.${name}.listCustomMenusFromMap" VALUE="list menu packages from map"/>
 <attribute NAME="addons.${name}" VALUE="Menu-o-Matic"/>
 <attribute NAME="addons.${name}.packCustomMenu" VALUE="pack menu"/>
+<attribute NAME="OptionPanel.${name}_useTitledBorders.tooltip" VALUE="if checked, it will show the name of the toolbar as its title"/>
 <attribute NAME="OptionPanel.${name}_runOnStartingFreeplane" VALUE="Open auto launch menus"/>
 <attribute NAME="addons.${name}.launchCustomToolTab" VALUE="Launch custom tool tab"/>
 <attribute NAME="addons.${name}.changePackParameters" VALUE="Change pack parameters"/>
@@ -481,10 +496,12 @@
 <attribute NAME="OptionPanel.${name}_runOnStartingFreeplane.tooltip" VALUE="Automatically opens all Custom Menus marked as AutoLaunch from all opened mindmaps on Freeplane start"/>
 <attribute NAME="OptionPanel.${name}_showMenuOMaticMenuLabels.tooltip" VALUE="Defines if MoM toolbar shows   icons and labels   or   icons only"/>
 <attribute NAME="addons.${name}.getMenuCommand" VALUE="menu item under mouse as new node"/>
+<attribute NAME="OptionPanel.${name}_useTitledBorders" VALUE="Use TitledBorders for each toolbar"/>
 <attribute NAME="addons.${name}.insertMenuOMaticPackage" VALUE="Insert Menu-o-Matic package node"/>
 <attribute NAME="addons.${name}.listCustomDialogs" VALUE="list opened menu dialogs"/>
 <attribute NAME="addons.${name}.unpackCustomMenu" VALUE="unpack menu"/>
 <attribute NAME="addons.${name}.launchDialogsFromBranch" VALUE="launch all dialog packages from branch"/>
+<attribute NAME="addons.${name}.markAsPowerButton" VALUE="Mark / unmark node as powerButton"/>
 </node>
 </node>
 <node TEXT="deinstall" POSITION="top_or_left" ID="ID_1351206087">
@@ -531,6 +548,7 @@
 <attribute NAME="delete" VALUE="${installationbase}/icons/Menu-o-Matic/MoMCloseTab.svg"/>
 <attribute NAME="delete" VALUE="${installationbase}/icons/Menu-o-Matic/MoMCloseToolbar.svg"/>
 <attribute NAME="delete" VALUE="${installationbase}/addons/${name}/scripts/changePackParameters.groovy"/>
+<attribute NAME="delete" VALUE="${installationbase}/addons/${name}/scripts/markAsPowerButton.groovy"/>
 </node>
 <node TEXT="scripts" POSITION="bottom_or_right" ID="ID_1105183990">
 <edge COLOR="#007c00"/>
@@ -688,6 +706,7 @@
 <attribute NAME="execute_scripts_without_network_restriction" VALUE="false"/>
 </node>
 <node TEXT="changePackParameters.groovy" ID="ID_439163238">
+<attribute_layout NAME_WIDTH="188.24999 pt" VALUE_WIDTH="170.24999 pt"/>
 <attribute NAME="menuTitleKey" VALUE="addons.${name}.changePackParameters"/>
 <attribute NAME="menuLocation" VALUE="${addonsMenu}/addons.${name}/design"/>
 <attribute NAME="executionMode" VALUE="on_single_node"/>
@@ -761,6 +780,18 @@
 <node TEXT="insertMenuOMaticPackage.groovy" ID="ID_1045039173">
 <attribute_layout NAME_WIDTH="204.74999 pt" VALUE_WIDTH="194.24999 pt"/>
 <attribute NAME="menuTitleKey" VALUE="addons.${name}.insertMenuOMaticPackage"/>
+<attribute NAME="menuLocation" VALUE="${addonsMenu}/addons.${name}/design"/>
+<attribute NAME="executionMode" VALUE="on_single_node"/>
+<attribute NAME="keyboardShortcut" VALUE=""/>
+<attribute NAME="execute_scripts_without_asking" VALUE="true"/>
+<attribute NAME="execute_scripts_without_file_restriction" VALUE="true"/>
+<attribute NAME="execute_scripts_without_write_restriction" VALUE="false"/>
+<attribute NAME="execute_scripts_without_exec_restriction" VALUE="false"/>
+<attribute NAME="execute_scripts_without_network_restriction" VALUE="false"/>
+</node>
+<node TEXT="markAsPowerButton.groovy" ID="ID_1919407952">
+<attribute_layout NAME_WIDTH="188.24999 pt" VALUE_WIDTH="159.75 pt"/>
+<attribute NAME="menuTitleKey" VALUE="addons.${name}.markAsPowerButton"/>
 <attribute NAME="menuLocation" VALUE="${addonsMenu}/addons.${name}/design"/>
 <attribute NAME="executionMode" VALUE="on_single_node"/>
 <attribute NAME="keyboardShortcut" VALUE=""/>
@@ -947,10 +978,10 @@
   </body>
 </html>
 </richcontent>
-<node TEXT="Build add-on" ID="ID_1006867388" LINK="menuitem:_addons.devtools.checkAddOn_on_single_node"/>
-<node TEXT="Package add-on for publication" ID="ID_1119353524" LINK="menuitem:_addons.devtools.releaseAddOn_on_single_node"/>
-<node TEXT="Export Translations" ID="ID_1088411781" LINK="menuitem:_addons.devtools.exportTranslations_on_single_node"/>
-<node TEXT="Import Translations" ID="ID_1039784888" LINK="menuitem:_addons.devtools.importTranslations_on_single_node"/>
+<node TEXT="Build add-on[translate me]" ID="ID_1784712276" LINK="menuitem:_addons.devtools.checkAddOn_on_single_node"/>
+<node TEXT="Package add-on for publication[translate me]" ID="ID_1042673242" LINK="menuitem:_addons.devtools.releaseAddOn_on_single_node"/>
+<node TEXT="Export Translations[translate me]" ID="ID_1190923889" LINK="menuitem:_addons.devtools.exportTranslations_on_single_node"/>
+<node TEXT="Import Translations[translate me]" ID="ID_1711584072" LINK="menuitem:_addons.devtools.importTranslations_on_single_node"/>
 </node>
 </node>
 </map>

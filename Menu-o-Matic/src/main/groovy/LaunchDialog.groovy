@@ -1,5 +1,8 @@
 package edofro.menuomatic
 
+import javax.swing.JPopupMenu
+import javax.swing.JToolBar
+import javax.swing.SwingUtilities
 import java.awt.Color
 import java.awt.Dimension
 import java.awt.GridLayout
@@ -23,6 +26,7 @@ import org.freeplane.core.util.TextUtils            as textUtils
 import org.freeplane.features.map.MapModel
 import org.freeplane.plugin.script.proxy.MapProxy
 import org.freeplane.plugin.script.proxy.ScriptUtils
+import org.freeplane.plugin.script.FreeplaneScriptBaseClass.ConfigProperties
 
 import edofro.menuomatic.DialogKeyboardNavigation   as DKBN
 import edofro.menuomatic.LaunchTabPane
@@ -42,6 +46,8 @@ class LaunchDialog{
     static final tb                         = PM.TB
     static final scriptStr                  = PM.scriptStr
     static final separatorStr               = PM.separatorStr
+    static final POWER_BUTTON_STYLE         = PM.POWER_BUTTON_STYLE
+    static final config                     = new ConfigProperties()
 
     static PM.MenuData md
     static Dimension prefDimension
@@ -210,19 +216,44 @@ class LaunchDialog{
         setUpToolbar(toolB)
     }
 
-    def static setUpToolbar(tb) {
-        //def theLayout = md.showLabels?new GridLayout(0,1): ToolbarLayout.vertical()
-        def theLayout = md.showLabels?new BoxLayout(tb, BoxLayout.PAGE_AXIS): ToolbarLayout.vertical()  // TODO : BoxLayout.PAGE_AXIS
+    def static setUpToolbar(JToolBar tb) {
+        def theLayout = md.showLabels?new BoxLayout(tb, BoxLayout.PAGE_AXIS): ToolbarLayout.vertical()
         tb.setLayout(theLayout)
         tb.setFloatable(true)
+
         tb.margin = new Insets(0, 0, 5, 0)
         tb.setBorderPainted(true)
-        ui.addTitledBorder(tb,md.title,10f)
-        if(md.fgColor) {tb.border.outsideBorder.titleColor = Color.decode(md.fgColor)}
+        def useTitledBorders =  config.getBooleanProperty('menuOMatic_useTitledBorders',false)
+        if(useTitledBorders) {
+            ui.addTitledBorder(tb, md.title, 10f)
+            if (md.fgColor) {
+                tb.border.outsideBorder.titleColor = Color.decode(md.fgColor)
+            }
+        }
+
         if(md.color) {tb.background = Color.decode(md.color)}
+
+        def pop = swingBuilder.popupMenu(){
+            menuItem(
+                    text : 'Remove toolbar',
+                    actionPerformed     : { e ->
+                      //  println e.source.class
+                      //  println tb.name
+                      //  println SwingUtilities.getAncestorNamed(LaunchTabPane.MOM_CONTAINER_NAME,tb).class
+
+                        def momContainer = SwingUtilities.getAncestorNamed(LaunchTabPane.MOM_CONTAINER_NAME,tb)
+                        momContainer.remove(tb)
+                        momContainer.revalidate()
+                        momContainer.repaint()
+                    }
+            )
+        }
+        tb.setComponentPopupMenu(pop)
+
         md.actions.eachWithIndex{ a, j ->
             tb.add(creaBoton(a, j))
         }
+
         tb.revalidate()
         tb.repaint()
     }
@@ -284,13 +315,13 @@ class LaunchDialog{
         } else if(acc==separatorStr){
             return new JSeparator(SwingConstants.HORIZONTAL) //SI NO FUNCIONA. VER 
         } else {
-            return creaBotonDesdeUI(acc, i)
+            return creaBotonDesdeUI(acc.split(';').flatten(), i)
         }
     }
 
     def static creaBotonDesdeScript(acc,i){
-        def text        = md.showLabels?textoLabel(md.labels[i]):null
         def icon        = md.showIcons?menuUtils.getMenuItemIcon(md.icons[i]):null
+        def text        = (md.showLabels || !icon)?textoLabel(md.labels[i]):null
         def toolTipText = md.labels[i]
         def prefD       = prefDimension
         def minD        = minDimension
@@ -321,14 +352,14 @@ class LaunchDialog{
         return nuevoBoton(text, icon, toolTipText, prefD, minD, actionPerformed, fgColor)
     }
 
-    def static creaBotonDesdeUI(acc, i){
-        def text = md.showLabels?textoLabel(md.labels[i]):null
+    def static creaBotonDesdeUI(acc, int i){
         def icon = md.showIcons?menuUtils.getMenuItemIcon(md.icons[i]):null
+        def text = (md.showLabels || !icon)?textoLabel(md.labels[i]):null
         def toolTipText = md.labels[i]
         def prefD= prefDimension
         def minD = minDimension
         def actionPerformed = {
-                menuUtils.executeMenuItems([acc])
+                menuUtils.executeMenuItems(acc)
                 if (md.focusMap) DKBN.focusMap()
             }
         def fgColor = md.fgColor
@@ -343,6 +374,7 @@ class LaunchDialog{
         def boton = swingBuilder.button(
             text                : t,
             foreground          : fgColor?Color.decode(fgColor):null,
+            background          : null,
             horizontalAlignment : SwingConstants.LEFT,
             icon                : i,
             toolTipText         : tt,
@@ -350,6 +382,7 @@ class LaunchDialog{
             minimumSize         : minD,
             margin              : new Insets(0,2,0,2),
             borderPainted       : false,
+            inheritsPopupMenu   : true,
             actionPerformed     : actPerf
         )
         return boton
