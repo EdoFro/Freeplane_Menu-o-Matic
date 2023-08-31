@@ -6062,51 +6062,77 @@ before the actual namefilter setting)
 <attribute NAME="fileSize" VALUE="40.442" OBJECT="org.freeplane.features.format.FormattedNumber|40442|#,##0"/>
 </node>
 <node TEXT="generados automáticamente" STYLE_REF="Organizador" ID="ID_753392396">
-<node TEXT="Menu-o-Matic-v0.1.7.addon.mm" STYLE_REF="freshNew" ID="ID_1846519074" LINK="Menu-o-Matic/Menu-o-Matic-v0.1.7.addon.mm"/>
-<node TEXT="Menu-o-Matic-v0.1.6.addon.mm" ID="ID_1389730929" LINK="Menu-o-Matic/Menu-o-Matic-v0.1.6.addon.mm"/>
-<node TEXT="Menu-o-Matic-v0.1.5.addon.mm" ID="ID_1736490742" LINK="Menu-o-Matic/Menu-o-Matic-v0.1.5.addon.mm"/>
-<node TEXT="Menu-o-Matic-v0.1.4.addon.mm" ID="ID_606492663" LINK="Menu-o-Matic/Menu-o-Matic-v0.1.4.addon.mm"/>
+<node TEXT="Menu-o-Matic-v0.1.8.addon.mm" ID="ID_331038225" LINK="Menu-o-Matic/Menu-o-Matic-v0.1.8.addon.mm">
+<attribute NAME="lastModifiedTime" VALUE="30-08-23 13:06" OBJECT="org.freeplane.features.format.FormattedDate|2023-08-30T13:06-0400|datetime"/>
+<attribute NAME="lastAccessTime" VALUE="30-08-23 17:48" OBJECT="org.freeplane.features.format.FormattedDate|2023-08-30T17:48-0400|datetime"/>
+<attribute NAME="creationTime" VALUE="29-08-23 08:46" OBJECT="org.freeplane.features.format.FormattedDate|2023-08-29T08:46-0400|datetime"/>
+<attribute NAME="fileSize" VALUE="367.559" OBJECT="org.freeplane.features.format.FormattedNumber|367559|#,##0"/>
+</node>
+<node TEXT="Menu-o-Matic-v0.1.7.addon.mm" ID="ID_1846519074" LINK="Menu-o-Matic/Menu-o-Matic-v0.1.7.addon.mm">
+<attribute NAME="lastModifiedTime" VALUE="29-08-23 17:33" OBJECT="org.freeplane.features.format.FormattedDate|2023-08-29T17:33-0400|datetime"/>
+<attribute NAME="lastAccessTime" VALUE="29-08-23 19:15" OBJECT="org.freeplane.features.format.FormattedDate|2023-08-29T19:15-0400|datetime"/>
+<attribute NAME="creationTime" VALUE="17-08-23 22:19" OBJECT="org.freeplane.features.format.FormattedDate|2023-08-17T22:19-0400|datetime"/>
+<attribute NAME="fileSize" VALUE="363.074" OBJECT="org.freeplane.features.format.FormattedNumber|363074|#,##0"/>
+</node>
+<node TEXT="Menu-o-Matic-v0.1.6.addon.mm" ID="ID_1389730929" LINK="Menu-o-Matic/Menu-o-Matic-v0.1.6.addon.mm">
+<attribute NAME="lastModifiedTime" VALUE="15-08-23 21:28" OBJECT="org.freeplane.features.format.FormattedDate|2023-08-15T21:28-0400|datetime"/>
+<attribute NAME="lastAccessTime" VALUE="25-08-23 16:33" OBJECT="org.freeplane.features.format.FormattedDate|2023-08-25T16:33-0400|datetime"/>
+<attribute NAME="creationTime" VALUE="08-08-23 19:10" OBJECT="org.freeplane.features.format.FormattedDate|2023-08-08T19:10-0400|datetime"/>
+<attribute NAME="fileSize" VALUE="358.048" OBJECT="org.freeplane.features.format.FormattedNumber|358048|#,##0"/>
+</node>
+<node TEXT="Menu-o-Matic-v0.1.5.addon.mm" ID="ID_1736490742" LINK="Menu-o-Matic/Menu-o-Matic-v0.1.5.addon.mm">
+<attribute NAME="lastModifiedTime" VALUE="08-08-23 20:03" OBJECT="org.freeplane.features.format.FormattedDate|2023-08-08T20:03-0400|datetime"/>
+<attribute NAME="lastAccessTime" VALUE="25-08-23 16:33" OBJECT="org.freeplane.features.format.FormattedDate|2023-08-25T16:33-0400|datetime"/>
+<attribute NAME="creationTime" VALUE="03-07-23 17:42" OBJECT="org.freeplane.features.format.FormattedDate|2023-07-03T17:42-0400|datetime"/>
+<attribute NAME="fileSize" VALUE="308.645" OBJECT="org.freeplane.features.format.FormattedNumber|308645|#,##0"/>
+</node>
+<node TEXT="Menu-o-Matic-v0.1.4.addon.mm" ID="ID_606492663" LINK="Menu-o-Matic/Menu-o-Matic-v0.1.4.addon.mm">
+<attribute NAME="lastModifiedTime" VALUE="16-11-22 17:15" OBJECT="org.freeplane.features.format.FormattedDate|2022-11-16T17:15-0300|datetime"/>
+<attribute NAME="lastAccessTime" VALUE="25-08-23 16:02" OBJECT="org.freeplane.features.format.FormattedDate|2023-08-25T16:02-0400|datetime"/>
+<attribute NAME="creationTime" VALUE="08-05-23 18:34" OBJECT="org.freeplane.features.format.FormattedDate|2023-05-08T18:34-0400|datetime"/>
+<attribute NAME="fileSize" VALUE="298.673" OBJECT="org.freeplane.features.format.FormattedNumber|298673|#,##0"/>
+</node>
 <node TEXT="Menu-o-Matic-v0.1.3.addon.mm" ID="ID_510896369" LINK="Menu-o-Matic/Menu-o-Matic-v0.1.3.addon.mm">
-<attribute NAME="lastModifiedTime" VALUE="12-05-22 11:04" OBJECT="org.freeplane.features.format.FormattedDate|2022-05-12T11:04-0400|datetime"/>
-<attribute NAME="lastAccessTime" VALUE="12-05-22 11:04" OBJECT="org.freeplane.features.format.FormattedDate|2022-05-12T11:04-0400|datetime"/>
-<attribute NAME="creationTime" VALUE="12-05-22 11:04" OBJECT="org.freeplane.features.format.FormattedDate|2022-05-12T11:04-0400|datetime"/>
-<attribute NAME="fileSize" VALUE="287.268" OBJECT="org.freeplane.features.format.FormattedNumber|287268|#,##0"/>
+<attribute NAME="lastModifiedTime" VALUE="12-05-22 13:31" OBJECT="org.freeplane.features.format.FormattedDate|2022-05-12T13:31-0400|dd-MM-yy HH:mm"/>
+<attribute NAME="lastAccessTime" VALUE="25-08-23 16:02" OBJECT="org.freeplane.features.format.FormattedDate|2023-08-25T16:02-0400|dd-MM-yy HH:mm"/>
+<attribute NAME="creationTime" VALUE="08-05-23 18:34" OBJECT="org.freeplane.features.format.FormattedDate|2023-05-08T18:34-0400|dd-MM-yy HH:mm"/>
+<attribute NAME="fileSize" VALUE="297.871" OBJECT="org.freeplane.features.format.FormattedNumber|297871|#,##0"/>
 </node>
 <node TEXT="Menu-o-Matic-v0.1.2.addon.mm" ID="ID_1384176031" LINK="Menu-o-Matic/Menu-o-Matic-v0.1.2.addon.mm">
 <attribute NAME="lastModifiedTime" VALUE="17-01-22 22:37" OBJECT="org.freeplane.features.format.FormattedDate|2022-01-17T22:37-0300|dd-MM-yy HH:mm"/>
-<attribute NAME="lastAccessTime" VALUE="29-01-22 13:16" OBJECT="org.freeplane.features.format.FormattedDate|2022-01-29T13:16-0300|dd-MM-yy HH:mm"/>
-<attribute NAME="creationTime" VALUE="07-08-21 21:36" OBJECT="org.freeplane.features.format.FormattedDate|2021-08-07T21:36-0400|datetime"/>
+<attribute NAME="lastAccessTime" VALUE="25-08-23 16:02" OBJECT="org.freeplane.features.format.FormattedDate|2023-08-25T16:02-0400|dd-MM-yy HH:mm"/>
+<attribute NAME="creationTime" VALUE="08-05-23 18:34" OBJECT="org.freeplane.features.format.FormattedDate|2023-05-08T18:34-0400|dd-MM-yy HH:mm"/>
 <attribute NAME="fileSize" VALUE="278.933" OBJECT="org.freeplane.features.format.FormattedNumber|278933|#,##0"/>
 </node>
 <node TEXT="Menu-o-Matic-v0.1.1.addon.mm" ID="ID_935699412" LINK="Menu-o-Matic/Menu-o-Matic-v0.1.1.addon.mm">
 <attribute NAME="lastModifiedTime" VALUE="07-08-21 21:11" OBJECT="org.freeplane.features.format.FormattedDate|2021-08-07T21:11-0400|dd-MM-yy HH:mm"/>
-<attribute NAME="lastAccessTime" VALUE="10-08-21 09:10" OBJECT="org.freeplane.features.format.FormattedDate|2021-08-10T09:10-0400|dd-MM-yy HH:mm"/>
-<attribute NAME="creationTime" VALUE="02-07-21 11:24" OBJECT="org.freeplane.features.format.FormattedDate|2021-07-02T11:24-0400|datetime"/>
+<attribute NAME="lastAccessTime" VALUE="25-08-23 16:02" OBJECT="org.freeplane.features.format.FormattedDate|2023-08-25T16:02-0400|dd-MM-yy HH:mm"/>
+<attribute NAME="creationTime" VALUE="08-05-23 18:34" OBJECT="org.freeplane.features.format.FormattedDate|2023-05-08T18:34-0400|dd-MM-yy HH:mm"/>
 <attribute NAME="fileSize" VALUE="272.749" OBJECT="org.freeplane.features.format.FormattedNumber|272749|#,##0"/>
 </node>
 <node TEXT="Menu-o-Matic-v0.1.0.addon.mm" ID="ID_213261528" LINK="Menu-o-Matic/Menu-o-Matic-v0.1.0.addon.mm">
 <attribute NAME="lastModifiedTime" VALUE="02-07-21 11:05" OBJECT="org.freeplane.features.format.FormattedDate|2021-07-02T11:05-0400|dd-MM-yy HH:mm"/>
-<attribute NAME="lastAccessTime" VALUE="06-07-21 08:57" OBJECT="org.freeplane.features.format.FormattedDate|2021-07-06T08:57-0400|dd-MM-yy HH:mm"/>
-<attribute NAME="creationTime" VALUE="29-06-21 15:58" OBJECT="org.freeplane.features.format.FormattedDate|2021-06-29T15:58-0400|datetime"/>
+<attribute NAME="lastAccessTime" VALUE="25-08-23 16:02" OBJECT="org.freeplane.features.format.FormattedDate|2023-08-25T16:02-0400|dd-MM-yy HH:mm"/>
+<attribute NAME="creationTime" VALUE="08-05-23 18:34" OBJECT="org.freeplane.features.format.FormattedDate|2023-05-08T18:34-0400|dd-MM-yy HH:mm"/>
 <attribute NAME="fileSize" VALUE="242.563" OBJECT="org.freeplane.features.format.FormattedNumber|242563|#,##0"/>
 </node>
 <node TEXT="Menu-o-Matic-alpha.addon.mm" ID="ID_627207204" LINK="Menu-o-Matic/Menu-o-Matic-alpha.addon.mm">
 <attribute NAME="lastModifiedTime" VALUE="29-06-21 09:55" OBJECT="org.freeplane.features.format.FormattedDate|2021-06-29T09:55-0400|dd-MM-yy HH:mm"/>
-<attribute NAME="lastAccessTime" VALUE="29-06-21 17:18" OBJECT="org.freeplane.features.format.FormattedDate|2021-06-29T17:18-0400|dd-MM-yy HH:mm"/>
-<attribute NAME="creationTime" VALUE="24-06-21 14:28" OBJECT="org.freeplane.features.format.FormattedDate|2021-06-24T14:28-0400|datetime"/>
+<attribute NAME="lastAccessTime" VALUE="25-08-23 16:02" OBJECT="org.freeplane.features.format.FormattedDate|2023-08-25T16:02-0400|dd-MM-yy HH:mm"/>
+<attribute NAME="creationTime" VALUE="08-05-23 18:34" OBJECT="org.freeplane.features.format.FormattedDate|2023-05-08T18:34-0400|dd-MM-yy HH:mm"/>
 <attribute NAME="fileSize" VALUE="234.305" OBJECT="org.freeplane.features.format.FormattedNumber|234305|#,##0"/>
 </node>
 <node TEXT="version.properties" ID="ID_428915476" LINK="Menu-o-Matic/version.properties">
-<attribute NAME="lastModifiedTime" VALUE="12-05-22 11:04" OBJECT="org.freeplane.features.format.FormattedDate|2022-05-12T11:04-0400|dd-MM-yy HH:mm"/>
-<attribute NAME="lastAccessTime" VALUE="12-05-22 11:04" OBJECT="org.freeplane.features.format.FormattedDate|2022-05-12T11:04-0400|dd-MM-yy HH:mm"/>
-<attribute NAME="creationTime" VALUE="24-06-21 14:28" OBJECT="org.freeplane.features.format.FormattedDate|2021-06-24T14:28-0400|datetime"/>
-<attribute NAME="fileSize" VALUE="232" OBJECT="org.freeplane.features.format.FormattedNumber|232|#,##0"/>
+<attribute NAME="lastModifiedTime" VALUE="30-08-23 13:06" OBJECT="org.freeplane.features.format.FormattedDate|2023-08-30T13:06-0400|dd-MM-yy HH:mm"/>
+<attribute NAME="lastAccessTime" VALUE="30-08-23 18:09" OBJECT="org.freeplane.features.format.FormattedDate|2023-08-30T18:09-0400|dd-MM-yy HH:mm"/>
+<attribute NAME="creationTime" VALUE="28-08-23 20:39" OBJECT="org.freeplane.features.format.FormattedDate|2023-08-28T20:39-0400|dd-MM-yy HH:mm"/>
+<attribute NAME="fileSize" VALUE="256" OBJECT="org.freeplane.features.format.FormattedNumber|256|#,##0"/>
 </node>
 <node TEXT="history.md" ID="ID_381928089" LINK="Menu-o-Matic/history.md">
-<attribute NAME="lastModifiedTime" VALUE="12-05-22 11:04" OBJECT="org.freeplane.features.format.FormattedDate|2022-05-12T11:04-0400|datetime"/>
-<attribute NAME="lastAccessTime" VALUE="12-05-22 11:06" OBJECT="org.freeplane.features.format.FormattedDate|2022-05-12T11:06-0400|datetime"/>
-<attribute NAME="creationTime" VALUE="12-05-22 11:04" OBJECT="org.freeplane.features.format.FormattedDate|2022-05-12T11:04-0400|datetime"/>
-<attribute NAME="fileSize" VALUE="746" OBJECT="org.freeplane.features.format.FormattedNumber|746|#,##0"/>
+<attribute NAME="lastModifiedTime" VALUE="30-08-23 13:06" OBJECT="org.freeplane.features.format.FormattedDate|2023-08-30T13:06-0400|dd-MM-yy HH:mm"/>
+<attribute NAME="lastAccessTime" VALUE="30-08-23 18:13" OBJECT="org.freeplane.features.format.FormattedDate|2023-08-30T18:13-0400|dd-MM-yy HH:mm"/>
+<attribute NAME="creationTime" VALUE="28-08-23 20:39" OBJECT="org.freeplane.features.format.FormattedDate|2023-08-28T20:39-0400|dd-MM-yy HH:mm"/>
+<attribute NAME="fileSize" VALUE="2.097" OBJECT="org.freeplane.features.format.FormattedNumber|2097|#,##0"/>
 <richcontent TYPE="NOTE">
 <html>
   <head>
@@ -7526,7 +7552,7 @@ before the actual namefilter setting)
 </node>
 <node TEXT="Menu-o-Matic project.mm" ID="ID_1492418706" LINK="Menu-o-Matic%20project.mm"/>
 <node TEXT="new imported files" STYLE_REF="newFolderImport" ID="ID_1788703280">
-<attribute NAME="log_MDI" VALUE="2" OBJECT="org.freeplane.features.format.FormattedObject|org.freeplane.plugin.script.proxy.ConvertibleNumber&amp;#x7c;2|number:decimal:#0.####"/>
+<attribute NAME="log_MDI" VALUE="2" OBJECT="org.freeplane.features.format.FormattedNumber|2|#0.####"/>
 <richcontent TYPE="NOTE">
 <html>
   <head>
@@ -7534,7 +7560,7 @@ before the actual namefilter setting)
   </head>
   <body>
     <p>
-      Inated:&#xa0;&#xa0;&#xa0;2023-08-30&#xa0;&#xa0;12:16:16
+      Inated:&#xa0;&#xa0;&#xa0;2023-08-30&#xa0;&#xa0;18:26:57
     </p>
     <p>
       
@@ -7579,7 +7605,7 @@ before the actual namefilter setting)
       
     </p>
     <p>
-      0.7 seconds
+      1.3 seconds
     </p>
     <p>
       
@@ -7599,9 +7625,7 @@ before the actual namefilter setting)
   </body>
 </html>
 </richcontent>
-<node TEXT="Menu-o-Matic" ID="ID_940860362" LINK="Menu-o-Matic/">
-<node TEXT="Menu-o-Matic-v0.1.8.addon.mm" ID="ID_331038225" LINK="Menu-o-Matic/Menu-o-Matic-v0.1.8.addon.mm"/>
-</node>
+<node TEXT="Menu-o-Matic" ID="ID_940860362" LINK="#ID_1589076031"/>
 </node>
 <node TEXT="versión instalada en AddOns" STYLE_REF="locked" FOLDED="true" ID="ID_1424141649">
 <node TEXT="menuOMatic" ID="ID_1859181061"><richcontent TYPE="DETAILS">
