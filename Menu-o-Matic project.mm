@@ -1,7 +1,7 @@
 <map version="freeplane 1.11.5">
 <!--To view this file, download free mind mapping software Freeplane from https://www.freeplane.org -->
 <attribute_registry SHOW_ATTRIBUTES="selected"/>
-<node TEXT="Menu-o-Matic project" LOCALIZED_STYLE_REF="AutomaticLayout.level.root" FOLDED="false" ID="ID_551814049" LINK="../../../../../Respaldo%20EF/ef/Documentos%20con%20macros/08%20Freemind%20Groovy/scripts/ScriptsEnComputadorYDesarrollosEdo%20v1.9.mm" MAX_WIDTH="7 cm"><hook NAME="MapStyle" background="#f9f9f8">
+<node TEXT="Menu-o-Matic project" LOCALIZED_STYLE_REF="AutomaticLayout.level.root" FOLDED="false" ID="ID_551814049" LINK="../../../../../Respaldo%20EF/ef/Documentos%20con%20macros/08%20Freemind%20Groovy/scripts/ScriptsEnComputadorYDesarrollosEdo%20v1.9.mm" MAX_WIDTH="7 cm"><hook NAME="MapStyle" background="#f9f9f8" zoom="0.8">
     <conditional_styles>
         <conditional_style ACTIVE="true" STYLE_REF="customMenuPackage" LAST="false">
             <attribute_exists_condition ATTRIBUTE="tbActions"/>
@@ -602,6 +602,7 @@ before the actual namefilter setting)
     </p>
   </body>
 </html></richcontent>
+<font BOLD="false" STRIKETHROUGH="false" ITALIC="false"/>
 <node TEXT="lib" STYLE_REF="Organizador" FOLDED="true" ID="ID_1649002022">
 <attribute NAME="projectCode" VALUE="lib"/>
 <node TEXT="src" STYLE_REF="file_folder" ID="ID_1777746420" LINK="Menu-o-Matic/src/">
@@ -3720,7 +3721,7 @@ before the actual namefilter setting)
   </body>
 </html></richcontent>
 </node>
-<node TEXT="get Map/Branch used icons actions" STYLE_REF="nextTask" FOLDED="true" ID="ID_232294406">
+<node TEXT="get Map/Branch used icons actions" STYLE_REF="nextTask" ID="ID_232294406">
 <node TEXT="present icons in map/branch as buttons" ID="ID_1197565766" VGAP_QUANTITY="2 px"><richcontent TYPE="NOTE">
 <html>
   <head>
@@ -4449,7 +4450,56 @@ before the actual namefilter setting)
 </html></richcontent>
 </node>
 </node>
-<node TEXT="Navigating" ID="ID_1591150376"/>
+<node TEXT="Navigating" ID="ID_1591150376">
+<node TEXT="xx" ID="ID_1352098386">
+<node TEXT="xx" ID="ID_1252458430">
+<icon BUILTIN="ksmiletris"/>
+</node>
+<node TEXT="fff" ID="ID_1903814517">
+<icon BUILTIN="clanbomber"/>
+</node>
+<node TEXT="&lt;-- -&apos;emoji-1F4B2&apos;" ID="ID_877029719">
+<icon BUILTIN="emoji-1F4B2"/>
+</node>
+<node TEXT="&lt;-- -&apos;emoji-27A1&apos;" ID="ID_1428089778">
+<icon BUILTIN="emoji-27A1"/>
+</node>
+<node TEXT="&lt;-- -&apos;forward&apos;" ID="ID_332609818">
+<icon BUILTIN="forward"/>
+</node>
+<node TEXT="&lt;-- -&apos;emoji-1F333&apos;" ID="ID_94127276">
+<icon BUILTIN="emoji-1F333"/>
+</node>
+<node TEXT="&lt;-- -&apos;emoji-1F525&apos;" ID="ID_962943316">
+<icon BUILTIN="emoji-1F525"/>
+</node>
+<node TEXT="&lt;-- -&apos;emoji-1F995&apos;" ID="ID_1039484867">
+<icon BUILTIN="emoji-1F995"/>
+</node>
+<node TEXT="&lt;-- -&apos;bookmarks/Bookmark 1&apos;" ID="ID_1511844389">
+<icon BUILTIN="bookmarks/Bookmark 1"/>
+</node>
+<node TEXT="&lt;-- -&apos;folder-black-48dp - copia&apos;" ID="ID_1009395801">
+<icon BUILTIN="folder-black-48dp - copia"/>
+</node>
+<node TEXT="&lt;-- -&apos;Importancia/Imp_3&apos;" ID="ID_993484654">
+<icon BUILTIN="Importancia/Imp_3"/>
+</node>
+<node TEXT="used icons (as buttons)" ID="ID_163342429">
+<node TEXT="I am happy" ID="ID_21212774" LINK="menuitem:_IconAction.ksmiletris"/>
+<node TEXT="Dangerous" ID="ID_548682703" LINK="menuitem:_IconAction.clanbomber"/>
+<node TEXT="heavy dollar sign" ID="ID_1270804842" LINK="menuitem:_IconAction.emoji-1F4B2"/>
+<node TEXT="right arrow" ID="ID_1664638010" LINK="menuitem:_IconAction.emoji-27A1"/>
+<node TEXT="Forward" ID="ID_1867774768" LINK="menuitem:_IconAction.forward"/>
+<node TEXT="deciduous tree" ID="ID_134346068" LINK="menuitem:_IconAction.emoji-1F333"/>
+<node TEXT="fire" ID="ID_847172239" LINK="menuitem:_IconAction.emoji-1F525"/>
+<node TEXT="sauropod" ID="ID_1770771070" LINK="menuitem:_IconAction.emoji-1F995"/>
+<node TEXT="Bookmark 1" ID="ID_1567295372" LINK="menuitem:_IconAction.bookmarks/Bookmark%201"/>
+<node TEXT="folder-black-48dp - copia" ID="ID_230857894" LINK="menuitem:_IconAction.folder-black-48dp%20-%20copia"/>
+<node TEXT="IconAction.Importancia/Imp_3" OBJECT="org.codehaus.groovy.runtime.GStringImpl|IconAction.Importancia/Imp_3" ID="ID_1936911724" LINK="menuitem:_IconAction.Importancia/Imp_3"/>
+</node>
+</node>
+</node>
 <node TEXT="borradores / tareas" STYLE_REF="Organizador" FOLDED="true" ID="ID_266728019" VSHIFT_QUANTITY="-0.75 pt">
 <node TEXT="design" STYLE_REF="Organizador" ID="ID_1602015427">
 <node TEXT="combinado: trae primero submenu y si repite trae botones" ID="ID_1020191197">
