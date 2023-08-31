@@ -27,6 +27,8 @@ def runOnStartingFreeplane =  config.getBooleanProperty('menuOMatic_runOnStartin
 
 //if both true, then it executes the script
 if(isAddOnActive && runOnStartingFreeplane){
+    menuUtils.executeMenuItems(['addons.menuOMatic.1launchMenuOMaticDialog_on_single_node'])
+
     println '- opening AutoLaunchCustomMenus from following mind maps:'
     def mapas = c.getOpenMindMaps()
     
@@ -36,8 +38,6 @@ if(isAddOnActive && runOnStartingFreeplane){
 
     def controller = Controller.currentController
     controller.addMapLifeCycleListener(new MoMMapCreationListener())
-    
-    menuUtils.executeMenuItems(['addons.menuOMatic.1launchMenuOMaticDialog_on_single_node'])
 
 }
 
