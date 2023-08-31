@@ -23,6 +23,7 @@ import org.freeplane.core.util.TextUtils            as textUtils
 import org.freeplane.features.map.MapModel
 import org.freeplane.plugin.script.proxy.MapProxy
 import org.freeplane.plugin.script.proxy.ScriptUtils
+import org.freeplane.plugin.script.FreeplaneScriptBaseClass.ConfigProperties
 
 import edofro.menuomatic.DialogKeyboardNavigation   as DKBN
 import edofro.menuomatic.LaunchTabPane
@@ -42,6 +43,7 @@ class LaunchDialog{
     static final tb                         = PM.TB
     static final scriptStr                  = PM.scriptStr
     static final separatorStr               = PM.separatorStr
+    static final config                     = new ConfigProperties()
 
     static PM.MenuData md
     static Dimension prefDimension
@@ -217,8 +219,14 @@ class LaunchDialog{
         tb.setFloatable(true)
         tb.margin = new Insets(0, 0, 5, 0)
         tb.setBorderPainted(true)
-        ui.addTitledBorder(tb,md.title,10f)
-        if(md.fgColor) {tb.border.outsideBorder.titleColor = Color.decode(md.fgColor)}
+        def useTitledBorders =  config.getBooleanProperty('menuOMatic_useTitledBorders',false)
+        if(useTitledBorders) {
+            ui.addTitledBorder(tb, md.title, 10f)
+            if (md.fgColor) {
+                tb.border.outsideBorder.titleColor = Color.decode(md.fgColor)
+            }
+        }
+
         if(md.color) {tb.background = Color.decode(md.color)}
         md.actions.eachWithIndex{ a, j ->
             tb.add(creaBoton(a, j))

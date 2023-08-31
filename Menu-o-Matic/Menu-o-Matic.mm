@@ -3,9 +3,9 @@
 <node TEXT="Menu-o-Matic" ID="ID_696401721" LINK="https://github.com/EdoFro/Freeplane_Menu-o-Matic" BACKGROUND_COLOR="#97c7dc">
 <font SIZE="16" BOLD="true" ITALIC="true"/>
 <hook NAME="AutomaticEdgeColor" COUNTER="17" RULE="ON_BRANCH_CREATION"/>
-<attribute_layout NAME_WIDTH="112.5 pt" VALUE_WIDTH="266.99999 pt"/>
+<attribute_layout NAME_WIDTH="104.25 pt" VALUE_WIDTH="233.24999 pt"/>
 <attribute NAME="name" VALUE="menuOMatic"/>
-<attribute NAME="version" VALUE="v0.1.8"/>
+<attribute NAME="version" VALUE="v0.1.9"/>
 <attribute NAME="author" VALUE="EdoFro"/>
 <attribute NAME="freeplaneVersionFrom" VALUE="v1.9.0"/>
 <attribute NAME="freeplaneVersionTo" VALUE=""/>
@@ -85,8 +85,7 @@
       </li>
     </ul>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 <hook NAME="MapStyle" background="#f9f9f8">
     <properties show_icon_for_attributes="true" edgeColorConfiguration="#808080ff,#ff0000ff,#0000ffff,#00ff00ff,#ff00ffff,#00ffffff,#7c0000ff,#00007cff,#007c00ff,#7c007cff,#007c7cff,#7c7c00ff" mapUsesOwnSaveOptions="true" save_modification_times="false" save_last_visited_node="default" show_note_icons="true" save_folding="never_save_folding" fit_to_viewport="false"/>
 
@@ -188,8 +187,7 @@
       To translate the description you have to define a translation for the key 'addons.${name}.description'.
     </p>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 <node TEXT="Menu-o-Matic for Freeplane!!&#xa;Menu-o-Matic is an AddOn for Freeplane that gives the user the possibility to create his/her own dialogs with the menu items he/she prefers.&#xa;It can also include scripts." ID="ID_1642042079"/>
 </node>
 <node TEXT="changes" POSITION="top_or_left" ID="ID_1349799607">
@@ -204,8 +202,7 @@
       Change log of this add-on: append one node for each noteworthy version and put the details for each version into a child node.
     </p>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 <node TEXT="v0.1.0" ID="ID_674021294">
 <node TEXT="initial release" ID="ID_17370257"/>
 </node>
@@ -266,6 +263,10 @@
 <node TEXT="Added menu separators" ID="ID_261454163"/>
 <node TEXT="Toolbar title can be modified in dialog" ID="ID_419612997"/>
 </node>
+<node TEXT="v0.1.9" ID="ID_1463454153">
+<node TEXT="Corrected button background color (bug in some L&amp;F)" ID="ID_1635777247"/>
+<node TEXT="Added preference to (in)activate TitledBorders" ID="ID_1456132538"/>
+</node>
 </node>
 <node TEXT="license" POSITION="top_or_left" ID="ID_492801974">
 <edge COLOR="#00ff00"/>
@@ -285,8 +286,7 @@
       The License text has to be entered as a child of the <i>'license'</i>&#xa0;node, either as plain text or as HTML.
     </p>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 <node TEXT="MIT License&#xa;&#xa;Copyright (c) 2021 Eduardo Frohlich.&#xa;&#xa;Permission is hereby granted, free of charge, to any person obtaining a copy&#xa;of this software and associated documentation files (the &quot;Software&quot;), to deal&#xa;in the Software without restriction, including without limitation the rights&#xa;to use, copy, modify, merge, publish, distribute, sublicense, and/or sell&#xa;copies of the Software, and to permit persons to whom the Software is&#xa;furnished to do so, subject to the following conditions:&#xa;&#xa;The above copyright notice and this permission notice shall be included in all&#xa;copies or substantial portions of the Software.&#xa;&#xa;THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR&#xa;IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,&#xa;FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE&#xa;AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER&#xa;LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,&#xa;OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE&#xa;SOFTWARE." ID="ID_1379820487" VSHIFT_QUANTITY="-0.75 pt"/>
 </node>
 <node TEXT="preferences.xml" POSITION="top_or_left" ID="ID_809015286">
@@ -397,12 +397,12 @@
       </tr>
     </table>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 <attribute_layout NAME_WIDTH="109.5 pt" VALUE_WIDTH="51.75 pt"/>
 <attribute NAME="runOnStartingFreeplane" VALUE="boolean"/>
 <attribute NAME="showMenuOMaticMenuLabels" VALUE="boolean"/>
-<node TEXT="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#xa;&lt;preferences_structure&gt;&#xa;         &lt;tabbed_pane&gt;&#xa;                  &lt;tab name=&quot;plugins&quot;&gt;&#xa;                            &lt;separator name = &quot;${name}&quot;&gt;&#xa;                                    &lt;boolean name = &quot;${name}_runOnStartingFreeplane&quot;/&gt;&#xa;                                    &lt;boolean name = &quot;${name}_showMenuOMaticMenuLabels&quot;/&gt;&#xa;                           &lt;/separator&gt;&#xa;                  &lt;/tab&gt;&#xa;         &lt;/tabbed_pane&gt;&#xa;&lt;/preferences_structure&gt;" ID="ID_1133880285" MAX_WIDTH="20 cm"/>
+<attribute NAME="useTitledBorders" VALUE="boolean"/>
+<node TEXT="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#xa;&lt;preferences_structure&gt;&#xa;         &lt;tabbed_pane&gt;&#xa;                  &lt;tab name=&quot;plugins&quot;&gt;&#xa;                            &lt;separator name = &quot;${name}&quot;&gt;&#xa;                                    &lt;boolean name = &quot;${name}_runOnStartingFreeplane&quot;/&gt;&#xa;                                    &lt;boolean name = &quot;${name}_showMenuOMaticMenuLabels&quot;/&gt;&#xa;                                    &lt;boolean name = &quot;${name}_useTitledBorders&quot;/&gt;&#xa;                           &lt;/separator&gt;&#xa;                  &lt;/tab&gt;&#xa;         &lt;/tabbed_pane&gt;&#xa;&lt;/preferences_structure&gt;" ID="ID_1133880285" MAX_WIDTH="20 cm"/>
 </node>
 <node TEXT="default.properties" POSITION="top_or_left" ID="ID_252406354">
 <edge COLOR="#00ffff"/>
@@ -424,11 +424,11 @@
       </li>
     </ul>
   </body>
-</html>
-</richcontent>
-<attribute_layout NAME_WIDTH="182.24999 pt" VALUE_WIDTH="39.75 pt"/>
+</html></richcontent>
+<attribute_layout NAME_WIDTH="166.5 pt" VALUE_WIDTH="37.5 pt"/>
 <attribute NAME="${name}_runOnStartingFreeplane" VALUE="true"/>
 <attribute NAME="${name}_showMenuOMaticMenuLabels" VALUE="true"/>
+<attribute NAME="${name}_useTitledBorders" VALUE="true"/>
 </node>
 <node TEXT="translations" POSITION="top_or_left" ID="ID_971883114">
 <edge COLOR="#7c0000"/>
@@ -462,17 +462,17 @@
       </li>
     </ul>
   </body>
-</html>
-</richcontent>
-<node TEXT="en" ID="ID_43497759">
-<attribute_layout NAME_WIDTH="262.49999 pt" VALUE_WIDTH="456.74999 pt"/>
+</html></richcontent>
+<node TEXT="en" ID="ID_78974084">
+<attribute_layout NAME_WIDTH="234.74999 pt" VALUE_WIDTH="411.74999 pt"/>
 <attribute NAME="addons.${name}.lauchDialogFromNodes" VALUE="launch menu dialog directly"/>
 <attribute NAME="addons.${name}.1launchMenuOMaticDialog" VALUE="launch Menu-o-Matic dialog"/>
-<attribute NAME="OptionPanel.${name}_showMenuOMaticMenuLabels" VALUE="show buttons labels in Menu-o-Matic toolbar"/>
+<attribute NAME="OptionPanel.${name}_showMenuOMaticMenuLabels" VALUE="Show buttons labels in Menu-o-Matic toolbar"/>
 <attribute NAME="addons.${name}.launchCustomDialog" VALUE="launch menu dialog from package"/>
 <attribute NAME="addons.${name}.listCustomMenusFromMap" VALUE="list menu packages from map"/>
 <attribute NAME="addons.${name}" VALUE="Menu-o-Matic"/>
 <attribute NAME="addons.${name}.packCustomMenu" VALUE="pack menu"/>
+<attribute NAME="OptionPanel.${name}_useTitledBorders.tooltip" VALUE="if checked, it will show the name of the toolbar as its title"/>
 <attribute NAME="OptionPanel.${name}_runOnStartingFreeplane" VALUE="Open auto launch menus"/>
 <attribute NAME="addons.${name}.launchCustomToolTab" VALUE="Launch custom tool tab"/>
 <attribute NAME="addons.${name}.changePackParameters" VALUE="Change pack parameters"/>
@@ -481,6 +481,7 @@
 <attribute NAME="OptionPanel.${name}_runOnStartingFreeplane.tooltip" VALUE="Automatically opens all Custom Menus marked as AutoLaunch from all opened mindmaps on Freeplane start"/>
 <attribute NAME="OptionPanel.${name}_showMenuOMaticMenuLabels.tooltip" VALUE="Defines if MoM toolbar shows   icons and labels   or   icons only"/>
 <attribute NAME="addons.${name}.getMenuCommand" VALUE="menu item under mouse as new node"/>
+<attribute NAME="OptionPanel.${name}_useTitledBorders" VALUE="Use TitledBorders for each toolbar"/>
 <attribute NAME="addons.${name}.insertMenuOMaticPackage" VALUE="Insert Menu-o-Matic package node"/>
 <attribute NAME="addons.${name}.listCustomDialogs" VALUE="list opened menu dialogs"/>
 <attribute NAME="addons.${name}.unpackCustomMenu" VALUE="unpack menu"/>
@@ -499,8 +500,7 @@
       List of files and/or directories to remove on uninstall
     </p>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 <attribute_layout NAME_WIDTH="42.75 pt" VALUE_WIDTH="316.49999 pt"/>
 <attribute NAME="delete" VALUE="${installationbase}/addons/${name}.script.xml"/>
 <attribute NAME="delete" VALUE="${installationbase}/addons/${name}/scripts/launchCustomDialog.groovy"/>
@@ -649,8 +649,7 @@
       &#xa0;&#xa0;- In any case set execute_scripts_without_asking to true unless you want to annoy users.
     </p>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 <node TEXT="getMenuCommand.groovy" ID="ID_1857102818">
 <attribute_layout NAME_WIDTH="204.74999 pt" VALUE_WIDTH="184.49999 pt"/>
 <attribute NAME="menuTitleKey" VALUE="addons.${name}.getMenuCommand"/>
@@ -846,8 +845,7 @@
       &#xa0;- The files will be processed in the sequence as seen in the map.
     </p>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 <node TEXT="Menu-o-Matic.jar" ID="ID_257757258"/>
 </node>
 <node TEXT="zips" POSITION="bottom_or_right" ID="ID_532152967">
@@ -886,8 +884,7 @@
       &#xa0;- The files will be processed in the sequence as seen in the map.
     </p>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 <node TEXT="doc" ID="ID_108012296"/>
 <node TEXT="templates" ID="ID_1212139449"/>
 <node TEXT="scripts" ID="ID_162715608"/>
@@ -925,8 +922,7 @@
       Images can be added automatically by releaseAddOn.groovy or must be uploaded into the map via the script <i>Tools-&gt;Scripts-&gt;Insert Binary</i>&#xa0;since they have to be (base64) encoded as simple strings.
     </p>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 <node TEXT="menuOMatic-screenshot-1.png" ID="ID_828445446"/>
 <node TEXT="menuOMatic-icon.png" STYLE_REF="freshNew" ID="ID_787195450">
 <richcontent TYPE="DETAILS" CONTENT-TYPE="plain/markdown"/>
@@ -945,8 +941,7 @@
   <body>
     Direct links to menu commands
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 <node TEXT="Build add-on" ID="ID_1006867388" LINK="menuitem:_addons.devtools.checkAddOn_on_single_node"/>
 <node TEXT="Package add-on for publication" ID="ID_1119353524" LINK="menuitem:_addons.devtools.releaseAddOn_on_single_node"/>
 <node TEXT="Export Translations" ID="ID_1088411781" LINK="menuitem:_addons.devtools.exportTranslations_on_single_node"/>

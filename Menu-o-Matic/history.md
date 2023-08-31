@@ -3,6 +3,7 @@
 ## v0.1.9
 
 * Corrected button background color (bug in some L&F)
+* Added preference to (in)activate TitledBorders
 ## v0.1.8
 
 * init script opens Menu o Matic toolbar
