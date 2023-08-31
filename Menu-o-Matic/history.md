@@ -1,5 +1,9 @@
 # History
 
+## v0.1.10
+
+* Unpacking powerButtons now gets the labels for icon buttons too
+
 ## v0.1.9
 
 * Corrected button background color (bug in some L&F)

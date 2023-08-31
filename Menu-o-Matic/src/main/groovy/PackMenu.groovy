@@ -269,7 +269,7 @@ class PackMenu{
             } else if (acc.contains(';')){
                 markAsPowerButton(nodo, true)
                 acc.split(';')each{a ->
-                    nodo.createChild(TextUtils.getText("${a}.text",null)?:TextUtils.getText("${a}.tooltip",null)?:'').link.text = "menuitem:_${a}"
+                    nodo.createChild(getLabelForAccion(a)).link.text = "menuitem:_${a.replace(' ','%20')}"
                 }
             } else {
                 nodo.link.text = "menuitem:_${acc}"
@@ -398,6 +398,29 @@ class PackMenu{
 
     def static getNodeIcon(n){
         return n.icons?"IconAction.${n.icons.first}":null
+    }
+
+    def static getLabelForAccion(acc){
+        def label = TextUtils.getText("${acc}.text",null)?:TextUtils.getText("${acc}.tooltip",null)
+        label ?= getLabelFromMenuTree(menuUtils.createMenuEntryTree("icons").children(),acc)
+        label ?= acc
+    }
+
+    def static getLabelFromMenuTree(nodos, accKey){
+        def lab
+        nodos.any{ n ->
+            def mObj = n.getUserObject()
+            def key = mObj.getKey()
+            if(key == accKey){
+                lab = mObj.getLabel()
+                return true
+            }
+            if (!n.isLeaf()){
+                lab = getLabelFromMenuTree(n.children(),accKey)
+                if(lab){return true}
+            }
+        }
+        return lab
     }
 
     def static respuestaDialogo(options,msg,title){
