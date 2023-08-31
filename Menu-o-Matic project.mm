@@ -3707,8 +3707,7 @@ before the actual namefilter setting)
       PM.markAsPowerButton(node, !PM.isPowerButtonNode(node))
     </p>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 <richcontent TYPE="DETAILS">
 <html>
   <head>
@@ -3719,8 +3718,7 @@ before the actual namefilter setting)
       .groovy
     </p>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 </node>
 <node TEXT="get Map/Branch used icons actions" STYLE_REF="nextTask" FOLDED="true" ID="ID_232294406">
 <node TEXT="present icons in map/branch as buttons" ID="ID_1197565766" VGAP_QUANTITY="2 px"><richcontent TYPE="NOTE">
@@ -6357,7 +6355,7 @@ before the actual namefilter setting)
 </node>
 <node TEXT="última versión no funciona con groovy 3.x.txt" ID="ID_1548801217" LINK="Menu-o-Matic/última%20versión%20no%20funciona%20con%20groovy%203.x.txt"/>
 </node>
-<node TEXT="resources" STYLE_REF="file_folder" FOLDED="true" ID="ID_928846385" LINK="resources/">
+<node TEXT="resources" STYLE_REF="file_folder" ID="ID_928846385" LINK="resources/">
 <attribute NAME="lastModifiedTime" VALUE="12-07-21 18:52" OBJECT="org.freeplane.features.format.FormattedDate|2021-07-12T18:52-0400|dd-MM-yy HH:mm"/>
 <attribute NAME="lastAccessTime" VALUE="07-08-21 21:36" OBJECT="org.freeplane.features.format.FormattedDate|2021-08-07T21:36-0400|dd-MM-yy HH:mm"/>
 <attribute NAME="creationTime" VALUE="10-03-21 10:51" OBJECT="org.freeplane.features.format.FormattedDate|2021-03-10T10:51-0300|datetime"/>
@@ -6509,6 +6507,7 @@ before the actual namefilter setting)
   </body>
 </html></richcontent>
 </node>
+<node TEXT="Menu-o-Matic examples.mm" STYLE_REF="freshNew" ID="ID_1769344524" LINK="resources/Menu-o-Matic%20examples.mm"/>
 </node>
 <node TEXT="README.md" ID="ID_925151699" LINK="README.md" STYLE="bubble">
 <edge COLOR="#ff0000"/>
@@ -7587,7 +7586,7 @@ before the actual namefilter setting)
 </node>
 <node TEXT="Menu-o-Matic project.mm" ID="ID_1492418706" LINK="Menu-o-Matic%20project.mm"/>
 <node TEXT="new imported files" STYLE_REF="newFolderImport" ID="ID_1788703280">
-<attribute NAME="log_MDI" VALUE="2" OBJECT="org.freeplane.features.format.FormattedObject|org.freeplane.plugin.script.proxy.ConvertibleNumber&amp;#x7c;2|number:decimal:#0.####"/>
+<attribute NAME="log_MDI" VALUE="2" OBJECT="org.freeplane.features.format.FormattedNumber|2|#0.####"/>
 <richcontent TYPE="NOTE">
 <html>
   <head>
@@ -7595,7 +7594,7 @@ before the actual namefilter setting)
   </head>
   <body>
     <p>
-      Inated:&#xa0;&#xa0;&#xa0;2023-08-31&#xa0;&#xa0;12:25:39
+      Inated:&#xa0;&#xa0;&#xa0;2023-08-31&#xa0;&#xa0;13:56:30
     </p>
     <p>
       
@@ -7640,7 +7639,7 @@ before the actual namefilter setting)
       
     </p>
     <p>
-      1 seconds
+      0.9 seconds
     </p>
     <p>
       
@@ -7658,8 +7657,8 @@ before the actual namefilter setting)
       No failed operation in drive
     </p>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
+<node TEXT="resources" ID="ID_1461192023" LINK="#ID_928846385"/>
 </node>
 <node TEXT="versión instalada en AddOns" STYLE_REF="locked" FOLDED="true" ID="ID_1424141649">
 <node TEXT="menuOMatic" ID="ID_1859181061"><richcontent TYPE="DETAILS">
