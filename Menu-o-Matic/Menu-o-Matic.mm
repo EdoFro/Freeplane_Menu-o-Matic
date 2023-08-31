@@ -266,6 +266,7 @@
 <node TEXT="v0.1.9" ID="ID_1463454153">
 <node TEXT="Corrected button background color (bug in some L&amp;F)" ID="ID_1635777247"/>
 <node TEXT="Added preference to (in)activate TitledBorders" ID="ID_1456132538"/>
+<node TEXT="Added popup menu to remove toolbars" ID="ID_1610581537"/>
 </node>
 </node>
 <node TEXT="license" POSITION="top_or_left" ID="ID_492801974">

@@ -1,5 +1,8 @@
 package edofro.menuomatic
 
+import javax.swing.JPopupMenu
+import javax.swing.JToolBar
+import javax.swing.SwingUtilities
 import java.awt.Color
 import java.awt.Dimension
 import java.awt.GridLayout
@@ -212,11 +215,11 @@ class LaunchDialog{
         setUpToolbar(toolB)
     }
 
-    def static setUpToolbar(tb) {
-        //def theLayout = md.showLabels?new GridLayout(0,1): ToolbarLayout.vertical()
-        def theLayout = md.showLabels?new BoxLayout(tb, BoxLayout.PAGE_AXIS): ToolbarLayout.vertical()  // TODO : BoxLayout.PAGE_AXIS
+    def static setUpToolbar(JToolBar tb) {
+        def theLayout = md.showLabels?new BoxLayout(tb, BoxLayout.PAGE_AXIS): ToolbarLayout.vertical()
         tb.setLayout(theLayout)
         tb.setFloatable(true)
+
         tb.margin = new Insets(0, 0, 5, 0)
         tb.setBorderPainted(true)
         def useTitledBorders =  config.getBooleanProperty('menuOMatic_useTitledBorders',false)
@@ -228,9 +231,28 @@ class LaunchDialog{
         }
 
         if(md.color) {tb.background = Color.decode(md.color)}
+
+        def pop = swingBuilder.popupMenu(){
+            menuItem(
+                    text : 'Remove toolbar',
+                    actionPerformed     : { e ->
+                      //  println e.source.class
+                      //  println tb.name
+                      //  println SwingUtilities.getAncestorNamed(LaunchTabPane.MOM_CONTAINER_NAME,tb).class
+
+                        def momContainer = SwingUtilities.getAncestorNamed(LaunchTabPane.MOM_CONTAINER_NAME,tb)
+                        momContainer.remove(tb)
+                        momContainer.revalidate()
+                        momContainer.repaint()
+                    }
+            )
+        }
+        tb.setComponentPopupMenu(pop)
+
         md.actions.eachWithIndex{ a, j ->
             tb.add(creaBoton(a, j))
         }
+
         tb.revalidate()
         tb.repaint()
     }
@@ -359,6 +381,7 @@ class LaunchDialog{
             minimumSize         : minD,
             margin              : new Insets(0,2,0,2),
             borderPainted       : false,
+            inheritsPopupMenu   : true,
             actionPerformed     : actPerf
         )
         return boton
