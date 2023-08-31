@@ -319,8 +319,8 @@ class LaunchDialog{
     }
 
     def static creaBotonDesdeScript(acc,i){
-        def text        = md.showLabels?textoLabel(md.labels[i]):null
         def icon        = md.showIcons?menuUtils.getMenuItemIcon(md.icons[i]):null
+        def text        = (md.showLabels || !icon)?textoLabel(md.labels[i]):null
         def toolTipText = md.labels[i]
         def prefD       = prefDimension
         def minD        = minDimension
@@ -352,8 +352,8 @@ class LaunchDialog{
     }
 
     def static creaBotonDesdeUI(acc, i){
-        def text = md.showLabels?textoLabel(md.labels[i]):null
         def icon = md.showIcons?menuUtils.getMenuItemIcon(md.icons[i]):null
+        def text = (md.showLabels || !icon)?textoLabel(md.labels[i]):null
         def toolTipText = md.labels[i]
         def prefD= prefDimension
         def minD = minDimension
