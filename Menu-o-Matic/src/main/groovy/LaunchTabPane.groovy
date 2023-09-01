@@ -88,7 +88,7 @@ class LaunchTabPane {
         Dimension prefD = null //new Dimension(20,20)
         //region def closeBtn
         def closeBtn = getCloseBtn(prefD, minD)
-        def closeToolbarBtn = getCloseToolbarBtn(prefD, minD)
+        //def closeToolbarBtn = getCloseToolbarBtn(prefD, minD) //close toolbar button is no longer necessary (now popupmenu)
         def MoMInfoBtn = getMoMInfoBtn(prefD, minD)
 //        def tBar = new MoMToolbar(MOM_TOPBAR, SwingConstants.VERTICAL)
         def tBar = new JPanel()
@@ -97,7 +97,7 @@ class LaunchTabPane {
         tBar.add(MoMInfoBtn)
         //tBar.add(Box.createHorizontalGlue())
         tBar.add(Box.createRigidArea(new Dimension(12,0)))
-        tBar.add(closeToolbarBtn)
+        //tBar.add(closeToolbarBtn) //close toolbar button is no longer necessary (now popupmenu)
         tBar.add(closeBtn)
         if(tabName) tBar.add(new JLabel(tabName))
 
@@ -118,29 +118,30 @@ class LaunchTabPane {
         return closeBtn
     }
 
-    static JButton getCloseToolbarBtn(prefD, minD){
-        JButton closeToolbarBtn = LaunchDialog.nuevoBoton(
-                null, closeToolbarIcon, 'Remove a toolbar from this Tab', prefD, minD,
-                { e ->
-                    def i = 1
-                    println "closeToolbarBtn ${i++}"
-                    def momContainer = e.source.parent.parent.components.find{it.name == MOM_CONTAINER_NAME}//.parent
-                    println "closeToolbarBtn ${i++}"
-                    def toolbars = momContainer.components.findAll{it?.class?.simpleName=='MoMToolbar'}
-                    println "closeToolbarBtn ${i++}"
-                    def toolbarsNames = toolbars*.name - MOM_TOPBAR
-                    println "closeToolbarBtn ${i++}"
-                    def tbName = PackMenu.respuestaDialogo(toolbarsNames,'Select toolbar to remove', 'Menu-o-Matic')
-                    def toolbarToRemove = toolbars.find{it.name == tbName}
-                    if (toolbarToRemove) {
-                        momContainer.remove(toolbarToRemove)
-                    }
-                    momContainer.revalidate()
-                    momContainer.repaint()
-                }
-        )
-        return closeToolbarBtn
-    }
+ //close toolbar button is no longer necessary (now popupmenu)
+ //   static JButton getCloseToolbarBtn(prefD, minD){
+ //       JButton closeToolbarBtn = LaunchDialog.nuevoBoton(
+ //               null, closeToolbarIcon, 'Remove a toolbar from this Tab', prefD, minD,
+ //               { e ->
+ //                   def i = 1
+ //                   println "closeToolbarBtn ${i++}"
+ //                   def momContainer = e.source.parent.parent.components.find{it.name == MOM_CONTAINER_NAME}//.parent
+ //                   println "closeToolbarBtn ${i++}"
+ //                   def toolbars = momContainer.components.findAll{it?.class?.simpleName=='MoMToolbar'}
+ //                   println "closeToolbarBtn ${i++}"
+ //                   def toolbarsNames = toolbars*.name - MOM_TOPBAR
+ //                   println "closeToolbarBtn ${i++}"
+ //                   def tbName = PackMenu.respuestaDialogo(toolbarsNames,'Select toolbar to remove', 'Menu-o-Matic')
+ //                   def toolbarToRemove = toolbars.find{it.name == tbName}
+ //                   if (toolbarToRemove) {
+ //                       momContainer.remove(toolbarToRemove)
+ //                   }
+ //                   momContainer.revalidate()
+ //                   momContainer.repaint()
+ //               }
+ //       )
+ //       return closeToolbarBtn
+ //   }
 
     static JButton getMoMInfoBtn(prefD, minD){
         JButton  momInfoBtn = LaunchDialog.nuevoBoton(
