@@ -603,7 +603,7 @@ before the actual namefilter setting)
   </body>
 </html></richcontent>
 <font BOLD="false" STRIKETHROUGH="false" ITALIC="false"/>
-<node TEXT="lib" STYLE_REF="Organizador" FOLDED="true" ID="ID_1649002022">
+<node TEXT="lib" STYLE_REF="Organizador" ID="ID_1649002022">
 <attribute NAME="projectCode" VALUE="lib"/>
 <node TEXT="src" STYLE_REF="file_folder" ID="ID_1777746420" LINK="Menu-o-Matic/src/">
 <attribute NAME="lastModifiedTime" VALUE="24-06-21 13:31" OBJECT="org.freeplane.features.format.FormattedDate|2021-06-24T13:31-0400|datetime"/>
@@ -2473,29 +2473,7 @@ before the actual namefilter setting)
     </p>
   </body>
 </html></richcontent>
-<node TEXT="MoM Future A" STYLE_REF="milestone" ID="ID_1214021140">
-<node TEXT="Crear forma de que un botón incluya varios comandos" STYLE_REF="nextTask" FOLDED="true" ID="ID_1260558966">
-<node TEXT="y los ejecute en orden" ID="ID_1787767020"/>
-<node TEXT="¿aplica scripts o sólo comandos?" ID="ID_1027772698"/>
-<node TEXT="alternativas" ID="ID_1501100269">
-<node TEXT="puede requerir nuevo estilo o ícono que indice nodo padre de unión" ID="ID_1944341740">
-<node TEXT="para que package entienda cuales son los comandos a unir" ID="ID_403432332"/>
-</node>
-<node TEXT="o puede hacerse en dos pasos" ID="ID_1016741639">
-<node TEXT="unir commandos en un nodo &quot;resumen&quot;" ID="ID_962422598"/>
-<node TEXT="package" ID="ID_359472693"/>
-</node>
-<node TEXT="o puede ser cuando se aplica package y uno de los hijos es un nodo package" ID="ID_427716198">
-<icon BUILTIN="forward"/>
-<node TEXT="si package incluye scripts?" ID="ID_1538141123">
-<node TEXT="los incluye" ID="ID_334845430"/>
-<node TEXT="los omite" ID="ID_1424559313"/>
-<node TEXT="aborta y mensaje" ID="ID_1407197711"/>
-</node>
-</node>
-</node>
-</node>
-</node>
+<node TEXT="MoM Future A" STYLE_REF="milestone" ID="ID_1214021140"/>
 </node>
 <node TEXT="LaunchDialog.groovy" ID="ID_1915686947" LINK="Menu-o-Matic/src/main/groovy/LaunchDialog.groovy">
 <attribute NAME="lastModifiedTime" VALUE="08-08-21 16:04" OBJECT="org.freeplane.features.format.FormattedDate|2021-08-08T16:04-0400|dd-MM-yy HH:mm"/>
@@ -3131,46 +3109,7 @@ before the actual namefilter setting)
     </p>
   </body>
 </html></richcontent>
-<node TEXT="MoM Future A" STYLE_REF="milestone" ID="ID_1002832824">
-<node TEXT="Hacer que MoM pueda estar en ToolsTab" STYLE_REF="maybeTask" ID="ID_91790832">
-<node TEXT="cada grupo de herramientas se anexa como una &quot;sección&quot;" STYLE_REF="completedTask" ID="ID_513233729"/>
-<node TEXT="secciones se pueden reordenar" STYLE_REF="completedTask" ID="ID_1427840939"/>
-<node TEXT="secciones se pueden minimizar" STYLE_REF="maybeTask" ID="ID_733577266"/>
-<node TEXT="secciones se pueden cambiar de sólo iconos a iconos + label de ida y vuelta" STYLE_REF="maybeTask" ID="ID_1557719601"/>
-<node TEXT="Tab en tools label &quot;recuerda&quot; su ancho" STYLE_REF="completedTask" FOLDED="true" ID="ID_1993864839">
-<node TEXT="al cambiar a otras tabs se recupera ancho original" ID="ID_1033020137"/>
-<node TEXT="botón que hace &quot;pack&quot; minimizando ancho necesario" ID="ID_714383084"/>
-</node>
-</node>
-<node TEXT="Menu-o-Matic" ID="ID_1838652963" LINK="menuitem:_addons.menuOMatic.launchCustomDialog_on_single_node">
-<attribute_layout NAME_WIDTH="85.78723 pt" VALUE_WIDTH="1598.55316 pt"/>
-<attribute NAME="tbActions" VALUE="[addons.menuOMatic.launchCustomDialog_on_single_node, addons.menuOMatic.packCustomMenu_on_single_node, addons.menuOMatic.unpackCustomMenu_on_single_node, addons.menuOMatic.lauchDialogFromNodes_on_single_node, addons.menuOMatic.launchDialogsFromBranch_on_single_node, addons.menuOMatic.listCustomDialogs_on_single_node, addons.menuOMatic.listCustomMenusFromMap_on_single_node]"/>
-<attribute NAME="tbIcons" VALUE="[IconAction.emoji-1F680, IconAction.emoji-1F4E6, IconAction.emoji-1F468-200D-1F527, IconAction.emoji-2728, IconAction.emoji-1F387, IconAction.list, IconAction.mindmap]"/>
-<attribute NAME="tbLabels" VALUE="[launch menu dialog, pack menu, unpack menu, launch directly, launch all, list menu dialogs, list menu packages from map]"/>
-<attribute NAME="tbMaxTextLength" VALUE="50" OBJECT="org.freeplane.features.format.FormattedNumber|50"/>
-<attribute NAME="tbShowIcons" VALUE="true"/>
-<attribute NAME="tbShowLabels" VALUE="false"/>
-<attribute NAME="tbFocusToMap" VALUE="true"/>
-<attribute NAME="tbTitle" VALUE="Menu-o-Matic"/>
-<richcontent TYPE="DETAILS">
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      customMenu&nbsp;&nbsp;
-    </p>
-    <p>
-      &nbsp;&nbsp;- icons only
-    </p>
-    <p>
-      &nbsp;&nbsp;- return to mindmap
-    </p>
-  </body>
-</html></richcontent>
-</node>
-</node>
+<node TEXT="MoM Future A" STYLE_REF="milestone" ID="ID_1002832824"/>
 <node TEXT="cambiar a MoMToolbars" STYLE_REF="completedTask" ID="ID_1305392679"/>
 <node TEXT="Eliminar dialogs??" STYLE_REF="nextTask" ID="ID_1470646510"/>
 </node>
@@ -3179,8 +3118,8 @@ before the actual namefilter setting)
 </node>
 <node TEXT="MoMToolbar.groovy" ID="ID_1177945776" LINK="Menu-o-Matic/src/main/groovy/MoMToolbar.groovy"/>
 <node TEXT="LaunchTabPane.groovy" ID="ID_56604948" LINK="Menu-o-Matic/src/main/groovy/LaunchTabPane.groovy">
-<node TEXT="inventar forma en que poder agregar separadores entre botones" STYLE_REF="nextTask" ID="ID_1218863478">
-<node TEXT="y que quede en MD" STYLE_REF="pendingTask" ID="ID_212680872"/>
+<node TEXT="inventar forma en que poder agregar separadores entre botones" STYLE_REF="completedTask" FOLDED="true" ID="ID_1218863478">
+<node TEXT="y que quede en MD" STYLE_REF="completedTask" ID="ID_212680872"/>
 </node>
 <node TEXT="al crear Tab, toma ícono de nodo" STYLE_REF="completedTask" FOLDED="true" ID="ID_1543419095">
 <node TEXT="puede ser parte del MD" STYLE_REF="completedTask" ID="ID_383938869"/>
@@ -3721,8 +3660,8 @@ before the actual namefilter setting)
   </body>
 </html></richcontent>
 </node>
-<node TEXT="get Map/Branch used icons actions" STYLE_REF="nextTask" ID="ID_232294406">
-<node TEXT="present icons in map/branch as buttons" ID="ID_1197565766" VGAP_QUANTITY="2 px"><richcontent TYPE="NOTE">
+<node TEXT="get Map/Branch used icons actions" STYLE_REF="nextTask" FOLDED="true" ID="ID_232294406">
+<node TEXT="present icons in map/branch as buttons" FOLDED="true" ID="ID_1197565766" VGAP_QUANTITY="2 px"><richcontent TYPE="NOTE">
 <html>
   <head>
     
@@ -3880,6 +3819,10 @@ before the actual namefilter setting)
 <node TEXT="Imp_3" ID="ID_624685296" LINK="menuitem:_IconAction.Importancia/Imp_3"/>
 </node>
 </node>
+</node>
+<node TEXT="debe ser equivalente a indetrtar MoM toolbar" ID="ID_596626769">
+<node TEXT="debe generar MD y luego generar toolbar" STYLE_REF="pendingTask" ID="ID_1772686801"/>
+<node TEXT="MD con Tab predefinida e ícono propio" STYLE_REF="pendingTask" ID="ID_1684493816"/>
 </node>
 </node>
 <node TEXT="get Map/Branch used styles actions" STYLE_REF="nextTask" FOLDED="true" ID="ID_817232585">
@@ -4244,6 +4187,7 @@ before the actual namefilter setting)
 </node>
 </node>
 </node>
+<node TEXT="necesito que DashStyle o algo así aparezca en API" STYLE_REF="nextTask" POSITION="bottom_or_right" ID="ID_968405354"/>
 </node>
 </node>
 </node>
@@ -4450,56 +4394,6 @@ before the actual namefilter setting)
 </html></richcontent>
 </node>
 </node>
-<node TEXT="Navigating" ID="ID_1591150376">
-<node TEXT="xx" ID="ID_1352098386">
-<node TEXT="xx" ID="ID_1252458430">
-<icon BUILTIN="ksmiletris"/>
-</node>
-<node TEXT="fff" ID="ID_1903814517">
-<icon BUILTIN="clanbomber"/>
-</node>
-<node TEXT="&lt;-- -&apos;emoji-1F4B2&apos;" ID="ID_877029719">
-<icon BUILTIN="emoji-1F4B2"/>
-</node>
-<node TEXT="&lt;-- -&apos;emoji-27A1&apos;" ID="ID_1428089778">
-<icon BUILTIN="emoji-27A1"/>
-</node>
-<node TEXT="&lt;-- -&apos;forward&apos;" ID="ID_332609818">
-<icon BUILTIN="forward"/>
-</node>
-<node TEXT="&lt;-- -&apos;emoji-1F333&apos;" ID="ID_94127276">
-<icon BUILTIN="emoji-1F333"/>
-</node>
-<node TEXT="&lt;-- -&apos;emoji-1F525&apos;" ID="ID_962943316">
-<icon BUILTIN="emoji-1F525"/>
-</node>
-<node TEXT="&lt;-- -&apos;emoji-1F995&apos;" ID="ID_1039484867">
-<icon BUILTIN="emoji-1F995"/>
-</node>
-<node TEXT="&lt;-- -&apos;bookmarks/Bookmark 1&apos;" ID="ID_1511844389">
-<icon BUILTIN="bookmarks/Bookmark 1"/>
-</node>
-<node TEXT="&lt;-- -&apos;folder-black-48dp - copia&apos;" ID="ID_1009395801">
-<icon BUILTIN="folder-black-48dp - copia"/>
-</node>
-<node TEXT="&lt;-- -&apos;Importancia/Imp_3&apos;" ID="ID_993484654">
-<icon BUILTIN="Importancia/Imp_3"/>
-</node>
-<node TEXT="used icons (as buttons)" ID="ID_163342429">
-<node TEXT="I am happy" ID="ID_21212774" LINK="menuitem:_IconAction.ksmiletris"/>
-<node TEXT="Dangerous" ID="ID_548682703" LINK="menuitem:_IconAction.clanbomber"/>
-<node TEXT="heavy dollar sign" ID="ID_1270804842" LINK="menuitem:_IconAction.emoji-1F4B2"/>
-<node TEXT="right arrow" ID="ID_1664638010" LINK="menuitem:_IconAction.emoji-27A1"/>
-<node TEXT="Forward" ID="ID_1867774768" LINK="menuitem:_IconAction.forward"/>
-<node TEXT="deciduous tree" ID="ID_134346068" LINK="menuitem:_IconAction.emoji-1F333"/>
-<node TEXT="fire" ID="ID_847172239" LINK="menuitem:_IconAction.emoji-1F525"/>
-<node TEXT="sauropod" ID="ID_1770771070" LINK="menuitem:_IconAction.emoji-1F995"/>
-<node TEXT="Bookmark 1" ID="ID_1567295372" LINK="menuitem:_IconAction.bookmarks/Bookmark%201"/>
-<node TEXT="folder-black-48dp - copia" ID="ID_230857894" LINK="menuitem:_IconAction.folder-black-48dp%20-%20copia"/>
-<node TEXT="IconAction.Importancia/Imp_3" OBJECT="org.codehaus.groovy.runtime.GStringImpl|IconAction.Importancia/Imp_3" ID="ID_1936911724" LINK="menuitem:_IconAction.Importancia/Imp_3"/>
-</node>
-</node>
-</node>
 <node TEXT="borradores / tareas" STYLE_REF="Organizador" FOLDED="true" ID="ID_266728019" VSHIFT_QUANTITY="-0.75 pt">
 <node TEXT="design" STYLE_REF="Organizador" ID="ID_1602015427">
 <node TEXT="combinado: trae primero submenu y si repite trae botones" ID="ID_1020191197">
@@ -4670,7 +4564,7 @@ before the actual namefilter setting)
 <node TEXT="combinar con siguiente para si mouse está sobre grupo de menus entonces descargue todos los botones baje él" ID="ID_1411193413"/>
 <node TEXT="abre dialogo con boton para ir repitiendo" ID="ID_1942898211"/>
 </node>
-<node TEXT="Abre submenu de la barra de menus de Freeplane" FOLDED="true" ID="ID_1785189681"><richcontent TYPE="NOTE">
+<node TEXT="Abre submenu de la barra de menus de Freeplane" ID="ID_1785189681"><richcontent TYPE="NOTE">
 <html>
   <head>
     
@@ -7636,7 +7530,7 @@ before the actual namefilter setting)
 </node>
 <node TEXT="Menu-o-Matic project.mm" ID="ID_1492418706" LINK="Menu-o-Matic%20project.mm"/>
 <node TEXT="new imported files" STYLE_REF="newFolderImport" ID="ID_1788703280">
-<attribute NAME="log_MDI" VALUE="2" OBJECT="org.freeplane.features.format.FormattedNumber|2|#0.####"/>
+<attribute NAME="log_MDI" VALUE="2" OBJECT="org.freeplane.features.format.FormattedObject|org.freeplane.plugin.script.proxy.ConvertibleNumber&amp;#x7c;2|number:decimal:#0.####"/>
 <richcontent TYPE="NOTE">
 <html>
   <head>
@@ -7644,7 +7538,7 @@ before the actual namefilter setting)
   </head>
   <body>
     <p>
-      Inated:&#xa0;&#xa0;&#xa0;2023-08-31&#xa0;&#xa0;13:56:30
+      Inated:&#xa0;&#xa0;&#xa0;2023-08-31&#xa0;&#xa0;18:37:19
     </p>
     <p>
       
@@ -7707,8 +7601,11 @@ before the actual namefilter setting)
       No failed operation in drive
     </p>
   </body>
-</html></richcontent>
-<node TEXT="resources" ID="ID_1461192023" LINK="#ID_928846385"/>
+</html>
+</richcontent>
+<node TEXT="Menu-o-Matic" ID="ID_356452712" LINK="Menu-o-Matic/">
+<node TEXT="Menu-o-Matic-v0.1.10.addon.mm" ID="ID_1896691301" LINK="Menu-o-Matic/Menu-o-Matic-v0.1.10.addon.mm"/>
+</node>
 </node>
 <node TEXT="versión instalada en AddOns" STYLE_REF="locked" FOLDED="true" ID="ID_1424141649">
 <node TEXT="menuOMatic" ID="ID_1859181061"><richcontent TYPE="DETAILS">
@@ -8590,8 +8487,8 @@ before the actual namefilter setting)
 <node TEXT="files" STYLE_REF="project" ID="ID_1868886251">
 <node TEXT="Menu-o-Matic" STYLE_REF="project" ID="ID_877236292">
 <node TEXT="lib" STYLE_REF="project" ID="ID_1336236067">
-<node ID="ID_998107432" CONTENT_ID="ID_1260558966"/>
-<node ID="ID_1281995186" CONTENT_ID="ID_91790832"/>
+<node TEXT="Crear forma de que un botón incluya varios comandos" STYLE_REF="completedTask" ID="ID_998107432"/>
+<node TEXT="Hacer que MoM pueda estar en ToolsTab" STYLE_REF="maybeTask" ID="ID_1281995186"/>
 <node ID="ID_1096080020" CONTENT_ID="ID_1898413286"/>
 </node>
 <node TEXT="scripts" STYLE_REF="project" ID="ID_1513346412">
@@ -8751,6 +8648,7 @@ before the actual namefilter setting)
 <node ID="ID_515805616" TREE_ID="ID_705207683"/>
 </node>
 </node>
+<node ID="ID_1238819887" TREE_ID="ID_968405354"/>
 </node>
 <node ID="ID_1113835356" TREE_ID="ID_563376606">
 <node ID="ID_1417946136" TREE_ID="ID_1602633014">

@@ -1,14 +1,14 @@
 <map version="freeplane 1.11.5">
 <!--To view this file, download free mind mapping software Freeplane from https://www.freeplane.org -->
 <node TEXT="Menu-o-Matic&#xa;examples" LOCALIZED_STYLE_REF="AutomaticLayout.level.root" FOLDED="false" ID="ID_696401721" CREATED="1610381621824" MODIFIED="1693502877323" STYLE="bubble" SHAPE_HORIZONTAL_MARGIN="10 pt" SHAPE_VERTICAL_MARGIN="15 pt"><hook NAME="MapStyle" background="#f9f9f8">
-    <properties edgeColorConfiguration="#808080ff,#ff0000ff,#0000ffff,#00ff00ff,#ff00ffff,#00ffffff,#7c0000ff,#00007cff,#007c00ff,#7c007cff,#007c7cff,#7c7c00ff" fit_to_viewport="false" associatedTemplateLocation="template:/vis01%20light_nord_template%20vEdo%20v2.mm"/>
+    <properties edgeColorConfiguration="#808080ff,#ff0000ff,#0000ffff,#00ff00ff,#ff00ffff,#00ffffff,#7c0000ff,#00007cff,#007c00ff,#7c007cff,#007c7cff,#7c7c00ff" associatedTemplateLocation="template:/vis01%20light_nord_template%20vEdo%20v2.mm" fit_to_viewport="false" mapUsesOwnSaveOptions="true" save_folding="default" save_last_visited_node="default" save_modification_times="false"/>
 
 <map_styles>
 <stylenode LOCALIZED_TEXT="styles.root_node" ID="ID_118736178" STYLE="oval" UNIFORM_SHAPE="true" VGAP_QUANTITY="24 pt">
 <font SIZE="24"/>
 <stylenode LOCALIZED_TEXT="styles.predefined" POSITION="bottom_or_right" STYLE="bubble">
 <stylenode LOCALIZED_TEXT="default" ID="ID_506805493" ICON_SIZE="12 pt" FORMAT_AS_HYPERLINK="false" COLOR="#484747" BACKGROUND_COLOR="#efefef" STYLE="bubble" SHAPE_HORIZONTAL_MARGIN="5 px" SHAPE_VERTICAL_MARGIN="2 px" NUMBERED="false" FORMAT="STANDARD_FORMAT" TEXT_ALIGN="DEFAULT" BORDER_WIDTH_LIKE_EDGE="false" BORDER_WIDTH="1.9 px" BORDER_COLOR_LIKE_EDGE="false" BORDER_COLOR="#8fbcbb" BORDER_DASH_LIKE_EDGE="true" BORDER_DASH="SOLID" VGAP_QUANTITY="2 px" COMMON_HGAP_QUANTITY="14 pt" CHILD_NODES_LAYOUT="AUTO">
-<arrowlink SHAPE="CUBIC_CURVE" COLOR="#bf5d3f" WIDTH="2" TRANSPARENCY="200" DASH="" FONT_SIZE="9" FONT_FAMILY="SansSerif" DESTINATION="ID_506805493" STARTINCLINATION="45 pt;-13.5 pt;" ENDINCLINATION="57 pt;30 pt;" STARTARROW="NONE" ENDARROW="DEFAULT"/>
+<arrowlink SHAPE="CUBIC_CURVE" COLOR="#bf5d3f" WIDTH="2" TRANSPARENCY="200" DASH="" FONT_SIZE="9" FONT_FAMILY="SansSerif" DESTINATION="ID_506805493" STARTINCLINATION="45 pt;-12.75 pt;" ENDINCLINATION="57 pt;30 pt;" STARTARROW="NONE" ENDARROW="DEFAULT"/>
 <font NAME="Dialog" SIZE="10" BOLD="false" STRIKETHROUGH="false" ITALIC="false"/>
 <edge STYLE="horizontal" COLOR="#2e3440" WIDTH="1" DASH="SOLID"/>
 <richcontent TYPE="DETAILS" CONTENT-TYPE="plain/auto"/>
@@ -85,8 +85,9 @@
 </stylenode>
 </map_styles>
 </hook>
-<node TEXT="powerButtons" LOCALIZED_STYLE_REF="AutomaticLayout.level,1" POSITION="bottom_or_right" ID="ID_376896291" CREATED="1693502621572" MODIFIED="1693502841523">
-<node TEXT="powerButtons example" ID="ID_1572295830" CREATED="1693440958127" MODIFIED="1693502823397">
+<node TEXT="powerButtons" LOCALIZED_STYLE_REF="AutomaticLayout.level,1" POSITION="bottom_or_right" ID="ID_376896291" CREATED="1693502621572" MODIFIED="1693535059482">
+<font BOLD="false" STRIKETHROUGH="false" ITALIC="false"/>
+<node TEXT="powerButtons example" ID="ID_1572295830" CREATED="1693440958127" MODIFIED="1693535081641">
 <font BOLD="false" STRIKETHROUGH="false" ITALIC="false"/>
 <richcontent TYPE="DETAILS">
 <html>
@@ -107,8 +108,7 @@
       4. test powerButtons
     </p>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 <node TEXT="Map overview" POSITION="bottom_or_right" ID="ID_1003470875" CREATED="1693440992572" MODIFIED="1693496850955" LINK="menuitem:_ToggleMapOverviewAction"/>
 <node TEXT="Display note panel" POSITION="bottom_or_right" ID="ID_1534501763" CREATED="1693440992580" MODIFIED="1693496850956" LINK="menuitem:_ShowHideNoteAction"/>
 <node TEXT="---" POSITION="bottom_or_right" ID="ID_1101527621" CREATED="1693440992584" MODIFIED="1693440992584"/>
@@ -138,7 +138,7 @@
 <node TEXT="Italic" ID="ID_163321600" CREATED="1693441094621" MODIFIED="1693441094624" LINK="menuitem:_ItalicAction"/>
 <node TEXT="Strike through" ID="ID_586192503" CREATED="1693441114588" MODIFIED="1693441114591" LINK="menuitem:_StrikeThroughAction"/>
 </node>
-<node TEXT="Let&apos;s go Surfing!!" POSITION="bottom_or_right" ID="ID_1394481334" CREATED="1693494062972" MODIFIED="1693500428981">
+<node TEXT="Let&apos;s go Surfing!!" POSITION="bottom_or_right" ID="ID_1394481334" CREATED="1693494062972" MODIFIED="1693535003294">
 <icon BUILTIN="emoji-1F3C4-200D-2642-FE0F"/>
 <richcontent TYPE="DETAILS">
 <html>
