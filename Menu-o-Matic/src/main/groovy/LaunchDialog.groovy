@@ -46,6 +46,7 @@ class LaunchDialog{
     static final tb                         = PM.TB
     static final scriptStr                  = PM.scriptStr
     static final separatorStr               = PM.separatorStr
+    static final vertSeparatorStr           = PM.vertSeparatorStr
     static final POWER_BUTTON_STYLE         = PM.POWER_BUTTON_STYLE
     static final config                     = new ConfigProperties()
 
@@ -314,7 +315,9 @@ class LaunchDialog{
         if(acc.startsWith(scriptStr)){
             return creaBotonDesdeScript(acc,i)
         } else if(acc==separatorStr){
-            return new JSeparator(SwingConstants.HORIZONTAL) //SI NO FUNCIONA. VER 
+            return new JSeparator(SwingConstants.HORIZONTAL)
+        } else if(acc==vertSeparatorStr){
+            return new JSeparator(SwingConstants.VERTICAL) 
         } else {
             return creaBotonDesdeUI(acc.split(';').flatten(), i)
         }

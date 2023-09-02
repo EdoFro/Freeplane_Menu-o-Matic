@@ -26,6 +26,7 @@ class PackMenu{
 
     static final String   scriptStr    = '_script'
     static final String   separatorStr = '_separator'
+    static final String   vertSeparatorStr = '_vertSeparator'
     static final String   POWER_BUTTON_STYLE = 'powerButton'
     // static final Boolean  scriptInNote = true
     
@@ -177,7 +178,7 @@ class PackMenu{
         nodoBase.find{isPowerButtonNode(it)}.each{
             nPowers += it.find{it.link?.uri?.scheme == 'menuitem'}
         }
-        def nAcciones  = [] + nodoBase.find{it.link?.uri?.scheme == 'menuitem' || WSE.isGroovyNode(it) || isSeparatorNode(it) || isPowerButtonNode(it)}
+        def nAcciones  = [] + nodoBase.find{it.link?.uri?.scheme == 'menuitem' || WSE.isGroovyNode(it) || isSeparatorNode(it) || isVertSeparatorNode(it)|| isPowerButtonNode(it)}
         nAcciones -= nPowers
         def hasScripts = nAcciones.any{WSE.isGroovyNode(it)}
 
@@ -266,6 +267,8 @@ class PackMenu{
                 WSE.setExtension(nodo, 'groovy')
             } else if (acc==separatorStr){
                 //nodo.text = '---' // it seems it isn't necessary
+            } else if (acc==vertSeparatorStr){
+                //nodo.text = '|' // it seems it isn't necessary
             } else if (acc.contains(';')){
                 markAsPowerButton(nodo, true)
                 acc.split(';')each{a ->
@@ -364,6 +367,10 @@ class PackMenu{
         return n.text.every{ it == '-' }
     }
 
+    def static isVertSeparatorNode(n){
+        return n.text.every{ it == '|' }
+    }
+
     def static isPowerButtonNode(n){
         //return n.style.name == POWER_BUTTON_STYLE
         return n.details?.startsWith(POWER_BUTTON_STYLE)?:false
@@ -381,9 +388,11 @@ class PackMenu{
                         scriptStr + ++iScript :
                         isSeparatorNode(n)?
                                 separatorStr:
-                                isPowerButtonNode(n)?
-                                        getPowerButtonActions(n):
-                                        null
+                                isVertSeparatorNode(n)?
+                                        vertSeparatorStr:
+                                        isPowerButtonNode(n)?
+                                                getPowerButtonActions(n):
+                                                null
     }
 
     def static getPowerButtonActions(n){

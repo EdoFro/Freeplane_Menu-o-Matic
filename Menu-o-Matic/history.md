@@ -5,6 +5,8 @@
 * Unpacking powerButtons now gets the labels for icon buttons too
 * Added popup menu to remove Tabs
   * Right clicking on tab, (not on toolbars)
+* Added vertical separators
+  * node text =  `|`
 
 ## v0.1.9
 
