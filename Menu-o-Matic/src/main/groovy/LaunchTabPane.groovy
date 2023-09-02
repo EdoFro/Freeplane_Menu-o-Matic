@@ -4,18 +4,23 @@ import edofro.menuomatic.LaunchDialog
 import edofro.menuomatic.MoMToolbar
 import edofro.menuomatic.PackMenu
 
-import javax.swing.Box
+import java.awt.Dimension
+//import java.awt.Component
+
+//import javax.swing.Box
 import javax.swing.BoxLayout
 import javax.swing.JButton
 import javax.swing.JLabel
 import javax.swing.JPanel
 import javax.swing.JSeparator
 import javax.swing.ScrollPaneConstants
-import java.awt.Dimension
 import javax.swing.Icon
 import javax.swing.JTabbedPane
 import javax.swing.JScrollPane
 import javax.swing.SwingConstants
+//import javax.swing.SwingUtilities
+
+import groovy.swing.SwingBuilder
 
 import org.freeplane.core.ui.components.UITools
 import org.freeplane.core.util.MenuUtils
@@ -29,8 +34,10 @@ class LaunchTabPane {
 //region: properties
 
     static final c = ScriptUtils.c()
+    static final SwingBuilder swingBuilder  = new SwingBuilder()
     static final String MOM_TOPBAR = 'MoM_topBar'
     static final String MOM_CONTAINER_NAME = 'MoM_container'
+    // static final String MOM_SCROLLPANE_NAME = 'MoM_scrollPane'
     static final JTabbedPane tabPane   = UITools.freeplaneTabbedPanel
     static final Icon closeTabIcon     = MenuUtils.getMenuItemIcon('IconAction.Menu-o-Matic/MoMCloseTab')
     static final Icon closeToolbarIcon = MenuUtils.getMenuItemIcon('IconAction.Menu-o-Matic/MoMCloseToolbar')
@@ -71,52 +78,68 @@ class LaunchTabPane {
         def separator = new JSeparator()
         separator.setMaximumSize(new Dimension (5000,8))
         def momContainer = new MoMToolbar(MOM_CONTAINER_NAME, SwingConstants.HORIZONTAL)
+        momContainer.setInheritsPopupMenu(true)
         def container = new JPanel()
         container.setLayout( new BoxLayout(container, BoxLayout.PAGE_AXIS))
         container.add(topBar(tabName))
         container.add(separator)
         container.add(momContainer)
         def scrollPane = new JScrollPane(container, ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED, ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER)
+        //scrollPane.name = MOM_SCROLLPANE_NAME
+        container.setComponentPopupMenu(getRemovePopupMenu(scrollPane, 'Remove Tab'))
         tabPane.addTab(tabName, scrollPane)
         println "MoM: tab '$tabName' was created"
         formatTab(tabPane.tabCount - 1, (tabName!=PackMenu.MoM_TAB_NAME)?iconForTab:null)
         return momContainer
     }
 
+    def static getRemovePopupMenu(comp, String label){
+        def pop = swingBuilder.popupMenu(){
+            menuItem(
+                    text : label,
+                    actionPerformed     : { e ->
+                        def momContainer = tabPane
+                        momContainer.remove(comp)
+                        momContainer.revalidate()
+                        momContainer.repaint()
+                    }
+            )
+        }
+        return pop
+    }
+
     def static topBar(tabName = null){
         Dimension minD  = null
         Dimension prefD = null //new Dimension(20,20)
-        //region def closeBtn
-        def closeBtn = getCloseBtn(prefD, minD)
+        //def closeBtn = getCloseBtn(prefD, minD)
         //def closeToolbarBtn = getCloseToolbarBtn(prefD, minD) //close toolbar button is no longer necessary (now popupmenu)
         def MoMInfoBtn = getMoMInfoBtn(prefD, minD)
 //        def tBar = new MoMToolbar(MOM_TOPBAR, SwingConstants.VERTICAL)
         def tBar = new JPanel()
         tBar.setLayout(new BoxLayout(tBar, BoxLayout.LINE_AXIS ))
         tBar.setMaximumSize(new Dimension(5000, 20))
+        tBar.setInheritsPopupMenu(true)
         tBar.add(MoMInfoBtn)
         //tBar.add(Box.createHorizontalGlue())
-        tBar.add(Box.createRigidArea(new Dimension(12,0)))
+        //tBar.add(Box.createRigidArea(new Dimension(12,0)))
         //tBar.add(closeToolbarBtn) //close toolbar button is no longer necessary (now popupmenu)
-        tBar.add(closeBtn)
+        //tBar.add(closeBtn)
         if(tabName) tBar.add(new JLabel(tabName))
-
         return tBar
     }
 
-    static JButton getCloseBtn(prefD, minD){
-        JButton closeBtn = LaunchDialog.nuevoBoton(
-                null, closeTabIcon, 'Remove this Tab', prefD, minD,
-                { e ->
-                    def scrollPane = e.source.parent.parent.parent.parent
-                  //  def index =  tabPane.indexOfComponent(scrollPane)
-                  //  def sumando = (tabPane.getTabCount() - (index + 1))>0?+1:-1
-                  //  def tabName =  tabPane.getToolTipTextAt(index + sumando)
-                    tabPane.remove(scrollPane)
-                }
-        )
-        return closeBtn
-    }
+// region "Close" buttons
+  //  static JButton getCloseBtn(prefD, minD){
+  //      JButton closeBtn = LaunchDialog.nuevoBoton(
+  //              null, closeTabIcon, 'Remove this Tab', prefD, minD,
+  //              { e ->
+  //                  Component comp = (Component) e.getSource();
+  //                  def scrollPane = SwingUtilities.getAncestorNamed(MOM_SCROLLPANE_NAME,comp)
+  //                  tabPane.remove(scrollPane)
+  //              }
+  //      )
+  //      return closeBtn
+  //  }
 
  //close toolbar button is no longer necessary (now popupmenu)
  //   static JButton getCloseToolbarBtn(prefD, minD){
@@ -142,6 +165,7 @@ class LaunchTabPane {
  //       )
  //       return closeToolbarBtn
  //   }
+ // endregion
 
     static JButton getMoMInfoBtn(prefD, minD){
         JButton  momInfoBtn = LaunchDialog.nuevoBoton(
