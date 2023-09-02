@@ -142,7 +142,7 @@ class LaunchDialog{
 
     // endregion
 
-    //region creating/showing dialog menu
+    // region creating/showing dialog menu
 
     def static show(nodo, boolean openInTabPane = true){
         if(isCustomMenuPack(nodo)){
@@ -223,7 +223,7 @@ class LaunchDialog{
 
         tb.margin = new Insets(0, 0, 5, 0)
         tb.setBorderPainted(true)
-        def useTitledBorders =  config.getBooleanProperty('menuOMatic_useTitledBorders',false)
+        def useTitledBorders =  config.getBooleanProperty('menuOMatic_useTitledBorders', false)
         if(useTitledBorders) {
             ui.addTitledBorder(tb, md.title, 10f)
             if (md.fgColor) {
@@ -233,29 +233,30 @@ class LaunchDialog{
 
         if(md.color) {tb.background = Color.decode(md.color)}
 
-        def pop = swingBuilder.popupMenu(){
-            menuItem(
-                    text : 'Remove toolbar',
-                    actionPerformed     : { e ->
-                      //  println e.source.class
-                      //  println tb.name
-                      //  println SwingUtilities.getAncestorNamed(LaunchTabPane.MOM_CONTAINER_NAME,tb).class
-
-                        def momContainer = SwingUtilities.getAncestorNamed(LaunchTabPane.MOM_CONTAINER_NAME,tb)
-                        momContainer.remove(tb)
-                        momContainer.revalidate()
-                        momContainer.repaint()
-                    }
-            )
-        }
-        tb.setComponentPopupMenu(pop)
+        tb.setComponentPopupMenu(getRemovePopupMenu(tb, LaunchTabPane.MOM_CONTAINER_NAME, 'Remove toolbar'))
 
         md.actions.eachWithIndex{ a, j ->
             tb.add(creaBoton(a, j))
         }
 
+        tb.pack()
         tb.revalidate()
         tb.repaint()
+    }
+    
+    def static getRemovePopupMenu(comp, String containerName, String label){
+        def pop = swingBuilder.popupMenu(){
+            menuItem(
+                    text : label,
+                    actionPerformed     : { e ->
+                        def momContainer = SwingUtilities.getAncestorNamed(containerName,comp)
+                        momContainer.remove(comp)
+                        momContainer.revalidate()
+                        momContainer.repaint()
+                    }
+            )
+        }
+        return pop
     }
 
     // endregion
