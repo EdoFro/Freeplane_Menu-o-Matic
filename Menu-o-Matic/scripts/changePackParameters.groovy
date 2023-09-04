@@ -23,7 +23,8 @@ if(LaunchDialog.isCustomMenuNode(nodoBase) || LaunchDialog.isCustomMenuPack(nodo
     
     (menuName, maxTextLength, tabName, autoLaunch, showIcons, showLabels, focusToMap, permissions) = PackMenu.getConfirmedInfo(forceDialog, hasScripts, menuName, maxTextLength, tabName, autoLaunch, showIcons, showLabels, focusToMap, permissions)
 
-    //menuName?=nodoBase[TB.title].string?:nodoBase.text
+    //menuName ?= nodoBase[TB.title].string
+    //menuName ?= nodoBase.text
     if(menuName && maxTextLength && tabName && autoLaunch!=null && showIcons!=null && showLabels!=null && focusToMap!=null 
     || ui.showConfirmDialog(null,'Do you want to remove the MoM attributes from selected node?','Menu-o-Matic',1)==0) {
         nodoBase[TB.title]         = menuName

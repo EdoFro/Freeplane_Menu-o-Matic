@@ -1,38 +1,36 @@
 package edofro.menuomatic
 
-import javax.swing.JPopupMenu
-import javax.swing.JToolBar
-import javax.swing.SwingUtilities
+import edofro.menuomatic.DialogKeyboardNavigation   as DKBN
+import edofro.menuomatic.LaunchTabPane
+import edofro.menuomatic.MoMToolbar
+import edofro.menuomatic.MoMToolbarLayout
+import edofro.menuomatic.PackMenu                   as PM
+
 import java.awt.Color
 import java.awt.Dimension
 import java.awt.GridLayout
 import java.awt.Insets
 import java.awt.event.WindowFocusListener
+
 import javax.swing.BoxLayout
 import javax.swing.Icon
 import javax.swing.JButton
+import javax.swing.JPopupMenu
 import javax.swing.JSeparator
+import javax.swing.JToolBar
 import javax.swing.SwingConstants
+import javax.swing.SwingUtilities
 
 import groovy.swing.SwingBuilder
-import groovy.time.TimeCategory
-import groovy.time.TimeDuration
 
 import org.freeplane.api.MindMap
-import org.freeplane.core.ui.components.ToolbarLayout
 import org.freeplane.core.ui.components.UITools     as ui
 import org.freeplane.core.util.MenuUtils            as menuUtils
 import org.freeplane.core.util.TextUtils            as textUtils
 import org.freeplane.features.map.MapModel
+import org.freeplane.plugin.script.FreeplaneScriptBaseClass.ConfigProperties
 import org.freeplane.plugin.script.proxy.MapProxy
 import org.freeplane.plugin.script.proxy.ScriptUtils
-import org.freeplane.plugin.script.FreeplaneScriptBaseClass.ConfigProperties
-
-import edofro.menuomatic.DialogKeyboardNavigation   as DKBN
-import edofro.menuomatic.LaunchTabPane
-import edofro.menuomatic.MoMToolbar
-import edofro.menuomatic.PackMenu                   as PM
-
 
 
 class LaunchDialog{
@@ -46,6 +44,7 @@ class LaunchDialog{
     static final tb                         = PM.TB
     static final scriptStr                  = PM.scriptStr
     static final separatorStr               = PM.separatorStr
+    static final vertSeparatorStr           = PM.vertSeparatorStr
     static final POWER_BUTTON_STYLE         = PM.POWER_BUTTON_STYLE
     static final config                     = new ConfigProperties()
 
@@ -57,6 +56,7 @@ class LaunchDialog{
     static final int WITHOUT_WRITE_RESTRICTION   = 0b0010
     static final int WITHOUT_EXEC_RESTRICTION    = 0b0100
     static final int WITHOUT_NETWORK_RESTRICTION = 0b1000
+
 
 //endregion
 
@@ -132,17 +132,17 @@ class LaunchDialog{
     }
 	
     def static launchAutoLaunchCustomMenusFromMap(MindMap mapa){
-        println "|- mindMap: '${mapa.name}'"
-        def nodos = /*([] +*/ mapa.root.find{isAutoLaunchMenuPack(it)}//).sort{it.text}  // No tengo claro si deseo que se ordene alfabéticamente o según su posición en el mapa
-        println "|  - ${nodos*.text}"
+        println "MoM AUTO: |- mindMap: '${mapa.name}'"
+        def nodos = mapa.root.find{isAutoLaunchMenuPack(it)}
+        println "MoM AUTO: |  - ${nodos*.text}"
         nodos.each{
             show(it)
         }
-    }	
+    }
 
     // endregion
 
-    //region creating/showing dialog menu
+    // region creating/showing dialog menu
 
     def static show(nodo, boolean openInTabPane = true){
         if(isCustomMenuPack(nodo)){
@@ -217,45 +217,43 @@ class LaunchDialog{
     }
 
     def static setUpToolbar(JToolBar tb) {
-        def theLayout = md.showLabels?new BoxLayout(tb, BoxLayout.PAGE_AXIS): ToolbarLayout.vertical()
+        def theLayout = md.showLabels?new BoxLayout(tb, BoxLayout.PAGE_AXIS): new MoMToolbarLayout()
         tb.setLayout(theLayout)
         tb.setFloatable(true)
-
-        tb.margin = new Insets(0, 0, 5, 0)
         tb.setBorderPainted(true)
-        def useTitledBorders =  config.getBooleanProperty('menuOMatic_useTitledBorders',false)
+        def useTitledBorders =  config.getBooleanProperty('menuOMatic_useTitledBorders', false)
         if(useTitledBorders) {
-            ui.addTitledBorder(tb, md.title, 10f)
+            double titledBorderFontScalingFactor = config.getIntProperty('menuOMatic_titledBorderFontScalingFactor', 85) / 100d
+            def fontSize = ui.getUIFontSize(titledBorderFontScalingFactor).toFloat()
+            ui.addTitledBorder(tb, md.title, fontSize)
             if (md.fgColor) {
                 tb.border.outsideBorder.titleColor = Color.decode(md.fgColor)
             }
         }
-
         if(md.color) {tb.background = Color.decode(md.color)}
-
-        def pop = swingBuilder.popupMenu(){
-            menuItem(
-                    text : 'Remove toolbar',
-                    actionPerformed     : { e ->
-                      //  println e.source.class
-                      //  println tb.name
-                      //  println SwingUtilities.getAncestorNamed(LaunchTabPane.MOM_CONTAINER_NAME,tb).class
-
-                        def momContainer = SwingUtilities.getAncestorNamed(LaunchTabPane.MOM_CONTAINER_NAME,tb)
-                        momContainer.remove(tb)
-                        momContainer.revalidate()
-                        momContainer.repaint()
-                    }
-            )
-        }
-        tb.setComponentPopupMenu(pop)
-
+        tb.setComponentPopupMenu(getRemovePopupMenu(tb, LaunchTabPane.MOM_CONTAINER_NAME, 'Remove toolbar'))
         md.actions.eachWithIndex{ a, j ->
             tb.add(creaBoton(a, j))
         }
-
         tb.revalidate()
         tb.repaint()
+    }
+    
+    def static getRemovePopupMenu(comp, String containerName, String label){
+        JPopupMenu pop = swingBuilder.popupMenu(){
+            menuItem(
+                    text : label,
+                    actionPerformed     : { e ->
+                        def momContainer = SwingUtilities.getAncestorNamed(containerName,comp)
+                        if(momContainer) {
+                            momContainer.remove(comp)
+                            momContainer.revalidate()
+                            momContainer.repaint()
+                        }
+                    }
+            )
+        }
+        return pop
     }
 
     // endregion
@@ -313,7 +311,11 @@ class LaunchDialog{
         if(acc.startsWith(scriptStr)){
             return creaBotonDesdeScript(acc,i)
         } else if(acc==separatorStr){
-            return new JSeparator(SwingConstants.HORIZONTAL) //SI NO FUNCIONA. VER 
+            JSeparator sep = new JSeparator(SwingConstants.HORIZONTAL)
+            return sep
+        } else if(acc==vertSeparatorStr){
+            JSeparator sep = new JSeparator(SwingConstants.VERTICAL)
+            return  sep
         } else {
             return creaBotonDesdeUI(acc.split(';').flatten(), i)
         }
@@ -387,5 +389,17 @@ class LaunchDialog{
         )
         return boton
     }
+    // endregion
+
+    // region auxiliary methods
+
+    def static print(t){
+        System.out.print(t)
+    }
+
+    def static println(t){
+        System.out.println(t)
+    }
+
     // endregion
 }

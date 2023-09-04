@@ -26,6 +26,7 @@ class PackMenu{
 
     static final String   scriptStr    = '_script'
     static final String   separatorStr = '_separator'
+    static final String   vertSeparatorStr = '_vertSeparator'
     static final String   POWER_BUTTON_STYLE = 'powerButton'
     // static final Boolean  scriptInNote = true
     
@@ -177,12 +178,9 @@ class PackMenu{
         nodoBase.find{isPowerButtonNode(it)}.each{
             nPowers += it.find{it.link?.uri?.scheme == 'menuitem'}
         }
-        def nAcciones  = [] + nodoBase.find{it.link?.uri?.scheme == 'menuitem' || WSE.isGroovyNode(it) || isSeparatorNode(it) || isPowerButtonNode(it)}
+        def nAcciones  = [] + nodoBase.find{it.link?.uri?.scheme == 'menuitem' || WSE.isGroovyNode(it) || isSeparatorNode(it) || isVertSeparatorNode(it)|| isPowerButtonNode(it)}
         nAcciones -= nPowers
         def hasScripts = nAcciones.any{WSE.isGroovyNode(it)}
-
-        //get info from node
-        //def title = nodoBase.text
 
         //get info from node/dialog
         def menuName      = nodoBase[TB.title].string?:nodoBase.text
@@ -195,7 +193,8 @@ class PackMenu{
         def permissions   = nodoBase[TB.permissions].string
         def forceDialog = false
         (menuName, maxTextLength, tabName, autoLaunch, showIcons, showLabels, focusToMap, permissions) = getConfirmedInfo(forceDialog, hasScripts, menuName, maxTextLength, tabName, autoLaunch, showIcons, showLabels, focusToMap, permissions)
-        menuName?=nodoBase[TB.title].string?:nodoBase.text
+        menuName ?= nodoBase[TB.title].string
+        menuName ?= nodoBase.text
         if(menuName && maxTextLength && tabName && autoLaunch!=null && showIcons!=null && showLabels!=null && focusToMap!=null) {
             def selectedOption = ((showIcons?1:0) + (showLabels?2:0)) - 1
             def resp_iconsLabels = optionsD1.getAt(selectedOption)
@@ -266,10 +265,12 @@ class PackMenu{
                 WSE.setExtension(nodo, 'groovy')
             } else if (acc==separatorStr){
                 //nodo.text = '---' // it seems it isn't necessary
+            } else if (acc==vertSeparatorStr){
+                //nodo.text = '|' // it seems it isn't necessary
             } else if (acc.contains(';')){
                 markAsPowerButton(nodo, true)
                 acc.split(';')each{a ->
-                    nodo.createChild(TextUtils.getText("${a}.text",null)?:TextUtils.getText("${a}.tooltip",null)?:'').link.text = "menuitem:_${a}"
+                    nodo.createChild(getLabelForAccion(a)).link.text = "menuitem:_${a.replace(' ','%20')}"
                 }
             } else {
                 nodo.link.text = "menuitem:_${acc}"
@@ -342,9 +343,9 @@ class PackMenu{
         if (result == JOptionPane.OK_OPTION) {
             def permiString = hasScripts? Integer.toBinaryString((readPermissionCheckBox.selected?0b0001:0)+(writePermissionCheckBox.selected?0b0010:0)+(netPermissionCheckBox.selected?0b0100:0)+(exePermissionCheckBox.selected?0b1000:0)) : null
             return [
-                    menuNameField.text,
+                    menuNameField.text.trim(),
                     textLengthField.text?.isInteger()?textLengthField.text.toInteger():maxTextLen,
-                    tabNameField.text?:MoM_TAB_NAME,
+                    tabNameField.text.trim()?:MoM_TAB_NAME,
                     autoLaunchCheckBox.isSelected(),
                     ((iconsLabelsComboBox.getSelectedIndex() + 1) & 0b01)>0,
                     ((iconsLabelsComboBox.getSelectedIndex() + 1) & 0b10)>0,
@@ -364,6 +365,10 @@ class PackMenu{
         return n.text.every{ it == '-' }
     }
 
+    def static isVertSeparatorNode(n){
+        return n.text.every{ it == '|' }
+    }
+
     def static isPowerButtonNode(n){
         //return n.style.name == POWER_BUTTON_STYLE
         return n.details?.startsWith(POWER_BUTTON_STYLE)?:false
@@ -381,9 +386,11 @@ class PackMenu{
                         scriptStr + ++iScript :
                         isSeparatorNode(n)?
                                 separatorStr:
-                                isPowerButtonNode(n)?
-                                        getPowerButtonActions(n):
-                                        null
+                                isVertSeparatorNode(n)?
+                                        vertSeparatorStr:
+                                        isPowerButtonNode(n)?
+                                                getPowerButtonActions(n):
+                                                null
     }
 
     def static getPowerButtonActions(n){
@@ -398,6 +405,29 @@ class PackMenu{
 
     def static getNodeIcon(n){
         return n.icons?"IconAction.${n.icons.first}":null
+    }
+
+    def static getLabelForAccion(acc){
+        def label = TextUtils.getText("${acc}.text",null)?:TextUtils.getText("${acc}.tooltip",null)
+        label ?= getLabelFromMenuTree(menuUtils.createMenuEntryTree("icons").children(),acc)
+        label ?= acc
+    }
+
+    def static getLabelFromMenuTree(nodos, accKey){
+        def lab
+        nodos.any{ n ->
+            def mObj = n.getUserObject()
+            def key = mObj.getKey()
+            if(key == accKey){
+                lab = mObj.getLabel()
+                return true
+            }
+            if (!n.isLeaf()){
+                lab = getLabelFromMenuTree(n.children(),accKey)
+                if(lab){return true}
+            }
+        }
+        return lab
     }
 
     def static respuestaDialogo(options,msg,title){

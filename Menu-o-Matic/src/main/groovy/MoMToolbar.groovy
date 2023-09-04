@@ -13,7 +13,6 @@ import javax.swing.AbstractButton
 import javax.swing.JToolBar
 
 import org.freeplane.core.util.Compat
-import org.freeplane.core.ui.components.ToolbarLayout
 
 class MoMToolbar extends JToolBar {
     protected static Insets nullInsets = new Insets(0, 0, 0, 0)
@@ -30,7 +29,6 @@ class MoMToolbar extends JToolBar {
         this.setMargin(MoMToolbar.nullInsets)
         setFloatable(false)
         setRollover(true)
-        super.setLayout(ToolbarLayout.vertical())
         addHierarchyBoundsListener(new HierarchyBoundsListener() {
             @Override
             public void ancestorResized(final HierarchyEvent e) {

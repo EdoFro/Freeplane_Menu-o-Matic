@@ -10,7 +10,7 @@ class MoMMapCreationListener implements IMapLifeCycleListener {
 
     @Override
     void onCreate(MapModel map) {
-        println "- launching AutoLaunchCustomMenus from opening mind map:"
+        println "MoM AUTO: - launching AutoLaunchCustomMenus from opening mind map:"
         LD.launchAutoLaunchCustomMenusFromMap(map)
     }
 }
@@ -29,7 +29,7 @@ def runOnStartingFreeplane =  config.getBooleanProperty('menuOMatic_runOnStartin
 if(isAddOnActive && runOnStartingFreeplane){
     menuUtils.executeMenuItems(['addons.menuOMatic.1launchMenuOMaticDialog_on_single_node'])
 
-    println '- opening AutoLaunchCustomMenus from following mind maps:'
+    println 'MoM init: - opening AutoLaunchCustomMenus from following mind maps:'
     def mapas = c.getOpenMindMaps()
     
     mapas.sort{it.name}.each{mapa ->

@@ -18,6 +18,7 @@ gradle-app.setting
 # Addon maps
 *.addon.mm
 *.mm.bak
+*.addon.zip
 # version.properties
 
 # ignore .jar files

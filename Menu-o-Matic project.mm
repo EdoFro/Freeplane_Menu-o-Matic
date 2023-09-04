@@ -1,7 +1,7 @@
 <map version="freeplane 1.11.5">
 <!--To view this file, download free mind mapping software Freeplane from https://www.freeplane.org -->
 <attribute_registry SHOW_ATTRIBUTES="selected"/>
-<node TEXT="Menu-o-Matic project" LOCALIZED_STYLE_REF="AutomaticLayout.level.root" FOLDED="false" ID="ID_551814049" LINK="../../../../../Respaldo%20EF/ef/Documentos%20con%20macros/08%20Freemind%20Groovy/scripts/ScriptsEnComputadorYDesarrollosEdo%20v1.9.mm" MAX_WIDTH="7 cm"><hook NAME="MapStyle" background="#f9f9f8">
+<node TEXT="Menu-o-Matic project" LOCALIZED_STYLE_REF="AutomaticLayout.level.root" FOLDED="false" ID="ID_551814049" LINK="../../../../../Respaldo%20EF/ef/Documentos%20con%20macros/08%20Freemind%20Groovy/scripts/ScriptsEnComputadorYDesarrollosEdo%20v1.9.mm" MAX_WIDTH="7 cm"><hook NAME="MapStyle" background="#f9f9f8" zoom="1.04">
     <conditional_styles>
         <conditional_style ACTIVE="true" STYLE_REF="customMenuPackage" LAST="false">
             <attribute_exists_condition ATTRIBUTE="tbActions"/>
@@ -393,7 +393,7 @@ before the actual namefilter setting)
 </html></richcontent>
 </node>
 </node>
-<node TEXT="files" ID="ID_1263743307">
+<node TEXT="files" FOLDED="true" ID="ID_1263743307">
 <attribute NAME="projectCode" VALUE="files"/>
 <node TEXT="delete" STYLE_REF="missing" ID="ID_1469136399" LINK="delete/"><richcontent TYPE="DETAILS">
 <html>
@@ -602,7 +602,8 @@ before the actual namefilter setting)
     </p>
   </body>
 </html></richcontent>
-<node TEXT="lib" STYLE_REF="Organizador" FOLDED="true" ID="ID_1649002022">
+<font BOLD="false" STRIKETHROUGH="false" ITALIC="false"/>
+<node TEXT="lib" STYLE_REF="Organizador" ID="ID_1649002022">
 <attribute NAME="projectCode" VALUE="lib"/>
 <node TEXT="src" STYLE_REF="file_folder" ID="ID_1777746420" LINK="Menu-o-Matic/src/">
 <attribute NAME="lastModifiedTime" VALUE="24-06-21 13:31" OBJECT="org.freeplane.features.format.FormattedDate|2021-06-24T13:31-0400|datetime"/>
@@ -2472,29 +2473,7 @@ before the actual namefilter setting)
     </p>
   </body>
 </html></richcontent>
-<node TEXT="MoM Future A" STYLE_REF="milestone" ID="ID_1214021140">
-<node TEXT="Crear forma de que un botón incluya varios comandos" STYLE_REF="nextTask" FOLDED="true" ID="ID_1260558966">
-<node TEXT="y los ejecute en orden" ID="ID_1787767020"/>
-<node TEXT="¿aplica scripts o sólo comandos?" ID="ID_1027772698"/>
-<node TEXT="alternativas" ID="ID_1501100269">
-<node TEXT="puede requerir nuevo estilo o ícono que indice nodo padre de unión" ID="ID_1944341740">
-<node TEXT="para que package entienda cuales son los comandos a unir" ID="ID_403432332"/>
-</node>
-<node TEXT="o puede hacerse en dos pasos" ID="ID_1016741639">
-<node TEXT="unir commandos en un nodo &quot;resumen&quot;" ID="ID_962422598"/>
-<node TEXT="package" ID="ID_359472693"/>
-</node>
-<node TEXT="o puede ser cuando se aplica package y uno de los hijos es un nodo package" ID="ID_427716198">
-<icon BUILTIN="forward"/>
-<node TEXT="si package incluye scripts?" ID="ID_1538141123">
-<node TEXT="los incluye" ID="ID_334845430"/>
-<node TEXT="los omite" ID="ID_1424559313"/>
-<node TEXT="aborta y mensaje" ID="ID_1407197711"/>
-</node>
-</node>
-</node>
-</node>
-</node>
+<node TEXT="MoM Future A" STYLE_REF="milestone" ID="ID_1214021140"/>
 </node>
 <node TEXT="LaunchDialog.groovy" ID="ID_1915686947" LINK="Menu-o-Matic/src/main/groovy/LaunchDialog.groovy">
 <attribute NAME="lastModifiedTime" VALUE="08-08-21 16:04" OBJECT="org.freeplane.features.format.FormattedDate|2021-08-08T16:04-0400|dd-MM-yy HH:mm"/>
@@ -3130,46 +3109,7 @@ before the actual namefilter setting)
     </p>
   </body>
 </html></richcontent>
-<node TEXT="MoM Future A" STYLE_REF="milestone" ID="ID_1002832824">
-<node TEXT="Hacer que MoM pueda estar en ToolsTab" STYLE_REF="maybeTask" ID="ID_91790832">
-<node TEXT="cada grupo de herramientas se anexa como una &quot;sección&quot;" STYLE_REF="completedTask" ID="ID_513233729"/>
-<node TEXT="secciones se pueden reordenar" STYLE_REF="completedTask" ID="ID_1427840939"/>
-<node TEXT="secciones se pueden minimizar" STYLE_REF="maybeTask" ID="ID_733577266"/>
-<node TEXT="secciones se pueden cambiar de sólo iconos a iconos + label de ida y vuelta" STYLE_REF="maybeTask" ID="ID_1557719601"/>
-<node TEXT="Tab en tools label &quot;recuerda&quot; su ancho" STYLE_REF="completedTask" FOLDED="true" ID="ID_1993864839">
-<node TEXT="al cambiar a otras tabs se recupera ancho original" ID="ID_1033020137"/>
-<node TEXT="botón que hace &quot;pack&quot; minimizando ancho necesario" ID="ID_714383084"/>
-</node>
-</node>
-<node TEXT="Menu-o-Matic" ID="ID_1838652963" LINK="menuitem:_addons.menuOMatic.launchCustomDialog_on_single_node">
-<attribute_layout NAME_WIDTH="85.78723 pt" VALUE_WIDTH="1598.55316 pt"/>
-<attribute NAME="tbActions" VALUE="[addons.menuOMatic.launchCustomDialog_on_single_node, addons.menuOMatic.packCustomMenu_on_single_node, addons.menuOMatic.unpackCustomMenu_on_single_node, addons.menuOMatic.lauchDialogFromNodes_on_single_node, addons.menuOMatic.launchDialogsFromBranch_on_single_node, addons.menuOMatic.listCustomDialogs_on_single_node, addons.menuOMatic.listCustomMenusFromMap_on_single_node]"/>
-<attribute NAME="tbIcons" VALUE="[IconAction.emoji-1F680, IconAction.emoji-1F4E6, IconAction.emoji-1F468-200D-1F527, IconAction.emoji-2728, IconAction.emoji-1F387, IconAction.list, IconAction.mindmap]"/>
-<attribute NAME="tbLabels" VALUE="[launch menu dialog, pack menu, unpack menu, launch directly, launch all, list menu dialogs, list menu packages from map]"/>
-<attribute NAME="tbMaxTextLength" VALUE="50" OBJECT="org.freeplane.features.format.FormattedNumber|50"/>
-<attribute NAME="tbShowIcons" VALUE="true"/>
-<attribute NAME="tbShowLabels" VALUE="false"/>
-<attribute NAME="tbFocusToMap" VALUE="true"/>
-<attribute NAME="tbTitle" VALUE="Menu-o-Matic"/>
-<richcontent TYPE="DETAILS">
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      customMenu&nbsp;&nbsp;
-    </p>
-    <p>
-      &nbsp;&nbsp;- icons only
-    </p>
-    <p>
-      &nbsp;&nbsp;- return to mindmap
-    </p>
-  </body>
-</html></richcontent>
-</node>
-</node>
+<node TEXT="MoM Future A" STYLE_REF="milestone" ID="ID_1002832824"/>
 <node TEXT="cambiar a MoMToolbars" STYLE_REF="completedTask" ID="ID_1305392679"/>
 <node TEXT="Eliminar dialogs??" STYLE_REF="nextTask" ID="ID_1470646510"/>
 </node>
@@ -3177,9 +3117,9 @@ before the actual namefilter setting)
 <node TEXT="agregar importMoMStyles" STYLE_REF="pendingTask" ID="ID_1898413286"/>
 </node>
 <node TEXT="MoMToolbar.groovy" ID="ID_1177945776" LINK="Menu-o-Matic/src/main/groovy/MoMToolbar.groovy"/>
-<node TEXT="LaunchTabPane.groovy" ID="ID_56604948" LINK="Menu-o-Matic/src/main/groovy/LaunchTabPane.groovy">
-<node TEXT="inventar forma en que poder agregar separadores entre botones" STYLE_REF="nextTask" ID="ID_1218863478">
-<node TEXT="y que quede en MD" STYLE_REF="pendingTask" ID="ID_212680872"/>
+<node TEXT="LaunchTabPane.groovy" FOLDED="true" ID="ID_56604948" LINK="Menu-o-Matic/src/main/groovy/LaunchTabPane.groovy">
+<node TEXT="inventar forma en que poder agregar separadores entre botones" STYLE_REF="completedTask" FOLDED="true" ID="ID_1218863478">
+<node TEXT="y que quede en MD" STYLE_REF="completedTask" ID="ID_212680872"/>
 </node>
 <node TEXT="al crear Tab, toma ícono de nodo" STYLE_REF="completedTask" FOLDED="true" ID="ID_1543419095">
 <node TEXT="puede ser parte del MD" STYLE_REF="completedTask" ID="ID_383938869"/>
@@ -3193,6 +3133,7 @@ before the actual namefilter setting)
 </node>
 </node>
 </node>
+<node TEXT="MoMToolbarLayout.groovy" ID="ID_1259118617" LINK="Menu-o-Matic/src/main/groovy/MoMToolbarLayout.groovy"/>
 </node>
 </node>
 </node>
@@ -3707,8 +3648,7 @@ before the actual namefilter setting)
       PM.markAsPowerButton(node, !PM.isPowerButtonNode(node))
     </p>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 <richcontent TYPE="DETAILS">
 <html>
   <head>
@@ -3719,11 +3659,10 @@ before the actual namefilter setting)
       .groovy
     </p>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 </node>
 <node TEXT="get Map/Branch used icons actions" STYLE_REF="nextTask" FOLDED="true" ID="ID_232294406">
-<node TEXT="present icons in map/branch as buttons" ID="ID_1197565766" VGAP_QUANTITY="2 px"><richcontent TYPE="NOTE">
+<node TEXT="present icons in map/branch as buttons" FOLDED="true" ID="ID_1197565766" VGAP_QUANTITY="2 px"><richcontent TYPE="NOTE">
 <html>
   <head>
     
@@ -3881,6 +3820,10 @@ before the actual namefilter setting)
 <node TEXT="Imp_3" ID="ID_624685296" LINK="menuitem:_IconAction.Importancia/Imp_3"/>
 </node>
 </node>
+</node>
+<node TEXT="debe ser equivalente a indetrtar MoM toolbar" ID="ID_596626769">
+<node TEXT="debe generar MD y luego generar toolbar" STYLE_REF="pendingTask" ID="ID_1772686801"/>
+<node TEXT="MD con Tab predefinida e ícono propio" STYLE_REF="pendingTask" ID="ID_1684493816"/>
 </node>
 </node>
 <node TEXT="get Map/Branch used styles actions" STYLE_REF="nextTask" FOLDED="true" ID="ID_817232585">
@@ -4055,7 +3998,7 @@ before the actual namefilter setting)
 </node>
 </node>
 <node TEXT="revisar MarkdownHelper para ver como traspasé estilo de nodo a panel PREVIEW" STYLE_REF="nextTask" ID="ID_141236557"/>
-<node TEXT="create &quot;Button&quot; using node format and icons" POSITION="bottom_or_right" ID="ID_945425172"><richcontent TYPE="NOTE">
+<node TEXT="create &quot;Button&quot; using node format and icons" FOLDED="true" POSITION="bottom_or_right" ID="ID_945425172"><richcontent TYPE="NOTE">
 <html>
   <head>
     
@@ -4245,6 +4188,7 @@ before the actual namefilter setting)
 </node>
 </node>
 </node>
+<node TEXT="necesito que DashStyle o algo así aparezca en API" STYLE_REF="nextTask" POSITION="bottom_or_right" ID="ID_968405354"/>
 </node>
 </node>
 </node>
@@ -4451,7 +4395,6 @@ before the actual namefilter setting)
 </html></richcontent>
 </node>
 </node>
-<node TEXT="Navigating" ID="ID_1591150376"/>
 <node TEXT="borradores / tareas" STYLE_REF="Organizador" FOLDED="true" ID="ID_266728019" VSHIFT_QUANTITY="-0.75 pt">
 <node TEXT="design" STYLE_REF="Organizador" ID="ID_1602015427">
 <node TEXT="combinado: trae primero submenu y si repite trae botones" ID="ID_1020191197">
@@ -4622,7 +4565,7 @@ before the actual namefilter setting)
 <node TEXT="combinar con siguiente para si mouse está sobre grupo de menus entonces descargue todos los botones baje él" ID="ID_1411193413"/>
 <node TEXT="abre dialogo con boton para ir repitiendo" ID="ID_1942898211"/>
 </node>
-<node TEXT="Abre submenu de la barra de menus de Freeplane" FOLDED="true" ID="ID_1785189681"><richcontent TYPE="NOTE">
+<node TEXT="Abre submenu de la barra de menus de Freeplane" ID="ID_1785189681"><richcontent TYPE="NOTE">
 <html>
   <head>
     
@@ -5871,14 +5814,14 @@ before the actual namefilter setting)
 <node TEXT="TabbedPanelMod" ID="ID_1367464612" LINK="Menu-o-Matic/zips/icons/TabbedPanelMod/">
 <node TEXT="MoM.svg" ID="ID_844351064" LINK="Menu-o-Matic/zips/icons/TabbedPanelMod/MoM.svg"/>
 </node>
-<node TEXT="Menu-o-Matic" STYLE_REF="movedRenamed" ID="ID_1262031919" LINK="Menu-o-Matic/zips/icons/Menu-o-Matic/">
-<node TEXT="MoM.svg" STYLE_REF="freshNew" ID="ID_647775263" LINK="Menu-o-Matic/zips/icons/Menu-o-Matic/MoM.svg">
+<node TEXT="Menu-o-Matic" ID="ID_1262031919" LINK="Menu-o-Matic/zips/icons/Menu-o-Matic/">
+<node TEXT="MoM.svg" ID="ID_647775263" LINK="Menu-o-Matic/zips/icons/Menu-o-Matic/MoM.svg">
 <node TEXT="MoM" POSITION="bottom_or_right" ID="ID_352979862" LINK="menuitem:_IconAction.Menu-o-Matic/MoM"/>
 </node>
-<node TEXT="MoMCloseTab.svg" STYLE_REF="freshNew" ID="ID_1249662872" LINK="Menu-o-Matic/zips/icons/Menu-o-Matic/MoMCloseTab.svg">
+<node TEXT="MoMCloseTab.svg" ID="ID_1249662872" LINK="Menu-o-Matic/zips/icons/Menu-o-Matic/MoMCloseTab.svg">
 <node TEXT="MoMCloseTab" ID="ID_1360054908" LINK="menuitem:_IconAction.Menu-o-Matic/MoMCloseTab"/>
 </node>
-<node TEXT="MoMCloseToolbar.svg" STYLE_REF="freshNew" ID="ID_49034312" LINK="Menu-o-Matic/zips/icons/Menu-o-Matic/MoMCloseToolbar.svg">
+<node TEXT="MoMCloseToolbar.svg" ID="ID_49034312" LINK="Menu-o-Matic/zips/icons/Menu-o-Matic/MoMCloseToolbar.svg">
 <node TEXT="MoMCloseToolbar" POSITION="bottom_or_right" ID="ID_409548431" LINK="menuitem:_IconAction.Menu-o-Matic/MoMCloseToolbar"/>
 </node>
 </node>
@@ -5922,27 +5865,8 @@ before the actual namefilter setting)
 </node>
 <node TEXT="scripts" ID="ID_943715260" LINK="Menu-o-Matic/zips/scripts/">
 <node TEXT="init" ID="ID_524155904" LINK="Menu-o-Matic/zips/scripts/init/">
-<node TEXT="Menu-o-Matic_init.groovy" ID="ID_13016940" LINK="Menu-o-Matic/zips/scripts/init/Menu-o-Matic_init.groovy"><richcontent TYPE="NOTE">
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      //crear
-    </p>
-    <p>
-      
-    </p>
-    <p>
-      //eso
-    </p>
-    <p>
-      
-    </p>
-  </body>
-</html></richcontent>
-<node TEXT="hacer que revise los mapas en orden alfabético" STYLE_REF="completedTask" ID="ID_773018765">
+<node TEXT="Tabz_Menu-o-Matic_init.groovy" FOLDED="true" ID="ID_374127528" LINK="Menu-o-Matic/zips/scripts/init/Tabz_Menu-o-Matic_init.groovy">
+<node TEXT="hacer que revise los mapas en orden alfabético" STYLE_REF="completedTask" POSITION="bottom_or_right" ID="ID_773018765">
 <node TEXT="DevTools" ID="ID_916920294" LINK="menuitem:_addons.menuOMatic.launchCustomDialog_on_single_node">
 <attribute_layout NAME_WIDTH="85.78723 pt" VALUE_WIDTH="379.14893 pt"/>
 <attribute NAME="tbActions" VALUE="[addons.devtools.checkAddOn_on_single_node, addons.devtools.releaseAddOn_on_single_node]"/>
@@ -5972,8 +5896,8 @@ before the actual namefilter setting)
 </html></richcontent>
 </node>
 </node>
-<node TEXT="y luego los nodos en cada mapa también en orden alfabético" STYLE_REF="completedTask" ID="ID_449476548"/>
-<node TEXT="Si tiene tbTabName --&gt; abre en TabPane" STYLE_REF="discardedTask" ID="ID_485021316"/>
+<node TEXT="y luego los nodos en cada mapa también en orden alfabético" STYLE_REF="completedTask" POSITION="bottom_or_right" ID="ID_449476548"/>
+<node TEXT="Si tiene tbTabName --&gt; abre en TabPane" STYLE_REF="completedTask" POSITION="bottom_or_right" ID="ID_485021316"/>
 </node>
 </node>
 </node>
@@ -6074,7 +5998,7 @@ before the actual namefilter setting)
 <node TEXT="propia configuración" ID="ID_401689680"/>
 </node>
 </node>
-<node TEXT="ver posibilidad de agregar separadores en toolbars" STYLE_REF="pendingTask" FOLDED="true" ID="ID_1433276653">
+<node TEXT="ver posibilidad de agregar separadores en toolbars" STYLE_REF="completedTask" FOLDED="true" ID="ID_1433276653">
 <node TEXT="ver" ID="ID_1116152058">
 <node TEXT="TitledSeparators" ID="ID_1305078940">
 <node TEXT="https://stackoverflow.com/questions/11466337/titled-separator-in-java-swing" POSITION="bottom_or_right" ID="ID_175447613" LINK="https://stackoverflow.com/questions/11466337/titled-separator-in-java-swing"/>
@@ -6095,8 +6019,9 @@ before the actual namefilter setting)
 <attribute NAME="creationTime" VALUE="24-06-21 13:09" OBJECT="org.freeplane.features.format.FormattedDate|2021-06-24T13:09-0400|datetime"/>
 <attribute NAME="fileSize" VALUE="40.442" OBJECT="org.freeplane.features.format.FormattedNumber|40442|#,##0"/>
 </node>
-<node TEXT="generados automáticamente" STYLE_REF="Organizador" ID="ID_753392396">
-<node TEXT="Menu-o-Matic-v0.1.9.addon.mm" STYLE_REF="freshNew" ID="ID_407125811" LINK="Menu-o-Matic/Menu-o-Matic-v0.1.9.addon.mm"/>
+<node TEXT="generados automáticamente" STYLE_REF="Organizador" FOLDED="true" ID="ID_753392396">
+<node TEXT="Menu-o-Matic-v0.1.10.addon.mm" ID="ID_1896691301" LINK="Menu-o-Matic/Menu-o-Matic-v0.1.10.addon.mm"/>
+<node TEXT="Menu-o-Matic-v0.1.9.addon.mm" ID="ID_407125811" LINK="Menu-o-Matic/Menu-o-Matic-v0.1.9.addon.mm"/>
 <node TEXT="Menu-o-Matic-v0.1.8.addon.mm" ID="ID_331038225" LINK="Menu-o-Matic/Menu-o-Matic-v0.1.8.addon.mm">
 <attribute NAME="lastModifiedTime" VALUE="30-08-23 13:06" OBJECT="org.freeplane.features.format.FormattedDate|2023-08-30T13:06-0400|datetime"/>
 <attribute NAME="lastAccessTime" VALUE="30-08-23 17:48" OBJECT="org.freeplane.features.format.FormattedDate|2023-08-30T17:48-0400|datetime"/>
@@ -6269,7 +6194,7 @@ before the actual namefilter setting)
 </node>
 <node TEXT="versiones anteriores" STYLE_REF="Organizador" ID="ID_73675832"/>
 </node>
-<node TEXT="build.gradle" ID="ID_770172581" LINK="Menu-o-Matic/build.gradle">
+<node TEXT="build.gradle" FOLDED="true" ID="ID_770172581" LINK="Menu-o-Matic/build.gradle">
 <attribute NAME="lastModifiedTime" VALUE="06-01-22 15:48" OBJECT="org.freeplane.features.format.FormattedDate|2022-01-06T15:48-0300|dd-MM-yy HH:mm"/>
 <attribute NAME="lastAccessTime" VALUE="28-03-22 11:13" OBJECT="org.freeplane.features.format.FormattedDate|2022-03-28T11:13-0300|dd-MM-yy HH:mm"/>
 <attribute NAME="creationTime" VALUE="24-06-21 11:48" OBJECT="org.freeplane.features.format.FormattedDate|2021-06-24T11:48-0400|datetime"/>
@@ -6357,7 +6282,7 @@ before the actual namefilter setting)
 </node>
 <node TEXT="última versión no funciona con groovy 3.x.txt" ID="ID_1548801217" LINK="Menu-o-Matic/última%20versión%20no%20funciona%20con%20groovy%203.x.txt"/>
 </node>
-<node TEXT="resources" STYLE_REF="file_folder" FOLDED="true" ID="ID_928846385" LINK="resources/">
+<node TEXT="resources" STYLE_REF="file_folder" ID="ID_928846385" LINK="resources/">
 <attribute NAME="lastModifiedTime" VALUE="12-07-21 18:52" OBJECT="org.freeplane.features.format.FormattedDate|2021-07-12T18:52-0400|dd-MM-yy HH:mm"/>
 <attribute NAME="lastAccessTime" VALUE="07-08-21 21:36" OBJECT="org.freeplane.features.format.FormattedDate|2021-08-07T21:36-0400|dd-MM-yy HH:mm"/>
 <attribute NAME="creationTime" VALUE="10-03-21 10:51" OBJECT="org.freeplane.features.format.FormattedDate|2021-03-10T10:51-0300|datetime"/>
@@ -6509,6 +6434,7 @@ before the actual namefilter setting)
   </body>
 </html></richcontent>
 </node>
+<node TEXT="Menu-o-Matic examples.mm" ID="ID_1769344524" LINK="resources/Menu-o-Matic%20examples.mm"/>
 </node>
 <node TEXT="README.md" ID="ID_925151699" LINK="README.md" STYLE="bubble">
 <edge COLOR="#ff0000"/>
@@ -7584,8 +7510,19 @@ before the actual namefilter setting)
 </node>
 </node>
 </node>
+<node TEXT="Menu-o-Matic project.mm" FOLDED="true" ID="ID_1492418706" LINK="Menu-o-Matic%20project.mm">
+<node TEXT="Menu-o-Matic project_files" FOLDED="true" ID="ID_203558723" LINK="Menu-o-Matic%20project_files/">
+<node TEXT="png_18412139571428858945.png" ID="ID_1292443528" LINK="Menu-o-Matic%20project_files/png_18412139571428858945.png"/>
+<node TEXT="png-230902-185627513-13176840237098188809.png" ID="ID_183319520" LINK="Menu-o-Matic%20project_files/png-230902-185627513-13176840237098188809.png"/>
+<node TEXT="png-230902-185923951-5170018360202205149.png" ID="ID_1166961153" LINK="Menu-o-Matic%20project_files/png-230902-185923951-5170018360202205149.png"/>
+<node TEXT="png-230902-190005088-8772525532631484939.png" ID="ID_547025834" LINK="Menu-o-Matic%20project_files/png-230902-190005088-8772525532631484939.png"/>
+<node TEXT="png-230902-190301036-2444676165306606889.png" ID="ID_1598047906" LINK="Menu-o-Matic%20project_files/png-230902-190301036-2444676165306606889.png"/>
+<node TEXT="png-230902-190356299-7410653210181318287.png" ID="ID_885033875" LINK="Menu-o-Matic%20project_files/png-230902-190356299-7410653210181318287.png"/>
+<node TEXT="png-230902-190615415-15654607576368185715.png" ID="ID_1445935026" LINK="Menu-o-Matic%20project_files/png-230902-190615415-15654607576368185715.png"/>
+<node TEXT="png-230902-190801671-11014909490229334339.png" ID="ID_1587039230" LINK="Menu-o-Matic%20project_files/png-230902-190801671-11014909490229334339.png"/>
 </node>
-<node TEXT="Menu-o-Matic project.mm" ID="ID_1492418706" LINK="Menu-o-Matic%20project.mm"/>
+</node>
+</node>
 <node TEXT="new imported files" STYLE_REF="newFolderImport" ID="ID_1788703280">
 <attribute NAME="log_MDI" VALUE="2" OBJECT="org.freeplane.features.format.FormattedObject|org.freeplane.plugin.script.proxy.ConvertibleNumber&amp;#x7c;2|number:decimal:#0.####"/>
 <richcontent TYPE="NOTE">
@@ -7595,7 +7532,7 @@ before the actual namefilter setting)
   </head>
   <body>
     <p>
-      Inated:&#xa0;&#xa0;&#xa0;2023-08-31&#xa0;&#xa0;12:25:39
+      Inated:&#xa0;&#xa0;&#xa0;2023-09-04&#xa0;&#xa0;19:37:43
     </p>
     <p>
       
@@ -7604,13 +7541,13 @@ before the actual namefilter setting)
       ------- Files: --------&#xa0;
     </p>
     <p>
-      &#xa0;4 node(s) pointing to unexisting/filtered files (marked as 'broken')
+      &#xa0;5 node(s) pointing to unexisting/filtered files (marked as 'broken')
     </p>
     <p>
       &#xa0;0 link(s) corrected in nodes
     </p>
     <p>
-      &#xa0;1 new file(s) imported as node(s)&#xa0;
+      &#xa0;0 new file(s) imported as node(s)&#xa0;
     </p>
     <p>
       &#xa0;0 node(s) moved/renamed in drive
@@ -7640,7 +7577,7 @@ before the actual namefilter setting)
       
     </p>
     <p>
-      1 seconds
+      0.3 seconds
     </p>
     <p>
       
@@ -8364,6 +8301,623 @@ before the actual namefilter setting)
 </html></richcontent>
 </node>
 </node>
+<node TEXT="pruebas" FOLDED="true" ID="ID_733825031">
+<node TEXT="ScrollablePanel" ID="ID_486244889">
+<node TEXT="ScrollablePanel ejemplo 1" ID="ID_490388973"><richcontent TYPE="NOTE">
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      import javax.swing.*;
+    </p>
+    <p>
+      import java.awt.*;
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      &#xa0;//&#xa0;&#xa0;&#xa0;public static void main(String[] args) {
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;JFrame frame = new JFrame(&quot;JScrollPane Example&quot;);
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;frame.setSize(400, 300);
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;frame.background = Color.pink
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;ScrollablePanelExample panel = new ScrollablePanelExample();
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;//JPanel panel = new JPanel();
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;panel.with{
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;for (int i = 0; i &lt; 20; i++) {
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;def label = new JLabel(&quot;Label &quot; + i)
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;label.with{
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;background = Color.yellow.brighter()
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;opaque = true
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;}
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;add(label);
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;}
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;background = Color.green
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;}
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;JScrollPane scrollPane = new JScrollPane(panel);
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;scrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;frame.add(scrollPane);
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;frame.setVisible(true);
+    </p>
+    <p>
+      &#xa0;//&#xa0;&#xa0;&#xa0;}
+    </p>
+    <p>
+      &#xa0;
+    </p>
+    <p>
+      public class ScrollablePanelExample extends JPanel implements Scrollable {
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;public ScrollablePanelExample() {}
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;@Override
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;public Dimension getPreferredScrollableViewportSize() {
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;return getPreferredSize();
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;}
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;@Override
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;public int getScrollableUnitIncrement(Rectangle visibleRect, int orientation, int direction) {
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;return 10;
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;}
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;@Override
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;public int getScrollableBlockIncrement(Rectangle visibleRect, int orientation, int direction) {
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;return 50;
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;}
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;@Override
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;public boolean getScrollableTracksViewportWidth() {
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;return true;
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;}
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;@Override
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;public boolean getScrollableTracksViewportHeight() {
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;return false;
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;}
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      }
+    </p>
+  </body>
+</html></richcontent>
+<richcontent TYPE="DETAILS">
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      .groovy
+    </p>
+  </body>
+</html></richcontent>
+</node>
+<node TEXT="ScrollablePanel ejemplo 2" ID="ID_1393404838"><richcontent TYPE="NOTE">
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      import java.awt.Dimension;
+    </p>
+    <p>
+      import java.awt.GridLayout;
+    </p>
+    <p>
+      import java.awt.Rectangle;
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      import javax.swing.JFrame;
+    </p>
+    <p>
+      import javax.swing.JLabel;
+    </p>
+    <p>
+      import javax.swing.JPanel;
+    </p>
+    <p>
+      import javax.swing.JScrollPane;
+    </p>
+    <p>
+      import javax.swing.Scrollable;
+    </p>
+    <p>
+      import javax.swing.SwingUtilities;
+    </p>
+    <p>
+      import javax.swing.SwingConstants;
+    </p>
+    <p>
+      import javax.swing.WindowConstants;
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;JPanel scrollPanel = new ScrollablePanel();
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;scrollPanel.setLayout(new GridLayout(20, 1));
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;for (int i = 0; i &lt; 20; i++) {
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;scrollPanel.add(new JLabel(&quot;It's a simple label to test whether scrolling works &quot; + i));
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;}
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;JFrame frm = new JFrame(&quot;Test scrolling&quot;);
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;frm.add(new JScrollPane(scrollPanel));
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;frm.setSize(220, 200);
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;frm.setLocationRelativeTo(null);
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;frm.setVisible(true);
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;class ScrollablePanel extends JPanel implements Scrollable {
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;@Override
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;public Dimension getPreferredScrollableViewportSize() {
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;return getPreferredSize();
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;}
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;@Override
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;public int getScrollableUnitIncrement(Rectangle visibleRect, int orientation, int direction) {
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;return 10;
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;}
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;@Override
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;public int getScrollableBlockIncrement(Rectangle visibleRect, int orientation, int direction) {
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;//return 30
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;return ((orientation == SwingConstants.VERTICAL) ? visibleRect.height : visibleRect.width) - 30;
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;}
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;@Override
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;public boolean getScrollableTracksViewportWidth() {
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;// no horizontal scroll bar
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;return true;
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;}
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;@Override
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;public boolean getScrollableTracksViewportHeight() {
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;return false;
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;}
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;}
+    </p>
+  </body>
+</html></richcontent>
+<richcontent TYPE="DETAILS">
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      .groovy
+    </p>
+  </body>
+</html></richcontent>
+</node>
+</node>
+<node TEXT="revisar componentes de toolpanel" ID="ID_628246036"><richcontent TYPE="NOTE">
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      import edofro.menuomatic.MenuAction as MA
+    </p>
+    <p>
+      import javax.swing.JComponent&#xa0;
+    </p>
+    <p>
+      import java.awt.*
+    </p>
+    <p>
+      import javax.swing.*
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      JComponent co = (JComponent) MA. getComponent()
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      def factor = 11
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      do {
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;co = co.parent&#xa0;
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;println &quot;class: ${co.class}&quot;
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;println &quot; co.size&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;: ${co.size}&quot;
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;println &quot; co.preferredSize : ${co.preferredSize} ,&#xa0;&#xa0;${co.preferredSizeSet}&quot;
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;println &quot; co.minimumSize&#xa0;&#xa0;&#xa0;: ${co.minimumSize} ,&#xa0;&#xa0;${co.minimumSizeSet}&quot;
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;println &quot; co.maximumSize&#xa0;&#xa0;&#xa0;: ${co.maximumSize} ,&#xa0;&#xa0;${co.maximumSizeSet}&quot;
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;co.with{
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;//margin&#xa0;&#xa0;= new Insets(10,10,10,40)
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;background = new Color((co.size.width *factor*2)%255 as int,(co.size.height *factor)%255 as int,140)
+    </p>
+    <p>
+      &#xa0;&#xa0;&#xa0;&#xa0;}
+    </p>
+    <p>
+      } while (co !instanceof JScrollPane)
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      //return 'listo'
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      //println 'validate'
+    </p>
+    <p>
+      co.revalidate()
+    </p>
+    <p>
+      //println 'paint'
+    </p>
+    <p>
+      co.repaint()
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      def cont = SwingUtilities.getAncestorNamed('MoM_container',co)
+    </p>
+    <p>
+      //println cont?.name
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      if(!cont) return 'nope'
+    </p>
+    <p>
+      //println 'validate'
+    </p>
+    <p>
+      cont.revalidate()
+    </p>
+    <p>
+      //println 'paint'
+    </p>
+    <p>
+      cont.repaint()
+    </p>
+  </body>
+</html></richcontent>
+<richcontent TYPE="DETAILS">
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      .groovy
+    </p>
+  </body>
+</html></richcontent>
+</node>
+<node TEXT="entendiendo ToolBar Layout" ID="ID_170056841">
+<node TEXT="ToolbarLayout." ID="ID_729555437">
+<node TEXT="fix()" POSITION="bottom_or_right" ID="ID_77634190"><richcontent TYPE="DETAILS">
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      BlockEndPosition.ON_EVERY_SEPARATOR
+    </p>
+  </body>
+</html></richcontent>
+<node TEXT="libres" POSITION="bottom_or_right" ID="ID_778566879">
+<node TEXT="posiciones fijas&#xa;todo separador genera salto de línea" FOLDED="true" ID="ID_587121908">
+<node TEXT="posiciones fijas&#xa;todo separador genera salto de línea" ID="ID_1775242333">
+<hook URI="Menu-o-Matic%20project_files/png-230902-185627513-13176840237098188809.png" SIZE="0.9063444" NAME="ExternalObject"/>
+</node>
+</node>
+</node>
+<node TEXT="apretados" POSITION="bottom_or_right" ID="ID_1441393038">
+<node TEXT="No los distribuye" FOLDED="true" ID="ID_292278367">
+<node TEXT="No los distribuye" ID="ID_1167326310">
+<hook URI="Menu-o-Matic%20project_files/png-230902-190005088-8772525532631484939.png" SIZE="1.0" NAME="ExternalObject"/>
+</node>
+</node>
+</node>
+</node>
+<node TEXT="horizontal()" POSITION="bottom_or_right" ID="ID_870932775"><richcontent TYPE="DETAILS">
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      BlockEndPosition.ON_SEPARATOR
+    </p>
+  </body>
+</html></richcontent>
+<node TEXT="libres" ID="ID_757408689">
+<node TEXT="separadores no producen saltos de línea" FOLDED="true" ID="ID_1119225995">
+<node TEXT="separadores no producen saltos de línea" ID="ID_1595994379">
+<hook URI="Menu-o-Matic%20project_files/png-230902-190301036-2444676165306606889.png" SIZE="1.0" NAME="ExternalObject"/>
+</node>
+</node>
+</node>
+<node TEXT="apretados" ID="ID_1498447026">
+<node TEXT="sólo separadores&#xa;producen saltos de línea" FOLDED="true" ID="ID_1479850011">
+<node TEXT="sólo separadores&#xa;producen saltos de línea" ID="ID_1951450683">
+<hook URI="Menu-o-Matic%20project_files/png-230902-190356299-7410653210181318287.png" SIZE="1.0" NAME="ExternalObject"/>
+</node>
+</node>
+</node>
+</node>
+<node TEXT="vertical()" POSITION="bottom_or_right" ID="ID_1844409806"><richcontent TYPE="DETAILS">
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      BlockEndPosition.ANYWHERE
+    </p>
+  </body>
+</html></richcontent>
+<node TEXT="libres" ID="ID_931373669">
+<node TEXT="posiciones fijas&#xa;todo separador genera salto de línea y hace que toolbar sea ancho" FOLDED="true" ID="ID_1599536659">
+<node TEXT="posiciones fijas&#xa;todo separador genera salto de línea y hace que toolbar sea ancho" ID="ID_3987436">
+<hook URI="Menu-o-Matic%20project_files/png-230902-190615415-15654607576368185715.png" SIZE="1.0" NAME="ExternalObject"/>
+</node>
+</node>
+</node>
+<node TEXT="apretados" ID="ID_1863799642">
+<node TEXT="se reacomodan todos los botones&#xa;(con separador o no)" FOLDED="true" ID="ID_1263717128">
+<node TEXT="se reacomodan todos los botones&#xa;(con separador o no)" ID="ID_1303280891">
+<hook URI="Menu-o-Matic%20project_files/png-230902-190801671-11014909490229334339.png" SIZE="1.0" NAME="ExternalObject"/>
+</node>
+</node>
+</node>
+</node>
+</node>
+<node TEXT="como quiero que sea" ID="ID_1555017128">
+<node TEXT="libres" ID="ID_1241871614">
+<node TEXT="solo separadores horizontales producen saltos de líneas" ID="ID_670192998"/>
+</node>
+<node TEXT="apretados" ID="ID_1221908844">
+<node TEXT="primero se divide en separadores verticales" ID="ID_1844796236"/>
+<node TEXT="luego botón a botón" ID="ID_1572577006"/>
+</node>
+</node>
+</node>
+</node>
 <node TEXT="WIP" STYLE_REF="tasksBucket" ID="ID_1832095650"><richcontent TYPE="DETAILS">
 <html>
   <head>
@@ -8541,8 +9095,8 @@ before the actual namefilter setting)
 <node TEXT="files" STYLE_REF="project" ID="ID_1868886251">
 <node TEXT="Menu-o-Matic" STYLE_REF="project" ID="ID_877236292">
 <node TEXT="lib" STYLE_REF="project" ID="ID_1336236067">
-<node ID="ID_998107432" CONTENT_ID="ID_1260558966"/>
-<node ID="ID_1281995186" CONTENT_ID="ID_91790832"/>
+<node TEXT="Crear forma de que un botón incluya varios comandos" STYLE_REF="completedTask" ID="ID_998107432"/>
+<node TEXT="Hacer que MoM pueda estar en ToolsTab" STYLE_REF="maybeTask" ID="ID_1281995186"/>
 <node ID="ID_1096080020" CONTENT_ID="ID_1898413286"/>
 </node>
 <node TEXT="scripts" STYLE_REF="project" ID="ID_1513346412">
@@ -8702,6 +9256,7 @@ before the actual namefilter setting)
 <node ID="ID_515805616" TREE_ID="ID_705207683"/>
 </node>
 </node>
+<node ID="ID_1238819887" TREE_ID="ID_968405354"/>
 </node>
 <node ID="ID_1113835356" TREE_ID="ID_563376606">
 <node ID="ID_1417946136" TREE_ID="ID_1602633014">
@@ -9201,9 +9756,6 @@ before the actual namefilter setting)
 </html></richcontent>
 </node>
 </node>
-</node>
-<node TEXT="Menu-o-Matic project_files" STYLE_REF="freshNew" ID="ID_203558723" LINK="Menu-o-Matic%20project_files/">
-<node TEXT="png_18412139571428858945.png" STYLE_REF="freshNew" ID="ID_1292443528" LINK="Menu-o-Matic%20project_files/png_18412139571428858945.png"/>
 </node>
 </node>
 <node TEXT="Freeplane_Menu-o-Matic" POSITION="bottom_or_right" ID="ID_996112512" LINK="."/>
