@@ -132,9 +132,9 @@ class LaunchDialog{
     }
 	
     def static launchAutoLaunchCustomMenusFromMap(MindMap mapa){
-        println "|- mindMap: '${mapa.name}'"
+        println "MoM AUTO: |- mindMap: '${mapa.name}'"
         def nodos = mapa.root.find{isAutoLaunchMenuPack(it)}
-        println "|  - ${nodos*.text}"
+        println "MoM AUTO: |  - ${nodos*.text}"
         nodos.each{
             show(it)
         }

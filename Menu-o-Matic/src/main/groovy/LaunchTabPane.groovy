@@ -252,7 +252,7 @@ class LaunchTabPane {
         def TPM_props = AddOnsController.getController().getInstalledAddOn('tabbedPanelMod')
         if (TPM_props && TPM_props['active'] && c.FreeplaneVersion.getVersion(TPM_props['version']) >= c.FreeplaneVersion.getVersion("v0.4")) {
             def scrText = "edofro.tabbedpanelmod.TPM.modifyTab(${index}${iconForTab?', \'' + iconForTab + '\'':''})"
-            println scrText
+            println "MoM: $scrText"
             c.script(scrText, "groovy").executeOn(c.selected)
             println "TPM: Tab $index modified"
         }
