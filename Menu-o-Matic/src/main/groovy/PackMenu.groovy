@@ -182,9 +182,6 @@ class PackMenu{
         nAcciones -= nPowers
         def hasScripts = nAcciones.any{WSE.isGroovyNode(it)}
 
-        //get info from node
-        //def title = nodoBase.text
-
         //get info from node/dialog
         def menuName      = nodoBase[TB.title].string?:nodoBase.text
         def maxTextLength = nodoBase[TB.maxTextLength].num?.toInteger()
@@ -196,7 +193,8 @@ class PackMenu{
         def permissions   = nodoBase[TB.permissions].string
         def forceDialog = false
         (menuName, maxTextLength, tabName, autoLaunch, showIcons, showLabels, focusToMap, permissions) = getConfirmedInfo(forceDialog, hasScripts, menuName, maxTextLength, tabName, autoLaunch, showIcons, showLabels, focusToMap, permissions)
-        menuName?=nodoBase[TB.title].string?:nodoBase.text
+        menuName ?= nodoBase[TB.title].string
+        menuName ?= nodoBase.text
         if(menuName && maxTextLength && tabName && autoLaunch!=null && showIcons!=null && showLabels!=null && focusToMap!=null) {
             def selectedOption = ((showIcons?1:0) + (showLabels?2:0)) - 1
             def resp_iconsLabels = optionsD1.getAt(selectedOption)
@@ -345,9 +343,9 @@ class PackMenu{
         if (result == JOptionPane.OK_OPTION) {
             def permiString = hasScripts? Integer.toBinaryString((readPermissionCheckBox.selected?0b0001:0)+(writePermissionCheckBox.selected?0b0010:0)+(netPermissionCheckBox.selected?0b0100:0)+(exePermissionCheckBox.selected?0b1000:0)) : null
             return [
-                    menuNameField.text,
+                    menuNameField.text.trim(),
                     textLengthField.text?.isInteger()?textLengthField.text.toInteger():maxTextLen,
-                    tabNameField.text?:MoM_TAB_NAME,
+                    tabNameField.text.trim()?:MoM_TAB_NAME,
                     autoLaunchCheckBox.isSelected(),
                     ((iconsLabelsComboBox.getSelectedIndex() + 1) & 0b01)>0,
                     ((iconsLabelsComboBox.getSelectedIndex() + 1) & 0b10)>0,
