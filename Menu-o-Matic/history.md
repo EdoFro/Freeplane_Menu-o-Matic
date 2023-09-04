@@ -7,6 +7,12 @@
   * Right clicking on tab, (not on toolbars)
 * Added vertical separators
   * node text =  `|`
+* Improved Panel layout
+  * implements Scrollable interface
+  * custom ToolbarLayout
+* TitledBorder font size can now be defined by user
+  * scalling factor (integer between 0 and 200)
+  * 100 =  same size as UI font size
 
 ## v0.1.9
 

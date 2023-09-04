@@ -88,13 +88,13 @@
 </html>
 </richcontent>
 <hook NAME="MapStyle" background="#f9f9f8">
-    <properties show_icon_for_attributes="true" edgeColorConfiguration="#808080ff,#ff0000ff,#0000ffff,#00ff00ff,#ff00ffff,#00ffffff,#7c0000ff,#00007cff,#007c00ff,#7c007cff,#007c7cff,#7c7c00ff" mapUsesOwnSaveOptions="true" save_modification_times="false" save_last_visited_node="default" show_note_icons="true" save_folding="never_save_folding" fit_to_viewport="false"/>
+    <properties show_icon_for_attributes="true" edgeColorConfiguration="#808080ff,#ff0000ff,#0000ffff,#00ff00ff,#ff00ffff,#00ffffff,#7c0000ff,#00007cff,#007c00ff,#7c007cff,#007c7cff,#7c7c00ff" mapUsesOwnSaveOptions="true" save_modification_times="false" save_last_visited_node="true" show_note_icons="true" save_folding="never_save_folding" fit_to_viewport="false"/>
 
 <map_styles>
 <stylenode LOCALIZED_TEXT="styles.root_node" ID="ID_118736178" STYLE="oval" UNIFORM_SHAPE="true" VGAP_QUANTITY="24 pt">
 <font SIZE="24"/>
 <stylenode LOCALIZED_TEXT="styles.predefined" POSITION="bottom_or_right" STYLE="bubble">
-<stylenode LOCALIZED_TEXT="default" ID="ID_506805493" ICON_SIZE="12 pt" FORMAT_AS_HYPERLINK="false" COLOR="#484747" BACKGROUND_COLOR="#efefef" STYLE="bubble" SHAPE_HORIZONTAL_MARGIN="5 px" SHAPE_VERTICAL_MARGIN="2 px" NUMBERED="false" FORMAT="STANDARD_FORMAT" TEXT_ALIGN="DEFAULT" BORDER_WIDTH_LIKE_EDGE="false" BORDER_WIDTH="1.9 px" BORDER_COLOR_LIKE_EDGE="false" BORDER_COLOR="#8fbcbb" BORDER_DASH_LIKE_EDGE="true" BORDER_DASH="SOLID" VGAP_QUANTITY="2 px" COMMON_HGAP_QUANTITY="14 pt" MAX_WIDTH="15 cm" MIN_WIDTH="3.5 cm" CHILD_NODES_LAYOUT="AUTO">
+<stylenode LOCALIZED_TEXT="default" ID="ID_506805493" ICON_SIZE="12 pt" FORMAT_AS_HYPERLINK="false" COLOR="#484747" BACKGROUND_COLOR="#efefef" STYLE="bubble" SHAPE_HORIZONTAL_MARGIN="5 px" SHAPE_VERTICAL_MARGIN="2 px" NUMBERED="false" FORMAT="STANDARD_FORMAT" TEXT_ALIGN="DEFAULT" BORDER_WIDTH_LIKE_EDGE="false" BORDER_WIDTH="1.9 px" BORDER_COLOR_LIKE_EDGE="false" BORDER_COLOR="#8fbcbb" BORDER_DASH_LIKE_EDGE="true" BORDER_DASH="SOLID" VGAP_QUANTITY="2 px" COMMON_HGAP_QUANTITY="14 pt" MAX_WIDTH="25 cm" MIN_WIDTH="3.5 cm" CHILD_NODES_LAYOUT="AUTO">
 <arrowlink SHAPE="CUBIC_CURVE" COLOR="#bf5d3f" WIDTH="2" TRANSPARENCY="200" DASH="" FONT_SIZE="9" FONT_FAMILY="SansSerif" DESTINATION="ID_506805493" STARTINCLINATION="45 pt;0 pt;" ENDINCLINATION="57 pt;30 pt;" STARTARROW="NONE" ENDARROW="DEFAULT"/>
 <font NAME="Dialog" SIZE="10" BOLD="false" STRIKETHROUGH="false" ITALIC="false"/>
 <edge STYLE="horizontal" COLOR="#ff0000" WIDTH="1" DASH="SOLID"/>
@@ -280,6 +280,20 @@
 </node>
 <node TEXT="v0.1.10" ID="ID_773113130">
 <node TEXT="Unpacking powerButtons now gets the labels for icon buttons too" ID="ID_340331638"/>
+<node TEXT="Added popup menu to remove Tabs" ID="ID_1870375720">
+<node TEXT="Right clicking on tab, (not on toolbars)" ID="ID_1231920678"/>
+</node>
+<node TEXT="Added vertical separators" ID="ID_1635036525">
+<node TEXT="node text =  `|`" ID="ID_1397346487"/>
+</node>
+<node TEXT="Improved Panel layout" ID="ID_1612175980">
+<node TEXT="implements Scrollable interface" ID="ID_348101374"/>
+<node TEXT="custom ToolbarLayout" ID="ID_1571525710"/>
+</node>
+<node TEXT="TitledBorder font size can now be defined by user" ID="ID_1792369526">
+<node TEXT="scalling factor (integer between 0 and 200)" ID="ID_1844760609"/>
+<node TEXT="100 =  same size as UI font size" ID="ID_248686952"/>
+</node>
 </node>
 </node>
 <node TEXT="license" POSITION="top_or_left" ID="ID_492801974">
@@ -414,7 +428,7 @@
   </body>
 </html>
 </richcontent>
-<attribute_layout NAME_WIDTH="109.5 pt" VALUE_WIDTH="51.75 pt"/>
+<attribute_layout NAME_WIDTH="132 pt" VALUE_WIDTH="63.75 pt"/>
 <attribute NAME="runOnStartingFreeplane" VALUE="boolean"/>
 <attribute NAME="showMenuOMaticMenuLabels" VALUE="boolean"/>
 <attribute NAME="useTitledBorders" VALUE="boolean"/>
@@ -483,8 +497,7 @@
   </body>
 </html>
 </richcontent>
-<node TEXT="en" ID="ID_1355176274">
-<attribute_layout NAME_WIDTH="234.74999 pt" VALUE_WIDTH="411.74999 pt"/>
+<node TEXT="en" ID="ID_1011355375">
 <attribute NAME="addons.${name}.lauchDialogFromNodes" VALUE="launch menu dialog directly"/>
 <attribute NAME="OptionPanel.${name}_showMenuOMaticMenuLabels" VALUE="Show buttons labels in Menu-o-Matic toolbar"/>
 <attribute NAME="addons.${name}.listCustomMenusFromMap" VALUE="list menu packages from map"/>
@@ -556,6 +569,7 @@
 <attribute NAME="delete" VALUE="${installationbase}/icons/Menu-o-Matic/MoMCloseToolbar.svg"/>
 <attribute NAME="delete" VALUE="${installationbase}/addons/${name}/scripts/changePackParameters.groovy"/>
 <attribute NAME="delete" VALUE="${installationbase}/addons/${name}/scripts/markAsPowerButton.groovy"/>
+<attribute NAME="delete" VALUE="${installationbase}/scripts/init/Tabz_Menu-o-Matic_init.groovy"/>
 </node>
 <node TEXT="scripts" POSITION="bottom_or_right" ID="ID_1105183990">
 <edge COLOR="#007c00"/>
