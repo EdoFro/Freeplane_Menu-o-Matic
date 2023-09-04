@@ -3,4 +3,4 @@ import edofro.menuomatic.PackMenu as PM
 
 
 def (MD, resp) = PM.getMDfromNodes(node)
-LD.showDialogFromMD(MD)
+if(MD) LD.showDialogFromMD(MD)
