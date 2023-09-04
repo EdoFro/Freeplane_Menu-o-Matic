@@ -418,7 +418,8 @@
 <attribute NAME="runOnStartingFreeplane" VALUE="boolean"/>
 <attribute NAME="showMenuOMaticMenuLabels" VALUE="boolean"/>
 <attribute NAME="useTitledBorders" VALUE="boolean"/>
-<node TEXT="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#xa;&lt;preferences_structure&gt;&#xa;         &lt;tabbed_pane&gt;&#xa;                  &lt;tab name=&quot;plugins&quot;&gt;&#xa;                            &lt;separator name = &quot;${name}&quot;&gt;&#xa;                                    &lt;boolean name = &quot;${name}_runOnStartingFreeplane&quot;/&gt;&#xa;                                    &lt;boolean name = &quot;${name}_showMenuOMaticMenuLabels&quot;/&gt;&#xa;                                    &lt;boolean name = &quot;${name}_useTitledBorders&quot;/&gt;&#xa;                           &lt;/separator&gt;&#xa;                  &lt;/tab&gt;&#xa;         &lt;/tabbed_pane&gt;&#xa;&lt;/preferences_structure&gt;" ID="ID_1133880285" MAX_WIDTH="20 cm"/>
+<attribute NAME="titledBorderFontScalingFactor" VALUE="number,0,200"/>
+<node TEXT="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#xa;&lt;preferences_structure&gt;&#xa;         &lt;tabbed_pane&gt;&#xa;                  &lt;tab name=&quot;plugins&quot;&gt;&#xa;                            &lt;separator name = &quot;${name}&quot;&gt;&#xa;                                    &lt;boolean name = &quot;${name}_runOnStartingFreeplane&quot;/&gt;&#xa;                                    &lt;boolean name = &quot;${name}_showMenuOMaticMenuLabels&quot;/&gt;&#xa;                                    &lt;boolean name = &quot;${name}_useTitledBorders&quot;/&gt;&#xa;                                    &lt;number name  = &quot;${name}_titledBorderFontScalingFactor&quot; min=&quot;0&quot; max=&quot;200&quot;/&gt;&#xa;                           &lt;/separator&gt;&#xa;                  &lt;/tab&gt;&#xa;         &lt;/tabbed_pane&gt;&#xa;&lt;/preferences_structure&gt;" ID="ID_1133880285" MAX_WIDTH="20 cm"/>
 </node>
 <node TEXT="default.properties" POSITION="top_or_left" ID="ID_252406354">
 <edge COLOR="#00ffff"/>
@@ -446,6 +447,7 @@
 <attribute NAME="${name}_runOnStartingFreeplane" VALUE="true"/>
 <attribute NAME="${name}_showMenuOMaticMenuLabels" VALUE="true"/>
 <attribute NAME="${name}_useTitledBorders" VALUE="true"/>
+<attribute NAME="${name}_titledBorderFontScalingFactor" VALUE="85" OBJECT="org.freeplane.features.format.FormattedNumber|85|#0.####"/>
 </node>
 <node TEXT="translations" POSITION="top_or_left" ID="ID_971883114">
 <edge COLOR="#7c0000"/>
@@ -481,27 +483,29 @@
   </body>
 </html>
 </richcontent>
-<node TEXT="en" ID="ID_553754732">
+<node TEXT="en" ID="ID_1355176274">
 <attribute_layout NAME_WIDTH="234.74999 pt" VALUE_WIDTH="411.74999 pt"/>
 <attribute NAME="addons.${name}.lauchDialogFromNodes" VALUE="launch menu dialog directly"/>
-<attribute NAME="addons.${name}.1launchMenuOMaticDialog" VALUE="launch Menu-o-Matic dialog"/>
 <attribute NAME="OptionPanel.${name}_showMenuOMaticMenuLabels" VALUE="Show buttons labels in Menu-o-Matic toolbar"/>
-<attribute NAME="addons.${name}.launchCustomDialog" VALUE="launch menu dialog from package"/>
 <attribute NAME="addons.${name}.listCustomMenusFromMap" VALUE="list menu packages from map"/>
-<attribute NAME="addons.${name}" VALUE="Menu-o-Matic"/>
-<attribute NAME="addons.${name}.packCustomMenu" VALUE="pack menu"/>
+<attribute NAME="OptionPanel.${name}_titledBorderFontScalingFactor" VALUE="TitledBorder&apos;s font scaling factor"/>
+<attribute NAME="OptionPanel.${name}_titledBorderFontScalingFactor.tooltip" VALUE="it&apos;s a number between 0 and 200"/>
 <attribute NAME="OptionPanel.${name}_useTitledBorders.tooltip" VALUE="if checked, it will show the name of the toolbar as its title"/>
 <attribute NAME="OptionPanel.${name}_runOnStartingFreeplane" VALUE="Open auto launch menus"/>
-<attribute NAME="addons.${name}.launchCustomToolTab" VALUE="Launch custom tool tab"/>
-<attribute NAME="addons.${name}.changePackParameters" VALUE="Change pack parameters"/>
 <attribute NAME="addons.${name}.showLastUsedMenu" VALUE="show most recently used menu"/>
-<attribute NAME="OptionPanel.separator.${name}" VALUE="Menu-o-Matic"/>
-<attribute NAME="OptionPanel.${name}_runOnStartingFreeplane.tooltip" VALUE="Automatically opens all Custom Menus marked as AutoLaunch from all opened mindmaps on Freeplane start"/>
 <attribute NAME="OptionPanel.${name}_showMenuOMaticMenuLabels.tooltip" VALUE="Defines if MoM toolbar shows   icons and labels   or   icons only"/>
-<attribute NAME="addons.${name}.getMenuCommand" VALUE="menu item under mouse as new node"/>
 <attribute NAME="OptionPanel.${name}_useTitledBorders" VALUE="Use TitledBorders for each toolbar"/>
 <attribute NAME="addons.${name}.insertMenuOMaticPackage" VALUE="Insert Menu-o-Matic package node"/>
 <attribute NAME="addons.${name}.listCustomDialogs" VALUE="list opened menu dialogs"/>
+<attribute NAME="addons.${name}.1launchMenuOMaticDialog" VALUE="launch Menu-o-Matic dialog"/>
+<attribute NAME="addons.${name}.launchCustomDialog" VALUE="launch menu dialog from package"/>
+<attribute NAME="addons.${name}" VALUE="Menu-o-Matic"/>
+<attribute NAME="addons.${name}.packCustomMenu" VALUE="pack menu"/>
+<attribute NAME="addons.${name}.launchCustomToolTab" VALUE="Launch custom tool tab"/>
+<attribute NAME="addons.${name}.changePackParameters" VALUE="Change pack parameters"/>
+<attribute NAME="OptionPanel.separator.${name}" VALUE="Menu-o-Matic"/>
+<attribute NAME="OptionPanel.${name}_runOnStartingFreeplane.tooltip" VALUE="Automatically opens all Custom Menus marked as AutoLaunch from all opened mindmaps on Freeplane start"/>
+<attribute NAME="addons.${name}.getMenuCommand" VALUE="menu item under mouse as new node"/>
 <attribute NAME="addons.${name}.unpackCustomMenu" VALUE="unpack menu"/>
 <attribute NAME="addons.${name}.launchDialogsFromBranch" VALUE="launch all dialog packages from branch"/>
 <attribute NAME="addons.${name}.markAsPowerButton" VALUE="Mark / unmark node as powerButton"/>

@@ -223,7 +223,9 @@ class LaunchDialog{
         tb.setBorderPainted(true)
         def useTitledBorders =  config.getBooleanProperty('menuOMatic_useTitledBorders', false)
         if(useTitledBorders) {
-            ui.addTitledBorder(tb, md.title, 10f)
+            double titledBorderFontScalingFactor = config.getIntProperty('menuOMatic_titledBorderFontScalingFactor', 85) / 100d
+            def fontSize = ui.getUIFontSize(titledBorderFontScalingFactor).toFloat()
+            ui.addTitledBorder(tb, md.title, fontSize)
             if (md.fgColor) {
                 tb.border.outsideBorder.titleColor = Color.decode(md.fgColor)
             }
