@@ -2,6 +2,7 @@ package edofro.menuomatic
 
 import edofro.menuomatic.LaunchDialog
 import edofro.menuomatic.MoMToolbar
+import edofro.menuomatic.MoMToolbarLayout
 import edofro.menuomatic.PackMenu
 
 import java.awt.Dimension
@@ -131,7 +132,8 @@ class LaunchTabPane {
     def static createMoMTab(String tabName, String iconForTab = null){
         def separator = new JSeparator()
         separator.setMaximumSize(new Dimension (5000,8))
-        def momContainer = new MoMToolbar(MOM_CONTAINER_NAME, SwingConstants.HORIZONTAL)
+        def momContainer = new MoMToolbar(MOM_CONTAINER_NAME, SwingConstants.VERTICAL)
+        momContainer.setLayout(new MoMToolbarLayout())
         momContainer.setInheritsPopupMenu(true)
         def container = new ScrollablePanel()
         container.with{

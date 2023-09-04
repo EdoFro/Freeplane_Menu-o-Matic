@@ -3,6 +3,7 @@ package edofro.menuomatic
 import edofro.menuomatic.DialogKeyboardNavigation   as DKBN
 import edofro.menuomatic.LaunchTabPane
 import edofro.menuomatic.MoMToolbar
+import edofro.menuomatic.MoMToolbarLayout
 import edofro.menuomatic.PackMenu                   as PM
 
 import java.awt.Color
@@ -23,7 +24,6 @@ import javax.swing.SwingUtilities
 import groovy.swing.SwingBuilder
 
 import org.freeplane.api.MindMap
-import org.freeplane.core.ui.components.ToolbarLayout
 import org.freeplane.core.ui.components.UITools     as ui
 import org.freeplane.core.util.MenuUtils            as menuUtils
 import org.freeplane.core.util.TextUtils            as textUtils
@@ -218,7 +218,7 @@ class LaunchDialog{
     }
 
     def static setUpToolbar(JToolBar tb) {
-        def theLayout = md.showLabels?new BoxLayout(tb, BoxLayout.PAGE_AXIS): ToolbarLayout.vertical()
+        def theLayout = md.showLabels?new BoxLayout(tb, BoxLayout.PAGE_AXIS): new MoMToolbarLayout()
         tb.setLayout(theLayout)
         tb.setFloatable(true)
         tb.setBorderPainted(true)
