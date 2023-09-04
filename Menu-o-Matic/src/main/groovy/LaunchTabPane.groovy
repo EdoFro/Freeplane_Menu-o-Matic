@@ -5,20 +5,22 @@ import edofro.menuomatic.MoMToolbar
 import edofro.menuomatic.PackMenu
 
 import java.awt.Dimension
-//import java.awt.Component
+import java.awt.Rectangle
+import java.awt.event.HierarchyBoundsListener
+import java.awt.event.HierarchyEvent
 
-//import javax.swing.Box
 import javax.swing.BoxLayout
+import javax.swing.Icon
 import javax.swing.JButton
 import javax.swing.JLabel
 import javax.swing.JPanel
-import javax.swing.JSeparator
-import javax.swing.ScrollPaneConstants
-import javax.swing.Icon
-import javax.swing.JTabbedPane
 import javax.swing.JScrollPane
+import javax.swing.JSeparator
+import javax.swing.JTabbedPane
+import javax.swing.JViewport
+import javax.swing.ScrollPaneConstants
+import javax.swing.Scrollable
 import javax.swing.SwingConstants
-//import javax.swing.SwingUtilities
 
 import groovy.swing.SwingBuilder
 
@@ -26,7 +28,6 @@ import org.freeplane.core.ui.components.UITools
 import org.freeplane.core.util.MenuUtils
 import org.freeplane.main.addons.AddOnsController
 import org.freeplane.plugin.script.proxy.ScriptUtils
-
 
 
 
@@ -44,6 +45,59 @@ class LaunchTabPane {
     static final String MoMIconText    = 'TabbedPanelMod/MoM'
     static final Icon MoMInfoIcon      = MenuUtils.getMenuItemIcon('IconAction.' + MoMIconText)
 //endregion:
+
+// region inner classes
+
+    private static class ScrollablePanel extends JPanel implements Scrollable {
+
+        ScrollablePanel() {
+            setLayout( new BoxLayout(this, BoxLayout.PAGE_AXIS))
+            addHierarchyBoundsListener(new HierarchyBoundsListener() {
+                @Override
+                public void ancestorResized(final HierarchyEvent e) {
+                    revalidate()
+                    repaint()
+                }
+
+                @Override
+                public void ancestorMoved(final HierarchyEvent e) {
+                }
+            })
+        }
+
+        @Override
+        public Dimension getPreferredScrollableViewportSize() {
+            return getPreferredSize()
+        }
+
+        @Override
+        public int getScrollableUnitIncrement(Rectangle visibleRect, int orientation, int direction) {
+            return 10;
+        }
+
+        @Override
+        public int getScrollableBlockIncrement(Rectangle visibleRect, int orientation, int direction) {
+            //return 30
+            return ((orientation == SwingConstants.VERTICAL) ? visibleRect.height : visibleRect.width) - 30;
+        }
+
+        @Override
+        public boolean getScrollableTracksViewportWidth() {
+            // no horizontal scroll bar
+            return true;
+        }
+
+        @Override
+        public boolean getScrollableTracksViewportHeight() {
+            if (getParent() instanceof JViewport)
+            {
+                return (((JViewport)getParent()).getHeight() > getPreferredSize().height);
+            }
+            return false;
+        }
+
+    }
+// endregion
 
 //region: methods tabPane
 
@@ -79,12 +133,13 @@ class LaunchTabPane {
         separator.setMaximumSize(new Dimension (5000,8))
         def momContainer = new MoMToolbar(MOM_CONTAINER_NAME, SwingConstants.HORIZONTAL)
         momContainer.setInheritsPopupMenu(true)
-        def container = new JPanel()
-        container.setLayout( new BoxLayout(container, BoxLayout.PAGE_AXIS))
-        container.add(topBar(tabName))
-        container.add(separator)
-        container.add(momContainer)
-        def scrollPane = new JScrollPane(container, ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED, ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER)
+        def container = new ScrollablePanel()
+        container.with{
+            add(topBar(tabName))
+            add(separator)
+            add(momContainer)
+        }
+        def scrollPane = new JScrollPane(container, ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED, ScrollPaneConstants.HORIZONTAL_SCROLLBAR_AS_NEEDED)
         //scrollPane.name = MOM_SCROLLPANE_NAME
         container.setComponentPopupMenu(getRemovePopupMenu(scrollPane, 'Remove Tab'))
         tabPane.addTab(tabName, scrollPane)
