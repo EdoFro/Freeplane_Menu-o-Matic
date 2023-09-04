@@ -33,8 +33,6 @@ import org.freeplane.plugin.script.proxy.MapProxy
 import org.freeplane.plugin.script.proxy.ScriptUtils
 
 
-
-
 class LaunchDialog{
 //region properties
     static final String defaultIcon     = 'IconAction.emoji-1F7EB'
@@ -58,6 +56,7 @@ class LaunchDialog{
     static final int WITHOUT_WRITE_RESTRICTION   = 0b0010
     static final int WITHOUT_EXEC_RESTRICTION    = 0b0100
     static final int WITHOUT_NETWORK_RESTRICTION = 0b1000
+
 
 //endregion
 
@@ -134,12 +133,12 @@ class LaunchDialog{
 	
     def static launchAutoLaunchCustomMenusFromMap(MindMap mapa){
         println "|- mindMap: '${mapa.name}'"
-        def nodos = /*([] +*/ mapa.root.find{isAutoLaunchMenuPack(it)}//).sort{it.text}  // No tengo claro si deseo que se ordene alfabéticamente o según su posición en el mapa
+        def nodos = mapa.root.find{isAutoLaunchMenuPack(it)}
         println "|  - ${nodos*.text}"
         nodos.each{
             show(it)
         }
-    }	
+    }
 
     // endregion
 
@@ -386,5 +385,17 @@ class LaunchDialog{
         )
         return boton
     }
+    // endregion
+
+    // region auxiliary methods
+
+    def static print(t){
+        System.out.print(t)
+    }
+
+    def static println(t){
+        System.out.println(t)
+    }
+
     // endregion
 }
