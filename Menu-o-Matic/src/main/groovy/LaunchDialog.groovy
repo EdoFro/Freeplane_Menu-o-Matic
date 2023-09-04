@@ -1,22 +1,26 @@
 package edofro.menuomatic
 
-import javax.swing.JPopupMenu
-import javax.swing.JToolBar
-import javax.swing.SwingUtilities
+import edofro.menuomatic.DialogKeyboardNavigation   as DKBN
+import edofro.menuomatic.LaunchTabPane
+import edofro.menuomatic.MoMToolbar
+import edofro.menuomatic.PackMenu                   as PM
+
 import java.awt.Color
 import java.awt.Dimension
 import java.awt.GridLayout
 import java.awt.Insets
 import java.awt.event.WindowFocusListener
+
 import javax.swing.BoxLayout
 import javax.swing.Icon
 import javax.swing.JButton
+import javax.swing.JPopupMenu
 import javax.swing.JSeparator
+import javax.swing.JToolBar
 import javax.swing.SwingConstants
+import javax.swing.SwingUtilities
 
 import groovy.swing.SwingBuilder
-import groovy.time.TimeCategory
-import groovy.time.TimeDuration
 
 import org.freeplane.api.MindMap
 import org.freeplane.core.ui.components.ToolbarLayout
@@ -24,14 +28,10 @@ import org.freeplane.core.ui.components.UITools     as ui
 import org.freeplane.core.util.MenuUtils            as menuUtils
 import org.freeplane.core.util.TextUtils            as textUtils
 import org.freeplane.features.map.MapModel
+import org.freeplane.plugin.script.FreeplaneScriptBaseClass.ConfigProperties
 import org.freeplane.plugin.script.proxy.MapProxy
 import org.freeplane.plugin.script.proxy.ScriptUtils
-import org.freeplane.plugin.script.FreeplaneScriptBaseClass.ConfigProperties
 
-import edofro.menuomatic.DialogKeyboardNavigation   as DKBN
-import edofro.menuomatic.LaunchTabPane
-import edofro.menuomatic.MoMToolbar
-import edofro.menuomatic.PackMenu                   as PM
 
 
 
@@ -221,8 +221,6 @@ class LaunchDialog{
         def theLayout = md.showLabels?new BoxLayout(tb, BoxLayout.PAGE_AXIS): ToolbarLayout.vertical()
         tb.setLayout(theLayout)
         tb.setFloatable(true)
-
-        tb.margin = new Insets(0, 0, 5, 0)
         tb.setBorderPainted(true)
         def useTitledBorders =  config.getBooleanProperty('menuOMatic_useTitledBorders', false)
         if(useTitledBorders) {
@@ -231,22 +229,17 @@ class LaunchDialog{
                 tb.border.outsideBorder.titleColor = Color.decode(md.fgColor)
             }
         }
-
         if(md.color) {tb.background = Color.decode(md.color)}
-
         tb.setComponentPopupMenu(getRemovePopupMenu(tb, LaunchTabPane.MOM_CONTAINER_NAME, 'Remove toolbar'))
-
         md.actions.eachWithIndex{ a, j ->
             tb.add(creaBoton(a, j))
         }
-
-        tb.pack()
         tb.revalidate()
         tb.repaint()
     }
     
     def static getRemovePopupMenu(comp, String containerName, String label){
-        def pop = swingBuilder.popupMenu(){
+        JPopupMenu pop = swingBuilder.popupMenu(){
             menuItem(
                     text : label,
                     actionPerformed     : { e ->
@@ -315,9 +308,11 @@ class LaunchDialog{
         if(acc.startsWith(scriptStr)){
             return creaBotonDesdeScript(acc,i)
         } else if(acc==separatorStr){
-            return new JSeparator(SwingConstants.HORIZONTAL)
+            JSeparator sep = new JSeparator(SwingConstants.HORIZONTAL)
+            return sep
         } else if(acc==vertSeparatorStr){
-            return new JSeparator(SwingConstants.VERTICAL) 
+            JSeparator sep = new JSeparator(SwingConstants.VERTICAL)
+            return  sep
         } else {
             return creaBotonDesdeUI(acc.split(';').flatten(), i)
         }
