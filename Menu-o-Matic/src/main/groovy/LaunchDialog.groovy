@@ -245,9 +245,11 @@ class LaunchDialog{
                     text : label,
                     actionPerformed     : { e ->
                         def momContainer = SwingUtilities.getAncestorNamed(containerName,comp)
-                        momContainer.remove(comp)
-                        momContainer.revalidate()
-                        momContainer.repaint()
+                        if(momContainer) {
+                            momContainer.remove(comp)
+                            momContainer.revalidate()
+                            momContainer.repaint()
+                        }
                     }
             )
         }
