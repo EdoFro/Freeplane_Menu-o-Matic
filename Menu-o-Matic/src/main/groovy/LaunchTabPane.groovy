@@ -185,45 +185,6 @@ class LaunchTabPane {
         return tBar
     }
 
-// region "Close" buttons
-  //  static JButton getCloseBtn(prefD, minD){
-  //      JButton closeBtn = LaunchDialog.nuevoBoton(
-  //              null, closeTabIcon, 'Remove this Tab', prefD, minD,
-  //              { e ->
-  //                  Component comp = (Component) e.getSource();
-  //                  def scrollPane = SwingUtilities.getAncestorNamed(MOM_SCROLLPANE_NAME,comp)
-  //                  tabPane.remove(scrollPane)
-  //              }
-  //      )
-  //      return closeBtn
-  //  }
-
- //close toolbar button is no longer necessary (now popupmenu)
- //   static JButton getCloseToolbarBtn(prefD, minD){
- //       JButton closeToolbarBtn = LaunchDialog.nuevoBoton(
- //               null, closeToolbarIcon, 'Remove a toolbar from this Tab', prefD, minD,
- //               { e ->
- //                   def i = 1
- //                   println "closeToolbarBtn ${i++}"
- //                   def momContainer = e.source.parent.parent.components.find{it.name == MOM_CONTAINER_NAME}//.parent
- //                   println "closeToolbarBtn ${i++}"
- //                   def toolbars = momContainer.components.findAll{it?.class?.simpleName=='MoMToolbar'}
- //                   println "closeToolbarBtn ${i++}"
- //                   def toolbarsNames = toolbars*.name - MOM_TOPBAR
- //                   println "closeToolbarBtn ${i++}"
- //                   def tbName = PackMenu.respuestaDialogo(toolbarsNames,'Select toolbar to remove', 'Menu-o-Matic')
- //                   def toolbarToRemove = toolbars.find{it.name == tbName}
- //                   if (toolbarToRemove) {
- //                       momContainer.remove(toolbarToRemove)
- //                   }
- //                   momContainer.revalidate()
- //                   momContainer.repaint()
- //               }
- //       )
- //       return closeToolbarBtn
- //   }
- // endregion
-
     static JButton getMoMInfoBtn(prefD, minD){
         JButton  momInfoBtn = LaunchDialog.nuevoBoton(
             null, MoMInfoIcon, 'Menu-o-Matic', prefD, minD,
@@ -233,7 +194,6 @@ class LaunchTabPane {
             })
         return momInfoBtn
     }
-
 
     def static removeTab(String tabName){
         def index = indexOfTab(tabName)
