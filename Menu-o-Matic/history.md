@@ -1,5 +1,9 @@
 # History
 
+## v0.1.11
+
+* vertical separators are shown as horizontal separators in toolbars with labels
+
 ## v0.1.10
 
 * Unpacking powerButtons now gets the labels for icon buttons too
