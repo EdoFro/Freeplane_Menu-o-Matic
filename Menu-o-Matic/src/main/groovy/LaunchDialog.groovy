@@ -310,7 +310,7 @@ class LaunchDialog{
     def static creaBoton(acc, i){
         if(acc.startsWith(scriptStr)){
             return creaBotonDesdeScript(acc,i)
-        } else if(acc==separatorStr){
+        } else if(acc==separatorStr || (acc==vertSeparatorStr && md.showLabels)){
             JSeparator sep = new JSeparator(SwingConstants.HORIZONTAL)
             return sep
         } else if(acc==vertSeparatorStr){
