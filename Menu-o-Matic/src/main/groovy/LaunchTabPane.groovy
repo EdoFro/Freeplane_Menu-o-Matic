@@ -129,10 +129,10 @@ class LaunchTabPane {
         return tabPane.getTitleAt(i)?:tabPane.getToolTipTextAt(i)
     }
 
-    def static createMoMTab(String tabName, String iconForTab = null){
+    static MoMToolbar createMoMTab(String tabName, String iconForTab = null){
         def separator = new JSeparator()
         separator.setMaximumSize(new Dimension (5000,8))
-        def momContainer = new MoMToolbar(MOM_CONTAINER_NAME, SwingConstants.VERTICAL)
+        MoMToolbar momContainer = new MoMToolbar(MOM_CONTAINER_NAME, SwingConstants.VERTICAL)
         momContainer.setLayout(new MoMToolbarLayout())
         momContainer.setInheritsPopupMenu(true)
         def container = new ScrollablePanel()

@@ -214,6 +214,10 @@ class LaunchDialog{
             }
         }
         setUpToolbar(toolB)
+        momContainer.with{
+            revalidate()
+            repaint()
+        }
     }
 
     def static setUpToolbar(JToolBar tb) {

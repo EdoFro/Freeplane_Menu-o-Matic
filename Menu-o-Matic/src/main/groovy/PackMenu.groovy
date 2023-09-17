@@ -291,13 +291,14 @@ class PackMenu{
         def focus
         if (longText) {
             //iconLabel = ic?sl?'icons and labels':'icons only':sl?'labels only':'error'
-            iconLabel = ic?sl?optionsD1[0]:optionsD1[1]:sl?optionsD1[2]:'error'
+            iconLabel = ic?sl?optionsD1[2]:optionsD1[0]:sl?optionsD1[1]:'error'
             focus = '' // fm?optionsD3[0]:optionsD3[1] //focus to map is currently don't needed, I will let the code here just in case in a future version it makes sense again.
         } else {
             iconLabel = ic?sl?'ic+lb':'ic':sl?'lb':'error'
             focus = '' // fm?'-> map':'-> menu' //focus to map is currently don't needed, I will let the code here just in case in a future version it makes sense again.
         }
-        return "$title  ($iconLabel, $focus)".toString()
+        //return "$title  ($iconLabel, $focus)".toString()
+        return "$title  ($iconLabel)".toString()
     }
 
     def static getConfirmedInfo(forceDialog, hasScripts, menuName, maxTextLength, tabName, autoLaunch, showIcons, showLabels, focusToMap, permissions) {
