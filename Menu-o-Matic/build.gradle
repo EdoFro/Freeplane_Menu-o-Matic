@@ -7,8 +7,8 @@ apply plugin: 'groovy'
 targetCompatibility='1.8'
 
 // 1. I have to define which freeplane version is going to be used to look at the libraries (freeplane and groovy)
-def FPversion = 'instaled'
-//def FPversion = 'USS'
+//def FPversion = 'instaled'
+def FPversion = 'USS'
 
     def freeplaneDirs = [
         instaled     : "C:/Program Files/Freeplane",

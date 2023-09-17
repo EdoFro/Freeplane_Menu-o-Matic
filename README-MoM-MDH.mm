@@ -1,4 +1,4 @@
-<map version="freeplane 1.9.13">
+<map version="freeplane 1.11.5">
 <!--To view this file, download free mind mapping software Freeplane from https://www.freeplane.org -->
 <attribute_registry SHOW_ATTRIBUTES="hide"/>
 <node TEXT="README.md&#xa;Menu-o-Matic" FOLDED="false" ID="ID_696401721">
@@ -47,12 +47,12 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
 <map_styles>
 <stylenode LOCALIZED_TEXT="styles.root_node" ID="ID_1443633467" STYLE="oval" UNIFORM_SHAPE="true" VGAP_QUANTITY="24 pt">
 <font SIZE="24"/>
-<stylenode LOCALIZED_TEXT="styles.predefined" POSITION="right" STYLE="bubble">
+<stylenode LOCALIZED_TEXT="styles.predefined" POSITION="bottom_or_right" STYLE="bubble">
 <stylenode LOCALIZED_TEXT="default" ID="ID_1704360557" ICON_SIZE="12 pt" FORMAT_AS_HYPERLINK="false" COLOR="#002b36" BACKGROUND_COLOR="#fdf6e3" STYLE="bubble" SHAPE_HORIZONTAL_MARGIN="8 pt" SHAPE_VERTICAL_MARGIN="5 pt" BORDER_WIDTH_LIKE_EDGE="false" BORDER_WIDTH="1.9 px" BORDER_COLOR_LIKE_EDGE="true" BORDER_COLOR="#f0f0f0" BORDER_DASH_LIKE_EDGE="true" BORDER_DASH="SOLID" VGAP_QUANTITY="3 pt">
 <arrowlink SHAPE="CUBIC_CURVE" COLOR="#000000" WIDTH="2" TRANSPARENCY="200" DASH="" FONT_SIZE="9" FONT_FAMILY="SansSerif" DESTINATION="ID_1704360557" STARTARROW="DEFAULT" ENDARROW="NONE"/>
 <font NAME="SansSerif" SIZE="11" BOLD="false" STRIKETHROUGH="false" ITALIC="false"/>
 <edge STYLE="bezier" COLOR="#93a1a1" WIDTH="3" DASH="SOLID"/>
-<richcontent CONTENT-TYPE="plain/auto" TYPE="DETAILS"/>
+<richcontent TYPE="DETAILS" CONTENT-TYPE="plain/auto"/>
 <richcontent TYPE="NOTE" CONTENT-TYPE="plain/auto"/>
 </stylenode>
 <stylenode LOCALIZED_TEXT="defaultstyle.details">
@@ -71,7 +71,7 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
 <cloud COLOR="#f0f0f0" SHAPE="ROUND_RECT"/>
 </stylenode>
 </stylenode>
-<stylenode LOCALIZED_TEXT="styles.user-defined" POSITION="right" STYLE="bubble">
+<stylenode LOCALIZED_TEXT="styles.user-defined" POSITION="bottom_or_right" STYLE="bubble">
 <stylenode LOCALIZED_TEXT="styles.important" ID="ID_1083719472" COLOR="#ffffff" BACKGROUND_COLOR="#bf616a" BORDER_COLOR="#bf616a">
 <icon BUILTIN="yes"/>
 <arrowlink COLOR="#bf616a" TRANSPARENCY="255" DESTINATION="ID_1083719472"/>
@@ -148,7 +148,7 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
 <font NAME="Liberation Sans" SIZE="10" BOLD="true"/>
 </stylenode>
 </stylenode>
-<stylenode LOCALIZED_TEXT="styles.AutomaticLayout" POSITION="right" STYLE="bubble">
+<stylenode LOCALIZED_TEXT="styles.AutomaticLayout" POSITION="bottom_or_right" STYLE="bubble">
 <stylenode LOCALIZED_TEXT="AutomaticLayout.level.root" COLOR="#ffffff" BACKGROUND_COLOR="#002b36" STYLE="bubble" SHAPE_HORIZONTAL_MARGIN="10 pt" SHAPE_VERTICAL_MARGIN="10 pt" BORDER_WIDTH="3.1 px" BORDER_COLOR_LIKE_EDGE="true" BORDER_COLOR="#2c2b29" BORDER_DASH_LIKE_EDGE="true">
 <font SIZE="18"/>
 </stylenode>
@@ -189,7 +189,7 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
 </stylenode>
 </map_styles>
 </hook>
-<node TEXT="README.md" STYLE_REF="MarkdownHelperNode" POSITION="right" ID="ID_340248887" LINK="file:/C:/Users/Edo/Documents/GitHub/Freeplane_My-Menu-Inator/README.md" VGAP_QUANTITY="3 pt">
+<node TEXT="README.md" STYLE_REF="MarkdownHelperNode" POSITION="bottom_or_right" ID="ID_340248887" LINK="file:/C:/Users/Edo/Documents/GitHub/Freeplane_My-Menu-Inator/README.md" VGAP_QUANTITY="3 pt">
 <edge COLOR="#ff0000"/>
 <attribute_layout NAME_WIDTH="126.75 pt"/>
 <attribute NAME="headersToUnderline" VALUE="1" OBJECT="org.freeplane.features.format.FormattedNumber|1|#0.####"/>
@@ -206,7 +206,7 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
 <attribute NAME="MarkdownRootFolder" VALUE="file:/C:/Users/Edo/Documents/GitHub/Freeplane_My-Menu-Inator/" OBJECT="java.net.URI|file:/C:/Users/Edo/Documents/GitHub/Freeplane_My-Menu-Inator/"/>
 <attribute NAME="MDHGithubBranch" VALUE=""/>
 <attribute NAME="MDHTargetRootPath" VALUE=""/>
-<richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
+<richcontent TYPE="NOTE">
 <html>
                     <head>
 
@@ -249,7 +249,7 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
 </node>
 <node TEXT="Menu-o-Matic for Freeplane!!" ID="ID_1642042079">
 <node TEXT="Menu-o-Matic is an AddOn for Freeplane that gives the user the possibility to create his/her own dialogs with the menu items he/she prefers." ID="ID_305856401"/>
-<node TEXT="local image" STYLE_REF="MarkdownHelperNode" ID="ID_305342503"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
+<node TEXT="local image" STYLE_REF="MarkdownHelperNode" ID="ID_305342503"><richcontent TYPE="NOTE">
 <html>
   <head>
     
@@ -259,12 +259,11 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
       = edofro.MarkDownHelper.MDH.imageLink(node,true)
     </p>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 <node TEXT="= edofro.MarkDownHelper.MDH.linkedNodeText(node)" STYLE_REF="MarkdownHelperLink" ID="ID_154016803" LINK="#ID_1274235167"/>
 </node>
 <node TEXT="It can also include scripts." ID="ID_1847763156"/>
-<node TEXT="text block" STYLE_REF="MarkdownHelperNode" ID="ID_980882272"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
+<node TEXT="text block" STYLE_REF="MarkdownHelperNode" ID="ID_980882272"><richcontent TYPE="NOTE">
 <html>
                                 <head>
 
@@ -275,7 +274,7 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
 </p>
                                 </body>
                             </html></richcontent>
-<node TEXT="download" ID="ID_347709445"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
+<node TEXT="download" ID="ID_347709445"><richcontent TYPE="NOTE">
 <html>
                                     <head>
 
@@ -286,7 +285,7 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
 </p>
                                     </body>
                                 </html></richcontent>
-<node TEXT="web link" STYLE_REF="MarkdownHelperNode" ID="ID_826596504"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
+<node TEXT="web link" STYLE_REF="MarkdownHelperNode" ID="ID_826596504"><richcontent TYPE="NOTE">
 <html>
                                         <head>
 
@@ -301,7 +300,7 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
 </node>
 </node>
 </node>
-<node TEXT="horizontal line" STYLE_REF="MarkdownHelperNode" ID="ID_1485434001"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
+<node TEXT="horizontal line" STYLE_REF="MarkdownHelperNode" ID="ID_1485434001"><richcontent TYPE="NOTE">
 <html>
                                 <head>
 
@@ -313,7 +312,7 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
                                 </body>
                             </html></richcontent>
 </node>
-<node TEXT="web link" STYLE_REF="MarkdownHelperNode" ID="ID_1040052128"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
+<node TEXT="web link" STYLE_REF="MarkdownHelperNode" ID="ID_1040052128"><richcontent TYPE="NOTE">
 <html>
                                 <head>
 
@@ -326,7 +325,7 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
                             </html></richcontent>
 <node TEXT="example video in YouTube" ID="ID_1297725985" LINK="https://www.youtube.com/watch?v=uu46pntlCag"/>
 </node>
-<node TEXT="horizontal line" STYLE_REF="MarkdownHelperNode" ID="ID_295589589"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
+<node TEXT="horizontal line" STYLE_REF="MarkdownHelperNode" ID="ID_295589589"><richcontent TYPE="NOTE">
 <html>
                                 <head>
 
@@ -341,7 +340,7 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
 <node TEXT="ToC" STYLE_REF="MarkdownHelperNode" ID="ID_1237536181">
 <attribute NAME="TOClevels" VALUE="2" OBJECT="org.freeplane.features.format.FormattedNumber|2"/>
 <attribute NAME="TOCindent" VALUE="true"/>
-<richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
+<richcontent TYPE="NOTE">
 <html>
                                 <head>
 
@@ -357,7 +356,7 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
 <node TEXT="Basic Instructions" ID="ID_1934829451">
 <node TEXT="list" STYLE_REF="MarkdownHelperNode" ID="ID_1679905467">
 <icon BUILTIN="emoji-1F522"/>
-<richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
+<richcontent TYPE="NOTE">
 <html>
                                 <head>
 
@@ -370,7 +369,7 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
                             </html></richcontent>
 <node TEXT="Build a a branch with node&apos;s linked to menu items" ID="ID_280679819">
 <icon BUILTIN="emoji-1F537"/>
-<node TEXT="local image" STYLE_REF="MarkdownHelperNode" ID="ID_1170266002"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
+<node TEXT="local image" STYLE_REF="MarkdownHelperNode" ID="ID_1170266002"><richcontent TYPE="NOTE">
 <html>
                                         <head>
 
@@ -386,7 +385,7 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
 </node>
 <node TEXT="Select the parent node. Its text will be used as the dialog&apos;s title.&#xa;And apply the &apos;**pack menu**&apos; command" ID="ID_241006681">
 <icon BUILTIN="emoji-1F537"/>
-<node TEXT="local image" STYLE_REF="MarkdownHelperNode" ID="ID_583039755"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
+<node TEXT="local image" STYLE_REF="MarkdownHelperNode" ID="ID_583039755"><richcontent TYPE="NOTE">
 <html>
                                         <head>
 
@@ -402,7 +401,7 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
 </node>
 <node TEXT="You have to decide if the resulting dialog should show labels, icons or both" ID="ID_1902901964">
 <icon BUILTIN="emoji-1F537"/>
-<node TEXT="local image" STYLE_REF="MarkdownHelperNode" ID="ID_1798979129"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
+<node TEXT="local image" STYLE_REF="MarkdownHelperNode" ID="ID_1798979129"><richcontent TYPE="NOTE">
 <html>
                                         <head>
 
@@ -418,7 +417,7 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
 </node>
 <node TEXT="You have to decide if after clicking a button the **focus** has to return to the map or stay in the dialog&#xa;(**new in v0.1.1**)" ID="ID_143371709">
 <icon BUILTIN="emoji-1F537"/>
-<node TEXT="local image" STYLE_REF="MarkdownHelperNode" ID="ID_850301501"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
+<node TEXT="local image" STYLE_REF="MarkdownHelperNode" ID="ID_850301501"><richcontent TYPE="NOTE">
 <html>
                                         <head>
 
@@ -434,7 +433,7 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
 </node>
 <node TEXT="It creates a &apos;**customMenu**&apos; node that includes the whole information to build the dialog" ID="ID_1833115902">
 <icon BUILTIN="emoji-1F537"/>
-<node TEXT="local image" STYLE_REF="MarkdownHelperNode" ID="ID_450173748"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
+<node TEXT="local image" STYLE_REF="MarkdownHelperNode" ID="ID_450173748"><richcontent TYPE="NOTE">
 <html>
                                         <head>
 
@@ -450,7 +449,7 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
 </node>
 <node TEXT="Use this new node to launch your menu dialog" ID="ID_1279806491">
 <icon BUILTIN="emoji-1F537"/>
-<node TEXT="local image" STYLE_REF="MarkdownHelperNode" ID="ID_1769666248"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
+<node TEXT="local image" STYLE_REF="MarkdownHelperNode" ID="ID_1769666248"><richcontent TYPE="NOTE">
 <html>
                                         <head>
 
@@ -466,7 +465,7 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
 </node>
 <node TEXT="And here is the resulting dialog!" ID="ID_1609023237">
 <icon BUILTIN="emoji-1F537"/>
-<node TEXT="local image" STYLE_REF="MarkdownHelperNode" ID="ID_1142571681"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
+<node TEXT="local image" STYLE_REF="MarkdownHelperNode" ID="ID_1142571681"><richcontent TYPE="NOTE">
 <html>
                                         <head>
 
@@ -486,9 +485,9 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
 </node>
 </node>
 </node>
-<node TEXT="Additional features and instructions" FOLDED="true" ID="ID_848178326">
+<node TEXT="Additional features and instructions" ID="ID_848178326">
 <node TEXT="Getting menu items as nodes" FOLDED="true" ID="ID_1618789141">
-<node TEXT="list" STYLE_REF="MarkdownHelperNode" ID="ID_1309862458"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
+<node TEXT="list" STYLE_REF="MarkdownHelperNode" ID="ID_1309862458"><richcontent TYPE="NOTE">
 <html>
                                     <head>
 
@@ -509,7 +508,7 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
 </node>
 </node>
 <node TEXT="Script nodes" FOLDED="true" ID="ID_1070521166">
-<node TEXT="list" STYLE_REF="MarkdownHelperNode" ID="ID_933412679"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
+<node TEXT="list" STYLE_REF="MarkdownHelperNode" ID="ID_933412679"><richcontent TYPE="NOTE">
 <html>
                                     <head>
 
@@ -530,7 +529,7 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
 </node>
 </node>
 <node TEXT="About the icons" FOLDED="true" ID="ID_472139069">
-<node TEXT="list" STYLE_REF="MarkdownHelperNode" ID="ID_496081861"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
+<node TEXT="list" STYLE_REF="MarkdownHelperNode" ID="ID_496081861"><richcontent TYPE="NOTE">
 <html>
                                     <head>
 
@@ -547,7 +546,7 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
 </node>
 </node>
 <node TEXT="Editing an existing **customMenu** node" FOLDED="true" ID="ID_168824044">
-<node TEXT="list" STYLE_REF="MarkdownHelperNode" ID="ID_1325081497"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
+<node TEXT="list" STYLE_REF="MarkdownHelperNode" ID="ID_1325081497"><richcontent TYPE="NOTE">
 <html>
                                     <head>
 
@@ -564,7 +563,7 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
 </node>
 </node>
 <node TEXT="Showing dialogs" FOLDED="true" ID="ID_1670444932">
-<node TEXT="list" STYLE_REF="MarkdownHelperNode" ID="ID_1988452661"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
+<node TEXT="list" STYLE_REF="MarkdownHelperNode" ID="ID_1988452661"><richcontent TYPE="NOTE">
 <html>
                                     <head>
 
@@ -584,7 +583,7 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
 </node>
 </node>
 <node TEXT="Navigating dialogs" ID="ID_1062449364">
-<node TEXT="list" STYLE_REF="MarkdownHelperNode" ID="ID_1749120424"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
+<node TEXT="list" STYLE_REF="MarkdownHelperNode" ID="ID_1749120424"><richcontent TYPE="NOTE">
 <html>
                                     <head>
 
@@ -610,7 +609,7 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
 </node>
 </node>
 <node TEXT="Mindmap templates" ID="ID_1871098404">
-<node TEXT="list" STYLE_REF="MarkdownHelperNode" ID="ID_77650609"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
+<node TEXT="list" STYLE_REF="MarkdownHelperNode" ID="ID_77650609"><richcontent TYPE="NOTE">
 <html>
                                     <head>
 
@@ -629,7 +628,7 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
 </node>
 </node>
 <node TEXT="Menu-o-Matic dialog" ID="ID_1356456242">
-<node TEXT="list" STYLE_REF="MarkdownHelperNode" ID="ID_1796608451"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
+<node TEXT="list" STYLE_REF="MarkdownHelperNode" ID="ID_1796608451"><richcontent TYPE="NOTE">
 <html>
                                     <head>
 
@@ -645,7 +644,7 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
 </node>
 </node>
 <node TEXT="Insert Menu-o-Matic package node" ID="ID_625991635">
-<node TEXT="list" STYLE_REF="MarkdownHelperNode" ID="ID_38572955"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
+<node TEXT="list" STYLE_REF="MarkdownHelperNode" ID="ID_38572955"><richcontent TYPE="NOTE">
 <html>
                                     <head>
 
@@ -661,7 +660,7 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
 </node>
 </node>
 <node TEXT="new when designing a new custom menu" ID="ID_1542624944">
-<node TEXT="list" STYLE_REF="MarkdownHelperNode" ID="ID_1734983975"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
+<node TEXT="list" STYLE_REF="MarkdownHelperNode" ID="ID_1734983975"><richcontent TYPE="NOTE">
 <html>
                                     <head>
 
@@ -678,7 +677,7 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
 </node>
 </node>
 </node>
-<node TEXT="history.md" ID="ID_1679510638" LINK="file:/C:/Users/Edo/Documents/GitHub/Freeplane_My-Menu-Inator/Menu-o-Matic/history.md"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
+<node TEXT="history.md" ID="ID_1679510638" LINK="file:/C:/Users/Edo/Documents/GitHub/Freeplane_My-Menu-Inator/Menu-o-Matic/history.md"><richcontent TYPE="NOTE">
 <html>
   <head>
     
@@ -779,13 +778,13 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
 </node>
 </node>
 </node>
-<node TEXT="Freeplane_My-Menu-Inator" STYLE_REF="baseFolder" POSITION="right" ID="ID_260100339" LINK="file:/C:/Users/Edo/Documents/GitHub/Freeplane_My-Menu-Inator/">
+<node TEXT="Freeplane_My-Menu-Inator" STYLE_REF="baseFolder" POSITION="bottom_or_right" ID="ID_260100339" LINK="file:/C:/Users/Edo/Documents/GitHub/Freeplane_My-Menu-Inator/">
 <attribute NAME="nameFilter" VALUE=""/>
 <attribute NAME="maxDepth" VALUE="-1" OBJECT="org.freeplane.features.format.FormattedNumber|-1|#0.####"/>
 <attribute NAME="markWhenMoved" VALUE="0" OBJECT="org.freeplane.features.format.FormattedNumber|0|#0.####"/>
 <attribute NAME="checkIfReallyBroken" VALUE="0" OBJECT="org.freeplane.features.format.FormattedNumber|0|#0.####"/>
 <edge COLOR="#7c0000"/>
-<richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
+<richcontent TYPE="NOTE">
 <html>
   <head>
     
@@ -962,7 +961,7 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
   </body>
 </html></richcontent>
 <node TEXT=".gitattributes" ID="ID_1996843115" LINK="file:/C:/Users/Edo/Documents/GitHub/Freeplane_My-Menu-Inator/.gitattributes"/>
-<node TEXT="Menu-o-Matic" STYLE_REF="locked" ID="ID_1589076031" LINK="file:/C:/Users/Edo/Documents/GitHub/Freeplane_My-Menu-Inator/Menu-o-Matic/"><richcontent CONTENT-TYPE="xml/" TYPE="DETAILS">
+<node TEXT="Menu-o-Matic" STYLE_REF="locked" ID="ID_1589076031" LINK="file:/C:/Users/Edo/Documents/GitHub/Freeplane_My-Menu-Inator/Menu-o-Matic/"><richcontent TYPE="DETAILS">
 <html>
                         <head>
 
@@ -976,7 +975,7 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
 </p>
                         </body>
                     </html></richcontent>
-<node TEXT="version.properties" ID="ID_428915476" LINK="file:/C:/Users/Edo/Documents/GitHub/Freeplane_My-Menu-Inator/Menu-o-Matic/version.properties"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
+<node TEXT="version.properties" ID="ID_428915476" LINK="file:/C:/Users/Edo/Documents/GitHub/Freeplane_My-Menu-Inator/Menu-o-Matic/version.properties"><richcontent TYPE="NOTE">
 <html>
   <head>
     
@@ -999,7 +998,7 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
 </node>
 <node ID="ID_381928089" CONTENT_ID="ID_1679510638"/>
 </node>
-<node TEXT="README-MoM-MDH.mm" ID="ID_179290817" LINK="file:/C:/Users/Edo/Documents/GitHub/Freeplane_My-Menu-Inator/README-MoM-MDH.mm"><richcontent CONTENT-TYPE="xml/" TYPE="DETAILS">
+<node TEXT="README-MoM-MDH.mm" ID="ID_179290817" LINK="file:/C:/Users/Edo/Documents/GitHub/Freeplane_My-Menu-Inator/README-MoM-MDH.mm"><richcontent TYPE="DETAILS">
 <html>
                         <head>
 
@@ -1097,7 +1096,7 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
                         </html></richcontent>
 </node>
 <node TEXT="MoM_example.mm" ID="ID_1497791969" LINK="file:/C:/Users/Edo/Documents/GitHub/Freeplane_My-Menu-Inator/resources/MoM_example.mm"/>
-<node TEXT="toUpperCase.groovy" ID="ID_530821844" LINK="file:/C:/Users/Edo/Documents/GitHub/Freeplane_My-Menu-Inator/resources/toUpperCase.groovy"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
+<node TEXT="toUpperCase.groovy" ID="ID_530821844" LINK="file:/C:/Users/Edo/Documents/GitHub/Freeplane_My-Menu-Inator/resources/toUpperCase.groovy"><richcontent TYPE="NOTE">
 <html>
   <head>
     
@@ -1122,7 +1121,7 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
 </html></richcontent>
 </node>
 </node>
-<node TEXT="LICENSE.md" ID="ID_1225660405" LINK="file:/C:/Users/Edo/Documents/GitHub/Freeplane_My-Menu-Inator/LICENSE.md"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
+<node TEXT="LICENSE.md" ID="ID_1225660405" LINK="file:/C:/Users/Edo/Documents/GitHub/Freeplane_My-Menu-Inator/LICENSE.md"><richcontent TYPE="NOTE">
 <html>
                         <head>
 
@@ -1194,7 +1193,7 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
                         </body>
                     </html></richcontent>
 </node>
-<node TEXT="README.md" ID="ID_1558207926" LINK="file:/C:/Users/Edo/Documents/GitHub/Freeplane_My-Menu-Inator/README.md"><richcontent CONTENT-TYPE="xml/" TYPE="DETAILS">
+<node TEXT="README.md" ID="ID_1558207926" LINK="file:/C:/Users/Edo/Documents/GitHub/Freeplane_My-Menu-Inator/README.md"><richcontent TYPE="DETAILS">
 <html>
                         <head>
 
@@ -1208,7 +1207,7 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
 </node>
 <node TEXT="new imported files" STYLE_REF="newFolderImport" ID="ID_458856747">
 <attribute NAME="log_MDI" VALUE="No"/>
-<richcontent TYPE="NOTE" CONTENT-TYPE="xml/">
+<richcontent TYPE="NOTE">
 <html>
   <head>
     

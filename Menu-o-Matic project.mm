@@ -1,7 +1,7 @@
 <map version="freeplane 1.11.5">
 <!--To view this file, download free mind mapping software Freeplane from https://www.freeplane.org -->
 <attribute_registry SHOW_ATTRIBUTES="selected"/>
-<node TEXT="Menu-o-Matic project" LOCALIZED_STYLE_REF="AutomaticLayout.level.root" FOLDED="false" ID="ID_551814049" LINK="../../../../../Respaldo%20EF/ef/Documentos%20con%20macros/08%20Freemind%20Groovy/scripts/ScriptsEnComputadorYDesarrollosEdo%20v1.9.mm" MAX_WIDTH="7 cm"><hook NAME="MapStyle" background="#f9f9f8" zoom="1.04">
+<node TEXT="Menu-o-Matic project" LOCALIZED_STYLE_REF="AutomaticLayout.level.root" FOLDED="false" ID="ID_551814049" LINK="../../../../../Respaldo%20EF/ef/Documentos%20con%20macros/08%20Freemind%20Groovy/scripts/ScriptsEnComputadorYDesarrollosEdo%20v1.9.mm" MAX_WIDTH="7 cm"><hook NAME="MapStyle" background="#f9f9f8" zoom="0.8">
     <conditional_styles>
         <conditional_style ACTIVE="true" STYLE_REF="customMenuPackage" LAST="false">
             <attribute_exists_condition ATTRIBUTE="tbActions"/>
@@ -7524,7 +7524,7 @@ before the actual namefilter setting)
 </node>
 </node>
 <node TEXT="new imported files" STYLE_REF="newFolderImport" ID="ID_1788703280">
-<attribute NAME="log_MDI" VALUE="2" OBJECT="org.freeplane.features.format.FormattedObject|org.freeplane.plugin.script.proxy.ConvertibleNumber&amp;#x7c;2|number:decimal:#0.####"/>
+<attribute NAME="log_MDI" VALUE="org.freeplane.plugin.script.proxy.ConvertibleNumber|2" OBJECT="org.freeplane.features.format.FormattedObject|java.lang.String&amp;#x7c;org.freeplane.plugin.script.proxy.ConvertibleNumber&amp;#x7c;2|number:decimal:#0.####"/>
 <richcontent TYPE="NOTE">
 <html>
   <head>
@@ -7595,8 +7595,7 @@ before the actual namefilter setting)
       No failed operation in drive
     </p>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 </node>
 <node TEXT="versión instalada en AddOns" STYLE_REF="locked" FOLDED="true" ID="ID_1424141649">
 <node TEXT="menuOMatic" ID="ID_1859181061"><richcontent TYPE="DETAILS">
@@ -7612,7 +7611,7 @@ before the actual namefilter setting)
 </html></richcontent>
 </node>
 </node>
-<node TEXT="Tareas" STYLE_REF="Organizador" FOLDED="true" ID="ID_642782932">
+<node TEXT="Tareas" STYLE_REF="Organizador" ID="ID_642782932">
 <attribute NAME="projectCode" VALUE="Tareas"/>
 <node TEXT="MoM First" STYLE_REF="milestone" ID="ID_1952544676">
 <node TEXT="traducir tareas al inglés" STYLE_REF="pendingTask" ID="ID_1966513049"/>
@@ -8301,7 +8300,7 @@ before the actual namefilter setting)
 </html></richcontent>
 </node>
 </node>
-<node TEXT="pruebas" FOLDED="true" ID="ID_733825031">
+<node TEXT="pruebas" ID="ID_733825031">
 <node TEXT="ScrollablePanel" ID="ID_486244889">
 <node TEXT="ScrollablePanel ejemplo 1" ID="ID_490388973"><richcontent TYPE="NOTE">
 <html>
