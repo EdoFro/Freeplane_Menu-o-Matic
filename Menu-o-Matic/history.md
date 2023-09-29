@@ -2,7 +2,15 @@
 
 ## v0.1.11
 
+* New listCustomMenuFromMap with checkboxes
 * vertical separators are shown as horizontal separators in toolbars with labels
+* launchDialogFromNodes now ignores package nodes
+* New unified commad to launch dialog
+  * LaunchDialogFromSelected
+  * Follows this priority:
+    * If selected node is a package --> it opens it as dialog
+    * If any descendant is a package --> it opens all packages from branch
+    * if there are descendant nodes related to menu commands or groovy scripts --> it creates a dialog for them
 * new custom icons
 
 ## v0.1.10

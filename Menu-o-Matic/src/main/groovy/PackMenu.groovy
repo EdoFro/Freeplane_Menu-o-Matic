@@ -1,7 +1,7 @@
 package edofro.menuomatic
 
 // region: imports
-
+import edofro.menuomatic.LaunchDialog
 import edofro.menuomatic.WSE_redux              as WSE
 import org.freeplane.core.util.MenuUtils        as menuUtils
 import org.freeplane.core.ui.components.UITools as ui
@@ -178,8 +178,14 @@ class PackMenu{
         nodoBase.find{isPowerButtonNode(it)}.each{
             nPowers += it.find{it.link?.uri?.scheme == 'menuitem'}
         }
+        def nPackages = nodoBase.find{LaunchDialog.isCustomMenuPack(it)}
+
         def nAcciones  = [] + nodoBase.find{it.link?.uri?.scheme == 'menuitem' || WSE.isGroovyNode(it) || isSeparatorNode(it) || isVertSeparatorNode(it)|| isPowerButtonNode(it)}
         nAcciones -= nPowers
+        nAcciones -= nPackages
+
+        if(!nAcciones){return [null, 'resp']} //if there are no acciones, then null
+
         def hasScripts = nAcciones.any{WSE.isGroovyNode(it)}
 
         //get info from node/dialog
