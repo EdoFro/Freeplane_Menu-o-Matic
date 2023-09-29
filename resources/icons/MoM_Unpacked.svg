@@ -1,0 +1,12 @@
+<svg version="1.1" viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg">
+    <g transform="matrix(1.2513 0 0 1.2474 -6.5134 -7.9321)" style="fill-rule:evenodd;fill:#d1d1d1;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.6008;stroke:#000">
+        <path d="m20.994 24.643 8.6383 5.7469v-11.865l-8.6383-5.7469z" style="fill-rule:evenodd;fill:#646435;stroke-linecap:butt;stroke-linejoin:round;stroke-width:.80039px;stroke:#000"/>
+        <path d="m9.7159 29.071v-11.865l11.278-4.4276v11.865z" style="fill-rule:evenodd;fill:#bfbf86;stroke-linecap:butt;stroke-linejoin:round;stroke-width:.80039px;stroke:#000"/>
+        <path d="m18.354 34.818v-11.865l11.278-4.4276v11.865z" style="fill-rule:evenodd;fill:#ffffd7;stroke-linecap:butt;stroke-linejoin:round;stroke-width:.80039px;stroke:#000"/>
+        <path d="m9.7159 29.071 8.6383 5.7469v-11.865l-8.6383-5.7469z" style="fill-rule:evenodd;fill:#bfbf86;stroke-linecap:butt;stroke-linejoin:round;stroke-width:.80039px;stroke:#000"/>
+    </g>
+    <rect transform="matrix(.83936 .54357 -.58525 .81086 0 0)" x="20.54" y="-13.167" width="12.559" height="9.0643" style="fill-rule:evenodd;fill:#bfbf86;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.0006;stroke:#000"/>
+    <rect transform="matrix(-.83184 -.55502 .53028 -.84782 0 0)" x="-24.745" y="-17.044" width="12.895" height="8.9234" ry="0" style="fill-rule:evenodd;fill:#ffffe9;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.0002;stroke:#000"/>
+    <rect transform="matrix(-.92883 .37051 -.40234 -.91549 0 0)" x="-21.664" y="-33.746" width="14.787" height="8.4696" ry="0" style="fill-rule:evenodd;fill:#ffffe9;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.0003;stroke:#000"/>
+    <rect transform="matrix(-.93037 .36663 -.77691 -.62961 0 0)" x="-6.9005" y="-16.764" width="14.289" height="7.0809" ry="0" style="fill-rule:evenodd;fill:#ffffe9;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.0718;stroke:#000"/>
+</svg>

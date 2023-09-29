@@ -1,7 +1,7 @@
 package edofro.menuomatic
 
 // region: imports
-
+import edofro.menuomatic.LaunchDialog
 import edofro.menuomatic.WSE_redux              as WSE
 import org.freeplane.core.util.MenuUtils        as menuUtils
 import org.freeplane.core.ui.components.UITools as ui
@@ -178,8 +178,14 @@ class PackMenu{
         nodoBase.find{isPowerButtonNode(it)}.each{
             nPowers += it.find{it.link?.uri?.scheme == 'menuitem'}
         }
+        def nPackages = nodoBase.find{LaunchDialog.isCustomMenuPack(it)}
+
         def nAcciones  = [] + nodoBase.find{it.link?.uri?.scheme == 'menuitem' || WSE.isGroovyNode(it) || isSeparatorNode(it) || isVertSeparatorNode(it)|| isPowerButtonNode(it)}
         nAcciones -= nPowers
+        nAcciones -= nPackages
+
+        if(!nAcciones){return [null, 'resp']} //if there are no acciones, then null
+
         def hasScripts = nAcciones.any{WSE.isGroovyNode(it)}
 
         //get info from node/dialog
@@ -291,13 +297,14 @@ class PackMenu{
         def focus
         if (longText) {
             //iconLabel = ic?sl?'icons and labels':'icons only':sl?'labels only':'error'
-            iconLabel = ic?sl?optionsD1[0]:optionsD1[1]:sl?optionsD1[2]:'error'
+            iconLabel = ic?sl?optionsD1[2]:optionsD1[0]:sl?optionsD1[1]:'error'
             focus = '' // fm?optionsD3[0]:optionsD3[1] //focus to map is currently don't needed, I will let the code here just in case in a future version it makes sense again.
         } else {
             iconLabel = ic?sl?'ic+lb':'ic':sl?'lb':'error'
             focus = '' // fm?'-> map':'-> menu' //focus to map is currently don't needed, I will let the code here just in case in a future version it makes sense again.
         }
-        return "$title  ($iconLabel, $focus)".toString()
+        //return "$title  ($iconLabel, $focus)".toString()
+        return "$title  ($iconLabel)".toString()
     }
 
     def static getConfirmedInfo(forceDialog, hasScripts, menuName, maxTextLength, tabName, autoLaunch, showIcons, showLabels, focusToMap, permissions) {

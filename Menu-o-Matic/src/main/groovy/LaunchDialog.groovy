@@ -10,6 +10,8 @@ import java.awt.Color
 import java.awt.Dimension
 import java.awt.GridLayout
 import java.awt.Insets
+import java.awt.event.MouseEvent
+import java.awt.event.MouseListener
 import java.awt.event.WindowFocusListener
 
 import javax.swing.BoxLayout
@@ -214,6 +216,10 @@ class LaunchDialog{
             }
         }
         setUpToolbar(toolB)
+        momContainer.with{
+            revalidate()
+            repaint()
+        }
     }
 
     def static setUpToolbar(JToolBar tb) {
@@ -221,6 +227,7 @@ class LaunchDialog{
         tb.setLayout(theLayout)
         tb.setFloatable(true)
         tb.setBorderPainted(true)
+        tb.addMouseListener(getToolbarListener(tb))
         def useTitledBorders =  config.getBooleanProperty('menuOMatic_useTitledBorders', false)
         if(useTitledBorders) {
             double titledBorderFontScalingFactor = config.getIntProperty('menuOMatic_titledBorderFontScalingFactor', 85) / 100d
@@ -237,6 +244,32 @@ class LaunchDialog{
         }
         tb.revalidate()
         tb.repaint()
+    }
+
+    def static getToolbarListener(tb){
+        return new MouseListener() {
+            @Override
+            void mouseClicked(MouseEvent e) {
+            }
+
+            @Override
+            void mousePressed(MouseEvent e) {
+                tb.setFloatable(e.getButton() != MouseEvent.BUTTON3)
+            }
+
+            @Override
+            void mouseReleased(MouseEvent e) {
+            }
+
+            @Override
+            void mouseEntered(MouseEvent e) {
+            }
+
+            @Override
+            void mouseExited(MouseEvent e) {
+            }
+
+        }
     }
     
     def static getRemovePopupMenu(comp, String containerName, String label){
@@ -310,7 +343,7 @@ class LaunchDialog{
     def static creaBoton(acc, i){
         if(acc.startsWith(scriptStr)){
             return creaBotonDesdeScript(acc,i)
-        } else if(acc==separatorStr){
+        } else if(acc==separatorStr || (acc==vertSeparatorStr && md.showLabels)){
             JSeparator sep = new JSeparator(SwingConstants.HORIZONTAL)
             return sep
         } else if(acc==vertSeparatorStr){

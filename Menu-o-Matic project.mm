@@ -1,7 +1,7 @@
 <map version="freeplane 1.11.5">
 <!--To view this file, download free mind mapping software Freeplane from https://www.freeplane.org -->
 <attribute_registry SHOW_ATTRIBUTES="selected"/>
-<node TEXT="Menu-o-Matic project" LOCALIZED_STYLE_REF="AutomaticLayout.level.root" FOLDED="false" ID="ID_551814049" LINK="../../../../../Respaldo%20EF/ef/Documentos%20con%20macros/08%20Freemind%20Groovy/scripts/ScriptsEnComputadorYDesarrollosEdo%20v1.9.mm" MAX_WIDTH="7 cm"><hook NAME="MapStyle" background="#f9f9f8" zoom="1.04">
+<node TEXT="Menu-o-Matic project" LOCALIZED_STYLE_REF="AutomaticLayout.level.root" FOLDED="false" ID="ID_551814049" LINK="../../../../../Respaldo%20EF/ef/Documentos%20con%20macros/08%20Freemind%20Groovy/scripts/ScriptsEnComputadorYDesarrollosEdo%20v1.9.mm" MAX_WIDTH="7 cm"><hook NAME="MapStyle" background="#f9f9f8">
     <conditional_styles>
         <conditional_style ACTIVE="true" STYLE_REF="customMenuPackage" LAST="false">
             <attribute_exists_condition ATTRIBUTE="tbActions"/>
@@ -217,6 +217,13 @@
 <stylenode TEXT="notMovedRenamed" BACKGROUND_COLOR="#f28bb3" BORDER_WIDTH="3 px">
 <icon BUILTIN="emoji-26D4"/>
 </stylenode>
+<stylenode TEXT="moveToTrash" BACKGROUND_COLOR="#e0e000">
+<icon BUILTIN="emoji-1F6AE"/>
+<font STRIKETHROUGH="false" ITALIC="true"/>
+</stylenode>
+<stylenode TEXT="trashFolder" BACKGROUND_COLOR="#e0e000" STYLE="rectangle" BORDER_WIDTH="3 px" BORDER_COLOR_LIKE_EDGE="false" BORDER_COLOR="#c61b26">
+<icon BUILTIN="emoji-1F5D1"/>
+</stylenode>
 </stylenode>
 <stylenode LOCALIZED_TEXT="styles.AutomaticLayout" POSITION="bottom_or_right" STYLE="bubble">
 <stylenode LOCALIZED_TEXT="AutomaticLayout.level.root" ID="ID_1209359852" COLOR="#ffffff" BACKGROUND_COLOR="#484747" STYLE="bubble" SHAPE_HORIZONTAL_MARGIN="10 pt" SHAPE_VERTICAL_MARGIN="15 pt" TEXT_ALIGN="CENTER" MAX_WIDTH="5 cm" MIN_WIDTH="3 cm">
@@ -393,9 +400,7 @@ before the actual namefilter setting)
 </html></richcontent>
 </node>
 </node>
-<node TEXT="files" FOLDED="true" ID="ID_1263743307">
-<attribute NAME="projectCode" VALUE="files"/>
-<node TEXT="delete" STYLE_REF="missing" ID="ID_1469136399" LINK="delete/"><richcontent TYPE="DETAILS">
+<node TEXT="delete" STYLE_REF="trashFolder" ID="ID_1469136399" LINK="delete/"><richcontent TYPE="DETAILS">
 <html>
   <head>
     
@@ -406,7 +411,13 @@ before the actual namefilter setting)
     </p>
   </body>
 </html></richcontent>
+<node TEXT="MoM.svg" STYLE_REF="moveToTrash" ID="ID_844351064" LINK="delete/MoM.svg">
+<attribute NAME="MDI_oldUri" VALUE="Menu-o-Matic/zips/icons/TabbedPanelMod/MoM.svg" OBJECT="java.net.URI|Menu-o-Matic/zips/icons/TabbedPanelMod/MoM.svg"/>
+<attribute NAME="MDI_movedFrom" VALUE="ID_1367464612"/>
 </node>
+</node>
+<node TEXT="files" ID="ID_1263743307">
+<attribute NAME="projectCode" VALUE="files"/>
 <node TEXT=".git" ID="ID_1176131600" LINK=".git/">
 <attribute NAME="lastModifiedTime" VALUE="12-07-21 19:06" OBJECT="org.freeplane.features.format.FormattedDate|2021-07-12T19:06-0400|dd-MM-yy HH:mm"/>
 <attribute NAME="lastAccessTime" VALUE="07-08-21 18:57" OBJECT="org.freeplane.features.format.FormattedDate|2021-08-07T18:57-0400|dd-MM-yy HH:mm"/>
@@ -3157,7 +3168,7 @@ before the actual namefilter setting)
 </node>
 </node>
 </node>
-<node TEXT="scripts" STYLE_REF="file_folder" ID="ID_283277560" LINK="Menu-o-Matic/scripts/">
+<node TEXT="scripts" STYLE_REF="file_folder" FOLDED="true" ID="ID_283277560" LINK="Menu-o-Matic/scripts/">
 <attribute NAME="lastModifiedTime" VALUE="12-05-22 10:19" OBJECT="org.freeplane.features.format.FormattedDate|2022-05-12T10:19-0400|dd-MM-yy HH:mm"/>
 <attribute NAME="lastAccessTime" VALUE="12-05-22 11:05" OBJECT="org.freeplane.features.format.FormattedDate|2022-05-12T11:05-0400|dd-MM-yy HH:mm"/>
 <attribute NAME="creationTime" VALUE="24-06-21 13:31" OBJECT="org.freeplane.features.format.FormattedDate|2021-06-24T13:31-0400|datetime"/>
@@ -3273,6 +3284,7 @@ before the actual namefilter setting)
 <icon BUILTIN="ksmiletris"/>
 </node>
 </node>
+<node TEXT="dejar sólo botón de &quot;Launch unido&quot;" STYLE_REF="nextTask" ID="ID_1211352573"/>
 </node>
 <node TEXT="Designing" ID="ID_1407265156">
 <node TEXT="getMenuCommand.groovy" ID="ID_1957867000" LINK="Menu-o-Matic/scripts/getMenuCommand.groovy">
@@ -4193,6 +4205,9 @@ before the actual namefilter setting)
 </node>
 </node>
 <node TEXT="Launching" ID="ID_1688826044">
+<node TEXT="" ID="ID_731297349">
+<hook NAME="FirstGroupNode"/>
+</node>
 <node TEXT="launchCustomDialog.groovy" ID="ID_1401230090" LINK="Menu-o-Matic/scripts/launchCustomDialog.groovy"><richcontent TYPE="DETAILS">
 <html>
   <head>
@@ -4262,7 +4277,7 @@ before the actual namefilter setting)
     </p>
   </body>
 </html></richcontent>
-<node ID="ID_50619971" CONTENT_ID="ID_264377532"/>
+<node TEXT="hacer que al armar el diálogo, ignore los nodos paquete" STYLE_REF="completedTask" ID="ID_1793064388"/>
 </node>
 <node TEXT="launchDialogsFromBranch.groovy" ID="ID_1503356647" LINK="Menu-o-Matic/scripts/launchDialogsFromBranch.groovy">
 <attribute NAME="lastModifiedTime" VALUE="11-07-21 19:07" OBJECT="org.freeplane.features.format.FormattedDate|2021-07-11T19:07-0400|dd-MM-yy HH:mm"/>
@@ -4310,6 +4325,52 @@ before the actual namefilter setting)
     </p>
   </body>
 </html></richcontent>
+</node>
+<node TEXT="" ID="ID_1155773860">
+<hook NAME="SummaryNode"/>
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="UNIR" STYLE_REF="completedTask" ID="ID_594148308">
+<arrowlink DESTINATION="ID_1379687969" STARTINCLINATION="71.25 pt;65.25 pt;" ENDINCLINATION="334.49999 pt;0 pt;"/>
+<node TEXT="lógica" ID="ID_1568688725">
+<node TEXT="nodo seleccionado es paquete?" ID="ID_468743442" CHILD_NODES_LAYOUT="AUTO_AFTERPARENT">
+<icon BUILTIN="emoji-2753"/>
+<node TEXT="sí" ID="ID_1898276477" CHILD_NODES_LAYOUT="TOPTOBOTTOM_RIGHT_FIRST">
+<icon BUILTIN="emoji-2705"/>
+<node TEXT="launchCustomDialog" ID="ID_1347219029">
+<font BOLD="true"/>
+</node>
+</node>
+<node TEXT="no" ID="ID_1758578682" CHILD_NODES_LAYOUT="TOPTOBOTTOM_RIGHT_FIRST">
+<icon BUILTIN="emoji-274C"/>
+<node TEXT="algún descendiente es paquete?" ID="ID_980550664" CHILD_NODES_LAYOUT="TOPTOBOTTOM_RIGHT_BOTTOM">
+<icon BUILTIN="emoji-2753"/>
+<node TEXT="si" ID="ID_973107571" CHILD_NODES_LAYOUT="TOPTOBOTTOM_RIGHT_FIRST">
+<icon BUILTIN="emoji-2705"/>
+<node TEXT="launchDialogsFromBranch" ID="ID_1766450104">
+<font BOLD="true"/>
+</node>
+</node>
+<node TEXT="no" ID="ID_758398817" CHILD_NODES_LAYOUT="TOPTOBOTTOM_RIGHT_FIRST">
+<icon BUILTIN="emoji-274C"/>
+<node TEXT="algún descendiente con link a commando o groovyNode?" ID="ID_192754025" CHILD_NODES_LAYOUT="TOPTOBOTTOM_RIGHT_BOTTOM">
+<icon BUILTIN="emoji-2753"/>
+<node TEXT="sí" ID="ID_1802443448" CHILD_NODES_LAYOUT="TOPTOBOTTOM_RIGHT_FIRST">
+<icon BUILTIN="emoji-2705"/>
+<node TEXT="lauchDialogFromNodes" ID="ID_545283002">
+<font BOLD="true"/>
+</node>
+</node>
+<node TEXT="no" ID="ID_1990880762" CHILD_NODES_LAYOUT="TOPTOBOTTOM_RIGHT_FIRST">
+<icon BUILTIN="emoji-274C"/>
+<node TEXT="abort" ID="ID_1906660166"/>
+</node>
+</node>
+</node>
+</node>
+</node>
+</node>
+</node>
+</node>
 </node>
 <node TEXT="listCustomMenusFromMap.groovy" ID="ID_247227183" LINK="Menu-o-Matic/scripts/listCustomMenusFromMap.groovy">
 <attribute NAME="lastModifiedTime" VALUE="08-08-21 16:04" OBJECT="org.freeplane.features.format.FormattedDate|2021-08-08T16:04-0400|dd-MM-yy HH:mm"/>
@@ -4394,6 +4455,7 @@ before the actual namefilter setting)
   </body>
 </html></richcontent>
 </node>
+<node TEXT="launchDialogFromSelected.groovy" POSITION="bottom_or_right" ID="ID_1379687969" LINK="Menu-o-Matic/scripts/launchDialogFromSelected.groovy"/>
 </node>
 <node TEXT="borradores / tareas" STYLE_REF="Organizador" FOLDED="true" ID="ID_266728019" VSHIFT_QUANTITY="-0.75 pt">
 <node TEXT="design" STYLE_REF="Organizador" ID="ID_1602015427">
@@ -5774,13 +5836,13 @@ before the actual namefilter setting)
 </node>
 <node ID="ID_91861266" CONTENT_ID="ID_1898413286"/>
 </node>
-<node TEXT="zips" STYLE_REF="file_folder" FOLDED="true" ID="ID_1075512046" LINK="Menu-o-Matic/zips/">
+<node TEXT="zips" STYLE_REF="file_folder" ID="ID_1075512046" LINK="Menu-o-Matic/zips/">
 <attribute NAME="lastModifiedTime" VALUE="25-06-21 15:00" OBJECT="org.freeplane.features.format.FormattedDate|2021-06-25T15:00-0400|dd-MM-yy HH:mm"/>
 <attribute NAME="lastAccessTime" VALUE="12-05-22 11:05" OBJECT="org.freeplane.features.format.FormattedDate|2022-05-12T11:05-0400|dd-MM-yy HH:mm"/>
 <attribute NAME="creationTime" VALUE="24-06-21 13:38" OBJECT="org.freeplane.features.format.FormattedDate|2021-06-24T13:38-0400|datetime"/>
 <attribute NAME="fileSize" VALUE="0" OBJECT="org.freeplane.features.format.FormattedNumber|0|#,##0"/>
 <attribute NAME="projectCode" VALUE="zips"/>
-<node TEXT="doc" STYLE_REF="file_folder" ID="ID_544149911" LINK="Menu-o-Matic/zips/doc/">
+<node TEXT="doc" STYLE_REF="file_folder" FOLDED="true" ID="ID_544149911" LINK="Menu-o-Matic/zips/doc/">
 <attribute NAME="lastModifiedTime" VALUE="25-06-21 15:02" OBJECT="org.freeplane.features.format.FormattedDate|2021-06-25T15:02-0400|dd-MM-yy HH:mm"/>
 <attribute NAME="lastAccessTime" VALUE="12-05-22 11:05" OBJECT="org.freeplane.features.format.FormattedDate|2022-05-12T11:05-0400|dd-MM-yy HH:mm"/>
 <attribute NAME="creationTime" VALUE="24-06-21 13:38" OBJECT="org.freeplane.features.format.FormattedDate|2021-06-24T13:38-0400|datetime"/>
@@ -5812,21 +5874,224 @@ before the actual namefilter setting)
 <node TEXT="icons" ID="ID_293396145" LINK="Menu-o-Matic/zips/icons/">
 <attribute NAME="projectCode" VALUE="icons"/>
 <node TEXT="TabbedPanelMod" ID="ID_1367464612" LINK="Menu-o-Matic/zips/icons/TabbedPanelMod/">
-<node TEXT="MoM.svg" ID="ID_844351064" LINK="Menu-o-Matic/zips/icons/TabbedPanelMod/MoM.svg"/>
+<node TEXT="MoM.svg" ID="ID_1817585946" LINK="Menu-o-Matic/zips/icons/TabbedPanelMod/MoM.svg"/>
 </node>
 <node TEXT="Menu-o-Matic" ID="ID_1262031919" LINK="Menu-o-Matic/zips/icons/Menu-o-Matic/">
-<node TEXT="MoM.svg" ID="ID_647775263" LINK="Menu-o-Matic/zips/icons/Menu-o-Matic/MoM.svg">
-<node TEXT="MoM" POSITION="bottom_or_right" ID="ID_352979862" LINK="menuitem:_IconAction.Menu-o-Matic/MoM"/>
+<node TEXT="revisar estas guías" STYLE_REF="nextTask" FOLDED="true" ID="ID_1497436013">
+<node TEXT="Icon Design" ID="ID_1912119524" LINK="https://minoraxis.medium.com/list/icon-design-846bd38354b6"><richcontent TYPE="DETAILS">
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      Tutorials, case studies, history, and inspiration
+    </p>
+  </body>
+</html></richcontent>
+<node TEXT="Icon Testing Strategy" POSITION="bottom_or_right" ID="ID_1308424470" LINK="https://medium.com/@lodestar-design/icon-testing-strategy-234e13e6932c"/>
+<node TEXT="Design principles for creating the perfect icon set" POSITION="bottom_or_right" ID="ID_1616525168" LINK="https://uxdesign.cc/design-principles-for-creating-the-perfect-icon-set-d12570e0bcb1"><richcontent TYPE="DETAILS">
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      12 steps you need to follow if you want to make an outstanding icon set
+    </p>
+  </body>
+</html></richcontent>
 </node>
-<node TEXT="MoMCloseTab.svg" ID="ID_1249662872" LINK="Menu-o-Matic/zips/icons/Menu-o-Matic/MoMCloseTab.svg">
-<node TEXT="MoMCloseTab" ID="ID_1360054908" LINK="menuitem:_IconAction.Menu-o-Matic/MoMCloseTab"/>
+<node TEXT="Icon design for dummies part II: how to create an icon set from scratch" POSITION="bottom_or_right" ID="ID_151859678" LINK="https://bootcamp.uxdesign.cc/icon-design-for-dummies-part-ii-how-to-create-an-icon-set-from-scratch-8eb0b1e730d7"/>
+<node TEXT="Designing icon sets: A masterclass from Streamline" POSITION="bottom_or_right" ID="ID_1155853748" LINK="https://bootcamp.uxdesign.cc/designing-icon-sets-a-masterclass-from-streamline-d331c4876de8">
+<arrowlink DESTINATION="ID_1378769536" STARTINCLINATION="558.74998 pt;0 pt;" ENDINCLINATION="558.74998 pt;0 pt;"/>
 </node>
-<node TEXT="MoMCloseToolbar.svg" ID="ID_49034312" LINK="Menu-o-Matic/zips/icons/Menu-o-Matic/MoMCloseToolbar.svg">
-<node TEXT="MoMCloseToolbar" POSITION="bottom_or_right" ID="ID_409548431" LINK="menuitem:_IconAction.Menu-o-Matic/MoMCloseToolbar"/>
+<node TEXT="7 Principles of Icon Design" ID="ID_893536723" LINK="https://uxdesign.cc/7-principles-of-icon-design-e7187539e4a2"><richcontent TYPE="DETAILS">
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      Clarity, Readability, Alignment, Brevity, Consistency, Personality, Ease of Use.
+    </p>
+  </body>
+</html></richcontent>
+</node>
+<node TEXT="5 Ways to Create a Settings Icon" ID="ID_1669762411" LINK="https://minoraxis.medium.com/5-ways-to-create-a-settings-icon-fff8dc95e36d"><richcontent TYPE="DETAILS">
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      Learn to use an array of Illustrator features through this exercise
+    </p>
+  </body>
+</html></richcontent>
+</node>
+<node TEXT="3 Classic Icon Families" ID="ID_785151106" LINK="https://minoraxis.medium.com/3-classic-icon-families-f5026ed923dd"><richcontent TYPE="DETAILS">
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      And why they matter
+    </p>
+  </body>
+</html></richcontent>
 </node>
 </node>
 </node>
-<node TEXT="templates" STYLE_REF="file_folder" ID="ID_1904073328" LINK="Menu-o-Matic/zips/templates/">
+<node TEXT="How to design complex concepts?" FOLDED="true" ID="ID_1378769536" VGAP_QUANTITY="13.5 pt">
+<node TEXT="The meaning of an icon must be immediately understood by any user. Sometimes, the choice of the referent is the most obvious, but using concept maps can help us find the most appropriate sign for each message." FOLDED="true" ID="ID_1383957589" VGAP_QUANTITY="14.25 pt">
+<node TEXT="image" FOLDED="true" POSITION="bottom_or_right" ID="ID_298069838">
+<node TEXT="png-230927-124055383-8986896184583569444.png" ID="ID_1385494912">
+<hook URI="Menu-o-Matic%20project_files/png-230927-124055383-8986896184583569444.png" SIZE="1.0" NAME="ExternalObject"/>
+</node>
+</node>
+<node TEXT="example" POSITION="bottom_or_right" ID="ID_1450550729" VGAP_QUANTITY="9.75 pt" COMMON_HGAP_QUANTITY="29 pt">
+<node TEXT="ADHD (Attention Deficit Hyperactivity Disorder)" ID="ID_53625463" CHILD_NODES_LAYOUT="LEFTTORIGHT_BOTHSIDES_CENTERED" MAX_WIDTH="4.5 cm" TEXT_ALIGN="CENTER">
+<hook URI="Menu-o-Matic%20project_files/png-230927-124151952-6758878813057896335.png" SIZE="1.0" NAME="ExternalObject"/>
+<cloud COLOR="#cdcdcd" SHAPE="ROUND_RECT"/>
+<node TEXT="Limited attention" POSITION="top_or_left" ID="ID_157664976">
+<node TEXT="Brain/Mind" ID="ID_811537314" BACKGROUND_COLOR="#6cb4fd"/>
+<node TEXT="Alarm/Clock" ID="ID_1678165123"/>
+<node TEXT="Target" ID="ID_578334951"/>
+</node>
+<node TEXT="Hyperactivity" POSITION="bottom_or_right" ID="ID_1290327676">
+<node TEXT="Exclamation" ID="ID_937363190"/>
+<node TEXT="Lightning" ID="ID_957584984"/>
+<node TEXT="Arrows" ID="ID_173377264" BACKGROUND_COLOR="#6cb4fd"/>
+</node>
+</node>
+</node>
+</node>
+<node TEXT="Comandos:" POSITION="bottom_or_right" ID="ID_1096482431">
+<node TEXT="----" ID="ID_1130392731">
+<node TEXT="" ID="ID_1787413013">
+<hook NAME="FirstGroupNode"/>
+</node>
+<node TEXT="launch directly" ID="ID_341973041" ICON_SIZE="16 px">
+<icon BUILTIN="Menu-o-Matic/MoM_dialog"/>
+<icon BUILTIN="emoji-1F4BD"/>
+<node TEXT="abre menú desde branch" ID="ID_1988520089"/>
+</node>
+<node TEXT="launch menu dialog" ID="ID_78450204">
+<node TEXT="paquete genera menú" ID="ID_518577400"/>
+<node TEXT="abrir paquete como menú" ID="ID_1178216975"/>
+</node>
+<node TEXT="" ID="ID_209465567">
+<hook NAME="SummaryNode"/>
+<hook NAME="AlwaysUnfoldedNode"/>
+<node TEXT="deberían ser un único botón" STYLE_REF="nextTask" ID="ID_123015713">
+<node TEXT="nodo seleccionado es paquete?" ID="ID_1202458782">
+<node TEXT="sí" ID="ID_720148983">
+<node TEXT="lanza desde paquete" ID="ID_1008092019"/>
+</node>
+<node TEXT="no" ID="ID_1773862625">
+<node TEXT="intenta lanzar directamente" ID="ID_474874024"/>
+</node>
+</node>
+<node TEXT="launch toolbar / dialog" ID="ID_995694229">
+<node TEXT="launch" ID="ID_1048177424"/>
+<node TEXT="open" ID="ID_1421213985"/>
+<node TEXT="genera" ID="ID_1130605683"/>
+<node TEXT="toolbar" ID="ID_1093806941"/>
+<node TEXT="menu" ID="ID_1347846977"/>
+</node>
+</node>
+</node>
+</node>
+<node TEXT="----" ID="ID_799613926">
+<node TEXT="launch all" ID="ID_555414594">
+<node TEXT="launch all packages from selected branch" ID="ID_1212143051">
+<node TEXT="branch" ID="ID_1431401946"/>
+<node TEXT="open" ID="ID_1775360247"/>
+<node TEXT="launch" ID="ID_238633519"/>
+<node TEXT="menus" ID="ID_1391668357"/>
+</node>
+</node>
+<node TEXT="list menu packages from map" ID="ID_1868472342" ICON_SIZE="16 px">
+<icon BUILTIN="Menu-o-Matic/MoM_List"/>
+<icon BUILTIN="emoji-1F4BD"/>
+<node TEXT="listado" ID="ID_1345161416"/>
+<node TEXT="checklist" ID="ID_1032222301"/>
+<node TEXT="board con clip" ID="ID_1018666455">
+<icon BUILTIN="emoji-1F4CB"/>
+</node>
+</node>
+</node>
+<node TEXT="----" ID="ID_597211636">
+<node TEXT="(Un)mark node as powerButton" ID="ID_1452955262" ICON_SIZE="16 px">
+<icon BUILTIN="Menu-o-Matic/MoM_union"/>
+<icon BUILTIN="emoji-1F4BD"/>
+<node TEXT="unir" ID="ID_70256977"/>
+<node TEXT="equipo" ID="ID_1707399067"/>
+<node TEXT="cadena" ID="ID_1926432739"/>
+</node>
+<node TEXT="Change pack parameters" ID="ID_1116181812" ICON_SIZE="16 px">
+<icon BUILTIN="Menu-o-Matic/MoM_changeParameters"/>
+<icon BUILTIN="emoji-1F4BD"/>
+<node TEXT="editar" ID="ID_775613861"/>
+<node TEXT="ajustar" ID="ID_1600763266"/>
+</node>
+<node TEXT="pack menu" ID="ID_1804854584" ICON_SIZE="16 px">
+<icon BUILTIN="Menu-o-Matic/MoM_box"/>
+<icon BUILTIN="emoji-1F4BD"/>
+<node TEXT="empacar" ID="ID_1043717321"/>
+</node>
+<node TEXT="unpack menu" ID="ID_837411483" ICON_SIZE="16 px">
+<icon BUILTIN="Menu-o-Matic/MoM_unbox"/>
+<icon BUILTIN="emoji-1F4BD"/>
+<node TEXT="desempacar" ID="ID_637004419"/>
+</node>
+</node>
+</node>
+</node>
+<node TEXT="MoM_List.svg" ID="ID_1840870510" LINK="Menu-o-Matic/zips/icons/Menu-o-Matic/MoM_List.svg"/>
+<node TEXT="MoM_box.svg" ID="ID_1797495661" LINK="Menu-o-Matic/zips/icons/Menu-o-Matic/MoM_box.svg"/>
+<node TEXT="MoM_changeParameters.svg" ID="ID_786245668" LINK="Menu-o-Matic/zips/icons/Menu-o-Matic/MoM_changeParameters.svg"/>
+<node TEXT="MoM_dialog.svg" ID="ID_871873396" LINK="Menu-o-Matic/zips/icons/Menu-o-Matic/MoM_dialog.svg"/>
+<node TEXT="MoM_unbox.svg" ID="ID_335063177" LINK="Menu-o-Matic/zips/icons/Menu-o-Matic/MoM_unbox.svg"/>
+<node TEXT="MoM_union.svg" ID="ID_1459816979" LINK="Menu-o-Matic/zips/icons/Menu-o-Matic/MoM_union.svg"/>
+</node>
+<node TEXT="Menu-o-Matic" POSITION="bottom_or_right" ID="ID_1273608564" LINK="menuitem:_addons.menuOMatic.launchCustomDialog_on_single_node">
+<attribute NAME="tbActions" VALUE="[addons.menuOMatic.lauchDialogFromNodes_on_single_node, addons.menuOMatic.launchCustomDialog_on_single_node, _vertSeparator, addons.menuOMatic.launchDialogsFromBranch_on_single_node, addons.menuOMatic.listCustomMenusFromMap_on_single_node, _vertSeparator, addons.menuOMatic.markAsPowerButton_on_single_node, addons.menuOMatic.changePackParameters_on_single_node, addons.menuOMatic.packCustomMenu_on_single_node, addons.menuOMatic.unpackCustomMenu_on_single_node]"/>
+<attribute NAME="tbIcons" VALUE="[IconAction.emoji-2728, IconAction.emoji-1F680, null, IconAction.emoji-1F387, IconAction.mindmap, null, IconAction.emoji-1F5DC, IconAction.emoji-1F527, IconAction.emoji-1F4E6, IconAction.emoji-1F468-200D-1F527]"/>
+<attribute NAME="tbLabels" VALUE="[launch directly, launch menu dialog, |, launch all, list menu packages from map, |, (Un)mark node as powerButton, Change pack parameters, pack menu, unpack menu]"/>
+<attribute NAME="tbMaxTextLength" VALUE="50" OBJECT="org.freeplane.features.format.FormattedNumber|50"/>
+<attribute NAME="tbShowIcons" VALUE="true"/>
+<attribute NAME="tbShowLabels" VALUE="true"/>
+<attribute NAME="tbTitle" VALUE="Menu-o-Matic"/>
+<attribute NAME="tbTabName" VALUE="MoM"/>
+<attribute NAME="tbAutoLaunch" VALUE="false"/>
+</node>
+<node TEXT="Menu-o-Matic" POSITION="bottom_or_right" ID="ID_1339564322" LINK="menuitem:_addons.menuOMatic.launchCustomDialog_on_single_node">
+<attribute NAME="tbActions" VALUE="[addons.menuOMatic.launchDialogFromSelected_on_single_node, addons.menuOMatic.listCustomMenusFromMap_on_single_node, _vertSeparator, addons.menuOMatic.markAsPowerButton_on_single_node, addons.menuOMatic.changePackParameters_on_single_node, addons.menuOMatic.packCustomMenu_on_single_node, addons.menuOMatic.unpackCustomMenu_on_single_node]"/>
+<attribute NAME="tbIcons" VALUE="[IconAction.Menu-o-Matic/MoM_dialog, IconAction.Menu-o-Matic/MoM_List, null, IconAction.Menu-o-Matic/MoM_union, IconAction.Menu-o-Matic/MoM_changeParameters, IconAction.Menu-o-Matic/MoM_box, IconAction.Menu-o-Matic/MoM_unbox]"/>
+<attribute NAME="tbLabels" VALUE="[Launch dialog(s) from selected node, list menu packages from map, |, Mark node as powerButton, Change pack parameters, pack menu, unpack menu]"/>
+<attribute NAME="tbMaxTextLength" VALUE="50" OBJECT="org.freeplane.features.format.FormattedNumber|50"/>
+<attribute NAME="tbShowIcons" VALUE="true"/>
+<attribute NAME="tbShowLabels" VALUE="true"/>
+<attribute NAME="tbTitle" VALUE="Menu-o-Matic"/>
+<attribute NAME="tbTabName" VALUE="MoM"/>
+<attribute NAME="tbAutoLaunch" VALUE="false"/>
+</node>
+<node TEXT="Menu-o-Matic" POSITION="bottom_or_right" ID="ID_1836184005" LINK="menuitem:_addons.menuOMatic.launchCustomDialog_on_single_node">
+<attribute NAME="tbActions" VALUE="[addons.menuOMatic.launchDialogFromSelected_on_single_node, addons.menuOMatic.listCustomMenusFromMap_on_single_node, _vertSeparator, addons.menuOMatic.markAsPowerButton_on_single_node, addons.menuOMatic.changePackParameters_on_single_node, addons.menuOMatic.packCustomMenu_on_single_node, addons.menuOMatic.unpackCustomMenu_on_single_node]"/>
+<attribute NAME="tbIcons" VALUE="[IconAction.Menu-o-Matic/MoM_dialog, IconAction.Menu-o-Matic/MoM_List, null, IconAction.Menu-o-Matic/MoM_union, IconAction.Menu-o-Matic/MoM_changeParameters, IconAction.Menu-o-Matic/MoM_box, IconAction.Menu-o-Matic/MoM_unbox]"/>
+<attribute NAME="tbLabels" VALUE="[Launch dialog(s) from selected node, list menu packages from map, |, Mark node as powerButton, Change pack parameters, pack menu, unpack menu]"/>
+<attribute NAME="tbMaxTextLength" VALUE="50" OBJECT="org.freeplane.features.format.FormattedNumber|50"/>
+<attribute NAME="tbShowIcons" VALUE="true"/>
+<attribute NAME="tbShowLabels" VALUE="false"/>
+<attribute NAME="tbTitle" VALUE="Menu-o-Matic"/>
+<attribute NAME="tbTabName" VALUE="MoM"/>
+<attribute NAME="tbAutoLaunch" VALUE="false"/>
+</node>
+</node>
+<node TEXT="templates" STYLE_REF="file_folder" FOLDED="true" ID="ID_1904073328" LINK="Menu-o-Matic/zips/templates/">
 <attribute NAME="lastModifiedTime" VALUE="25-06-21 15:00" OBJECT="org.freeplane.features.format.FormattedDate|2021-06-25T15:00-0400|datetime"/>
 <attribute NAME="lastAccessTime" VALUE="12-05-22 11:05" OBJECT="org.freeplane.features.format.FormattedDate|2022-05-12T11:05-0400|dd-MM-yy HH:mm"/>
 <attribute NAME="creationTime" VALUE="25-06-21 15:00" OBJECT="org.freeplane.features.format.FormattedDate|2021-06-25T15:00-0400|datetime"/>
@@ -5863,7 +6128,7 @@ before the actual namefilter setting)
 </node>
 </node>
 </node>
-<node TEXT="scripts" ID="ID_943715260" LINK="Menu-o-Matic/zips/scripts/">
+<node TEXT="scripts" FOLDED="true" ID="ID_943715260" LINK="Menu-o-Matic/zips/scripts/">
 <node TEXT="init" ID="ID_524155904" LINK="Menu-o-Matic/zips/scripts/init/">
 <node TEXT="Tabz_Menu-o-Matic_init.groovy" FOLDED="true" ID="ID_374127528" LINK="Menu-o-Matic/zips/scripts/init/Tabz_Menu-o-Matic_init.groovy">
 <node TEXT="hacer que revise los mapas en orden alfabético" STYLE_REF="completedTask" POSITION="bottom_or_right" ID="ID_773018765">
@@ -6281,6 +6546,7 @@ before the actual namefilter setting)
 </html></richcontent>
 </node>
 <node TEXT="última versión no funciona con groovy 3.x.txt" ID="ID_1548801217" LINK="Menu-o-Matic/última%20versión%20no%20funciona%20con%20groovy%203.x.txt"/>
+<node TEXT="Menu-o-Matic-v0.1.11.addon.mm" STYLE_REF="freshNew" ID="ID_795800258" LINK="Menu-o-Matic/Menu-o-Matic-v0.1.11.addon.mm"/>
 </node>
 <node TEXT="resources" STYLE_REF="file_folder" ID="ID_928846385" LINK="resources/">
 <attribute NAME="lastModifiedTime" VALUE="12-07-21 18:52" OBJECT="org.freeplane.features.format.FormattedDate|2021-07-12T18:52-0400|dd-MM-yy HH:mm"/>
@@ -6435,6 +6701,38 @@ before the actual namefilter setting)
 </html></richcontent>
 </node>
 <node TEXT="Menu-o-Matic examples.mm" ID="ID_1769344524" LINK="resources/Menu-o-Matic%20examples.mm"/>
+<node TEXT="icons" ID="ID_1990455219" LINK="resources/icons/">
+<node TEXT="MoM.svg" ID="ID_647775263" LINK="resources/icons/MoM.svg">
+<node TEXT="MoM" POSITION="bottom_or_right" ID="ID_352979862" LINK="menuitem:_IconAction.Menu-o-Matic/MoM"/>
+</node>
+<node TEXT="MoMCloseTab.svg" ID="ID_1249662872" LINK="resources/icons/MoMCloseTab.svg">
+<node TEXT="MoMCloseTab" ID="ID_1360054908" LINK="menuitem:_IconAction.Menu-o-Matic/MoMCloseTab"/>
+</node>
+<node TEXT="MoMCloseToolbar.svg" ID="ID_49034312" LINK="resources/icons/MoMCloseToolbar.svg">
+<node TEXT="MoMCloseToolbar" POSITION="bottom_or_right" ID="ID_409548431" LINK="menuitem:_IconAction.Menu-o-Matic/MoMCloseToolbar"/>
+</node>
+<node TEXT="MoM_Packed.svg" ID="ID_373609272" LINK="resources/icons/MoM_Packed.svg"/>
+<node TEXT="MoM_Unpacked.svg" ID="ID_1954423230" LINK="resources/icons/MoM_Unpacked.svg"/>
+<node TEXT="box.svg" ID="ID_610596201" LINK="resources/icons/box.svg"/>
+<node TEXT="pack.svg" ID="ID_1596289631" LINK="resources/icons/pack.svg"/>
+<node TEXT="MoM_List.svg" ID="ID_1002546380" LINK="resources/icons/MoM_List.svg"/>
+<node TEXT="MoM_List_36.svg" ID="ID_599623505" LINK="resources/icons/MoM_List_36.svg"/>
+<node TEXT="MoM_box.svg" ID="ID_692182067" LINK="resources/icons/MoM_box.svg"/>
+<node TEXT="MoM_box_02.svg" ID="ID_1913622918" LINK="resources/icons/MoM_box_02.svg"/>
+<node TEXT="MoM_box_24.svg" ID="ID_1464289818" LINK="resources/icons/MoM_box_24.svg"/>
+<node TEXT="MoM_box_36.svg" ID="ID_527089558" LINK="resources/icons/MoM_box_36.svg"/>
+<node TEXT="MoM_changeParameters.svg" ID="ID_248647144" LINK="resources/icons/MoM_changeParameters.svg"/>
+<node TEXT="MoM_changeParameters_24.svg" ID="ID_1949484757" LINK="resources/icons/MoM_changeParameters_24.svg"/>
+<node TEXT="MoM_changeParameters_36.svg" ID="ID_1787213897" LINK="resources/icons/MoM_changeParameters_36.svg"/>
+<node TEXT="MoM_dialog.svg" ID="ID_1825307300" LINK="resources/icons/MoM_dialog.svg"/>
+<node TEXT="MoM_dialog_24.svg" ID="ID_472572518" LINK="resources/icons/MoM_dialog_24.svg"/>
+<node TEXT="MoM_dialog_36.svg" ID="ID_873483977" LINK="resources/icons/MoM_dialog_36.svg"/>
+<node TEXT="MoM_unbox.svg" ID="ID_1321116432" LINK="resources/icons/MoM_unbox.svg"/>
+<node TEXT="MoM_unbox.svg.2023_09_28_19_52_13.0.svg" ID="ID_1208228119" LINK="resources/icons/MoM_unbox.svg.2023_09_28_19_52_13.0.svg"/>
+<node TEXT="MoM_unbox_36.svg" ID="ID_1781369534" LINK="resources/icons/MoM_unbox_36.svg"/>
+<node TEXT="MoM_union.svg" ID="ID_346032289" LINK="resources/icons/MoM_union.svg"/>
+<node TEXT="MoM_union_36.svg" ID="ID_343655121" LINK="resources/icons/MoM_union_36.svg"/>
+</node>
 </node>
 <node TEXT="README.md" ID="ID_925151699" LINK="README.md" STYLE="bubble">
 <edge COLOR="#ff0000"/>
@@ -6540,7 +6838,7 @@ before the actual namefilter setting)
   </body>
 </html></richcontent>
 </node>
-<node TEXT="ignoredByGitHub" FOLDED="true" ID="ID_1913165798" LINK="ignoredByGitHub/"><richcontent TYPE="DETAILS">
+<node TEXT="ignoredByGitHub" ID="ID_1913165798" LINK="ignoredByGitHub/"><richcontent TYPE="DETAILS">
 <html>
   <head>
     
@@ -7520,11 +7818,14 @@ before the actual namefilter setting)
 <node TEXT="png-230902-190356299-7410653210181318287.png" ID="ID_885033875" LINK="Menu-o-Matic%20project_files/png-230902-190356299-7410653210181318287.png"/>
 <node TEXT="png-230902-190615415-15654607576368185715.png" ID="ID_1445935026" LINK="Menu-o-Matic%20project_files/png-230902-190615415-15654607576368185715.png"/>
 <node TEXT="png-230902-190801671-11014909490229334339.png" ID="ID_1587039230" LINK="Menu-o-Matic%20project_files/png-230902-190801671-11014909490229334339.png"/>
+<node TEXT="png-230927-123604270-16909018880893553591.png" STYLE_REF="freshNew" ID="ID_805870119" LINK="Menu-o-Matic%20project_files/png-230927-123604270-16909018880893553591.png"/>
+<node TEXT="png-230927-124055383-8986896184583569444.png" STYLE_REF="freshNew" ID="ID_1441916672" LINK="Menu-o-Matic%20project_files/png-230927-124055383-8986896184583569444.png"/>
+<node TEXT="png-230927-124151952-6758878813057896335.png" STYLE_REF="freshNew" ID="ID_1893950420" LINK="Menu-o-Matic%20project_files/png-230927-124151952-6758878813057896335.png"/>
 </node>
 </node>
 </node>
 <node TEXT="new imported files" STYLE_REF="newFolderImport" ID="ID_1788703280">
-<attribute NAME="log_MDI" VALUE="2" OBJECT="org.freeplane.features.format.FormattedObject|org.freeplane.plugin.script.proxy.ConvertibleNumber&amp;#x7c;2|number:decimal:#0.####"/>
+<attribute NAME="log_MDI" VALUE="2" OBJECT="org.freeplane.features.format.FormattedObject|org.freeplane.plugin.script.proxy.ConvertibleText&amp;#x7c;2|number:decimal:#0.####"/>
 <richcontent TYPE="NOTE">
 <html>
   <head>
@@ -7532,7 +7833,7 @@ before the actual namefilter setting)
   </head>
   <body>
     <p>
-      Inated:&#xa0;&#xa0;&#xa0;2023-09-04&#xa0;&#xa0;19:37:43
+      Inated:&#xa0;&#xa0;&#xa0;2023-09-29&#xa0;&#xa0;13:47:14
     </p>
     <p>
       
@@ -7562,10 +7863,10 @@ before the actual namefilter setting)
       ------- Folders: --------&#xa0;
     </p>
     <p>
-      26 folders didn't need to be moved&#xa0;
+      31 folders didn't need to be moved&#xa0;
     </p>
     <p>
-      2 folders were not found&#xa0;
+      1 folders were not found&#xa0;
     </p>
     <p>
       1 folder node(s) having case: 'mapPosition != drivePosition' but that had Clones that were OK --&gt; they were OK&#xa0;
@@ -7597,6 +7898,11 @@ before the actual namefilter setting)
   </body>
 </html>
 </richcontent>
+<node TEXT="Menu-o-Matic" ID="ID_1774159242" LINK="Menu-o-Matic/">
+<node TEXT="zips" ID="ID_55756330" LINK="Menu-o-Matic/zips/">
+<node TEXT="icons" ID="ID_880042332" LINK="Menu-o-Matic/zips/icons/"/>
+</node>
+</node>
 </node>
 <node TEXT="versión instalada en AddOns" STYLE_REF="locked" FOLDED="true" ID="ID_1424141649">
 <node TEXT="menuOMatic" ID="ID_1859181061"><richcontent TYPE="DETAILS">
@@ -7612,7 +7918,7 @@ before the actual namefilter setting)
 </html></richcontent>
 </node>
 </node>
-<node TEXT="Tareas" STYLE_REF="Organizador" FOLDED="true" ID="ID_642782932">
+<node TEXT="Tareas" STYLE_REF="Organizador" ID="ID_642782932">
 <attribute NAME="projectCode" VALUE="Tareas"/>
 <node TEXT="MoM First" STYLE_REF="milestone" ID="ID_1952544676">
 <node TEXT="traducir tareas al inglés" STYLE_REF="pendingTask" ID="ID_1966513049"/>
@@ -8301,7 +8607,7 @@ before the actual namefilter setting)
 </html></richcontent>
 </node>
 </node>
-<node TEXT="pruebas" FOLDED="true" ID="ID_733825031">
+<node TEXT="pruebas" ID="ID_733825031">
 <node TEXT="ScrollablePanel" ID="ID_486244889">
 <node TEXT="ScrollablePanel ejemplo 1" ID="ID_490388973"><richcontent TYPE="NOTE">
 <html>
@@ -8826,7 +9132,7 @@ before the actual namefilter setting)
   </body>
 </html></richcontent>
 </node>
-<node TEXT="entendiendo ToolBar Layout" ID="ID_170056841">
+<node TEXT="entendiendo ToolBar Layout" FOLDED="true" ID="ID_170056841">
 <node TEXT="ToolbarLayout." ID="ID_729555437">
 <node TEXT="fix()" POSITION="bottom_or_right" ID="ID_77634190"><richcontent TYPE="DETAILS">
 <html>

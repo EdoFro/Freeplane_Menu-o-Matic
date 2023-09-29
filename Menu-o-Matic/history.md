@@ -1,5 +1,24 @@
 # History
 
+## v0.1.11
+
+* New listCustomMenuFromMap with checkboxes
+* vertical separators are shown as horizontal separators in toolbars with labels
+* launchDialogFromNodes now ignores package nodes
+* New unified commad to launch dialog
+  * LaunchDialogFromSelected
+  * Follows this priority:
+    * If selected node is a package --> it opens it as dialog
+    * If any descendant is a package --> it opens all packages from branch
+    * if there are descendant nodes related to menu commands or groovy scripts --> it creates a dialog for them
+* solved [bug FP MoM: black box](https://github.com/EdoFro/Freeplane_Menu-o-Matic/issues/13)
+* new custom icons
+* Menu-o-Matic dialog now has less buttons
+  * LaunchDialogFromSelected replaces
+    * LaunchDialogFromNodes
+    * LaunchCustomDialog
+    * LaunchDialogFromBranch
+
 ## v0.1.10
 
 * Unpacking powerButtons now gets the labels for icon buttons too

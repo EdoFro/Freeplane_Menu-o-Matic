@@ -1,0 +1,13 @@
+<svg version="1.1" viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <marker id="CapTriangle" style="overflow:visible" markerHeight="0.99999994" markerWidth="0.52499998" orient="auto-start-reverse" preserveAspectRatio="xMidYMid" viewBox="0 0 0.525 1">
+            <path transform="scale(.5)" d="m0-1 1 1-1 1-0.05-1z" style="fill:context-stroke"/>
+        </marker>
+    </defs>
+    <g transform="matrix(1.2513 0 0 1.2474 -6.5134 -7.9321)" style="fill-rule:evenodd;fill:#d1d1d1;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.6008;stroke:#000">
+        <path d="m9.7159 17.205 8.6383 5.7469 11.278-4.4276-8.6383-5.7469z" style="fill-rule:evenodd;fill:#dedeaf;stroke-linecap:butt;stroke-linejoin:round;stroke-width:.80039px;stroke:#000"/>
+        <path d="m18.354 34.818v-11.865l11.278-4.4276v11.865z" style="fill-rule:evenodd;fill:#ffffd7;stroke-linecap:butt;stroke-linejoin:round;stroke-width:.80039px;stroke:#000"/>
+        <path d="m9.7159 29.071 8.6383 5.7469v-11.865l-8.6383-5.7469z" style="fill-rule:evenodd;fill:#bfbf86;stroke-linecap:butt;stroke-linejoin:round;stroke-width:.80039px;stroke:#000"/>
+    </g>
+    <path d="m13.246 10.511 10.214 7.7055-0.05785 3.6982" style="fill:none;marker-end:url(#CapTriangle);stroke-width:2;stroke:#000"/>
+</svg>
