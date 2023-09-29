@@ -10,16 +10,16 @@
   <defs
      id="defs7103" />
   <rect
-     style="fill:#e5e5e5;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-linecap:square;stroke-opacity:1"
+     style="fill:#d1d1d1;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-linecap:square;stroke-opacity:1"
      id="rect710"
-     width="32"
-     height="32"
-     x="2"
-     y="2"
+     width="30"
+     height="30"
+     x="3"
+     y="3"
      ry="5"
      rx="5" />
   <path
-     d="m 11,8 h 8 m 5,0 h 6 c 0.5,0 1,0.5 1,1 v 18 c 0,0.5 -0.5,1 -1,1 H 6 C 5.53,28 5,27.5 5,27 V 9 C 5,8.5 5.54,8 6,8"
+     d="m 12,10 h 4 m 4,0 h 8 c 0.5,0 1,0.5 1,1 v 14 c 0,0.5 -0.5,1 -1,1 H 8 C 7.53,26 7,25.5 7,25 V 11 c 0,-0.5 0.54,-1 1,-1"
      style="display:inline;fill:none;stroke:#1f1f1f;stroke-width:2.00003;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
      id="path7079" />
   <rect
@@ -27,8 +27,8 @@
      id="rect7661"
      width="4"
      height="4"
-     x="9"
-     y="12"
+     x="10"
+     y="13"
      ry="1"
      rx="1" />
   <rect
@@ -37,7 +37,7 @@
      width="4"
      height="4"
      x="16"
-     y="12"
+     y="13"
      ry="1"
      rx="1" />
   <rect
@@ -45,8 +45,8 @@
      id="rect7661-4-7"
      width="4"
      height="4"
-     x="23"
-     y="12"
+     x="22"
+     y="13"
      ry="1"
      rx="1" />
   <rect
@@ -54,8 +54,8 @@
      id="rect7661-4-6"
      width="4"
      height="4"
-     x="9"
-     y="20"
+     x="10"
+     y="19"
      ry="1"
      rx="1" />
 </svg>

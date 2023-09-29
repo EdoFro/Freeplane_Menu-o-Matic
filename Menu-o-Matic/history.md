@@ -3,6 +3,7 @@
 ## v0.1.11
 
 * vertical separators are shown as horizontal separators in toolbars with labels
+* new custom icons
 
 ## v0.1.10
 
