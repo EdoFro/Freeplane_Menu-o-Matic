@@ -12,6 +12,11 @@
     * If any descendant is a package --> it opens all packages from branch
     * if there are descendant nodes related to menu commands or groovy scripts --> it creates a dialog for them
 * new custom icons
+* Menu-o-Matic dialog now has less buttons
+  * LaunchDialogFromSelected replaces
+    * LaunchDialogFromNodes
+    * LaunchCustomDialog
+    * LaunchDialogFromBranch
 
 ## v0.1.10
 
