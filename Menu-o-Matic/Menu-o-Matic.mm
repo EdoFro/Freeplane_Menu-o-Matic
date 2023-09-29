@@ -1,6 +1,6 @@
 <map version="freeplane 1.11.5">
 <!--To view this file, download free mind mapping software Freeplane from https://www.freeplane.org -->
-<node TEXT="Menu-o-Matic" ID="ID_696401721" LINK="https://github.com/EdoFro/Freeplane_Menu-o-Matic" BACKGROUND_COLOR="#97c7dc">
+<node TEXT="Menu-o-Matic" FOLDED="false" ID="ID_696401721" LINK="https://github.com/EdoFro/Freeplane_Menu-o-Matic" BACKGROUND_COLOR="#97c7dc">
 <font SIZE="16" BOLD="true" ITALIC="true"/>
 <hook NAME="AutomaticEdgeColor" COUNTER="17" RULE="ON_BRANCH_CREATION"/>
 <attribute_layout NAME_WIDTH="104.25 pt" VALUE_WIDTH="233.24999 pt"/>
@@ -85,9 +85,10 @@
       </li>
     </ul>
   </body>
-</html></richcontent>
+</html>
+</richcontent>
 <hook NAME="MapStyle" background="#f9f9f8">
-    <properties show_icon_for_attributes="true" edgeColorConfiguration="#808080ff,#ff0000ff,#0000ffff,#00ff00ff,#ff00ffff,#00ffffff,#7c0000ff,#00007cff,#007c00ff,#7c007cff,#007c7cff,#7c7c00ff" mapUsesOwnSaveOptions="true" save_modification_times="false" save_last_visited_node="true" show_note_icons="true" save_folding="never_save_folding" fit_to_viewport="false"/>
+    <properties show_icon_for_attributes="true" edgeColorConfiguration="#808080ff,#ff0000ff,#0000ffff,#00ff00ff,#ff00ffff,#00ffffff,#7c0000ff,#00007cff,#007c00ff,#7c007cff,#007c7cff,#7c7c00ff" mapUsesOwnSaveOptions="true" save_modification_times="false" save_last_visited_node="true" show_note_icons="true" save_folding="save_folding_if_map_is_changed" fit_to_viewport="false"/>
 
 <map_styles>
 <stylenode LOCALIZED_TEXT="styles.root_node" ID="ID_118736178" STYLE="oval" UNIFORM_SHAPE="true" VGAP_QUANTITY="24 pt">
@@ -171,7 +172,7 @@
 </stylenode>
 </map_styles>
 </hook>
-<node TEXT="description" POSITION="top_or_left" ID="ID_1654147712"><richcontent TYPE="NOTE">
+<node TEXT="description" FOLDED="true" POSITION="top_or_left" ID="ID_1654147712"><richcontent TYPE="NOTE">
 <html>
   <head>
     
@@ -187,7 +188,8 @@
       To translate the description you have to define a translation for the key 'addons.${name}.description'.
     </p>
   </body>
-</html></richcontent>
+</html>
+</richcontent>
 <node TEXT="Menu-o-Matic for Freeplane!!&#xa;Menu-o-Matic is an AddOn for Freeplane that gives the user the possibility to create his/her own dialogs with the menu items he/she prefers.&#xa;It can also include scripts." ID="ID_1642042079"/>
 </node>
 <node TEXT="changes" POSITION="top_or_left" ID="ID_1349799607">
@@ -202,11 +204,12 @@
       Change log of this add-on: append one node for each noteworthy version and put the details for each version into a child node.
     </p>
   </body>
-</html></richcontent>
-<node TEXT="v0.1.0" ID="ID_674021294">
+</html>
+</richcontent>
+<node TEXT="v0.1.0" FOLDED="true" ID="ID_674021294">
 <node TEXT="initial release" ID="ID_17370257"/>
 </node>
-<node TEXT="v0.1.1" ID="ID_935483166">
+<node TEXT="v0.1.1" FOLDED="true" ID="ID_935483166">
 <node TEXT="new command to directly open dialog from nodes (not through customMenu node)" ID="ID_1604082793"/>
 <node TEXT="added hyperlink to &quot;Launch&quot; command to &apos;customMenu&apos; pack nodes" ID="ID_1479420128"/>
 <node TEXT="new command to launch all dialogs from selected node branch" ID="ID_1934205043"/>
@@ -216,27 +219,27 @@
 <node TEXT="added Add-on images" ID="ID_495594442"/>
 <node TEXT="added &apos;list menu packages from map&apos;" ID="ID_1829374000"/>
 </node>
-<node TEXT="v0.1.2" ID="ID_945933975">
+<node TEXT="v0.1.2" FOLDED="true" ID="ID_945933975">
 <node TEXT="added submenus in MenuBar" ID="ID_876496407"/>
 <node TEXT="added command &apos;launchMenuOMaticDialog&apos;" ID="ID_1416498060"/>
 </node>
-<node TEXT="v0.1.3" ID="ID_1207801593">
+<node TEXT="v0.1.3" FOLDED="true" ID="ID_1207801593">
 <node TEXT="ported to new devtools version" ID="ID_77472293"/>
 <node TEXT="added insertMenuOMaticPackage" ID="ID_66453549"/>
 <node TEXT="launchMenuOMaticDialog no more in Launch submenu" ID="ID_1116239515"/>
 <node TEXT="launchMenuOMaticDialog no longer offers to insert MoM package node" ID="ID_972257044"/>
 <node TEXT="now if &apos;title&apos; node has package options in its details text, it will take that parameters and it won&apos;t show the options dialogs to the user.&#xa;Nice when iterating when designing a new menu package." ID="ID_500892562"/>
 </node>
-<node TEXT="v0.1.4" ID="ID_170412075">
+<node TEXT="v0.1.4" FOLDED="true" ID="ID_170412075">
 <node TEXT="added elapsed time message when clicking on a script based button" ID="ID_67878750"/>
 </node>
-<node TEXT="v0.1.5" ID="ID_423298702">
-<node TEXT="Added AutoLaunch capabillity to custom Menus" ID="ID_350307818">
+<node TEXT="v0.1.5" FOLDED="true" ID="ID_423298702">
+<node TEXT="Added AutoLaunch capabillity to custom Menus" FOLDED="true" ID="ID_350307818">
 <node TEXT="They launch automatically when starting Freeplane or when opening a map that contains Custom Menus marked as &apos;AutoLaunch&apos;" ID="ID_286725258"/>
 <node TEXT="just add a &apos;launch&apos; icon to the package node to define it as an AutoLaunch menu" ID="ID_123594505"/>
 </node>
 </node>
-<node TEXT="v0.1.6" ID="ID_321909342">
+<node TEXT="v0.1.6" FOLDED="true" ID="ID_321909342">
 <node TEXT="added menuOMatic.svg icon" ID="ID_1516241569"/>
 <node TEXT="added MoM.svg icon for TabbedPanelMod" ID="ID_376952887"/>
 <node TEXT="CustomMenus are now launched in tool panel" ID="ID_1171719173"/>
@@ -244,9 +247,9 @@
 <node TEXT="added custom colors to toolbar" ID="ID_141499994"/>
 <node TEXT="it selects the tab when adding a toolbar" ID="ID_529425209"/>
 </node>
-<node TEXT="v0.1.7" ID="ID_1528067874">
+<node TEXT="v0.1.7" FOLDED="true" ID="ID_1528067874">
 <node TEXT="No more status bar information messages when clicking on a script based button" ID="ID_1688242281"/>
-<node TEXT="Removed unused commands:" ID="ID_932433916">
+<node TEXT="Removed unused commands:" FOLDED="true" ID="ID_932433916">
 <node TEXT="listCustomDialogs" ID="ID_1140132384"/>
 <node TEXT="launchCustomToolTab" ID="ID_1732437525"/>
 <node TEXT="showLastUsedMenu" ID="ID_51805126"/>
@@ -257,46 +260,65 @@
 <node TEXT="created changePackParameters command" ID="ID_321714507"/>
 <node TEXT="insertMenuOMaticPackage updated" ID="ID_1959406335"/>
 </node>
-<node TEXT="v0.1.8" ID="ID_49387614">
+<node TEXT="v0.1.8" FOLDED="true" ID="ID_49387614">
 <node TEXT="init script opens Menu o Matic toolbar" ID="ID_1115388473"/>
 <node TEXT="Added preference to show/hide Menu-o-Matic toolbar buttons labels" ID="ID_1223570050"/>
 <node TEXT="Added menu separators" ID="ID_261454163"/>
 <node TEXT="Toolbar title can be modified in dialog" ID="ID_419612997"/>
 </node>
-<node TEXT="v0.1.9" ID="ID_1463454153">
-<node TEXT="Corrected button background color (bug in some L&amp;F)" ID="ID_1635777247">
+<node TEXT="v0.1.9" FOLDED="true" ID="ID_1463454153">
+<node TEXT="Corrected button background color (bug in some L&amp;F)" FOLDED="true" ID="ID_1635777247">
 <node TEXT="In original Look&amp;Feels the buttons background weren&apos;t transparent" ID="ID_520607658"/>
 </node>
 <node TEXT="Added preference to (in)activate TitledBorders" ID="ID_1456132538"/>
-<node TEXT="Added popup menu to remove toolbars" ID="ID_1610581537">
+<node TEXT="Added popup menu to remove toolbars" FOLDED="true" ID="ID_1610581537">
 <node TEXT="Right clicking on toolbars" ID="ID_1636531086"/>
 </node>
-<node TEXT="Added powerButtons functionality" ID="ID_986228712">
+<node TEXT="Added powerButtons functionality" FOLDED="true" ID="ID_986228712">
 <node TEXT="Unifies multiple MenuActions nodes as a single &quot;powerButton&quot; that executes all actions at once" ID="ID_987728606"/>
 </node>
 </node>
-<node TEXT="v0.1.10" ID="ID_773113130">
+<node TEXT="v0.1.10" FOLDED="true" ID="ID_773113130">
 <node TEXT="Unpacking powerButtons now gets the labels for icon buttons too" ID="ID_340331638"/>
-<node TEXT="Added popup menu to remove Tabs" ID="ID_1870375720">
+<node TEXT="Added popup menu to remove Tabs" FOLDED="true" ID="ID_1870375720">
 <node TEXT="Right clicking on tab, (not on toolbars)" ID="ID_1231920678"/>
 </node>
-<node TEXT="Added vertical separators" ID="ID_1635036525">
+<node TEXT="Added vertical separators" FOLDED="true" ID="ID_1635036525">
 <node TEXT="node text =  `|`" ID="ID_1397346487"/>
 </node>
-<node TEXT="Improved Panel layout" ID="ID_1612175980">
+<node TEXT="Improved Panel layout" FOLDED="true" ID="ID_1612175980">
 <node TEXT="implements Scrollable interface" ID="ID_348101374"/>
 <node TEXT="custom ToolbarLayout" ID="ID_1571525710"/>
 </node>
-<node TEXT="TitledBorder font size can now be defined by user" ID="ID_1792369526">
+<node TEXT="TitledBorder font size can now be defined by user" FOLDED="true" ID="ID_1792369526">
 <node TEXT="scalling factor (integer between 0 and 200)" ID="ID_1844760609"/>
 <node TEXT="100 =  same size as UI font size" ID="ID_248686952"/>
 </node>
 </node>
 <node TEXT="v0.1.11" ID="ID_1010987679">
+<node TEXT="New listCustomMenuFromMap with checkboxes" ID="ID_163846547"/>
 <node TEXT="vertical separators are shown as horizontal separators in toolbars with labels" ID="ID_37832348"/>
+<node TEXT="launchDialogFromNodes now ignores package nodes" ID="ID_1523098423"/>
+<node TEXT="New unified commad to launch dialog" ID="ID_215881083">
+<node TEXT="LaunchDialogFromSelected" ID="ID_1636953454"/>
+<node TEXT="Follows this priority:" ID="ID_1673084718">
+<node TEXT="If selected node is a package --&gt; it opens it as dialog" ID="ID_813725796"/>
+<node TEXT="If any descendant is a package --&gt; it opens all packages from branch" ID="ID_994811324"/>
+<node TEXT="if there are descendant nodes related to menu commands or groovy scripts --&gt; it creates a dialog for them" ID="ID_559448199"/>
 </node>
 </node>
-<node TEXT="license" POSITION="top_or_left" ID="ID_492801974">
+<node TEXT="solved [bug FP MoM: black box](https://github.com/EdoFro/Freeplane_Menu-o-Matic/issues/13)" ID="ID_377311740"/>
+<node TEXT="new custom icons" ID="ID_143158582"/>
+<node TEXT="Menu-o-Matic dialog now has less buttons" ID="ID_1052226777">
+<node TEXT="LaunchDialogFromSelected replaces" ID="ID_1079213536">
+<node TEXT="LaunchDialogFromNodes" ID="ID_957075159"/>
+<node TEXT="LaunchCustomDialog" ID="ID_1419638499"/>
+<node TEXT="LaunchDialogFromBranch" ID="ID_1746280723"/>
+</node>
+</node>
+</node>
+</node>
+<node TEXT="license" FOLDED="true" POSITION="top_or_left" ID="ID_492801974">
 <edge COLOR="#00ff00"/>
 <richcontent TYPE="NOTE">
 <html>
@@ -314,10 +336,11 @@
       The License text has to be entered as a child of the <i>'license'</i>&#xa0;node, either as plain text or as HTML.
     </p>
   </body>
-</html></richcontent>
+</html>
+</richcontent>
 <node TEXT="MIT License&#xa;&#xa;Copyright (c) 2021 Eduardo Frohlich.&#xa;&#xa;Permission is hereby granted, free of charge, to any person obtaining a copy&#xa;of this software and associated documentation files (the &quot;Software&quot;), to deal&#xa;in the Software without restriction, including without limitation the rights&#xa;to use, copy, modify, merge, publish, distribute, sublicense, and/or sell&#xa;copies of the Software, and to permit persons to whom the Software is&#xa;furnished to do so, subject to the following conditions:&#xa;&#xa;The above copyright notice and this permission notice shall be included in all&#xa;copies or substantial portions of the Software.&#xa;&#xa;THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR&#xa;IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,&#xa;FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE&#xa;AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER&#xa;LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,&#xa;OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE&#xa;SOFTWARE." ID="ID_1379820487" VSHIFT_QUANTITY="-0.75 pt"/>
 </node>
-<node TEXT="preferences.xml" POSITION="top_or_left" ID="ID_809015286">
+<node TEXT="preferences.xml" FOLDED="true" POSITION="top_or_left" ID="ID_809015286">
 <edge COLOR="#ff00ff"/>
 <richcontent TYPE="NOTE">
 <html>
@@ -425,7 +448,8 @@
       </tr>
     </table>
   </body>
-</html></richcontent>
+</html>
+</richcontent>
 <attribute_layout NAME_WIDTH="132 pt" VALUE_WIDTH="63.75 pt"/>
 <attribute NAME="runOnStartingFreeplane" VALUE="boolean"/>
 <attribute NAME="showMenuOMaticMenuLabels" VALUE="boolean"/>
@@ -453,7 +477,8 @@
       </li>
     </ul>
   </body>
-</html></richcontent>
+</html>
+</richcontent>
 <attribute_layout NAME_WIDTH="166.5 pt" VALUE_WIDTH="37.5 pt"/>
 <attribute NAME="${name}_runOnStartingFreeplane" VALUE="true"/>
 <attribute NAME="${name}_showMenuOMaticMenuLabels" VALUE="true"/>
@@ -492,8 +517,10 @@
       </li>
     </ul>
   </body>
-</html></richcontent>
+</html>
+</richcontent>
 <node TEXT="en" ID="ID_1011355375">
+<attribute_layout NAME_WIDTH="234.74999 pt" VALUE_WIDTH="411.74999 pt"/>
 <attribute NAME="addons.${name}.lauchDialogFromNodes" VALUE="launch menu dialog directly"/>
 <attribute NAME="OptionPanel.${name}_showMenuOMaticMenuLabels" VALUE="Show buttons labels in Menu-o-Matic toolbar"/>
 <attribute NAME="addons.${name}.listCustomMenusFromMap" VALUE="list menu packages from map"/>
@@ -517,7 +544,8 @@
 <attribute NAME="addons.${name}.getMenuCommand" VALUE="menu item under mouse as new node"/>
 <attribute NAME="addons.${name}.unpackCustomMenu" VALUE="unpack menu"/>
 <attribute NAME="addons.${name}.launchDialogsFromBranch" VALUE="launch all dialog packages from branch"/>
-<attribute NAME="addons.${name}.markAsPowerButton" VALUE="Mark / unmark node as powerButton"/>
+<attribute NAME="addons.${name}.markAsPowerButton" VALUE="Mark node as &apos;Joined Button&apos;"/>
+<attribute NAME="addons.${name}.launchDialogFromSelected" VALUE="Launch dialog(s) from selected node"/>
 </node>
 </node>
 <node TEXT="deinstall" POSITION="top_or_left" ID="ID_1351206087">
@@ -532,7 +560,8 @@
       List of files and/or directories to remove on uninstall
     </p>
   </body>
-</html></richcontent>
+</html>
+</richcontent>
 <attribute_layout NAME_WIDTH="42.75 pt" VALUE_WIDTH="316.49999 pt"/>
 <attribute NAME="delete" VALUE="${installationbase}/addons/${name}.script.xml"/>
 <attribute NAME="delete" VALUE="${installationbase}/addons/${name}/scripts/launchCustomDialog.groovy"/>
@@ -559,14 +588,18 @@
 <attribute NAME="delete" VALUE="${installationbase}/scripts/init/Menu-o-Matic_init.groovy"/>
 <attribute NAME="delete" VALUE="${installationbase}/icons/TabbedPanelMod/MoM.svg"/>
 <attribute NAME="delete" VALUE="${installationbase}/addons/${name}/scripts/launchCustomToolTab.groovy"/>
-<attribute NAME="delete" VALUE="${installationbase}/icons/Menu-o-Matic/MoM.svg"/>
-<attribute NAME="delete" VALUE="${installationbase}/icons/Menu-o-Matic/MoMCloseTab.svg"/>
-<attribute NAME="delete" VALUE="${installationbase}/icons/Menu-o-Matic/MoMCloseToolbar.svg"/>
 <attribute NAME="delete" VALUE="${installationbase}/addons/${name}/scripts/changePackParameters.groovy"/>
 <attribute NAME="delete" VALUE="${installationbase}/addons/${name}/scripts/markAsPowerButton.groovy"/>
 <attribute NAME="delete" VALUE="${installationbase}/scripts/init/Tabz_Menu-o-Matic_init.groovy"/>
+<attribute NAME="delete" VALUE="${installationbase}/addons/${name}/scripts/launchDialogFromSelected.groovy"/>
+<attribute NAME="delete" VALUE="${installationbase}/icons/Menu-o-Matic/MoM_box.svg"/>
+<attribute NAME="delete" VALUE="${installationbase}/icons/Menu-o-Matic/MoM_changeParameters.svg"/>
+<attribute NAME="delete" VALUE="${installationbase}/icons/Menu-o-Matic/MoM_dialog.svg"/>
+<attribute NAME="delete" VALUE="${installationbase}/icons/Menu-o-Matic/MoM_List.svg"/>
+<attribute NAME="delete" VALUE="${installationbase}/icons/Menu-o-Matic/MoM_unbox.svg"/>
+<attribute NAME="delete" VALUE="${installationbase}/icons/Menu-o-Matic/MoM_union.svg"/>
 </node>
-<node TEXT="scripts" POSITION="bottom_or_right" ID="ID_1105183990">
+<node TEXT="scripts" FOLDED="true" POSITION="bottom_or_right" ID="ID_1105183990">
 <edge COLOR="#007c00"/>
 <richcontent TYPE="NOTE">
 <html>
@@ -683,7 +716,8 @@
       &#xa0;&#xa0;- In any case set execute_scripts_without_asking to true unless you want to annoy users.
     </p>
   </body>
-</html></richcontent>
+</html>
+</richcontent>
 <node TEXT="getMenuCommand.groovy" ID="ID_1857102818">
 <attribute_layout NAME_WIDTH="204.74999 pt" VALUE_WIDTH="184.49999 pt"/>
 <attribute NAME="menuTitleKey" VALUE="addons.${name}.getMenuCommand"/>
@@ -729,6 +763,18 @@
 <attribute NAME="execute_scripts_without_asking" VALUE="true"/>
 <attribute NAME="execute_scripts_without_file_restriction" VALUE="true"/>
 <attribute NAME="execute_scripts_without_write_restriction" VALUE="false"/>
+<attribute NAME="execute_scripts_without_exec_restriction" VALUE="false"/>
+<attribute NAME="execute_scripts_without_network_restriction" VALUE="false"/>
+</node>
+<node TEXT="launchDialogFromSelected.groovy" ID="ID_341847944">
+<attribute_layout NAME_WIDTH="188.24999 pt" VALUE_WIDTH="179.99999 pt"/>
+<attribute NAME="menuTitleKey" VALUE="addons.${name}.launchDialogFromSelected"/>
+<attribute NAME="menuLocation" VALUE="${addonsMenu}/addons.${name}/launch"/>
+<attribute NAME="executionMode" VALUE="on_single_node"/>
+<attribute NAME="keyboardShortcut" VALUE=""/>
+<attribute NAME="execute_scripts_without_asking" VALUE="true"/>
+<attribute NAME="execute_scripts_without_file_restriction" VALUE="true"/>
+<attribute NAME="execute_scripts_without_write_restriction" VALUE="true"/>
 <attribute NAME="execute_scripts_without_exec_restriction" VALUE="false"/>
 <attribute NAME="execute_scripts_without_network_restriction" VALUE="false"/>
 </node>
@@ -817,7 +863,7 @@
 <attribute NAME="execute_scripts_without_network_restriction" VALUE="false"/>
 </node>
 </node>
-<node TEXT="xx" POSITION="bottom_or_right" ID="ID_1535583604">
+<node TEXT="xx" FOLDED="true" POSITION="bottom_or_right" ID="ID_1535583604">
 <edge COLOR="#7c0000"/>
 <node TEXT="showLastUsedMenu.groovy" POSITION="bottom_or_right" ID="ID_960626023">
 <attribute_layout NAME_WIDTH="204.74999 pt" VALUE_WIDTH="191.99999 pt"/>
@@ -856,7 +902,7 @@
 <attribute NAME="execute_scripts_without_network_restriction" VALUE="false"/>
 </node>
 </node>
-<node TEXT="lib" POSITION="bottom_or_right" ID="ID_1186629716">
+<node TEXT="lib" FOLDED="true" POSITION="bottom_or_right" ID="ID_1186629716">
 <edge COLOR="#7c007c"/>
 <richcontent TYPE="NOTE">
 <html>
@@ -892,10 +938,11 @@
       &#xa0;- The files will be processed in the sequence as seen in the map.
     </p>
   </body>
-</html></richcontent>
+</html>
+</richcontent>
 <node TEXT="Menu-o-Matic.jar" ID="ID_257757258"/>
 </node>
-<node TEXT="zips" POSITION="bottom_or_right" ID="ID_532152967">
+<node TEXT="zips" FOLDED="true" POSITION="bottom_or_right" ID="ID_532152967">
 <edge COLOR="#007c7c"/>
 <richcontent TYPE="NOTE">
 <html>
@@ -931,13 +978,14 @@
       &#xa0;- The files will be processed in the sequence as seen in the map.
     </p>
   </body>
-</html></richcontent>
+</html>
+</richcontent>
 <node TEXT="doc" ID="ID_108012296"/>
 <node TEXT="templates" ID="ID_1212139449"/>
 <node TEXT="scripts" ID="ID_162715608"/>
 <node TEXT="icons" ID="ID_652630771"/>
 </node>
-<node TEXT="images" POSITION="bottom_or_right" ID="ID_817685181" VGAP_QUANTITY="2 px">
+<node TEXT="images" FOLDED="true" POSITION="bottom_or_right" ID="ID_817685181" VGAP_QUANTITY="2 px">
 <edge COLOR="#7c7c00"/>
 <richcontent TYPE="NOTE">
 <html>
@@ -969,7 +1017,8 @@
       Images can be added automatically by releaseAddOn.groovy or must be uploaded into the map via the script <i>Tools-&gt;Scripts-&gt;Insert Binary</i>&#xa0;since they have to be (base64) encoded as simple strings.
     </p>
   </body>
-</html></richcontent>
+</html>
+</richcontent>
 <node TEXT="menuOMatic-screenshot-1.png" ID="ID_828445446"/>
 <node TEXT="menuOMatic-icon.png" STYLE_REF="freshNew" ID="ID_787195450">
 <richcontent TYPE="DETAILS" CONTENT-TYPE="plain/markdown"/>
@@ -988,7 +1037,8 @@
   <body>
     Direct links to menu commands
   </body>
-</html></richcontent>
+</html>
+</richcontent>
 <node TEXT="Build add-on" ID="ID_829126329" LINK="menuitem:_addons.devtools.checkAddOn_on_single_node"/>
 <node TEXT="Package add-on for publication" ID="ID_1111005612" LINK="menuitem:_addons.devtools.releaseAddOn_on_single_node"/>
 <node TEXT="Export Translations" ID="ID_934895712" LINK="menuitem:_addons.devtools.exportTranslations_on_single_node"/>
