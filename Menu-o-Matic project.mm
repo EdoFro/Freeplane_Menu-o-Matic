@@ -3168,7 +3168,7 @@ before the actual namefilter setting)
 </node>
 </node>
 </node>
-<node TEXT="scripts" STYLE_REF="file_folder" FOLDED="true" ID="ID_283277560" LINK="Menu-o-Matic/scripts/">
+<node TEXT="scripts" STYLE_REF="file_folder" ID="ID_283277560" LINK="Menu-o-Matic/scripts/">
 <attribute NAME="lastModifiedTime" VALUE="12-05-22 10:19" OBJECT="org.freeplane.features.format.FormattedDate|2022-05-12T10:19-0400|dd-MM-yy HH:mm"/>
 <attribute NAME="lastAccessTime" VALUE="12-05-22 11:05" OBJECT="org.freeplane.features.format.FormattedDate|2022-05-12T11:05-0400|dd-MM-yy HH:mm"/>
 <attribute NAME="creationTime" VALUE="24-06-21 13:31" OBJECT="org.freeplane.features.format.FormattedDate|2021-06-24T13:31-0400|datetime"/>
@@ -6091,7 +6091,7 @@ before the actual namefilter setting)
 <attribute NAME="tbAutoLaunch" VALUE="false"/>
 </node>
 </node>
-<node TEXT="templates" STYLE_REF="file_folder" FOLDED="true" ID="ID_1904073328" LINK="Menu-o-Matic/zips/templates/">
+<node TEXT="templates" STYLE_REF="file_folder" ID="ID_1904073328" LINK="Menu-o-Matic/zips/templates/">
 <attribute NAME="lastModifiedTime" VALUE="25-06-21 15:00" OBJECT="org.freeplane.features.format.FormattedDate|2021-06-25T15:00-0400|datetime"/>
 <attribute NAME="lastAccessTime" VALUE="12-05-22 11:05" OBJECT="org.freeplane.features.format.FormattedDate|2022-05-12T11:05-0400|dd-MM-yy HH:mm"/>
 <attribute NAME="creationTime" VALUE="25-06-21 15:00" OBJECT="org.freeplane.features.format.FormattedDate|2021-06-25T15:00-0400|datetime"/>
@@ -6284,7 +6284,7 @@ before the actual namefilter setting)
 <attribute NAME="creationTime" VALUE="24-06-21 13:09" OBJECT="org.freeplane.features.format.FormattedDate|2021-06-24T13:09-0400|datetime"/>
 <attribute NAME="fileSize" VALUE="40.442" OBJECT="org.freeplane.features.format.FormattedNumber|40442|#,##0"/>
 </node>
-<node TEXT="generados automáticamente" STYLE_REF="Organizador" FOLDED="true" ID="ID_753392396">
+<node TEXT="generados automáticamente" STYLE_REF="Organizador" ID="ID_753392396">
 <node TEXT="Menu-o-Matic-v0.1.10.addon.mm" ID="ID_1896691301" LINK="Menu-o-Matic/Menu-o-Matic-v0.1.10.addon.mm"/>
 <node TEXT="Menu-o-Matic-v0.1.9.addon.mm" ID="ID_407125811" LINK="Menu-o-Matic/Menu-o-Matic-v0.1.9.addon.mm"/>
 <node TEXT="Menu-o-Matic-v0.1.8.addon.mm" ID="ID_331038225" LINK="Menu-o-Matic/Menu-o-Matic-v0.1.8.addon.mm">
@@ -6548,7 +6548,7 @@ before the actual namefilter setting)
 <node TEXT="última versión no funciona con groovy 3.x.txt" ID="ID_1548801217" LINK="Menu-o-Matic/última%20versión%20no%20funciona%20con%20groovy%203.x.txt"/>
 <node TEXT="Menu-o-Matic-v0.1.11.addon.mm" STYLE_REF="freshNew" ID="ID_795800258" LINK="Menu-o-Matic/Menu-o-Matic-v0.1.11.addon.mm"/>
 </node>
-<node TEXT="resources" STYLE_REF="file_folder" ID="ID_928846385" LINK="resources/">
+<node TEXT="resources" STYLE_REF="file_folder" FOLDED="true" ID="ID_928846385" LINK="resources/">
 <attribute NAME="lastModifiedTime" VALUE="12-07-21 18:52" OBJECT="org.freeplane.features.format.FormattedDate|2021-07-12T18:52-0400|dd-MM-yy HH:mm"/>
 <attribute NAME="lastAccessTime" VALUE="07-08-21 21:36" OBJECT="org.freeplane.features.format.FormattedDate|2021-08-07T21:36-0400|dd-MM-yy HH:mm"/>
 <attribute NAME="creationTime" VALUE="10-03-21 10:51" OBJECT="org.freeplane.features.format.FormattedDate|2021-03-10T10:51-0300|datetime"/>
@@ -6838,7 +6838,7 @@ before the actual namefilter setting)
   </body>
 </html></richcontent>
 </node>
-<node TEXT="ignoredByGitHub" ID="ID_1913165798" LINK="ignoredByGitHub/"><richcontent TYPE="DETAILS">
+<node TEXT="ignoredByGitHub" FOLDED="true" ID="ID_1913165798" LINK="ignoredByGitHub/"><richcontent TYPE="DETAILS">
 <html>
   <head>
     
@@ -7825,7 +7825,7 @@ before the actual namefilter setting)
 </node>
 </node>
 <node TEXT="new imported files" STYLE_REF="newFolderImport" ID="ID_1788703280">
-<attribute NAME="log_MDI" VALUE="2" OBJECT="org.freeplane.features.format.FormattedObject|org.freeplane.plugin.script.proxy.ConvertibleText&amp;#x7c;2|number:decimal:#0.####"/>
+<attribute NAME="log_MDI" VALUE="2" OBJECT="org.freeplane.features.format.FormattedNumber|2|#0.####"/>
 <richcontent TYPE="NOTE">
 <html>
   <head>
@@ -7833,7 +7833,7 @@ before the actual namefilter setting)
   </head>
   <body>
     <p>
-      Inated:&#xa0;&#xa0;&#xa0;2023-09-29&#xa0;&#xa0;13:47:14
+      Inated:&#xa0;&#xa0;&#xa0;2023-09-29&#xa0;&#xa0;17:45:22
     </p>
     <p>
       
@@ -7842,7 +7842,7 @@ before the actual namefilter setting)
       ------- Files: --------&#xa0;
     </p>
     <p>
-      &#xa0;5 node(s) pointing to unexisting/filtered files (marked as 'broken')
+      &#xa0;4 node(s) pointing to unexisting/filtered files (marked as 'broken')
     </p>
     <p>
       &#xa0;0 link(s) corrected in nodes
@@ -7878,7 +7878,7 @@ before the actual namefilter setting)
       
     </p>
     <p>
-      0.3 seconds
+      1.1 seconds
     </p>
     <p>
       
