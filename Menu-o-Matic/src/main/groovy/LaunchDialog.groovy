@@ -36,7 +36,8 @@ import org.freeplane.plugin.script.proxy.ScriptUtils
 
 
 class LaunchDialog{
-//region properties
+
+    //region properties
     static final String defaultIcon     = 'IconAction.emoji-1F7EB'
     static final String dialogStr       = '_MoM_'
     static final int    maxButtonsHoriz = 6
@@ -60,7 +61,7 @@ class LaunchDialog{
     static final int WITHOUT_NETWORK_RESTRICTION = 0b1000
 
 
-//endregion
+    //endregion
 
 
     // region managing dialogs

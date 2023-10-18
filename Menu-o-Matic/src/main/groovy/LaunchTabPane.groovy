@@ -33,7 +33,7 @@ import org.freeplane.plugin.script.proxy.ScriptUtils
 
 
 class LaunchTabPane {
-//region: properties
+// region properties
 
     static final c = ScriptUtils.c()
     static final SwingBuilder swingBuilder  = new SwingBuilder()
@@ -45,7 +45,7 @@ class LaunchTabPane {
     static final Icon closeToolbarIcon = MenuUtils.getMenuItemIcon('IconAction.Menu-o-Matic/MoMCloseToolbar')
     static final String MoMIconText    = 'TabbedPanelMod/MoM'
     static final Icon MoMInfoIcon      = MenuUtils.getMenuItemIcon('IconAction.' + MoMIconText)
-//endregion:
+// endregion
 
 // region inner classes
 
@@ -100,7 +100,7 @@ class LaunchTabPane {
     }
 // endregion
 
-//region: methods tabPane
+// region methods tabPane
 
     def static getMoMTabContainer(String tabName, String iconForTab = null){
         def index = indexOfTab(tabName)
@@ -203,9 +203,9 @@ class LaunchTabPane {
         } else return false
     }
 
-//endregion:
+//endregion
 
-//region: TabbedPanelMod
+// region TabbedPanelMod
 
     //if TabbedPanelMod addon active --> apply on tab?
     def static formatTab(int index, String iconForTab = null) {
@@ -218,6 +218,6 @@ class LaunchTabPane {
         }
     }
 
-//endregion:
+//endregion
 
 }

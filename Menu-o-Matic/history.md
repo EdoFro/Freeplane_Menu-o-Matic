@@ -1,5 +1,8 @@
 # History
 
+## v0.1.12
+
+
 ## v0.1.11
 
 * New listCustomMenuFromMap with checkboxes
