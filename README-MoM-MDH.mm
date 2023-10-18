@@ -9,28 +9,6 @@
         <conditional_style ACTIVE="true" STYLE_REF="BotonMenu" LAST="false">
             <hyper_link_contains TEXT="menuitem:"/>
         </conditional_style>
-        <conditional_style ACTIVE="true" STYLE_REF="file" LAST="false">
-            <script_condition>
-                <script>{node.link?.uri?.scheme == &apos;file&apos;}</script>
-            </script_condition>
-        </conditional_style>
-        <conditional_style ACTIVE="true" STYLE_REF="modifiedFile" LAST="false">
-            <attribute_contains_condition ATTRIBUTE="modifiedFile" VALUE="true"/>
-        </conditional_style>
-        <conditional_style ACTIVE="true" STYLE_REF="file_folder" LAST="false">
-            <script_condition>
-                <script>{node.link?.uri?.scheme == &apos;file&apos; &amp;&amp; (node.link.file?.exists()? node.link.file.directory : node.link.uri.path?.reverse()[0] == &apos;/&apos;)}</script>
-            </script_condition>
-        </conditional_style>
-        <conditional_style ACTIVE="true" STYLE_REF="file_folder_with_icon" LAST="false">
-            <conjunct_condition>
-                <style_contains_condition TEXT="file_folder"/>
-                <script_condition>
-                    <script>import org.freeplane.core.util.FreeplaneVersion&#xd;
-return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) || !(node.link?.uri?.scheme == &apos;file&apos;) )</script>
-                </script_condition>
-            </conjunct_condition>
-        </conditional_style>
         <conditional_style ACTIVE="true" STYLE_REF="containsNextTasks" LAST="true">
             <script_condition>
                 <script>(node.findAll() - node)?.any{it.hasStyle(&apos;nextTask&apos;)}</script>
@@ -41,14 +19,22 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
                 <script>(node.findAll() - node)?.any{it.hasStyle(&apos;pendingTask&apos;)}</script>
             </script_condition>
         </conditional_style>
+        <conditional_style ACTIVE="true" STYLE_REF="file" LAST="false">
+            <script_condition>
+                <script>{node.link.file &amp;&amp; !node.link.uri?.fragment}</script>
+            </script_condition>
+        </conditional_style>
+        <conditional_style ACTIVE="true" STYLE_REF="modifiedFile" LAST="false">
+            <attribute_contains_condition ATTRIBUTE="modifiedFile" VALUE="true"/>
+        </conditional_style>
     </conditional_styles>
-    <properties show_icon_for_attributes="true" edgeColorConfiguration="#808080ff,#ff0000ff,#0000ffff,#00ff00ff,#ff00ffff,#00ffffff,#7c0000ff,#00007cff,#007c00ff,#7c007cff,#007c7cff,#7c7c00ff" mapUsesOwnSaveOptions="true" save_modification_times="false" save_last_visited_node="default" show_note_icons="true" save_folding="save_folding_if_map_is_changed" fit_to_viewport="false"/>
+    <properties show_icon_for_attributes="true" edgeColorConfiguration="#808080ff,#ff0000ff,#0000ffff,#00ff00ff,#ff00ffff,#00ffffff,#7c0000ff,#00007cff,#007c00ff,#7c007cff,#007c7cff,#7c7c00ff" mapUsesOwnSaveOptions="true" save_modification_times="false" save_last_visited_node="default" show_note_icons="true" save_folding="save_folding_if_map_is_changed" fit_to_viewport="false" MDI_template="v0.0.13"/>
 
 <map_styles>
 <stylenode LOCALIZED_TEXT="styles.root_node" ID="ID_1443633467" STYLE="oval" UNIFORM_SHAPE="true" VGAP_QUANTITY="24 pt">
 <font SIZE="24"/>
 <stylenode LOCALIZED_TEXT="styles.predefined" POSITION="bottom_or_right" STYLE="bubble">
-<stylenode LOCALIZED_TEXT="default" ID="ID_1704360557" ICON_SIZE="12 pt" FORMAT_AS_HYPERLINK="false" COLOR="#002b36" BACKGROUND_COLOR="#fdf6e3" STYLE="bubble" SHAPE_HORIZONTAL_MARGIN="8 pt" SHAPE_VERTICAL_MARGIN="5 pt" BORDER_WIDTH_LIKE_EDGE="false" BORDER_WIDTH="1.9 px" BORDER_COLOR_LIKE_EDGE="true" BORDER_COLOR="#f0f0f0" BORDER_DASH_LIKE_EDGE="true" BORDER_DASH="SOLID" VGAP_QUANTITY="3 pt">
+<stylenode LOCALIZED_TEXT="default" ID="ID_1704360557" ICON_SIZE="12 pt" FORMAT_AS_HYPERLINK="false" COLOR="#002b36" BACKGROUND_COLOR="#fdf6e3" STYLE="bubble" SHAPE_HORIZONTAL_MARGIN="8 pt" SHAPE_VERTICAL_MARGIN="5 pt" NUMBERED="false" FORMAT="STANDARD_FORMAT" TEXT_ALIGN="DEFAULT" TEXT_WRITING_DIRECTION="LEFT_TO_RIGHT" BORDER_WIDTH_LIKE_EDGE="false" BORDER_WIDTH="1.9 px" BORDER_COLOR_LIKE_EDGE="true" BORDER_COLOR="#f0f0f0" BORDER_DASH_LIKE_EDGE="true" BORDER_DASH="SOLID" VGAP_QUANTITY="3 pt" COMMON_HGAP_QUANTITY="14 pt" CHILD_NODES_LAYOUT="AUTO">
 <arrowlink SHAPE="CUBIC_CURVE" COLOR="#000000" WIDTH="2" TRANSPARENCY="200" DASH="" FONT_SIZE="9" FONT_FAMILY="SansSerif" DESTINATION="ID_1704360557" STARTARROW="DEFAULT" ENDARROW="NONE"/>
 <font NAME="SansSerif" SIZE="11" BOLD="false" STRIKETHROUGH="false" ITALIC="false"/>
 <edge STYLE="bezier" COLOR="#93a1a1" WIDTH="3" DASH="SOLID"/>
@@ -93,10 +79,12 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
 <stylenode TEXT="movedRenamed" ID="ID_508935120" ICON_SIZE="16 pt" BACKGROUND_COLOR="#ace500">
 <icon BUILTIN="emoji-1F500"/>
 </stylenode>
-<stylenode TEXT="file" ID="ID_392024814" BORDER_WIDTH="2.5 px" BACKGROUND_COLOR="#bcc6e0" FORMAT="NO_FORMAT">
+<stylenode TEXT="file" ID="ID_392024814" BACKGROUND_COLOR="#bcc6e0" FORMAT="NO_FORMAT" BORDER_WIDTH="2.5 px">
 <font NAME="Consolas"/>
 </stylenode>
-<stylenode TEXT="file_folder" ID="ID_1640408220" BORDER_WIDTH="3 px"/>
+<stylenode TEXT="file_folder" ID="ID_1640408220" BORDER_WIDTH="3 px">
+<icon BUILTIN="emoji-1F4C1"/>
+</stylenode>
 <stylenode TEXT="missing" ID="ID_1821444380" BACKGROUND_COLOR="#f28bb3" BORDER_WIDTH="3 px">
 <icon BUILTIN="broken-line"/>
 </stylenode>
@@ -108,7 +96,7 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
 <icon BUILTIN="emoji-1F512"/>
 </stylenode>
 <stylenode TEXT="file_folder_with_icon" ID="ID_1400739717">
-<icon BUILTIN="emoji-1F4C2"/>
+<icon BUILTIN="emoji-1F4CD"/>
 </stylenode>
 <stylenode TEXT="MarkdownHelperNode" ID="ID_1802051390" COLOR="#dbffdb" BACKGROUND_COLOR="#333333" STYLE="rectangle" BORDER_WIDTH="4 px" BORDER_COLOR_LIKE_EDGE="false" BORDER_COLOR="#009000">
 <icon BUILTIN="emoji-1F343"/>
@@ -146,6 +134,16 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
 </stylenode>
 <stylenode LOCALIZED_TEXT="styles.subsubtopic" COLOR="#669900">
 <font NAME="Liberation Sans" SIZE="10" BOLD="true"/>
+</stylenode>
+<stylenode TEXT="notMovedRenamed" BACKGROUND_COLOR="#f28bb3" BORDER_WIDTH="3 px">
+<icon BUILTIN="emoji-26D4"/>
+</stylenode>
+<stylenode TEXT="moveToTrash" BACKGROUND_COLOR="#e0e000">
+<icon BUILTIN="emoji-1F6AE"/>
+<font STRIKETHROUGH="false" ITALIC="true"/>
+</stylenode>
+<stylenode TEXT="trashFolder" BACKGROUND_COLOR="#e0e000" STYLE="rectangle" BORDER_WIDTH="3 px" BORDER_COLOR_LIKE_EDGE="false" BORDER_COLOR="#c61b26">
+<icon BUILTIN="emoji-1F5D1"/>
 </stylenode>
 </stylenode>
 <stylenode LOCALIZED_TEXT="styles.AutomaticLayout" POSITION="bottom_or_right" STYLE="bubble">
@@ -206,7 +204,7 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
 <attribute NAME="MarkdownRootFolder" VALUE="file:/C:/Users/Edo/Documents/GitHub/Freeplane_My-Menu-Inator/" OBJECT="java.net.URI|file:/C:/Users/Edo/Documents/GitHub/Freeplane_My-Menu-Inator/"/>
 <attribute NAME="MDHGithubBranch" VALUE=""/>
 <attribute NAME="MDHTargetRootPath" VALUE=""/>
-<richcontent TYPE="NOTE">
+<richcontent TYPE="NOTE" CONTENT-TYPE="xml/auto">
 <html>
                     <head>
 
@@ -219,7 +217,7 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
                 </html></richcontent>
 <node TEXT="content" ID="ID_905564017">
 <icon BUILTIN="emoji-1F648"/>
-<node TEXT="Freeplane_My-Menu-Inator" FOLDED="true" ID="ID_1936106468" VGAP_QUANTITY="3 pt">
+<node TEXT="Freeplane_My-Menu-Inator" ID="ID_1936106468" VGAP_QUANTITY="3 pt">
 <icon BUILTIN="emoji-26D4"/>
 <node TEXT="parrafo introductorio" ID="ID_787612943">
 <node TEXT="que es" ID="ID_19596780"/>
@@ -246,6 +244,27 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
 <node TEXT="This AddOn is still beta" ID="ID_570730383"/>
 <node TEXT="Your Help needed" ID="ID_1975254815"/>
 <node TEXT="About Freeplane" ID="ID_1948234373"/>
+<node TEXT="[10:10, 1/10/2023] eduardo frohlich: MoM" ID="ID_1534741984">
+<node TEXT="- que es y para que sirve" ID="ID_211238787">
+<node TEXT="- addon" ID="ID_42678499"/>
+<node TEXT="- para tener tus propias barras de herramientas" ID="ID_1830694153"/>
+</node>
+<node TEXT="- idea general de cómo con mini videos, a modo de showcase" ID="ID_762522063">
+<node TEXT="- define tus herramientas en un branch y conviertelo en una botonera" ID="ID_318729517"/>
+<node TEXT="- lleva los scripts de nodos a botones independientes" ID="ID_1894993595"/>
+<node TEXT="- une varias funcionalidades en un único botón" ID="ID_449152457"/>
+</node>
+<node TEXT="- despliega las botoneras con label, sólo iconos o ambos" ID="ID_1067208064"/>
+<node TEXT="y luego más en detalle los siguientes puntos (colapsables)" ID="ID_1634595714">
+<node TEXT="- instalación" ID="ID_1112526852"/>
+<node TEXT="- quick start" ID="ID_1019158916"/>
+<node TEXT="- instrucciones detalladas de uso" ID="ID_892736675"/>
+<node TEXT="- listado de features" ID="ID_740388308"/>
+<node TEXT="- historial de versiones" ID="ID_1799526543"/>
+<node TEXT="- listado pendientes y próximos pasos" ID="ID_396964824"/>
+<node TEXT="- como participar" ID="ID_284952464"/>
+</node>
+</node>
 </node>
 <node TEXT="Menu-o-Matic for Freeplane!!" ID="ID_1642042079">
 <node TEXT="Menu-o-Matic is an AddOn for Freeplane that gives the user the possibility to create his/her own dialogs with the menu items he/she prefers." ID="ID_305856401"/>
@@ -661,23 +680,59 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
 </node>
 <node TEXT="new when designing a new custom menu" ID="ID_1542624944">
 <node TEXT="list" STYLE_REF="MarkdownHelperNode" ID="ID_1734983975"><richcontent TYPE="NOTE">
-<html>
-                                    <head>
-
-</head>
-                                    <body>
-                                        <p>
-      = edofro.MarkDownHelper.MDH.list(node)
-</p>
-                                    </body>
-                                </html></richcontent>
+<text>= edofro.MarkDownHelper.MDH.list(node)</text></richcontent>
 <node TEXT="Now if &apos;Title&apos; node has package options expressed in its details text, it will take that parameters and it won&apos;t show the options dialogs to the user." ID="ID_1653473975"/>
 <node TEXT="Nice when iterating when designing a new menu package." ID="ID_1738285540"/>
 <node TEXT="Added in v0.1.3" ID="ID_265625073"/>
 </node>
 </node>
 </node>
-<node TEXT="history.md" ID="ID_1679510638" LINK="file:/C:/Users/Edo/Documents/GitHub/Freeplane_My-Menu-Inator/Menu-o-Matic/history.md"><richcontent TYPE="NOTE">
+<node TEXT="History" ID="ID_1574430581">
+<icon BUILTIN="emoji-1F53B"/>
+<node TEXT="fileText" ID="ID_1537755327">
+<icon BUILTIN="emoji-1F343"/>
+<richcontent TYPE="NOTE" CONTENT-TYPE="xml/markdown">
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      =<br/>def nodo = node.children.find{it.link.uri}
+    </p>
+    <p>
+      if(!nodo) return&#xa0;&#xa0;&quot;\n\n----\n\n--- No child node with link found!! ---\n\n----\n\n&quot;
+    </p>
+    <p>
+      def mapUri = mindMap.file.toURI()
+    </p>
+    <p>
+      def nodeUri = nodo.link.uri
+    </p>
+    <p>
+      if(!nodeUri) return&#xa0;&#xa0;&quot;\n\n----\n\n--- No link found!! ---\n\n----\n\n&quot;
+    </p>
+    <p>
+      def fileUri = mapUri.resolve(nodeUri)
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      def file = new File(fileUri)
+    </p>
+    <p>
+      if(!file.exists()) return &quot;\n\n----\n\n--- No file found!! ---\n\n----\n\n&quot;
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      return file.text
+    </p>
+  </body>
+</html></richcontent>
+<node TEXT="history.md" ID="ID_1679510638" LINK="Menu-o-Matic/history.md"><richcontent TYPE="NOTE">
 <html>
   <head>
     
@@ -778,190 +833,89 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
 </node>
 </node>
 </node>
-<node TEXT="Freeplane_My-Menu-Inator" STYLE_REF="baseFolder" POSITION="bottom_or_right" ID="ID_260100339" LINK="file:/C:/Users/Edo/Documents/GitHub/Freeplane_My-Menu-Inator/">
+</node>
+</node>
+<node TEXT="Freeplane_My-Menu-Inator" STYLE_REF="baseFolder" POSITION="bottom_or_right" ID="ID_260100339" LINK=".">
 <attribute NAME="nameFilter" VALUE=""/>
 <attribute NAME="maxDepth" VALUE="-1" OBJECT="org.freeplane.features.format.FormattedNumber|-1|#0.####"/>
 <attribute NAME="markWhenMoved" VALUE="0" OBJECT="org.freeplane.features.format.FormattedNumber|0|#0.####"/>
 <attribute NAME="checkIfReallyBroken" VALUE="0" OBJECT="org.freeplane.features.format.FormattedNumber|0|#0.####"/>
+<attribute NAME="linkType" VALUE="1" OBJECT="org.freeplane.features.format.FormattedNumber|1|#0.####"/>
 <edge COLOR="#7c0000"/>
-<richcontent TYPE="NOTE">
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      null
-    </p>
-    <p>
-      
-    </p>
-    <p>
-      ================ MDI =====================
-    </p>
-    <p>
-      
-    </p>
-    <p>
-      The import of files and folders can be adapted by providing various options in the attributes of the BaseFolder node:
-    </p>
-    <p>
-      
-    </p>
-    <p>
-      -----------------------------------------------------
-    </p>
-    <p>
-      &nbsp;&nbsp;&nbsp;&nbsp;-- nameFilter:
-    </p>
-    <p>
-      -----------------------------------------------------
-    </p>
-    <p>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A filter to perform on the name of traversed files. If set, only files which match are brought.
-    </p>
-    <p>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This option allowes four types of inputs:
-    </p>
-    <p>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1. nothing (empty) means no filtering (default)
-    </p>
-    <p>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2. regex&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- example:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~/.*\.mp3/
-    </p>
-    <p>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3. 'simplified' regex&nbsp;&nbsp;&nbsp;&nbsp;- example:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~.*\.mp3
-    </p>
-    <p>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4. string with *&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- example:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*.mp3&nbsp;&nbsp;&nbsp;&nbsp;(equivalent to regex&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~/(?i).*\.mp3/&nbsp;&nbsp;)
-    </p>
-    <p>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5. list of strings with * and ;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- example:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*.mp3;*.png&nbsp;&nbsp;&nbsp;(equivalent to regex&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~/(?i)(.*\.mp3|.*\.png)/&nbsp;&nbsp;)
-    </p>
-    <p>
-      
-    </p>
-    <p>
-      -----------------------------------------------------
-    </p>
-    <p>
-      &nbsp;&nbsp;-- maxDepth:
-    </p>
-    <p>
-      -----------------------------------------------------
-    </p>
-    <p>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The maximum number of directory levels when recursing
-    </p>
-    <p>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(default is -1 which means no limit, set to 0 for no recursion)
-    </p>
-    <p>
-      
-    </p>
-    <p>
-      
-    </p>
-    <p>
-      
-    </p>
-    <p>
-      -----------------------------------------------------
-    </p>
-    <p>
-      &nbsp;&nbsp;-- markWhenMoved:
-    </p>
-    <p>
-      -----------------------------------------------------
-    </p>
-    <p>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;change styles to moved/renamed file Nodes
-    </p>
-    <p>
-      
-    </p>
-    <p>
-      &nbsp;set to:
-    </p>
-    <p>
-      &nbsp;&nbsp;&nbsp;&nbsp;0 : to change style only if node hasn't a previous one (default),
-    </p>
-    <p>
-      
-    </p>
-    <p>
-      &nbsp;&nbsp;&nbsp;&nbsp;1 : to allways change the style,
-    </p>
-    <p>
-      
-    </p>
-    <p>
-      &nbsp;&nbsp;&nbsp;-1 : to never change the style
-    </p>
-    <p>
-      
-    </p>
-    <p>
-      &nbsp;&nbsp;&nbsp;
-    </p>
-    <p>
-      
-    </p>
-    <p>
-      -----------------------------------------------------
-    </p>
-    <p>
-      &nbsp;&nbsp;-- checkIfReallyBroken:
-    </p>
-    <p>
-      -----------------------------------------------------
-    </p>
-    <p>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Check if existing nodes pointing to filtered files still exist.&nbsp;
-    </p>
-    <p>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This option is only useful if you defined a nameFilter before&nbsp;
-    </p>
-    <p>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;but in the map there are also some files that doesn't match&nbsp;
-    </p>
-    <p>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this filter definition&nbsp;
-    </p>
-    <p>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(for example if you brought them manually or import them&nbsp;
-    </p>
-    <p>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;before the actual namefilter setting)&nbsp;&nbsp;
-    </p>
-    <p>
-      
-    </p>
-    <p>
-      &nbsp;&nbsp;&nbsp;&nbsp;- default is 0 which means don't check --&gt; Mark node as missing also if it doesn't match the current filter,
-    </p>
-    <p>
-      
-    </p>
-    <p>
-      &nbsp;&nbsp;&nbsp;&nbsp;- set to 1 to extra check if a not matching file still exists in drive&nbsp;
-    </p>
-    <p>
-      
-    </p>
-    <p>
-      
-    </p>
-    <p>
-      ==========================================
-    </p>
-    <p>
-      &nbsp;&nbsp;&nbsp;
-    </p>
-  </body>
-</html></richcontent>
-<node TEXT=".gitattributes" ID="ID_1996843115" LINK="file:/C:/Users/Edo/Documents/GitHub/Freeplane_My-Menu-Inator/.gitattributes"/>
-<node TEXT="Menu-o-Matic" STYLE_REF="locked" ID="ID_1589076031" LINK="file:/C:/Users/Edo/Documents/GitHub/Freeplane_My-Menu-Inator/Menu-o-Matic/"><richcontent TYPE="DETAILS">
+<richcontent TYPE="NOTE" CONTENT-TYPE="plain/markdown">
+<text>null
+
+================ MDI =====================
+
+The import of files and folders can be adapted by providing various options in the attributes of the BaseFolder node:
+
+-----------------------------------------------------
+    -- nameFilter:
+-----------------------------------------------------
+       A filter to perform on the name of traversed files. If set, only files which match are brought.
+        This option allowes four types of inputs:
+           1. nothing (empty) means no filtering (default)
+           2. regex                   - example:       ~/.*\.mp3/
+           3. 'simplified' regex    - example:       ~.*\.mp3
+           4. string with *          - example:       *.mp3    (equivalent to regex      ~/(?i).*\.mp3/  )
+           5. list of strings with * and ;         - example:       *.mp3;*.png   (equivalent to regex      ~/(?i)(.*\.mp3|.*\.png)/  )
+
+-----------------------------------------------------
+  -- maxDepth:
+-----------------------------------------------------
+       The maximum number of directory levels when recursing
+        (default is -1 which means no limit, set to 0 for no recursion)
+
+
+
+-----------------------------------------------------
+  -- markWhenMoved:
+-----------------------------------------------------
+       change styles to moved/renamed file Nodes
+
+ set to:
+    0 : to change style only if node hasn't a previous one (default),
+
+    1 : to allways change the style,
+
+   -1 : to never change the style
+
+   
+
+-----------------------------------------------------
+  -- checkIfReallyBroken:
+-----------------------------------------------------
+       Check if existing nodes pointing to filtered files still exist. 
+       This option is only useful if you defined a nameFilter before 
+       but in the map there are also some files that doesn't match 
+       this filter definition 
+       (for example if you brought them manually or import them 
+       before the actual namefilter setting)  
+
+    - default is 0 which means don't check --&gt; Mark node as missing also if it doesn't match the current filter,
+
+    - set to 1 to extra check if a not matching file still exists in drive 
+
+
+==========================================
+   
+# MDI:  linkType:
+
+Define if you want to use Absolute or Relative   
+links for files and folders.
+
+ set to:   
+
+0 : to use Absolute links
+
+1 : to use Relative links
+
+-----------------------------------------------------
+   </text></richcontent>
+<node TEXT=".gitattributes" ID="ID_1996843115" LINK=".gitattributes"/>
+<node TEXT=".gitignore" ID="ID_1492454871" LINK=".gitignore"/>
+<node TEXT="ignoredByGitHub" STYLE_REF="locked" ID="ID_1540954410" LINK="ignoredByGitHub/"/>
+<node TEXT="Menu-o-Matic" STYLE_REF="locked" ID="ID_1589076031" LINK="Menu-o-Matic/"><richcontent TYPE="DETAILS">
 <html>
                         <head>
 
@@ -975,7 +929,7 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
 </p>
                         </body>
                     </html></richcontent>
-<node TEXT="version.properties" ID="ID_428915476" LINK="file:/C:/Users/Edo/Documents/GitHub/Freeplane_My-Menu-Inator/Menu-o-Matic/version.properties"><richcontent TYPE="NOTE">
+<node TEXT="version.properties" ID="ID_428915476" LINK="Menu-o-Matic/version.properties"><richcontent TYPE="NOTE">
 <html>
   <head>
     
@@ -998,7 +952,7 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
 </node>
 <node ID="ID_381928089" CONTENT_ID="ID_1679510638"/>
 </node>
-<node TEXT="README-MoM-MDH.mm" ID="ID_179290817" LINK="file:/C:/Users/Edo/Documents/GitHub/Freeplane_My-Menu-Inator/README-MoM-MDH.mm"><richcontent TYPE="DETAILS">
+<node TEXT="README-MoM-MDH.mm" ID="ID_179290817" LINK="README-MoM-MDH.mm"><richcontent TYPE="DETAILS">
 <html>
                         <head>
 
@@ -1010,8 +964,8 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
                         </body>
                     </html></richcontent>
 </node>
-<node TEXT="resources" ID="ID_928846385" LINK="file:/C:/Users/Edo/Documents/GitHub/Freeplane_My-Menu-Inator/resources/">
-<node TEXT="MoM 001.png" ID="ID_837225588" LINK="file:/C:/Users/Edo/Documents/GitHub/Freeplane_My-Menu-Inator/resources/MoM%20001.png"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/markdown">
+<node TEXT="resources" ID="ID_928846385" LINK="resources/">
+<node TEXT="MoM 001.png" ID="ID_837225588" LINK="resources/MoM%20001.png"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/markdown">
 <html>
                             <head>
 
@@ -1023,7 +977,7 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
                             </body>
                         </html></richcontent>
 </node>
-<node TEXT="MoM 002.png" STYLE_REF="pendingTask" ID="ID_311358415" LINK="file:/C:/Users/Edo/Documents/GitHub/Freeplane_My-Menu-Inator/resources/MoM%20002.png"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/markdown">
+<node TEXT="MoM 002.png" STYLE_REF="pendingTask" ID="ID_311358415" LINK="resources/MoM%20002.png"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/markdown">
 <html>
                             <head>
 
@@ -1035,7 +989,7 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
                             </body>
                         </html></richcontent>
 </node>
-<node TEXT="MoM 003.png" ID="ID_507235335" LINK="file:/C:/Users/Edo/Documents/GitHub/Freeplane_My-Menu-Inator/resources/MoM%20003.png"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/markdown">
+<node TEXT="MoM 003.png" ID="ID_507235335" LINK="resources/MoM%20003.png"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/markdown">
 <html>
                             <head>
 
@@ -1047,7 +1001,7 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
                             </body>
                         </html></richcontent>
 </node>
-<node TEXT="MoM 004.png" STYLE_REF="pendingTask" ID="ID_32454308" LINK="file:/C:/Users/Edo/Documents/GitHub/Freeplane_My-Menu-Inator/resources/MoM%20004.png"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/markdown">
+<node TEXT="MoM 004.png" STYLE_REF="pendingTask" ID="ID_32454308" LINK="resources/MoM%20004.png"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/markdown">
 <html>
                             <head>
 
@@ -1059,7 +1013,7 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
                             </body>
                         </html></richcontent>
 </node>
-<node TEXT="MoM 005.png" STYLE_REF="pendingTask" ID="ID_644455809" LINK="file:/C:/Users/Edo/Documents/GitHub/Freeplane_My-Menu-Inator/resources/MoM%20005.png"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/markdown">
+<node TEXT="MoM 005.png" STYLE_REF="pendingTask" ID="ID_644455809" LINK="resources/MoM%20005.png"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/markdown">
 <html>
                             <head>
 
@@ -1071,7 +1025,7 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
                             </body>
                         </html></richcontent>
 </node>
-<node TEXT="MoM 006.png" ID="ID_1831047845" LINK="file:/C:/Users/Edo/Documents/GitHub/Freeplane_My-Menu-Inator/resources/MoM%20006.png"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/markdown">
+<node TEXT="MoM 006.png" ID="ID_1831047845" LINK="resources/MoM%20006.png"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/markdown">
 <html>
                             <head>
 
@@ -1083,7 +1037,7 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
                             </body>
                         </html></richcontent>
 </node>
-<node TEXT="MoM 007.png" ID="ID_1037661475" LINK="file:/C:/Users/Edo/Documents/GitHub/Freeplane_My-Menu-Inator/resources/MoM%20007.png"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/markdown">
+<node TEXT="MoM 007.png" ID="ID_1037661475" LINK="resources/MoM%20007.png"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/markdown">
 <html>
                             <head>
 
@@ -1095,8 +1049,8 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
                             </body>
                         </html></richcontent>
 </node>
-<node TEXT="MoM_example.mm" ID="ID_1497791969" LINK="file:/C:/Users/Edo/Documents/GitHub/Freeplane_My-Menu-Inator/resources/MoM_example.mm"/>
-<node TEXT="toUpperCase.groovy" ID="ID_530821844" LINK="file:/C:/Users/Edo/Documents/GitHub/Freeplane_My-Menu-Inator/resources/toUpperCase.groovy"><richcontent TYPE="NOTE">
+<node TEXT="MoM_example.mm" ID="ID_1497791969" LINK="resources/MoM_example.mm"/>
+<node TEXT="toUpperCase.groovy" ID="ID_530821844" LINK="resources/toUpperCase.groovy"><richcontent TYPE="NOTE">
 <html>
   <head>
     
@@ -1108,7 +1062,7 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
   </body>
 </html></richcontent>
 </node>
-<node TEXT="MoM-launchDirectly.gif" STYLE_REF="nextTask" ID="ID_1274235167" LINK="file:/C:/Users/Edo/Documents/GitHub/Freeplane_My-Menu-Inator/resources/MoM-launchDirectly.gif"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/markdown">
+<node TEXT="MoM-launchDirectly.gif" STYLE_REF="nextTask" ID="ID_1274235167" LINK="resources/MoM-launchDirectly.gif"><richcontent TYPE="NOTE" CONTENT-TYPE="xml/markdown">
 <html>
   <head>
     
@@ -1120,80 +1074,111 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
   </body>
 </html></richcontent>
 </node>
+<node TEXT="icons" FOLDED="true" ID="ID_1758977914" LINK="resources/icons/">
+<node TEXT="MoM.svg" ID="ID_123822785" LINK="resources/icons/MoM.svg"/>
+<node TEXT="MoMCloseTab.svg" ID="ID_1609384433" LINK="resources/icons/MoMCloseTab.svg"/>
+<node TEXT="MoMCloseToolbar.svg" ID="ID_1039222431" LINK="resources/icons/MoMCloseToolbar.svg"/>
+<node TEXT="MoM_List.svg" ID="ID_643091334" LINK="resources/icons/MoM_List.svg"/>
+<node TEXT="MoM_List_36.svg" ID="ID_555420670" LINK="resources/icons/MoM_List_36.svg"/>
+<node TEXT="MoM_Packed.svg" ID="ID_1838353741" LINK="resources/icons/MoM_Packed.svg"/>
+<node TEXT="MoM_Unpacked.svg" ID="ID_168473669" LINK="resources/icons/MoM_Unpacked.svg"/>
+<node TEXT="MoM_box.svg" ID="ID_291667320" LINK="resources/icons/MoM_box.svg"/>
+<node TEXT="MoM_box_02.svg" ID="ID_423979398" LINK="resources/icons/MoM_box_02.svg"/>
+<node TEXT="MoM_box_24.svg" ID="ID_1106544608" LINK="resources/icons/MoM_box_24.svg"/>
+<node TEXT="MoM_box_36.svg" ID="ID_1935940308" LINK="resources/icons/MoM_box_36.svg"/>
+<node TEXT="MoM_changeParameters.svg" ID="ID_1685986491" LINK="resources/icons/MoM_changeParameters.svg"/>
+<node TEXT="MoM_changeParameters_24.svg" ID="ID_1845841163" LINK="resources/icons/MoM_changeParameters_24.svg"/>
+<node TEXT="MoM_changeParameters_36.svg" ID="ID_495495604" LINK="resources/icons/MoM_changeParameters_36.svg"/>
+<node TEXT="MoM_dialog.svg" ID="ID_1436858137" LINK="resources/icons/MoM_dialog.svg"/>
+<node TEXT="MoM_dialog_24.svg" ID="ID_696356337" LINK="resources/icons/MoM_dialog_24.svg"/>
+<node TEXT="MoM_dialog_36.svg" ID="ID_689046001" LINK="resources/icons/MoM_dialog_36.svg"/>
+<node TEXT="MoM_unbox.svg" ID="ID_1957548980" LINK="resources/icons/MoM_unbox.svg"/>
+<node TEXT="MoM_unbox.svg.2023_09_28_19_52_13.0.svg" ID="ID_1983868051" LINK="resources/icons/MoM_unbox.svg.2023_09_28_19_52_13.0.svg"/>
+<node TEXT="MoM_unbox_36.svg" ID="ID_870102463" LINK="resources/icons/MoM_unbox_36.svg"/>
+<node TEXT="MoM_union.svg" ID="ID_963856012" LINK="resources/icons/MoM_union.svg"/>
+<node TEXT="MoM_union_36.svg" ID="ID_1466277983" LINK="resources/icons/MoM_union_36.svg"/>
+<node TEXT="box.svg" ID="ID_1517854012" LINK="resources/icons/box.svg"/>
+<node TEXT="pack.svg" ID="ID_1011416022" LINK="resources/icons/pack.svg"/>
 </node>
-<node TEXT="LICENSE.md" ID="ID_1225660405" LINK="file:/C:/Users/Edo/Documents/GitHub/Freeplane_My-Menu-Inator/LICENSE.md"><richcontent TYPE="NOTE">
+<node TEXT="Menu-o-Matic examples.mm" ID="ID_1718324410" LINK="resources/Menu-o-Matic%20examples.mm"/>
+<node TEXT="MoM_example v0.1.11.mm" ID="ID_1064670266" LINK="resources/MoM_example%20v0.1.11.mm"/>
+<node TEXT="Standard Template Map for svg.mm" ID="ID_1131784858" LINK="resources/Standard%20Template%20Map%20for%20svg.mm"/>
+<node TEXT="Template Map for svg.mm" ID="ID_1905446011" LINK="resources/Template%20Map%20for%20svg.mm"/>
+</node>
+<node TEXT="LICENSE.md" ID="ID_1225660405" LINK="LICENSE.md"><richcontent TYPE="NOTE">
 <html>
-                        <head>
-
-</head>
-                        <body>
-                            <p>
+  <head>
+    
+  </head>
+  <body>
+    <p>
       MIT License
-</p>
-                            <p>
-
-</p>
-                            <p>
+    </p>
+    <p>
+      
+    </p>
+    <p>
       Copyright (c) 2021 Eduardo Frohlich.
-</p>
-                            <p>
-
-</p>
-                            <p>
+    </p>
+    <p>
+      
+    </p>
+    <p>
       Permission is hereby granted, free of charge, to any person obtaining a copy
-</p>
-                            <p>
+    </p>
+    <p>
       of this software and associated documentation files (the &quot;Software&quot;), to deal
-</p>
-                            <p>
+    </p>
+    <p>
       in the Software without restriction, including without limitation the rights
-</p>
-                            <p>
+    </p>
+    <p>
       to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-</p>
-                            <p>
+    </p>
+    <p>
       copies of the Software, and to permit persons to whom the Software is
-</p>
-                            <p>
+    </p>
+    <p>
       furnished to do so, subject to the following conditions:
-</p>
-                            <p>
-
-</p>
-                            <p>
+    </p>
+    <p>
+      
+    </p>
+    <p>
       The above copyright notice and this permission notice shall be included in all
-</p>
-                            <p>
+    </p>
+    <p>
       copies or substantial portions of the Software.
-</p>
-                            <p>
-
-</p>
-                            <p>
+    </p>
+    <p>
+      
+    </p>
+    <p>
       THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-</p>
-                            <p>
+    </p>
+    <p>
       IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-</p>
-                            <p>
+    </p>
+    <p>
       FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-</p>
-                            <p>
+    </p>
+    <p>
       AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-</p>
-                            <p>
+    </p>
+    <p>
       LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-</p>
-                            <p>
+    </p>
+    <p>
       OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-</p>
-                            <p>
+    </p>
+    <p>
       SOFTWARE.
-</p>
-                        </body>
-                    </html></richcontent>
+    </p>
+  </body>
+</html>
+</richcontent>
 </node>
-<node TEXT="README.md" ID="ID_1558207926" LINK="file:/C:/Users/Edo/Documents/GitHub/Freeplane_My-Menu-Inator/README.md"><richcontent TYPE="DETAILS">
+<node TEXT="README.md" ID="ID_1558207926" LINK="README.md"><richcontent TYPE="DETAILS">
 <html>
                         <head>
 
@@ -1205,8 +1190,23 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
                         </body>
                     </html></richcontent>
 </node>
+<node TEXT="Menu-o-Matic project.mm" FOLDED="true" ID="ID_755640178" LINK="Menu-o-Matic%20project.mm">
+<node TEXT="Menu-o-Matic project_files" FOLDED="true" POSITION="bottom_or_right" ID="ID_1027433864" LINK="Menu-o-Matic%20project_files/">
+<node TEXT="png-230902-185627513-13176840237098188809.png" ID="ID_464877708" LINK="Menu-o-Matic%20project_files/png-230902-185627513-13176840237098188809.png"/>
+<node TEXT="png-230902-185923951-5170018360202205149.png" ID="ID_418848022" LINK="Menu-o-Matic%20project_files/png-230902-185923951-5170018360202205149.png"/>
+<node TEXT="png-230902-190005088-8772525532631484939.png" ID="ID_69578088" LINK="Menu-o-Matic%20project_files/png-230902-190005088-8772525532631484939.png"/>
+<node TEXT="png-230902-190301036-2444676165306606889.png" ID="ID_1107014220" LINK="Menu-o-Matic%20project_files/png-230902-190301036-2444676165306606889.png"/>
+<node TEXT="png-230902-190356299-7410653210181318287.png" ID="ID_1424817278" LINK="Menu-o-Matic%20project_files/png-230902-190356299-7410653210181318287.png"/>
+<node TEXT="png-230902-190615415-15654607576368185715.png" ID="ID_891582891" LINK="Menu-o-Matic%20project_files/png-230902-190615415-15654607576368185715.png"/>
+<node TEXT="png-230902-190801671-11014909490229334339.png" ID="ID_1585068076" LINK="Menu-o-Matic%20project_files/png-230902-190801671-11014909490229334339.png"/>
+<node TEXT="png-230927-123604270-16909018880893553591.png" ID="ID_12747917" LINK="Menu-o-Matic%20project_files/png-230927-123604270-16909018880893553591.png"/>
+<node TEXT="png-230927-124055383-8986896184583569444.png" ID="ID_1074711487" LINK="Menu-o-Matic%20project_files/png-230927-124055383-8986896184583569444.png"/>
+<node TEXT="png-230927-124151952-6758878813057896335.png" ID="ID_557284422" LINK="Menu-o-Matic%20project_files/png-230927-124151952-6758878813057896335.png"/>
+<node TEXT="png_18412139571428858945.png" ID="ID_45022474" LINK="Menu-o-Matic%20project_files/png_18412139571428858945.png"/>
+</node>
+</node>
 <node TEXT="new imported files" STYLE_REF="newFolderImport" ID="ID_458856747">
-<attribute NAME="log_MDI" VALUE="No"/>
+<attribute NAME="log_MDI" VALUE="2" OBJECT="org.freeplane.features.format.FormattedObject|org.freeplane.plugin.script.proxy.ConvertibleText&amp;#x7c;2|number:decimal:#0.####"/>
 <richcontent TYPE="NOTE">
 <html>
   <head>
@@ -1214,43 +1214,49 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
   </head>
   <body>
     <p>
-      Inated:&nbsp;&nbsp;&nbsp;2022-05-12&nbsp;&nbsp;13:18:30
+      Inated:&#xa0;&#xa0;&#xa0;2023-10-18&#xa0;&#xa0;19:35:41
     </p>
     <p>
       
     </p>
     <p>
-      ------- Files: --------&nbsp;
+      ------- Files: --------&#xa0;
     </p>
     <p>
-      &nbsp;0 node(s) pointing to unexisting/filtered files (marked as 'broken')
+      &#xa0;0 node(s) pointing to unexisting/filtered files (marked as 'broken')
     </p>
     <p>
-      &nbsp;0 link(s) corrected in nodes
+      &#xa0;0 link(s) corrected in nodes
     </p>
     <p>
-      &nbsp;0 new file(s) imported as node(s)&nbsp;
+      &#xa0;0 new file(s) imported as node(s)&#xa0;
     </p>
     <p>
-      &nbsp;0 node(s) moved/renamed in drive
+      &#xa0;0 node(s) moved/renamed in drive
     </p>
     <p>
-      
-    </p>
-    <p>
-      ------- Folders: --------&nbsp;
-    </p>
-    <p>
-      1 folders didn't need to be moved&nbsp;
+      &#xa0;0 node(s) couldn't be moved/renamed in drive (marked as 'notMovedRenamed')
     </p>
     <p>
       
     </p>
     <p>
+      ------- Folders: --------&#xa0;
+    </p>
+    <p>
+      4 folders didn't need to be moved&#xa0;
+    </p>
+    <p>
       
     </p>
     <p>
-      0.4 seconds
+      
+    </p>
+    <p>
+      0.1 seconds
+    </p>
+    <p>
+      
     </p>
     <p>
       
@@ -1261,8 +1267,15 @@ return (c.freeplaneVersion &lt; FreeplaneVersion.getVersion(&quot;1.9.0&quot;) |
     <p>
       
     </p>
+    <p>
+      No failed operation in drive
+    </p>
   </body>
-</html></richcontent>
+</html>
+</richcontent>
+</node>
+<node TEXT="delete" STYLE_REF="trashFolder" ID="ID_1706885477" LINK="delete/">
+<node TEXT="MoM.svg" STYLE_REF="moveToTrash" POSITION="bottom_or_right" ID="ID_1112187534" LINK="delete/MoM.svg"/>
 </node>
 </node>
 </node>

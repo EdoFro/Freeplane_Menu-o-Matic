@@ -4,7 +4,7 @@
 
 Menu-o-Matic is an AddOn for Freeplane that gives the user the possibility to create his/her own dialogs with the menu items he/she prefers.
 
-![MoM-launchDirectly.gif](resources/MoM-launchDirectly.gif)
+![MoM-launchDirectly.gif](file:/C:/Users/efroh/GitHub/Freeplane_Menu-o-Matic/resources/MoM-launchDirectly.gif)
 
 It can also include scripts.
 
@@ -42,24 +42,28 @@ The addon can be downloaded from the [latest release](https://github.com/EdoFro/
 
       * [10. new when designing a new custom menu](#10-new-when-designing-a-new-custom-menu)
 
+   * [History](#History)
+
+</details>
+
 -----
 
 # Basic Instructions
 
 1. Build a a branch with node's linked to menu items
-   - ![MoM 001.png](resources/MoM%20001.png)
+   - ![MoM 001.png](file:/C:/Users/efroh/GitHub/Freeplane_Menu-o-Matic/resources/MoM%20001.png)
 1. Select the parent node. Its text will be used as the dialog's title.<br>And apply the '**pack menu**' command
-   - ![MoM 002.png](resources/MoM%20002.png)
+   - ![MoM 002.png](file:/C:/Users/efroh/GitHub/Freeplane_Menu-o-Matic/resources/MoM%20002.png)
 1. You have to decide if the resulting dialog should show labels, icons or both
-   - ![MoM 003.png](resources/MoM%20003.png)
+   - ![MoM 003.png](file:/C:/Users/efroh/GitHub/Freeplane_Menu-o-Matic/resources/MoM%20003.png)
 1. You have to decide if after clicking a button the **focus** has to return to the map or stay in the dialog<br>(**new in v0.1.1**)
-   - ![MoM 007.png](resources/MoM%20007.png)
+   - ![MoM 007.png](file:/C:/Users/efroh/GitHub/Freeplane_Menu-o-Matic/resources/MoM%20007.png)
 1. It creates a '**customMenu**' node that includes the whole information to build the dialog
-   - ![MoM 004.png](resources/MoM%20004.png)
+   - ![MoM 004.png](file:/C:/Users/efroh/GitHub/Freeplane_Menu-o-Matic/resources/MoM%20004.png)
 1. Use this new node to launch your menu dialog
-   - ![MoM 005.png](resources/MoM%20005.png)
+   - ![MoM 005.png](file:/C:/Users/efroh/GitHub/Freeplane_Menu-o-Matic/resources/MoM%20005.png)
 1. And here is the resulting dialog!
-   - ![MoM 006.png](resources/MoM%20006.png)
+   - ![MoM 006.png](file:/C:/Users/efroh/GitHub/Freeplane_Menu-o-Matic/resources/MoM%20006.png)
 1. **New in v0.1.1**: now there is a command so you can skip the packaging step and directly launch the menu dialog if you want
    - useful when you want to create a one time menu
 
@@ -141,7 +145,97 @@ The addon can be downloaded from the [latest release](https://github.com/EdoFro/
 - Nice when iterating when designing a new menu package.
 - Added in v0.1.3
 
+<details><summary><h1>History</h1></summary>
+
 # History
+
+## v0.1.12
+
+* Added new groovy icon
+  * Artist: [Papirus Development Team](https://github.com/PapirusDevelopmentTeam)
+* Improved Templates Styles
+
+## v0.1.11
+
+* New listCustomMenuFromMap with checkboxes
+* vertical separators are shown as horizontal separators in toolbars with labels
+* launchDialogFromNodes now ignores package nodes
+* New unified commad to launch dialog
+  * LaunchDialogFromSelected
+  * Follows this priority:
+    * If selected node is a package --> it opens it as dialog
+    * If any descendant is a package --> it opens all packages from branch
+    * if there are descendant nodes related to menu commands or groovy scripts --> it creates a dialog for them
+* solved [bug FP MoM: black box](https://github.com/EdoFro/Freeplane_Menu-o-Matic/issues/13)
+* new custom icons
+* Menu-o-Matic dialog now has less buttons
+  * LaunchDialogFromSelected replaces
+    * LaunchDialogFromNodes
+    * LaunchCustomDialog
+    * LaunchDialogFromBranch
+
+## v0.1.10
+
+* Unpacking powerButtons now gets the labels for icon buttons too
+* Added popup menu to remove Tabs
+  * Right clicking on tab, (not on toolbars)
+* Added vertical separators
+  * node text =  `|`
+* Improved Panel layout
+  * implements Scrollable interface
+  * custom ToolbarLayout
+* TitledBorder font size can now be defined by user
+  * scalling factor (integer between 0 and 200)
+  * 100 =  same size as UI font size
+
+## v0.1.9
+
+* Corrected button background color (bug in some L&F)
+  * In original Look&Feels the buttons background weren't transparent
+* Added preference to (in)activate TitledBorders
+* Added popup menu to remove toolbars
+  * Right clicking on toolbars
+* Added powerButtons functionality
+  * Unifies multiple MenuActions nodes as a single "powerButton" that executes all actions at once
+
+## v0.1.8
+
+* init script opens Menu o Matic toolbar
+* Added preference to show/hide Menu-o-Matic toolbar buttons labels
+* Added menu separators
+* Toolbar title can be modified in dialog
+
+## v0.1.7
+
+* No more status bar information messages when clicking on a script based button
+* Removed unused commands:
+  * listCustomDialogs
+  * launchCustomToolTab
+  * showLastUsedMenu
+* AutoLaunch mark is no longer a rocket icon, now it is an attribute
+* Added script restrictions parameters
+* improved input dialog
+* created changePackParameters command
+* insertMenuOMaticPackage updated
+
+## v0.1.6
+
+* added menuOMatic.svg icon
+* added MoM.svg icon for TabbedPanelMod
+* CustomMenus are now launched in tool panel
+* Added Tab Icon capability
+* added custom colors to toolbar
+* it selects the tab when adding a toolbar
+
+## v0.1.5
+
+* Added AutoLaunch capabillity to custom Menus
+  * They launch automatically when starting Freeplane or when opening a map that contains Custom Menus marked as 'AutoLaunch'
+  * just add a 'launch' icon to the package node to define it as an AutoLaunch menu
+
+## v0.1.4
+
+* added elapsed time message when clicking on a script based button
 
 ## v0.1.3
 
@@ -171,4 +265,6 @@ Nice when iterating when designing a new menu package.
 ## v0.1.0
 
 * initial release
+
+</details>
 
