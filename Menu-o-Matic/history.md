@@ -4,6 +4,7 @@
 
 * Added new groovy icon
   * Artist: [Papirus Development Team](https://github.com/PapirusDevelopmentTeam)
+* Improved Templates Styles
 
 ## v0.1.11
 

@@ -1,7 +1,6 @@
 <map version="freeplane 1.11.5">
 <!--To view this file, download free mind mapping software Freeplane from https://www.freeplane.org -->
-<attribute_registry SHOW_ATTRIBUTES="selected"/>
-<node TEXT="New Mindmap" LOCALIZED_STYLE_REF="AutomaticLayout.level.root" FOLDED="false" ID="ID_1090958577"><hook NAME="MapStyle" background="#f9f9f8">
+<node TEXT="Map" LOCALIZED_STYLE_REF="AutomaticLayout.level.root" FOLDED="false" ID="ID_1090958577"><hook NAME="MapStyle" background="#f9f9f8">
     <conditional_styles>
         <conditional_style ACTIVE="true" STYLE_REF="GroovyNode" LAST="false">
             <script_condition>
@@ -15,14 +14,14 @@
             <attribute_exists_condition ATTRIBUTE="tbActions"/>
         </conditional_style>
     </conditional_styles>
-    <properties show_icon_for_attributes="true" edgeColorConfiguration="#808080ff,#ff0000ff,#0000ffff,#00ff00ff,#ff00ffff,#00ffffff,#7c0000ff,#00007cff,#007c00ff,#7c007cff,#007c7cff,#7c7c00ff" show_note_icons="true" fit_to_viewport="false"/>
+    <properties show_icon_for_attributes="true" edgeColorConfiguration="#808080ff,#ff0000ff,#0000ffff,#00ff00ff,#ff00ffff,#00ffffff,#7c0000ff,#00007cff,#007c00ff,#7c007cff,#007c7cff,#7c7c00ff" show_note_icons="true" fit_to_viewport="false" associatedTemplateLocation="template:/Menu-o-Matic/Menu-o-Matic%20template.mm"/>
 
 <map_styles>
 <stylenode LOCALIZED_TEXT="styles.root_node" ID="ID_118736178" STYLE="oval" UNIFORM_SHAPE="true" VGAP_QUANTITY="24 pt">
 <font SIZE="24"/>
 <stylenode LOCALIZED_TEXT="styles.predefined" POSITION="bottom_or_right" STYLE="bubble">
 <stylenode LOCALIZED_TEXT="default" ID="ID_506805493" ICON_SIZE="12 pt" FORMAT_AS_HYPERLINK="false" COLOR="#484747" BACKGROUND_COLOR="#efefef" STYLE="bubble" SHAPE_HORIZONTAL_MARGIN="5 px" SHAPE_VERTICAL_MARGIN="2 px" NUMBERED="false" FORMAT="STANDARD_FORMAT" TEXT_ALIGN="DEFAULT" TEXT_WRITING_DIRECTION="LEFT_TO_RIGHT" BORDER_WIDTH_LIKE_EDGE="false" BORDER_WIDTH="1.9 px" BORDER_COLOR_LIKE_EDGE="false" BORDER_COLOR="#8fbcbb" BORDER_DASH_LIKE_EDGE="true" BORDER_DASH="SOLID" VGAP_QUANTITY="2 px" COMMON_HGAP_QUANTITY="14 pt" CHILD_NODES_LAYOUT="AUTO">
-<arrowlink SHAPE="CUBIC_CURVE" COLOR="#bf5d3f" WIDTH="2" TRANSPARENCY="200" DASH="" FONT_SIZE="9" FONT_FAMILY="SansSerif" DESTINATION="ID_506805493" STARTINCLINATION="45 pt;-6 pt;" ENDINCLINATION="57 pt;30 pt;" STARTARROW="NONE" ENDARROW="DEFAULT"/>
+<arrowlink SHAPE="CUBIC_CURVE" COLOR="#bf5d3f" WIDTH="2" TRANSPARENCY="200" DASH="" FONT_SIZE="9" FONT_FAMILY="SansSerif" DESTINATION="ID_506805493" STARTINCLINATION="45 pt;-5.25 pt;" ENDINCLINATION="57 pt;30 pt;" STARTARROW="NONE" ENDARROW="DEFAULT"/>
 <font NAME="Dialog" SIZE="10" BOLD="false" STRIKETHROUGH="false" ITALIC="false"/>
 <edge STYLE="horizontal" COLOR="#2e3440" WIDTH="1" DASH="SOLID"/>
 <richcontent TYPE="DETAILS" CONTENT-TYPE="plain/auto"/>
@@ -93,5 +92,39 @@
 </stylenode>
 </map_styles>
 </hook>
+<hook NAME="accessories/plugins/AutomaticLayout.properties" VALUE="ALL"/>
+<node TEXT="Menu-o-Matic" POSITION="bottom_or_right" ID="ID_138359347">
+<node TEXT="GroovyNode" STYLE_REF="GroovyNode" ID="ID_1278126962"/>
+<node TEXT="menuButton" ID="ID_1234239189" LINK="menuitem:_AboutAction"/>
+<node TEXT="customMenuPackage" STYLE_REF="customMenuPackage" ID="ID_1177380545"/>
+</node>
+<node TEXT="test" POSITION="bottom_or_right" ID="ID_1466382678"/>
+<node TEXT="test" POSITION="bottom_or_right" ID="ID_203630912">
+<node TEXT="test" ID="ID_534949068">
+<node TEXT="test" ID="ID_1853318091">
+<node TEXT="test" ID="ID_1829823934">
+<node TEXT="test" ID="ID_1511234907">
+<node TEXT="test" ID="ID_130213865"/>
+</node>
+</node>
+</node>
+</node>
+</node>
+<node TEXT="test" POSITION="top_or_left" ID="ID_215114198">
+<attribute NAME="test1" VALUE="test"/>
+<attribute NAME="test2" VALUE="test"/>
+<richcontent TYPE="DETAILS">
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      Details...
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
 </node>
 </map>
