@@ -2,6 +2,8 @@
 
 ## v0.1.12
 
+* Added new groovy icon
+  * Artist: [Papirus Development Team](https://github.com/PapirusDevelopmentTeam)
 
 ## v0.1.11
 
