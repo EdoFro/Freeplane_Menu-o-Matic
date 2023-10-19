@@ -187,7 +187,7 @@
 </stylenode>
 </map_styles>
 </hook>
-<node TEXT="README.md" STYLE_REF="MarkdownHelperNode" POSITION="bottom_or_right" ID="ID_340248887" LINK="file:/C:/Users/Edo/Documents/GitHub/Freeplane_My-Menu-Inator/README.md" VGAP_QUANTITY="3 pt">
+<node TEXT="README.md" STYLE_REF="MarkdownHelperNode" POSITION="bottom_or_right" ID="ID_340248887" LINK="file:/C:/Users/efroh/GitHub/Freeplane_Menu-o-Matic/README.md" VGAP_QUANTITY="3 pt">
 <edge COLOR="#ff0000"/>
 <attribute_layout NAME_WIDTH="126.75 pt"/>
 <attribute NAME="headersToUnderline" VALUE="1" OBJECT="org.freeplane.features.format.FormattedNumber|1|#0.####"/>
@@ -204,7 +204,7 @@
 <attribute NAME="MarkdownRootFolder" VALUE="file:/C:/Users/Edo/Documents/GitHub/Freeplane_My-Menu-Inator/" OBJECT="java.net.URI|file:/C:/Users/Edo/Documents/GitHub/Freeplane_My-Menu-Inator/"/>
 <attribute NAME="MDHGithubBranch" VALUE=""/>
 <attribute NAME="MDHTargetRootPath" VALUE=""/>
-<richcontent TYPE="NOTE" CONTENT-TYPE="xml/auto">
+<richcontent TYPE="NOTE">
 <html>
                     <head>
 
@@ -687,51 +687,41 @@
 </node>
 </node>
 </node>
-<node TEXT="History" ID="ID_1574430581">
+<node TEXT="Versions history" ID="ID_1574430581">
 <icon BUILTIN="emoji-1F53B"/>
 <node TEXT="fileText" ID="ID_1537755327">
 <icon BUILTIN="emoji-1F343"/>
-<richcontent TYPE="NOTE" CONTENT-TYPE="xml/markdown">
+<richcontent TYPE="NOTE" CONTENT-TYPE="plain/markdown">
+<text>=
+def nodo = node.children.find{it.link.uri}
+if(!nodo) return  &quot;\n\n----\n\n--- No child node with link found!! ---\n\n----\n\n&quot;
+def mapUri = mindMap.file.toURI()
+def nodeUri = nodo.link.uri
+if(!nodeUri) return  &quot;\n\n----\n\n--- No link found!! ---\n\n----\n\n&quot;
+def fileUri = mapUri.resolve(nodeUri)
+
+def file = new File(fileUri)
+if(!file.exists()) return &quot;\n\n----\n\n--- No file found!! ---\n\n----\n\n&quot;
+
+
+node.details = &quot;loaded:\n&quot; + format(new Date(),&quot;yyyy-MM-dd HH:mm:ss&quot;).toString()
+
+return file.text</text></richcontent>
+<richcontent TYPE="DETAILS">
 <html>
   <head>
     
   </head>
   <body>
     <p>
-      =<br/>def nodo = node.children.find{it.link.uri}
+      loaded:
     </p>
     <p>
-      if(!nodo) return&#xa0;&#xa0;&quot;\n\n----\n\n--- No child node with link found!! ---\n\n----\n\n&quot;
-    </p>
-    <p>
-      def mapUri = mindMap.file.toURI()
-    </p>
-    <p>
-      def nodeUri = nodo.link.uri
-    </p>
-    <p>
-      if(!nodeUri) return&#xa0;&#xa0;&quot;\n\n----\n\n--- No link found!! ---\n\n----\n\n&quot;
-    </p>
-    <p>
-      def fileUri = mapUri.resolve(nodeUri)
-    </p>
-    <p>
-      
-    </p>
-    <p>
-      def file = new File(fileUri)
-    </p>
-    <p>
-      if(!file.exists()) return &quot;\n\n----\n\n--- No file found!! ---\n\n----\n\n&quot;
-    </p>
-    <p>
-      
-    </p>
-    <p>
-      return file.text
+      2023-10-18 20:06:57
     </p>
   </body>
-</html></richcontent>
+</html>
+</richcontent>
 <node TEXT="history.md" ID="ID_1679510638" LINK="Menu-o-Matic/history.md"><richcontent TYPE="NOTE">
 <html>
   <head>
