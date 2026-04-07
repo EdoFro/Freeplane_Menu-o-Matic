@@ -117,7 +117,7 @@ class LaunchTabPane {
     }
 
     static int indexOfTab(String tabName){
-        for(int i = 0; i < tabPane.tabCount; i++) {
+        for(int i = 4; i < tabPane.tabCount; i++) {
             if (getTabTitleAt(i)==tabName) {
                 return i
             }
@@ -146,6 +146,7 @@ class LaunchTabPane {
         container.setComponentPopupMenu(getRemovePopupMenu(scrollPane, 'Remove Tab'))
         tabPane.addTab(tabName, scrollPane)
         println "MoM: tab '$tabName' was created"
+        // TODO: add tabName:iconForTab as Meta to tabPane 
         formatTab(tabPane.tabCount - 1, (tabName!=PackMenu.MoM_TAB_NAME)?iconForTab:null)
         return momContainer
     }

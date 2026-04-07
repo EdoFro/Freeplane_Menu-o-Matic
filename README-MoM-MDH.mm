@@ -3,7 +3,7 @@
 <attribute_registry SHOW_ATTRIBUTES="hide"/>
 <node TEXT="README.md&#xa;Menu-o-Matic" FOLDED="false" ID="ID_696401721">
 <font SIZE="18"/>
-<hook NAME="AutomaticEdgeColor" COUNTER="6" RULE="ON_BRANCH_CREATION"/>
+<hook NAME="AutomaticEdgeColor" COUNTER="7" RULE="ON_BRANCH_CREATION"/>
 <hook NAME="MapStyle" background="#fdf6e3" zoom="0.826">
     <conditional_styles>
         <conditional_style ACTIVE="true" STYLE_REF="BotonMenu" LAST="false">
@@ -28,7 +28,7 @@
             <attribute_contains_condition ATTRIBUTE="modifiedFile" VALUE="true"/>
         </conditional_style>
     </conditional_styles>
-    <properties show_icon_for_attributes="true" edgeColorConfiguration="#808080ff,#ff0000ff,#0000ffff,#00ff00ff,#ff00ffff,#00ffffff,#7c0000ff,#00007cff,#007c00ff,#7c007cff,#007c7cff,#7c7c00ff" mapUsesOwnSaveOptions="true" save_modification_times="false" save_last_visited_node="default" show_note_icons="true" save_folding="save_folding_if_map_is_changed" fit_to_viewport="false" MDI_template="v0.0.13"/>
+    <properties show_icon_for_attributes="true" edgeColorConfiguration="#808080ff,#ff0000ff,#0000ffff,#00ff00ff,#ff00ffff,#00ffffff,#7c0000ff,#00007cff,#007c00ff,#7c007cff,#007c7cff,#7c7c00ff" mapUsesOwnSaveOptions="true" save_modification_times="false" save_last_visited_node="default" show_note_icons="true" MDI_template="v0.0.13" save_folding="save_folding_if_map_is_changed" fit_to_viewport="false"/>
 
 <map_styles>
 <stylenode LOCALIZED_TEXT="styles.root_node" ID="ID_1443633467" STYLE="oval" UNIFORM_SHAPE="true" VGAP_QUANTITY="24 pt">
@@ -601,7 +601,7 @@
 </node>
 </node>
 </node>
-<node TEXT="Navigating dialogs" ID="ID_1062449364">
+<node TEXT="Navigating dialogs" FOLDED="true" ID="ID_1062449364">
 <node TEXT="list" STYLE_REF="MarkdownHelperNode" ID="ID_1749120424"><richcontent TYPE="NOTE">
 <html>
                                     <head>
@@ -627,7 +627,7 @@
 </node>
 </node>
 </node>
-<node TEXT="Mindmap templates" ID="ID_1871098404">
+<node TEXT="Mindmap templates" FOLDED="true" ID="ID_1871098404">
 <node TEXT="list" STYLE_REF="MarkdownHelperNode" ID="ID_77650609"><richcontent TYPE="NOTE">
 <html>
                                     <head>
@@ -646,7 +646,7 @@
 </node>
 </node>
 </node>
-<node TEXT="Menu-o-Matic dialog" ID="ID_1356456242">
+<node TEXT="Menu-o-Matic dialog" FOLDED="true" ID="ID_1356456242">
 <node TEXT="list" STYLE_REF="MarkdownHelperNode" ID="ID_1796608451"><richcontent TYPE="NOTE">
 <html>
                                     <head>
@@ -662,7 +662,7 @@
 <node TEXT="Added in v0.1.2" ID="ID_1571491706"/>
 </node>
 </node>
-<node TEXT="Insert Menu-o-Matic package node" ID="ID_625991635">
+<node TEXT="Insert Menu-o-Matic package node" FOLDED="true" ID="ID_625991635">
 <node TEXT="list" STYLE_REF="MarkdownHelperNode" ID="ID_38572955"><richcontent TYPE="NOTE">
 <html>
                                     <head>
@@ -678,7 +678,7 @@
 <node TEXT="Added in v0.1.3" ID="ID_998965906"/>
 </node>
 </node>
-<node TEXT="new when designing a new custom menu" ID="ID_1542624944">
+<node TEXT="new when designing a new custom menu" FOLDED="true" ID="ID_1542624944">
 <node TEXT="list" STYLE_REF="MarkdownHelperNode" ID="ID_1734983975"><richcontent TYPE="NOTE">
 <text>= edofro.MarkDownHelper.MDH.list(node)</text></richcontent>
 <node TEXT="Now if &apos;Title&apos; node has package options expressed in its details text, it will take that parameters and it won&apos;t show the options dialogs to the user." ID="ID_1653473975"/>
@@ -717,7 +717,7 @@ return file.text</text></richcontent>
       loaded:
     </p>
     <p>
-      2023-10-18 20:06:57
+      2023-12-12 08:51:01
     </p>
   </body>
 </html>
@@ -825,7 +825,7 @@ return file.text</text></richcontent>
 </node>
 </node>
 </node>
-<node TEXT="Freeplane_My-Menu-Inator" STYLE_REF="baseFolder" POSITION="bottom_or_right" ID="ID_260100339" LINK=".">
+<node TEXT="Freeplane_My-Menu-Inator" STYLE_REF="baseFolder" FOLDED="true" POSITION="bottom_or_right" ID="ID_260100339" LINK=".">
 <attribute NAME="nameFilter" VALUE=""/>
 <attribute NAME="maxDepth" VALUE="-1" OBJECT="org.freeplane.features.format.FormattedNumber|-1|#0.####"/>
 <attribute NAME="markWhenMoved" VALUE="0" OBJECT="org.freeplane.features.format.FormattedNumber|0|#0.####"/>
@@ -1165,8 +1165,7 @@ links for files and folders.
       SOFTWARE.
     </p>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 </node>
 <node TEXT="README.md" ID="ID_1558207926" LINK="README.md"><richcontent TYPE="DETAILS">
 <html>
@@ -1196,7 +1195,7 @@ links for files and folders.
 </node>
 </node>
 <node TEXT="new imported files" STYLE_REF="newFolderImport" ID="ID_458856747">
-<attribute NAME="log_MDI" VALUE="2" OBJECT="org.freeplane.features.format.FormattedObject|org.freeplane.plugin.script.proxy.ConvertibleText&amp;#x7c;2|number:decimal:#0.####"/>
+<attribute NAME="log_MDI" VALUE="org.freeplane.plugin.script.proxy.ConvertibleText|2" OBJECT="org.freeplane.features.format.FormattedObject|java.lang.String&amp;#x7c;org.freeplane.plugin.script.proxy.ConvertibleText&amp;#x7c;2|number:decimal:#0.####"/>
 <richcontent TYPE="NOTE">
 <html>
   <head>
@@ -1261,8 +1260,7 @@ links for files and folders.
       No failed operation in drive
     </p>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 </node>
 <node TEXT="delete" STYLE_REF="trashFolder" ID="ID_1706885477" LINK="delete/">
 <node TEXT="MoM.svg" STYLE_REF="moveToTrash" POSITION="bottom_or_right" ID="ID_1112187534" LINK="delete/MoM.svg"/>

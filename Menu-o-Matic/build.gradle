@@ -17,12 +17,12 @@ def FPversion = 'instaled'
         v10_1         : "C:/Freeplane/freeplane-1.10.2",
         USS       : "C:/Users/eduardo.frohlich/PortableApps/FreeplanePortable/App/Freeplane"
     ]
-	def freeplaneDir = freeplaneDirs[FPversion]
+    def freeplaneDir = freeplaneDirs[FPversion]
 
 def groovyVersion = '4.0.1'
 
-	def isNewerGroovy = groovyVersion.startsWith('4.')
-	def groovyGroupId = isNewerGroovy?'org.apache.groovy':'org.codehaus.groovy'
+    def isNewerGroovy = groovyVersion.startsWith('4.')
+    def groovyGroupId = isNewerGroovy?'org.apache.groovy':'org.codehaus.groovy'
 
 
 libsDirName = "${rootDir}/lib"
